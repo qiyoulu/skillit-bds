@@ -25,10 +25,11 @@
 
 ## Primary type hierarchy
 
-Four levels. Display, Heading, and H2 follow a strict 2:1 ratio. Body breaks the ratio at 16px to maintain screen legibility — 16px is the accessibility floor for body copy.
+Five levels. Display, Heading, and H2 follow a strict 2:1 ratio. Body breaks the ratio at 16px to maintain screen legibility — 16px is the accessibility floor for body copy.
 
 | Level | Token | px (screen) | rem (web) | pt (print) | Weight | CSS weight | Line height | Leading (print) | Letter spacing |
 |---|---|---|---|---|---|---|---|---|---|
+| Poster |  | 160px |  | 120pt | Extra Bold | 800 | 0.85 | 102pt |  |
 | Display | `--text-display` | 80px | `5rem` | 40pt | Bold | 700 | 0.9 | 36pt | `-0.03em` |
 | Heading | `--text-heading` | 40px | `2.5rem` | 20pt | Semibold | 600 | 1.0 | 20pt | `-0.02em` |
 | H2 | `--text-h2` | 20px | `1.25rem` | 15pt | Medium | 500 | 1.1 | 16.5pt | `-0.01em` |
@@ -38,7 +39,8 @@ Four levels. Display, Heading, and H2 follow a strict 2:1 ratio. Body breaks the
 
 | Level | Base weight | Base value | Bolded weight | Bolded value |
 |---|---|---|---|---|
-| Display | Bold | 700 | Black | 900 |
+| Poster | Extra Bold | 800 | Black | 900 |
+| Display | | 700 | Black | 900 |
 | Heading | Semibold | 600 | Extra Bold | 800 |
 | H2 | Medium | 500 | Bold | 700 |
 | Body | Regular | 400 | Semibold | 600 |
@@ -83,6 +85,13 @@ This is a system font stack — no CDN required. Use it only for data strings, n
   --font-mono:      'SF Mono', 'Fira Code', 'Courier New', monospace;
 
   /* Primary hierarchy — px maps to screen, rem is web, pt is print */
+  /* Poster:   160px / 10rem / 120pt */
+  --text-poster:                10rem;
+  --text-poster-weight:         800;   /* Extra Bold */
+  --text-poster-weight-bold:    900;   /* Black */
+  --text-poster-leading:        0.85;
+  --text-poster-tracking:       -0.04em;
+
   /* Display:  80px / 5rem / 60pt */
   --text-display:           5rem;
   --text-display-weight:    700;   /* Bold */
@@ -142,6 +151,7 @@ This is a system font stack — no CDN required. Use it only for data strings, n
 
 ### Primary hierarchy (marketing, digital, editorial, print)
 
+- **Poster (160px / 10rem / 120pt):** Massive brand moments, event banners, numbers/stats at extreme scale. Work Sans Extra Bold (800). Bolded: Black (900). Line height 0.85 / 102pt leading. Tracking −4%.
 - **Display (80px / 5rem / 60pt):** Hero headlines, campaign statements, large callouts. Work Sans Bold (700). Bolded: Black (900). Line height 0.9 / 54pt leading. Tracking −3%.
 - **Heading (40px / 2.5rem / 30pt):** Section headings, page titles. Work Sans Semibold (600). Bolded: Extra Bold (800). Line height 1.0 / 30pt leading. Tracking −2%.
 - **H2 (20px / 1.25rem / 15pt):** Subsection headings, pull quotes, captions at emphasis scale. Work Sans Medium (500). Bolded: Bold (700). Line height 1.1 / 16.5pt leading. Tracking −1%.
