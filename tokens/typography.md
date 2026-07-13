@@ -23,29 +23,26 @@
 
 ---
 
-## Primary type hierarchy
+## The Typographic Algorithm (Primary Scale)
 
-Five levels. Display, Heading, and H2 follow a strict 2:1 ratio. Body breaks the ratio at 16px to maintain screen legibility — 16px is the accessibility floor for body copy.
+The typography system is mathematically derived and infinitely scalable. Levels are named objectively by their pixel size (, ). 
 
-| Level | Token | px (screen) | rem (web) | pt (print) | Weight | CSS weight | Line height | Leading (print) | Letter spacing |
-|---|---|---|---|---|---|---|---|---|---|
-| Poster |  | 160px |  | 120pt | Extra Bold | 800 | 0.85 | 102pt |  |
-| Display | `--text-display` | 80px | `5rem` | 40pt | Bold | 700 | 0.9 | 36pt | `-0.03em` |
-| Heading | `--text-heading` | 40px | `2.5rem` | 20pt | Semibold | 600 | 1.0 | 20pt | `-0.02em` |
-| H2 | `--text-h2` | 20px | `1.25rem` | 15pt | Medium | 500 | 1.1 | 16.5pt | `-0.01em` |
-| Body | `--text-body-primary` | 16px | `1rem` | 12pt | Regular | 400 | 1.25 | 15pt | `0` |
+If you need a size larger than 160px (e.g., 320px), extrapolate using this algorithm starting from the 20px baseline:
+- **Size:** Multiply by 2.
+- **Base Weight:** Add +100 for each doubling of size (Max: 900).
+- **Bolded Weight:** Base weight + 200 (Max: 900).
+- **Line Height:** Subtract -0.1 for each doubling of size (Hard floor: 0.8).
+- **Tracking:** Subtract -1% (-0.01em) for each doubling of size.
 
-**Bolded variants within each level:**
+| Level | Token | px (screen) | rem (web) | pt (print) | Base Weight | Bolded | Line height | Tracking |
+|---|---|---|---|---|---|---|---|---|
+| **Text-160** |  | 160px |  | 120pt | Extra Bold (800) | Black (900) | 0.80 |  |
+| **Text-80** |  | 80px |  | 60pt | Bold (700) | Black (900) | 0.90 |  |
+| **Text-40** |  | 40px |  | 30pt | Semibold (600) | Extra Bold (800) | 1.00 |  |
+| **Text-20** |  | 20px |  | 15pt | Medium (500) | Bold (700) | 1.10 |  |
+| **Text-16** |  | 16px |  | 12pt | Regular (400) | Semibold (600) | 1.25 |  |
 
-| Level | Base weight | Base value | Bolded weight | Bolded value |
-|---|---|---|---|---|
-| Poster | Extra Bold | 800 | Black | 900 |
-| Display | | 700 | Black | 900 |
-| Heading | Semibold | 600 | Extra Bold | 800 |
-| H2 | Medium | 500 | Bold | 700 |
-| Body | Regular | 400 | Semibold | 600 |
-
----
+*(Note: Text-16 is the accessibility floor for body copy and operates slightly outside the strict 2x multiplier rule to protect legibility).*
 
 ## Functional type scale (UI)
 
@@ -84,41 +81,41 @@ This is a system font stack — no CDN required. Use it only for data strings, n
   --font-primary:   'Work Sans', sans-serif;
   --font-mono:      'SF Mono', 'Fira Code', 'Courier New', monospace;
 
-  /* Primary hierarchy — px maps to screen, rem is web, pt is print */
-  /* Poster:   160px / 10rem / 120pt */
-  --text-poster:                10rem;
-  --text-poster-weight:         800;   /* Extra Bold */
-  --text-poster-weight-bold:    900;   /* Black */
-  --text-poster-leading:        0.85;
-  --text-poster-tracking:       -0.04em;
+  /* Primary hierarchy — absolute size naming */
+  /* Text-160 */
+  --text-160:               10rem;
+  --text-160-weight:        800;
+  --text-160-weight-bold:   900;
+  --text-160-leading:       0.80;
+  --text-160-tracking:      -0.04em;
 
-  /* Display:  80px / 5rem / 60pt */
-  --text-display:           5rem;
-  --text-display-weight:    700;   /* Bold */
-  --text-display-weight-bold: 900; /* Black */
-  --text-display-leading:   0.9;
-  --text-display-tracking:  -0.03em;
+  /* Text-80 */
+  --text-80:                5rem;
+  --text-80-weight:         700;
+  --text-80-weight-bold:    900;
+  --text-80-leading:        0.90;
+  --text-80-tracking:       -0.03em;
 
-  /* Heading:  40px / 2.5rem / 30pt */
-  --text-heading:               2.5rem;
-  --text-heading-weight:        600;   /* Semibold */
-  --text-heading-weight-bold:   800;   /* Extra Bold */
-  --text-heading-leading:       1.0;
-  --text-heading-tracking:      -0.02em;
+  /* Text-40 */
+  --text-40:                2.5rem;
+  --text-40-weight:         600;
+  --text-40-weight-bold:    800;
+  --text-40-leading:        1.00;
+  --text-40-tracking:       -0.02em;
 
-  /* H2:       20px / 1.25rem / 15pt */
-  --text-h2:                1.25rem;
-  --text-h2-weight:         500;   /* Medium */
-  --text-h2-weight-bold:    700;   /* Bold */
-  --text-h2-leading:        1.1;
-  --text-h2-tracking:       -0.01em;
+  /* Text-20 */
+  --text-20:                1.25rem;
+  --text-20-weight:         500;
+  --text-20-weight-bold:    700;
+  --text-20-leading:        1.10;
+  --text-20-tracking:       -0.01em;
 
-  /* Body:     16px / 1rem / 12pt */
-  --text-body-primary:          1rem;
-  --text-body-primary-weight:   400;   /* Regular */
-  --text-body-primary-weight-bold: 600; /* Semibold */
-  --text-body-primary-leading:  1.25;
-  --text-body-primary-tracking: 0;
+  /* Text-16 */
+  --text-16:                1rem;
+  --text-16-weight:         400;
+  --text-16-weight-bold:    600;
+  --text-16-leading:        1.25;
+  --text-16-tracking:       0;
 
   /* Functional UI scale */
   --text-ui-lg:     1.125rem;
@@ -151,11 +148,11 @@ This is a system font stack — no CDN required. Use it only for data strings, n
 
 ### Primary hierarchy (marketing, digital, editorial, print)
 
-- **Poster (160px / 10rem / 120pt):** Massive brand moments, event banners, numbers/stats at extreme scale. Work Sans Extra Bold (800). Bolded: Black (900). Line height 0.85 / 102pt leading. Tracking −4%.
-- **Display (80px / 5rem / 60pt):** Hero headlines, campaign statements, large callouts. Work Sans Bold (700). Bolded: Black (900). Line height 0.9 / 54pt leading. Tracking −3%.
-- **Heading (40px / 2.5rem / 30pt):** Section headings, page titles. Work Sans Semibold (600). Bolded: Extra Bold (800). Line height 1.0 / 30pt leading. Tracking −2%.
-- **H2 (20px / 1.25rem / 15pt):** Subsection headings, pull quotes, captions at emphasis scale. Work Sans Medium (500). Bolded: Bold (700). Line height 1.1 / 16.5pt leading. Tracking −1%.
-- **Body (16px / 1rem / 12pt):** All running copy, paragraph text. Work Sans Regular (400). Bolded: Semibold (600). Line height 1.25 / 15pt leading. No tracking.
+- **Text-160:** Massive brand moments, event banners, numbers/stats at extreme scale.
+- **Text-80:** Hero headlines, campaign statements, large callouts.
+- **Text-40:** Section headings, page titles.
+- **Text-20:** Subsection headings, pull quotes, captions at emphasis scale.
+- **Text-16:** All running copy, paragraph text.
 
 ### Functional UI scale (app, dashboard)
 

@@ -58,7 +58,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 
 1. **Flush left alignment.** The system relies on a strict horizontal grid. Text blocks, headings, and data tables align flush left. Centered text is prohibited for body copy and strongly discouraged for headlines.
 
-2. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-display` directly adjacent to `--text-body-primary`), not by stepping gently through intermediate sizes or adding color.
+2. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-80` directly adjacent to `--text-16`), not by stepping gently through intermediate sizes or adding color.
 
 3. **Strict functionalism.** Every border and margin must serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.
 
@@ -76,20 +76,20 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Full viewport height on desktop, minimum `560px`.
 - Background: Notebook (`--color-bg`).
 - Worker portrait (isolated, hard-edge) placed right or center.
-- Headline: `--text-display` or `--text-heading`, Graphite, sentence-case.
+- Headline: `--text-80` or `--text-40`, Graphite, sentence-case.
 - Single Cord CTA button beneath headline.
 - No secondary CTA below the fold.
 
 ### Content section
 - Two-column (text left, image right) or full-width text.
 - Background: Notebook.
-- Subheading: `--text-h2`, Graphite.
-- Body: `--text-body-primary`, Graphite, max `70ch`.
+- Subheading: `--text-20`, Graphite.
+- Body: `--text-16`, Graphite, max `70ch`.
 - Accent use: Cord for inline data callouts or a single stat highlight, not decorative.
 
 ### Data / proof section
 - Stat blocks in a 3- or 4-column grid.
-- Stats: `--text-display`, Cord.
+- Stats: `--text-80`, Cord.
 - Stat labels: `--text-ui-sm`, Graphite.
 - Background: Notebook or Graphite (inverted — white text on Graphite, Cord stats).
 
