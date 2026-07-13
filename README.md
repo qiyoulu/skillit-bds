@@ -8,6 +8,7 @@
 For automated systems and agents consuming this BDS, route tasks to the specific models below. Do not treat models as interchangeable for brand outputs:
 
 - **Claude 3.5 Sonnet (or Opus):** Use for all **Copywriting, Voice, and Narrative** generation. Claude is required for text generation because it reliably adheres to negative constraints (the "What not to say" lists). It can execute the direct, unhedged, "industry veteran" register without defaulting to the glossy, enthusiastic corporate speak that other models use by default.
+- **Gemini (1.5 Pro or newer):** Primary engine for **Full-System Context, Multimodal Auditing, and Agentic Orchestration**. Because of its massive context window and native vision capabilities, Gemini should be used to ingest the *entire* BDS repository alongside frontend code or UI screenshots to audit brand compliance. Use Gemini to orchestrate workflows (e.g., managing the handoff between Claude's copy and GPT's code).
 - **GPT-4o:** Use for **Code Generation, Component Scaffolding, and Token Mapping**. Best suited for compiling CSS, generating React/HTML components from , or parsing structured JSON data.
 - **Midjourney v6 (or Flux.1):** Use for **Image Generation**. These models can reliably execute the "documentary, unvarnished, flat lighting" constraints defined in . Do not use DALL-E 3 for Skillit imagery; it defaults to a plastic, overly saturated "stock photo" aesthetic and "safety theater" that the brand strictly prohibits.
 
@@ -50,6 +51,7 @@ Use this system to generate any Skillit output: website copy, social posts, pres
 For automated systems and agents consuming this BDS, route tasks to the specific models below. Do not treat models as interchangeable for brand outputs:
 
 - **Claude 3.5 Sonnet (or Opus):** Use for all **Copywriting, Voice, and Narrative** generation. Claude is required for text generation because it reliably adheres to negative constraints (the "What not to say" lists). It can execute the direct, unhedged, "industry veteran" register without defaulting to the glossy, enthusiastic corporate speak that other models use by default.
+- **Gemini (1.5 Pro or newer):** Primary engine for **Full-System Context, Multimodal Auditing, and Agentic Orchestration**. Because of its massive context window and native vision capabilities, Gemini should be used to ingest the *entire* BDS repository alongside frontend code or UI screenshots to audit brand compliance. Use Gemini to orchestrate workflows (e.g., managing the handoff between Claude's copy and GPT's code).
 - **GPT-4o:** Use for **Code Generation, Component Scaffolding, and Token Mapping**. Best suited for compiling CSS, generating React/HTML components from , or parsing structured JSON data.
 - **Midjourney v6 (or Flux.1):** Use for **Image Generation**. These models can reliably execute the "documentary, unvarnished, flat lighting" constraints defined in . Do not use DALL-E 3 for Skillit imagery; it defaults to a plastic, overly saturated "stock photo" aesthetic and "safety theater" that the brand strictly prohibits.
 
