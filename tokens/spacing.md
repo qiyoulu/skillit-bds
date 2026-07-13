@@ -1,6 +1,5 @@
 # Spacing Tokens — Skillit BDS
 
-**Direction:** D (Work)
 **Last updated:** 2026-07-10
 
 ---
@@ -9,7 +8,7 @@
 
 - Use only named spacing tokens. Never hardcode arbitrary pixel values.
 - Whitespace is a core brand element — it focuses attention on the human. When in doubt, use more space, not less.
-- Direction D uses “tactile padding” — interactive elements (buttons, cards) use generous horizontal padding to feel warm and physical, not tight and SaaS-like.
+- The system uses “tactile padding” — interactive elements (buttons, cards) use generous horizontal padding to feel warm and physical, not tight and SaaS-like.
 - All values are in `rem` (base 16px). Never use `px` for spacing — it breaks accessibility scaling.
 
 ---
@@ -35,9 +34,9 @@ Built on a 4px base unit (`0.25rem`). Every value is a multiple of 4.
 
 ---
 
-## Tactile padding (Direction D rule)
+## Tactile padding
 
-Buttons and interactive cards must use **double the standard horizontal padding** to feel warm and physical. This is non-negotiable for Direction D.
+Buttons and interactive cards must use **double the standard horizontal padding** to feel warm and physical. This is a non-negotiable brand rule.
 
 | Component | Vertical padding | Horizontal padding |
 |---|---|---|

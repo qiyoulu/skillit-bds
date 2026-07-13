@@ -1,7 +1,6 @@
 # Skillit Brand Design System (BDS)
 
 **Version:** 1.0 — Phase I scaffold
-**Direction:** D (Work) + C palette hybrid
 **Last updated:** 2026-07-10
 
 ---

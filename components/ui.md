@@ -1,6 +1,5 @@
 # UI Components — Skillit BDS
 
-**Direction:** D (Work)
 **Last updated:** 2026-07-10
 
 ---
@@ -9,7 +8,7 @@
 
 - All components use tokens from `tokens/color.md`, `tokens/typography.md`, and `tokens/spacing.md`. Never hardcode values.
 - Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
-- Tactile padding rule: buttons and interactive cards use generous horizontal padding — double the standard. This is non-negotiable for Direction D.
+- Tactile padding rule: buttons and interactive cards use generous horizontal padding — double the standard. This is a non-negotiable brand rule.
 - Every interactive element must have a visible focus state (2px solid Cord, 2px offset).
 - Touch targets minimum 44px in both dimensions (app).
 

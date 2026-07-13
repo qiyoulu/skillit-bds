@@ -1,6 +1,5 @@
 # Typography Tokens — Skillit BDS
 
-**Direction:** D (Work)
 **Last updated:** 2026-07-12
 
 ---

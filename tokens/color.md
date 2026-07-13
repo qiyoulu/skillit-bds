@@ -1,6 +1,5 @@
 # Color Tokens — Skillit BDS
 
-**Direction:** D (Work / Human Toolkit)
 **Last updated:** 2026-07-10
 
 ---
@@ -113,8 +112,8 @@ These colors exist in the project’s research history but are NOT active tokens
 
 | Color                    | Hex       | Why retired                                         |
 | ------------------------ | --------- | --------------------------------------------------- |
-| Signal Orange (old site) | `#FF5733` | Legacy — not part of Direction D                    |
-| Old brand orange         | `#FF6F31` | Legacy — not part of Direction D                    |
+| Signal Orange (old site) | `#FF5733` | Legacy — retired                    |
+| Old brand orange         | `#FF6F31` | Legacy — retired                    |
 | Previously proposed orange | `#F97316` | Considered but not selected                         |
 | Copper (old primary)     | `#B34700` | Replaced by Cord — too muted for approved direction |
 | Brick (old error)        | `#9C363D` | Replaced by Toolbox — Laura approved `#C8102E`      |

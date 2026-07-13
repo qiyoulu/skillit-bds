@@ -1,6 +1,5 @@
 # Layout Rules — Skillit BDS
 
-**Direction:** D (Work)
 **Last updated:** 2026-07-10
 
 ---
