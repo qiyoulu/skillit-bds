@@ -22,9 +22,9 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 
 3. **No color grading filters.** No Instagram-style color treatment. No dramatic color shifts. Natural color only.
 
-4. **No composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on a flat brand color (`--color-bg` Parchment or `--color-fg` Graphite) with no environment invented behind them.
+4. **No composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on a flat brand color (`--color-bg` Notebook or `--color-fg` Graphite) with no environment invented behind them.
 
-5. **Backgrounds must be transparent or flat brand colors.** Worker portraits and hardware isolations must have either a transparent alpha channel or a single flat brand color background (`--color-bg` Notebook or `--color-fg` Graphite) with no environment invented behind them.
+5. **Universal Blend Mode:** All photography must use the `multiply` CSS blend mode (`mix-blend-mode: multiply;`). Because the primary brand ground is Notebook (`#FAF7F3`), this universally drops out lighter backgrounds and melts every photograph perfectly into the layout. This creates a flawless, borderless editorial look across the entire system.
 
 ---
 

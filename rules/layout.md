@@ -39,11 +39,11 @@ State colors (Hard Hat, Toolbox, Lumber, Cooler) are functional only. They appea
 ## Grid
 
 ### Website / marketing
-- 12-column grid on desktop, 8 on tablet, 4 on mobile.
-- Gutter: `--space-6` (24px).
-- Content max-width: `1200px`, centered.
-- Side margins: `--space-16` (64px) desktop, `--space-8` (32px) tablet, `--space-4` (16px) mobile.
-- Full-bleed sections (hero, large image panels) may extend to viewport width — content within them still follows the max-width container.
+- Strict 12-column grid on desktop. No flexible fractional columns (e.g., `1fr`, `1.5fr`). Use fixed `col-span` classes so elements align flawlessly down the vertical axis.
+- Gutter: `--space-32` (32px).
+- Content max-width: `1440px`, centered.
+- Side margins: `--space-128` (128px) desktop, scaling down on mobile.
+- Mobile: Scales to a single-column layout via CSS Media Queries.
 
 ### App (worker-facing)
 - Single-column, max-width `480px`.
@@ -58,15 +58,19 @@ These are hard constraints derived from the core brand direction. They apply to 
 
 1. **Flush left alignment.** The system relies on a strict horizontal grid. Text blocks, headings, and data tables align flush left. Centered text is prohibited for body copy and strongly discouraged for headlines.
 
-2. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-80` directly adjacent to `--text-16`), not by stepping gently through intermediate sizes or adding color.
+2. **Optical Top Alignment.** Multi-column elements align at the top edge. To achieve this, typography must be vertically trimmed (`margin-top: -0.15em`) so the cap height—not the invisible line-height box—aligns flush with adjacent images or containers.
 
-3. **Strict functionalism.** Every border and margin must serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.
+3. **Button Alignment Exception.** Do not align buttons by their external padding bubble. Align them optically by the text inside them. A button must shift upward by its top padding value to ensure its internal text cap-height aligns with adjacent layout elements.
 
-4. **One accent per layout.** Cord (`--color-primary`) appears once per page section. It does not repeat as decoration. 
+4. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-80` directly adjacent to `--text-16`), not by stepping gently through intermediate sizes or adding color.
 
-5. **Shape signals action (Static = Sharp, Actionable = Pill).** All static layout containers (cards, panels, photographs) must use hard, straight edges (`border-radius: 0`). Only actionable human touchpoints (buttons) use a fully rounded pill shape (`border-radius: 100px`). No intermediate rounded corners (e.g., 4px or 8px) are permitted. No gradients, no drop shadows.
+5. **Strict functionalism.** Every border and margin must serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.
 
-6. **Typography does the heavy lifting.** Space and scale create order. Color is exclusively used to signal interactive function (links, buttons, states).
+6. **One accent per layout.** Cord (`--color-primary`) appears once per page section. It does not repeat as decoration. 
+
+7. **Shape signals action (Static = Sharp, Actionable = Pill).** All static layout containers (cards, panels, photographs) must use hard, straight edges (`border-radius: 0`). Only actionable human touchpoints (buttons) use a fully rounded pill shape (`border-radius: 100px`). No intermediate rounded corners (e.g., 4px or 8px) are permitted. No gradients, no drop shadows.
+
+8. **Typography does the heavy lifting.** Space and scale create order. Color is exclusively used to signal interactive function (links, buttons, states).
 
 ---
 

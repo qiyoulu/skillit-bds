@@ -23,9 +23,10 @@ Every output — website, app, social asset, document, generated content — mus
 | Text color         | Background         | Ratio  | Status                    |
 | ------------------ | ------------------ | ------ | ------------------------- |
 | Graphite `#232F36` | Notebook `#FAF7F3` | 12.4:1 | Pass AAA                  |
+| Graphite `#232F36` | Plaster `#FFFFFF`  | 13.0:1 | Pass AAA                  |
 | Notebook `#FAF7F3` | Graphite `#232F36` | 12.4:1 | Pass AAA                  |
-| Notebook `#FAF7F3` | Cord `#EF6F1A`     | 3.1:1  | Pass AA (large text only) |
-| Graphite `#232F36` | Cord `#EF6F1A`     | 6.6:1  | Pass AAA                  |
+| Notebook `#FAF7F3` | Cord `#EF6F1A`     | 2.83:1 | Fail — not permitted at any size          |
+| Graphite `#232F36` | Cord `#EF6F1A`     | 4.54:1 | Pass AA                                   |
 | Graphite `#232F36` | Hard Hat `#FEB11C` | 7.1:1  | Pass AAA                  |
 | Notebook `#FAF7F3` | Toolbox `#C8102E`  | 4.8:1  | Pass AA                   |
 | Notebook `#FAF7F3` | Lumber `#367C2B`   | 4.7:1  | Pass AA                   |
@@ -35,7 +36,8 @@ Every output — website, app, social asset, document, generated content — mus
 
 | Text               | Background         | Ratio  | Reason                                                                |
 | ------------------ | ------------------ | ------ | --------------------------------------------------------------------- |
-| Cord `#EF6F1A`     | Notebook `#FAF7F3` | 3.1:1  | Fails AA for body text — only use at large display scale (≥24px bold) |
+| Cord `#EF6F1A`     | Notebook `#FAF7F3` | 2.83:1 | Fails AA — never use Cord as text on Notebook                         |
+| Notebook `#FAF7F3` | Cord `#EF6F1A`     | 2.83:1 | Fails AA — never use Notebook text on Cord                            |
 | Hard Hat `#FEB11C` | Notebook `#FAF7F3` | 1.5:1  | Fails — never use yellow text on light background                     |
 | Lumber `#367C2B`   | Toolbox `#C8102E`  | ~1.2:1 | Fails — red/green together banned entirely                            |
 

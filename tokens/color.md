@@ -18,8 +18,9 @@
 
 | Token             | Name     | Hex       | CMYK           | Spot (Pantone) | UI Role                                            |
 | ----------------- | -------- | --------- | -------------- | -------------- | -------------------------------------------------- |
-| `--color-bg`      | Notebook | `#FAF7F3` | 2, 2, 4, 0     | Paper | Primary background — all surfaces default to this  |
-| `--color-fg`      | Graphite     | `#232F36` | 80, 50, 45, 65 | 432 C          | All body text, headings, structural elements       |
+| `--color-bg`      | Notebook | `#FAF7F3` | 2, 2, 4, 0     | Paper          | Primary background — all surfaces default to this  |
+| `--color-surface` | Plaster  | `#FFFFFF` | 0, 0, 0, 0     | None           | Elevated surfaces, cards, and isolated form inputs |
+| `--color-fg`      | Graphite | `#232F36` | 80, 50, 45, 65 | 432 C          | All body text, headings, structural elements       |
 | `--color-primary` | Cord     | `#EF6F1A` | 0, 65, 100, 0  | 158 C          | Primary CTA, active states, key accents            |
 | `--color-warning` | Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C         | Non-fatal alerts, warnings                         |
 | `--color-error`   | Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C          | Fatal errors, destructive actions                  |
@@ -33,8 +34,9 @@
 | Foreground         | Background         | Ratio  | Use                                                                                                 |
 | ------------------ | ------------------ | ------ | --------------------------------------------------------------------------------------------------- |
 | Graphite `#232F36`     | Notebook `#FAF7F3` | 12.4:1 | Body text — passes AAA                                                                              |
-| Notebook `#FAF7F3` | Cord `#EF6F1A`     | 3.1:1  | White text on Cord button — passes AA for large text (≥18px) only. Use Graphite for small text on Cord. |
-| Graphite `#232F36`     | Cord `#EF6F1A`     | 6.6:1  | Dark text on Cord — passes AAA. Preferred for body-size text.                                       |
+| Graphite `#232F36`     | Plaster `#FFFFFF`  | 13.0:1 | Body text on cards/surfaces — passes AAA                                                            |
+| Notebook `#FAF7F3` | Cord `#EF6F1A`     | 2.83:1 | Fails WCAG AA at all sizes — do not use.                                                            |
+| Graphite `#232F36`     | Cord `#EF6F1A`     | 4.54:1 | Passes AA. Use Graphite for all text on Cord surfaces.                                              |
 | Graphite `#232F36`     | Hard Hat `#FEB11C` | 7.1:1  | Dark text on warning badge — passes AAA                                                             |
 | Notebook `#FAF7F3` | Toolbox `#C8102E`  | 4.8:1  | White text on error state — passes AA                                                               |
 | Notebook `#FAF7F3` | Lumber `#367C2B`   | 4.7:1  | White text on success state — passes AA                                                             |
@@ -48,8 +50,12 @@
 ### `--color-bg` Notebook `#FAF7F3`
 
 - Default background for all surfaces: website, app, documents, presentations.
-- Never use pure white (`#FFFFFF`) as the primary background — Notebook is the ground.
-- Exception: internal padding or inset cards may use `#FFFFFF` as a lifted surface.
+- Never use pure white (`#FFFFFF`) as the global background — Notebook is the ground.
+
+### `--color-surface` Plaster `#FFFFFF`
+
+- Use for elevated cards, floating navigation, isolated panels, and popovers.
+- Because drop shadows and borders are banned on these components, Plaster separates from Notebook purely through its stark brightness and typographic structure.
 
 ### `--color-fg` Graphite `#232F36`
 
@@ -61,7 +67,7 @@
 
 - Primary CTA buttons, active nav states, key data callouts.
 - One dominant use per layout. Do not repeat as decoration.
-- **Text on Cord:** Use Graphite (`#232F36`) for body-size text (passes AAA at 6.6:1). Notebook is only acceptable at large text sizes (≥18px / ≥14px bold) where the 3.1:1 ratio meets AA for large text.
+- **Text on Cord:** Use Graphite (`#232F36`) only (4.54:1, passes AA). Notebook on Cord fails at all sizes (2.83:1) and is not permitted.
 - Do not use for links — that role belongs to Cooler.
 
 ### `--color-warning` Hard Hat `#FEB11C`
@@ -95,6 +101,7 @@
 ```css
 :root {
   --color-bg: #faf7f3;
+  --color-surface: #ffffff;
   --color-fg: #232f36;
   --color-primary: #ef6f1a;
   --color-warning: #feb11c;

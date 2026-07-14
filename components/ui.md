@@ -26,7 +26,7 @@ The main CTA. One per section maximum. Cord background, Notebook text.
   font-family: var(--font-primary);
   font-size: var(--text-ui);              /* 1rem */
   font-weight: var(--weight-semibold);      /* 600 */
-  padding: var(--space-3) var(--space-8);   /* 12px 32px — tactile padding */
+  padding: var(--space-8) var(--space-16);  /* 8px 16px */
   border: none;
   border-radius: 100px;
   letter-spacing: 0;
@@ -41,7 +41,9 @@ The main CTA. One per section maximum. Cord background, Notebook text.
 }
 ```
 
-**Label rules:** Sentence-case imperative. “Sign up” / “Get hired” / “Apply” / “See the network.” Never “Click here” or “Submit form.”
+**Label rules:** 
+- Sentence-case imperative. “Sign up” / “Apply” / “See the network.” Never “Click here” or “Submit form.”
+- **Strict Consistency:** All buttons that point to the exact same destination page must use the exact same label across the entire platform. If the primary account creation CTA is "Sign up", do not alternate it with "Get started", "Create your profile", or "Join now" elsewhere on the page. Pick one label per destination and lock it.
 
 ### Secondary button
 Outlined, Graphite stroke, no fill. For secondary actions.
@@ -53,7 +55,7 @@ Outlined, Graphite stroke, no fill. For secondary actions.
   font-family: var(--font-primary);
   font-size: var(--text-ui);
   font-weight: var(--weight-semibold);      /* 600 */
-  padding: var(--space-3) var(--space-8);   /* tactile padding */
+  padding: var(--space-8) var(--space-16);  /* 8px 16px */
   border: 1.5px solid var(--color-fg);
   border-radius: 100px;
   cursor: pointer;
@@ -74,7 +76,7 @@ For irreversible actions only. Toolbox background.
   font-family: var(--font-primary);
   font-size: var(--text-ui);
   font-weight: var(--weight-semibold);
-  padding: var(--space-3) var(--space-8);
+  padding: var(--space-8) var(--space-16);  /* 8px 16px */
   border: none;
   border-radius: 100px;
   cursor: pointer;
@@ -85,20 +87,42 @@ For irreversible actions only. Toolbox background.
 
 ## Navigation
 
+The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF`) to act as a structural, tactile anchor at the top of the interface.
+
 ```css
 .nav {
   background-color: var(--color-bg);        /* Notebook */
-  border-bottom: 1px solid rgba(35, 47, 54, 0.12); /* Graphite at 12% */
-  padding: 0 var(--space-16);              /* 64px side margins */
+  background-image: url('../assets/logo/pattern.svg'); /* Plaster pattern */
+  background-repeat: repeat-x;              /* Horizontal only */
+  background-size: auto 100%;               /* Scale to fit nav height */
+  border-bottom: none;                      /* No borders */
+}
+
+.nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-128);             /* 128px side margins aligning with main content */
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-48);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-32);
+  align-items: center;
+}
+
 .nav-link {
   font-family: var(--font-primary);
-  font-size: var(--text-ui-sm);          /* 0.875rem */
+  font-size: var(--text-ui);             /* 1rem / 16px */
   font-weight: var(--weight-medium);       /* 500 */
   color: var(--color-fg);                  /* Graphite */
   text-decoration: none;
@@ -198,12 +222,13 @@ Every badge must communicate via color + shape + label. Never color alone.
 
 ## Cards
 
-Cards use generous padding (tactile) and a hairline border for separation. No drop shadows.
+Cards use generous padding (tactile). Because borders and drop shadows are banned, cards separate from the Notebook ground purely through the optical contrast of their Plaster (`#FFFFFF`) background and strong typographic layout. 
 
 ```css
+/* Standard structural card */
 .card {
-  background-color: var(--color-bg);       /* Notebook */
-  border: 1px solid rgba(35, 47, 54, 0.1); /* Graphite at 10% */
+  background-color: var(--color-surface);  /* Plaster */
+  border: none;                            /* No borders */
   border-radius: 0;
   padding: var(--space-6);                 /* 24px all sides */
 }
@@ -216,8 +241,17 @@ Cards use generous padding (tactile) and a hairline border for separation. No dr
 
 /* Active / selected state */
 .card-interactive[aria-selected="true"] {
-  border-color: var(--color-primary);
-  border-width: 2px;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* Inverted surface (Dark mode block) */
+.surface-inverted {
+  background-color: var(--color-fg);       /* Graphite */
+  color: var(--color-bg);                  /* Notebook */
+  border: none;
+  border-radius: 0;
+  padding: var(--space-8);                 /* Generous padding for heavy blocks */
 }
 ```
 
@@ -245,9 +279,48 @@ a:focus-visible {
 
 **On Graphite (dark) backgrounds:** Use Notebook underlined text instead of Cooler — Cooler does not pass contrast on Graphite.
 
+## Photography & Media
+
+All photography utilizes a universal multiply blend mode to integrate seamlessly with the Notebook ground.
+
+```css
+img.photo, 
+.photo-container img {
+  mix-blend-mode: multiply;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+```
+
 ---
 
-## Dividers
+## Footer
+
+The footer anchors the bottom of the page using an inverted Graphite surface, completing the structural framing of the layout.
+
+```css
+.footer {
+  background-color: var(--color-fg);       /* Graphite */
+  color: var(--color-bg);                  /* Notebook */
+}
+.footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--space-64) var(--space-128);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .nav-link {
+  color: var(--color-bg);                  /* Notebook links */
+}
+.footer .nav-link:hover {
+  color: var(--color-primary);             /* Cord hover */
+}
+```
+
+The logo in the footer must be the `lockup-notebook.svg` variant (Notebook fill) to pass contrast on the Graphite background.
 
 ```css
 .divider {

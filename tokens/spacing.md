@@ -1,5 +1,44 @@
 # Spacing Tokens — Skillit BDS
 
+**Last updated:** 2026-07-13
+
+---
+
+## Rules before you use this file
+
+- The system uses a strict **8px / 16px baseline grid**.
+- Never hardcode margins or padding with arbitrary `px` values. Always use a multiple from the token scale below.
+- Do not mix units (e.g., `em` or `%` for structural spacing).
+
+---
+
+## The 8px/16px Multiplier Scale
+
+The layout spacing directly mirrors the typography scale's factor-of-2 logic.
+
+| Token | Pixel Value | Rem Value | Common Use |
+|---|---|---|---|
+| `--space-8` | 8px | 0.5rem | Micro gap, button vertical padding |
+| `--space-16` | 16px | 1rem | Tight gap, button horizontal padding |
+| `--space-32` | 32px | 2rem | Standard gap, lockup height |
+| `--space-48` | 48px | 3rem | Medium component gap |
+| `--space-64` | 64px | 4rem | Inner section padding, grid gutters, nav bar height |
+| `--space-96` | 96px | 6rem | Section padding |
+| `--space-128` | 128px | 8rem | Minimum desktop section gap, page margins |
+| `--space-256` | 256px | 16rem | Massive editorial breaks |
+
+---
+
+## Structural Constants
+
+| Element | Height / Padding | Margin |
+| ------- | ---------------- | ------ |
+| Nav Bar | 64px (`--space-64`) | —      |
+| Logo Lockup | 32px (`--space-32`) | —      |
+| Primary Buttons | 8px vertical, 16px horizontal | — |
+| Desktop Section Gap | — | 128px (`--space-128`) |
+| Desktop Page Margin | — | 128px (`--space-128`) |
+
 **Last updated:** 2026-07-10
 
 ---

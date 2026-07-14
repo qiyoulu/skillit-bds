@@ -12,6 +12,16 @@ Every piece of Skillit communication should be speakable aloud by an industry ve
 
 ---
 
+## Scannability & Inline Emphasis
+
+The people reading your copy are busy. Do not rely on them reading a full paragraph.
+
+- **The Rule:** You must use inline bolding (`<strong>` or `**markdown**`) to highlight the critical action verbs and key data points within long blocks of text.
+- **The Test:** If a user skips the normal text and only reads the bolded words, the core argument should still make perfect sense.
+- **Example:** "**1 in 20 skilled workers** are missing from the labor pool. The other 19 are **already out there**. The challenge isn’t creating more craft workers overnight. It’s helping the ones who already exist **access better opportunities**."
+
+---
+
 ## Core voice attributes
 
 ### 1. Direct and unhedged

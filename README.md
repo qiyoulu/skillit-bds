@@ -65,6 +65,7 @@ skillit-brand-system/
 │
 ├── tokens/
 │   ├── color.md               ← all hex values, UI roles, contrast ratios
+│   ├── logo.md                ← mark, wordmark, lockup rules, color variants
 │   ├── typography.md          ← typefaces, scale, weights, CDN links
 │   └── spacing.md             ← padding, margin, grid, breakpoints
 │
@@ -92,6 +93,7 @@ skillit-brand-system/
 | File | Status |
 |---|---|
 | `tokens/color.md` | Complete |
+| `tokens/logo.md` | Complete |
 | `tokens/typography.md` | Complete |
 | `tokens/spacing.md` | Complete |
 | `voice/brand-voice.md` | Complete |
@@ -109,7 +111,6 @@ skillit-brand-system/
 
 These will be added in Phase I finalization or Phase II:
 
-- Logo usage rules (clearspace, minimum size, misuse)
 - Dark mode token overrides
 - Icon system (style, stroke weight, corner radius)
 - Social media template specs
