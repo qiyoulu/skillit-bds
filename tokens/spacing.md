@@ -12,20 +12,20 @@
 
 ---
 
-## The 8px/16px Multiplier Scale
+## The Fluid Multiplier Scale
 
-The layout spacing directly mirrors the typography scale's factor-of-2 logic.
+The layout spacing directly mirrors the typography scale's factor-of-2 logic. To prevent abrupt, jarring layout shifts when users resize their browser, macro-spacing uses CSS `clamp()` functions to fluidly scale down.
 
-| Token | Pixel Value | Rem Value | Common Use |
-|---|---|---|---|
-| `--space-8` | 8px | 0.5rem | Micro gap, button vertical padding |
-| `--space-16` | 16px | 1rem | Tight gap, button horizontal padding |
-| `--space-32` | 32px | 2rem | Standard gap, lockup height |
-| `--space-48` | 48px | 3rem | Medium component gap |
-| `--space-64` | 64px | 4rem | Inner section padding, grid gutters, nav bar height |
-| `--space-96` | 96px | 6rem | Section padding |
-| `--space-128` | 128px | 8rem | Minimum desktop section gap, page margins |
-| `--space-256` | 256px | 16rem | Massive editorial breaks |
+| Token | CSS Value | Common Use |
+|---|---|---|
+| `--space-8` | `8px` | Micro gap, button vertical padding |
+| `--space-16` | `16px` | Tight gap, button horizontal padding |
+| `--space-32` | `32px` | Standard gap, lockup height |
+| `--space-48` | `48px` | Medium component gap |
+| `--space-64` | `clamp(32px, 5vw, 64px)` | Inner section padding, grid gutters, nav bar height |
+| `--space-96` | `clamp(48px, 7vw, 96px)` | Section padding |
+| `--space-128` | `clamp(48px, 10vw, 128px)` | Minimum desktop section gap, page margins |
+| `--space-256` | `clamp(96px, 18vw, 256px)` | Massive editorial breaks |
 
 ---
 

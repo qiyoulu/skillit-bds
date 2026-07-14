@@ -114,6 +114,14 @@ The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF
   gap: var(--space-48);
 }
 
+.nav-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-8);
+}
+
 .nav-links {
   display: flex;
   gap: var(--space-32);

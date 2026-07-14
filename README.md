@@ -61,7 +61,16 @@ For automated systems and agents consuming this BDS, route tasks to the specific
 
 ```
 skillit-brand-system/
-├── README.md                  ← you are here. Load this first.
+├── README.md                  ← System instructions for LLMs & automation.
+├── GUIDELINES.md              ← Human-readable brand guidelines (PDF equivalent).
+│
+├── examples/
+│   ├── index.html             ← Live HTML preview of the brand system.
+│   └── css/system.css         ← Compiled CSS execution of the BDS tokens.
+│
+├── assets/
+│   ├── logo/                  ← Approved SVG vectors (mark, wordmark, lockup, pattern).
+│   └── images/                ← Approved photography assets.
 │
 ├── tokens/
 │   ├── color.md               ← all hex values, UI roles, contrast ratios
@@ -92,6 +101,8 @@ skillit-brand-system/
 
 | File | Status |
 |---|---|
+| `GUIDELINES.md` | Complete |
+| `examples/index.html` | Complete |
 | `tokens/color.md` | Complete |
 | `tokens/logo.md` | Complete |
 | `tokens/typography.md` | Complete |

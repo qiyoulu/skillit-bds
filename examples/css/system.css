@@ -1,0 +1,229 @@
+:root {
+    /* Colors */
+    --color-bg: #FAF7F3;       /* Notebook */
+    --color-surface: #FFFFFF;  /* Plaster */
+    --color-fg: #232F36;       /* Graphite */
+    --color-primary: #EF6F1A;  /* Cord */
+
+    /* Spacing (Fluid Architectural Scaling) */
+    --space-8: 8px;
+    --space-16: 16px;
+    --space-32: 32px;
+    --space-48: 48px;
+    --space-64: clamp(32px, 5vw, 64px);
+    --space-96: clamp(48px, 7vw, 96px);
+    --space-128: clamp(48px, 10vw, 128px);
+    --space-256: clamp(96px, 18vw, 256px);
+
+    /* Fonts */
+    --font-primary: 'Work Sans', sans-serif;
+  }
+
+  /* Global Reset & Base */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-primary);
+    line-height: 1.25;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Typography Hierarchy (Factor of 2) */
+  .text-256 { font-size: 256px; font-weight: 800; line-height: 0.80; letter-spacing: -0.04em; }
+  .text-128 { font-size: clamp(64px, 8vw, 128px); font-weight: 700; line-height: 0.90; letter-spacing: -0.03em; }
+  .text-64  { font-size: clamp(40px, 5vw, 64px); font-weight: 600; line-height: 0.90; letter-spacing: -0.03em; }
+  .text-32  { font-size: clamp(24px, 3vw, 32px); font-weight: 500; line-height: 1.00; letter-spacing: -0.02em; }
+  .text-16  { font-size: 16px; font-weight: 400; line-height: 1.10; letter-spacing: -0.01em; }
+  
+  p { text-wrap: pretty; }
+  h1, h2, h3 { text-wrap: balance; }
+
+  /* Optical Alignment Utilities */
+  .trim-top {
+    /* Removes the internal leading above the cap height for Work Sans */
+    margin-top: -0.15em; 
+  }
+  .btn-optical {
+    /* Aligns the button by the text cap height, not the padding bubble */
+    margin-top: calc(-1 * var(--space-8));
+  }
+
+
+  /* Navigation */
+  .nav {
+    background-color: var(--color-bg);
+    background-image: url("../../assets/logo/pattern.svg");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+  }
+  
+  .nav-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--space-128);
+    height: 64px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .nav-logo img {
+    height: 20px; /* Scaled down to match Anthropic */
+    display: block;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-48);
+  }
+
+  .nav-links { 
+    display: flex; 
+    gap: var(--space-32); 
+    align-items: center; 
+  }
+
+  .nav-link {
+    font-size: 16px; 
+    font-weight: 500; 
+    color: var(--color-fg); 
+    text-decoration: none;
+  }
+  
+  .nav-link:hover { color: var(--color-primary); }
+
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-fg); /* Graphite text on Cord */
+    font-family: inherit; font-size: 16px; font-weight: 600;
+    padding: var(--space-8) var(--space-16); /* 8px/16px padding */
+    border: none; border-radius: 100px;
+    cursor: pointer; display: inline-block; text-decoration: none;
+  }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-primary:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+
+  /* Layout Container */
+  .container { max-width: 1440px; margin: 0 auto; padding: var(--space-128); }
+  
+  
+
+  
+
+  
+  /* Unified 12-Column Grid */
+  .row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-32);
+    align-items: start;
+    margin-bottom: var(--space-256);
+  }
+  
+  .col-4 { grid-column: span 4; }
+  .col-5 { grid-column: span 5; }
+  .col-6 { grid-column: span 6; }
+  .col-7 { grid-column: span 7; }
+  .col-8 { grid-column: span 8; }
+  .col-12 { grid-column: span 12; }
+
+  /* Logo Responsiveness */
+  .logo-mobile { display: none; }
+
+  /* Tablet Scaling (Medium Viewports) */
+  @media (max-width: 1024px) {
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-menu-btn { display: block; }
+    
+    .row {
+      grid-template-columns: 1fr;
+      gap: var(--space-64);
+      margin-bottom: var(--space-128) !important;
+    }
+    [class*="col-"] {
+      grid-column: span 1;
+    }
+    .grid-3 {
+      grid-template-columns: 1fr;
+      gap: var(--space-64);
+    }
+  }
+
+  /* Mobile Scaling */
+  @media (max-width: 768px) {
+    
+    /* Generous Mobile Margins */
+    .nav-inner { padding: 0 var(--space-48); height: auto; padding-top: 16px; padding-bottom: 16px; flex-wrap: wrap; gap: 16px; }
+    .container { padding: var(--space-64) var(--space-48); }
+    .surface-inverted { padding: var(--space-64) var(--space-48); }
+    .footer-inner { padding: var(--space-64) var(--space-48); flex-direction: column; align-items: flex-start; gap: var(--space-32); }
+    
+    /* Mobile Nav Handled in 1024px breakpoint */
+    
+    /* Logo Swap Rule */
+    .logo-desktop { display: none !important; }
+    .logo-mobile { display: block !important; height: 32px; }
+  }
+
+  
+
+  .feature-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+    border-top: 2px solid var(--color-fg);
+    padding-top: var(--space-32);
+  }
+
+  .photo-container {
+    width: 100%;
+  }
+  .photo-container img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+  }
+
+  /* Inverted Surface */
+  .surface-inverted {
+    background-color: var(--color-fg);
+    color: var(--color-bg);
+    padding: var(--space-128);
+  }
+  .surface-inverted .text-128 { font-weight: 800; }
+  .surface-inverted .text-64 { font-weight: 570; } /* 600 base - 30 */
+  .surface-inverted .text-32 { font-weight: 470; } /* 500 base - 30 */
+  .surface-inverted .text-16 { font-weight: 370; } /* 400 base - 30 */
+  .surface-inverted .btn-primary { 
+    background-color: var(--color-primary); 
+    color: var(--color-fg); 
+    font-weight: 600; 
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: var(--color-fg);
+    color: var(--color-bg);
+  }
+  .footer .nav-link {
+    color: var(--color-bg);
+  }
+  .footer .nav-link:hover {
+    color: var(--color-primary);
+  }
+  .footer-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: var(--space-64) var(--space-128);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-links {
+    display: flex; gap: var(--space-32);
+  }

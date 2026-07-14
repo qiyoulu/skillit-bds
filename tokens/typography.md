@@ -37,10 +37,10 @@ If you need a size larger than 160px (e.g., 320px), extrapolate using this algor
 | Level | Token | px (screen) | rem (web) | pt (print) | Base Weight | Bolded | Line height | Tracking |
 |---|---|---|---|---|---|---|---|---|
 | **Text-256** |  | 256px |  | 192pt | Extra Bold (800) | Black (900) | 0.80 |  |
-| **Text-128** |  | 128px |  | 96pt | Bold (700) | Extra Bold (800) | 0.90 |  |
-| **Text-64** |  | 64px |  | 48pt | Semibold (600) | Bold (700) | 1.00 |  |
-| **Text-32** |  | 32px |  | 24pt | Medium (500) | Semibold (600) | 1.10 |  |
-| **Text-16** |  | 16px |  | 12pt | Regular (400) | Medium (500) | 1.25 |  |
+| **Text-128** |  | 128px |  | 96pt | Bold (700) | Extra Bold (800) | 0.80 | -4% |
+| **Text-64** |  | 64px |  | 48pt | Semibold (600) | Bold (700) | 0.90 | -3% |
+| **Text-32** |  | 32px |  | 24pt | Medium (500) | Semibold (600) | 1.00 | -2% |
+| **Text-16** |  | 16px |  | 12pt | Regular (400) | Medium (500) | 1.10 | -1% |
 
 *(Note: Text-16 is the accessibility floor for body copy and operates slightly outside the strict 2x multiplier rule to protect legibility).*
 
@@ -100,22 +100,22 @@ This is a system font stack — no CDN required. Use it only for data strings, n
   --text-64:                4rem;
   --text-64-weight:         600;
   --text-64-weight-bold:    700;
-  --text-64-leading:        1.00;
-  --text-64-tracking:       -0.02em;
+  --text-64-leading:        0.90;
+  --text-64-tracking:       -0.03em;
 
   /* Text-32 */
   --text-32:                2rem;
   --text-32-weight:         500;
   --text-32-weight-bold:    600;
-  --text-32-leading:        1.10;
-  --text-32-tracking:       -0.01em;
+  --text-32-leading:        1.00;
+  --text-32-tracking:       -0.02em;
 
   /* Text-16 */
   --text-16:                1rem;
   --text-16-weight:         400;
   --text-16-weight-bold:    500;
-  --text-16-leading:        1.25;
-  --text-16-tracking:       0;
+  --text-16-leading:        1.10;
+  --text-16-tracking:       -0.01em;
 
   /* Functional UI scale */
   --text-ui-lg:     1.125rem;

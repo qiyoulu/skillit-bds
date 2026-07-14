@@ -42,8 +42,9 @@ State colors (Hard Hat, Toolbox, Lumber, Cooler) are functional only. They appea
 - Strict 12-column grid on desktop. No flexible fractional columns (e.g., `1fr`, `1.5fr`). Use fixed `col-span` classes so elements align flawlessly down the vertical axis.
 - Gutter: `--space-32` (32px).
 - Content max-width: `1440px`, centered.
-- Side margins: `--space-128` (128px) desktop, scaling down on mobile.
-- Mobile: Scales to a single-column layout via CSS Media Queries.
+- Side margins: `--space-128` (128px) desktop.
+- **Tablet (`< 1024px`):** The 12-column grid collapses to a single-column layout early to prevent element jumbling. Large typography needs horizontal space; never force complex multi-column grids onto medium viewports.
+- **Mobile (`< 768px`):** Scaling down typography via CSS `clamp()` and implementing generous minimum mobile side padding (`--space-48` / 48px). We preserve wide margins even on mobile to maintain the premium, editorial aesthetic seen on Anthropic.
 
 ### App (worker-facing)
 - Single-column, max-width `480px`.
