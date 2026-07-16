@@ -22,9 +22,9 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 
 3. **No color grading filters.** No Instagram-style color treatment. No dramatic color shifts. Natural color only.
 
-4. **No composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on a flat brand color (`--color-bg` Notebook or `--color-fg` Graphite) with no environment invented behind them.
+4. **No composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on a flat brand color (`--color-bg` Canvas or `--color-fg` Iron) with no environment invented behind them.
 
-5. **Universal Blend Mode:** All photography must use the `multiply` CSS blend mode (`mix-blend-mode: multiply;`). Because the primary brand ground is Notebook (`#FAF7F3`), this universally drops out lighter backgrounds and melts every photograph perfectly into the layout. This creates a flawless, borderless editorial look across the entire system.
+5. **Universal Blend Mode:** All photography must use the `multiply` CSS blend mode (`mix-blend-mode: multiply;`). Because the primary brand ground is Canvas (`#FAF7F3`), this universally drops out lighter backgrounds and melts every photograph perfectly into the layout. This creates a flawless, borderless editorial look across the entire system.
 
 ---
 
@@ -69,7 +69,7 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 ## Subject: product screenshots / UI
 
 - Capture at `2x` resolution (retina). Always.
-- Background: Notebook (`--color-bg`) only. Not pure white, not grey.
+- Background: Canvas (`--color-bg`) only. Not pure white, not grey.
 - Browser chrome: minimal or none. Show the UI, not the browser.
 - Data in screenshots must be realistic. Fake or clearly placeholder data (e.g., “John Doe,” “Test Company”) undermines the brand’s credibility.
 - Crop tightly to the relevant UI area. Do not show a full screen if the relevant feature is in one panel.
@@ -96,7 +96,7 @@ Lighting: flat, natural, diffused — no dramatic rim lights or color gels
 Framing: [eye level / tight crop / wide environmental]
 Style: photorealistic, documentary photography, no filters
 Color: natural — no color grading, no vignette
-Background: [transparent / Notebook #FAF7F3 / Graphite #232F36]
+Background: [transparent / Canvas #FAF7F3 / Iron #232F36]
 Avoid: stock photo aesthetics, posed expressions, fake environments, rounded edges, drop shadows, color filters
 ```
 

@@ -40,7 +40,7 @@ Use this system to generate any Skillit output: website copy, social posts, pres
 - **Colors:** Use only named tokens from `tokens/color.md`. Never approximate or invent new colors.
 - **Type:** Use only the typefaces listed in `tokens/typography.md`. Never substitute.
 - **Voice:** Match the register defined in `voice/brand-voice.md` for the output channel. Never use corporate jargon, hype language, or hedging.
-- **Minimalism:** Primary surfaces are Notebook + Graphite (dark text). The single accent (Cord) is used sparingly — one dominant use per layout, not sprinkled.
+- **Minimalism:** Primary surfaces are Canvas + Iron (dark text). The single accent (Traffic Cone) is used sparingly — one dominant use per layout, not sprinkled.
 - **Case:** Sentence-case everywhere. No title case in UI. No ALL CAPS except hardware serial number context.
 - **Accessibility:** Every color combination must meet WCAG AA (4.5:1 body, 3:1 UI). Never use color as the only status signal.
 
@@ -62,7 +62,7 @@ For automated systems and agents consuming this BDS, route tasks to the specific
 ```
 skillit-brand-system/
 ├── README.md                  ← System instructions for LLMs & automation.
-├── GUIDELINES.md              ← Human-readable brand guidelines (PDF equivalent).
+├── HUMAN-INSTRUCTIONS.md              ← Human-readable brand guidelines (PDF equivalent).
 │
 ├── examples/
 │   ├── index.html             ← Live HTML preview of the brand system.
@@ -101,7 +101,7 @@ skillit-brand-system/
 
 | File | Status |
 |---|---|
-| `GUIDELINES.md` | Complete |
+| `HUMAN-INSTRUCTIONS.md` | Complete |
 | `examples/index.html` | Complete |
 | `tokens/color.md` | Complete |
 | `tokens/logo.md` | Complete |

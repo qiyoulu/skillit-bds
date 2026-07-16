@@ -9,7 +9,7 @@
 - All components use tokens from `tokens/color.md`, `tokens/typography.md`, and `tokens/spacing.md`. Never hardcode values.
 - Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
 - Tactile padding rule: buttons and interactive cards use generous horizontal padding — double the standard. This is a non-negotiable brand rule.
-- Every interactive element must have a visible focus state (2px solid Cord, 2px offset).
+- Every interactive element must have a visible focus state (2px solid Traffic Cone, 2px offset).
 - Touch targets minimum 44px in both dimensions (app).
 
 ---
@@ -17,12 +17,12 @@
 ## Buttons
 
 ### Primary button
-The main CTA. One per section maximum. Cord background, Notebook text.
+The main CTA. One per section maximum. Traffic Cone background, Canvas text.
 
 ```css
 .btn-primary {
-  background-color: var(--color-primary);   /* Cord #EF6F1A */
-  color: var(--color-bg);                   /* Notebook #FAF7F3 */
+  background-color: var(--color-primary);   /* Traffic Cone #EF6F1A */
+  color: var(--color-bg);                   /* Canvas #FAF7F3 */
   font-family: var(--font-primary);
   font-size: var(--text-ui);              /* 1rem */
   font-weight: var(--weight-semibold);      /* 600 */
@@ -33,11 +33,21 @@ The main CTA. One per section maximum. Cord background, Notebook text.
   cursor: pointer;
 }
 .btn-primary:hover {
-  background-color: #CC5200;               /* Cord darkened 20% */
+  background-color: #CC5200;               /* Traffic Cone darkened 20% */
 }
 .btn-primary:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+```
+
+### CTA Button (inverted)
+For primary actions inside the Iron `surface-inverted` blocks. Note the text color is Iron to maintain high contrast against Traffic Cone.
+
+```css
+.surface-inverted .btn-primary {
+  background-color: var(--color-primary);   /* Traffic Cone */
+  color: var(--color-fg);                   /* Iron text */
 }
 ```
 
@@ -46,12 +56,12 @@ The main CTA. One per section maximum. Cord background, Notebook text.
 - **Strict Consistency:** All buttons that point to the exact same destination page must use the exact same label across the entire platform. If the primary account creation CTA is "Sign up", do not alternate it with "Get started", "Create your profile", or "Join now" elsewhere on the page. Pick one label per destination and lock it.
 
 ### Secondary button
-Outlined, Graphite stroke, no fill. For secondary actions.
+Outlined, Iron stroke, no fill. For secondary actions.
 
 ```css
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-fg);                   /* Graphite #232F36 */
+  color: var(--color-fg);                   /* Iron #232F36 */
   font-family: var(--font-primary);
   font-size: var(--text-ui);
   font-weight: var(--weight-semibold);      /* 600 */
@@ -87,11 +97,13 @@ For irreversible actions only. Toolbox background.
 
 ## Navigation
 
-The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF`) to act as a structural, tactile anchor at the top of the interface.
+The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF`) to act as a structural, tactile anchor at the top of the interface. 
+
+On desktop, the full "Skillit" lockup is visible. When the viewport scales down, the lockup hides and is replaced by the 24px `mark` icon, while the navigation items collapse into a full-width dropdown menu.
 
 ```css
 .nav {
-  background-color: var(--color-bg);        /* Notebook */
+  background-color: var(--color-bg);        /* Canvas */
   background-image: url('../assets/logo/pattern.svg'); /* Plaster pattern */
   background-repeat: repeat-x;              /* Horizontal only */
   background-size: auto 100%;               /* Scale to fit nav height */
@@ -108,6 +120,9 @@ The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF
   justify-content: space-between;
 }
 
+.nav-logo img { height: 20px; }
+.logo-mark { display: none; width: 24px; height: 24px; }
+
 .nav-right {
   display: flex;
   align-items: center;
@@ -120,6 +135,7 @@ The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF
   border: none;
   cursor: pointer;
   padding: var(--space-8);
+  position: relative;
 }
 
 .nav-links {
@@ -128,23 +144,41 @@ The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF
   align-items: center;
 }
 
+.mobile-dropdown {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-32);
+  padding: var(--space-64) var(--space-128);
+  border-top: 1px solid rgba(35, 47, 54, 0.12);
+}
+.mobile-dropdown .nav-link { font-size: clamp(24px, 3vw, 32px); font-weight: 500; }
+
 .nav-link {
   font-family: var(--font-primary);
   font-size: var(--text-ui);             /* 1rem / 16px */
   font-weight: var(--weight-medium);       /* 500 */
-  color: var(--color-fg);                  /* Graphite */
+  color: var(--color-fg);                  /* Iron */
   text-decoration: none;
 }
 
 .nav-link:hover,
 .nav-link[aria-current="page"] {
-  color: var(--color-primary);             /* Cord */
+  color: var(--color-primary);             /* Traffic Cone */
 }
+
+/* Responsive Nav */
+@media (max-width: 1024px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-menu-btn { display: block; }
+  .logo-desktop { display: none; }
+  .logo-mark { display: block; }
+}
+.mobile-dropdown.open { display: flex; }
 ```
 
 **Approved nav tabs:** How It Works · Our Network · Jobs · About Us · Resources
 
-**Right side:** Primary button (“Sign up”) — Cord, tactile padding.
+**Right side:** Primary button (“Sign up”) — Traffic Cone, tactile padding.
 
 ---
 
@@ -156,7 +190,7 @@ Input fields use a bottom-border-only style — no box, no background fill. Mimi
 .input {
   background: transparent;
   border: none;
-  border-bottom: 2px solid var(--color-fg); /* Graphite */
+  border-bottom: 2px solid var(--color-fg); /* Iron */
   border-radius: 0;
   color: var(--color-fg);
   font-family: var(--font-primary);
@@ -166,18 +200,18 @@ Input fields use a bottom-border-only style — no box, no background fill. Mimi
 }
 .input:focus {
   outline: none;
-  border-bottom-color: var(--color-primary); /* Cord on focus */
+  border-bottom-color: var(--color-primary); /* Traffic Cone on focus */
 }
 .input::placeholder {
-  color: rgba(35, 47, 54, 0.4);            /* Graphite at 40% */
+  color: rgba(35, 47, 54, 0.4);            /* Iron at 40% */
 }
 ```
 
-**Labels:** Above the field, not inside (placeholder is not a label). `--text-label` size, `--weight-medium`, Graphite.
+**Labels:** Above the field, not inside (placeholder is not a label). `--text-label` size, `--weight-medium`, Iron.
 
 **Error state:** Border becomes Toolbox (`--color-error`). Error message below field in Toolbox, `--text-ui-sm`. Must include an error icon (non-color signal).
 
-**Success state:** Border becomes Lumber (`--color-success`). Checkmark icon alongside.
+**Success state:** Border becomes Bottle Glass (`--color-success`). Checkmark icon alongside.
 
 ---
 
@@ -199,29 +233,29 @@ Every badge must communicate via color + shape + label. Never color alone.
 
 /* Success — pill shape */
 .badge-success {
-  background-color: var(--color-success);  /* Lumber */
-  color: var(--color-bg);                  /* Notebook */
+  background-color: var(--color-success);  /* Bottle Glass */
+  color: var(--color-bg);                  /* Canvas */
   border-radius: 100px;                    /* pill */
 }
 
 /* Warning — chamfered (use clip-path or angled border) */
 .badge-warning {
   background-color: var(--color-warning);  /* Hard Hat */
-  color: var(--color-fg);                  /* Graphite */
+  color: var(--color-fg);                  /* Iron */
   border-radius: 0;
 }
 
 /* Error — square */
 .badge-error {
   background-color: var(--color-error);    /* Toolbox */
-  color: var(--color-bg);                  /* Notebook */
+  color: var(--color-bg);                  /* Canvas */
   border-radius: 0;
 }
 
 /* Info */
 .badge-info {
-  background-color: var(--color-link);     /* Cooler */
-  color: var(--color-bg);                  /* Notebook */
+  background-color: var(--color-link);     /* Painter's Tape */
+  color: var(--color-bg);                  /* Canvas */
   border-radius: 100px;
 }
 ```
@@ -230,7 +264,7 @@ Every badge must communicate via color + shape + label. Never color alone.
 
 ## Cards
 
-Cards use generous padding (tactile). Because borders and drop shadows are banned, cards separate from the Notebook ground purely through the optical contrast of their Plaster (`#FFFFFF`) background and strong typographic layout. 
+Cards use generous padding (tactile). Because borders and drop shadows are banned, cards separate from the Canvas ground purely through the optical contrast of their Plaster (`#FFFFFF`) background and strong typographic layout. 
 
 ```css
 /* Standard structural card */
@@ -243,7 +277,7 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
 
 /* Hover state for interactive cards */
 .card-interactive:hover {
-  border-color: var(--color-primary);      /* Cord border on hover */
+  border-color: var(--color-primary);      /* Traffic Cone border on hover */
   cursor: pointer;
 }
 
@@ -255,8 +289,8 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
 
 /* Inverted surface (Dark mode block) */
 .surface-inverted {
-  background-color: var(--color-fg);       /* Graphite */
-  color: var(--color-bg);                  /* Notebook */
+  background-color: var(--color-fg);       /* Iron */
+  color: var(--color-bg);                  /* Canvas */
   border: none;
   border-radius: 0;
   padding: var(--space-8);                 /* Generous padding for heavy blocks */
@@ -267,11 +301,11 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
 
 ## Text links
 
-Links are Cooler, always underlined. Never a fill, never a button-style treatment.
+Links are Painter's Tape, always underlined. Never a fill, never a button-style treatment.
 
 ```css
 a {
-  color: var(--color-link);               /* Cooler #007CA6 */
+  color: var(--color-link);               /* Painter's Tape #007CA6 */
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -285,11 +319,11 @@ a:focus-visible {
 }
 ```
 
-**On Graphite (dark) backgrounds:** Use Notebook underlined text instead of Cooler — Cooler does not pass contrast on Graphite.
+**On Iron (dark) backgrounds:** Use Canvas underlined text instead of Painter's Tape — Painter's Tape does not pass contrast on Iron.
 
 ## Photography & Media
 
-All photography utilizes a universal multiply blend mode to integrate seamlessly with the Notebook ground.
+All photography utilizes a universal multiply blend mode to integrate seamlessly with the Canvas ground.
 
 ```css
 img.photo, 
@@ -305,40 +339,49 @@ img.photo,
 
 ## Footer
 
-The footer anchors the bottom of the page using an inverted Graphite surface, completing the structural framing of the layout.
+The footer anchors the bottom of the page using an inverted Iron surface, completing the structural framing of the layout. It uses a flush-left vertical stack for the brand and a multi-column grid for navigation, following the structural simplicity of Anthropic.com.
 
 ```css
 .footer {
-  background-color: var(--color-fg);       /* Graphite */
-  color: var(--color-bg);                  /* Notebook */
+  background-color: var(--color-fg);       /* Iron */
+  color: var(--color-bg);                  /* Canvas */
+  padding: var(--space-128);
 }
 .footer-inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: var(--space-64) var(--space-128);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  gap: var(--space-128);
+}
+.footer-brand {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+.footer-copyright {
+  color: rgba(250, 247, 243, 0.6);        /* Canvas at 60% */
+}
+.footer-columns {
+  display: flex;
+  gap: var(--space-128);
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
 }
 .footer .nav-link {
-  color: var(--color-bg);                  /* Notebook links */
+  color: var(--color-bg);                  /* Canvas links */
+  display: block;
+  margin-bottom: var(--space-8);
 }
 .footer .nav-link:hover {
-  color: var(--color-primary);             /* Cord hover */
+  color: var(--color-primary);             /* Traffic Cone hover */
 }
 ```
 
-The logo in the footer must be the `lockup-notebook.svg` variant (Notebook fill) to pass contrast on the Graphite background.
-
-```css
-.divider {
-  border: none;
-  border-top: 1px solid rgba(35, 47, 54, 0.12); /* Graphite at 12% */
-  margin: var(--space-8) 0;              /* 32px top and bottom */
-}
-```
-
-No decorative dividers. No colored dividers. No thick rules used as decorative elements.
+The logo in the footer must be the `lockup-canvas.svg` variant (Canvas fill) to pass contrast on the Iron background. On smaller viewports, this hides and is replaced by the `mark-canvas.svg` variant.
 
 ---
 
@@ -350,7 +393,7 @@ All timestamps, IDs, distances, file sizes, and numeric data strings use the mon
 .meta {
   font-family: var(--font-mono);
   font-size: var(--text-mono);            /* 0.875rem */
-  color: rgba(35, 47, 54, 0.6);          /* Graphite at 60% */
+  color: rgba(35, 47, 54, 0.6);          /* Iron at 60% */
   letter-spacing: 0.02em;
 }
 ```

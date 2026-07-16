@@ -163,7 +163,7 @@ This is a system font stack — no CDN required. Use it only for data strings, n
 
 ### Variable Font & Optical Balancing
 Work Sans is implemented as a variable font (`wght@100..900`). 
-- **Optical Balancing:** White text on dark backgrounds creates an optical illusion (halation) making it appear thicker. To maintain perfect visual consistency, subtract 30 weight units from any text placed on a dark background (Iron, Cord, Toolbox, Lumber). E.g., `font-weight: var(--weight-regular-dark);` (370) instead of 400.
+- **Optical Balancing:** White text on dark backgrounds creates an optical illusion (halation) making it appear thicker. To maintain perfect visual consistency, subtract 30 weight units from any text placed on a dark background (Iron, Traffic Cone, Toolbox, Bottle Glass). E.g., `font-weight: var(--weight-regular-dark);` (370) instead of 400.
 - **Micro-interactions:** Use CSS transitions on the `font-weight` axis (e.g., `400` to `600`) for fluid hover states on navigation links and buttons, rather than abrupt jumps.
 
 ### Monospace / metadata

@@ -22,24 +22,24 @@ Every output — website, app, social asset, document, generated content — mus
 
 | Text color         | Background         | Ratio  | Status                    |
 | ------------------ | ------------------ | ------ | ------------------------- |
-| Graphite `#232F36` | Notebook `#FAF7F3` | 12.4:1 | Pass AAA                  |
-| Graphite `#232F36` | Plaster `#FFFFFF`  | 13.0:1 | Pass AAA                  |
-| Notebook `#FAF7F3` | Graphite `#232F36` | 12.4:1 | Pass AAA                  |
-| Notebook `#FAF7F3` | Cord `#EF6F1A`     | 2.83:1 | Fail — not permitted at any size          |
-| Graphite `#232F36` | Cord `#EF6F1A`     | 4.54:1 | Pass AA                                   |
-| Graphite `#232F36` | Hard Hat `#FEB11C` | 7.1:1  | Pass AAA                  |
-| Notebook `#FAF7F3` | Toolbox `#C8102E`  | 4.8:1  | Pass AA                   |
-| Notebook `#FAF7F3` | Lumber `#367C2B`   | 4.7:1  | Pass AA                   |
-| Cooler `#007CA6`   | Notebook `#FAF7F3` | 4.6:1  | Pass AA                   |
+| Iron `#232F36` | Canvas `#FAF7F3` | 12.4:1 | Pass AAA                  |
+| Iron `#232F36` | Plaster `#FFFFFF`  | 13.0:1 | Pass AAA                  |
+| Canvas `#FAF7F3` | Iron `#232F36` | 12.4:1 | Pass AAA                  |
+| Canvas `#FAF7F3` | Traffic Cone `#EF6F1A`     | 2.83:1 | Fail — not permitted at any size          |
+| Iron `#232F36` | Traffic Cone `#EF6F1A`     | 4.54:1 | Pass AA                                   |
+| Iron `#232F36` | Hard Hat `#FEB11C` | 7.1:1  | Pass AAA                  |
+| Canvas `#FAF7F3` | Toolbox `#C8102E`  | 4.8:1  | Pass AA                   |
+| Canvas `#FAF7F3` | Bottle Glass `#367C2B`   | 4.7:1  | Pass AA                   |
+| Painter's Tape `#007CA6`   | Canvas `#FAF7F3` | 4.6:1  | Pass AA                   |
 
 ### Pairs that are banned
 
 | Text               | Background         | Ratio  | Reason                                                                |
 | ------------------ | ------------------ | ------ | --------------------------------------------------------------------- |
-| Cord `#EF6F1A`     | Notebook `#FAF7F3` | 2.83:1 | Fails AA — never use Cord as text on Notebook                         |
-| Notebook `#FAF7F3` | Cord `#EF6F1A`     | 2.83:1 | Fails AA — never use Notebook text on Cord                            |
-| Hard Hat `#FEB11C` | Notebook `#FAF7F3` | 1.5:1  | Fails — never use yellow text on light background                     |
-| Lumber `#367C2B`   | Toolbox `#C8102E`  | ~1.2:1 | Fails — red/green together banned entirely                            |
+| Traffic Cone `#EF6F1A`     | Canvas `#FAF7F3` | 2.83:1 | Fails AA — never use Traffic Cone as text on Canvas                         |
+| Canvas `#FAF7F3` | Traffic Cone `#EF6F1A`     | 2.83:1 | Fails AA — never use Canvas text on Traffic Cone                            |
+| Hard Hat `#FEB11C` | Canvas `#FAF7F3` | 1.5:1  | Fails — never use yellow text on light background                     |
+| Bottle Glass `#367C2B`   | Toolbox `#C8102E`  | ~1.2:1 | Fails — red/green together banned entirely                            |
 
 ---
 
@@ -49,11 +49,11 @@ Approximately 8% of men and 0.5% of women have red-green color blindness (deuter
 
 1. **Never use color as the only signal.** Every status state (success, error, warning) must pair color with a shape and a text label. Color alone is never sufficient.
 
-2. **Never pair red and green as opposing states.** Toolbox (error) and Lumber (success) must never appear as direct visual opposites without shape differentiation.
+2. **Never pair red and green as opposing states.** Toolbox (error) and Bottle Glass (success) must never appear as direct visual opposites without shape differentiation.
 
-3. **Orange + Blue is the safest contrast pair.** Cord (`--color-primary`) and Cooler (`--color-link`) are perceptually distinct for all common forms of color blindness.
+3. **Orange + Blue is the safest contrast pair.** Traffic Cone (`--color-primary`) and Painter's Tape (`--color-link`) are perceptually distinct for all common forms of color blindness.
 
-4. **Hard Hat (yellow) + Cord (orange) require shape or size differentiation** when both appear in the same context. Never use them as adjacent status indicators without a distinct shape difference.
+4. **Hard Hat (yellow) + Traffic Cone (orange) require shape or size differentiation** when both appear in the same context. Never use them as adjacent status indicators without a distinct shape difference.
 
 ---
 
@@ -63,10 +63,10 @@ Every status state must communicate via three channels simultaneously: color + s
 
 | State   | Color              | Shape                 | Label required                            |
 | ------- | ------------------ | --------------------- | ----------------------------------------- |
-| Success | Lumber `#367C2B`   | Circle / pill         | “Verified,” “Complete,” “Confirmed”       |
+| Success | Bottle Glass `#367C2B`   | Circle / pill         | “Verified,” “Complete,” “Confirmed”       |
 | Warning | Hard Hat `#FEB11C` | Triangle / chamfer    | “Incomplete,” “Action needed,” “Expiring” |
 | Error   | Toolbox `#C8102E`  | Square / sharp corner | “Error,” “Failed,” “Expired”              |
-| Info    | Cooler `#007CA6`   | Rounded square        | “Info,” “Note,” “Tip”                     |
+| Info    | Painter's Tape `#007CA6`   | Rounded square        | “Info,” “Note,” “Tip”                     |
 
 ---
 
@@ -91,7 +91,7 @@ Every status state must communicate via three channels simultaneously: color + s
 ## Focus states
 
 - All interactive elements must have a visible focus ring.
-- Focus ring: `2px solid` Cord (`--color-primary`), `2px offset`.
+- Focus ring: `2px solid` Traffic Cone (`--color-primary`), `2px offset`.
 - Never remove focus outlines with `outline: none` without providing an equivalent custom focus style.
 - Focus must be keyboard-navigable in the correct DOM order.
 

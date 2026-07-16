@@ -6,9 +6,18 @@
 
 ## Introduction
 
-This document is the human-readable companion to the Skillit Brand Design System. The system itself lives as a machine-readable token library on GitHub — this is the translation of those rules into plain language, for anyone at Skillit who creates something on behalf of the brand.
+This document is the human-readable companion to the Skillit Brand Design System. The system itself lives as a machine-readable token library — this is the translation of those rules into plain language, for anyone at Skillit who creates something on behalf of the brand.
 
 Designers, marketers, writers, agency partners, and anyone who has ever asked “does this look right?” — this is for you.
+
+---
+
+## PDF References
+
+This Markdown file is the source of truth for the brand system, but we provide two graphical PDF companions for distribution and quick reference:
+
+1.  **`HUMAN-INSTRUCTIONS.pdf`**: The full graphical translation of this document. This is the formal brand guidelines document suitable for partners, agencies, and high-fidelity printing.
+2.  **`SUMMARY.pdf`**: A standalone "At a Glance" cheat sheet. This one-pager is designed for quick reference.
 
 ---
 
@@ -18,10 +27,11 @@ _For when you have 30 seconds._
 
 **The Vibe:** Documentary, not corporate. The smartest person on the job site.
 **The Typography:** Work Sans only. Sentence-case everywhere. No all-caps. Flush-left alignment. Dramatic leaps in scale.
-**The Layout:** Strict functionalism. Whitespace is structural mass. Hard, straight edges only. Notebook (off-white) background, Graphite (dark navy) text. No decoration.
-**The Accent:** Cord (orange). Use it exactly _once_ per layout section. Never for decoration.
+**The Layout:** Strict functionalism. Whitespace is structural mass. Hard, straight edges only. Canvas (off-white) background, Iron (dark navy) text. No decoration.
+**The Accent:** Traffic Cone (orange). Use it exactly _once_ per layout section. Never for decoration.
 **The Photos:** Real workers doing real work. Shot at eye level. No color grading.
 **The Copy:** Direct, unhedged, data-backed. Don’t say revolutionize or disrupt.
+**The Assets:** All logos, icons, and graphics are built with `currentColor`. They should be inlined in code (or used as components) to inherit dynamic CSS coloring.
 **The Rule:** Technology should make humans more essential, not more expendable. Start from the worker’s perspective.
 
 ---
@@ -50,35 +60,35 @@ This is our anchor. Every design decision, every piece of copy, and every produc
 
 ## Colors
 
-The Skillit palette is the Human Toolkit — eight colors named for the physical materials workers handle every day. **Each color has one job. Use it for that job only.**
+The Skillit palette is "Materials on a jobsite" — eight colors named for the physical materials workers handle every day. **Each color has one job. Use it for that job only.**
 
 ### The palette
 
-| Name     | Hex       | CMYK            | Spot (Pantone) | Role                                    |
-| -------- | --------- | --------------- | -------------- | --------------------------------------- |
-| Notebook | `#FAF7F3` | 2, 2, 4, 0      | Paper          | Primary background — all surfaces       |
-| Plaster  | `#FFFFFF` | 0, 0, 0, 0      | None           | Elevated surfaces, cards, form inputs   |
-| Graphite | `#232F36` | 80, 50, 45, 65  | 432 C          | All text, structural elements           |
-| Cord     | `#EF6F1A` | 0, 65, 100, 0   | 158 C          | Primary CTA, active states, key accents |
-| Hard Hat | `#FEB11C` | 0, 30, 100, 0   | 1235 C         | Warnings, non-fatal alerts              |
-| Toolbox  | `#C8102E` | 2, 100, 85, 6   | 186 C          | Errors, destructive actions             |
-| Lumber   | `#367C2B` | 75, 15, 100, 10 | 364 C          | Success, confirmations                  |
-| Cooler   | `#007CA6` | 100, 30, 10, 10 | 3135 C         | Text links only                         |
+| Name           | Hex       | CMYK            | Spot (Pantone) | Role                                    |
+| -------------- | --------- | --------------- | -------------- | --------------------------------------- |
+| Canvas         | `#FAF7F3` | 2, 2, 4, 0      | Paper          | Primary background — all surfaces       |
+| Plaster        | `#FFFFFF` | 0, 0, 0, 0      | None           | Elevated surfaces, cards, form inputs   |
+| Iron           | `#232F36` | 80, 50, 45, 65  | 432 C          | All text, structural elements           |
+| Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C          | Primary CTA, active states, key accents |
+| Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C         | Warnings, non-fatal alerts              |
+| Toolbox        | `#C8102E` | 2, 100, 85, 6   | 186 C          | Errors, destructive actions             |
+| Bottle Glass   | `#367C2B` | 75, 15, 100, 10 | 364 C          | Success, confirmations                  |
+| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C         | Text links only                         |
 
 ### Color Do / Don’t
 
-- **Do** use Cord once per section, on the most important element.
-- **Don’t** repeat Cord decoratively across borders, icons, and dividers.
+- **Do** use Traffic Cone once per section, on the most important element.
+- **Don’t** repeat Traffic Cone decoratively across borders, icons, and dividers.
 
-- **Do** use Graphite on Notebook for all body text.
-- **Don’t** use Cord text on Notebook backgrounds at body size — it fails contrast.
+- **Do** use Iron on Canvas for all body text.
+- **Don’t** use Traffic Cone text on Canvas backgrounds at body size — it fails contrast.
 
-- **Do** pair every status color with a shape and a label.
+- **Do** pair every status color with a specific shape (Circle for Success, Triangle for Warning, Octagon for Error) and a label.
 - **Don’t** rely on color alone to communicate error, warning, or success.
 
 - **Don’t** use gradients — all color transitions are hard edges.
-- **Don’t** use Hard Hat, Toolbox, Lumber, or Cooler as layout backgrounds or decorative elements.
-- **Don’t** use Cooler as a button fill — it is for text links only.
+- **Don’t** use Hard Hat, Toolbox, Bottle Glass, or Painter's Tape as layout backgrounds or decorative elements.
+- **Don’t** use Painter's Tape as a button fill — it is for text links only.
 - **Don’t** introduce any color outside the eight tokens.
 
 ---
@@ -113,14 +123,14 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 
 ### Color variants
 
-| Variant              | Contrast | Use                                             |
-| -------------------- | -------- | ----------------------------------------------- |
-| Graphite on Notebook | 12.84:1  | Default — all light backgrounds                 |
-| Notebook on Graphite | 12.84:1  | Dark backgrounds, inverted surfaces             |
-| Graphite on Cord     | 4.54:1   | Cord backgrounds only — marginal, use sparingly |
-| Single color outline | —        | Print, embroidery, engraving only               |
+| Variant              | Contrast | Use                                                     |
+| -------------------- | -------- | ------------------------------------------------------- |
+| Iron on Canvas       | 12.84:1  | Default — all light backgrounds                         |
+| Canvas on Iron       | 12.84:1  | Dark backgrounds, inverted surfaces                     |
+| Iron on Traffic Cone | 4.54:1   | Traffic Cone backgrounds only — marginal, use sparingly |
+| Single color outline | —        | Print, embroidery, engraving only                       |
 
-Notebook on Cord and Cord on Notebook both fail WCAG AA (2.83:1) and are not permitted.
+Canvas on Traffic Cone and Traffic Cone on Canvas both fail WCAG AA (2.83:1) and are not permitted.
 
 ### What not to do
 
@@ -136,18 +146,32 @@ Notebook on Cord and Cord on Notebook both fail WCAG AA (2.83:1) and are not per
 
 The Skillit pattern is a step-and-repeat tessellation of the boot tread mark. Because the mark's negative space is designed as an interlocking joint, the repeated pattern locks together to form a structural, masonry-like wall. It is the only decorative graphic permitted in the system.
 
+**Because the pattern is built directly from the mark, all technical rules that apply to the logo apply equally to the pattern** (no stretching, shearing, rotating, no drop shadows, no raster formats like PNG/JPG, and always use the approved SVG file).
+
 **How to use it:**
 
-- **As a structural anchor:** Use it to ground the top edge of a digital surface (e.g., the primary navigation bar). It creates a physical, structural boundary that grounds the layout. The preferred execution is rendering the pattern in **Plaster** (`#FFFFFF`) over a **Notebook** ground.
-- **Tone-on-tone:** The pattern must always be rendered in low-contrast, tone-on-tone applications. Plaster on Notebook is the standard digital application. It should read as background architecture, not a foreground graphic.
+- **Restricted Palette:** The pattern may ONLY be rendered using the neutral structural colors: Canvas, Plaster, and Iron (the whites and black). Accent colors are strictly banned.
+- **As a structural anchor:** Use it to ground the top edge of a digital surface (e.g., the primary navigation bar). It creates a physical, structural boundary that grounds the layout. The preferred execution is rendering the pattern in **Plaster** (`#FFFFFF`) over a **Canvas** ground.
 - **Physical applications:** Excellent for tactile physical touchpoints (e.g., debossed into leather, printed on packaging interiors, or as a subtle watermark on formal documents).
 
 **What not to do:**
 
-- Do not use the pattern as a background for running text or UI components.
+- Do not use any accent colors (Traffic Cone, Bottle Glass, Toolbox, Hard Hat, Painter's Tape) for the pattern.
+- Do not use the pattern as a background for running text.
 - Do not scale it up massively to act as a hero graphic — it is masonry, not an illustration.
-- Do not use high-contrast colors (e.g., Cord pattern on a Notebook background) that compete with the content.
-- Do not overlay it on photography.
+- Do not place it on photography.
+
+---
+
+## Iconography
+
+The Skillit brand uses a strict, utilitarian 24x24px solid-fill icon system. Icons are tools, not decorations. 
+
+- **Utilitarian & Honest:** No decorative embellishments or gradients.
+- **Solid Fill Only:** All icons must be solid shapes (`fill="currentColor"`). Line icons are banned to ensure consistency with the heavy, block-like geometry of the logo and pattern.
+- **Inline SVGs:** SVGs should be inlined into the markup to inherit parent CSS colors perfectly.
+
+See `rules/iconography.md` for the core inventory of 12 structural icons and full implementation rules.
 
 ---
 
@@ -163,13 +187,12 @@ The typography system is mathematically derived. Levels are named objectively by
 
 The scale is a perfect factor-of-2 progression built on a 16px baseline: `16 → 32 → 64 → 128 → 256`.
 
-| Level        | Size      | Base Weight      | Bolded           | Line Height | Tracking | Use                            |
-| ------------ | --------- | ---------------- | ---------------- | ----------- | -------- | ------------------------------ |
-| **Text-256** | 256px     | Extra Bold (800) | Black (900)      | 0.80        | −4%      | Extreme scale numbers, banners |
-| **Text-128** | 128px     | Bold (700)       | Extra Bold (800) | 0.80        | −4%      | Hero headlines at massive scale|
-| **Text-64**  | 64px      | Semibold (600)   | Bold (700)       | 0.90        | −3%      | Standard headlines             |
-| **Text-32**  | 32px      | Medium (500)     | Semibold (600)   | 1.00        | −2%      | Subheadings, pull quotes       |
-| **Text-16**  | 16px      | Regular (400)    | Medium (500)     | 1.10        | −1%      | All running copy               |
+| Level        | Size  | Base Weight      | Bolded           | Line Height | Tracking | Use                             |
+| ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
+| **Text-128** | 128px | Bold (700)       | Black (900)      | 0.80        | −5%      | Hero headlines at massive scale |
+| **Text-64**  | 64px  | Semibold (600)   | Extra Bold (800) | 0.90        | −5%      | Standard headlines              |
+| **Text-32**  | 32px  | Medium (500)     | Bold (700)       | 1.00        | −4%      | Subheadings, pull quotes        |
+| **Text-16**  | 16px  | Regular (400)    | Semibold (600)   | 1.10        | −3%      | All running copy                |
 
 ### Variable weight & optical balancing
 
@@ -177,22 +200,14 @@ Work Sans is a **variable font**. Rather than fixed buckets, it has a continuous
 
 **The Halation Rule:** Light text on a dark background creates an optical illusion (halation) that makes the text look noticeably thicker. Because we use a variable font, we correct this optically:
 
-- **On light backgrounds (Notebook):** Use standard weights (400, 500, 600, 700).
-- **On dark backgrounds (Iron, Cord, Toolbox, Lumber):** Subtract **30 units** of font weight. (e.g., Regular becomes 370, Semibold becomes 570). This ensures the text looks perfectly uniform across the entire system.
-
-### Tracking and leading
-
-| Level   | Letter spacing | Line height |
-| ------- | -------------- | ----------- |
-| Poster  | −4%            | 0.85        |
-| Display |                | 0.9         |
-| Heading | −2%            | 1.0         |
-| H2      | −1%            | 1.1         |
-| Body    | 0              | 1.25        |
+- **On light backgrounds (Canvas):** Use standard weights (400, 500, 600, 700).
+- **On dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass):** Subtract **30 units** of font weight. (e.g., Regular becomes 370, Semibold becomes 570). This ensures the text looks perfectly uniform across the entire system.
 
 ### Typographic Punctuation
 
-Always use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy. Straight quotes are for writing code; angled quotes are for reading text.
+**Smart Quotes:** Always use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy. Straight quotes are for writing code; angled quotes are for reading text.
+
+**Hanging Punctuation:** All text blocks must use hanging punctuation (optical margin alignment). Quotation marks, bullets, and hyphens must hang *outside* the left bounding box of the text column. This ensures the actual letters form a perfectly flush, unbroken architectural line down the left side of the layout grid.
 
 ### Widows and Orphans
 
@@ -219,7 +234,7 @@ To maintain the grid’s mathematical rhythm, vertical spacing between text elem
 - **Don’t** use title case or all-caps in UI or layouts (the logo wordmark is the only exception).
 
 - **Do** let size, weight, and spacing create hierarchy.
-- **Don’t** use Cord or Hard Hat on headings to make them stand out — color signals function, not rank.
+- **Don’t** use Traffic Cone or Hard Hat on headings to make them stand out — color signals function, not rank.
 
 - **Do** use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`).
 - **Don’t** use straight (dumb) typewriter quotes in human-readable copy.
@@ -247,16 +262,16 @@ To maintain the grid’s mathematical rhythm, vertical spacing between text elem
 The interface relies on stark, physical separation rather than artificial lighting effects.
 
 - **No drop shadows.** Banned universally.
-- **No colored backgrounds for cards.** Do not use Hard Hat, Lumber, or Cord as container backgrounds.
+- **No colored backgrounds for cards.** Do not use Hard Hat, Bottle Glass, or Traffic Cone as container backgrounds.
 
 ### Surface hierarchy
 
 Every layout uses four layers, in order of elevation and visual weight:
 
-1. **Ground** — Notebook. The default background for all pages and apps.
-2. **Lifted Surface** — Plaster. Used for cards and isolated containers. Because drop shadows and borders are banned, Plaster separates purely through stark optical brightness and generous padding. 
-3. **Structure & Inversion** — Graphite. Used for all text and structural lines. When massive visual weight or strict sectioning is needed, Graphite inverts to become a dark background surface (with Notebook text).
-4. **Signal** — Cord. One dominant accent per layout section.
+1. **Ground** — Canvas. The default background for all pages and apps.
+2. **Lifted Surface** — Plaster. Used for cards and isolated containers. Because drop shadows and borders are banned, Plaster separates purely through stark optical brightness and generous padding.
+3. **Structure & Inversion** — Iron. Used for all text and structural lines. When massive visual weight or strict sectioning is needed, Iron inverts to become a dark background surface (with Canvas text).
+4. **Signal** — Traffic Cone. One dominant accent per layout section.
 
 ### Rules
 
@@ -265,7 +280,7 @@ Every layout uses four layers, in order of elevation and visual weight:
 - **Button Alignment.** When aligning a button alongside text, align the button by its typography (its internal cap height), not its external padding bubble. The button must shift upwards by the exact value of its top padding to achieve optical alignment.
 - **Tension through scale.** Create hierarchy through dramatic leaps in scale (e.g., placing a 64px headline directly next to a 16px body copy block). Do not rely on intermediate sizes or color shifts to organize information.
 - **Strict functionalism.** No decorative elements. No abstract shapes, blobs, or illustrated backgrounds. Every border, margin, and pixel must perform a structural job.
-- **One accent.** Cord appears exactly once per layout section (e.g., on the CTA or a key stat). Never repeated decoratively.
+- **One accent.** Traffic Cone appears exactly once per layout section (e.g., on the CTA or a key stat). Never repeated decoratively.
 - **Shape signals action.** Static structural elements (cards, layout panels, photographs) use hard, straight edges (0px). Actionable human touchpoints (buttons) use a fully rounded pill shape. Intermediate rounded corners (e.g., 4px or 8px) are banned. No drop shadows.
 - **Mathematical text blocks.** Body text columns never exceed 70 characters wide to maintain perfect tracking and readability.
 
@@ -279,19 +294,19 @@ In this system, shape indicates whether an element is interactive or static. We 
 
 ### Grid & Baseline
 
-The layout is built on an **8px/16px baseline grid**, paired with **Fluid Architectural Scaling**. 
+The layout is built on an **8px/16px baseline grid**, paired with **Fluid Architectural Scaling**.
 
 While micro-spacing (`8px`, `16px`, `32px`) remains locked to absolute pixels to protect touch targets and UI integrity, macro-spacing (margins, section gaps, padding) uses CSS `clamp()` functions (`--space-64` through `--space-256`). This ensures the massive, confident margins seen on desktop smoothly and gradually compress as the viewport scales down, exactly mimicking the fluid, tensioned behavior of Anthropic's grid, without sudden, jarring jumps at breakpoints.
 
 **12-Column Newspaper Grid:** All desktop layouts sit on a strict 12-column grid. Do not use flexible percentage splits. Blocks must span fixed column counts (e.g., 7 columns for hero text, 5 columns for the hero CTA) so that vertical alignment is maintained down the entire page.
 
-| Element | Height / Padding | Margin |
-| ------- | ---------------- | ------ |
-| Nav Bar | 64px             | —      |
-| Logo Lockup | 32px height  | —      |
-| Primary Buttons | 8px vertical, 16px horizontal | — |
-| Desktop Section Gap | — | 128px |
-| Desktop Page Margin | — | 128px (wide) |
+| Element             | Height / Padding              | Margin       |
+| ------------------- | ----------------------------- | ------------ |
+| Nav Bar             | 64px                          | —            |
+| Logo Lockup         | 32px height                   | —            |
+| Primary Buttons     | 8px vertical, 16px horizontal | —            |
+| Desktop Section Gap | —                             | 128px        |
+| Desktop Page Margin | —                             | 320px (Anthropic scale) |
 
 ### Layout Do / Don’t
 
@@ -368,7 +383,7 @@ Sam is Skillit’s AI assistant. Sam has a name because names matter — they si
 - **Do** use inline bolding for key phrases in paragraph text to improve scannability. Assume the user will only read the bold words. If the bold words tell the complete story ("**1 in 20 workers**... **already out there**... **access better opportunities**"), the execution is correct.
 - **Don’t** lead with the product. “Skillit is an AI-powered construction hiring platform...”
 
-- **Do** use strict consistency for button labels. If a button points to account creation, it must say "Sign up" everywhere. Never alternate between "Get started", "Create a profile", and "Sign up" on the same page if they lead to the same destination. 
+- **Do** use strict consistency for button labels. If a button points to account creation, it must say "Sign up" everywhere. Never alternate between "Get started", "Create a profile", and "Sign up" on the same page if they lead to the same destination.
 - **Do** use one CTA per section.
 - **Don’t** offer “Start hiring” alongside “Get hired” alongside “Learn more.”
 
@@ -383,9 +398,9 @@ Photography is the brand’s most human element. Every image should make a craft
 These apply to every image across every surface, without exception:
 
 - **No drop shadows.** Images sit directly on the surface.
-- **Blend modes:** All photography must apply the `multiply` blend mode (CSS: `mix-blend-mode: multiply;`). This melts lighter backgrounds directly into the Notebook layout ground, removing harsh rectangular borders and creating a premium, unified editorial finish.
+- **Blend modes:** All photography must apply the `multiply` blend mode (CSS: `mix-blend-mode: multiply;`). This melts lighter backgrounds directly into the Canvas layout ground, removing harsh rectangular borders and creating a premium, unified editorial finish.
 - **No color grading.** Natural color only — no filters, no warm toning, no dramatic shifts.
-- **No composite backgrounds.** If the background is removed, the worker sits on Notebook or Graphite — no invented environment behind them.
+- **No composite backgrounds.** If the background is removed, the worker sits on Canvas or Iron — no invented environment behind them.
 - **No stock photo aesthetics.** No fake smiles, obvious casting, or safety theater.
 
 ### Worker portraits
@@ -400,7 +415,7 @@ These apply to every image across every surface, without exception:
 
 ### The mood in one line
 
-Documentary photography. Real sites, real light, real people. Eye level. Hard edges on Notebook or Graphite.
+Documentary photography. Real sites, real light, real people. Eye level. Hard edges on Canvas or Iron.
 
 ### Photography Do / Don’t
 

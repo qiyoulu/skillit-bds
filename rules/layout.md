@@ -18,11 +18,11 @@ Every layout is built on three layers. Use them in order.
 
 | Layer | Color | Token | Role |
 |---|---|---|---|
-| Ground | Notebook | `--color-bg` | Default background for all surfaces |
-| Structure | Graphite | `--color-fg` | Text, borders, dividers, nav elements |
-| Signal | Cord | `--color-primary` | One dominant accent per layout — CTAs, key data, active states |
+| Ground | Canvas | `--color-bg` | Default background for all surfaces |
+| Structure | Iron | `--color-fg` | Text, borders, dividers, nav elements |
+| Signal | Traffic Cone | `--color-primary` | One dominant accent per layout — CTAs, key data, active states |
 
-State colors (Hard Hat, Toolbox, Lumber, Cooler) are functional only. They appear in UI interactions, not in layout composition.
+State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional only. They appear in UI interactions, not in layout composition.
 
 ---
 
@@ -67,7 +67,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 
 5. **Strict functionalism.** Every border and margin must serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.
 
-6. **One accent per layout.** Cord (`--color-primary`) appears once per page section. It does not repeat as decoration. 
+6. **One accent per layout.** Traffic Cone (`--color-primary`) appears once per page section. It does not repeat as decoration. 
 
 7. **Shape signals action (Static = Sharp, Actionable = Pill).** All static layout containers (cards, panels, photographs) must use hard, straight edges (`border-radius: 0`). Only actionable human touchpoints (buttons) use a fully rounded pill shape (`border-radius: 100px`). No intermediate rounded corners (e.g., 4px or 8px) are permitted. No gradients, no drop shadows.
 
@@ -79,40 +79,40 @@ These are hard constraints derived from the core brand direction. They apply to 
 
 ### Hero
 - Full viewport height on desktop, minimum `560px`.
-- Background: Notebook (`--color-bg`).
+- Background: Canvas (`--color-bg`).
 - Worker portrait (isolated, hard-edge) placed right or center.
-- Headline: `--text-80` or `--text-40`, Graphite, sentence-case.
-- Single Cord CTA button beneath headline.
+- Headline: `--text-80` or `--text-40`, Iron, sentence-case.
+- Single Traffic Cone CTA button beneath headline.
 - No secondary CTA below the fold.
 
 ### Content section
 - Two-column (text left, image right) or full-width text.
-- Background: Notebook.
-- Subheading: `--text-20`, Graphite.
-- Body: `--text-16`, Graphite, max `70ch`.
-- Accent use: Cord for inline data callouts or a single stat highlight, not decorative.
+- Background: Canvas.
+- Subheading: `--text-20`, Iron.
+- Body: `--text-16`, Iron, max `70ch`.
+- Accent use: Traffic Cone for inline data callouts or a single stat highlight, not decorative.
 
 ### Data / proof section
 - Stat blocks in a 3- or 4-column grid.
-- Stats: `--text-80`, Cord.
-- Stat labels: `--text-ui-sm`, Graphite.
-- Background: Notebook or Graphite (inverted — white text on Graphite, Cord stats).
+- Stats: `--text-80`, Traffic Cone.
+- Stat labels: `--text-ui-sm`, Iron.
+- Background: Canvas or Iron (inverted — white text on Iron, Traffic Cone stats).
 
 ### CTA / sign-up section
 - Centered, maximum `600px` wide.
 - One headline, one subline, one button.
-- Background: Notebook or full Graphite panel.
-- Button: Cord background, Notebook text.
+- Background: Canvas or full Iron panel.
+- Button: Traffic Cone background, Canvas text.
 
 ---
 
 ## Nav bar
 
-- Background: Notebook with boot tread pattern overlay (low opacity — texture only, not legible repeat).
+- Background: Canvas with boot tread pattern overlay (low opacity — texture only, not legible repeat).
 - Logo: left-aligned.
-- Nav links: Graphite, `--text-ui-sm`, sentence-case, no underline at rest.
-- Active nav link: Cord, no underline.
-- Primary CTA (“Sign up”): Cord button, right-aligned.
+- Nav links: Iron, `--text-ui-sm`, sentence-case, no underline at rest.
+- Active nav link: Traffic Cone, no underline.
+- Primary CTA (“Sign up”): Traffic Cone button, right-aligned.
 - Nav tabs (approved): How It Works · Our Network · Jobs · About Us · Resources
 
 ---
@@ -127,4 +127,4 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Pattern fills on content surfaces (boot tread is nav header only)
 - More than one accent color per layout section
 - Centered body text or centered layout structures (flush-left is the law)
-- Full-bleed background color sections in accent colors (Cord, Hard Hat, Toolbox — these are UI states, not backgrounds)
+- Full-bleed background color sections in accent colors (Traffic Cone, Hard Hat, Toolbox — these are UI states, not backgrounds)

@@ -56,12 +56,12 @@ Because horizontal space is at an absolute premium on mobile viewports (e.g., iP
 
 | Variant                             | Contrast | Permitted | Use                                             |
 | ----------------------------------- | -------- | --------- | ----------------------------------------------- |
-| Graphite on Notebook                | 12.84:1  | Yes       | Default — all light backgrounds                 |
-| Notebook on Graphite                | 12.84:1  | Yes       | Dark backgrounds, inverted surfaces             |
-| Graphite on Cord                    | 4.54:1   | Yes       | Cord backgrounds only — marginal, use sparingly |
-| Single color (Graphite or Notebook) | —        | Yes       | Print, embroidery, engraving                    |
-| Notebook on Cord                    | 2.83:1   | No        | Fails WCAG AA                                   |
-| Cord on Notebook                    | 2.83:1   | No        | Fails WCAG AA                                   |
+| Iron on Canvas                | 12.84:1  | Yes       | Default — all light backgrounds                 |
+| Canvas on Iron                | 12.84:1  | Yes       | Dark backgrounds, inverted surfaces             |
+| Iron on Traffic Cone                    | 4.54:1   | Yes       | Traffic Cone backgrounds only — marginal, use sparingly |
+| Single color (Iron or Canvas) | —        | Yes       | Print, embroidery, engraving                    |
+| Canvas on Traffic Cone                    | 2.83:1   | No        | Fails WCAG AA                                   |
+| Traffic Cone on Canvas                    | 2.83:1   | No        | Fails WCAG AA                                   |
 
 The mark is always rendered in a single, flat color. No gradients, multi-color treatments, or effects.
 
@@ -71,7 +71,7 @@ The pattern is a step-and-repeat tessellation of the mark. Because the mark feat
 
 **Usage rules:**
 - **Placement:** Use as a structural anchor (e.g., the primary nav bar) or on physical touchpoints (debossing, endpapers). 
-- **Contrast:** Must be low-contrast, tone-on-tone. Rendering the pattern in **Plaster** (`#FFFFFF`) against a **Notebook** ground is the approved and preferred execution for digital surfaces like the navigation bar.
+- **Contrast:** Must be low-contrast, tone-on-tone. Rendering the pattern in **Plaster** (`#FFFFFF`) against a **Canvas** ground is the approved and preferred execution for digital surfaces like the navigation bar.
 - **Scale:** Keep it scaled as a texture. Do not blow it up into a massive hero graphic.
 - **Restrictions:** Never use as a background behind running text or UI components. Never overlay on photography.
 
