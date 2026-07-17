@@ -36,13 +36,13 @@ If you need a size larger than 160px (e.g., 320px), extrapolate using this algor
 
 | Level | Token | px (screen) | rem (web) | pt (print) | Base Weight | Bolded | Line height | Tracking |
 |---|---|---|---|---|---|---|---|---|
-| **Text-256** |  | 256px |  | 192pt | Extra Bold (800) | Black (900) | 0.80 |  |
-| **Text-128** |  | 128px |  | 96pt | Bold (700) | Extra Bold (800) | 0.80 | -4% |
-| **Text-64** |  | 64px |  | 48pt | Semibold (600) | Bold (700) | 0.90 | -3% |
-| **Text-32** |  | 32px |  | 24pt | Medium (500) | Semibold (600) | 1.00 | -2% |
-| **Text-16** |  | 16px |  | 12pt | Regular (400) | Medium (500) | 1.10 | -1% |
+| **Text-16x** |  | 256px |  | 192pt | Extra Bold (800) | Black (900) | 0.80 |  |
+| **Text-8x** |  | 128px |  | 96pt | Bold (700) | Extra Bold (800) | 0.80 | -4% |
+| **Text-4x** |  | 64px |  | 48pt | Semibold (600) | Bold (700) | 0.90 | -3% |
+| **Text-2x** |  | 32px |  | 24pt | Medium (500) | Semibold (600) | 1.00 | -2% |
+| **Text-1x** |  | 16px |  | 12pt | Regular (400) | Medium (500) | 1.10 | -1% |
 
-*(Note: Text-16 is the accessibility floor for body copy and operates slightly outside the strict 2x multiplier rule to protect legibility).*
+*(Note: Text-1x is the accessibility floor for body copy and operates slightly outside the strict 2x multiplier rule to protect legibility).*
 
 ## Functional type scale (UI)
 
@@ -82,40 +82,40 @@ This is a system font stack — no CDN required. Use it only for data strings, n
   --font-mono:      'SF Mono', 'Fira Code', 'Courier New', monospace;
 
   /* Primary hierarchy — absolute size naming */
-  /* Text-256 */
-  --text-256:               16rem;
-  --text-256-weight:        800;
-  --text-256-weight-bold:   900;
-  --text-256-leading:       0.80;
-  --text-256-tracking:      -0.04em;
+  /* Text-16x */
+  --text-16x:               16rem;
+  --text-16x-weight:        800;
+  --text-16x-weight-bold:   900;
+  --text-16x-leading:       0.80;
+  --text-16x-tracking:      -0.04em;
 
-  /* Text-128 */
-  --text-128:               8rem;
-  --text-128-weight:        700;
-  --text-128-weight-bold:   800;
-  --text-128-leading:       0.90;
-  --text-128-tracking:      -0.03em;
+  /* Text-8x */
+  --text-8x:               8rem;
+  --text-8x-weight:        700;
+  --text-8x-weight-bold:   800;
+  --text-8x-leading:       0.90;
+  --text-8x-tracking:      -0.03em;
 
-  /* Text-64 */
-  --text-64:                4rem;
-  --text-64-weight:         600;
-  --text-64-weight-bold:    700;
-  --text-64-leading:        0.90;
-  --text-64-tracking:       -0.03em;
+  /* Text-4x */
+  --text-4x:                4rem;
+  --text-4x-weight:         600;
+  --text-4x-weight-bold:    700;
+  --text-4x-leading:        0.90;
+  --text-4x-tracking:       -0.03em;
 
-  /* Text-32 */
-  --text-32:                2rem;
-  --text-32-weight:         500;
-  --text-32-weight-bold:    600;
-  --text-32-leading:        1.00;
-  --text-32-tracking:       -0.02em;
+  /* Text-2x */
+  --text-2x:                2rem;
+  --text-2x-weight:         500;
+  --text-2x-weight-bold:    600;
+  --text-2x-leading:        1.00;
+  --text-2x-tracking:       -0.02em;
 
-  /* Text-16 */
-  --text-16:                1rem;
-  --text-16-weight:         400;
-  --text-16-weight-bold:    500;
-  --text-16-leading:        1.10;
-  --text-16-tracking:       -0.01em;
+  /* Text-1x */
+  --text-1x:                1rem;
+  --text-1x-weight:         400;
+  --text-1x-weight-bold:    500;
+  --text-1x-leading:        1.10;
+  --text-1x-tracking:       -0.01em;
 
   /* Functional UI scale */
   --text-ui-lg:     1.125rem;
@@ -148,11 +148,11 @@ This is a system font stack — no CDN required. Use it only for data strings, n
 
 ### Primary hierarchy (marketing, digital, editorial, print)
 
-- **Text-256:** Massive brand moments, event banners, numbers/stats at extreme scale.
-- **Text-128:** Hero headlines at massive scale.
-- **Text-64:** Standard headlines, campaign statements, large callouts.
-- **Text-32:** Section headings, page titles, pull quotes.
-- **Text-16:** All running copy, paragraph text.
+- **Text-16x:** Massive brand moments, event banners, numbers/stats at extreme scale.
+- **Text-8x:** Hero headlines at massive scale.
+- **Text-4x:** Standard headlines, campaign statements, large callouts.
+- **Text-2x:** Section headings, page titles, pull quotes.
+- **Text-1x:** All running copy, paragraph text.
 
 ### Functional UI scale (app, dashboard)
 
@@ -185,3 +185,7 @@ Work Sans is implemented as a variable font (`wght@100..900`).
 - Do not use any typeface other than Work Sans.
 - Do not set letter-spacing on UI text below `--text-ui` — it reduces legibility at small sizes.
 - Do not use the primary hierarchy sizes in UI components — they are for editorial/marketing surfaces only.
+
+### Responsive Scaling (Desktop to Mobile)
+- **The Rule:** Scale display text sizes down smoothly to a minimum of half the size at mobile breakpoints (e.g., a desktop 128px becomes 64px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
+- **Body Text Exception:** Body and UI text (`--text-ui`, `--text-1x`, etc.) must not scale down. Maintain their exact desktop size on mobile to ensure strict job-site legibility.

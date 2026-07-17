@@ -27,7 +27,7 @@ There are only two acceptable corner treatments. Intermediate radiuses (e.g., `4
 
 ## 3. Typography Rules
 *   **Typeface:** Work Sans (or system sans-serif fallback if unhosted). No boutique webfonts.
-*   **Sizing:** Use absolute numerical size tokens (e.g., `Text-160`, `Text-20`, `Text-16`), NOT semantic sizing (e.g., `text-sm`, `h1`). 
+*   **Sizing:** Use absolute numerical size tokens (e.g., `Text-16x`, `Text-2x`, `Text-1x`), NOT semantic sizing (e.g., `text-sm`, `h1`). 
 *   **Optical Balancing:** If rendering light text on a dark background (e.g., Canvas on Iron), manually subtract 30 units of font weight to prevent visual halation.
 *   **Case:** Sentence-case everywhere. NEVER title-case UI elements or headers, except for the logo wordmark.
 *   **Alignment:** All text must be flush-left. Centered text is banned.
@@ -46,4 +46,4 @@ There are only two acceptable corner treatments. Intermediate radiuses (e.g., `4
 **Verification Step:** Before outputting code, verify that:
 1. SVGs utilize `currentColor` and are dynamically colored via CSS.
 2. No unauthorized hex codes were introduced.
-3. All photos/cards have `0px` radius and buttons are pill-shaped.
+3. All photos/cards have `0px` radius and buttons are pill-shaped.*   **Responsive Typography:** Use fluid scaling (e.g., `clamp()`) to smoothly scale headers to a minimum of half their desktop size on mobile, but **keep the font-weight identical** to desktop. Never scale down body text.

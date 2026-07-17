@@ -63,7 +63,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 
 3. **Button Alignment Exception.** Do not align buttons by their external padding bubble. Align them optically by the text inside them. A button must shift upward by its top padding value to ensure its internal text cap-height aligns with adjacent layout elements.
 
-4. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-80` directly adjacent to `--text-16`), not by stepping gently through intermediate sizes or adding color.
+4. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-8x` directly adjacent to `--text-1x`), not by stepping gently through intermediate sizes or adding color.
 
 5. **Strict functionalism.** Every border and margin must serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.
 
@@ -81,7 +81,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Full viewport height on desktop, minimum `560px`.
 - Background: Canvas (`--color-bg`).
 - Worker portrait (isolated, hard-edge) placed right or center.
-- Headline: `--text-80` or `--text-40`, Iron, sentence-case.
+- Headline: `--text-8x` or `--text-4x`, Iron, sentence-case.
 - Single Traffic Cone CTA button beneath headline.
 - No secondary CTA below the fold.
 
@@ -89,12 +89,12 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Two-column (text left, image right) or full-width text.
 - Background: Canvas.
 - Subheading: `--text-20`, Iron.
-- Body: `--text-16`, Iron, max `70ch`.
+- Body: `--text-1x`, Iron, max `70ch`.
 - Accent use: Traffic Cone for inline data callouts or a single stat highlight, not decorative.
 
 ### Data / proof section
 - Stat blocks in a 3- or 4-column grid.
-- Stats: `--text-80`, Traffic Cone.
+- Stats: `--text-8x`, Traffic Cone.
 - Stat labels: `--text-ui-sm`, Iron.
 - Background: Canvas or Iron (inverted — white text on Iron, Traffic Cone stats).
 

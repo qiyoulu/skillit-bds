@@ -189,10 +189,10 @@ The scale is a perfect factor-of-2 progression built on a 16px baseline: `16 →
 
 | Level        | Size  | Base Weight      | Bolded           | Line Height | Tracking | Use                             |
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
-| **Text-128** | 128px | Bold (700)       | Black (900)      | 0.80        | −5%      | Hero headlines at massive scale |
-| **Text-64**  | 64px  | Semibold (600)   | Extra Bold (800) | 0.90        | −5%      | Standard headlines              |
-| **Text-32**  | 32px  | Medium (500)     | Bold (700)       | 1.00        | −4%      | Subheadings, pull quotes        |
-| **Text-16**  | 16px  | Regular (400)    | Semibold (600)   | 1.10        | −3%      | All running copy                |
+| **Text-8x** | 128px | Bold (700)       | Black (900)      | 0.80        | −5%      | Hero headlines at massive scale |
+| **Text-4x**  | 64px  | Semibold (600)   | Extra Bold (800) | 0.90        | −5%      | Standard headlines              |
+| **Text-2x**  | 32px  | Medium (500)     | Bold (700)       | 1.00        | −4%      | Subheadings, pull quotes        |
+| **Text-1x**  | 16px  | Regular (400)    | Semibold (600)   | 1.10        | −3%      | All running copy                |
 
 ### Variable weight & optical balancing
 
@@ -434,3 +434,8 @@ They are not a substitute for judgment. Rules describe the system. Judgment appl
 
 _Skillit Brand Guidelines · Version 1.0 · July 2026_
 _Brand Design: Chiyo · System: Skillit Narrative & Brand_
+
+### Responsive Scaling
+- Scale display headers down smoothly (using fluid typography or breakpoints) to half their size at mobile viewports.
+- **Maintain the original desktop font-weight** when scaling down headers to preserve hierarchy and punch.
+- Never scale down body or UI text (`Text-1x`, `--text-ui`); keep them at their desktop sizes for legibility.
