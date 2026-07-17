@@ -439,3 +439,20 @@ _Brand Design: Chiyo · System: Skillit Narrative & Brand_
 - Scale display headers down smoothly (using fluid typography or breakpoints) to half their size at mobile viewports.
 - **Maintain the original desktop font-weight** when scaling down headers to preserve hierarchy and punch.
 - Never scale down body or UI text (`Text-1x`, `--text-ui`); keep them at their desktop sizes for legibility.
+
+---
+
+## Engineering Handoff
+
+The production codebase is **Ruby on Rails 7.2** using **`tailwindcss-rails`** and **importmap** (no npm build pipeline, no Vite or webpack).
+
+**Token delivery format:**
+- Brand tokens are delivered as a `tailwind.config.js` theme extension — not a standalone CSS file.
+- The Google Fonts `<link>` tag for Work Sans belongs in `app/views/layouts/application.html.erb` inside `<head>`.
+- SVGs are inlined as Rails ERB partials (e.g., `_icon_check.html.erb`) so they inherit `currentColor` dynamically.
+- Any values Tailwind cannot express natively (e.g., optical weight offsets for halation compensation) go into `app/assets/stylesheets/application.css` as CSS custom properties.
+
+**What not to do:**
+- Do not deliver a standalone HTML file or npm install instructions.
+- Do not reference Vite, webpack, or a JS entrypoint for font loading.
+- Do not use raw hex codes in templates — reference Tailwind config keys only.

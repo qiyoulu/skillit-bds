@@ -42,8 +42,23 @@ There are only two acceptable corner treatments. Intermediate radiuses (e.g., `4
 *   **Actionable CTAs:** The primary funnel is "Join" (not "Sign Up", not "Start Hiring").
 *   **Framing:** Always frame features around empowering the human craft worker, not replacing them. 
 
+## 6. Engineering Stack (Skillit Rails)
+
+The production codebase is **Ruby on Rails 7.2 with `tailwindcss-rails`** and **importmap** (no npm build pipeline). Deliver brand tokens as a Tailwind config theme extension, not raw CSS custom properties.
+
+**Delivery format:**
+*   **Primary:** A `tailwind.config.js` theme extension block mapping all BDS tokens to Tailwind keys (colors, fontFamily, fontSize, fontWeight, lineHeight, letterSpacing, borderRadius).
+*   **Secondary:** A CSS custom properties block in `app/assets/stylesheets/application.css` for any values Tailwind cannot express natively (e.g., optical weight offsets for halation compensation).
+*   **Fonts:** The Google Fonts `<link>` tag for Work Sans belongs in `app/views/layouts/application.html.erb` inside the `<head>`.
+*   **SVGs:** Inline into ERB templates or Rails partials (e.g., `_icon_check.html.erb`) so they inherit `currentColor` dynamically via CSS.
+
+**Do not** output standalone HTML files, npm install instructions, or Vite/webpack config. The stack uses Sprockets and importmap.
+
 ---
 **Verification Step:** Before outputting code, verify that:
 1. SVGs utilize `currentColor` and are dynamically colored via CSS.
-2. No unauthorized hex codes were introduced.
-3. All photos/cards have `0px` radius and buttons are pill-shaped.*   **Responsive Typography:** Use fluid scaling (e.g., `clamp()`) to smoothly scale headers to a minimum of half their desktop size on mobile, but **keep the font-weight identical** to desktop. Never scale down body text.
+2. No unauthorized hex codes were introduced — use Tailwind config keys or CSS variables only.
+3. All photos/cards have `0px` radius and buttons are pill-shaped.
+4. Font imports target `app/views/layouts/application.html.erb`, not a JS entrypoint.
+5. Token delivery is a `tailwind.config.js` theme extension, not a raw CSS file.
+*   **Responsive Typography:** Use fluid scaling (e.g., `clamp()`) to smoothly scale headers to a minimum of half their desktop size on mobile, but **keep the font-weight identical** to desktop. Never scale down body text.
