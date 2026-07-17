@@ -42,17 +42,28 @@ There are only two acceptable corner treatments. Intermediate radiuses (e.g., `4
 *   **Actionable CTAs:** The primary funnel is "Join" (not "Sign Up", not "Start Hiring").
 *   **Framing:** Always frame features around empowering the human craft worker, not replacing them. 
 
-## 6. Engineering Stack (Skillit Rails)
+## 6. Two Implementation Targets
 
-The production codebase is **Ruby on Rails 7.2 with `tailwindcss-rails`** and **importmap** (no npm build pipeline). Deliver brand tokens as a Tailwind config theme extension, not raw CSS custom properties.
+The BDS serves two separate surfaces. Always confirm which target you are building for before writing any code or assets.
+
+### Target A: Marketing website (`www.skillit.com`) — Squarespace
+The public-facing marketing site is built and maintained in Squarespace by a non-engineer.
 
 **Delivery format:**
-*   **Primary:** A `tailwind.config.js` theme extension block mapping all BDS tokens to Tailwind keys (colors, fontFamily, fontSize, fontWeight, lineHeight, letterSpacing, borderRadius).
-*   **Secondary:** A CSS custom properties block in `app/assets/stylesheets/application.css` for any values Tailwind cannot express natively (e.g., optical weight offsets for halation compensation).
-*   **Fonts:** The Google Fonts `<link>` tag for Work Sans belongs in `app/views/layouts/application.html.erb` inside the `<head>`.
-*   **SVGs:** Inline into ERB templates or Rails partials (e.g., `_icon_check.html.erb`) so they inherit `currentColor` dynamically via CSS.
+*   Figma page prototypes (the design handoff — no code required).
+*   Exported SVGs for logo and icons (standalone files, not ERB partials).
+*   A plain-language asset reference: hex values, Google Fonts name (`Work Sans`), spacing values in px, and border-radius rules — formatted for manual entry into Squarespace's style editor.
+*   Do **not** deliver `tailwind.config.js`, ERB partials, or Rails-specific code for this target.
 
-**Do not** output standalone HTML files, npm install instructions, or Vite/webpack config. The stack uses Sprockets and importmap.
+### Target B: Product app (`app.skillit.com`) — Ruby on Rails
+The worker app and contractor dashboard run on **Ruby on Rails 7.2 with `tailwindcss-rails`** and **importmap** (no npm build pipeline).
+
+**Delivery format:**
+*   **Primary:** A `tailwind.config.js` theme extension block under a `skillit` namespace (e.g., `colors.skillit.iron`), so BDS tokens do not collide with existing Tailwind keys.
+*   **Secondary:** A CSS custom properties block in `app/assets/stylesheets/application.css` for values Tailwind cannot express natively (e.g., optical weight offsets for halation compensation).
+*   **Fonts:** The Google Fonts `<link>` tag for Work Sans belongs in `app/views/layouts/application.html.erb` inside the `<head>`.
+*   **SVGs:** Delivered as ViewComponents in `app/components/` or partials in `app/views/shared/` so they inherit `currentColor` dynamically via CSS.
+*   Do **not** output standalone HTML files, npm install instructions, or Vite/webpack config. The stack uses Sprockets and importmap.
 
 ---
 **Verification Step:** Before outputting code, verify that:
