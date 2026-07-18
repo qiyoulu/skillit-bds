@@ -152,7 +152,7 @@ skillit-bds/
 ## Planned for Phase II
 
 - Dark mode token overrides
-- Icon system (style, stroke weight, corner radius) — **complete; icons not yet drawn in Figma**
+- Icon system complete (exported to `assets/icons/`)
 - Social media template specs
 - Print/physical material specs (CMYK, bleed, safe zone)
 - Swag and in-situ material specs

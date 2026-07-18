@@ -440,14 +440,14 @@ Icons are delivered as inline SVGs in Rails ViewComponents (`app/components/`) s
 
 | Icon | Status |
 |---|---|
-| Checkmark | To do |
-| Error | To do |
-| Warning | To do |
-| Search | To do |
-| Arrow (left, right, up, down) | To do |
-| Location | To do |
-| Clock | To do |
-| User | To do |
-| External link | To do |
-| Plus | To do |
-| Menu (hamburger) | To do |
+| Checkmark | Complete (`checkmark.svg`) |
+| Error | Complete (`error.svg`) |
+| Warning | Complete (`warning.svg`) |
+| Search | Complete (`search.svg`) |
+| Arrow (left, right, up, down) | Complete (`arrow-left.svg`, etc.) |
+| Location | Complete (`location.svg`) |
+| Clock | Complete (`clock.svg`) |
+| User | Complete (`user.svg`) |
+| External link | Complete (`external-link.svg`) |
+| Plus | Complete (`close.svg` rotated / `plus.svg`) |
+| Menu (hamburger) | Complete (`menu.svg`) |
