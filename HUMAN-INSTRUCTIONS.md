@@ -165,13 +165,51 @@ The Skillit pattern is a step-and-repeat tessellation of the boot tread mark. Be
 
 ## Iconography
 
-The Skillit brand uses a strict, utilitarian 24x24px solid-fill icon system. Icons are tools, not decorations. 
+Icons are tools, not decorations. The system is engineered for legibility on a job site — heavy, solid, and mathematically centered.
 
-- **Utilitarian & Honest:** No decorative embellishments or gradients.
-- **Solid Fill Only:** All icons must be solid shapes (`fill="currentColor"`). Line icons are banned to ensure consistency with the heavy, block-like geometry of the logo and pattern.
-- **Inline SVGs:** SVGs should be inlined into the markup to inherit parent CSS colors perfectly.
+### Geometry
 
-See `rules/iconography.md` for the core inventory of 12 structural icons and full implementation rules.
+| Property | Value |
+|---|---|
+| Canvas | 24×24px |
+| Sub-grid | 10×10 (1 block = 2px) |
+| Style | Solid fill only |
+| Stroke weight | None — solid fill, not stroked |
+| Corner radius | 0px — sharp edges, no rounding |
+| Color | `fill="currentColor"` always |
+
+The 10×10 sub-grid (1 block = 2px) solves mathematical centering — the 2px block unit divides the 24px canvas evenly — and enforces the heavy cast-iron aesthetic consistent with the logo mark.
+
+### Rules
+
+- **Solid fill only.** Line icons are banned. They conflict with the heavy, block-like geometry of the mark and pattern.
+- **0px corner radius.** Rounding icon geometry is not permitted.
+- **`fill="currentColor"` always.** Never hardcode a fill color in the SVG. Icons inherit their color from the surrounding CSS context.
+- **Stay on the grid.** All geometry must align to the 10×10 sub-grid. Off-grid paths break centering math.
+- **No gradients, no drop shadows, no decorative embellishments.**
+
+### Status shape signals
+
+Status must never rely on color alone. Each state has a locked geometric silhouette:
+
+| State | Shape |
+|---|---|
+| Success | Circle |
+| Warning | Triangle |
+| Error | Octagon |
+
+### Core icon set (Phase I)
+
+Checkmark · Error · Warning · Search · Arrow (×4) · Location · Clock · User · External link · Plus · Menu (hamburger)
+
+### Do / Don't
+
+| Do | Don't |
+|---|---|
+| Draw solid filled shapes on the 10×10 sub-grid | Use stroke/outline icon styles |
+| Use `fill="currentColor"` | Hardcode hex values in SVG fills |
+| Keep corners at 0px | Round any icon geometry |
+| Use the circle/triangle/octagon system for status | Use color as the only status signal |
 
 ---
 
