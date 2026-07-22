@@ -438,7 +438,7 @@ These apply to every image across every surface, without exception:
 
 - **No drop shadows.** Images sit directly on the surface.
 - **Blend modes:** All photography must apply the `multiply` blend mode (CSS: `mix-blend-mode: multiply;`). This melts lighter backgrounds directly into the Canvas layout ground, removing harsh rectangular borders and creating a premium, unified editorial finish.
-- **Tonal pre-set.** Unify all photography by applying the designated tonal pre-set. This ensures disparate stock and owned images feel cohesive.
+- **No color grading.** Natural color only — no filters, no warm toning, no dramatic shifts.
 - **No text or symbols.** Images must be completely free of text, symbols, UI elements, graphs, and numbers.
 - **No AI generation.** Only authentic photography is permitted.
 - **No composite backgrounds.** If the background is removed, the worker sits on Canvas or Iron — no invented environment behind them.
