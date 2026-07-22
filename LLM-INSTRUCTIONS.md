@@ -33,12 +33,15 @@ There are only two acceptable corner treatments. Intermediate radiuses (e.g., `4
 *   **Alignment:** All text must be flush-left. Centered text is banned.
 *   **Hanging Punctuation:** Use hanging punctuation (optical margin alignment) so quotation marks and bullets sit outside the text bounding box, keeping the left edge of the letters perfectly flush.
 
-## 4. Asset Management & SVGs
+## 4. Asset Management, SVGs & Imagery
 *   **Implementation:** All logos, patterns, and icons are built with `fill="currentColor"`. They should be inlined into the HTML (or used as components in frameworks like React) so they inherit CSS text colors dynamically.
 *   **Logo/Pattern Strictness:** All technical rules for logos (no stretching, rotating, drop shadows, or raster formats) apply equally to the background pattern.
+*   **Photography:** All photos must have the tonal pre-set applied for unity. Never use images containing text, symbols, graphs, numbers, or AI-generated artifacts.
 
 ## 5. Voice & Copy
+*   **The Worker-First Mandate:** Every piece of copy—from blog titles to button labels—must ultimately serve and elevate the worker. When in doubt, frame the narrative around their reality.
 *   **Tone:** Write like the smartest person on the job site—direct, data-driven, warm-but-firm.
+*   **Blog/Editorial:** Authoritative, punchy, and data-informed headlines. Unified brand voice only — no individual bylines.
 *   **Actionable CTAs:** The primary funnel is "Join" (not "Sign Up", not "Start Hiring").
 *   **Framing:** Always frame features around empowering the human craft worker, not replacing them. 
 

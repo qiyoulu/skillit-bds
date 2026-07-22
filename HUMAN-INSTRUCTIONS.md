@@ -264,7 +264,7 @@ To maintain the grid’s mathematical rhythm, vertical spacing between text elem
 
 ### Case
 
-**Sentence-case everywhere.** “Sign up for free” — not “Sign Up For Free.” “How it works” — not “HOW IT WORKS.” All-caps and title case are banned in all typesetting. (The logo wordmark is the sole exception—it is a fixed graphic, not typed text.)
+**Sentence-case everywhere.** “Join for free” — not “Join For Free.” “How it works” — not “HOW IT WORKS.” All-caps and title case are banned in all typesetting. (The logo wordmark is the sole exception—it is a fixed graphic, not typed text.)
 
 ### Typography Do / Don’t
 
@@ -392,7 +392,8 @@ While micro-spacing (`8px`, `16px`, `32px`) remains locked to absolute pixels to
 
 ### By channel
 
-**Website / marketing:** Confident, proof-heavy, counterintuitive. Lead with the insight, not the product. One CTA per section. “Sign up.” “See the network.” Never “Learn more.”
+**Website / marketing:** Confident, proof-heavy, counterintuitive. Lead with the insight, not the product. One CTA per section. "Join." Never “Learn more.”
+**Blog / editorial:** Authoritative, punchy, data-informed. Unified brand voice only — no individual bylines.
 
 **Worker app:** Simple, respectful, warm. One idea per screen. Write for gloves and sunlight. “Complete your profile to get found faster.” Not “Optimizing your profile increases your discoverability.”
 
@@ -421,9 +422,9 @@ Sam is Skillit’s AI assistant. Sam has a name because names matter — they si
 - **Do** use inline bolding for key phrases in paragraph text to improve scannability. Assume the user will only read the bold words. If the bold words tell the complete story ("**1 in 20 workers**... **already out there**... **access better opportunities**"), the execution is correct.
 - **Don’t** lead with the product. “Skillit is an AI-powered construction hiring platform...”
 
-- **Do** use strict consistency for button labels. If a button points to account creation, it must say "Sign up" everywhere. Never alternate between "Get started", "Create a profile", and "Sign up" on the same page if they lead to the same destination.
-- **Do** use one CTA per section.
-- **Don’t** offer “Start hiring” alongside “Get hired” alongside “Learn more.”
+- **Do** use strict consistency for button labels. If a button points to account creation, it must say "Join" everywhere. Never alternate between "Get started", "Create a profile", and "Join" on the same page if they lead to the same destination.
+- **Do** use one CTA per section. Ensure the primary mobile CTA is visible without scrolling.
+- **Don’t** offer “Start hiring” alongside “Get hired” — consolidate to a single “Join.”
 
 ---
 
@@ -437,7 +438,9 @@ These apply to every image across every surface, without exception:
 
 - **No drop shadows.** Images sit directly on the surface.
 - **Blend modes:** All photography must apply the `multiply` blend mode (CSS: `mix-blend-mode: multiply;`). This melts lighter backgrounds directly into the Canvas layout ground, removing harsh rectangular borders and creating a premium, unified editorial finish.
-- **No color grading.** Natural color only — no filters, no warm toning, no dramatic shifts.
+- **Tonal pre-set.** Unify all photography by applying the designated tonal pre-set. This ensures disparate stock and owned images feel cohesive.
+- **No text or symbols.** Images must be completely free of text, symbols, UI elements, graphs, and numbers.
+- **No AI generation.** Only authentic photography is permitted.
 - **No composite backgrounds.** If the background is removed, the worker sits on Canvas or Iron — no invented environment behind them.
 - **No stock photo aesthetics.** No fake smiles, obvious casting, or safety theater.
 
