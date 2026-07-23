@@ -1,4 +1,4 @@
-# Brand Guidelines — Skillit
+# Brand Design System (BDS) — Skillit
 
 **Version 1.0 · July 2026**
 
@@ -9,15 +9,6 @@
 This document is the human-readable companion to the Skillit Brand Design System. The system itself lives as a machine-readable token library — this is the translation of those rules into plain language, for anyone at Skillit who creates something on behalf of the brand.
 
 Designers, marketers, writers, agency partners, and anyone who has ever asked “does this look right?” — this is for you.
-
----
-
-## PDF References
-
-This Markdown file is the source of truth for the brand system, but we provide two graphical PDF companions for distribution and quick reference:
-
-1.  **`HUMAN-INSTRUCTIONS.pdf`**: The full graphical translation of this document. This is the formal brand guidelines document suitable for partners, agencies, and high-fidelity printing.
-2.  **`SUMMARY.pdf`**: A standalone "At a Glance" cheat sheet. This one-pager is designed for quick reference.
 
 ---
 
@@ -473,7 +464,7 @@ They are not a substitute for judgment. Rules describe the system. Judgment appl
 
 ---
 
-_Skillit Brand Guidelines · Version 1.0 · July 2026_
+_Skillit Brand Design System · Version 1.0 · July 2026_
 _Brand Design: Chiyo · System: Skillit Narrative & Brand_
 
 ### Responsive Scaling

@@ -96,7 +96,7 @@ Route tasks to the correct model — do not treat them as interchangeable:
 ```
 skillit-bds/
 ├── README.md                  ← Start here (engineering + LLM instructions)
-├── HUMAN-INSTRUCTIONS.md      ← Human-readable brand guidelines (PDF equivalent)
+├── HUMAN-INSTRUCTIONS.md      ← Human-readable brand instructions
 ├── LLM-INSTRUCTIONS.md        ← System prompt for AI agents generating UI code
 │
 ├── assets/

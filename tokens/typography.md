@@ -41,8 +41,9 @@ If you need a size larger than 160px (e.g., 320px), extrapolate using this algor
 | **Text-4x** |  | 64px |  | 48pt | Semibold (600) | Bold (700) | 0.90 | -3% |
 | **Text-2x** |  | 32px |  | 24pt | Medium (500) | Semibold (600) | 1.00 | -2% |
 | **Text-1x** |  | 16px |  | 12pt | Regular (400) | Medium (500) | 1.10 | -1% |
+| **Text-0.5x** |  | 12px |  | 9pt | Regular (400) | Medium (500) | 1.20 | 0% |
 
-*(Note: Text-1x is the accessibility floor for body copy and operates slightly outside the strict 2x multiplier rule to protect legibility).*
+*(Note: Text-1x and Text-0.5x operate outside the strict 2x multiplier rule to protect legibility on job-site screens. 12px is the absolute hard floor).*
 
 ## Functional type scale (UI)
 
@@ -116,6 +117,13 @@ This is a system font stack — no CDN required. Use it only for data strings, n
   --text-1x-weight-bold:    500;
   --text-1x-leading:        1.10;
   --text-1x-tracking:       -0.01em;
+
+  /* Text-0.5x (Hard Legibility Floor) */
+  --text-0.5x:              0.75rem;
+  --text-0.5x-weight:       400;
+  --text-0.5x-weight-bold:  500;
+  --text-0.5x-leading:      1.20;
+  --text-0.5x-tracking:     0em;
 
   /* Functional UI scale */
   --text-ui-lg:     1.125rem;
