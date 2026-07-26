@@ -15,3 +15,8 @@ Thumbs.db
 # Temporary files
 *.log
 tmp/
+
+# Opencode Memory Files
+MEMORY.md
+memory/
+
