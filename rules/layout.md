@@ -1,43 +1,27 @@
 # Layout Rules — Skillit BDS
-
 **Last updated:** 2026-07-10
-
 ---
-
 ## The core principle
-
-Whitespace is structural mass. It organizes data and anchors the grid. The human is the subject; the layout is the mathematical framework that supports them. 
-
+Whitespace is structural mass. It organizes data and anchors the grid. The human is the subject; the layout is the mathematical framework that supports them.
 The visual constraint (non-negotiable): **mostly white, black, and a splash of a single accent.** If a visual element does not perform a strict functional job, delete it.
-
 ---
-
 ## Surface hierarchy
-
 Every layout is built on three layers. Use them in order.
-
 | Layer | Color | Token | Role |
 |---|---|---|---|
 | Ground | Canvas | `--color-bg` | Default background for all surfaces |
 | Structure | Iron | `--color-fg` | Text, borders, dividers, nav elements |
 | Signal | Traffic Cone | `--color-primary` | One dominant accent per layout — CTAs, key data, active states |
-
 State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional only. They appear in UI interactions, not in layout composition.
-
 ---
-
 ## Whitespace rules
-
 - **Section padding (desktop):** Minimum `--space-16` (64px) top and bottom. Hero sections: minimum `--space-24` (96px).
 - **Section padding (mobile):** Minimum `--space-10` (40px) top and bottom.
 - **Between unrelated content blocks:** Always `--space-16` minimum. Never let unrelated content run together visually.
 - **Text column width:** Never exceed `70ch`. Set `max-width: var(--max-width-text)` on all body text blocks.
 - **Image-to-text gap:** Minimum `--space-8` (32px) between an image and its adjacent text block.
-
 ---
-
 ## Grid
-
 ### Website / marketing
 - Strict 12-column grid on desktop. No flexible fractional columns (e.g., `1fr`, `1.5fr`). Use fixed `col-span` classes so elements align flawlessly down the vertical axis.
 - Gutter: `--space-32` (32px).
@@ -45,38 +29,23 @@ State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional on
 - Side margins: `--space-128` (128px) desktop.
 - **Tablet (`< 1024px`):** The 12-column grid collapses to a single-column layout early to prevent element jumbling. Large typography needs horizontal space; never force complex multi-column grids onto medium viewports.
 - **Mobile (`< 768px`):** Scaling down typography via CSS `clamp()` and implementing generous minimum mobile side padding (`--space-48` / 48px). We preserve wide margins even on mobile to maintain the premium, editorial aesthetic seen on Anthropic.
-
 ### App (worker-facing)
 - Single-column, max-width `480px`.
 - Side padding: `--space-4` (16px).
 - All interactive elements respect a minimum touch target of `44px`.
-
 ---
-
 ## Visual minimalism rules
-
 These are hard constraints derived from the core brand direction. They apply to every generated layout.
-
 1. **Flush left alignment.** The system relies on a strict horizontal grid. Text blocks, headings, and data tables align flush left. Centered text is prohibited for body copy and strongly discouraged for headlines.
-
 2. **Optical Top Alignment.** Multi-column elements align at the top edge. To achieve this, typography must be vertically trimmed (`margin-top: -0.15em`) so the cap height—not the invisible line-height box—aligns flush with adjacent images or containers.
-
 3. **Button Alignment Exception.** Do not align buttons by their external padding bubble. Align them optically by the text inside them. A button must shift upward by its top padding value to ensure its internal text cap-height aligns with adjacent layout elements.
-
 4. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-8x` directly adjacent to `--text-1x`), not by stepping gently through intermediate sizes or adding color.
-
 5. **Strict functionalism.** Every border and margin must serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.
-
-6. **One accent per layout.** Traffic Cone (`--color-primary`) appears once per page section. It does not repeat as decoration. 
-
+6. **One accent per layout.** Traffic Cone (`--color-primary`) appears once per page section. It does not repeat as decoration.
 7. **Shape signals action (Static = Sharp, Actionable = Pill).** All static layout containers (cards, panels, photographs) must use hard, straight edges (`border-radius: 0`). Only actionable human touchpoints (buttons) use a fully rounded pill shape (`border-radius: 100px`). No intermediate rounded corners (e.g., 4px or 8px) are permitted. No gradients, no drop shadows.
-
 8. **Typography does the heavy lifting.** Space and scale create order. Color is exclusively used to signal interactive function (links, buttons, states).
-
 ---
-
 ## Section types
-
 ### Hero
 - Full viewport height on desktop, minimum `560px`.
 - Background: Canvas (`--color-bg`).
@@ -84,41 +53,32 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Headline: `--text-8x` or `--text-4x`, Iron, sentence-case.
 - Single Traffic Cone CTA button beneath headline.
 - No secondary CTA below the fold.
-
 ### Content section
 - Two-column (text left, image right) or full-width text.
 - Background: Canvas.
 - Subheading: `--text-20`, Iron.
 - Body: `--text-1x`, Iron, max `70ch`.
 - Accent use: Traffic Cone for inline data callouts or a single stat highlight, not decorative.
-
 ### Data / proof section
 - Stat blocks in a 3- or 4-column grid.
 - Stats: `--text-8x`, Traffic Cone.
 - Stat labels: `--text-ui-sm`, Iron.
 - Background: Canvas or Iron (inverted — white text on Iron, Traffic Cone stats).
-
 ### CTA / sign-up section
 - Centered, maximum `600px` wide.
 - One headline, one subline, one button.
 - Background: Canvas or full Iron panel.
 - Button: Traffic Cone background, Canvas text.
-
 ---
-
 ## Nav bar
-
 - Background: Canvas with boot tread pattern overlay (low opacity — texture only, not legible repeat).
 - Logo: left-aligned.
 - Nav links: Iron, `--text-ui-sm`, sentence-case, no underline at rest.
 - Active nav link: Traffic Cone, no underline.
 - Primary CTA (“Sign up”): Traffic Cone button, right-aligned.
 - Nav tabs (approved): How It Works · Our Network · Jobs · About Us · Resources
-
 ---
-
 ## What is banned in layouts
-
 - Gradients of any kind
 - Drop shadows on content
 - Rounded corners on any element ()

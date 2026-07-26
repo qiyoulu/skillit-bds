@@ -1,14 +1,10 @@
 # Iconography Rules — Skillit BDS
-
 **Last updated:** 2026-07-15
-
 ---
-
 ## 1. Core Principles
 - **Utilitarian & Honest:** Icons must be instantly recognizable and strictly utilitarian. No decorative embellishments, unnecessary gradients, or clever visual puns. They are tools, not art.
 - **Solid Fill Only:** To remain visually consistent with the heavy, block-like geometry of the Skillit mark and pattern, all icons must be solid, filled shapes. Line icons and strokes are strictly banned.
 - **Worker-First Legibility:** Icons must be legible on high-glare screens in bright sunlight on a job site. Solid fills perform significantly better for optical recognition at small sizes than thin lines.
-
 ## 2. Geometry & Grid
 - **Base Canvas:** 24x24px.
 - **The 10x10 Sub-grid:** To maintain blocky structural DNA while perfectly centering on an even canvas, all icons must be drawn on a strict 10x10 sub-grid where **1 block = 2x2px**. All vertices must snap to multiples of 2.
@@ -16,13 +12,11 @@
 - **Shapes:** Solid, filled vector shapes (`fill="currentColor"`). No strokes.
 - **Angles & Curves:** Restricted to 90-degree and 45-degree angles. **No bezier curves.** The only curves permitted in the entire set are mathematically perfect full circles or half-circles.
 - **Clearance:** Minimum internal padding of 2px (1 block) to maintain the heavy aesthetic.
-
 ## 3. Status Icons & Accessibility
 To comply with the brand's strict accessibility rules (never relying on color alone) and to mimic physical job-site signage, status icons are permanently locked to specific geometric silhouettes. The icon graphic is punched out of the solid shape:
 - **Success (Bottle Glass / Green):** Solid **Circle** (Proceed / Safe)
 - **Warning (Hard Hat / Yellow):** Solid **Triangle** (Hazard / Yield)
 - **Error (Toolbox / Red):** Solid **Octagon** (Critical / Stop)
-
 ## 4. Approved Core Inventory
 The following 12 icons constitute the core structural set. Do not invent new metaphors for these actions.
 1. `menu.svg` (Sandwich/hamburger for mobile nav)
@@ -37,7 +31,6 @@ The following 12 icons constitute the core structural set. Do not invent new met
 10. `arrow-right.svg` (Directional flow)
 11. `arrow-left.svg` (Back/return)
 12. `chevron-down.svg` (Dropdown/expand)
-
 ## 4. Implementation Rules
 - **Coloring:** Icons inherit their color from the parent text element (`fill="currentColor"`), allowing them to automatically adapt to their UI context (Iron on Canvas, Canvas on Traffic Cone, etc.).
 - **Inline SVGs:** To unlock the power of `currentColor`, icons should be inlined directly into the HTML (or handled via modern component frameworks) rather than loaded as static `<img>` tags.
