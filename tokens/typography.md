@@ -20,17 +20,17 @@ If you need a size larger than 160px (e.g., 320px), extrapolate using this algor
 - **Size:** Multiply by 2.
 - **Base Weight:** Add +100 for each doubling of size (Max: 900).
 - **Bolded Weight:** Base weight + 200 (Max: 900).
-- **Line Height:** Subtract -0.1 for each doubling of size (Hard floor: 0.8).
-- **Tracking:** Subtract -1% (-0.01em) for each doubling of size.
+- **Line Height:** Add +0.2 for each halving of size (e.g., 256px → 0.60, 128px → 0.80, down to 16px → 1.40).
+- **Tracking:** Subtract -2% (-0.02em) for each doubling of size (floor: 0%).
 | Level | Token | px (screen) | rem (web) | pt (print) | Base Weight | Bolded | Line height | Tracking |
 |---|---|---|---|---|---|---|---|---|
-| **Text-16x** |  | 256px |  | 192pt | Extra Bold (800) | Black (900) | 0.80 |  |
-| **Text-8x** |  | 128px |  | 96pt | Bold (700) | Extra Bold (800) | 0.80 | -4% |
-| **Text-4x** |  | 64px |  | 48pt | Semibold (600) | Bold (700) | 0.90 | -3% |
-| **Text-2x** |  | 32px |  | 24pt | Medium (500) | Semibold (600) | 1.00 | -2% |
-| **Text-1x** |  | 16px |  | 12pt | Regular (400) | Medium (500) | 1.10 | -1% |
-| **Text-0.5x** |  | 12px |  | 9pt | Regular (400) | Medium (500) | 1.20 | 0% |
-*(Note: Text-1x and Text-0.5x operate outside the strict 2x multiplier rule to protect legibility on job-site screens. 12px is the absolute hard floor).*
+| **Text-16x** |  | 256px |  | 192pt | Extra Bold (800) | Black (900) | 0.60 | -8% |
+| **Text-8x** |  | 128px |  | 96pt | Bold (700) | Extra Bold (800) | 0.80 | -6% |
+| **Text-4x** |  | 64px |  | 48pt | Semibold (600) | Bold (700) | 1.00 | -4% |
+| **Text-2x** |  | 32px |  | 24pt | Medium (500) | Semibold (600) | 1.20 | -2% |
+| **Text-1x** |  | 16px |  | 12pt | Regular (400) | Medium (500) | 1.40 | 0% |
+| **Text-0.75x** |  | 12px |  | 9pt | Regular (400) | Medium (500) | 1.55 | 0% |
+*(Note: Text-1x and Text-0.75x operate outside the strict 2x multiplier rule to protect legibility on job-site screens. 12px is the absolute hard floor. Text-16x leading of 0.60 is aggressive — manually adjust if descenders clip at your specific rendering size.)*
 ## Functional type scale (UI)
 These tokens cover UI surfaces (app, dashboard, labels, captions) where the primary hierarchy doesn’t apply directly.
 | Token | Role | Size | Weight | Line height | Letter spacing |
@@ -61,38 +61,38 @@ This is a system font stack — no CDN required. Use it only for data strings, n
   --text-16x:               16rem;
   --text-16x-weight:        800;
   --text-16x-weight-bold:   900;
-  --text-16x-leading:       0.80;
-  --text-16x-tracking:      -0.04em;
+  --text-16x-leading:       0.60;
+  --text-16x-tracking:      -0.08em;
   /* Text-8x */
   --text-8x:               8rem;
   --text-8x-weight:        700;
   --text-8x-weight-bold:   800;
-  --text-8x-leading:       0.90;
-  --text-8x-tracking:      -0.03em;
+  --text-8x-leading:       0.80;
+  --text-8x-tracking:      -0.06em;
   /* Text-4x */
   --text-4x:                4rem;
   --text-4x-weight:         600;
   --text-4x-weight-bold:    700;
-  --text-4x-leading:        0.90;
-  --text-4x-tracking:       -0.03em;
+  --text-4x-leading:        1.00;
+  --text-4x-tracking:       -0.04em;
   /* Text-2x */
   --text-2x:                2rem;
   --text-2x-weight:         500;
   --text-2x-weight-bold:    600;
-  --text-2x-leading:        1.00;
+  --text-2x-leading:        1.20;
   --text-2x-tracking:       -0.02em;
   /* Text-1x */
   --text-1x:                1rem;
   --text-1x-weight:         400;
   --text-1x-weight-bold:    500;
-  --text-1x-leading:        1.10;
-  --text-1x-tracking:       -0.01em;
-  /* Text-0.5x (Hard Legibility Floor) */
-  --text-0.5x:              0.75rem;
-  --text-0.5x-weight:       400;
-  --text-0.5x-weight-bold:  500;
-  --text-0.5x-leading:      1.20;
-  --text-0.5x-tracking:     0em;
+  --text-1x-leading:        1.40;
+  --text-1x-tracking:       0em;
+  /* Text-0.75x (Hard Legibility Floor) */
+  --text-0.75x:             0.75rem;
+  --text-0.75x-weight:      400;
+  --text-0.75x-weight-bold: 500;
+  --text-0.75x-leading:     1.55;
+  --text-0.75x-tracking:    0em;
   /* Functional UI scale */
   --text-ui-lg:     1.125rem;
   --text-ui:        1rem;
