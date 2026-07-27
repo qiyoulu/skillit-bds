@@ -20,12 +20,12 @@ The wordmark is set in Work Sans Black, all-caps, −3% tracking. It is a fixed 
 **Clear space:** Minimum clear space equal to the wordmark cap height on all sides.
 ---
 ## The lockup
-The lockup is the mark and wordmark combined. It is the primary logo for all desktop and tablet environments.
+The lockup is the mark and wordmark together. It is the primary logo — use it wherever possible.
 **File:** `assets/logo/lockup.svg`
-**Construction:** Mark to the left of the wordmark, aligned to cap height, 1 unit of space between them.
+**Construction:** Mark to the left of the wordmark, aligned to cap height, 2 units of space between them. (1 unit = 1 grid unit from the 7×8 mark grid.)
 **Format:** Horizontal only. No stacked or vertical variant.
-**Minimum size:** 24px/18pt height.
-**Clear space:** Minimum clear space equal to the wordmark cap height on all sides of the lockup as a unit.
+**Minimum size:** 24px/18pt height (mark at 24px/18pt, wordmark at 18px/13.5pt).
+**Clear space:** Maintain a minimum clear space of 2 units on all sides of the lockup as a unit.
 ## Responsive Rules (Mobile)
 Because horizontal space is at an absolute premium on mobile viewports (e.g., iPhone screens), the full lockup collapses into the standalone **mark**.
 - **Breakpoint:** `< 768px` (Mobile)

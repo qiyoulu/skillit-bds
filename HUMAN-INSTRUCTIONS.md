@@ -35,7 +35,7 @@ Your job is to communicate that truth. Our visuals and copy must project infrast
 ## Mission
 
 > Technology should make humans more essential, not more expendable.
-> This is our anchor. Every design decision, every piece of copy, and every product interaction must pass this test. **If an asset diminishes the worker, makes them look like a corporate resource, or relies on tech-utopian AI hype, revise it.**
+> This is our anchor. Every design decision, every piece of copy, and every product interaction must pass this test. If an asset diminishes the worker, makes them look like a corporate resource, or relies on tech-utopian AI hype, revise it.
 
 ## **Worker First.** The brand is built around the worker, not the contractor. The contractor is our customer, but the worker is our subject. When in doubt, frame the design and the message from the worker’s perspective.
 
@@ -81,16 +81,16 @@ The Skillit mark is the brand’s initial ‘S’ engineered for **physical grip
 
 ### The wordmark
 
-The wordmark is set in Work Sans Black, all-caps, with −3% tracking. It is the logotype — a fixed graphic asset, not a line of text.
+The wordmark is set in Work Sans Black, all-caps, with −3% tracking. It is a fixed graphic asset, not a line of text.
 **Minimum size:** 18px/13.5pt height.
 **Clear space:** Maintain a minimum clear space equal to the cap height of the wordmark on all sides. Never crowd it against an edge, another logo, or a photographic element.
 
 ### The lockup
 
-The lockup is the mark and wordmark together. It is the primary logo — use it wherever space allows.
-**Horizontal lockup only.** The mark sits to the left of the wordmark, aligned to the cap height, with one unit of space between them. No stacked or vertical variant.
-**Minimum size:** 24px/18pt height (at this scale, the mark is 24px/18pt and the wordmark scales naturally to 18px/13.5pt).
-**Clear space:** Maintain a minimum clear space equal to the cap height of the wordmark on all sides of the lockup as a unit. Never crowd it against an edge, another logo, or a photographic element.
+The lockup is the mark and wordmark together. It is the primary logo — use it wherever possible.
+**Horizontal lockup only.** The mark sits to the left of the wordmark, aligned to the cap height, with 2 units of space between them. (1 unit = 1 grid unit from the 7×8 mark grid.) No stacked or vertical variant.
+**Minimum size:** 24px/18pt height (mark at 24px/18pt, wordmark at 18px/13.5pt).
+**Clear space:** Maintain a minimum clear space of 2 units on all sides of the lockup as a unit. Never crowd it against an edge, another logo, or a photographic element.
 
 ### Color variants
 
@@ -132,50 +132,15 @@ The Skillit pattern is a step-and-repeat tessellation of the boot tread mark. Be
 
 ## Iconography
 
-Icons are tools, not decorations. The system is engineered for legibility on a job site — heavy, solid, and mathematically centered.
+Icons are tools, not decorations — heavy, solid, mathematically centered for job-site legibility.
 
-### Geometry
+All icons are drawn on a 24×24px canvas using a strict 10×10 sub-grid where one block equals 2px. The sub-grid solves centering math — 2px divides the 24px canvas evenly — and enforces the same heavy, cast-iron geometry as the mark. Every shape must snap to the grid; off-grid paths break the system.
 
-| Property      | Value                          |
-| ------------- | ------------------------------ |
-| Canvas        | 24×24px                        |
-| Sub-grid      | 10×10 (1 block = 2px)          |
-| Style         | Solid fill only                |
-| Stroke weight | None — solid fill, not stroked |
-| Corner radius | 0px — sharp edges, no rounding |
-| Color         | `fill="currentColor"` always   |
+Style is solid fill only. No strokes, no outlines, no gradients, no drop shadows, 0px corner radius on all geometry. Icons inherit their color via `fill="currentColor"` — never hardcode a hex value in an SVG.
 
-The 10×10 sub-grid (1 block = 2px) solves mathematical centering — the 2px block unit divides the 24px canvas evenly — and enforces the heavy cast-iron aesthetic consistent with the logo mark.
+Status never relies on color alone. Locked silhouettes: Success = Circle, Warning = Triangle, Error = Octagon.
 
-### Rules
-
-- **Solid fill only.** Line icons are banned. They conflict with the heavy, block-like geometry of the mark and pattern.
-- **0px corner radius.** Rounding icon geometry is not permitted.
-- **`fill="currentColor"` always.** Never hardcode a fill color in the SVG. Icons inherit their color from the surrounding CSS context.
-- **Stay on the grid.** All geometry must align to the 10×10 sub-grid. Off-grid paths break centering math.
-- **No gradients, no drop shadows, no decorative embellishments.**
-
-### Status shape signals
-
-Status must never rely on color alone. Each state has a locked geometric silhouette:
-| State | Shape |
-|---|---|
-| Success | Circle |
-| Warning | Triangle |
-| Error | Octagon |
-
-### Core icon set (Phase I)
-
-Checkmark · Error · Warning · Search · Arrow (×4) · Location · Clock · User · External link · Plus · Menu (hamburger)
-
-### Do / Don't
-
-| Do                                                | Don't                               |
-| ------------------------------------------------- | ----------------------------------- |
-| Draw solid filled shapes on the 10×10 sub-grid    | Use stroke/outline icon styles      |
-| Use `fill="currentColor"`                         | Hardcode hex values in SVG fills    |
-| Keep corners at 0px                               | Round any icon geometry             |
-| Use the circle/triangle/octagon system for status | Use color as the only status signal |
+**Core set (Phase I):** Checkmark · Error · Warning · Search · Arrow (×4) · Location · Clock · User · External link · Plus · Menu
 
 ---
 
@@ -186,23 +151,24 @@ Skillit uses one typeface: **Work Sans**. Designed by Australian designer Wei Hu
 ### The Typographic Algorithm
 
 The typography system is mathematically derived. Levels are named objectively by their pixel size.
-The scale is a perfect factor-of-2 progression built on a 16px baseline: `16 → 32 → 64 → 128 → 256`.
+The scale is a perfect factor-of-2 progression built on a 16px baseline: `128 → 64 → 32 → 16`, with the addition of a smaller 12px caption level as the hard legibility floor.
 | Level | Size | Base Weight | Bolded | Line Height | Tracking | Use |
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
 | **Text-8x** | 128px | Bold (700) | Black (900) | 0.80 | −6% | Hero headlines at massive scale |
 | **Text-4x** | 64px | Semibold (600) | Extra Bold (800) | 1.00 | −4% | Standard headlines |
 | **Text-2x** | 32px | Medium (500) | Bold (700) | 1.20 | −2% | Subheadings, pull quotes |
 | **Text-1x** | 16px | Regular (400) | Semibold (600) | 1.40 | 0% | All running copy |
+| **Text-0.75x** | 12px | Regular (400) | Medium (500) | 1.55 | 0% | Captions, labels, legal |
 
 _(Text-16x at 0.60 leading is aggressive at extreme scale — manually adjust if descenders clip.)_
 
 ### Variable weight & optical balancing
 
 Work Sans is a **variable font**. Rather than fixed buckets, it has a continuous weight axis from 100 to 900.
-**The Halation Rule:** Light text on a dark background creates an optical illusion (halation) that makes the text look noticeably thicker. Because we use a variable font, we correct this optically:
+**Optical correction:** Light text on a dark background creates an optical illusion (halation) that makes letterforms appear heavier than they are. Two techniques reduce this:
 
-- **On light backgrounds (Canvas):** Use standard weights (400, 500, 600, 700).
-- **On dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass):** Subtract **30 units** of font weight. (e.g., Regular becomes 370, Semibold becomes 570). This ensures the text looks perfectly uniform across the entire system.
+- **On light backgrounds (Canvas):** Use standard weights (400, 500, 600, 700). Canvas is already an off-white (`#FAF9F6`) rather than pure white, which naturally reduces irradiation against dark type.
+- **On dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass):** Subtract ~25 units of font weight (375, 475, 575, 675). The goal is to make the text read as the same apparent weight as it would on a light background.
 
 ### Typographic Punctuation
 

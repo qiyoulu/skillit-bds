@@ -106,13 +106,13 @@ This is a system font stack — no CDN required. Use it only for data strings, n
   --weight-bold:       700;
   --weight-extrabold:  800;
   --weight-black:      900;
-  /* Optical Balancing for Dark Backgrounds (Halation compensation) */
-  --weight-regular-dark:    370;
-  --weight-medium-dark:     470;
-  --weight-semibold-dark:   570;
-  --weight-bold-dark:       670;
-  --weight-extrabold-dark:  770;
-  --weight-black-dark:      870;
+  /* Optical Balancing for Dark Backgrounds (halation compensation — approx. −25 units, adjust by eye) */
+  --weight-regular-dark:    375;
+  --weight-medium-dark:     475;
+  --weight-semibold-dark:   575;
+  --weight-bold-dark:       675;
+  --weight-extrabold-dark:  775;
+  --weight-black-dark:      875;
 }
 ```
 ---
@@ -129,7 +129,7 @@ This is a system font stack — no CDN required. Use it only for data strings, n
 - Maximum line length for body: 70 characters (`max-width: var(--max-width-text)`).
 ### Variable Font & Optical Balancing
 Work Sans is implemented as a variable font (`wght@100..900`).
-- **Optical Balancing:** White text on dark backgrounds creates an optical illusion (halation) making it appear thicker. To maintain perfect visual consistency, subtract 30 weight units from any text placed on a dark background (Iron, Traffic Cone, Toolbox, Bottle Glass). E.g., `font-weight: var(--weight-regular-dark);` (370) instead of 400.
+- **Optical Balancing:** Light text on a dark background creates an optical illusion (halation) making letterforms appear heavier. Canvas is already off-white (`#FAF9F6`) rather than pure white, which reduces irradiation naturally. For text on dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass), subtract approximately 25 units of font weight as a starting point — e.g., `font-weight: var(--weight-regular-dark);` (375) instead of 400. Adjust by eye; this is a heuristic, not a fixed rule.
 - **Micro-interactions:** Use CSS transitions on the `font-weight` axis (e.g., `400` to `600`) for fluid hover states on navigation links and buttons, rather than abrupt jumps.
 ### Monospace / metadata
 - Use `--font-mono` for: timestamps, worker IDs, distances, file sizes, any numeric data string.
