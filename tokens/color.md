@@ -11,14 +11,14 @@
 ## Core palette
 | Token             | Name     | Hex       | CMYK           | Spot (Pantone) | UI Role                                            |
 | ----------------- | -------- | --------- | -------------- | -------------- | -------------------------------------------------- |
-| `--color-bg`      | Canvas | `#FAF7F3` | 2, 2, 4, 0     | Paper          | Primary background — all surfaces default to this  |
-| `--color-surface` | Plaster  | `#FFFFFF` | 0, 0, 0, 0     | None           | Elevated surfaces, cards, and isolated form inputs |
-| `--color-fg`      | Iron | `#232F36` | 80, 50, 45, 65 | 432 C          | All body text, headings, structural elements       |
-| `--color-primary` | Traffic Cone     | `#EF6F1A` | 0, 65, 100, 0  | 158 C          | Primary CTA, active states, key accents            |
-| `--color-warning` | Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C         | Non-fatal alerts, warnings                         |
-| `--color-error`   | Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C          | Fatal errors, destructive actions                  |
-| `--color-success` | Bottle Glass   | `#367C2B` | 75, 15, 100, 10| 364 C          | Confirmations, success states                      |
-| `--color-link`    | Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C         | Text links only — underlined, never used as a fill |
+| `--color-bg`      | 📜 Canvas | `#FAF7F3` | 2, 2, 4, 0     | Paper          | Primary background — all surfaces default to this  |
+| `--color-surface` | ⬜️ Plaster  | `#FFFFFF` | 0, 0, 0, 0     | None           | Elevated surfaces, cards, and isolated form inputs |
+| `--color-fg`      | ⬛️ Iron | `#232F36` | 80, 50, 45, 65 | 432 C          | All body text, headings, structural elements       |
+| `--color-primary` | 🟧 Traffic Cone     | `#EF6F1A` | 0, 65, 100, 0  | 158 C          | Primary CTA, active states, key accents            |
+| `--color-warning` | 🟨 Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C         | Non-fatal alerts, warnings                         |
+| `--color-error`   | 🟥 Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C          | Fatal errors, destructive actions                  |
+| `--color-success` | 🟩 Bottle Glass   | `#367C2B` | 75, 15, 100, 10| 364 C          | Confirmations, success states                      |
+| `--color-link`    | 🟦 Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C         | Text links only — underlined, never used as a fill |
 ---
 ## Contrast ratios (WCAG AA minimum: 4.5:1 body, 3:1 UI)
 | Foreground         | Background         | Ratio  | Use                                                                                                 |
@@ -34,34 +34,34 @@
 | Painter's Tape `#007CA6`   | Canvas `#FAF7F3` | 4.6:1  | Link text on background — passes AA                                                                 |
 ---
 ## Usage rules per token
-### `--color-bg` Canvas `#FAF7F3`
+### `--color-bg` 📜 Canvas `#FAF7F3`
 - Default background for all surfaces: website, app, documents, presentations.
 - Never use pure white (`#FFFFFF`) as the global background — Canvas is the ground.
-### `--color-surface` Plaster `#FFFFFF`
+### `--color-surface` ⬜️ Plaster `#FFFFFF`
 - Use for elevated cards, floating navigation, isolated panels, and popovers.
 - Because drop shadows and borders are banned on these components, Plaster separates from Canvas purely through its stark brightness and typographic structure.
-### `--color-fg` Iron `#232F36`
+### `--color-fg` ⬛️ Iron `#232F36`
 - All body text, headings, labels, metadata.
 - Used for structural UI elements: borders, dividers, nav strokes.
 - The single darkest tone in the system — do not introduce black (`#000000`).
-### `--color-primary` Traffic Cone `#EF6F1A`
+### `--color-primary` 🟧 Traffic Cone `#EF6F1A`
 - Primary CTA buttons, active nav states, key data callouts.
 - One dominant use per layout. Do not repeat as decoration.
 - **Text on Traffic Cone:** Use Iron (`#232F36`) only (4.54:1, passes AA). Canvas on Traffic Cone fails at all sizes (2.83:1) and is not permitted.
 - Do not use for links — that role belongs to Painter's Tape.
-### `--color-warning` Hard Hat `#FEB11C`
+### `--color-warning` 🟨 Hard Hat `#FEB11C`
 - Warning badges, alert banners, incomplete profile states.
-- Text on Hard Hat must always be Iron (`#232F36`) — never white.
+- Text on Hard Hat should always be Iron (`#232F36`) — never white.
 - Never pair with Toolbox or Bottle Glass on the same surface (colorblindness risk).
-### `--color-error` Toolbox `#C8102E`
+### `--color-error` 🟥 Toolbox `#C8102E`
 - Destructive action confirmation, form validation errors, failed states.
-- Text on Toolbox must always be Canvas (`#FAF7F3`).
-- Must always be accompanied by an error label — never color alone.
-### `--color-success` Bottle Glass `#367C2B`
+- Text on Toolbox should always be Canvas (`#FAF7F3`).
+- Should always be accompanied by an error label — never color alone.
+### `--color-success` 🟩 Bottle Glass `#367C2B`
 - Confirmed actions, verified worker badges, completed profile states.
-- Text on Bottle Glass must always be Canvas (`#FAF7F3`).
-- Must always be accompanied by a success label — never color alone.
-### `--color-link` Painter's Tape `#007CA6`
+- Text on Bottle Glass should always be Canvas (`#FAF7F3`).
+- Should always be accompanied by a success label — never color alone.
+### `--color-link` 🟦 Painter's Tape `#007CA6`
 - Text links only. Always underlined.
 - Never used as a button fill, background, or decorative element.
 - On dark (Iron) backgrounds: use Canvas underlined text instead.

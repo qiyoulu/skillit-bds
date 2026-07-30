@@ -2,7 +2,7 @@
 **Last updated:** 2026-07-10
 ---
 ## Load this file when the output is audience-specific.
-Skillit serves two distinct audiences simultaneously. They have different needs, different emotional states, and different relationships with the product. The brand must serve both without flattening either.
+Skillit serves two distinct audiences simultaneously. They have different needs, different emotional states, and different relationships with the product. The brand should serve both without flattening either.
 **Default rule:** When in doubt, write for the worker first. The worker is the subject. The contractor is the customer. These are not the same thing.
 ---
 ## Audience 1: Craft workers

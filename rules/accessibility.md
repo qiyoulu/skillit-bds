@@ -2,7 +2,7 @@
 **Last updated:** 2026-07-10
 ---
 ## Non-negotiable
-Every output — website, app, social asset, document, generated content — must meet these requirements. Accessibility is baked in, not bolted on. The brand was designed around these constraints.
+Every output — website, app, social asset, document, generated content — should meet these requirements. Accessibility is baked in, not bolted on. The brand was designed around these constraints.
 ---
 ## Contrast requirements (WCAG AA)
 | Text type                                          | Minimum ratio | Standard |
@@ -32,13 +32,13 @@ Every output — website, app, social asset, document, generated content — mus
 ---
 ## Color blindness rules
 Approximately 8% of men and 0.5% of women have red-green color blindness (deuteranopia/protanopia). These rules are non-negotiable:
-1. **Never use color as the only signal.** Every status state (success, error, warning) must pair color with a shape and a text label. Color alone is never sufficient.
-2. **Never pair red and green as opposing states.** Toolbox (error) and Bottle Glass (success) must never appear as direct visual opposites without shape differentiation.
+1. **Never use color as the only signal.** Every status state (success, error, warning) should pair color with a shape and a text label. Color alone is never sufficient.
+2. **Never pair red and green as opposing states.** Toolbox (error) and Bottle Glass (success) should never appear as direct visual opposites without shape differentiation.
 3. **Orange + Blue is the safest contrast pair.** Traffic Cone (`--color-primary`) and Painter's Tape (`--color-link`) are perceptually distinct for all common forms of color blindness.
 4. **Hard Hat (yellow) + Traffic Cone (orange) require shape or size differentiation** when both appear in the same context. Never use them as adjacent status indicators without a distinct shape difference.
 ---
 ## Status state rules (shape coding)
-Every status state must communicate via three channels simultaneously: color + shape + label.
+Every status state should communicate via three channels simultaneously: color + shape + label.
 | State   | Color              | Shape                 | Label required                            |
 | ------- | ------------------ | --------------------- | ----------------------------------------- |
 | Success | Bottle Glass `#367C2B`   | Circle / pill         | “Verified,” “Complete,” “Confirmed”       |
@@ -49,7 +49,7 @@ Every status state must communicate via three channels simultaneously: color + s
 ## Touch target rules (mobile / app)
 - Minimum touch target size: `44px × 44px` (Apple HIG / WCAG 2.5.5).
 - This applies to all interactive elements: buttons, links, checkboxes, radio inputs, nav items.
-- The visible element may be smaller, but the clickable/tappable area must meet the minimum.
+- The visible element may be smaller, but the clickable/tappable area should meet the minimum.
 - On the worker app specifically: assume fat fingers, gloves, and direct sunlight. When in doubt, go larger.
 ---
 ## Text sizing rules
@@ -59,13 +59,13 @@ Every status state must communicate via three channels simultaneously: color + s
 - Line height minimum: `1.4` for UI, `1.6` for body text. Tighter than this hurts legibility.
 ---
 ## Focus states
-- All interactive elements must have a visible focus ring.
+- All interactive elements should have a visible focus ring.
 - Focus ring: `2px solid` Traffic Cone (`--color-primary`), `2px offset`.
 - Never remove focus outlines with `outline: none` without providing an equivalent custom focus style.
-- Focus must be keyboard-navigable in the correct DOM order.
+- Focus should be keyboard-navigable in the correct DOM order.
 ---
 ## Image alt text rules
-All images in generated content must have descriptive alt text. Rules:
+All images in generated content should have descriptive alt text. Rules:
 - Worker portraits: describe the person’s trade and action, not their appearance. “Graphiteworker reviewing blueprints on a job site” not “man in hard hat.”
 - Product screenshots: describe what’s shown in the UI. “Skillit worker profile showing NCCER certifications and availability.”
 - Decorative images (boot tread pattern, texture): `alt=""` (empty string — tells screen readers to skip).

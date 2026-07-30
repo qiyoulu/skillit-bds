@@ -53,7 +53,7 @@ Built on a 4px base unit (`0.25rem`). Every value is a multiple of 4.
 | `--space-24` | `6rem` | 96px | Maximum section vertical padding |
 ---
 ## Tactile padding
-Buttons and interactive cards must use **double the standard horizontal padding** to feel warm and physical. This is a non-negotiable brand rule.
+Buttons and interactive cards should use **double the standard horizontal padding** to feel warm and physical. This is a non-negotiable brand rule.
 | Component | Vertical padding | Horizontal padding |
 |---|---|---|
 | Button (default) | `--space-3` (12px) | `--space-8` (32px) |
@@ -127,7 +127,7 @@ Buttons and interactive cards must use **double the standard horizontal padding*
 ```
 ---
 ## Whitespace rules
-- **Minimum editorial padding:** All full-width sections must have at minimum `--space-16` (64px) top and bottom padding. Less than this reads as cramped and contradicts the brand’s editorial whitespace principle.
-- **Maximum text width:** Body text columns must never exceed `70ch` (approximately 70 characters). Set `max-width: var(--max-width-text)` on all `<p>` blocks.
+- **Minimum editorial padding:** All full-width sections should have at minimum `--space-16` (64px) top and bottom padding. Less than this reads as cramped and contradicts the brand’s editorial whitespace principle.
+- **Maximum text width:** Body text columns should never exceed `70ch` (approximately 70 characters). Set `max-width: var(--max-width-text)` on all `<p>` blocks.
 - **Hero sections:** Minimum `--space-24` (96px) top padding on desktop. The hero is the brand’s first impression — give it room.
 - **Between unrelated sections:** Always `--space-16` minimum. Never let unrelated content run together.

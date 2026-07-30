@@ -6,7 +6,7 @@
 - Do not hardcode hex values into any SVG paths.
 ---
 ## SVG Management
-To ensure logos, patterns, and icons automatically adapt to their UI context (Iron on Canvas, Canvas on Traffic Cone, etc.), they must inherit CSS colors.
+To ensure logos, patterns, and icons automatically adapt to their UI context (Iron on Canvas, Canvas on Traffic Cone, etc.), they should inherit CSS colors.
 ### The Rule
 **Inline SVGs are the standard.** Every graphic, icon, logo variant, and repeating pattern uses `currentColor`. To unlock this functionality, SVGs should be inlined directly into the HTML (or handled via modern component frameworks like React/Vue that inline them at build time).
 ```html

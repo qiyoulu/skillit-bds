@@ -11,7 +11,7 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 2. **No edge fading or blending.** Images do not fade into the background color. Hard cut only.
 3. **No color grading filters.** No Instagram-style color treatment. No dramatic color shifts. Natural color only.
 4. **No composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on a flat brand color (`--color-bg` Canvas or `--color-fg` Iron) with no environment invented behind them.
-5. **Universal Blend Mode:** All photography must use the `multiply` CSS blend mode (`mix-blend-mode: multiply;`). Because the primary brand ground is Canvas (`#FAF7F3`), this universally drops out lighter backgrounds and melts every photograph perfectly into the layout. This creates a flawless, borderless editorial look across the entire system.
+5. **Universal Blend Mode:** All photography should use the `multiply` CSS blend mode (`mix-blend-mode: multiply;`). Because the primary brand ground is Canvas (`#FAF7F3`), this universally drops out lighter backgrounds and melts every photograph perfectly into the layout. This creates a flawless, borderless editorial look across the entire system.
 ---
 ## Subject: worker portraits
 ### What to capture
@@ -29,7 +29,7 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 - Flat, natural, or diffused lighting only.
 - Outdoor: overcast preferred. Harsh direct sun is acceptable if it reads as authentic job-site light — not as a dramatic effect.
 - No studio rim lights. No gels. No dramatic fill ratios.
-- Blacks must hit true black. No lifted shadows (no “faded” or “matte” look).
+- Blacks should hit true black. No lifted shadows (no “faded” or “matte” look).
 ### What to avoid
 - Stock photo aesthetics: unnatural poses, fake smiles, obvious casting.
 - “Tech company” framing: workers in front of laptops, in conference rooms, in business casual.
@@ -46,7 +46,7 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 - Capture at `2x` resolution (retina). Always.
 - Background: Canvas (`--color-bg`) only. Not pure white, not grey.
 - Browser chrome: minimal or none. Show the UI, not the browser.
-- Data in screenshots must be realistic. Fake or clearly placeholder data (e.g., “John Doe,” “Test Company”) undermines the brand’s credibility.
+- Data in screenshots should be realistic. Fake or clearly placeholder data (e.g., “John Doe,” “Test Company”) undermines the brand’s credibility.
 - Crop tightly to the relevant UI area. Do not show a full screen if the relevant feature is in one panel.
 ---
 ## Subject: hardware and materials (macro)

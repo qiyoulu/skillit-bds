@@ -45,7 +45,7 @@ The mark is always rendered in a single, flat color. No gradients, multi-color t
 The pattern is a step-and-repeat tessellation of the mark. Because the mark features interlocking negative space, repeating it forms a structural, masonry-like wall.
 **Usage rules:**
 - **Placement:** Use as a structural anchor (e.g., the primary nav bar) or on physical touchpoints (debossing, endpapers).
-- **Contrast:** Must be low-contrast, tone-on-tone. Rendering the pattern in **Plaster** (`#FFFFFF`) against a **Canvas** ground is the approved and preferred execution for digital surfaces like the navigation bar.
+- **Contrast:** Should be low-contrast, tone-on-tone. Rendering the pattern in **Plaster** (`#FFFFFF`) against a **Canvas** ground is the approved and preferred execution for digital surfaces like the navigation bar.
 - **Scale:** Keep it scaled as a texture. Do not blow it up into a massive hero graphic.
 - **Restrictions:** Never use as a background behind running text or UI components. Never overlay on photography.
 ---

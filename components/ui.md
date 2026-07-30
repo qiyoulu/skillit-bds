@@ -5,7 +5,7 @@
 - All components use tokens from `tokens/color.md`, `tokens/typography.md`, and `tokens/spacing.md`. Never hardcode values.
 - Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
 - Tactile padding rule: buttons and interactive cards use generous horizontal padding — double the standard. This is a non-negotiable brand rule.
-- Every interactive element must have a visible focus state (2px solid Traffic Cone, 2px offset).
+- Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
 - Touch targets minimum 44px in both dimensions (app).
 ---
 ## Buttons
@@ -42,7 +42,7 @@ For primary actions inside the Iron `surface-inverted` blocks. Note the text col
 ```
 **Label rules:**
 - Sentence-case imperative. “Sign up” / “Apply” / “See the network.” Never “Click here” or “Submit form.”
-- **Strict Consistency:** All buttons that point to the exact same destination page must use the exact same label across the entire platform. If the primary account creation CTA is "Sign up", do not alternate it with "Get started", "Create your profile", or "Join now" elsewhere on the page. Pick one label per destination and lock it.
+- **Strict Consistency:** All buttons that point to the exact same destination page should use the exact same label across the entire platform. If the primary account creation CTA is "Sign up", do not alternate it with "Get started", "Create your profile", or "Join now" elsewhere on the page. Pick one label per destination and lock it.
 ### Secondary button
 Outlined, Iron stroke, no fill. For secondary actions.
 ```css
@@ -172,11 +172,11 @@ Input fields use a bottom-border-only style — no box, no background fill. Mimi
 }
 ```
 **Labels:** Above the field, not inside (placeholder is not a label). `--text-label` size, `--weight-medium`, Iron.
-**Error state:** Border becomes Toolbox (`--color-error`). Error message below field in Toolbox, `--text-ui-sm`. Must include an error icon (non-color signal).
+**Error state:** Border becomes Toolbox (`--color-error`). Error message below field in Toolbox, `--text-ui-sm`. Should include an error icon (non-color signal).
 **Success state:** Border becomes Bottle Glass (`--color-success`). Checkmark icon alongside.
 ---
 ## Badges and status indicators
-Every badge must communicate via color + shape + label. Never color alone.
+Every badge should communicate via color + shape + label. Never color alone.
 ```css
 /* Base badge */
 .badge {
@@ -315,7 +315,7 @@ The footer anchors the bottom of the page using an inverted Iron surface, comple
   color: var(--color-primary);             /* Traffic Cone hover */
 }
 ```
-The logo in the footer must be the `lockup-canvas.svg` variant (Canvas fill) to pass contrast on the Iron background. On smaller viewports, this hides and is replaced by the `mark-canvas.svg` variant.
+The logo in the footer should be the `lockup-canvas.svg` variant (Canvas fill) to pass contrast on the Iron background. On smaller viewports, this hides and is replaced by the `mark-canvas.svg` variant.
 ---
 ## Metadata and data strings
 All timestamps, IDs, distances, file sizes, and numeric data strings use the monospace stack.

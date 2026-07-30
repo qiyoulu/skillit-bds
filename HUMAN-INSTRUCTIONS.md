@@ -4,14 +4,18 @@
 
 ## Introduction
 
-This document is the human-readable companion to the Skillit Brand Design System. The system itself lives as a machine-readable token library — this is the translation of those rules into plain language, for anyone at Skillit who creates something on behalf of the brand.
-Designers, marketers, writers, agency partners, and anyone who has ever asked “does this look right?” — this is for you.
+This is the Skillit Brand Design System. This is not a static set of brand guidelines—it is a living system designed to evolve alongside the company. Its purpose is to ensure every Skillit touchpoint feels unmistakably like Skillit, regardless of who created it.
+
+The brand is a strategic advantage. Our goal is to make the world—enterprise customers, tier-one investors, top talent, and partners— come to us before we even reach out.
+
+This document is the human-readable translation of the rules. The system itself also lives as a machine-readable token library (via MCP). This means anyone at Skillit can use AI tools to generate presentations, sales collateral, product marketing (worker portraits, feature illustrations, screenshots), and other visual outputs that are mathematically and aesthetically perfectly on-brand.
+
+Designers, marketers, writers, engineers, and anyone who has ever asked “does this look right?” — this is for you.
 
 ---
 
 ## At a Glance
 
-_For when you have 30 seconds._
 **The Vibe:** Documentary, not corporate. The smartest person on the job site.
 **The Typography:** Work Sans only. Sentence-case everywhere. No all-caps. Flush-left alignment. Dramatic leaps in scale.
 **The Layout:** Strict functionalism. Whitespace is structural mass. Hard, straight edges only. Canvas (off-white) background, Iron (dark navy) text. No decoration.
@@ -28,14 +32,14 @@ _For when you have 30 seconds._
 **Skillit is not a job board. We are workforce infrastructure.**
 When you create assets for Skillit, you are designing for a specific, misunderstood reality: the physical world tracks materials, schedules, and budgets with extraordinary precision, but it doesn’t track the people doing the work.
 Our data proves that only 1 in 20 workers are missing from the labor force, yet 9 in 10 employers can’t find them. **This is an access problem, not a shortage problem.**
-Your job is to communicate that truth. Our visuals and copy must project infrastructure-level reliability to contractors, while maintaining absolute respect and dignity for the craft worker. Everything we make must reflect our founding reality: **we are builders who built tech**, not a software company that discovered construction.
+Your job is to communicate that truth. Our visuals and copy should project infrastructure-level reliability to contractors, while maintaining absolute respect and dignity for the craft worker. Everything we make should reflect our founding reality: **we are builders who built tech**, not a software company that discovered construction.
 
 ---
 
 ## Mission
 
 > Technology should make humans more essential, not more expendable.
-> This is our anchor. Every design decision, every piece of copy, and every product interaction must pass this test. If an asset diminishes the worker, makes them look like a corporate resource, or relies on tech-utopian AI hype, revise it.
+> This is our anchor. Every design decision, every piece of copy, and every product interaction should pass this test. If an asset diminishes the worker, makes them look like a corporate resource, or relies on tech-utopian AI hype, revise it.
 
 ## **Worker First.** The brand is built around the worker, not the contractor. The contractor is our customer, but the worker is our subject. When in doubt, frame the design and the message from the worker’s perspective.
 
@@ -134,7 +138,7 @@ The Skillit pattern is a step-and-repeat tessellation of the boot tread mark. Be
 
 Icons are tools, not decorations — heavy, solid, mathematically centered for job-site legibility.
 
-All icons are drawn on a 24×24px canvas using a strict 10×10 sub-grid where one block equals 2px. The sub-grid solves centering math — 2px divides the 24px canvas evenly — and enforces the same heavy, cast-iron geometry as the mark. Every shape must snap to the grid; off-grid paths break the system.
+All icons are drawn on a 24×24px canvas using a strict 10×10 sub-grid where one block equals 2px. The sub-grid solves centering math — 2px divides the 24px canvas evenly — and enforces the same heavy, cast-iron geometry as the mark. Every shape should snap to the grid; off-grid paths break the system.
 
 Style is solid fill only. No strokes, no outlines, no gradients, no drop shadows, 0px corner radius on all geometry. Icons inherit their color via `fill="currentColor"` — never hardcode a hex value in an SVG.
 
@@ -146,7 +150,10 @@ Status never relies on color alone. Locked silhouettes: Success = Circle, Warnin
 
 ## Typography
 
-Skillit uses one typeface: **Work Sans**. Designed by Australian designer Wei Huang and inspired by early twentieth-century Grotesque typefaces, it is warm, direct, and legible — the same values as the brand. Released in 2015, it is free and open-source, available on Google Fonts, Adobe Fonts, and GitHub.
+Skillit uses a primary typeface for human content, and a monospace typeface for machine data. Both are free, open-source, and available on Google Fonts, Adobe Fonts, and GitHub.
+
+- **Work Sans** (Primary): Designed by Australian designer Wei Huang and inspired by early twentieth-century Grotesque typefaces, it is warm, direct, and legible.
+- **IBM Plex Mono** (Metadata & Code): Designed by Mike Abbink and the Bold Monday foundry for IBM, it was engineered to emphasize the relationship between mankind and machine.
 
 ### The Typographic Algorithm
 
@@ -170,16 +177,23 @@ Work Sans is a **variable font**. Rather than fixed buckets, it has a continuous
 - **On light backgrounds (Canvas):** Use standard weights (400, 500, 600, 700). Canvas is already an off-white (`#FAF9F6`) rather than pure white, which naturally reduces irradiation against dark type.
 - **On dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass):** Subtract ~25 units of font weight (375, 475, 575, 675). The goal is to make the text read as the same apparent weight as it would on a light background.
 
+### Monospace & Metadata
+
+All metadata (timestamps, worker IDs, distances, file sizes) and code blocks (inline `` or multiline) should use a monospace font to visually separate machine data from human text.
+
+- **The Stack:** IBM Plex Mono (Primary), JetBrains Mono (Fallback).
+- **The Scale:** Monospace fonts sit on a different em-square. To optically align with Work Sans without breaking the line-box, always scale inline monospace text to 90% of the parent font size.
+
 ### Typographic Punctuation
 
 **Smart Quotes:** Always use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy. Straight quotes are for writing code; angled quotes are for reading text.
-**Hanging Punctuation:** All text blocks must use hanging punctuation (optical margin alignment). Quotation marks, bullets, and hyphens must hang _outside_ the left bounding box of the text column. This ensures the actual letters form a perfectly flush, unbroken architectural line down the left side of the layout grid.
+**Hanging Punctuation:** All text blocks should use hanging punctuation (optical margin alignment). Quotation marks, bullets, and hyphens should hang _outside_ the left bounding box of the text column. This ensures the actual letters form a perfectly flush, unbroken architectural line down the left side of the layout grid.
 
 ### Widows and Orphans
 
 A widow is a single word left alone on the last line of a paragraph or headline. They create visual holes in the grid and break the solid, block-like texture of our typography. They are strictly prohibited.
 
-- **The Non-Breaking Space Rule:** You must manually inject a non-breaking space (`&nbsp;` in HTML, or `Option+Space` on Mac) between the final two words of any paragraph or heading. This physically ties the last two words together, forcing them to wrap as a unit and permanently eliminating widows.
+- **The Non-Breaking Space Rule:** You should manually inject a non-breaking space (`&nbsp;` in HTML, or `Option+Space` on Mac) between the final two words of any paragraph or heading. This physically ties the last two words together, forcing them to wrap as a unit and permanently eliminating widows.
 - **In Engineering (CSS):** Apply `text-wrap: balance;` to all headlines (`h1`, `h2`, `h3`). Apply `text-wrap: pretty;` to all paragraph text (`p`). Because `text-wrap: pretty` is not yet supported in all legacy browsers, the manual non-breaking space rule above is still required as a fallback for all critical marketing copy.
 
 ### Paragraph and List Spacing
@@ -237,10 +251,10 @@ Every layout uses four layers, in order of elevation and visual weight:
 ### Rules
 
 - **Flush left.** All typography and content blocks align flush left. Centered text is banned for running copy and strongly discouraged for headlines. The grid provides the structure; strict alignment makes it visible.
-- **Optical Top Alignment.** Elements positioned across columns must align perfectly at their top edge. However, because digital typography includes internal leading (the space above the cap height), text must be vertically trimmed (e.g., `margin-top: -0.15em;`) to ensure the cap height aligns flush with adjacent images or blocks.
-- **Button Alignment.** When aligning a button alongside text, align the button by its typography (its internal cap height), not its external padding bubble. The button must shift upwards by the exact value of its top padding to achieve optical alignment.
+- **Optical Top Alignment.** Elements positioned across columns should align perfectly at their top edge. Because digital typography includes internal leading, text should be vertically trimmed using the exact cap-height ratio of Work Sans (`0.72`). The algorithm for the negative top margin is: `(line-height - 0.72) / 2`. Example: a `1.4` line-height requires a `-0.34em` margin-top.
+- **Button Alignment.** When aligning a button alongside text, align the button by its typography (its internal cap height), not its external padding bubble. The button should shift upwards by the exact value of its top padding to achieve optical alignment.
 - **Tension through scale.** Create hierarchy through dramatic leaps in scale (e.g., placing a 64px headline directly next to a 16px body copy block). Do not rely on intermediate sizes or color shifts to organize information.
-- **Strict functionalism.** No decorative elements. No abstract shapes, blobs, or illustrated backgrounds. Every border, margin, and pixel must perform a structural job.
+- **Strict functionalism.** No decorative elements. No abstract shapes, blobs, or illustrated backgrounds. Every border, margin, and pixel should perform a structural job.
 - **One accent.** Traffic Cone appears exactly once per layout section (e.g., on the CTA or a key stat). Never repeated decoratively.
 - **Shape signals action.** Static structural elements (cards, layout panels, photographs) use hard, straight edges (0px). Actionable human touchpoints (buttons) use a fully rounded pill shape. Intermediate rounded corners (e.g., 4px or 8px) are banned. No drop shadows.
 - **Mathematical text blocks.** Body text columns never exceed 70 characters wide to maintain perfect tracking and readability.
@@ -257,7 +271,7 @@ In this system, shape indicates whether an element is interactive or static. We 
 
 The layout is built on an **8px/16px baseline grid**, paired with **Fluid Architectural Scaling**.
 While micro-spacing (`8px`, `16px`, `32px`) remains locked to absolute pixels to protect touch targets and UI integrity, macro-spacing (margins, section gaps, padding) uses CSS `clamp()` functions (`--space-64` through `--space-256`). This ensures the massive, confident margins seen on desktop smoothly and gradually compress as the viewport scales down, exactly mimicking the fluid, tensioned behavior of Anthropic's grid, without sudden, jarring jumps at breakpoints.
-**12-Column Newspaper Grid:** All desktop layouts sit on a strict 12-column grid. Do not use flexible percentage splits. Blocks must span fixed column counts (e.g., 7 columns for hero text, 5 columns for the hero CTA) so that vertical alignment is maintained down the entire page.
+**12-Column Newspaper Grid:** All desktop layouts sit on a strict 12-column grid. Do not use flexible percentage splits. Blocks should span fixed column counts (e.g., 7 columns for hero text, 5 columns for the hero CTA) so that vertical alignment is maintained down the entire page.
 | Element | Height / Padding | Margin |
 | ------------------- | ----------------------------- | ------------ |
 | Nav Bar | 64px | — |
@@ -276,6 +290,32 @@ While micro-spacing (`8px`, `16px`, `32px`) remains locked to absolute pixels to
 - **Don’t** bevel edges or use drop shadows.
 - **Do** use the boot tread pattern in the nav bar header.
 - **Don’t** use it as a section background or content surface fill.
+
+---
+
+## Data Visualization
+
+Skillit’s data visualization is utilitarian. The charts should be legible, precise, and stripped of decorative noise. Our goal is human-centered clarity: every pixel should convey the truth of the data.
+
+### Geometry & Structure
+
+- **Containers:** All data viz graphics must sit on a Plaster (pure white) background card to isolate the data and maintain contrast against the surrounding UI.
+- **Sharp edges:** Bar charts, tooltips, legends, and Plaster cards should have `0px` border-radius. No rounded edges.
+- **Line weight:** All structural lines must be `4px` thick. This applies to data lines and gridlines.
+- **Gridlines:** Rendered in Canvas with 4px stroke weight. Remove all outer bounding boxes. Use horizontal (Y-axis) gridlines only. No vertical gridlines.
+- **Pie charts:** Slices must sit flush against each other with zero gap and zero stroke.
+- **Line charts:** Both unsmoothed (stepped/linear) and smoothed (spline/curved) paths are permitted based on the data story.
+
+### Color
+
+- **Monochromatic scale:** Standard categorical charts use a monochromatic scale, instead of different colors, to preserve UI semantics.
+- **Highlight:** Traffic Cone (orange) is used exclusively to highlight the focal data point or trend the viewer is supposed to care about. Orange is the thesis; Iron is the context.
+
+### Banned Elements
+
+- 3D effects and drop shadows.
+- Donut charts (decorative SaaS trope. If showing a part-to-whole ratio, use a solid pie chart instead).
+- Radar or spider charts.
 
 ---
 
@@ -327,7 +367,7 @@ Sam is Skillit’s AI assistant. Sam has a name because names matter — they si
 - **Do** lead with the insight. “Only 1 in 20 workers are missing. 9 in 10 employers still can’t find them.”
 - **Do** use inline bolding for key phrases in paragraph text to improve scannability. Assume the user will only read the bold words. If the bold words tell the complete story ("**1 in 20 workers**... **already out there**... **access better opportunities**"), the execution is correct.
 - **Don’t** lead with the product. “Skillit is an AI-powered construction hiring platform...”
-- **Do** use strict consistency for button labels. If a button points to account creation, it must say "Join" everywhere. Never alternate between "Get started", "Create a profile", and "Join" on the same page if they lead to the same destination.
+- **Do** use strict consistency for button labels. If a button points to account creation, it should say "Join" everywhere. Never alternate between "Get started", "Create a profile", and "Join" on the same page if they lead to the same destination.
 - **Do** use one CTA per section. Ensure the primary mobile CTA is visible without scrolling.
 - **Don’t** offer “Start hiring” alongside “Get hired” — consolidate to a single “Join.”
 
@@ -342,9 +382,9 @@ Photography is the brand’s most human element. Every image should make a craft
 These apply to every image across every surface, without exception:
 
 - **No drop shadows.** Images sit directly on the surface.
-- **Blend modes:** All photography must apply the `multiply` blend mode (CSS: `mix-blend-mode: multiply;`). This melts lighter backgrounds directly into the Canvas layout ground, removing harsh rectangular borders and creating a premium, unified editorial finish.
+- **Blend modes:** All photography should apply the `multiply` blend mode (CSS: `mix-blend-mode: multiply;`). This melts lighter backgrounds directly into the Canvas layout ground, removing harsh rectangular borders and creating a premium, unified editorial finish.
 - **No color grading.** Natural color only — no filters, no warm toning, no dramatic shifts.
-- **No text or symbols.** Images must be completely free of text, symbols, UI elements, graphs, and numbers.
+- **No text or symbols.** Images should be completely free of text, symbols, UI elements, graphs, and numbers.
 - **No AI generation.** Only authentic photography is permitted.
 - **No composite backgrounds.** If the background is removed, the worker sits on Canvas or Iron — no invented environment behind them.
 - **No stock photo aesthetics.** No fake smiles, obvious casting, or safety theater.
@@ -374,7 +414,7 @@ They are not a substitute for judgment. Rules describe the system. Judgment appl
 
 ---
 
-_Skillit Brand Design System · Version 1.0 · July 2026_
+_Skillit Brand Design System · Version 0.9-beta · July 2026_
 _Brand Design: Chiyo · System: Skillit Narrative & Brand_
 
 ### Responsive Scaling

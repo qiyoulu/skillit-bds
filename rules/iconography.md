@@ -2,12 +2,12 @@
 **Last updated:** 2026-07-15
 ---
 ## 1. Core Principles
-- **Utilitarian & Honest:** Icons must be instantly recognizable and strictly utilitarian. No decorative embellishments, unnecessary gradients, or clever visual puns. They are tools, not art.
-- **Solid Fill Only:** To remain visually consistent with the heavy, block-like geometry of the Skillit mark and pattern, all icons must be solid, filled shapes. Line icons and strokes are strictly banned.
-- **Worker-First Legibility:** Icons must be legible on high-glare screens in bright sunlight on a job site. Solid fills perform significantly better for optical recognition at small sizes than thin lines.
+- **Utilitarian & Honest:** Icons should be instantly recognizable and strictly utilitarian. No decorative embellishments, unnecessary gradients, or clever visual puns. They are tools, not art.
+- **Solid Fill Only:** To remain visually consistent with the heavy, block-like geometry of the Skillit mark and pattern, all icons should be solid, filled shapes. Line icons and strokes are strictly banned.
+- **Worker-First Legibility:** Icons should be legible on high-glare screens in bright sunlight on a job site. Solid fills perform significantly better for optical recognition at small sizes than thin lines.
 ## 2. Geometry & Grid
 - **Base Canvas:** 24x24px.
-- **The 10x10 Sub-grid:** To maintain blocky structural DNA while perfectly centering on an even canvas, all icons must be drawn on a strict 10x10 sub-grid where **1 block = 2x2px**. All vertices must snap to multiples of 2.
+- **The 10x10 Sub-grid:** To maintain blocky structural DNA while perfectly centering on an even canvas, all icons should be drawn on a strict 10x10 sub-grid where **1 block = 2x2px**. All vertices should snap to multiples of 2.
 - **Live Area:** Leave a 1-block (2px) padding around the edges. The maximum live drawing area is 10x10 blocks (20x20px).
 - **Shapes:** Solid, filled vector shapes (`fill="currentColor"`). No strokes.
 - **Angles & Curves:** Restricted to 90-degree and 45-degree angles. **No bezier curves.** The only curves permitted in the entire set are mathematically perfect full circles or half-circles.
