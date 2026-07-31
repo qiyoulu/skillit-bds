@@ -4,7 +4,7 @@
 ## Rules before you use this file
 - Use ONLY the tokens listed here. Never approximate, mix, or invent colors.
 - Every token has a designated UI role. Use each color only for its assigned role.
-- Primary surfaces are Canvas + Iron. Traffic Cone is the single accent — use it once per layout, not repeatedly.
+- Primary surfaces are Canvas + Iron. Traffic Cone is the single accent — use it once per layout section, not repeatedly.
 - Never use color as the only status signal. Always pair with shape and label.
 - All contrast ratios listed are against their intended text color. Do not pair colors outside their documented combinations.
 ---
@@ -46,7 +46,7 @@
 - The single darkest tone in the system — do not introduce black (`#000000`).
 ### `--color-primary` 🟧 Traffic Cone `#EF6F1A`
 - Primary CTA buttons, active nav states, key data callouts.
-- One dominant use per layout. Do not repeat as decoration.
+- One dominant use per layout section. Do not repeat as decoration.
 - **Text on Traffic Cone:** Use Iron (`#232F36`) only (4.54:1, passes AA). Canvas on Traffic Cone fails at all sizes (2.83:1) and is not permitted.
 - Do not use for links — that role belongs to Painter's Tape.
 ### `--color-warning` 🟨 Hard Hat `#FEB11C`
