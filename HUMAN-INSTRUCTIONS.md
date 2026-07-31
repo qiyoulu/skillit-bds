@@ -308,7 +308,7 @@ Skillit’s data visualization is utilitarian. The charts should be legible, pre
 
 ### Color
 
-- **Monochromatic scale:** Standard categorical charts use a monochromatic scale, instead of different colors, to preserve UI semantics.
+- **Monochromatic scale:** Standard categorical charts use a monochromatic scale, rather than different colors, to preserve UI semantics.
 - **Highlight:** Traffic Cone (orange) is used exclusively to highlight the focal data point or trend the viewer is supposed to care about. Orange is the thesis; Iron is the context.
 
 ### Banned Elements
