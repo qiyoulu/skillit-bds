@@ -135,12 +135,18 @@ Work Sans is implemented as a variable font (`wght@100..900`).
 - Use `--font-mono` for: timestamps, worker IDs, distances, file sizes, any numeric data string.
 - Never use monospace for labels, body copy, or headings.
 - Signals “machine data” vs. “human content” — a core visual distinction in the system.
+### Paragraph and List Spacing (Vertical Rhythm)
+- **Paragraphs:** 16px (`--space-4`). The gap between paragraphs is exactly equal to the default body font size (1em), maintaining a perfect mathematical rhythm down the page.
+- **Text Lists:** 8px (`--space-2`). Items in a bulleted or numbered text list sit tighter together so the list reads visually as a single, cohesive block of information.
+- **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 44px minimum touch target rule.
+
 ### Typographic Punctuation
-- **The Rule:** Always use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy.
-- **Why:** Straight quotes are for code. Angled quotes are for reading. In a highly crafted typography system, straight quotes signal a lack of attention to detail.
+- **Smart Quotes:** Always use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy. Straight quotes are for code; angled quotes are for reading.
+- **Hanging Punctuation (Optical Margin Alignment):** Because layouts are flush-left, opening quotation marks on the first line of a paragraph or pull quote must hang *outside* the bounding box. This ensures the first letters of every line form a perfectly flush vertical grid line. Do not hang bullets or list numbers.
 ### Widows and Orphans
-- **The Rule:** Never leave a single word alone on the last line of a paragraph or headline. They create visual holes that break the structural mass of the text block.
-- **The Non-Breaking Space Injection:** You should manually inject a non-breaking space (`&nbsp;`) between the final two words of any paragraph, description, or headline. (e.g., `at&nbsp;scale.`, `deployed&nbsp;faster.`). This mechanically prevents the final word from wrapping alone.
+- **The Rule:** Never leave a single word alone on the last line of a paragraph or headline. They create visual holes that break the structural mass of the text block and severely damage readability and scannability.
+- **Manual Tracking Adjustment (Primary Fix):** To fix widows and orphans on static or editorial surfaces, adjust the tracking (letter-spacing) of the text block by up to `±2%` (`±0.02em`). This is the preferred method because it imperceptibly compresses or expands the text to force a re-wrap without creating a ragged visual hole at the end of the previous line.
+- **The Non-Breaking Space Injection (Secondary Fix):** If tracking adjustment isn't feasible, manually inject a non-breaking space (`&nbsp;`) between the final two words of the paragraph (e.g., `at&nbsp;scale.`). Note that this physically forces the penultimate word to the next line, which can leave a gap on the right edge.
 - **In Engineering:** Apply `text-wrap: balance;` to all Display, Heading, and H2 elements. Apply `text-wrap: pretty;` to Body copy (`p`). Because browser support for `pretty` is not absolute, the manual `&nbsp;` injection above is mandatory for all critical marketing copy. Use `orphans: 2; widows: 2;` in print stylesheets.
 ### What not to do
 - Do not use `font-weight: 300` (Light) — too thin for job-site legibility.

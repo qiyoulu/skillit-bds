@@ -152,8 +152,8 @@ Status never relies on color alone. Locked silhouettes: Success = Circle, Warnin
 
 Skillit uses a primary typeface for human content, and a monospace typeface for machine data. Both are free, open-source, and available on Google Fonts, Adobe Fonts, and GitHub.
 
-- **Work Sans** (Primary): Designed by Australian designer Wei Huang and inspired by early twentieth-century Grotesque typefaces, it is warm, direct, and legible.
-- **IBM Plex Mono** (Metadata & Code): Designed by Mike Abbink and the Bold Monday foundry for IBM, it was engineered to emphasize the relationship between mankind and machine.
+- **Work Sans** (Primary): Inspired by early twentieth-century Grotesque typefaces, it is warm, direct, and legible.
+- **IBM Plex Mono** (Metadata & Code): Engineered to emphasize the relationship between mankind and machine.
 
 ### The Typographic Algorithm
 
@@ -187,22 +187,23 @@ All metadata (timestamps, worker IDs, distances, file sizes) and code blocks (in
 ### Typographic Punctuation
 
 **Smart Quotes:** Always use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy. Straight quotes are for writing code; angled quotes are for reading text.
-**Hanging Punctuation:** All text blocks should use hanging punctuation (optical margin alignment). Quotation marks, bullets, and hyphens should hang _outside_ the left bounding box of the text column. This ensures the actual letters form a perfectly flush, unbroken architectural line down the left side of the layout grid.
+**Hanging Punctuation:** All text blocks must use optical margin alignment. Because our layouts are strictly flush-left, this rule applies exclusively to the left margin: **opening quotation marks** on the first line of a paragraph (or pull quote). These marks must hang *outside* the left bounding box of the text column so the actual letters form a perfectly flush, unbroken vertical line down the grid. Do not hang punctuation that naturally wraps mid-paragraph, and **do not hang bullets or numbers** in a list.
 
 ### Widows and Orphans
 
-A widow is a single word left alone on the last line of a paragraph or headline. They create visual holes in the grid and break the solid, block-like texture of our typography. They are strictly prohibited.
+A **widow** is a single word left dangling on its own line at the end of a paragraph. An **orphan** is a single line of text separated from its paragraph across a column or page break. Both damage readability and scannability. Avoid them by manually adjusting the spacing:
 
-- **The Non-Breaking Space Rule:** You should manually inject a non-breaking space (`&nbsp;` in HTML, or `Option+Space` on Mac) between the final two words of any paragraph or heading. This physically ties the last two words together, forcing them to wrap as a unit and permanently eliminating widows.
+- **Tracking Adjustment (Primary Fix):** To fix a widow or orphan, manually adjust the tracking (letter-spacing) of the entire text block by up to `±2%` (`±0.02em`). This is the preferred method because it imperceptibly compresses or expands the text to force a re-wrap without creating a ragged visual hole at the end of the previous line.
+- **The Non-Breaking Space (Secondary Fix):** If tracking adjustment isn't feasible, you can inject a non-breaking space (`&nbsp;` in HTML, or `Shift+Space` on a computer) before the penultimate word of the paragraph. Be aware that this forces the penultimate word to drop down, which can leave an unwanted gap in the bottom right corner of the text block.
 - **In Engineering (CSS):** Apply `text-wrap: balance;` to all headlines (`h1`, `h2`, `h3`). Apply `text-wrap: pretty;` to all paragraph text (`p`). Because `text-wrap: pretty` is not yet supported in all legacy browsers, the manual non-breaking space rule above is still required as a fallback for all critical marketing copy.
 
-### Paragraph and List Spacing
+### Paragraph and List Spacing (Vertical Rhythm)
 
 To maintain the grid’s mathematical rhythm, vertical spacing between text elements is strictly defined:
 
-- **Paragraphs:** 16px. The gap between paragraphs is exactly equal to the body font size (1em).
-- **Text Lists:** 8px. Items in a bulleted or numbered list sit tighter together so the list reads as a solid, cohesive block.
-- **UI Lists:** 16px. Interactive lists (like a feed of jobs in the app) use a wider gap to protect touch targets.
+- **Paragraphs:** 16px (`--space-4`). The gap between paragraphs is exactly equal to the default body font size (1em).
+- **Text Lists:** 8px (`--space-2`). Items in a bulleted or numbered list sit tighter together so the list reads visually as a single, cohesive block.
+- **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 44px minimum touch target rule.
 
 ### Case
 
@@ -326,59 +327,68 @@ Skillit’s data visualization is utilitarian. The charts should be legible, pre
 > Write like the smartest person on the job site — the one who’s been doing this since before it was a startup, who knows the data cold, and who doesn’t need to prove they belong in the room because the work speaks for itself.
 > **If it sounds like a press release, a pitch deck, or a LinkedIn growth-hacker, it’s wrong.**
 
-**The Worker-First Mandate:** Every piece of copy—from blog titles to button labels—must ultimately serve and elevate the worker. Amplify the overlooked details of craftwork by focusing on these traits: *Agency, Judgment, Craftsmanship, Stamina, Responsibility*. Technology should uplift, meaning craft workers are irreplaceable and tech merely provides a direct route for their skills to be discovered.
+**The Worker-First Mandate:** Every piece of copy—from blog titles to button labels—must ultimately serve and elevate the worker. Amplify the overlooked details of craftwork by focusing on these traits: _Agency, Judgment, Craftsmanship, Stamina, Responsibility_. Technology should uplift, meaning craft workers are irreplaceable and tech merely provides a direct route for their skills to be discovered.
 
 ### The Five Core Traits
 
 The brand voice is built entirely around five traits inherent to craft workers. Every piece of copy should reflect at least one of these:
 
 **1. Agency (Empowering Choice).** Craft workers are independent decision-makers, not cogs in a machine. Write to empower their control over their career.
+
 - Wrong: "We place you in open jobs."
 - Right: "Choose the right job for you."
 
 **2. Judgment (Respecting Expertise).** They know the work better than we do. Never talk down, over-explain, or act like the software is the hero.
+
 - Wrong: "Our algorithm knows the best fit for your skills."
 - Right: "You know your trade. We make sure contractors see it."
 
 **3. Craftsmanship (Tangible Reality).** Emphasize the tangible skill and precision of the work. Avoid abstract digital jargon.
+
 - Wrong: "Optimizing the talent acquisition pipeline."
 - Right: "Getting the right worker to the right job site."
 
 **4. Stamina (Direct & Unfussy).** Acknowledge the physical and mental reality of the job site. Write concisely—for gloves and sunlight.
+
 - Wrong: "We think construction workers deserve better tools."
 - Right: "Construction workers deserve better tools."
 
 **5. Responsibility (Reliable Objectivity).** Speak objectively and reliably. No empty promises, no hype, no fluff.
+
 - Wrong: "We will revolutionize your career in construction!"
 - Right: "Set your pay expectations upfront. Earn what you're worth."
 
-### By channel
+### Tone by Channel
 
-**Website / marketing:** Confident, proof-heavy, counterintuitive. Lead with the insight, not the product. One CTA per section. "Join." Never “Learn more.”
-**Blog / editorial:** Authoritative, punchy, data-informed. Unified brand voice only — no individual bylines.
-**Worker app:** Simple, respectful, warm. One idea per screen. Write for gloves and sunlight. “Complete your profile to get found faster.” Not “Optimizing your profile increases your discoverability.”
-**Contractor dashboard:** Precise, no-nonsense. Outcome-focused. “Find qualified workers.” “Post a role.”
-**LinkedIn / Executive voice:** Direct, opinionated, first-person. Counterintuitive claim → data → principle. Start with the surprising sentence.
-**Press:** Founder-story-led. Lead with our founding story or a striking statistic. Never with a product feature.
+**Website / marketing:** Confident, objective, and proof-heavy. Lead with the insight, not the product. One CTA per section.
+**Blog / editorial:** Authoritative, punchy, and grounded. Focus on tangible realities. No individual bylines.
+**Worker app:** Unfussy, respectful, and simple. One idea per screen. Write for gloves and sunlight.
+**Contractor dashboard:** Precise, no-nonsense. Outcome-focused.
+**LinkedIn / Executive:** Opinionated, first-person authority. Counterintuitive claim → data → principle. Stand firm on industry truths.
+**Press:** Founder-story-led. Anchor the narrative in tangible impact, never just a product feature.
 
-### What Skillit never says
+### Banned Language (Trait Violations)
 
-“Revolutionize.” “Disrupt.” “Ecosystem.” “Leverage synergies.” “Best-in-class.” “World-class.” “Empower.” “Holistic.” “Excited to announce.” “Thrilled to share.” “We believe.” “Perhaps.” “AI-powered” as the lead descriptor.
+- **Violates Responsibility (Hype):** “Revolutionize,” “Disrupt,” “Excited to announce,” “Thrilled to share,” “World-class.”
+- **Violates Craftsmanship (Tech Abstraction):** “Ecosystem,” “Leverage synergies,” “Holistic,” “Pipeline.”
+- **Violates Judgment (Hedging):** “We believe,” “Perhaps,” “Might be able to.”
+- **Violates Agency (Software as Hero):** “AI-powered” as the lead descriptor, "We place you," "Let our algorithm decide."
 
-### Sam
+### Sam (The AI)
 
-Sam is Skillit’s AI assistant. Sam has a name because names matter — they signal that this is a tool built for humans, not a machine optimizing around them.
+Sam is Skillit’s AI assistant. Sam has a name because names matter — they signal that this is a tool built for humans, not a machine replacing them.
 
 - Right: “Hey Sam, pull up civil welders with GMAW experience in Dallas.”
 - Wrong: “Our proprietary ML algorithm surfaces qualified candidates based on your requirements.”
-  **Sam coordinates and surfaces. The human still decides.**
+
+**Sam coordinates and surfaces. The human still decides.** This is the ultimate expression of worker _Agency_ and _Judgment_.
 
 ### Copy Do / Don’t
 
 - **Do** lead with the insight. “Only 1 in 20 workers are missing. 9 in 10 employers still can’t find them.”
-- **Do** use inline bolding for key phrases in paragraph text to improve scannability. Assume the user will only read the bold words. If the bold words tell the complete story ("**1 in 20 workers**... **already out there**... **access better opportunities**"), the execution is correct.
+- **Do** use inline bolding for key phrases in paragraph text to improve scannability (Stamina).
 - **Don’t** lead with the product. “Skillit is an AI-powered construction hiring platform...”
-- **Do** use strict consistency for button labels. If a button points to account creation, it should say "Join" everywhere. Never alternate between "Get started", "Create a profile", and "Join" on the same page if they lead to the same destination.
+- **Do** use strict consistency for button labels. If a button points to account creation, it should say "Join" everywhere.
 - **Do** use one CTA per section. Ensure the primary mobile CTA is visible without scrolling.
 - **Don’t** offer “Start hiring” alongside “Get hired” — consolidate to a single “Join.”
 
@@ -386,9 +396,9 @@ Sam is Skillit’s AI assistant. Sam has a name because names matter — they si
 
 ## Photography & Imagery
 
-Photography is the brand’s most human element. Every image should make a craft worker feel seen — **not as a stock photo prop, but as a skilled professional** whose work builds the physical world. 
+Photography is the brand’s most human element. Every image should make a craft worker feel seen — **not as a stock photo prop, but as a skilled professional** whose work builds the physical world.
 
-**Visual Archetype:** Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic should blend the accessibility of a government vocational program, the rigor of resource-rich institutions, the flair of aspirational publications, and the incentive-centric intensity of the US Army.
+**Visual Archetype:** Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic should blend the accessibility of a government vocational program, the rigor of resource-rich institutions, and the flair of aspirational publications.
 
 ### Hard rules
 

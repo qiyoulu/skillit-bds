@@ -85,9 +85,9 @@ Buttons and interactive cards should use **double the standard horizontal paddin
 | Touch target minimum | `44px` (Apple HIG / WCAG 2.5.5) |
 ---
 ## Text Spacing Rules
-- **Paragraphs:**  (16px / ) below paragraphs. This is exactly equal to the body font size (1em), maintaining a perfect mathematical rhythm.
-- **Text Lists:**  (8px / ) between bulleted or numbered text items. This tighter spacing ensures the list reads visually as a single, cohesive block of information.
-- **UI Lists:**  (16px / ) between interactive list items in the app or dashboard. This wider spacing protects the 44px minimum touch target rule.
+- **Paragraphs:** `--space-4` (16px / 1rem) below paragraphs. This is exactly equal to the body font size (1em), maintaining a perfect mathematical rhythm.
+- **Text Lists:** `--space-2` (8px / 0.5rem) between bulleted or numbered text items. This tighter spacing ensures the list reads visually as a single, cohesive block of information.
+- **UI Lists:** `--space-4` (16px / 1rem) between interactive list items in the app or dashboard. This wider spacing protects the 44px minimum touch target rule.
 ---
 ## Breakpoints
 | Name | Min width | Context |
