@@ -1,6 +1,6 @@
 # Data Visualization Rules — Skillit BDS
 
-**Mandate:** Human-centered utility. We present facts about the labor market to people whose time is valuable. Charts should be hyper-legible, mathematically precise, and stripped of decorative noise. Every pixel should expose the truth of the data. If a chart prioritizes aesthetic trends over functional clarity, it fails the test. It is a precision tool built for human use.
+**Mandate:** Human-centered utility. We present facts about the labor market to people whose time is valuable. Charts should be hyper-legible, consistently precise, and stripped of decorative noise. Every pixel should expose the truth of the data. If a chart prioritizes aesthetic trends over functional clarity, it fails the test. It is a precision tool built for human use.
 
 ## 1. Geometry & Structure
 - **Containers:** All data viz graphics must sit on a Plaster (`--color-surface`, pure white) background card to isolate the data and maintain contrast against the surrounding UI.

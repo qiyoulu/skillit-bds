@@ -11,12 +11,12 @@ The mark is the brand's initial 'S' engineered for **physical grip**. Built from
 **File:** `assets/logo/mark.svg`
 **Grid:** 7×8 unit grid.
 **Protected area:** 1 unit clear space on all sides — 9×10 unit protected zone.
-**Minimum size:** 24px/18pt height. Below this the internal negative space closes up and the mark loses definition.
+**Minimum size:** 21px/16pt height. Below this the internal negative space closes up and the mark loses definition.
 ---
 ## The wordmark
 The wordmark is set in Work Sans Black, all-caps, −3% tracking. It is a fixed graphic asset — not a typed line of text.
 **File:** `assets/logo/lockup.svg` (extract wordmark from this file as needed)
-**Minimum size:** 18px/13.5pt height.
+**Minimum size:** 16px/12pt height.
 **Clear space:** Minimum clear space equal to the wordmark cap height on all sides.
 ---
 ## The lockup
@@ -24,7 +24,7 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 **File:** `assets/logo/lockup.svg`
 **Construction:** Mark to the left of the wordmark, aligned to cap height, 2 units of space between them. (1 unit = 1 grid unit from the 7×8 mark grid.)
 **Format:** Horizontal only. No stacked or vertical variant.
-**Minimum size:** 24px/18pt height (mark at 24px/18pt, wordmark at 18px/13.5pt).
+**Minimum size:** 21px/16pt height (mark at 21px/16pt, wordmark at 16px/12pt).
 **Clear space:** Maintain a minimum clear space of 2 units on all sides of the lockup as a unit.
 ## Responsive Rules (Mobile)
 Because horizontal space is at an absolute premium on mobile viewports (e.g., iPhone screens), the full lockup collapses into the standalone **mark**.

@@ -20,3 +20,6 @@ tmp/
 MEMORY.md
 memory/
 
+
+# Generated exports — never commit binaries
+*.pdf

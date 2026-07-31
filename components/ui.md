@@ -331,7 +331,7 @@ This visually separates machine data from human content — a core distinction i
 ---
 ## Icons
 ### Geometry
-Icons are drawn on a strict **10×10 sub-grid** (1 block = 2px) inside a **24×24px canvas**. This grid solves mathematical centering (the 2px block unit divides the 24px canvas evenly) and enforces the heavy, cast-iron aesthetic.
+Icons are drawn on a strict **10×10 sub-grid** (1 block = 2px) inside a **24×24px canvas**. This grid solves consistent centering (the 2px block unit divides the 24px canvas evenly) and enforces the heavy, cast-iron aesthetic.
 - **Canvas size:** 24×24px
 - **Sub-grid:** 10×10 (1 block = 2px)
 - **Style:** Solid fill only. No strokes, no outlines, no line icons.

@@ -10,7 +10,7 @@
 - **The 10x10 Sub-grid:** To maintain blocky structural DNA while perfectly centering on an even canvas, all icons should be drawn on a strict 10x10 sub-grid where **1 block = 2x2px**. All vertices should snap to multiples of 2.
 - **Live Area:** Leave a 1-block (2px) padding around the edges. The maximum live drawing area is 10x10 blocks (20x20px).
 - **Shapes:** Solid, filled vector shapes (`fill="currentColor"`). No strokes.
-- **Angles & Curves:** Restricted to 90-degree and 45-degree angles. **No bezier curves.** The only curves permitted in the entire set are mathematically perfect full circles or half-circles.
+- **Angles & Curves:** Restricted to 90-degree and 45-degree angles. **No bezier curves.** The only curves permitted in the entire set are consistently perfect full circles or half-circles.
 - **Clearance:** Minimum internal padding of 2px (1 block) to maintain the heavy aesthetic.
 ## 3. Status Icons & Accessibility
 To comply with the brand's strict accessibility rules (never relying on color alone) and to mimic physical job-site signage, status icons are permanently locked to specific geometric silhouettes. The icon graphic is punched out of the solid shape:

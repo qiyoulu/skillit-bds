@@ -5,7 +5,7 @@
 - Use only Work Sans. Never substitute with system fonts, other Google Fonts, or unlicensed alternatives.
 - Work Sans is the only typeface. It loads from Google Fonts — zero configuration needed.
 - All sizes are in `rem` (base 16px). Never use `px` for type — it breaks accessibility scaling.
-- All text should be sentence-case. No title case in UI. No ALL CAPS anywhere.
+- All text should be sentence-case. No title case in UI. No ALL CAPS anywhere (except industry acronyms like OSHA, HVAC, AI).
 ---
 ## Typefaces
 ### Work Sans
@@ -15,7 +15,7 @@
 - **Use:** Everything — UI, headings, body text, buttons, labels, marketing, print.
 ---
 ## The Typographic Algorithm (Primary Scale)
-The typography system is mathematically derived and infinitely scalable. Levels are named objectively by their pixel size (, ).
+The typography system is consistently derived and infinitely scalable. Levels are named objectively by their pixel size (, ).
 If you need a size larger than 160px (e.g., 320px), extrapolate using this algorithm starting from the 20px baseline:
 - **Size:** Multiply by 2.
 - **Base Weight:** Add +100 for each doubling of size (Max: 900).
@@ -129,16 +129,27 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
 - Maximum line length for body: 70 characters (`max-width: var(--max-width-text)`).
 ### Variable Font & Optical Balancing
 Work Sans is implemented as a variable font (`wght@100..900`).
-- **Optical Balancing:** Light text on a dark background creates an optical illusion (halation) making letterforms appear heavier. Canvas is already off-white (`#FAF9F6`) rather than pure white, which reduces irradiation naturally. For text on dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass), subtract approximately 25 units of font weight as a starting point — e.g., `font-weight: var(--weight-regular-dark);` (375) instead of 400. Adjust by eye; this is a heuristic, not a fixed rule.
+- **Optical Balancing:** Light text on a dark background creates an optical illusion (halation) making letterforms appear heavier. Canvas is already off-white (`#FAF7F3`) rather than pure white, which reduces irradiation naturally. For text on dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass), subtract approximately 25 units of font weight to generate an interpolated weight — e.g., `font-weight: var(--weight-regular-dark);` (375) instead of 400. Adjust by eye; this is a heuristic, not a fixed rule.
 - **Micro-interactions:** Use CSS transitions on the `font-weight` axis (e.g., `400` to `600`) for fluid hover states on navigation links and buttons, rather than abrupt jumps.
 ### Monospace / metadata
 - Use `--font-mono` for: timestamps, worker IDs, distances, file sizes, any numeric data string.
 - Never use monospace for labels, body copy, or headings.
 - Signals “machine data” vs. “human content” — a core visual distinction in the system.
-### Paragraph and List Spacing (Vertical Rhythm)
-- **Paragraphs:** 16px (`--space-4`). The gap between paragraphs is exactly equal to the default body font size (1em), maintaining a perfect mathematical rhythm down the page.
+### Italics & Emphasis
+- **Emphasis:** Use italics strictly to highlight specific words within a sentence.
+- **Titles of Works:** Use italics for book names, publications, and articles.
+- **No Decorative Use:** Do not use italics for entire blocks of text (like blockquotes).
+
+### Spacing & Indentation
+To lock text into the rigid 8px/16px baseline grid, vertical spacing between text elements uses absolute tokens regardless of the font size. **Never use relative `em` margins.**
+
+- **Paragraphs:** 16px (`--space-4`). The standard gap between paragraphs.
 - **Text Lists:** 8px (`--space-2`). Items in a bulleted or numbered text list sit tighter together so the list reads visually as a single, cohesive block of information.
 - **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 44px minimum touch target rule.
+
+**Blockquotes**
+- **Container:** Place quotes inside a Plaster (`#FFFFFF`) card container with 0px border radius. It uses standard card padding.
+- **Typography:** Roman only. Do not italicize the entire quote (reserve italics for emphasis or titles of works).
 
 ### Typographic Punctuation
 - **Smart Quotes:** Always use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy. Straight quotes are for code; angled quotes are for reading.

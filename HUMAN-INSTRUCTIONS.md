@@ -2,13 +2,74 @@
 
 ## **Version 1.0 · July 2026**
 
+## Table of Contents
+
+- [Brand Design System (BDS) — Skillit](#brand-design-system-bds--skillit)
+  - [**Version 1.0 · July 2026**](#version-10--july-2026)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [At a Glance](#at-a-glance)
+  - [The Story](#the-story)
+  - [Mission](#mission)
+  - [**Worker First.** The brand is built around the worker, not the contractor. The contractor is our customer, but the worker is our subject. When in doubt, frame the design and the message from the worker’s perspective.](#worker-first-the-brand-is-built-around-the-worker-not-the-contractor-the-contractor-is-our-customer-but-the-worker-is-our-subject-when-in-doubt-frame-the-design-and-the-message-from-the-workers-perspective)
+  - [Colors](#colors)
+    - [The palette](#the-palette)
+    - [Color Do / Don’t](#color-do--dont)
+  - [Logo](#logo)
+    - [The mark](#the-mark)
+    - [The wordmark](#the-wordmark)
+    - [The lockup](#the-lockup)
+    - [Color variants](#color-variants)
+    - [What not to do](#what-not-to-do)
+    - [The Pattern](#the-pattern)
+  - [Iconography](#iconography)
+  - [Typography](#typography)
+    - [The Typographic Algorithm](#the-typographic-algorithm)
+    - [Case](#case)
+    - [Monospace \& Metadata](#monospace--metadata)
+    - [Italics \& Emphasis](#italics--emphasis)
+    - [Spacing](#spacing)
+    - [Variable weight \& halation correction](#variable-weight--halation-correction)
+    - [Typographic Punctuation](#typographic-punctuation)
+    - [Widows and Orphans](#widows-and-orphans)
+    - [Typography Do / Don’t](#typography-do--dont)
+  - [Layout](#layout)
+    - [The principle](#the-principle)
+    - [Surface boundaries (Cards \& Containers)](#surface-boundaries-cards--containers)
+    - [Surface hierarchy](#surface-hierarchy)
+    - [Rules](#rules)
+    - [Border radius (Shape signals action)](#border-radius-shape-signals-action)
+    - [Grid \& Baseline](#grid--baseline)
+    - [Layout Do / Don’t](#layout-do--dont)
+  - [Data Visualization](#data-visualization)
+    - [Geometry \& Structure](#geometry--structure)
+    - [Color](#color)
+    - [Banned Elements](#banned-elements)
+  - [Voice \& Tone](#voice--tone)
+    - [The north star](#the-north-star)
+    - [The Five Core Traits](#the-five-core-traits)
+    - [Tone by Channel](#tone-by-channel)
+    - [Banned Language (Trait Violations)](#banned-language-trait-violations)
+    - [Sam (The AI)](#sam-the-ai)
+    - [Copy Do / Don’t](#copy-do--dont)
+  - [Photography \& Imagery](#photography--imagery)
+    - [The mood in one line](#the-mood-in-one-line)
+    - [Photography Do / Don’t](#photography-do--dont)
+  - [A note on this document](#a-note-on-this-document)
+    - [Responsive Scaling](#responsive-scaling)
+  - [Engineering Handoff](#engineering-handoff)
+  - [Resources](#resources)
+    - [Asset Directory](#asset-directory)
+
+---
+
 ## Introduction
 
 This is the Skillit Brand Design System. This is not a static set of brand guidelines—it is a living system designed to evolve alongside the company. Its purpose is to ensure every Skillit touchpoint feels unmistakably like Skillit, regardless of who created it.
 
 The brand is a strategic advantage. Our goal is to make the world—enterprise customers, tier-one investors, top talent, and partners— come to us before we even reach out.
 
-This document is the human-readable translation of the rules. The system itself also lives as a machine-readable token library (via MCP). This means anyone at Skillit can use AI tools to generate presentations, sales collateral, product marketing (worker portraits, feature illustrations, screenshots), and other visual outputs that are mathematically and aesthetically perfectly on-brand.
+This document is the human-readable translation of the rules. The system itself also lives as a machine-readable token library (via MCP). This means anyone at Skillit can use AI tools to generate presentations, sales collateral, product marketing (worker portraits, feature illustrations, screenshots), and other visual outputs that are consistently and aesthetically perfectly on-brand.
 
 Designers, marketers, writers, engineers, and anyone who has ever asked “does this look right?” — this is for you.
 
@@ -20,7 +81,7 @@ Designers, marketers, writers, engineers, and anyone who has ever asked “does 
 **The Typography:** Work Sans only. Sentence-case everywhere. No all-caps. Flush-left alignment. Dramatic leaps in scale.
 **The Layout:** Strict functionalism. Whitespace is structural mass. Hard, straight edges only. Canvas (off-white) background, Iron (dark navy) text. No decoration.
 **The Accent:** Traffic Cone (orange). Use it exactly _once_ per layout section. Never for decoration.
-**The Photos:** Real workers doing real work. Shot at eye level. No color grading.
+**The Photos:** Real workers doing real work. Shot at eye level. No color grading or filters.
 **The Copy:** Direct, unhedged, data-backed. Don’t say revolutionize or disrupt.
 **The Assets:** All logos, icons, and graphics are built with `currentColor`. They should be inlined in code (or used as components) to inherit dynamic CSS coloring.
 **The Rule:** Technology should make humans more essential, not more expendable. Start from the worker’s perspective.
@@ -81,20 +142,20 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 
 The Skillit mark is the brand’s initial ‘S’ engineered for **physical grip**. Built from three interlocking blocks on a precise **1:3 shear**, the geometry acts as a **boot tread, machinery tracks, or diamond plate steel**. It encodes **traction**, **structural integrity**, and **forward momentum** into a single form. It **does not require the wordmark** to be understood.
 **Grid:** 7×8 unit grid. One unit of clear space on all sides — protected area of 9×10 units.
-**Minimum size:** 24px/18pt height. Below this threshold the internal negative space closes up and the mark loses definition.
+**Minimum size:** 21px/16pt height. Below this threshold the internal negative space closes up and the mark loses definition.
 
 ### The wordmark
 
 The wordmark is set in Work Sans Black, all-caps, with −3% tracking. It is a fixed graphic asset, not a line of text.
-**Minimum size:** 18px/13.5pt height.
+**Minimum size:** 16px/12pt height.
 **Clear space:** Maintain a minimum clear space equal to the cap height of the wordmark on all sides. Never crowd it against an edge, another logo, or a photographic element.
 
 ### The lockup
 
 The lockup is the mark and wordmark together. It is the primary logo — use it wherever possible.
 **Horizontal lockup only.** The mark sits to the left of the wordmark, aligned to the cap height, with 2 units of space between them. (1 unit = 1 grid unit from the 7×8 mark grid.) No stacked or vertical variant.
-**Minimum size:** 24px/18pt height (mark at 24px/18pt, wordmark at 18px/13.5pt).
-**Clear space:** Maintain a minimum clear space of 2 units on all sides of the lockup as a unit. Never crowd it against an edge, another logo, or a photographic element.
+**Minimum size:** 21px/16pt height (mark at 21px/16pt, wordmark at 16px/12pt).
+**Clear space:** Maintain a minimum clear space of 2 units on all sides of the lockup as a unit. Never crowd it against an edge, another logo, or an image.
 
 ### Color variants
 
@@ -136,7 +197,7 @@ The Skillit pattern is a step-and-repeat tessellation of the boot tread mark. Be
 
 ## Iconography
 
-Icons are tools, not decorations — heavy, solid, mathematically centered for job-site legibility.
+Icons are tools, not decorations — heavy, solid, consistently centered for job-site legibility.
 
 All icons are drawn on a 24×24px canvas using a strict 10×10 sub-grid where one block equals 2px. The sub-grid solves centering math — 2px divides the 24px canvas evenly — and enforces the same heavy, cast-iron geometry as the mark. Every shape should snap to the grid; off-grid paths break the system.
 
@@ -157,7 +218,7 @@ Skillit uses a primary typeface for human content, and a monospace typeface for 
 
 ### The Typographic Algorithm
 
-The typography system is mathematically derived. Levels are named objectively by their pixel size.
+The typography system is consistently derived. Levels are named objectively by their pixel size.
 The scale is a perfect factor-of-2 progression built on a 16px baseline: `128 → 64 → 32 → 16`, with the addition of a smaller 12px caption level as the hard legibility floor.
 | Level | Size | Base Weight | Bolded | Line Height | Tracking | Use |
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
@@ -169,13 +230,17 @@ The scale is a perfect factor-of-2 progression built on a 16px baseline: `128 �
 
 _(Text-16x at 0.60 leading is aggressive at extreme scale — manually adjust if descenders clip.)_
 
-### Variable weight & optical balancing
+### Case
 
-Work Sans is a **variable font**. Rather than fixed buckets, it has a continuous weight axis from 100 to 900.
-**Optical correction:** Light text on a dark background creates an optical illusion (halation) that makes letterforms appear heavier than they are. Two techniques reduce this:
+**Sentence-case everywhere.** “Join for free” — not “Join For Free.” “How it works” — not “HOW IT WORKS.” All-caps and title case are banned in all brand typesetting.
 
-- **On light backgrounds (Canvas):** Use standard weights (400, 500, 600, 700). Canvas is already an off-white (`#FAF9F6`) rather than pure white, which naturally reduces irradiation against dark type.
-- **On dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass):** Subtract ~25 units of font weight (375, 475, 575, 675). The goal is to make the text read as the same apparent weight as it would on a light background.
+**Exceptions to the rule:**
+
+1. **The Wordmark:** The logo is the sole exception for all-caps (it is a fixed graphic, not typed text).
+2. **Acronyms & Certifications:** Standard industry acronyms (OSHA, HVAC, AI, CDL) remain fully capitalized. Do not force them into lowercase.
+3. **Proper Nouns:** Names of people, companies (Skillit, Suffolk Tech), and cities retain standard proper noun capitalization.
+4. **User-Generated Content:** The sentence-case rule applies to our UI, product copy, and marketing. We do not automatically mutate user-inputted data (like a worker's resume title or name) into sentence-case if they typed it differently.
+5. **Quoted Content:** Direct quotes, press excerpts, and testimonials retain their original capitalization to preserve the source's integrity.
 
 ### Monospace & Metadata
 
@@ -184,10 +249,39 @@ All metadata (timestamps, worker IDs, distances, file sizes) and code blocks (in
 - **The Stack:** IBM Plex Mono (Primary), JetBrains Mono (Fallback).
 - **The Scale:** Monospace fonts sit on a different em-square. To optically align with Work Sans without breaking the line-box, always scale inline monospace text to 90% of the parent font size.
 
+### Italics & Emphasis
+
+Use italics strictly for their semantic purpose:
+
+- **Emphasis:** Highlighting specific words within a sentence.
+- **Titles of Works:** Formatting the names of books, publications, or articles (e.g., _Engineering News-Record_, _Why Buildings Stand Up_).
+  Do not use italics as a decorative style for entire blocks of text (like blockquotes).
+
+### Spacing
+
+To maintain the grid’s consistent rhythm, vertical spacing between text elements is locked to absolute spacing tokens regardless of the text size. Never use relative `em` spacing (which breaks the 8px baseline grid).
+
+- **Paragraphs:** 16px (`--space-4`). The standard gap between text blocks.
+- **Text Lists:** 8px (`--space-2`). Items in a bulleted or numbered list sit tighter together so the list reads visually as a single, cohesive block.
+- **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 44px minimum touch target rule.
+
+**Blockquotes** are treated as elevated structural cards, not editorial text callouts.
+
+- **Container:** Wrap the quote in a Plaster (`var(--color-surface)` / `#FFFFFF`) card container (0px corners). It inherits the standard tactile padding for cards.
+- **No Block Italics:** Do not italicize the entire quote. Keep the typography Roman and grounded, reserving italics strictly for emphasis or titles within the text.
+
+### Variable weight & halation correction
+
+Work Sans is a **variable font** with a continuous weight axis (100–900). Use interpolated weights for optical correction.
+**Halation correction:** Light text on a dark background creates an optical illusion that makes letterforms appear heavier than they are. There are two techniques to reduce this:
+
+- **On light backgrounds (Canvas):** Use standard weights (400, 500, 600, 700). Canvas is already an off-white (`#FAF7F3`) rather than pure white, which naturally reduces irradiation against dark type.
+- **On dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass):** Subtract ~25 units to use interpolated weights (375, 475, 575, 675). The goal is to make the text read as the same apparent weight as it would on a light background.
+
 ### Typographic Punctuation
 
 **Smart Quotes:** Always use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy. Straight quotes are for writing code; angled quotes are for reading text.
-**Hanging Punctuation:** All text blocks must use optical margin alignment. Because our layouts are strictly flush-left, this rule applies exclusively to the left margin: **opening quotation marks** on the first line of a paragraph (or pull quote). These marks must hang *outside* the left bounding box of the text column so the actual letters form a perfectly flush, unbroken vertical line down the grid. Do not hang punctuation that naturally wraps mid-paragraph, and **do not hang bullets or numbers** in a list.
+**Hanging Punctuation:** All text blocks must use optical margin alignment. Because our layouts are strictly flush-left, this rule applies exclusively to the left margin: **opening quotation marks** on the first line of a paragraph (or pull quote). These marks must hang _outside_ the left bounding box of the text column so the actual letters form a perfectly flush, unbroken vertical line down the grid. Do not hang punctuation that naturally wraps mid-paragraph, and **do not hang bullets or numbers** in a list.
 
 ### Widows and Orphans
 
@@ -196,18 +290,6 @@ A **widow** is a single word left dangling on its own line at the end of a parag
 - **Tracking Adjustment (Primary Fix):** To fix a widow or orphan, manually adjust the tracking (letter-spacing) of the entire text block by up to `±2%` (`±0.02em`). This is the preferred method because it imperceptibly compresses or expands the text to force a re-wrap without creating a ragged visual hole at the end of the previous line.
 - **The Non-Breaking Space (Secondary Fix):** If tracking adjustment isn't feasible, you can inject a non-breaking space (`&nbsp;` in HTML, or `Shift+Space` on a computer) before the penultimate word of the paragraph. Be aware that this forces the penultimate word to drop down, which can leave an unwanted gap in the bottom right corner of the text block.
 - **In Engineering (CSS):** Apply `text-wrap: balance;` to all headlines (`h1`, `h2`, `h3`). Apply `text-wrap: pretty;` to all paragraph text (`p`). Because `text-wrap: pretty` is not yet supported in all legacy browsers, the manual non-breaking space rule above is still required as a fallback for all critical marketing copy.
-
-### Paragraph and List Spacing (Vertical Rhythm)
-
-To maintain the grid’s mathematical rhythm, vertical spacing between text elements is strictly defined:
-
-- **Paragraphs:** 16px (`--space-4`). The gap between paragraphs is exactly equal to the default body font size (1em).
-- **Text Lists:** 8px (`--space-2`). Items in a bulleted or numbered list sit tighter together so the list reads visually as a single, cohesive block.
-- **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 44px minimum touch target rule.
-
-### Case
-
-**Sentence-case everywhere.** “Join for free” — not “Join For Free.” “How it works” — not “HOW IT WORKS.” All-caps and title case are banned in all typesetting. (The logo wordmark is the sole exception—it is a fixed graphic, not typed text.)
 
 ### Typography Do / Don’t
 
@@ -230,7 +312,7 @@ To maintain the grid’s mathematical rhythm, vertical spacing between text elem
 
 ### The principle
 
-**Whitespace is not empty space—it is structural mass.** It is the primary tool used to organize information and direct the eye. The human is the subject; the grid is the quiet, mathematical framework that supports them. Everything else gets out of the way.
+**Whitespace is not empty space—it is structural mass.** It is the primary tool used to organize information and direct the eye. The human is the subject; the grid is the quiet, consistent framework that supports them. Everything else gets out of the way.
 **The core visual constraint, stated plainly:** mostly white, black, and a splash of a single accent. **If an element does not perform a specific, functional job, delete it.**
 
 ### Surface boundaries (Cards & Containers)
@@ -258,7 +340,7 @@ Every layout uses four layers, in order of elevation and visual weight:
 - **Strict functionalism.** No decorative elements. No abstract shapes, blobs, or illustrated backgrounds. Every border, margin, and pixel should perform a structural job.
 - **One accent.** Traffic Cone appears exactly once per layout section (e.g., on the CTA or a key stat). Never repeated decoratively.
 - **Shape signals action.** Static structural elements (cards, layout panels, photographs) use hard, straight edges (0px). Actionable human touchpoints (buttons) use a fully rounded pill shape. Intermediate rounded corners (e.g., 4px or 8px) are banned. No drop shadows.
-- **Mathematical text blocks.** Body text columns never exceed 70 characters wide to maintain perfect tracking and readability.
+- **Consistent text blocks.** Body text columns never exceed 70 characters wide to maintain perfect tracking and readability.
 
 ### Border radius (Shape signals action)
 
@@ -400,34 +482,21 @@ Photography is the brand’s most human element. Every image should make a craft
 
 **Visual Archetype:** Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic should blend the accessibility of a government vocational program, the rigor of resource-rich institutions, and the flair of aspirational publications.
 
-### Hard rules
-
-These apply to every image across every surface, without exception:
-
-- **Hard edges only.** No rounded corners, no beveled masks, no feathered edges, no vignettes.
-- **No drop shadows.** Images sit directly on the surface.
-- **Blend modes:** All photography should apply the `multiply` blend mode (CSS: `mix-blend-mode: multiply;`). This melts lighter backgrounds directly into the Canvas layout ground, removing harsh rectangular borders and creating a premium, unified editorial finish.
-- **No color grading.** Natural color only — no filters, no warm toning, no dramatic shifts.
-- **No text or symbols.** Images should be completely free of text, symbols, UI elements, graphs, and numbers.
-- **No AI generation.** Only authentic photography is permitted.
-- **No composite backgrounds.** If the background is removed, the worker sits on Canvas or Iron — no invented environment behind them.
-- **No stock photo aesthetics.** No fake smiles, obvious casting, or safety theater.
-
-### Worker portraits
-
-**Frame:** Eye level or slightly below. Never looking down at the worker. The subject fills the frame — workers are not small figures in a large environment.
-**Lighting:** Flat, natural, or diffused. Outdoor overcast is preferred. Harsh direct sun is acceptable if it reads as authentic job-site light, not dramatic effect.
-**What to show:** Skilled workers doing skilled work. Hands matter — show them being used. Real job sites: concrete, steel, dirt, equipment. Candid and dignified.
-**What to avoid:** Workers at laptops or in conference rooms. Pristine, clearly costume safety gear. Looking down at the subject. Any framing that reduces the worker to a problem to be solved.
-
 ### The mood in one line
 
 Documentary photography. Real sites, real light, real people. Eye level. Hard edges on Canvas or Iron.
 
 ### Photography Do / Don’t
 
+- **Don’t** use photographic edge masks like feathered edges, vignettes, or beveled cutouts. (Standard hard edges are enforced globally by the layout rules).
+- **Do** apply the `multiply` blend mode to photography to melt lighter backgrounds into the Canvas ground.
+- **Don’t** apply color grading, warm toning, or dramatic filters. Natural color only.
+- **Don’t** overlay text, symbols, UI elements, or graphs on images.
+- **Don’t** use AI-generated images or composite backgrounds. If the background is removed, the worker sits directly on Canvas or Iron.
 - **Do** frame workers at eye level or below.
-- **Don’t** shoot from above — it’s a power dynamic the brand explicitly rejects.
+- **Don’t** shoot from above — it creates a power dynamic the brand explicitly rejects.
+- **Do** capture candid, dignified workers doing skilled work on real job sites (concrete, steel, dirt). Show their hands.
+- **Don’t** use stock photo aesthetics: no fake smiles, obvious casting, or pristine "safety theater" costumes.
 
 ---
 
@@ -462,3 +531,17 @@ The production codebase is **Ruby on Rails 7.2** using **`tailwindcss-rails`** a
 - Do not deliver a standalone HTML file or npm install instructions.
 - Do not reference Vite, webpack, or a JS entrypoint for font loading.
 - Do not use raw hex codes in templates — reference Tailwind config keys only.
+
+---
+
+## Resources
+
+The brand is a living system. If you encounter a layout or touchpoint that these rules do not accommodate, do not invent a solution in isolation.
+
+### Asset Directory
+
+- **Engineering:** `https://github.com/skillit-eng/skillit-bds`
+- **Logos & Icons:** Raw SVGs are available in the `/assets` folder of the BDS repository.
+- **Figma Library:** Maintained internally by the Narrative Team.
+
+> _Technology should make humans more essential, not more expendable._

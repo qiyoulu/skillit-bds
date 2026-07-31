@@ -59,7 +59,8 @@ Buttons and interactive cards should use **double the standard horizontal paddin
 | Button (default) | `--space-3` (12px) | `--space-8` (32px) |
 | Button (small) | `--space-2` (8px) | `--space-6` (24px) |
 | Button (large) | `--space-4` (16px) | `--space-10` (40px) |
-| Card | `--space-6` (24px) | `--space-6` (24px) |
+| Card (desktop) | `--space-16` (64px) | `--space-16` (64px) |
+| Card (mobile) | `--space-8` (32px) | `--space-8` (32px) |
 | Input field | `--space-3` (12px) | `--space-4` (16px) |
 ---
 ## Layout grid
@@ -69,7 +70,7 @@ Buttons and interactive cards should use **double the standard horizontal paddin
 | Max content width | `1200px` |
 | Side margin (desktop) | `--space-16` (64px) each side |
 | Side margin (tablet) | `--space-8` (32px) each side |
-| Side margin (mobile) | `--space-4` (16px) each side |
+| Side margin (mobile) | `--space-8` (32px) each side |
 | Column gutter | `--space-6` (24px) |
 | Grid columns (desktop) | 12 |
 | Grid columns (tablet) | 8 |
@@ -85,7 +86,7 @@ Buttons and interactive cards should use **double the standard horizontal paddin
 | Touch target minimum | `44px` (Apple HIG / WCAG 2.5.5) |
 ---
 ## Text Spacing Rules
-- **Paragraphs:** `--space-4` (16px / 1rem) below paragraphs. This is exactly equal to the body font size (1em), maintaining a perfect mathematical rhythm.
+- **Paragraphs:** `--space-4` (16px / 1rem) below paragraphs. This is exactly equal to the body font size (1em), maintaining a perfect consistent rhythm.
 - **Text Lists:** `--space-2` (8px / 0.5rem) between bulleted or numbered text items. This tighter spacing ensures the list reads visually as a single, cohesive block of information.
 - **UI Lists:** `--space-4` (16px / 1rem) between interactive list items in the app or dashboard. This wider spacing protects the 44px minimum touch target rule.
 ---

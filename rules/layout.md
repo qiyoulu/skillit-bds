@@ -2,7 +2,7 @@
 **Last updated:** 2026-07-10
 ---
 ## The core principle
-Whitespace is structural mass. It organizes data and anchors the grid. The human is the subject; the layout is the mathematical framework that supports them.
+Whitespace is structural mass. It organizes data and anchors the grid. The human is the subject; the layout is the consistent framework that supports them.
 The visual constraint (non-negotiable): **mostly white, black, and a splash of a single accent.** If a visual element does not perform a strict functional job, delete it.
 ---
 ## Surface hierarchy
@@ -26,9 +26,9 @@ State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional on
 - Strict 12-column grid on desktop. No flexible fractional columns (e.g., `1fr`, `1.5fr`). Use fixed `col-span` classes so elements align flawlessly down the vertical axis.
 - Gutter: `--space-32` (32px).
 - Content max-width: `1440px`, centered.
-- Side margins: `--space-128` (128px) desktop.
+- Side margins: `--space-16` (64px) desktop.
 - **Tablet (`< 1024px`):** The 12-column grid collapses to a single-column layout early to prevent element jumbling. Large typography needs horizontal space; never force complex multi-column grids onto medium viewports.
-- **Mobile (`< 768px`):** Scaling down typography via CSS `clamp()` and implementing generous minimum mobile side padding (`--space-48` / 48px). We preserve wide margins even on mobile to maintain the premium, editorial aesthetic seen on Anthropic.
+- **Mobile (`< 768px`):** Scaling down typography via CSS `clamp()` and implementing `--space-8` (32px) minimum mobile side padding to maintain the premium, editorial whitespace aesthetic.
 ### App (worker-facing)
 - Single-column, max-width `480px`.
 - Side padding: `--space-4` (16px).
