@@ -326,6 +326,8 @@ Skillit’s data visualization is utilitarian. The charts should be legible, pre
 > Write like the smartest person on the job site — the one who’s been doing this since before it was a startup, who knows the data cold, and who doesn’t need to prove they belong in the room because the work speaks for itself.
 > **If it sounds like a press release, a pitch deck, or a LinkedIn growth-hacker, it’s wrong.**
 
+**The Worker-First Mandate:** Every piece of copy—from blog titles to button labels—must ultimately serve and elevate the worker. Amplify the overlooked details of craftwork by focusing on these traits: *Agency, Judgment, Craftsmanship, Stamina, Responsibility*. Technology should uplift, meaning craft workers are irreplaceable and tech merely provides a direct route for their skills to be discovered.
+
 ### Four attributes
 
 **Direct.** Say what you mean. No qualifiers, no throat-clearing.
@@ -375,12 +377,15 @@ Sam is Skillit’s AI assistant. Sam has a name because names matter — they si
 
 ## Photography & Imagery
 
-Photography is the brand’s most human element. Every image should make a craft worker feel seen — **not as a stock photo prop, but as a skilled professional** whose work builds the physical world.
+Photography is the brand’s most human element. Every image should make a craft worker feel seen — **not as a stock photo prop, but as a skilled professional** whose work builds the physical world. 
+
+**Visual Archetype:** Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic should blend the accessibility of a government vocational program, the rigor of resource-rich institutions, the flair of aspirational publications, and the incentive-centric intensity of the US Army.
 
 ### Hard rules
 
 These apply to every image across every surface, without exception:
 
+- **Hard edges only.** No rounded corners, no beveled masks, no feathered edges, no vignettes.
 - **No drop shadows.** Images sit directly on the surface.
 - **Blend modes:** All photography should apply the `multiply` blend mode (CSS: `mix-blend-mode: multiply;`). This melts lighter backgrounds directly into the Canvas layout ground, removing harsh rectangular borders and creating a premium, unified editorial finish.
 - **No color grading.** Natural color only — no filters, no warm toning, no dramatic shifts.

@@ -3,7 +3,16 @@
 **Version:** 0.9-beta (Phase I)  
 **Upstream:** `qiyoulu/skillit-bds`
 
-The machine-readable source of truth for the Skillit brand (`app.skillit.com`). This repository contains a flat, tokenized, rule-based architecture designed for both human engineers and AI agents to enforce strict brand compliance across all touchpoints.
+This repository is the **Machine-Readable Brand System**—the semantic dataset and rules engine designed to power a future **Model Context Protocol (MCP)** server. 
+
+It is *not* an active MCP server or application itself. Instead, it contains the flat, tokenized, rule-based architecture (design tokens, markdown rules, and SVG assets) required for both human engineers and AI agents to enforce strict brand compliance across all touchpoints. When the MCP server is implemented (Phase II), it will read from this repository to inject brand context into LLMs dynamically.
+
+### What's Missing for Phase II (Active MCP Server)
+Currently, `skillit-bds` provides the data blueprints but lacks the software layer to actively serve it. To upgrade this repository into a functional MCP server, the following infrastructure must be built:
+1. **Server Runtime:** A script (e.g., Node.js or Python) that actively runs and listens for incoming requests.
+2. **The MCP SDK:** The official code library (e.g., `@modelcontextprotocol/sdk`) that implements the protocol.
+3. **Resource Mapping:** Code that explicitly registers these markdown files (like `LLM-INSTRUCTIONS.md` and the `tokens/` folder) as formal MCP `resources` or `prompts` so an AI client can query them.
+4. **Transport Configuration:** The communication layer (typically `stdio` for local agents) that enables the server and the AI client to talk to each other.
 
 ---
 
