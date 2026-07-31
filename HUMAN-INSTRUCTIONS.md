@@ -328,20 +328,29 @@ Skillit’s data visualization is utilitarian. The charts should be legible, pre
 
 **The Worker-First Mandate:** Every piece of copy—from blog titles to button labels—must ultimately serve and elevate the worker. Amplify the overlooked details of craftwork by focusing on these traits: *Agency, Judgment, Craftsmanship, Stamina, Responsibility*. Technology should uplift, meaning craft workers are irreplaceable and tech merely provides a direct route for their skills to be discovered.
 
-### Four attributes
+### The Five Core Traits
 
-**Direct.** Say what you mean. No qualifiers, no throat-clearing.
+The brand voice is built entirely around five traits inherent to craft workers. Every piece of copy should reflect at least one of these:
 
-- Wrong: “We think construction workers deserve better tools.”
-- Right: “Construction workers deserve better tools.”
-  **Counterintuitive.** Name the assumption. Surface the contradiction. Reveal the real insight.
-- “Construction has the smallest labor gap of any industry. Yet 9 in 10 employers can’t find the workers they need. The problem isn’t shortage. It’s access.”
-  **Data at human scale.** Cite the number. Then translate it into what it actually means.
-- Wrong: “400,000 workers are missing from the construction workforce.”
-- Right: “400,000 workers are missing. That’s 5% of the workforce. It feels like 33%.”
-  **Grounded in physical reality.** Avoid digital abstraction. Anchor every idea in something you can touch or build.
-- Wrong: “Optimizing the talent acquisition pipeline.”
-- Right: “Getting the right worker to the right job site.”
+**1. Agency (Empowering Choice).** Craft workers are independent decision-makers, not cogs in a machine. Write to empower their control over their career.
+- Wrong: "We place you in open jobs."
+- Right: "Choose the right job for you."
+
+**2. Judgment (Respecting Expertise).** They know the work better than we do. Never talk down, over-explain, or act like the software is the hero.
+- Wrong: "Our algorithm knows the best fit for your skills."
+- Right: "You know your trade. We make sure contractors see it."
+
+**3. Craftsmanship (Tangible Reality).** Emphasize the tangible skill and precision of the work. Avoid abstract digital jargon.
+- Wrong: "Optimizing the talent acquisition pipeline."
+- Right: "Getting the right worker to the right job site."
+
+**4. Stamina (Direct & Unfussy).** Acknowledge the physical and mental reality of the job site. Write concisely—for gloves and sunlight.
+- Wrong: "We think construction workers deserve better tools."
+- Right: "Construction workers deserve better tools."
+
+**5. Responsibility (Reliable Objectivity).** Speak objectively and reliably. No empty promises, no hype, no fluff.
+- Wrong: "We will revolutionize your career in construction!"
+- Right: "Set your pay expectations upfront. Earn what you're worth."
 
 ### By channel
 
