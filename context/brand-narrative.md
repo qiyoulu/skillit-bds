@@ -79,7 +79,7 @@ Use these when a generated output risks drifting into the wrong category:
 | Labor gap | ~400,000 workers / ~5% of construction workforce | Fraser / industry data |
 | Employer pain | 9 in 10 employers can’t find the workers they need | Skillit research |
 | Competitor gaps | Hospitality: 25% gap. Manufacturing: 17% gap. Construction: 5%. | Comparative framing |
-| Network | 200,000+ craft workers | Skillit network size |
+| Network | 88,000+ craft workers | Skillit network size |
 | Hiring speed | Workers hired 10x faster | Skillit platform data |
 | Recruiter productivity | 4x | Skillit platform data |
 | Interview volume | 2x more interviews | Skillit platform data |
