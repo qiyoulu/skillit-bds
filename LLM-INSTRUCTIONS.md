@@ -22,7 +22,7 @@ Use CSS variables, never raw hex codes in output.
 
 ## 3. Typography
 - **Typeface:** Work Sans.
-- **Sizing:** Absolute numerical tokens (`Text-16x`), never semantic (`h1`, `text-sm`).
+- **Sizing:** Absolute numerical tokens (`Text-8x`), never semantic (`h1`, `text-sm`).
 - **Optical Balance:** Subtract 30 units of font-weight for light text on dark backgrounds to prevent halation.
 - **Case:** Sentence-case everywhere. No title-case UI elements.
 - **Alignment:** Flush-left only. Centered text banned.

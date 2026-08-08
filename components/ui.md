@@ -172,7 +172,7 @@ Input fields use a bottom-border-only style — no box, no background fill. Mimi
 }
 ```
 **Labels:** Above the field, not inside (placeholder is not a label). `--text-label` size, `--weight-medium`, Iron.
-**Error state:** Border becomes Toolbox (`--color-error`). Error message below field in Toolbox, `--text-ui-sm`. Should include an error icon (non-color signal).
+**Error state:** Border becomes Toolbox (`--color-error`). Error message below field in Toolbox, `--text-0.75x`. Should include an error icon (non-color signal).
 **Success state:** Border becomes Bottle Glass (`--color-success`). Checkmark icon alongside.
 ---
 ## Badges and status indicators

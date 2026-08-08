@@ -228,7 +228,7 @@ The scale is a perfect factor-of-2 progression built on a 16px baseline: `128 �
 | **Text-1x** | 16px | Regular (400) | Semibold (600) | 1.40 | 0% | All running copy |
 | **Text-0.75x** | 12px | Regular (400) | Medium (500) | 1.55 | 0% | Captions, labels, legal |
 
-_(Text-16x at 0.60 leading is aggressive at extreme scale — manually adjust if descenders clip.)_
+_(Full print/small-viewport/monospace variants for each level are documented in `tokens/typography.md` — check there before inventing a new size, so this table and the token file don't drift apart again.)_
 
 ### Case
 
@@ -288,8 +288,8 @@ Work Sans is a **variable font** with a continuous weight axis (100–900). Use 
 A **widow** is a single word left dangling on its own line at the end of a paragraph. An **orphan** is a single line of text separated from its paragraph across a column or page break. Both damage readability and scannability. Avoid them by manually adjusting the spacing:
 
 - **Tracking Adjustment (Primary Fix):** To fix a widow or orphan, manually adjust the tracking (letter-spacing) of the entire text block by up to `±2%` (`±0.02em`). This is the preferred method because it imperceptibly compresses or expands the text to force a re-wrap without creating a ragged visual hole at the end of the previous line.
-- **The Non-Breaking Space (Secondary Fix):** If tracking adjustment isn't feasible, you can inject a non-breaking space (`&nbsp;` in HTML, or `Shift+Space` on a computer) before the penultimate word of the paragraph. Be aware that this forces the penultimate word to drop down, which can leave an unwanted gap in the bottom right corner of the text block.
-- **In Engineering (CSS):** Apply `text-wrap: balance;` to all headlines (`h1`, `h2`, `h3`). Apply `text-wrap: pretty;` to all paragraph text (`p`). Because `text-wrap: pretty` is not yet supported in all legacy browsers, the manual non-breaking space rule above is still required as a fallback for all critical marketing copy.
+- **The Soft Break (Secondary Fix):** If tracking adjustment isn't feasible, insert a soft break opportunity (`&wbr;` in HTML, or a manual soft line break — Shift+Enter in Figma) before the word that would otherwise orphan. Unlike a non-breaking space, this only kicks in if the line actually needs to wrap there — it doesn't glue two words together permanently, so it won't leave a stray gap once the text block gets more room (e.g. a wider viewport).
+- **In Engineering (CSS):** Apply `text-wrap: balance;` to all headlines (`h1`, `h2`, `h3`). Apply `text-wrap: pretty;` to all paragraph text (`p`). Because `text-wrap: pretty` is not yet supported in all legacy browsers, the manual soft-break rule above is still required as a fallback for all critical marketing copy.
 
 ### Typography Do / Don’t
 
