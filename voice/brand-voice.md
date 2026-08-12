@@ -36,6 +36,7 @@ Warmth through respect, not softening language.
 ## Banned Register
 - **Hype:** Revolutionize, disrupt, ecosystem, synergies.
 - **Boilerplate:** Best-in-class, solutions, empower, holistic.
+  - *Why "empower" specifically:* "Empower" frames Skillit as the source of the worker's power. The brand's ontology is the opposite — workers are independent decision-makers, not cogs in a machine (Agency). Power pre-exists; Skillit removes friction. Use "give", "let", "support" — or the mission filter ("make more essential").
 - **AI Doom:** "In a world where AI replaces..."
 - **Hedging:** We believe, perhaps, might be able to.
 - **Over-enthusiasm:** Thrilled to announce, exciting.

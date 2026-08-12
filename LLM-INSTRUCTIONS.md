@@ -44,7 +44,7 @@ Use CSS variables, never raw hex codes in output.
 ## 6. Voice & Anti-LLM Copywriting Rules
 - **Mandate:** Elevate the worker. Direct, data-driven, warm-but-firm.
 - **CTAs:** Actionable ("Join", not "Sign Up").
-- **Framing:** Empower craft workers; never replace them.
+- **Framing:** Make craft workers more essential; never replace them. <!-- orig: "Empower craft workers" — banned in brand-voice.md Banned Register -->
 
 **Universal Anti-LLM Rules:**
 To counteract robotic, default AI writing patterns, adhere strictly to the following constraints when generating human-readable copy:

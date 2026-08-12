@@ -415,7 +415,7 @@ Skillit’s data visualization is utilitarian. The charts should be legible, pre
 
 The brand voice is built entirely around five traits inherent to craft workers. Every piece of copy should reflect at least one of these:
 
-**1. Agency (Empowering Choice).** Craft workers are independent decision-makers, not cogs in a machine. Write to empower their control over their career.
+**1. Agency (Empowering Choice).** Craft workers are independent decision-makers, not cogs in a machine. Write to support their control over their career. <!-- orig: "empower" — banned in brand-voice.md Banned Register -->
 
 - Wrong: "We place you in open jobs."
 - Right: "Choose the right job for you."
