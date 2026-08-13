@@ -31,13 +31,13 @@ If you need a size larger than 128px (e.g., 256px), extrapolate using this algor
 | **Text-0.75x** |  | 12px |  | 9pt | Regular (400) | Medium (500) | 1.55 | 0% |
 *(Note: Text-1x and Text-0.75x operate outside the strict 2x multiplier rule to protect legibility on job-site screens — Bolded is only +100 at this floor, not +200. 12px is the absolute hard floor. Text-16x was retired — no longer a defined Figma text style; use the extrapolation algorithm above if a size beyond Text-8x is ever needed.)*
 ### Small-viewport variants (confirmed against Figma)
-Per the halving rule below: Text-2x/4x/8x halve at small viewports; Text-1x/0.75x hold their desktop size (hard legibility floor, see Responsive Scaling section).
+Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = Text-1x at small viewports). In CSS, the suffix is `-sm` (e.g., `--text-1x-sm`), matching the breakpoint naming in the spacing tokens — **`-sm` always means "small viewport variant", never "small text size"** (small text sizes live in the scale itself, e.g. `--text-0.75x`). Per the halving rule below: Text-2x/4x/8x halve at small viewports. Text-1x scales to `Text-1s` (12px) — the old 16px mobile body was retired aug 13, the former `Text-0.75s` (12px) was renamed to `Text-1s`. Text-0.75x holds its desktop size (hard legibility floor, see Responsive Scaling section).
 | Level | Desktop | Small viewport | Leading (unchanged) |
 |---|---|---|---|
 | Text-8x | 128px | 64px | 0.80 |
 | Text-4x | 64px | 32px | 1.00 |
 | Text-2x | 32px | 16px | 1.20 |
-| Text-1x | 16px | 16px (no override) | 1.40 |
+| Text-1x | 16px | 12px (`Text-1s`) | 1.40 |
 | Text-0.75x | 12px | 12px (no override) | 1.55 |
 ### Monospace variants (confirmed against Figma)
 Concrete values for the 90% scaling rule below, confirmed against current Figma text styles. Only Text-1x and Text-2x have confirmed mono variants so far — don't extrapolate 0.75x/4x/8x mono sizes without confirming in Figma first.
@@ -79,7 +79,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-8x-leading:       0.80;
   --text-8x-tracking:      -0.06em;
   --text-8x-print:         96pt;
-  --text-8x-small:         4rem;   /* 64px — halved for small viewports */
+  --text-8x-sm:            4rem;   /* 64px — small viewport variant */
   /* Text-4x */
   --text-4x:                4rem;
   --text-4x-weight:         600;
@@ -87,7 +87,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-4x-leading:        1.00;
   --text-4x-tracking:       -0.04em;
   --text-4x-print:          48pt;
-  --text-4x-small:          2rem;  /* 32px — halved for small viewports */
+  --text-4x-sm:             2rem;  /* 32px — small viewport variant */
   /* Text-2x */
   --text-2x:                2rem;
   --text-2x-weight:         500;
@@ -95,7 +95,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-2x-leading:        1.20;
   --text-2x-tracking:       -0.02em;
   --text-2x-print:          24pt;
-  --text-2x-small:          1rem;  /* 16px — halved for small viewports */
+  --text-2x-sm:             1rem;  /* 16px — small viewport variant */
   --text-2x-mono:            1.8125rem; /* 29px — confirmed Figma value, round(32 * 0.9) */
   /* Text-1x */
   --text-1x:                1rem;
@@ -104,7 +104,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-1x-leading:        1.40;
   --text-1x-tracking:       0em;
   --text-1x-print:          12pt;
-  /* No -small token: Text-1x does not scale down on mobile (job-site legibility floor) */
+  --text-1x-sm:             0.75rem; /* 12px — mobile body, renamed from Text-0.75s (aug 13) */
   /* Text-0.75x (Hard Legibility Floor) */
   --text-0.75x:             0.75rem;
   --text-0.75x-weight:      400;
@@ -112,7 +112,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-0.75x-leading:     1.55;
   --text-0.75x-tracking:    0em;
   --text-0.75x-print:       9pt;
-  /* No -small token: already the hard floor, does not scale down further */
+  /* No -sm token: already the hard floor, does not scale down further */
   /* Functional UI scale */
   --text-ui-lg:     1.125rem;
   --text-ui:        1rem;
@@ -184,4 +184,4 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 - Do not use the primary hierarchy sizes in UI components — they are for editorial/marketing surfaces only.
 ### Responsive Scaling (Desktop to Mobile)
 - **The Rule:** Scale display text sizes down smoothly to a minimum of half the size at mobile breakpoints (e.g., a desktop 128px becomes 64px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
-- **Body Text Exception:** Body and UI text (`--text-ui`, `--text-1x`, etc.) should not scale down. Maintain their exact desktop size on mobile to ensure strict job-site legibility.
+- **Body Text Exception:** Body and UI text scale down to the 12px hard floor on mobile (`Text-1s` = 12px, locked aug 13). Never below 12px. UI text (`--text-ui`, `--text-label`) holds its size — the 44px touch target rule governs app surfaces, not display.

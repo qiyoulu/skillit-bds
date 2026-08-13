@@ -230,6 +230,8 @@ The scale is a perfect factor-of-2 progression built on a 16px baseline: `128 �
 
 _(Full print/small-viewport/monospace variants for each level are documented in `tokens/typography.md` — check there before inventing a new size, so this table and the token file don't drift apart again.)_
 
+**Small-viewport variants:** Each level above `Text-0.75x` has a `-s` variant in Figma and `-sm` in CSS (e.g., `Text-1s` / `--text-1x-sm`). The `-sm` suffix always means "small viewport variant", never "small text size". Text-8x/4x/2x halve at small viewports; Text-1x scales down to 12px (`Text-1s`, locked aug 13); Text-0.75x holds its size (hard floor).
+
 ### Case
 
 **Sentence-case everywhere.** “Join for free” — not “Join For Free.” “How it works” — not “HOW IT WORKS.” All-caps and title case are banned in all brand typesetting.
@@ -514,7 +516,7 @@ _Brand Design: Chiyo · System: Skillit Narrative & Brand_
 
 - Scale display headers down smoothly (using fluid typography or breakpoints) to half their size at mobile viewports.
 - **Maintain the original desktop font-weight** when scaling down headers to preserve hierarchy and punch.
-- Never scale down body or UI text (`Text-1x`, `--text-ui`); keep them at their desktop sizes for legibility.
+- Never scale body or UI text below 12px. Body (`Text-1x`) scales to `Text-1s` (12px) on small viewports — never below. UI text (`--text-ui`) holds its desktop size for app legibility and touch targets.
 
 ---
 

@@ -40,6 +40,7 @@ Built on a 4px base unit (`0.25rem`). Every value is a multiple of 4.
 | Token | Value | px equiv | Use |
 |---|---|---|---|
 | `--space-1` | `0.25rem` | 4px | Micro gaps — icon-to-label, tight inline spacing |
+| `--space-1.5` | `0.375rem` | 6px | Small-viewport text list gaps (mobile bullet/numbered rhythm) |
 | `--space-2` | `0.5rem` | 8px | Compact spacing — badge padding, text list item gaps |
 | `--space-3` | `0.75rem` | 12px | Small gaps — input field internal padding (top/bottom) |
 | `--space-4` | `1rem` | 16px | Default spacing unit — paragraph gap, UI list item gap |
@@ -89,6 +90,11 @@ Buttons and interactive cards should use **double the standard horizontal paddin
 - **Paragraphs:** `--space-4` (16px / 1rem) below paragraphs. This is exactly equal to the body font size (1em), maintaining a perfect consistent rhythm.
 - **Text Lists:** `--space-2` (8px / 0.5rem) between bulleted or numbered text items. This tighter spacing ensures the list reads visually as a single, cohesive block of information.
 - **UI Lists:** `--space-4` (16px / 1rem) between interactive list items in the app or dashboard. This wider spacing protects the 44px minimum touch target rule.
+
+### Small viewports (`< 768px`)
+- **Paragraphs:** `--space-3` (12px / 0.75rem) below paragraphs. Tighter than desktop — body copy at small viewports reads as one continuous column; 16px creates visible gaps between stacked paragraphs.
+- **Text Lists:** `--space-1.5` (6px / 0.375rem) between bulleted or numbered text items. This is intentionally *off* the 8px scale — it's the optical sweet spot for list rhythm on narrow columns, locked by design review (aug 13).
+- **UI Lists:** unchanged (`--space-4`, 16px) — the 44px touch target rule is viewport-independent.
 ---
 ## Breakpoints
 | Name | Min width | Context |
@@ -109,6 +115,7 @@ Buttons and interactive cards should use **double the standard horizontal paddin
 ```css
 :root {
   --space-1:  0.25rem;
+  --space-1.5: 0.375rem;
   --space-2:  0.5rem;
   --space-3:  0.75rem;
   --space-4:  1rem;
