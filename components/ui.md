@@ -18,7 +18,7 @@ The main CTA. One per section maximum. Traffic Cone background, Canvas text.
   font-family: var(--font-primary);
   font-size: var(--text-ui);              /* 1rem */
   font-weight: var(--weight-semibold);      /* 600 */
-  padding: var(--space-8) var(--space-16);  /* 8px 16px */
+  padding: var(--space-3) var(--space-8);  /* 12px 32px — tactile */
   border: none;
   border-radius: 100px;
   letter-spacing: 0;
@@ -52,7 +52,7 @@ Outlined, Iron stroke, no fill. For secondary actions.
   font-family: var(--font-primary);
   font-size: var(--text-ui);
   font-weight: var(--weight-semibold);      /* 600 */
-  padding: var(--space-8) var(--space-16);  /* 8px 16px */
+  padding: var(--space-3) var(--space-8);  /* 12px 32px — tactile */
   border: 1.5px solid var(--color-fg);
   border-radius: 100px;
   cursor: pointer;
@@ -71,7 +71,7 @@ For irreversible actions only. Toolbox background.
   font-family: var(--font-primary);
   font-size: var(--text-ui);
   font-weight: var(--weight-semibold);
-  padding: var(--space-8) var(--space-16);  /* 8px 16px */
+  padding: var(--space-3) var(--space-8);  /* 12px 32px — tactile */
   border: none;
   border-radius: 100px;
   cursor: pointer;
@@ -103,7 +103,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 .nav-right {
   display: flex;
   align-items: center;
-  gap: var(--space-48);
+  gap: var(--space-12);               /* 48px — nav right cluster */
 }
 .nav-menu-btn {
   display: none;
@@ -115,14 +115,14 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 }
 .nav-links {
   display: flex;
-  gap: var(--space-32);
+  gap: var(--space-8);               /* 32px — nav links */
   align-items: center;
 }
 .mobile-dropdown {
   display: none;
   flex-direction: column;
-  gap: var(--space-32);
-  padding: var(--space-64) var(--space-128);
+  gap: var(--space-8);               /* 32px — mobile dropdown links */
+  padding: var(--space-16) var(--space-128);
   border-top: 1px solid rgba(35, 47, 54, 0.12);
 }
 .mobile-dropdown .nav-link { font-size: clamp(24px, 3vw, 32px); font-weight: 500; }

@@ -1,10 +1,15 @@
 /**
  * Skillit Brand Design System — Tailwind Theme Extension
- * 
+ *
+ * DERIVED from tokens/tokens.json5 (single source of truth).
+ * Do not edit values here directly — edit tokens.json5 and regenerate.
+ *
  * Instructions:
- * Merge this object into the `theme.extend` section of your project's tailwind.config.js.
+ * 1. Import the CSS custom properties from tokens/tokens.css into your global stylesheet
+ *    (the var() references below resolve against that :root block).
+ * 2. Merge this object into the `theme.extend` section of your project's tailwind.config.js.
  * This ensures all brand colors are namespaced under `skillit-*` (e.g. `bg-skillit-canvas`, `text-skillit-iron`)
- * and tied directly to the CSS custom properties defined in the global stylesheet.
+ * and tied directly to the canonical design tokens.
  */
 
 module.exports = {
@@ -26,9 +31,37 @@ module.exports = {
         sans: ['"Work Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['"IBM Plex Mono"', '"JetBrains Mono"', 'ui-monospace', 'monospace']
       },
+      fontSize: {
+        '8x': 'var(--text-8x)',
+        '4x': 'var(--text-4x)',
+        '2x': 'var(--text-2x)',
+        '1x': 'var(--text-1x)',
+        '0.75x': 'var(--text-0.75x)',
+        ui: 'var(--text-ui)',
+        'ui-lg': 'var(--text-ui-lg)',
+        label: 'var(--text-label)',
+        mono: 'var(--text-mono)'
+      },
       borderRadius: {
-        none: '0px',
-        pill: '9999px'
+        sharp: 'var(--radius-sharp)',
+        pill: 'var(--radius-pill)'
+      },
+      spacing: {
+        '1': 'var(--space-1)',
+        '1.5': 'var(--space-1.5)',
+        '2': 'var(--space-2)',
+        '3': 'var(--space-3)',
+        '4': 'var(--space-4)',
+        '5': 'var(--space-5)',
+        '6': 'var(--space-6)',
+        '8': 'var(--space-8)',
+        '10': 'var(--space-10)',
+        '12': 'var(--space-12)',
+        '16': 'var(--space-16)',
+        '20': 'var(--space-20)',
+        '24': 'var(--space-24)',
+        '128': 'var(--space-128)',
+        '256': 'var(--space-256)'
       }
     }
   }

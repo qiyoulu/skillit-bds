@@ -1,5 +1,6 @@
 # Color Tokens — Skillit BDS
 **Last updated:** 2026-07-10
+**Canonical source:** `tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
 - Use ONLY the tokens listed here. Never approximate, mix, or invent colors.

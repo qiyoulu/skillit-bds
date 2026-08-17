@@ -1,5 +1,6 @@
 # Typography Tokens — Skillit BDS
 **Last updated:** 2026-07-12
+**Canonical source:** `tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
 - Use only Work Sans. Never substitute with system fonts, other Google Fonts, or unlicensed alternatives.

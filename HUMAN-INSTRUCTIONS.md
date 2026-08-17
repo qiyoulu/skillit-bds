@@ -355,7 +355,7 @@ In this system, shape indicates whether an element is interactive or static. We 
 ### Grid & Baseline
 
 The layout is built on an **8px/16px baseline grid**, paired with **Fluid Architectural Scaling**.
-While micro-spacing (`8px`, `16px`, `32px`) remains locked to absolute pixels to protect touch targets and UI integrity, macro-spacing (margins, section gaps, padding) uses CSS `clamp()` functions (`--space-64` through `--space-256`). This ensures the massive, confident margins seen on desktop smoothly and gradually compress as the viewport scales down, exactly mimicking the fluid, tensioned behavior of Anthropic's grid, without sudden, jarring jumps at breakpoints.
+While micro-spacing (`8px`, `16px`, `32px`) remains locked to absolute pixels to protect touch targets and UI integrity, macro-spacing (margins, section gaps, padding) uses CSS `clamp()` functions (`--space-128` and `--space-256`). This ensures the massive, confident margins seen on desktop smoothly and gradually compress as the viewport scales down, exactly mimicking the fluid, tensioned behavior of Anthropic's grid, without sudden, jarring jumps at breakpoints.
 **12-Column Newspaper Grid:** All desktop layouts sit on a strict 12-column grid. Do not use flexible percentage splits. Blocks should span fixed column counts (e.g., 7 columns for hero text, 5 columns for the hero CTA) so that vertical alignment is maintained down the entire page.
 | Element | Height / Padding | Margin |
 | ------------------- | ----------------------------- | ------------ |

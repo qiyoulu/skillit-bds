@@ -1,5 +1,6 @@
 # Logo Tokens — Skillit BDS
 **Last updated:** 2026-07-13
+**Canonical source:** `tokens.json5` (machine-readable) for dimension tokens; the SVGs in `assets/logo/` are the fixed graphic assets.
 ---
 ## Rules before you use this file
 - Always use the approved SVG files. Never recreate the mark or wordmark from scratch.

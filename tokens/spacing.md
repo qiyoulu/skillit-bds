@@ -1,33 +1,45 @@
 # Spacing Tokens — Skillit BDS
 **Last updated:** 2026-07-13
+**Canonical source:** `tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
 - The system uses a strict **8px / 16px baseline grid**.
 - Never hardcode margins or padding with arbitrary `px` values. Always use a multiple from the token scale below.
 - Do not mix units (e.g., `em` or `%` for structural spacing).
 ---
-## The Fluid Multiplier Scale
-The layout spacing directly mirrors the typography scale's factor-of-2 logic. To prevent abrupt, jarring layout shifts when users resize their browser, macro-spacing uses CSS `clamp()` functions to fluidly scale down.
+## Base spacing scale
+Built on a 4px base unit (`0.25rem`). Every value is a multiple of 4. This is the canonical scale — one value per token name, no duplicates.
+| Token | Value | px equiv | Use |
+|---|---|---|---|
+| `--space-1` | `0.25rem` | 4px | Micro gaps — icon-to-label, tight inline spacing |
+| `--space-1.5` | `0.375rem` | 6px | Small-viewport text list gaps (mobile bullet/numbered rhythm) |
+| `--space-2` | `0.5rem` | 8px | Compact spacing — badge padding, text list item gaps |
+| `--space-3` | `0.75rem` | 12px | Small gaps — input field internal padding (top/bottom) |
+| `--space-4` | `1rem` | 16px | Default spacing unit — paragraph gap, UI list item gap |
+| `--space-5` | `1.25rem` | 20px | Medium — between form groups |
+| `--space-6` | `1.5rem` | 24px | Standard section padding, between related elements |
+| `--space-8` | `2rem` | 32px | Between unrelated elements, nav to content |
+| `--space-10` | `2.5rem` | 40px | Large section gaps |
+| `--space-12` | `3rem` | 48px | Section breaks |
+| `--space-16` | `4rem` | 64px | Major section separators |
+| `--space-20` | `5rem` | 80px | Hero padding, full-bleed section margins |
+| `--space-24` | `6rem` | 96px | Maximum section vertical padding |
+---
+## Macro spacing (fluid)
+Large structural spacing uses CSS `clamp()` to fluidly scale down, preventing abrupt layout shifts on resize. These tokens do **not** collide with the base scale.
 | Token | CSS Value | Common Use |
 |---|---|---|
-| `--space-8` | `8px` | Micro gap, button vertical padding |
-| `--space-16` | `16px` | Tight gap, button horizontal padding |
-| `--space-32` | `32px` | Standard gap, lockup height |
-| `--space-48` | `48px` | Medium component gap |
-| `--space-64` | `clamp(32px, 5vw, 64px)` | Inner section padding, grid gutters, nav bar height |
-| `--space-96` | `clamp(48px, 7vw, 96px)` | Section padding |
-| `--space-128` | `clamp(48px, 10vw, 128px)` | Minimum desktop section gap, page margins |
+| `--space-128` | `clamp(48px, 10vw, 128px)` | Desktop section gaps, page margins |
 | `--space-256` | `clamp(96px, 18vw, 256px)` | Massive editorial breaks |
 ---
 ## Structural Constants
 | Element | Height / Padding | Margin |
 | ------- | ---------------- | ------ |
-| Nav Bar | 64px (`--space-64`) | —      |
-| Logo Lockup | 32px (`--space-32`) | —      |
-| Primary Buttons | 8px vertical, 16px horizontal | — |
+| Nav Bar | 64px (`--space-16`) | —      |
+| Logo Lockup | 32px (`--space-8`) | —      |
+| Primary Buttons | `--space-3` vertical (12px), `--space-8` horizontal (32px) | — |
 | Desktop Section Gap | — | 128px (`--space-128`) |
 | Desktop Page Margin | — | 128px (`--space-128`) |
-**Last updated:** 2026-07-10
 ---
 ## Rules before you use this file
 - Use only named spacing tokens. Never hardcode arbitrary pixel values.

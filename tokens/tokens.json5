@@ -1,0 +1,161 @@
+{
+  // skillit brand design system — canonical token source (w3c design tokens)
+  // single machine-readable source of truth. derived artifacts:
+  //   - tokens.css        (CSS custom properties :root block)
+  //   - tailwind-theme.js (tailwind theme extension)
+  // never edit the derived files directly — edit here, regenerate.
+  base: {
+    color: {
+      bg: {
+        $value: '#FAF7F3',
+        $type: 'color',
+        $description: 'Canvas — primary background. never pure white as global ground.',
+        $extensions: {
+          'org.skillit.role': 'background',
+          'org.skillit.pantone': 'Paper',
+        },
+      },
+      surface: {
+        $value: '#FFFFFF',
+        $type: 'color',
+        $description: 'Plaster — elevated surfaces, cards, isolated form inputs.',
+        $extensions: { 'org.skillit.role': 'surface' },
+      },
+      fg: {
+        $value: '#232F36',
+        $type: 'color',
+        $description: 'Iron — all body text, headings, structural elements. never #000000.',
+        $extensions: {
+          'org.skillit.role': 'foreground',
+          'org.skillit.pantone': '432 C',
+        },
+      },
+      primary: {
+        $value: '#EF6F1A',
+        $type: 'color',
+        $description: 'Traffic Cone — primary CTA, active states, key accents. one accent per section.',
+        $extensions: {
+          'org.skillit.role': 'accent',
+          'org.skillit.pantone': '158 C',
+        },
+      },
+      warning: {
+        $value: '#FEB11C',
+        $type: 'color',
+        $description: 'Hard Hat — non-fatal alerts, warnings. always pair with shape + label.',
+        $extensions: { 'org.skillit.pantone': '1235 C' },
+      },
+      error: {
+        $value: '#C8102E',
+        $type: 'color',
+        $description: 'Toolbox — fatal errors, destructive actions.',
+        $extensions: { 'org.skillit.pantone': '186 C' },
+      },
+      success: {
+        $value: '#367C2B',
+        $type: 'color',
+        $description: 'Bottle Glass — confirmations, success states.',
+        $extensions: { 'org.skillit.pantone': '364 C' },
+      },
+      link: {
+        $value: '#007CA6',
+        $type: 'color',
+        $description: "Painter's Tape — text links only, underlined, never a fill.",
+        $extensions: { 'org.skillit.pantone': '3135 C' },
+      },
+    },
+    spacing: {
+      '1': { $value: '0.25rem', $type: 'dimension', $description: '4px — micro gaps, icon-to-label' },
+      '1.5': { $value: '0.375rem', $type: 'dimension', $description: '6px — small-viewport text list gaps' },
+      '2': { $value: '0.5rem', $type: 'dimension', $description: '8px — compact spacing, badge padding' },
+      '3': { $value: '0.75rem', $type: 'dimension', $description: '12px — small gaps, input field internal padding' },
+      '4': { $value: '1rem', $type: 'dimension', $description: '16px — default spacing unit, paragraph gap' },
+      '5': { $value: '1.25rem', $type: 'dimension', $description: '20px — medium, between form groups' },
+      '6': { $value: '1.5rem', $type: 'dimension', $description: '24px — standard section padding' },
+      '8': { $value: '2rem', $type: 'dimension', $description: '32px — between unrelated elements, nav to content' },
+      '10': { $value: '2.5rem', $type: 'dimension', $description: '40px — large section gaps' },
+      '12': { $value: '3rem', $type: 'dimension', $description: '48px — section breaks' },
+      '16': { $value: '4rem', $type: 'dimension', $description: '64px — major section separators' },
+      '20': { $value: '5rem', $type: 'dimension', $description: '80px — hero padding, full-bleed section margins' },
+      '24': { $value: '6rem', $type: 'dimension', $description: '96px — maximum section vertical padding' },
+      '128': { $value: 'clamp(48px, 10vw, 128px)', $type: 'dimension', $description: 'desktop section gaps, page margins' },
+      '256': { $value: 'clamp(96px, 18vw, 256px)', $type: 'dimension', $description: 'massive editorial breaks' },
+    },
+    typography: {
+      family: {
+        primary: { $value: "'Work Sans', sans-serif", $type: 'fontFamily', $description: 'the only typeface — UI, headings, body, marketing, print' },
+        mono: { $value: "'IBM Plex Mono', 'JetBrains Mono', monospace", $type: 'fontFamily', $description: 'metadata, IDs, data — scale to 0.9em inline' },
+      },
+      text: {
+        '8x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '8rem', fontWeight: 700, lineHeight: 0.8, letterSpacing: '-0.06em' },
+          $type: 'typography',
+          $description: 'Text-8x — hero headlines. small viewport: 4rem. bolded: 900.',
+          $extensions: { 'org.skillit.print': '96pt', 'org.skillit.sm': '4rem' },
+        },
+        '4x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '4rem', fontWeight: 600, lineHeight: 1, letterSpacing: '-0.04em' },
+          $type: 'typography',
+          $description: 'Text-4x — standard headlines, large callouts. small viewport: 2rem. bolded: 800.',
+          $extensions: { 'org.skillit.print': '48pt', 'org.skillit.sm': '2rem' },
+        },
+        '2x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '2rem', fontWeight: 500, lineHeight: 1.2, letterSpacing: '-0.02em' },
+          $type: 'typography',
+          $description: 'Text-2x — section headings, pull quotes. small viewport: 1rem. bolded: 700. mono: 1.8125rem.',
+          $extensions: { 'org.skillit.print': '24pt', 'org.skillit.sm': '1rem' },
+        },
+        '1x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '1rem', fontWeight: 400, lineHeight: 1.4, letterSpacing: '0em' },
+          $type: 'typography',
+          $description: 'Text-1x — all running copy. small viewport: 0.75rem (12px). bolded: 600. mono: 0.875rem.',
+          $extensions: { 'org.skillit.print': '12pt', 'org.skillit.sm': '0.75rem' },
+        },
+        '0.75x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.55, letterSpacing: '0em' },
+          $type: 'typography',
+          $description: 'Text-0.75x — hard legibility floor, 12px. no -sm variant. bolded: 500 (exception).',
+          $extensions: { 'org.skillit.print': '9pt' },
+        },
+        'ui-lg': { $value: { fontSize: '1.125rem', fontWeight: 400, lineHeight: 1.6, letterSpacing: '0' }, $type: 'typography', $description: 'large UI text' },
+        'ui': { $value: { fontSize: '1rem', fontWeight: 400, lineHeight: 1.6, letterSpacing: '0' }, $type: 'typography', $description: 'default UI body' },
+        label: { $value: { fontSize: '0.75rem', fontWeight: 500, lineHeight: 1.4, letterSpacing: '0.04em' }, $type: 'typography', $description: 'labels, tags, badges — sentence-case, minimum size' },
+        mono: { $value: { fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.5, letterSpacing: '0.02em' }, $type: 'typography', $description: 'metadata, IDs, data — Text-1x mono variant, round(16 × 0.9)' },
+      },
+      weight: {
+        regular: { $value: 400, $type: 'fontWeight' },
+        medium: { $value: 500, $type: 'fontWeight' },
+        semibold: { $value: 600, $type: 'fontWeight' },
+        bold: { $value: 700, $type: 'fontWeight' },
+        extrabold: { $value: 800, $type: 'fontWeight' },
+        black: { $value: 900, $type: 'fontWeight' },
+        // optical balancing for dark backgrounds — subtract ~25 units
+        'regular-dark': { $value: 375, $type: 'fontWeight', $description: '375 — light text on dark, halation compensation' },
+        'medium-dark': { $value: 475, $type: 'fontWeight' },
+        'semibold-dark': { $value: 575, $type: 'fontWeight' },
+        'bold-dark': { $value: 675, $type: 'fontWeight' },
+        'extrabold-dark': { $value: 775, $type: 'fontWeight' },
+        'black-dark': { $value: 875, $type: 'fontWeight' },
+      },
+    },
+    radius: {
+      sharp: { $value: '0px', $type: 'dimension', $description: 'structural containers, photos, cards, icons — static = sharp' },
+      pill: { $value: '9999px', $type: 'dimension', $description: 'actionable touchpoints — buttons, badges. 100vmax or 9999px.' },
+    },
+    layout: {
+      'max-width-content': { $value: '1200px', $type: 'dimension', $description: 'website / marketing max content width' },
+      'max-width-app': { $value: '480px', $type: 'dimension', $description: 'app (worker-facing) max width, mobile-first' },
+      'max-width-text': { $value: '70ch', $type: 'dimension', $description: 'body text column max width — never exceed' },
+      'touch-target-min': { $value: '44px', $type: 'dimension', $description: 'minimum touch target, Apple HIG / WCAG 2.5.5' },
+      'nav-height': { $value: '64px', $type: 'dimension', $description: 'primary nav bar height' },
+      'logo-mark-min': { $value: '21px', $type: 'dimension', $description: 'mark minimum size — below this the negative space closes up' },
+      'wordmark-min': { $value: '16px', $type: 'dimension', $description: 'wordmark minimum size' },
+    },
+    breakpoint: {
+      sm: { $value: '480px', $type: 'dimension', $description: 'large mobile' },
+      md: { $value: '768px', $type: 'dimension', $description: 'tablet — lockup collapses to mark' },
+      lg: { $value: '1024px', $type: 'dimension', $description: 'desktop — grid collapses to single column below this' },
+      xl: { $value: '1280px', $type: 'dimension', $description: 'wide desktop' },
+    },
+  },
+}
