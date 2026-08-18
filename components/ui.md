@@ -134,9 +134,12 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   color: var(--color-fg);                  /* Iron */
   text-decoration: none;
 }
-.nav-link:hover,
+.nav-link:hover {
+  color: var(--color-link);                /* Painter's Tape — link color, 4.6:1 passes AA at 16px */
+  text-decoration: underline;
+}
 .nav-link[aria-current="page"] {
-  color: var(--color-primary);             /* Traffic Cone */
+  color: var(--color-primary);             /* Traffic Cone — active state, the accent's role */
 }
 /* Responsive Nav */
 @media (max-width: 1024px) {
@@ -249,7 +252,7 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 a:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-fg);     /* Iron ring — focus rings are always Iron (color.md) */
   outline-offset: 2px;
   border-radius: 0;
 }
@@ -361,3 +364,12 @@ Icons are delivered as inline SVGs in Rails ViewComponents (`app/components/`) s
 | Plus | Complete via rotated `close.svg` (no dedicated `plus.svg`) |
 | Menu (hamburger) | Complete (`menu.svg`) |
 | Info | Pending — “i” in a square, to be drawn when needed (chiyo, 2026-08-17) |
+---
+## States
+Design all states, not just the happy path. A layout that only works for the ideal case isn't finished.
+- **Empty:** Plaster surface, Iron message, single illustration or icon. Never a blank void — give the user a reason the state is empty and a path forward.
+- **Loading:** skeleton blocks in Plaster, no spinner-only states. Skeletons match final layout geometry so nothing jumps on load.
+- **Error:** icon (octagon, Toolbox) + specific message. See form inputs for field-level states.
+- **Disabled:** Iron at 40% (`rgba(35, 47, 54, 0.4)`), no color change — a disabled control must never be confused with an error state.
+- **Overflow:** one line of text at any width must never clip. Headings wrap; long worker names truncate with ellipsis at the container edge, never overlap.
+- **Progressive disclosure:** the simple view first, advanced options behind a toggle. Never dump every option on screen at once.

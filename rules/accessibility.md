@@ -60,9 +60,23 @@ Every status state should communicate via three channels simultaneously: color +
 ---
 ## Focus states
 - All interactive elements should have a visible focus ring.
-- Focus ring: `2px solid` Traffic Cone (`--color-primary`), `2px offset`.
+- Focus ring: `2px solid` Iron (`--color-fg`), `2px offset`. Focus rings are always Iron — never a status/accent color (see `tokens/color.md`).
 - Never remove focus outlines with `outline: none` without providing an equivalent custom focus style.
 - Focus should be keyboard-navigable in the correct DOM order.
+- **Skip-to-content link** at the top of every page (visually hidden until focused) so keyboard users bypass repeated navigation.
+- **Never trap focus in a modal.** On open, focus moves to the modal; on close, it returns to the element that opened it.
+- **Hover is not a state on touch.** Every hover interaction needs a tap equivalent. Icons that function as buttons need a text alternative (`aria-label`).
+---
+## Motion rules
+- Respect `prefers-reduced-motion`. If the user requests reduced motion, their setting wins — no exceptions for "but it's subtle."
+- Nothing flashes more than 3 times per second (seizure safety, WCAG 2.3.1).
+- Animations ≤ 5 seconds or user-controlled. No infinite loops without a stop mechanism.
+- Auto-playing or auto-moving content (carousels, ticker tapes) gets visible pause/stop controls.
+- If an animation carries meaning, that meaning must survive with motion disabled.
+---
+## Reflow / zoom
+- Layout must be usable at 200% zoom with no horizontal scrolling (WCAG 1.4.10). Text reflows; the grid collapses rather than clips.
+- Test every layout at 200% zoom before shipping.
 ---
 ## Image alt text rules
 All images in generated content should have descriptive alt text. Rules:
