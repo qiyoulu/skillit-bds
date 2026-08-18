@@ -33,7 +33,7 @@ Use CSS variables, never raw hex codes in output.
 ## 4. Assets & Imagery
 - **SVGs:** `fill="currentColor"`. Inline in HTML/components to inherit CSS text color.
 - **Logos/Patterns:** No stretching, rotating, drop shadows, raster formats.
-- **Photography:** No text, symbols, graphs, numbers, or AI artifacts in images.
+- **Photography:** No AI image generation, ever (Laura lock). No text, symbols, graphs, numbers, or AI artifacts in images. Real, human-captured, shot on genuine work sites — see `rules/photography.md`.
 
 ## 5. Data Visualization
 - **Geometry:** `0px` corners for bars/tooltips. Unsmoothed (stepped/linear) and smoothed (spline/curved) line paths are both permitted. No X-axis gridlines.

@@ -11,7 +11,7 @@
 ## Typefaces
 ### Work Sans
 - **Source:** Google Fonts CDN (zero-config)
-- **CDN link:** `https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap`
+- **CDN link:** `https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&family=IBM+Plex+Mono:wght@400&display=swap`
 - **CSS variable:** `--font-primary: 'Work Sans', sans-serif;`
 - **Use:** Everything — UI, headings, body text, buttons, labels, marketing, print.
 ---
@@ -67,7 +67,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
 ## CSS custom properties (copy-paste ready)
 ```css
 /* Google Fonts import — add to <head> */
-/* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"> */
+/* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"> */
 :root {
   /* Families */
   --font-primary:   'Work Sans', sans-serif;

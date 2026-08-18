@@ -99,7 +99,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   align-items: center;
   justify-content: space-between;
 }
-.nav-logo img { height: 21px; }             /* --logo-mark-min — never below 21px */
+.nav-logo img { height: var(--logo-mark-min); }  /* 21px — never below this */
 .logo-mark { display: none; width: 24px; height: 24px; }
 .nav-right {
   display: flex;
@@ -375,3 +375,4 @@ Icons are delivered as inline SVGs in Rails ViewComponents (`app/components/`) s
 | External link | Complete (`external-link.svg`) |
 | Plus | Complete via rotated `close.svg` (no dedicated `plus.svg`) |
 | Menu (hamburger) | Complete (`menu.svg`) |
+| Info | Pending — “i” in a square, to be drawn when needed (chiyo, 2026-08-17) |

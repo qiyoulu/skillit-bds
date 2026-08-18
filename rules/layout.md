@@ -69,7 +69,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Centered, maximum `600px` wide.
 - One headline, one subline, one button.
 - Background: Canvas or full Iron panel.
-- Button: Traffic Cone background, Canvas text.
+- Button: Traffic Cone background, Iron text.
 ---
 ## Nav bar
 - Background: Canvas with boot tread pattern overlay (low opacity — texture only, not legible repeat).

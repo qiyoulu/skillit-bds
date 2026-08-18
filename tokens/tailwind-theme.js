@@ -5,8 +5,10 @@
  * No generator exists yet — keep this file in sync with tokens.json5 manually.
  *
  * WARNING: the `spacing` keys (1–256) override Tailwind's default scale for
- * those keys (e.g. p-5 = 20px, not 1.25rem). This is intentional — every
- * spacing value is remapped onto the canonical skillit 4px-base scale.
+ * the keys they share. In practice the 1–24 range matches Tailwind's defaults
+ * (both are 4px-base rem, e.g. p-5 = 1.25rem = 20px), so the merge is
+ * harmless there — the real additions are the macro tokens 128 and 256,
+ * which Tailwind does not define.
  *
  * Instructions:
  * 1. Import the CSS custom properties from tokens/tokens.css into your global stylesheet

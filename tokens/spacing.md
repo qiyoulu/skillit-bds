@@ -34,6 +34,8 @@ Large structural spacing uses CSS `clamp()` to fluidly scale down, preventing ab
 |---|---|---|
 | `--space-128` | `clamp(48px, 10vw, 128px)` | Desktop section gaps, page margins |
 | `--space-256` | `clamp(96px, 18vw, 256px)` | Massive editorial breaks |
+
+> **Retired:** `--space-64` and `--space-96` from the old fluid multiplier scale are gone. Do not use them — the macro scale is `--space-128` and `--space-256` only.
 ---
 ## Structural Constants
 | Element | Height / Padding | Margin |
