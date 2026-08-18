@@ -93,7 +93,7 @@ These colors exist in the project’s research history but are NOT active tokens
 | Old brand orange         | `#FF6F31` | Legacy — retired                    |
 | Previously proposed orange | `#F97316` | Considered but not selected                         |
 | Copper (old primary)     | `#B34700` | Replaced by Traffic Cone — too muted for approved direction |
-| Brick (old error)        | `#9C363D` | Replaced by Toolbox — Laura approved `#C8102E`      |
+| Brick (old error)        | `#9C363D` | Replaced by Toolbox — approved `#C8102E`            |
 | Ridgid                   | `#D64500` | Brand name retired                                  |
 | Clay                     | `#B76E4A` | Fails contrast — dropped                            |
 | Bottle Glass Green (old)       | `#4F6B4E` | Fails contrast — dropped; replaced by `#367C2B`     |

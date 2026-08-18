@@ -364,7 +364,7 @@ Icons are delivered as inline SVGs in Rails ViewComponents (`app/components/`) s
 | External link | Complete (`external-link.svg`) |
 | Plus | Complete via rotated `close.svg` (no dedicated `plus.svg`) |
 | Menu (hamburger) | Complete (`menu.svg`) |
-| Info | Pending — “i” in a square, to be drawn when needed (chiyo, 2026-08-17) |
+| Info | Pending — “i” in a square, to be drawn when needed |
 ---
 ## States
 Design all states, not just the happy path. A layout that only works for the ideal case isn't finished.

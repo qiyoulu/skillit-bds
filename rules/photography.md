@@ -56,7 +56,7 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 - Background: transparent or flat surface (no environment).
 ---
 ## Photography sourcing
-Skillit does not use AI generation for photography. All photography is real, human-captured, and sourced from genuine work sites. This is a hard brand lock from Laura.
+Skillit does not use AI generation for photography. All photography is real, human-captured, and sourced from genuine work sites. This is a hard brand lock.
 - **No AI-generated images.** Banned universally — no Midjourney, Firefly, DALL-E, Flux, or any generative model output, in any context.
 - **When commissioning or briefing a photographer**, use this template to art-direct the shoot:
 ```
