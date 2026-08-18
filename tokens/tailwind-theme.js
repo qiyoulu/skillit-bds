@@ -2,7 +2,11 @@
  * Skillit Brand Design System — Tailwind Theme Extension
  *
  * DERIVED from tokens/tokens.json5 (single source of truth).
- * Do not edit values here directly — edit tokens.json5 and regenerate.
+ * No generator exists yet — keep this file in sync with tokens.json5 manually.
+ *
+ * WARNING: the `spacing` keys (1–256) override Tailwind's default scale for
+ * those keys (e.g. p-5 = 20px, not 1.25rem). This is intentional — every
+ * spacing value is remapped onto the canonical skillit 4px-base scale.
  *
  * Instructions:
  * 1. Import the CSS custom properties from tokens/tokens.css into your global stylesheet
@@ -21,6 +25,7 @@ module.exports = {
           plaster: 'var(--color-surface)',
           iron: 'var(--color-fg)',
           'traffic-cone': 'var(--color-primary)',
+          'traffic-cone-hover': 'var(--color-primary-hover)',
           'hard-hat': 'var(--color-warning)',
           toolbox: 'var(--color-error)',
           'bottle-glass': 'var(--color-success)',

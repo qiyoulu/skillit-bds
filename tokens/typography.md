@@ -1,17 +1,17 @@
 # Typography Tokens — Skillit BDS
-**Last updated:** 2026-07-12
+**Last updated:** 2026-08-17
 **Canonical source:** `tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
-- Use only Work Sans. Never substitute with system fonts, other Google Fonts, or unlicensed alternatives.
-- Work Sans is the only typeface. It loads from Google Fonts — zero configuration needed.
+- Use only Work Sans for human text. Never substitute with system fonts, other Google Fonts, or unlicensed alternatives.
+- IBM Plex Mono is the only approved monospace — metadata, IDs, and data only, never running copy.
 - All sizes are in `rem` (base 16px). Never use `px` for type — it breaks accessibility scaling.
 - All text should be sentence-case. No title case in UI. No ALL CAPS anywhere (except industry acronyms like OSHA, HVAC, AI).
 ---
 ## Typefaces
 ### Work Sans
 - **Source:** Google Fonts CDN (zero-config)
-- **CDN link:** `https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap`
+- **CDN link:** `https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap`
 - **CSS variable:** `--font-primary: 'Work Sans', sans-serif;`
 - **Use:** Everything — UI, headings, body text, buttons, labels, marketing, print.
 ---
@@ -25,11 +25,11 @@ If you need a size larger than 128px (e.g., 256px), extrapolate using this algor
 - **Tracking:** Subtract -2% (-0.02em) for each doubling of size (floor: 0%).
 | Level | Token | px (screen) | rem (web) | pt (print) | Base Weight | Bolded | Line height | Tracking |
 |---|---|---|---|---|---|---|---|---|
-| **Text-8x** |  | 128px |  | 96pt | Bold (700) | Black (900) | 0.80 | -6% |
-| **Text-4x** |  | 64px |  | 48pt | Semibold (600) | Extra Bold (800) | 1.00 | -4% |
-| **Text-2x** |  | 32px |  | 24pt | Medium (500) | Bold (700) | 1.20 | -2% |
-| **Text-1x** |  | 16px |  | 12pt | Regular (400) | Semibold (600) | 1.40 | 0% |
-| **Text-0.75x** |  | 12px |  | 9pt | Regular (400) | Medium (500) | 1.55 | 0% |
+| **Text-8x** | `--text-8x` | 128px | 8rem | 96pt | Bold (700) | Black (900) | 0.80 | -6% |
+| **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | Semibold (600) | Extra Bold (800) | 1.00 | -4% |
+| **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | Medium (500) | Bold (700) | 1.20 | -2% |
+| **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | Regular (400) | Semibold (600) | 1.40 | 0% |
+| **Text-0.75x** | `--text-0.75x` | 12px | 0.75rem | 9pt | Regular (400) | Medium (500) | 1.55 | 0% |
 *(Note: Text-1x and Text-0.75x operate outside the strict 2x multiplier rule to protect legibility on job-site screens — Bolded is only +100 at this floor, not +200. 12px is the absolute hard floor. Text-16x was retired — no longer a defined Figma text style; use the extrapolation algorithm above if a size beyond Text-8x is ever needed.)*
 ### Small-viewport variants (confirmed against Figma)
 Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = Text-1x at small viewports). In CSS, the suffix is `-sm` (e.g., `--text-1x-sm`), matching the breakpoint naming in the spacing tokens — **`-sm` always means "small viewport variant", never "small text size"** (small text sizes live in the scale itself, e.g. `--text-0.75x`). Per the halving rule below: Text-2x/4x/8x halve at small viewports. Text-1x scales to `Text-1s` (12px) — the old 16px mobile body was retired aug 13, the former `Text-0.75s` (12px) was renamed to `Text-1s`. Text-0.75x holds its desktop size (hard legibility floor, see Responsive Scaling section).
@@ -67,7 +67,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
 ## CSS custom properties (copy-paste ready)
 ```css
 /* Google Fonts import — add to <head> */
-/* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap" rel="stylesheet"> */
+/* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"> */
 :root {
   /* Families */
   --font-primary:   'Work Sans', sans-serif;

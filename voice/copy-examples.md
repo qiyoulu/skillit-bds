@@ -1,5 +1,5 @@
 # Copy Examples — Skillit BDS
-**Last updated:** 2026-07-10
+**Last updated:** 2026-08-17
 Use this file to calibrate tone before generating any Skillit copy. Read a few examples in the relevant channel before writing. If your output sounds like the “Wrong” column, revise.
 ---
 ## Website / marketing
@@ -7,7 +7,7 @@ Use this file to calibrate tone before generating any Skillit copy. Read a few e
 | Wrong | Right |
 |---|---|
 | “The future of construction hiring is here.” | “The workers exist. The system to find them doesn’t.” |
-| “Empowering craft workers with AI-driven solutions.” | “AI workforce systems that make craft more essential.” |
+| “Empowering craft pros with AI-driven solutions.” | “AI workforce systems that make craft more essential.” |
 | “Connecting contractors and workers at scale.” | “Only 1 in 20 workers are missing. 9 in 10 employers still can’t find them.” |
 ### Section copy
 **Section 1 — The problem (approved copy):**
@@ -15,7 +15,7 @@ Use this file to calibrate tone before generating any Skillit copy. Read a few e
 **Section 2 — The insight (approved copy):**
 > Only 1 in 20 workers are missing from the labor force, yet 9 out of 10 employers can’t find them. Skillit’s data-driven platform makes craft labor more visible, routable, and hireable at scale.
 **Section 3 — The CTA (approved copy):**
-> Trusted by the largest contractors in the world, vetted craft workers in our growing network get hired 10x as fast. Create a free profile today.
+> Trusted by the largest contractors in the world, vetted craft pros in our growing network get hired 10x as fast. Create a free profile today.
 ### CTAs
 | Wrong | Right |
 |---|---|

@@ -1,8 +1,8 @@
 # Photography & Image Rules — Skillit BDS
-**Last updated:** 2026-07-10
+**Last updated:** 2026-08-17
 ---
 ## The principle
-Photography is the brand’s most human element. Every image should make a craft worker feel seen — not as a stock photo prop, not as a demographic data point, but as a skilled professional whose work builds the physical world.
+Photography is the brand’s most human element. Every image should make a craft pro feel seen — not as a stock photo prop, not as a demographic data point, but as a skilled professional whose work builds the physical world.
 The camera position is always respectful. Never looking down at the worker. Eye level or slightly below.
 ---
 ## Hard rules (apply to all images)
@@ -55,8 +55,10 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 - These are used as supporting visual elements, not hero images.
 - Background: transparent or flat surface (no environment).
 ---
-## Generating image briefs for AI image tools
-When prompting an image generation tool (Midjourney, Firefly, DALL-E, etc.) for Skillit assets, use this template:
+## Photography sourcing
+Skillit does not use AI generation for photography. All photography is real, human-captured, and sourced from genuine work sites. This is a hard brand lock from Laura.
+- **No AI-generated images.** Banned universally — no Midjourney, Firefly, DALL-E, Flux, or any generative model output, in any context.
+- **When commissioning or briefing a photographer**, use this template to art-direct the shoot:
 ```
 Subject: [describe subject precisely]
 Setting: [real job site / flat background / product UI]

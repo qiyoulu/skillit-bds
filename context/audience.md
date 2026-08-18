@@ -1,5 +1,5 @@
 # Audience — Skillit BDS
-**Last updated:** 2026-07-10
+**Last updated:** 2026-08-17
 ---
 ## Load this file when the output is audience-specific.
 Skillit serves two distinct audiences simultaneously. They have different needs, different emotional states, and different relationships with the product. The brand should serve both without flattening either.
@@ -21,7 +21,7 @@ Skillit serves two distinct audiences simultaneously. They have different needs,
 - To feel that this tool was built for them, not just for the contractors who hire them.
 - Confidence that their skills and certifications will be seen and valued.
 - Simplicity — they do not want to spend their off-hours managing a complex profile.
-### How to write for craft workers
+### How to write for craft pros
 - Short sentences. They’re reading on a phone, often with limited attention.
 - Direct and practical. “Complete your profile to get found faster.” Not “Optimizing your profile increases your discoverability.”
 - Respect the craft. Name the trade. Acknowledge the skill. Never generic “workers.”

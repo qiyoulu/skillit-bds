@@ -93,7 +93,7 @@ Designers, marketers, writers, engineers, and anyone who has ever asked “does 
 **Skillit is not a job board. We are workforce infrastructure.**
 When you create assets for Skillit, you are designing for a specific, misunderstood reality: the physical world tracks materials, schedules, and budgets with extraordinary precision, but it doesn’t track the people doing the work.
 Our data proves that only 1 in 20 workers are missing from the labor force, yet 9 in 10 employers can’t find them. **This is an access problem, not a shortage problem.**
-Your job is to communicate that truth. Our visuals and copy should project infrastructure-level reliability to contractors, while maintaining absolute respect and dignity for the craft worker. Everything we make should reflect our founding reality: **we are builders who built tech**, not a software company that discovered construction.
+Your job is to communicate that truth. Our visuals and copy should project infrastructure-level reliability to contractors, while maintaining absolute respect and dignity for the craft pro. Everything we make should reflect our founding reality: **we are builders who built tech**, not a software company that discovered construction.
 
 ---
 
@@ -349,7 +349,7 @@ Every layout uses four layers, in order of elevation and visual weight:
 In this system, shape indicates whether an element is interactive or static. We rely on two extremes and nothing in between:
 
 - **Static elements:** `0px` (sharp). Applied to all cards, layout panels, images, photos, and containers.
-- **Actionable elements:** `100vmax` or `9999px` (fully rounded pill). Applied to primary CTA buttons and touch targets.
+- **Actionable elements:** `9999px` (fully rounded pill, `--radius-pill`). Applied to primary CTA buttons and touch targets.
 - **Intermediate radii:** Banned. Do not use `4px`, `8px`, or slightly rounded corners anywhere.
 
 ### Grid & Baseline
@@ -361,9 +361,9 @@ While micro-spacing (`8px`, `16px`, `32px`) remains locked to absolute pixels to
 | ------------------- | ----------------------------- | ------------ |
 | Nav Bar | 64px | — |
 | Logo Lockup | 32px height | — |
-| Primary Buttons | 8px vertical, 16px horizontal | — |
+| Primary Buttons | 12px vertical, 32px horizontal (tactile) | — |
 | Desktop Section Gap | — | 128px |
-| Desktop Page Margin | — | 320px (Anthropic scale) |
+| Desktop Page Margin | — | 128px |
 
 ### Layout Do / Don’t
 
@@ -411,11 +411,11 @@ Skillit’s data visualization is utilitarian. The charts should be legible, pre
 > Write like the smartest person on the job site — the one who’s been doing this since before it was a startup, who knows the data cold, and who doesn’t need to prove they belong in the room because the work speaks for itself.
 > **If it sounds like a press release, a pitch deck, or a LinkedIn growth-hacker, it’s wrong.**
 
-**The Worker-First Mandate:** Every piece of copy—from blog titles to button labels—must ultimately serve and elevate the worker. Amplify the overlooked details of craftwork by focusing on these traits: _Agency, Judgment, Craftsmanship, Stamina, Responsibility_. Technology should uplift, meaning craft workers are irreplaceable and tech merely provides a direct route for their skills to be discovered.
+**The Worker-First Mandate:** Every piece of copy—from blog titles to button labels—must ultimately serve and elevate the worker. Amplify the overlooked details of craftwork by focusing on these traits: _Agency, Judgment, Craftsmanship, Stamina, Responsibility_. Technology should uplift, meaning craft pros are irreplaceable and tech merely provides a direct route for their skills to be discovered.
 
 ### The Five Core Traits
 
-The brand voice is built entirely around five traits inherent to craft workers. Every piece of copy should reflect at least one of these:
+The brand voice is built entirely around five traits inherent to craft pros. Every piece of copy should reflect at least one of these:
 
 **1. Agency (Empowering Choice).** Craft workers are independent decision-makers, not cogs in a machine. Write to support their control over their career. <!-- orig: "empower" — banned in brand-voice.md Banned Register -->
 
@@ -480,7 +480,7 @@ Sam is Skillit’s AI assistant. Sam has a name because names matter — they si
 
 ## Photography & Imagery
 
-Photography is the brand’s most human element. Every image should make a craft worker feel seen — **not as a stock photo prop, but as a skilled professional** whose work builds the physical world.
+Photography is the brand’s most human element. Every image should make a craft pro feel seen — **not as a stock photo prop, but as a skilled professional** whose work builds the physical world.
 
 **Visual Archetype:** Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic should blend the accessibility of a government vocational program, the rigor of resource-rich institutions, and the flair of aspirational publications.
 
@@ -509,7 +509,7 @@ They are not a substitute for judgment. Rules describe the system. Judgment appl
 
 ---
 
-_Skillit Brand Design System · Version 0.9-beta · July 2026_
+_Skillit Brand Design System · Version 1.0 · July 2026_
 _Brand Design: Chiyo · System: Skillit Narrative & Brand_
 
 ### Responsive Scaling

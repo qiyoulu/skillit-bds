@@ -7,10 +7,10 @@
 - **Corners:** `0px` radius (bars, tooltips, legends, and the Plaster cards themselves).
 - **Stroke Weights:** A universal `4px` rule applies to all line work to maintain an industrial, structural feel.
   - Data lines are `4px`.
-  - Gridlines (horizontal Y-axis only) are `4px` Canvas (`--color-background`).
+  - Gridlines (horizontal Y-axis only) are `4px` Canvas (`--color-bg`).
 - **Line Charts:** Both unsmoothed (stepped/linear) and smoothed (spline/curved) paths are permitted. Choose the geometry that best serves the specific data story.
 - **Markers:** Sharp squares (`0px`) or diamonds. No circles.
-- **Axes:** Remove outer bounding boxes. Y-axis gridlines only (4px Canvas). No X-axis gridlines.
+- **Axes:** Remove outer bounding boxes. Y-axis gridlines only (4px Canvas `--color-bg`). No X-axis gridlines.
 
 ## 2. Typography
 - **Font:** Work Sans.

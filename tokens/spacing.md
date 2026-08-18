@@ -1,11 +1,14 @@
 # Spacing Tokens — Skillit BDS
-**Last updated:** 2026-07-13
+**Last updated:** 2026-08-17
 **Canonical source:** `tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
 - The system uses a strict **8px / 16px baseline grid**.
 - Never hardcode margins or padding with arbitrary `px` values. Always use a multiple from the token scale below.
 - Do not mix units (e.g., `em` or `%` for structural spacing).
+- All values are in `rem` (base 16px). Never use `px` for spacing — it breaks accessibility scaling.
+- Whitespace is a core brand element — it focuses attention on the human. When in doubt, use more space, not less.
+- The system uses “tactile padding” — interactive elements (buttons, cards) use generous horizontal padding to feel warm and physical, not tight and SaaS-like.
 ---
 ## Base spacing scale
 Built on a 4px base unit (`0.25rem`). Every value is a multiple of 4. This is the canonical scale — one value per token name, no duplicates.
@@ -40,30 +43,6 @@ Large structural spacing uses CSS `clamp()` to fluidly scale down, preventing ab
 | Primary Buttons | `--space-3` vertical (12px), `--space-8` horizontal (32px) | — |
 | Desktop Section Gap | — | 128px (`--space-128`) |
 | Desktop Page Margin | — | 128px (`--space-128`) |
----
-## Rules before you use this file
-- Use only named spacing tokens. Never hardcode arbitrary pixel values.
-- Whitespace is a core brand element — it focuses attention on the human. When in doubt, use more space, not less.
-- The system uses “tactile padding” — interactive elements (buttons, cards) use generous horizontal padding to feel warm and physical, not tight and SaaS-like.
-- All values are in `rem` (base 16px). Never use `px` for spacing — it breaks accessibility scaling.
----
-## Base spacing scale
-Built on a 4px base unit (`0.25rem`). Every value is a multiple of 4.
-| Token | Value | px equiv | Use |
-|---|---|---|---|
-| `--space-1` | `0.25rem` | 4px | Micro gaps — icon-to-label, tight inline spacing |
-| `--space-1.5` | `0.375rem` | 6px | Small-viewport text list gaps (mobile bullet/numbered rhythm) |
-| `--space-2` | `0.5rem` | 8px | Compact spacing — badge padding, text list item gaps |
-| `--space-3` | `0.75rem` | 12px | Small gaps — input field internal padding (top/bottom) |
-| `--space-4` | `1rem` | 16px | Default spacing unit — paragraph gap, UI list item gap |
-| `--space-5` | `1.25rem` | 20px | Medium — between form groups |
-| `--space-6` | `1.5rem` | 24px | Standard section padding, between related elements |
-| `--space-8` | `2rem` | 32px | Between unrelated elements, nav to content |
-| `--space-10` | `2.5rem` | 40px | Large section gaps |
-| `--space-12` | `3rem` | 48px | Section breaks |
-| `--space-16` | `4rem` | 64px | Major section separators |
-| `--space-20` | `5rem` | 80px | Hero padding, full-bleed section margins |
-| `--space-24` | `6rem` | 96px | Maximum section vertical padding |
 ---
 ## Tactile padding
 Buttons and interactive cards should use **double the standard horizontal padding** to feel warm and physical. This is a non-negotiable brand rule.

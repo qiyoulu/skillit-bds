@@ -56,7 +56,8 @@ When tasked with generating code, copywriting, or UI components, you should adhe
 ### Model Routing
 - **Claude (3.5/5):** Use for code generation, Tailwind scaffolding, copywriting, and CSS compilation.
 - **Gemini (1.5/3.5 Pro):** Use for repo-wide context audits and cross-referencing brand rules against screenshots.
-- **Midjourney v6 / Flux.1:** Image generation. Standard DALL-E is banned (stock aesthetic).
+
+Note: Skillit does not use AI image generation. Photography is real, human-captured, and shot on genuine work sites — see `rules/photography.md`.
 
 ---
 
@@ -67,7 +68,7 @@ skillit-bds/
 ├── README.md                  # Entry point (you are here)
 ├── LLM-INSTRUCTIONS.md        # Core system prompt for UI generation
 ├── HUMAN-INSTRUCTIONS.md      # Plain language brand manual
-├── assets/                    # Approved SVG logos, icons, and photography
+├── assets/                    # Approved SVG logos and icons (no photography — shot on real sites)
 ├── tokens/                    # Colors, typography, spacing, and logo rules
 ├── voice/                     # Brand voice guidelines and copy examples
 ├── rules/                     # Layout, accessibility, photography, and data-viz
@@ -88,5 +89,5 @@ skillit-bds/
 | `rules/data-viz.md` | Complete |
 | `rules/photography.md` | Complete |
 | `context/` (Narrative, Audience) | Complete |
-| Icon System | Planned for Phase II |
+| Icon System (core 12, in `assets/icons/`) | Complete — arrow up/down pending |
 | Dark Mode Tokens | Planned for Phase II |

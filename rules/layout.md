@@ -1,17 +1,18 @@
 # Layout Rules — Skillit BDS
-**Last updated:** 2026-07-10
+**Last updated:** 2026-08-17
 ---
 ## The core principle
 Whitespace is structural mass. It organizes data and anchors the grid. The human is the subject; the layout is the consistent framework that supports them.
 The visual constraint (non-negotiable): **mostly white, black, and a splash of a single accent.** If a visual element does not perform a strict functional job, delete it.
 ---
 ## Surface hierarchy
-Every layout is built on three layers. Use them in order.
+Every layout is built on four layers, in order of elevation and visual weight:
 | Layer | Color | Token | Role |
 |---|---|---|---|
 | Ground | Canvas | `--color-bg` | Default background for all surfaces |
+| Lifted Surface | Plaster | `--color-surface` | Cards and isolated containers |
 | Structure | Iron | `--color-fg` | Text, borders, dividers, nav elements |
-| Signal | Traffic Cone | `--color-primary` | One dominant accent per layout — CTAs, key data, active states |
+| Signal | Traffic Cone | `--color-primary` | One dominant accent per layout section — CTAs, key data, active states |
 State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional only. They appear in UI interactions, not in layout composition.
 ---
 ## Whitespace rules
@@ -41,8 +42,8 @@ These are hard constraints derived from the core brand direction. They apply to 
 3. **Button Alignment Exception.** Do not align buttons by their external padding bubble. Align them optically by the text inside them. A button should shift upward by its top padding value to ensure its internal text cap-height aligns with adjacent layout elements.
 4. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-8x` directly adjacent to `--text-1x`), not by stepping gently through intermediate sizes or adding color.
 5. **Strict functionalism.** Every border and margin should serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.
-6. **One accent per layout.** Traffic Cone (`--color-primary`) appears once per page section. It does not repeat as decoration.
-7. **Shape signals action (Static = Sharp, Actionable = Pill).** All static layout containers (cards, panels, photographs) should use hard, straight edges (`border-radius: 0`). Only actionable human touchpoints (buttons) use a fully rounded pill shape (`border-radius: 100px`). No intermediate rounded corners (e.g., 4px or 8px) are permitted. No gradients, no drop shadows.
+6. **One accent per layout section.** Traffic Cone (`--color-primary`) appears once per page section. It does not repeat as decoration.
+7. **Shape signals action (Static = Sharp, Actionable = Pill).** All static layout containers (cards, panels, photographs) should use hard, straight edges (`border-radius: 0`). Only actionable human touchpoints (buttons) use a fully rounded pill shape (`border-radius: var(--radius-pill)`, 9999px). No intermediate rounded corners (e.g., 4px or 8px) are permitted. No gradients, no drop shadows.
 8. **Typography does the heavy lifting.** Space and scale create order. Color is exclusively used to signal interactive function (links, buttons, states).
 ---
 ## Section types
@@ -56,7 +57,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 ### Content section
 - Two-column (text left, image right) or full-width text.
 - Background: Canvas.
-- Subheading: `--text-20`, Iron.
+- Subheading: `--text-2x`, Iron.
 - Body: `--text-1x`, Iron, max `70ch`.
 - Accent use: Traffic Cone for inline data callouts or a single stat highlight, not decorative.
 ### Data / proof section
@@ -75,13 +76,13 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Logo: left-aligned.
 - Nav links: Iron, `--text-0.75x`, sentence-case, no underline at rest.
 - Active nav link: Traffic Cone, no underline.
-- Primary CTA (“Sign up”): Traffic Cone button, right-aligned.
+- Primary CTA (“Join”): Traffic Cone button, right-aligned.
 - Nav tabs (approved): How It Works · Our Network · Jobs · About Us · Resources
 ---
 ## What is banned in layouts
 - Gradients of any kind
 - Drop shadows on content
-- Rounded corners on any element ()
+- Rounded corners on any element that is not an actionable touchpoint
 - Intermediate rounded corners (e.g., 4px or 8px)
 - Beveled or angled image masks
 - Pattern fills on content surfaces (boot tread is nav header only)

@@ -1,12 +1,12 @@
 # Brand Narrative — Skillit BDS
-**Last updated:** 2026-07-10
+**Last updated:** 2026-08-17
 ---
 ## Load this file when generating any Skillit content.
 This is the contextual foundation. Every output — a LinkedIn post, a product screen, a press release, an investor slide — should be grounded in what is written here. If what you are generating contradicts this, stop and revise.
 ---
 ## Who Skillit is
 Skillit is not a job board. Not a staffing agency. Not a construction-tech feature.
-Skillit is **workforce infrastructure for the physical economy** — the data layer that skilled labor has never had. It makes craft workers visible, routable, and hireable at scale.
+Skillit is **workforce infrastructure for the physical economy** — the data layer that skilled labor has never had. It makes craft pros visible, routable, and hireable at scale.
 The company was founded by builders: apprentice carpenter in Scotland, journeyman, ironworker, general contractor, then founder. We experienced the problem from both sides — as a worker finding jobs and as a GC finding workers. We built Skillit because the solution didn’t exist.
 ---
 ## The problem (state it this way)
@@ -31,7 +31,7 @@ This is the anchor. It resolves the core tension (rugged job-site craft vs. high
 **Worker First:** The brand is built around the worker, not the contractor. The contractor is the customer. The worker is the subject. Every design decision, every piece of copy, every product interaction should start from the worker’s perspective and work outward.
 ---
 ## The brand’s single belief
-The physical economy is the foundation of everything. Every dollar of construction revenue starts with a craft worker in the field. Every building, road, pipeline, and data center begins with someone who knows how to build it.
+The physical economy is the foundation of everything. Every dollar of construction revenue starts with a craft pro in the field. Every building, road, pipeline, and data center begins with someone who knows how to build it.
 Skillit’s job is to make those people findable — and to make the system around them worthy of the work they do.
 ---
 ## The narrative arc (10-year story)
@@ -43,7 +43,7 @@ Skillit’s job is to make those people findable — and to make the system arou
 ### Act 2: Solve the shortage (2027–2029)
 **”Grow the workforce using AI.”**
 - Training pathways, career guidance, reducing early-career fragility.
-- Brand emphasis: *Creating the next generation of craft workers.*
+- Brand emphasis: *Creating the next generation of craft pros.*
 ### Act 3: Expand (2030+)
 **”Every physical industry.”**
 - Manufacturing, energy, utilities, defense, space.
@@ -71,7 +71,7 @@ Use these when a generated output risks drifting into the wrong category:
 - **Not a job board.** Job boards show listings. Skillit shows verified, data-rich profiles. The difference is infrastructure vs. directory.
 - **Not a staffing agency.** Agencies place workers. Skillit gives employers direct access to a verified workforce network with AI-managed workflows.
 - **Not another construction-tech SaaS.** Construction-tech is project management, BIM, cost estimation. Skillit is the workforce layer that all of those depend on but none of them solve.
-- **Not an AI-replacing-workers story.** The opposite. The brand exists to prove that AI makes craft workers more essential.
+- **Not an AI-replacing-workers story.** The opposite. The brand exists to prove that AI makes craft pros more essential.
 ---
 ## Key statistics (use precisely)
 | Stat | Value | Source context |
@@ -79,7 +79,7 @@ Use these when a generated output risks drifting into the wrong category:
 | Labor gap | ~400,000 workers / ~5% of construction workforce | Fraser / industry data |
 | Employer pain | 9 in 10 employers can’t find the workers they need | Skillit research |
 | Competitor gaps | Hospitality: 25% gap. Manufacturing: 17% gap. Construction: 5%. | Comparative framing |
-| Network | 88,000+ craft workers | Skillit network size |
+| Network | 88,000+ craft pros | Skillit network size |
 | Hiring speed | Workers hired 10x faster | Skillit platform data |
 | Recruiter productivity | 4x | Skillit platform data |
 | Interview volume | 2x more interviews | Skillit platform data |

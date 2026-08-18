@@ -3,7 +3,7 @@
   // single machine-readable source of truth. derived artifacts:
   //   - tokens.css        (CSS custom properties :root block)
   //   - tailwind-theme.js (tailwind theme extension)
-  // never edit the derived files directly — edit here, regenerate.
+  // no generator exists yet — keep tokens.css and tailwind-theme.js in sync manually.
   base: {
     color: {
       bg: {
@@ -38,6 +38,12 @@
           'org.skillit.role': 'accent',
           'org.skillit.pantone': '158 C',
         },
+      },
+      'primary-hover': {
+        $value: '#CC5200',
+        $type: 'color',
+        $description: 'Traffic Cone darkened 20% — hover/pressed state of the primary CTA. text stays Iron (4.54:1).',
+        $extensions: { 'org.skillit.role': 'accent' },
       },
       warning: {
         $value: '#FEB11C',

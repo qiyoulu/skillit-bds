@@ -1,5 +1,5 @@
 # Accessibility Rules — Skillit BDS
-**Last updated:** 2026-07-10
+**Last updated:** 2026-08-17
 ---
 ## Non-negotiable
 Every output — website, app, social asset, document, generated content — should meet these requirements. Accessibility is baked in, not bolted on. The brand was designed around these constraints.
@@ -43,7 +43,7 @@ Every status state should communicate via three channels simultaneously: color +
 | ------- | ------------------ | --------------------- | ----------------------------------------- |
 | Success | Bottle Glass `#367C2B`   | Circle / pill         | “Verified,” “Complete,” “Confirmed”       |
 | Warning | Hard Hat `#FEB11C` | Triangle / chamfer    | “Incomplete,” “Action needed,” “Expiring” |
-| Error   | Toolbox `#C8102E`  | Square / sharp corner | “Error,” “Failed,” “Expired”              |
+| Error   | Toolbox `#C8102E`  | Octagon            | “Error,” “Failed,” “Expired”              |
 | Info    | Painter's Tape `#007CA6`   | Rounded square        | “Info,” “Note,” “Tip”                     |
 ---
 ## Touch target rules (mobile / app)

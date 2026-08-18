@@ -1,5 +1,5 @@
 # UI Components — Skillit BDS
-**Last updated:** 2026-07-10
+**Last updated:** 2026-08-17
 ---
 ## Rules before you use this file
 - All components use tokens from `tokens/color.md`, `tokens/typography.md`, and `tokens/spacing.md`. Never hardcode values.
@@ -10,22 +10,22 @@
 ---
 ## Buttons
 ### Primary button
-The main CTA. One per section maximum. Traffic Cone background, Canvas text.
+The main CTA. One per section maximum. Traffic Cone background, Iron text (Canvas on Cone is banned — 2.83:1, see `rules/accessibility.md`).
 ```css
 .btn-primary {
   background-color: var(--color-primary);   /* Traffic Cone #EF6F1A */
-  color: var(--color-bg);                   /* Canvas #FAF7F3 */
+  color: var(--color-fg);                   /* Iron text #232F36 — 4.54:1 AA */
   font-family: var(--font-primary);
   font-size: var(--text-ui);              /* 1rem */
   font-weight: var(--weight-semibold);      /* 600 */
   padding: var(--space-3) var(--space-8);  /* 12px 32px — tactile */
   border: none;
-  border-radius: 100px;
+  border-radius: var(--radius-pill);       /* 9999px pill */
   letter-spacing: 0;
   cursor: pointer;
 }
 .btn-primary:hover {
-  background-color: #CC5200;               /* Traffic Cone darkened 20% */
+  background-color: var(--color-primary-hover);  /* Traffic Cone darkened */
 }
 .btn-primary:focus-visible {
   outline: 2px solid var(--color-primary);
@@ -33,7 +33,7 @@ The main CTA. One per section maximum. Traffic Cone background, Canvas text.
 }
 ```
 ### CTA Button (inverted)
-For primary actions inside the Iron `surface-inverted` blocks. Note the text color is Iron to maintain high contrast against Traffic Cone.
+For primary actions inside the Iron `surface-inverted` blocks. Iron text on Traffic Cone, same as the standard primary button — consistent across all surfaces.
 ```css
 .surface-inverted .btn-primary {
   background-color: var(--color-primary);   /* Traffic Cone */
@@ -41,8 +41,8 @@ For primary actions inside the Iron `surface-inverted` blocks. Note the text col
 }
 ```
 **Label rules:**
-- Sentence-case imperative. “Sign up” / “Apply” / “See the network.” Never “Click here” or “Submit form.”
-- **Strict Consistency:** All buttons that point to the exact same destination page should use the exact same label across the entire platform. If the primary account creation CTA is "Sign up", do not alternate it with "Get started", "Create your profile", or "Join now" elsewhere on the page. Pick one label per destination and lock it.
+- Sentence-case imperative. “Join” / “Apply” / “See the network.” Never “Click here” or “Submit form.”
+- **Strict Consistency:** All buttons that point to the exact same destination page should use the exact same label across the entire platform. If the primary account creation CTA is "Join", do not alternate it with "Get started", "Create your profile", or "Sign up" elsewhere on the page. Pick one label per destination and lock it.
 ### Secondary button
 Outlined, Iron stroke, no fill. For secondary actions.
 ```css
@@ -54,7 +54,7 @@ Outlined, Iron stroke, no fill. For secondary actions.
   font-weight: var(--weight-semibold);      /* 600 */
   padding: var(--space-3) var(--space-8);  /* 12px 32px — tactile */
   border: 1.5px solid var(--color-fg);
-  border-radius: 100px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
 }
 .btn-secondary:hover {
@@ -73,7 +73,7 @@ For irreversible actions only. Toolbox background.
   font-weight: var(--weight-semibold);
   padding: var(--space-3) var(--space-8);  /* 12px 32px — tactile */
   border: none;
-  border-radius: 100px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
 }
 ```
@@ -84,6 +84,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 ```css
 .nav {
   background-color: var(--color-bg);        /* Canvas */
+  color: var(--color-surface);              /* currentColor for pattern.svg — Plaster tread */
   background-image: url('../assets/logo/pattern.svg'); /* Plaster pattern */
   background-repeat: repeat-x;              /* Horizontal only */
   background-size: auto 100%;               /* Scale to fit nav height */
@@ -98,7 +99,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   align-items: center;
   justify-content: space-between;
 }
-.nav-logo img { height: 20px; }
+.nav-logo img { height: 21px; }             /* --logo-mark-min — never below 21px */
 .logo-mark { display: none; width: 24px; height: 24px; }
 .nav-right {
   display: flex;
@@ -147,7 +148,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 .mobile-dropdown.open { display: flex; }
 ```
 **Approved nav tabs:** How It Works · Our Network · Jobs · About Us · Resources
-**Right side:** Primary button (“Sign up”) — Traffic Cone, tactile padding.
+**Right side:** Primary button (“Join”) — Traffic Cone, tactile padding.
 ---
 ## Form inputs
 Input fields use a bottom-border-only style — no box, no background fill. Mimics a drafting line.
@@ -192,7 +193,7 @@ Every badge should communicate via color + shape + label. Never color alone.
 .badge-success {
   background-color: var(--color-success);  /* Bottle Glass */
   color: var(--color-bg);                  /* Canvas */
-  border-radius: 100px;                    /* pill */
+  border-radius: var(--radius-pill);
 }
 /* Warning — chamfered (use clip-path or angled border) */
 .badge-warning {
@@ -210,7 +211,7 @@ Every badge should communicate via color + shape + label. Never color alone.
 .badge-info {
   background-color: var(--color-link);     /* Painter's Tape */
   color: var(--color-bg);                  /* Canvas */
-  border-radius: 100px;
+  border-radius: var(--radius-pill);
 }
 ```
 ---
@@ -222,17 +223,24 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
   background-color: var(--color-surface);  /* Plaster */
   border: none;                            /* No borders */
   border-radius: 0;
-  padding: var(--space-6);                 /* 24px all sides */
+  padding: var(--space-16);                /* 64px — tactile */
+}
+/* Interactive cards reserve a transparent border so hover can reveal the Cone outline without layout shift */
+.card-interactive {
+  border: 1.5px solid transparent;
 }
 /* Hover state for interactive cards */
 .card-interactive:hover {
   border-color: var(--color-primary);      /* Traffic Cone border on hover */
   cursor: pointer;
 }
-/* Active / selected state */
+/* Active / selected state — Iron text on Traffic Cone (Canvas on Cone is banned, 2.83:1) */
 .card-interactive[aria-selected="true"] {
   background-color: var(--color-primary);
-  color: var(--color-bg);
+  color: var(--color-fg);
+}
+@media (max-width: 768px) {
+  .card { padding: var(--space-8); }        /* 32px — tactile mobile */
 }
 /* Inverted surface (Dark mode block) */
 .surface-inverted {
@@ -315,7 +323,7 @@ The footer anchors the bottom of the page using an inverted Iron surface, comple
   color: var(--color-primary);             /* Traffic Cone hover */
 }
 ```
-The logo in the footer should be the `lockup-canvas.svg` variant (Canvas fill) to pass contrast on the Iron background. On smaller viewports, this hides and is replaced by the `mark-canvas.svg` variant.
+The logo in the footer should be `lockup.svg` with `color: var(--color-bg)` on the container so the `currentColor` fill renders Canvas on the Iron background. On smaller viewports, this hides and is replaced by `mark.svg` the same way.
 ---
 ## Metadata and data strings
 All timestamps, IDs, distances, file sizes, and numeric data strings use the monospace stack.
@@ -359,10 +367,11 @@ Icons are delivered as inline SVGs in Rails ViewComponents (`app/components/`) s
 | Error | Complete (`error.svg`) |
 | Warning | Complete (`warning.svg`) |
 | Search | Complete (`search.svg`) |
-| Arrow (left, right, up, down) | Complete (`arrow-left.svg`, etc.) |
+| Arrow (left, right) | Complete (`arrow-left.svg`, `arrow-right.svg`) |
+| Arrow (up, down) | Missing — add to Phase II |
 | Location | Complete (`location.svg`) |
 | Clock | Complete (`clock.svg`) |
 | User | Complete (`user.svg`) |
 | External link | Complete (`external-link.svg`) |
-| Plus | Complete (`close.svg` rotated / `plus.svg`) |
+| Plus | Complete via rotated `close.svg` (no dedicated `plus.svg`) |
 | Menu (hamburger) | Complete (`menu.svg`) |

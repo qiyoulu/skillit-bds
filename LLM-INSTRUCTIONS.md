@@ -9,7 +9,7 @@ Use CSS variables, never raw hex codes in output.
 - `--color-bg`: Canvas (`#FAF7F3`) - Default background.
 - `--color-surface`: Plaster (`#FFFFFF`) - Cards, elevated panels.
 - `--color-fg`: Iron (`#232F36`) - Body text, borders. NO `#000000`.
-- `--color-primary`: Traffic Cone (`#EF6F1A`) - Primary CTAs. Use sparingly (one per layout).
+- `--color-primary`: Traffic Cone (`#EF6F1A`) - Primary CTAs. Use sparingly (one per layout section).
 - `--color-link`: Painter's Tape (`#007CA6`) - Text links only (underlined).
 - `--color-success`: Bottle Glass (`#367C2B`)
 - `--color-warning`: Hard Hat (`#FEB11C`)
@@ -23,7 +23,7 @@ Use CSS variables, never raw hex codes in output.
 ## 3. Typography
 - **Typeface:** Work Sans.
 - **Sizing:** Absolute numerical tokens (`Text-8x`), never semantic (`h1`, `text-sm`).
-- **Optical Balance:** Subtract 30 units of font-weight for light text on dark backgrounds to prevent halation.
+- **Optical Balance:** Subtract 25 units of font-weight for light text on dark backgrounds to prevent halation.
 - **Case:** Sentence-case everywhere. No title-case UI elements.
 - **Alignment:** Flush-left only. Centered text banned.
 - **Monospace Stack:** `'IBM Plex Mono', 'JetBrains Mono', monospace`. Scale to `0.9em` inline to optically match Work Sans without rupturing line-height.
@@ -36,7 +36,7 @@ Use CSS variables, never raw hex codes in output.
 - **Photography:** No text, symbols, graphs, numbers, or AI artifacts in images.
 
 ## 5. Data Visualization
-- **Geometry:** `0px` corners for bars/tooltips. Straight lines only (no spline/bezier curves). No X-axis gridlines.
+- **Geometry:** `0px` corners for bars/tooltips. Unsmoothed (stepped/linear) and smoothed (spline/curved) line paths are both permitted. No X-axis gridlines.
 - **Typography:** `font-variant-numeric: tabular-nums` (mandatory). Right-align Y-axis.
 - **Colors:** Monochromatic scale using Iron opacities (100%, 60%, 30%). Traffic Cone allowed 1x for absolute focal highlight. NEVER use semantic colors (Blue, Green, Yellow, Red) for standard categories.
 - **Banned:** 3D, drop shadows, donut charts (use solid pie charts for ratios), radar charts.
@@ -44,7 +44,7 @@ Use CSS variables, never raw hex codes in output.
 ## 6. Voice & Anti-LLM Copywriting Rules
 - **Mandate:** Elevate the worker. Direct, data-driven, warm-but-firm.
 - **CTAs:** Actionable ("Join", not "Sign Up").
-- **Framing:** Make craft workers more essential; never replace them. <!-- orig: "Empower craft workers" — banned in brand-voice.md Banned Register -->
+- **Framing:** Make craft pros more essential; never replace them. <!-- orig: "Empower craft workers" — banned in brand-voice.md Banned Register -->
 
 **Universal Anti-LLM Rules:**
 To counteract robotic, default AI writing patterns, adhere strictly to the following constraints when generating human-readable copy:
