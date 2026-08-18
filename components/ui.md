@@ -28,7 +28,7 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
   background-color: var(--color-primary-hover);  /* Traffic Cone darkened */
 }
 .btn-primary:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-fg);   /* Iron ring — neutral, 12.4:1 on Canvas */
   outline-offset: 2px;
 }
 ```
@@ -151,30 +151,31 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 **Right side:** Primary button (“Join”) — Traffic Cone, tactile padding.
 ---
 ## Form inputs
-Input fields use a bottom-border-only style — no box, no background fill. Mimics a drafting line.
+Fields are **Plaster on Canvas** — the surface separates them from the ground, same as cards. A bottom Iron drafting line keeps the type affordance. State is signaled by a status indicator (drawn icon) plus message text, never by changing the border. Colored borders are not a color usage (see `tokens/color.md`: colors = text fill, button bg fill, or icons).
 ```css
 .input {
-  background: transparent;
+  background-color: var(--color-surface); /* Plaster — field separated from Canvas ground */
   border: none;
-  border-bottom: 2px solid var(--color-fg); /* Iron */
+  border-bottom: 2px solid var(--color-fg); /* Iron — drafting line (neutral, structural) */
   border-radius: 0;
   color: var(--color-fg);
   font-family: var(--font-primary);
   font-size: var(--text-ui);
-  padding: var(--space-3) 0;               /* 12px top/bottom, no side padding */
+  padding: var(--space-3) var(--space-2);  /* 12px 8px — tactile */
   width: 100%;
 }
 .input:focus {
-  outline: none;
-  border-bottom-color: var(--color-primary); /* Traffic Cone on focus */
+  outline: 2px solid var(--color-fg);      /* Iron focus ring — visible, neutral */
+  outline-offset: 2px;
+  border-bottom-color: var(--color-fg);    /* line stays Iron */
 }
 .input::placeholder {
   color: rgba(35, 47, 54, 0.4);            /* Iron at 40% */
 }
 ```
 **Labels:** Above the field, not inside (placeholder is not a label). `--text-label` size, `--weight-medium`, Iron.
-**Error state:** Border becomes Toolbox (`--color-error`). Error message below field in Toolbox, `--text-0.75x`. Should include an error icon (non-color signal).
-**Success state:** Border becomes Bottle Glass (`--color-success`). Checkmark icon alongside.
+**Error state:** Field unchanged. Error icon (Toolbox, octagon) beside the field + message below in Toolbox, `--text-0.75x`. Icon + text carry the signal — never a colored border.
+**Success state:** Field unchanged. Checkmark icon (Bottle Glass) alongside. No border change.
 ---
 ## Badges and status indicators
 Status badges are **drawn icons** — the shape carries the state (shape coding in `rules/accessibility.md`), the label carries the text. No colored chips: colors appear only as text fill (info), button bg fill, or icon fill (`tokens/color.md`).
@@ -209,13 +210,13 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
   border-radius: 0;
   padding: var(--space-16);                /* 64px — tactile */
 }
-/* Interactive cards reserve a transparent border so hover can reveal the Cone outline without layout shift */
+/* Interactive cards reserve a transparent border so hover can reveal the Iron outline without layout shift */
 .card-interactive {
   border: 1.5px solid transparent;
 }
-/* Hover state for interactive cards */
+/* Hover state for interactive cards — Iron outline (structural). Traffic Cone is reserved for the selected state. */
 .card-interactive:hover {
-  border-color: var(--color-primary);      /* Traffic Cone border on hover */
+  border-color: var(--color-fg);            /* Iron border on hover */
   cursor: pointer;
 }
 /* Active / selected state — Iron text on Traffic Cone (Canvas on Cone is banned, 2.83:1) */

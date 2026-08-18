@@ -7,6 +7,7 @@
 - Every token has a designated UI role. Use each color only for its assigned role.
 - Primary surfaces are Canvas + Iron. Traffic Cone is the single accent — use it once per layout section, not repeatedly.
 - **Color usage is limited to three places only:** (1) text fill on Canvas, Plaster, or Iron; (2) button background fill; (3) icons — including status badges, which are drawn icons (shape-coded, see `rules/accessibility.md`). Never use a color as a layout background, a decorative fill, a border, or a shadow.
+- **Borders and focus rings are always Iron** (structural) — never a status color. State lives in icons and text, not borders.
 - **Painter's Tape (blue):** text without underline = **info**; text with underline = **link**. Never a fill.
 - Never use color as the only status signal. Always pair with shape and label.
 - All contrast ratios listed are against their intended text color. Do not pair colors outside their documented combinations.
