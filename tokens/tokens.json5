@@ -72,7 +72,7 @@
       link: {
         $value: '#007CA6',
         $type: 'color',
-        $description: "Painter's Tape — text fill: underlined = link, not underlined = info. never a fill.",
+        $description: "Painter's Tape — text fill: underlined = link, not underlined = info. never a fill. info text floor 12px (4.6:1 on canvas); below 12px use iron.",
         $extensions: {
           'org.skillit.role': 'text-fill',
           'org.skillit.pantone': '3135 C',

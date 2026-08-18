@@ -369,7 +369,7 @@ Icons are delivered as inline SVGs in Rails ViewComponents (`app/components/`) s
 ## States
 Design all states, not just the happy path. A layout that only works for the ideal case isn't finished.
 - **Empty:** Plaster surface, Iron message, single illustration or icon. Never a blank void — give the user a reason the state is empty and a path forward.
-- **Loading:** skeleton blocks in Plaster, no spinner-only states. Skeletons match final layout geometry so nothing jumps on load.
+- **Loading:** skeleton blocks in Plaster, no spinner-only states. There is no spinner icon in the set — if one is ever needed, it must be drawn and added to the inventory; skeletons are the default loading treatment.
 - **Error:** icon (octagon, Toolbox) + specific message. See form inputs for field-level states.
 - **Disabled:** Iron at 40% (`rgba(35, 47, 54, 0.4)`), no color change — a disabled control must never be confused with an error state.
 - **Overflow:** one line of text at any width must never clip. Headings wrap; long worker names truncate with ellipsis at the container edge, never overlap.

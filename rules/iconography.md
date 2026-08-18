@@ -31,6 +31,8 @@ The following 12 icons constitute the core structural set. Do not invent new met
 10. `arrow-right.svg` (Directional flow)
 11. `arrow-left.svg` (Back/return)
 12. `chevron-down.svg` (Dropdown/expand)
+
+`arrow-up.svg` and `arrow-down.svg` are rotations of `arrow-right.svg` — derived variants, not separate core icons (listed as Complete in `components/ui.md`; Figma exports can replace them later).
 ## 4. Implementation Rules
 - **Coloring:** Icons inherit their color from the parent text element (`fill="currentColor"`), allowing them to automatically adapt to their UI context (Iron on Canvas, Canvas on Traffic Cone, etc.).
 - **Inline SVGs:** To unlock the power of `currentColor`, icons should be inlined directly into the HTML (or handled via modern component frameworks) rather than loaded as static `<img>` tags.

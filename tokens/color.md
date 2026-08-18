@@ -20,6 +20,7 @@
 | `--color-surface` | ⬜️ Plaster  | `#FFFFFF` | 0, 0, 0, 0     | None           | Elevated surfaces, cards, and isolated form inputs |
 | `--color-fg`      | ⬛️ Iron | `#232F36` | 80, 50, 45, 65 | 432 C          | All body text, headings, structural elements       |
 | `--color-primary` | 🟧 Traffic Cone     | `#EF6F1A` | 0, 65, 100, 0  | 158 C          | Primary CTA, active states, key accents            |
+| `--color-primary-hover` | 🟧 Traffic Cone (dark) | `#CC5200` | 0, 82, 100, 20 | 158 C (dark) | Primary CTA hover/pressed — text stays Iron (4.54:1) |
 | `--color-warning` | 🟨 Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C         | Non-fatal alerts, warnings                         |
 | `--color-error`   | 🟥 Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C          | Fatal errors, destructive actions                  |
 | `--color-success` | 🟩 Bottle Glass   | `#367C2B` | 75, 15, 100, 10| 364 C          | Confirmations, success states                      |
