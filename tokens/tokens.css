@@ -14,7 +14,7 @@
   --color-warning: #FEB11C;       /* Hard Hat — warnings */
   --color-error: #C8102E;         /* Toolbox — errors */
   --color-success: #367C2B;       /* Bottle Glass — success */
-  --color-link: #007CA6;          /* Painter's Tape — text links only */
+  --color-link: #007CA6;          /* Painter's Tape — underlined = link, not underlined = info. never a fill */
 
   /* spacing — 4px base unit, rem */
   --space-1: 0.25rem;             /* 4px  */

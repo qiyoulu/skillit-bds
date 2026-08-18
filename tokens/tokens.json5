@@ -4,6 +4,12 @@
   //   - tokens.css        (CSS custom properties :root block)
   //   - tailwind-theme.js (tailwind theme extension)
   // no generator exists yet — keep tokens.css and tailwind-theme.js in sync manually.
+  //
+  // color usage scope (matches tokens/color.md):
+  //   colors appear ONLY as (1) text fill on canvas/plaster/iron, (2) button bg fill,
+  //   (3) icons incl. status badges. never layout backgrounds, decorative fills,
+  //   borders, or shadows. borders and focus rings are always iron.
+  //   painter's tape (link): underlined = link, not underlined = info. never a fill.
   base: {
     color: {
       bg: {
@@ -66,8 +72,11 @@
       link: {
         $value: '#007CA6',
         $type: 'color',
-        $description: "Painter's Tape — text links only, underlined, never a fill.",
-        $extensions: { 'org.skillit.pantone': '3135 C' },
+        $description: "Painter's Tape — text fill: underlined = link, not underlined = info. never a fill.",
+        $extensions: {
+          'org.skillit.role': 'text-fill',
+          'org.skillit.pantone': '3135 C',
+        },
       },
     },
     spacing: {

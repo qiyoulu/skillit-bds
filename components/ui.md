@@ -200,6 +200,7 @@ Status badges are **drawn icons** — the shape carries the state (shape coding 
 /* Info — Painter's Tape text, no underline. */
 .badge-info {
   color: var(--color-link);                /* Painter's Tape #007CA6 — info, no underline */
+  text-decoration: none;                   /* never inherits link underline */
 }
 ```
 ---
