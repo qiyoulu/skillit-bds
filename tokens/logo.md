@@ -58,3 +58,4 @@ The pattern is a step-and-repeat tessellation of the mark. Because the mark feat
 - Do not use legacy versions — the 2023 orange logo is retired
 - Do not recreate the mark or wordmark in another application — always use the approved file
 - Do not use raster formats (PNG, JPG, BMP) of the logo — always use the vector SVG
+- **Exception — raster-only platforms:** PNG exports (`lockup-*.png`, `mark-*.png` in `assets/logo/`) are approved for platforms that reject SVG uploads (e.g., Google Slides, some CMS editors, deck tools). SVG remains the source of truth and the standard for web.

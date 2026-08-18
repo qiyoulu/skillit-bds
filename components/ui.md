@@ -207,10 +207,11 @@ Every badge should communicate via color + shape + label. Never color alone.
   color: var(--color-bg);                  /* Canvas */
   border-radius: 0;
 }
-/* Info */
+/* Info — Painter's Tape is text-only (color.md), so no fill. Outlined style signals info. */
 .badge-info {
-  background-color: var(--color-link);     /* Painter's Tape */
-  color: var(--color-bg);                  /* Canvas */
+  background-color: var(--color-surface);  /* Plaster */
+  color: var(--color-link);                /* Painter's Tape text */
+  border: 1.5px solid var(--color-link);   /* Painter's Tape outline */
   border-radius: var(--radius-pill);
 }
 ```
