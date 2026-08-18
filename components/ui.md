@@ -207,11 +207,11 @@ Every badge should communicate via color + shape + label. Never color alone.
   color: var(--color-bg);                  /* Canvas */
   border-radius: 0;
 }
-/* Info — neutral, Iron. Painter's Tape is text-links-only; blue is not an info color. */
+/* Info — neutral, Iron. Painter's Tape is text-links-only; blue is not an info color. Shape = square (future icon: “i” in a square). */
 .badge-info {
   background-color: var(--color-fg);       /* Iron */
   color: var(--color-bg);                  /* Canvas */
-  border-radius: var(--radius-pill);
+  border-radius: 0;
 }
 ```
 ---
