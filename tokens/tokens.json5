@@ -45,12 +45,6 @@
           'org.skillit.pantone': '158 C',
         },
       },
-      'primary-hover': {
-        $value: '#CC5200',
-        $type: 'color',
-        $description: 'Traffic Cone darkened 20% — hover/pressed state of the primary CTA. text stays Iron (4.54:1).',
-        $extensions: { 'org.skillit.role': 'accent' },
-      },
       warning: {
         $value: '#FEB11C',
         $type: 'color',

@@ -27,7 +27,6 @@ module.exports = {
           plaster: 'var(--color-surface)',
           iron: 'var(--color-fg)',
           'traffic-cone': 'var(--color-primary)',
-          'traffic-cone-hover': 'var(--color-primary-hover)',
           'hard-hat': 'var(--color-warning)',
           toolbox: 'var(--color-error)',
           'bottle-glass': 'var(--color-success)',

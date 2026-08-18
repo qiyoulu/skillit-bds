@@ -10,7 +10,6 @@
   --color-surface: #FFFFFF;       /* Plaster — elevated surfaces */
   --color-fg: #232F36;            /* Iron — body text, borders. never #000000 */
   --color-primary: #EF6F1A;       /* Traffic Cone — primary CTA, one per section */
-  --color-primary-hover: #CC5200; /* Traffic Cone darkened 20% — hover/pressed */
   --color-warning: #FEB11C;       /* Hard Hat — warnings */
   --color-error: #C8102E;         /* Toolbox — errors */
   --color-success: #367C2B;       /* Bottle Glass — success */

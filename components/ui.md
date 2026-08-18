@@ -24,8 +24,12 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
   letter-spacing: 0;
   cursor: pointer;
 }
-.btn-primary:hover {
-  background-color: var(--color-primary-hover);  /* Traffic Cone darkened */
+/* Hover for ALL filled buttons (any color: Cone, Toolbox, Hard Hat, Bottle Glass, Painter's Tape):
+   opacity: 0.9 — one treatment, no per-color hover hexes. Lifts over Canvas.
+   Note: .btn-secondary is NOT filled — it uses its own inversion hover (below). */
+.btn-primary:hover,
+.btn-destructive:hover {
+  opacity: 0.9;
 }
 .btn-primary:focus-visible {
   outline: 2px solid var(--color-fg);   /* Iron ring — neutral, 12.4:1 on Canvas */
