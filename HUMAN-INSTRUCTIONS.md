@@ -119,7 +119,7 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 | Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C         | Warnings, non-fatal alerts              |
 | Toolbox        | `#C8102E` | 2, 100, 85, 6   | 186 C          | Errors, destructive actions             |
 | Bottle Glass   | `#367C2B` | 75, 15, 100, 10 | 364 C          | Success, confirmations                  |
-| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C         | Text links only                         |
+| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C         | Text fill — underlined = link, not underlined = info |
 
 ### Color Do / Don’t
 
@@ -131,7 +131,8 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 - **Don’t** rely on color alone to communicate error, warning, or success.
 - **Don’t** use gradients — all color transitions are hard edges.
 - **Don’t** use Hard Hat, Toolbox, Bottle Glass, or Painter's Tape as layout backgrounds or decorative elements.
-- **Don’t** use Painter's Tape as a button fill — it is for text links only.
+- **Don’t** use Painter's Tape as a button fill. Colors are limited to: text fill on Canvas/Plaster/Iron, button bg fill, and drawn icons (incl. status badges).
+- **Do** use Painter's Tape text underlined for links, not underlined for info.
 - **Don’t** introduce any color outside the eight tokens.
 
 ---

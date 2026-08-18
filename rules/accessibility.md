@@ -44,7 +44,7 @@ Every status state should communicate via three channels simultaneously: color +
 | Success | Bottle Glass `#367C2B`   | Circle / pill         | “Verified,” “Complete,” “Confirmed”       |
 | Warning | Hard Hat `#FEB11C` | Triangle / chamfer    | “Incomplete,” “Action needed,” “Expiring” |
 | Error   | Toolbox `#C8102E`  | Octagon            | “Error,” “Failed,” “Expired”              |
-| Info    | Iron `#232F36`  | Square             | “Info,” “Note,” “Tip”                     |
+| Info    | Painter's Tape `#007CA6` | Square             | “Info,” “Note,” “Tip”                     |
 ---
 ## Touch target rules (mobile / app)
 - Minimum touch target size: `44px × 44px` (Apple HIG / WCAG 2.5.5).

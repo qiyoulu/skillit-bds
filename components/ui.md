@@ -177,9 +177,9 @@ Input fields use a bottom-border-only style — no box, no background fill. Mimi
 **Success state:** Border becomes Bottle Glass (`--color-success`). Checkmark icon alongside.
 ---
 ## Badges and status indicators
-Every badge should communicate via color + shape + label. Never color alone.
+Status badges are **drawn icons** — the shape carries the state (shape coding in `rules/accessibility.md`), the label carries the text. No colored chips: colors appear only as text fill (info), button bg fill, or icon fill (`tokens/color.md`).
 ```css
-/* Base badge */
+/* Base badge — icon + label, no colored background */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -189,29 +189,13 @@ Every badge should communicate via color + shape + label. Never color alone.
   font-weight: var(--weight-medium);       /* 500 */
   padding: var(--space-1) var(--space-2); /* 4px 8px */
 }
-/* Success — pill shape */
-.badge-success {
-  background-color: var(--color-success);  /* Bottle Glass */
-  color: var(--color-bg);                  /* Canvas */
-  border-radius: var(--radius-pill);
-}
-/* Warning — chamfered (use clip-path or angled border) */
-.badge-warning {
-  background-color: var(--color-warning);  /* Hard Hat */
-  color: var(--color-fg);                  /* Iron */
-  border-radius: 0;
-}
-/* Error — square */
-.badge-error {
-  background-color: var(--color-error);    /* Toolbox */
-  color: var(--color-bg);                  /* Canvas */
-  border-radius: 0;
-}
-/* Info — neutral, Iron. Painter's Tape is text-links-only; blue is not an info color. Shape = square (future icon: “i” in a square). */
+/* State color lives in the icon fill; labels stay Iron. */
+.badge-success .icon { color: var(--color-success); }  /* Bottle Glass — circle / pill shape */
+.badge-warning .icon { color: var(--color-warning); }  /* Hard Hat — triangle / chamfer */
+.badge-error   .icon { color: var(--color-error); }    /* Toolbox — octagon */
+/* Info — Painter's Tape text, no underline. */
 .badge-info {
-  background-color: var(--color-fg);       /* Iron */
-  color: var(--color-bg);                  /* Canvas */
-  border-radius: 0;
+  color: var(--color-link);                /* Painter's Tape #007CA6 — info, no underline */
 }
 ```
 ---
@@ -368,7 +352,7 @@ Icons are delivered as inline SVGs in Rails ViewComponents (`app/components/`) s
 | Warning | Complete (`warning.svg`) |
 | Search | Complete (`search.svg`) |
 | Arrow (left, right) | Complete (`arrow-left.svg`, `arrow-right.svg`) |
-| Arrow (up, down) | Missing — add to Phase II |
+| Arrow (up, down) | Complete — rotated from `arrow-right.svg` (`arrow-up.svg`, `arrow-down.svg`); Figma exports can replace later |
 | Location | Complete (`location.svg`) |
 | Clock | Complete (`clock.svg`) |
 | User | Complete (`user.svg`) |

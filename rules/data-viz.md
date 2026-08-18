@@ -22,7 +22,7 @@
 - **The Insight (Hero):** Traffic Cone (`--color-primary`) is used *exclusively* to highlight the specific data point or trend the viewer is supposed to care about. Orange is the thesis; Iron is the context.
 - **Overlapping Data (Varying Iron):** ONLY introduce varying opacity scales of Iron (e.g., 100%, 60%, 30%) if the data overlaps and requires structural separation (e.g., multi-line graphs crossing over each other).
 - **Expanded Scale:** Use industrial patterns (diagonal cross-hatching, stippling) in Iron. Do not add colors.
-- **Semantic Lock:** NEVER use Painter's Tape (Blue), Bottle Glass (Green), Hard Hat (Yellow), or Toolbox (Red) for standard categories. Only use them if measuring explicit links, successes, warnings, or failures.
+- **Semantic Lock:** NEVER use Painter's Tape (Blue), Bottle Glass (Green), Hard Hat (Yellow), or Toolbox (Red) for standard categories. Only use them if measuring explicit links, info notes, successes, warnings, or failures.
 
 ## 4. Interaction & Specific Chart Rules
 - **Tooltips:** Plaster (`--color-surface`) background, 1px solid Iron (`--color-fg`) border, `0px` corners.

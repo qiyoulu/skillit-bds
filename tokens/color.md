@@ -6,6 +6,8 @@
 - Use ONLY the tokens listed here. Never approximate, mix, or invent colors.
 - Every token has a designated UI role. Use each color only for its assigned role.
 - Primary surfaces are Canvas + Iron. Traffic Cone is the single accent — use it once per layout section, not repeatedly.
+- **Color usage is limited to three places only:** (1) text fill on Canvas, Plaster, or Iron; (2) button background fill; (3) icons — including status badges, which are drawn icons (shape-coded, see `rules/accessibility.md`). Never use a color as a layout background, a decorative fill, a border, or a shadow.
+- **Painter's Tape (blue):** text without underline = **info**; text with underline = **link**. Never a fill.
 - Never use color as the only status signal. Always pair with shape and label.
 - All contrast ratios listed are against their intended text color. Do not pair colors outside their documented combinations.
 ---
@@ -19,7 +21,7 @@
 | `--color-warning` | 🟨 Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C         | Non-fatal alerts, warnings                         |
 | `--color-error`   | 🟥 Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C          | Fatal errors, destructive actions                  |
 | `--color-success` | 🟩 Bottle Glass   | `#367C2B` | 75, 15, 100, 10| 364 C          | Confirmations, success states                      |
-| `--color-link`    | 🟦 Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C         | Text links only — underlined, never used as a fill |
+| `--color-link`    | 🟦 Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C         | Text fill — underlined = link, not underlined = info. Never a fill. |
 ---
 ## Contrast ratios (WCAG AA minimum: 4.5:1 body, 3:1 UI)
 | Foreground         | Background         | Ratio  | Use                                                                                                 |
@@ -63,7 +65,7 @@
 - Text on Bottle Glass should always be Canvas (`#FAF7F3`).
 - Should always be accompanied by a success label — never color alone.
 ### `--color-link` 🟦 Painter's Tape `#007CA6`
-- Text links only. Always underlined.
+- Text fill only. Underlined = link; not underlined = info (“Info,” “Note,” “Tip”).
 - Never used as a button fill, background, or decorative element.
 - On dark (Iron) backgrounds: use Canvas underlined text instead.
 ---
