@@ -39,6 +39,7 @@ module.exports = {
       },
       fontSize: {
         '8x': 'var(--text-8x)',
+        '6x': 'var(--text-6x)',
         '4x': 'var(--text-4x)',
         '3x': 'var(--text-3x)',
         '2x': 'var(--text-2x)',
@@ -46,7 +47,6 @@ module.exports = {
         '1x': 'var(--text-1x)',
         ui: 'var(--text-ui)',
         'ui-lg': 'var(--text-ui-lg)',
-        label: 'var(--text-label)',
         mono: 'var(--text-mono)'
       },
       borderRadius: {

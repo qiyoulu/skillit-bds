@@ -26,6 +26,7 @@ If you need a size larger than 128px (e.g., 256px), extrapolate using this algor
 | Level | Token | px (screen) | rem (web) | pt (print) | Base Weight | Bolded | Line height | Tracking |
 |---|---|---|---|---|---|---|---|---|
 | **Text-8x** | `--text-8x` | 128px | 8rem | 96pt | Bold (700) | Black (900) | 0.80 | -6% |
+| **Text-6x** | `--text-6x` | 96px | 6rem | 72pt | **650** | **850** | 0.90 | -5% |
 | **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | Semibold (600) | Extra Bold (800) | 1.00 | -4% |
 | **Text-3x** | `--text-3x` | 48px | 3rem | 36pt | Semibold (600) | Bold (700) | 1.10 | -3% |
 | **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | Medium (500) | Bold (700) | 1.20 | -2% |
@@ -37,6 +38,7 @@ Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = 
 | Level | Desktop | Mobile (×0.75) | Leading |
 |---|---|---|---|
 | Text-8x | 128px | 96px (`Text-8s`) | 0.80 |
+| Text-6x | 96px | 72px (`Text-6s`) | 0.90 |
 | Text-4x | 64px | 48px (`Text-4s`) | 1.00 |
 | Text-3x | 48px | 36px (`Text-3s`) | 1.10 |
 | Text-2x | 32px | 24px (`Text-2s`) | 1.20 |
@@ -80,6 +82,14 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-8x-tracking:      -0.06em;
   --text-8x-print:         96pt;
   --text-8x-sm:            6rem;   /* 96px — mobile variant (was 4rem/64px) */
+  /* Text-6x */
+  --text-6x:               6rem;
+  --text-6x-weight:        650;
+  --text-6x-weight-bold:   850;
+  --text-6x-leading:       0.90;
+  --text-6x-tracking:      -0.05em;
+  --text-6x-print:         72pt;
+  --text-6x-sm:            4.5rem; /* 72px — mobile variant */
   /* Text-4x */
   --text-4x:                4rem;
   --text-4x-weight:         600;

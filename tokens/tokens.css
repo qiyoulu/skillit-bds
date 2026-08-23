@@ -45,6 +45,12 @@
   --text-8x-leading: 0.80;
   --text-8x-tracking: -0.06em;
   --text-8x-sm: 4rem;
+  --text-6x: 6rem;                /* Text-6x, mobile: 4.5rem (72px), bolded: 850 */
+  --text-6x-weight: 650;
+  --text-6x-weight-bold: 850;
+  --text-6x-leading: 0.90;
+  --text-6x-tracking: -0.05em;
+  --text-6x-sm: 4.5rem;
   --text-4x: 4rem;                /* Text-4x, mobile: 3rem (48px), bolded: 800 */
   --text-4x-weight: 600;
   --text-4x-weight-bold: 800;

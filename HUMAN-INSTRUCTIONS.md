@@ -220,10 +220,11 @@ Skillit uses a primary typeface for human content, and a monospace typeface for 
 ### The Typographic Algorithm
 
 The typography system is consistently derived. Levels are named objectively by their pixel size.
-The scale is built on a 16px baseline: `128 → 64 → 48 → 32 → 24 → 16`.
+The scale is built on a 16px baseline: `128 → 96 → 64 → 48 → 32 → 24 → 16`.
 | Level | Size | Base Weight | Bolded | Line Height | Tracking | Use |
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
 | **Text-8x** | 128px | Bold (700) | Black (900) | 0.80 | −6% | Hero headlines at massive scale |
+| **Text-6x** | 96px | **650** | **850** | 0.90 | −5% | Large hero/section titles |
 | **Text-4x** | 64px | Semibold (600) | Extra Bold (800) | 1.00 | −4% | Standard headlines |
 | **Text-3x** | 48px | Semibold (600) | Bold (700) | 1.10 | −3% | Section titles, pull quotes |
 | **Text-2x** | 32px | Medium (500) | Bold (700) | 1.20 | −2% | Subheadings |
@@ -234,6 +235,7 @@ _(Full print/mobile/monospace variants for each level are documented in `tokens/
 
 **Mobile variants:** Each level has a `-s` variant in Figma and `-sm` in CSS (e.g., `Text-1s` / `--text-1x-sm`). The `-sm` suffix always means "mobile variant", never "small text size". All levels scale ×0.75 for mobile (mobile px = print pt):
 - Text-8x: 128px → 96px (`Text-8s`)
+- Text-6x: 96px → 72px (`Text-6s`)
 - Text-4x: 64px → 48px (`Text-4s`)
 - Text-3x: 48px → 36px (`Text-3s`)
 - Text-2x: 32px → 24px (`Text-2s`)

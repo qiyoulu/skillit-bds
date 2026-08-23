@@ -99,8 +99,14 @@
         '8x': {
           $value: { fontFamily: '{base.typography.family.primary}', fontSize: '8rem', fontWeight: 700, lineHeight: 0.8, letterSpacing: '-0.06em' },
           $type: 'typography',
-          $description: 'Text-8x — hero headlines. small viewport: 4rem. bolded: 900.',
-          $extensions: { 'org.skillit.print': '96pt', 'org.skillit.sm': '4rem' },
+          $description: 'Text-8x — hero headlines. mobile: 6rem (96px). bolded: 900.',
+          $extensions: { 'org.skillit.print': '96pt', 'org.skillit.sm': '6rem' },
+        },
+        '6x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '6rem', fontWeight: 650, lineHeight: 0.9, letterSpacing: '-0.05em' },
+          $type: 'typography',
+          $description: 'Text-6x — large hero/section titles. mobile: 4.5rem (72px). bolded: 850.',
+          $extensions: { 'org.skillit.print': '72pt', 'org.skillit.sm': '4.5rem' },
         },
         '4x': {
           $value: { fontFamily: '{base.typography.family.primary}', fontSize: '4rem', fontWeight: 600, lineHeight: 1, letterSpacing: '-0.04em' },
