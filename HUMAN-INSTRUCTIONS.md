@@ -270,7 +270,7 @@ To maintain the grid’s consistent rhythm, vertical spacing between text elemen
 
 **Blockquotes** are treated as elevated structural cards, not editorial text callouts.
 
-- **Container:** Wrap the quote in a Plaster (`var(--color-surface)` / `#FFFFFF`) card container (0px corners). It inherits the standard tactile padding for cards.
+- **Container:** Wrap the quote in a Plaster (`var(--color-surface)` / `#FFFFFF`) card container (16px corners). It inherits the standard tactile padding for cards.
 - **No Block Italics:** Do not italicize the entire quote. Keep the typography Roman and grounded, reserving italics strictly for emphasis or titles within the text.
 
 ### Variable weight & halation correction
@@ -342,14 +342,14 @@ Every layout uses four layers, in order of elevation and visual weight:
 - **Tension through scale.** Create hierarchy through dramatic leaps in scale (e.g., placing a 64px headline directly next to a 16px body copy block). Do not rely on intermediate sizes or color shifts to organize information.
 - **Strict functionalism.** No decorative elements. No abstract shapes, blobs, or illustrated backgrounds. Every border, margin, and pixel should perform a structural job.
 - **One accent.** Traffic Cone appears exactly once per layout section (e.g., on the CTA or a key stat). Never repeated decoratively.
-- **Shape signals action.** Static structural elements (cards, layout panels, photographs) use hard, straight edges (0px). Actionable human touchpoints (buttons) use a fully rounded pill shape. Intermediate rounded corners (e.g., 4px or 8px) are banned. No drop shadows.
+- **Shape signals action.** Static structural elements (cards, layout panels, photographs) use 16px corners. Actionable human touchpoints (buttons) use a fully rounded pill shape. Intermediate rounded corners (e.g., 4px or 8px) are banned. No drop shadows.
 - **Consistent text blocks.** Body text columns never exceed 70 characters wide to maintain perfect tracking and readability.
 
 ### Border radius (Shape signals action)
 
 In this system, shape indicates whether an element is interactive or static. We rely on two extremes and nothing in between:
 
-- **Static elements:** `0px` (sharp). Applied to all cards, layout panels, images, photos, and containers.
+- **Static elements:** `16px` radius. Applied to all cards, layout panels, images, photos, and containers.
 - **Actionable elements:** `9999px` (fully rounded pill, `--radius-pill`). Applied to primary CTA buttons and touch targets.
 - **Intermediate radii:** Banned. Do not use `4px`, `8px`, or slightly rounded corners anywhere.
 
@@ -370,7 +370,7 @@ While micro-spacing (`8px`, `16px`, `32px`) remains locked to absolute pixels to
 
 - **Do** leave generous space. Minimum 128px vertical padding on desktop sections.
 - **Don’t** fill space with shapes, patterns, or decorative elements to avoid “emptiness.”
-- **Do** use hard, straight edges (0px) for static containers and photos.
+- **Do** use 16px corners for static containers and photos.
 - **Do** use fully rounded pill shapes for primary buttons.
 - **Don’t** use intermediate rounded corners (e.g., 4px or 8px) anywhere.
 - **Don’t** bevel edges or use drop shadows.
@@ -386,7 +386,7 @@ Skillit’s data visualization is utilitarian. The charts should be legible, pre
 ### Geometry & Structure
 
 - **Containers:** All data viz graphics must sit on a Plaster (pure white) background card to isolate the data and maintain contrast against the surrounding UI.
-- **Sharp edges:** Bar charts, tooltips, legends, and Plaster cards should have `0px` border-radius. No rounded edges.
+- **Sharp edges:** Bar charts, tooltips, legends, and Plaster cards should have `16px` border-radius.
 - **Line weight:** All structural lines must be `4px` thick. This applies to data lines and gridlines.
 - **Gridlines:** Rendered in Canvas with 4px stroke weight. Remove all outer bounding boxes. Use horizontal (Y-axis) gridlines only. No vertical gridlines.
 - **Pie charts:** Slices must sit flush against each other with zero gap and zero stroke.

@@ -16,7 +16,7 @@ Use CSS variables, never raw hex codes in output.
 - `--color-error`: Toolbox (`#C8102E`)
 
 ## 2. Geometry (Binary Rule)
-- **Structural Containers:** `0px` radius (photos, cards, borders). No bevels.
+- **Structural Containers:** `16px` radius (photos, cards, borders). No bevels.
 - **Human Touchpoints:** `9999px` radius / pill (actionable buttons, badges).
 - Intermediate radiuses (e.g., 4px, 8px) are banned.
 
@@ -36,7 +36,7 @@ Use CSS variables, never raw hex codes in output.
 - **Photography:** No AI image generation, ever — hard brand lock. No text, symbols, graphs, numbers, or AI artifacts in images. Real, human-captured, shot on genuine work sites — see `rules/photography.md`.
 
 ## 5. Data Visualization
-- **Geometry:** `0px` corners for bars/tooltips. Unsmoothed (stepped/linear) and smoothed (spline/curved) line paths are both permitted. No X-axis gridlines.
+- **Geometry:** `16px` corners for bars/tooltips. Unsmoothed (stepped/linear) and smoothed (spline/curved) line paths are both permitted. No X-axis gridlines.
 - **Typography:** `font-variant-numeric: tabular-nums` (mandatory). Right-align Y-axis.
 - **Colors:** Monochromatic scale using Iron opacities (100%, 60%, 30%). Traffic Cone allowed 1x for absolute focal highlight. NEVER use semantic colors (Blue, Green, Yellow, Red) for standard categories.
 - **Banned:** 3D, drop shadows, donut charts (use solid pie charts for ratios), radar charts.
@@ -71,5 +71,5 @@ Confirm target before generating code.
 **Verification before output:**
 1. SVGs use `currentColor`.
 2. No unauthorized hex codes.
-3. Corners are 0px (cards) or pill (buttons).
+3. Corners are 16px (cards) or pill (buttons).
 4. Typography uses fluid scaling (`clamp()`) on mobile, weight remains identical to desktop.

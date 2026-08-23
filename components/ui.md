@@ -164,7 +164,7 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground,
   background-color: var(--color-surface); /* Plaster — field separated from Canvas ground */
   border: none;
   border-bottom: 2px solid var(--color-fg); /* Iron — drafting line (neutral, structural) */
-  border-radius: 0;
+  border-radius: 16px;
   color: var(--color-fg);
   font-family: var(--font-primary);
   font-size: var(--text-ui);
@@ -215,7 +215,7 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
 .card {
   background-color: var(--color-surface);  /* Plaster */
   border: none;                            /* No borders */
-  border-radius: 0;
+  border-radius: 16px;
   padding: var(--space-16);                /* 64px — tactile */
 }
 /* Interactive cards reserve a transparent border so hover can reveal the Iron outline without layout shift */
@@ -240,7 +240,7 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
   background-color: var(--color-fg);       /* Iron */
   color: var(--color-bg);                  /* Canvas */
   border: none;
-  border-radius: 0;
+  border-radius: 16px;
   padding: var(--space-8);                 /* Generous padding for heavy blocks */
 }
 ```

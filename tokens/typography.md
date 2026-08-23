@@ -167,7 +167,7 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 - **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 44px minimum touch target rule.
 
 **Blockquotes**
-- **Container:** Place quotes inside a Plaster (`#FFFFFF`) card container with 0px border radius. It uses standard card padding.
+- **Container:** Place quotes inside a Plaster (`#FFFFFF`) card container with 16px border radius. It uses standard card padding.
 - **Typography:** Roman only. Do not italicize the entire quote (reserve italics for emphasis or titles of works).
 
 ### Typographic Punctuation

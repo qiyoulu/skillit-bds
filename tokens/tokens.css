@@ -90,8 +90,8 @@
   --weight-extrabold-dark: 775;
   --weight-black-dark: 875;
 
-  /* radius — binary: sharp or pill, nothing between */
-  --radius-sharp: 0px;
+  /* radius — 16px for structural containers, 9999px for pills, nothing between */
+  --radius-sharp: 16px;
   --radius-pill: 9999px;
 
   /* layout constants */

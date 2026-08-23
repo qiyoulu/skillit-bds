@@ -51,7 +51,7 @@ When tasked with generating code, copywriting, or UI components, you should adhe
 - **Colors:** Use defined tokens only. No raw hex codes in output.
 - **Typography:** Work Sans for all human text. IBM Plex Mono for metadata and code blocks. Sentence-case UI.
 - **Voice:** "Industry veteran." No tech jargon, hype, or hedging. 
-- **Geometry:** 0px radius for structural elements; 9999px (pill) for buttons.
+- **Geometry:** 16px radius for structural elements; 9999px (pill) for buttons.
 
 ### Model Routing
 - **Claude (3.5/5):** Use for code generation, Tailwind scaffolding, copywriting, and CSS compilation.

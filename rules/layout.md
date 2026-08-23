@@ -3,7 +3,21 @@
 ---
 ## The core principle
 Whitespace is structural mass. It organizes data and anchors the grid. The human is the subject; the layout is the consistent framework that supports them.
+
 The visual constraint (non-negotiable): **mostly white, black, and a splash of a single accent.** If a visual element does not perform a strict functional job, delete it.
+
+**The visual direction is softer and bolder at the same time:**
+- **Softer** — communicated through the earth tones of projects and people. Canvas ground, iron structure, material-named accent colors. Whitespace that breathes. Photography that reads as documentary, not stylized.
+- **Bolder** — communicated through the innovative and creative spirit of the product. Large, confident type. Expansive layout moments where the image carries the story (full-viewport photography, full-width environment shots). A single Traffic Cone accent that signals action without shouting.
+
+Boxes should not feel restrictive. The grid is structural; the experience should feel expansive. When a section carries a single strong image or a single strong idea, let it fill the space — full-bleed photography, wide environment shots, generous type scale that asserts the point without decoration. The brand sells a dream to the American people, not a feature list to a contracting firm. The layout should reflect that scale.
+
+**Structural vs. flat feels:** Cards and panels (Plaster surfaces) are for grouped, scannable data — job cards, stat blocks, feature lists. Full-bleed and large-format moments (Canvas ground, photography carrying the full width) are for narrative, hero, and emotional impact. Use each for its purpose. Don't turn a story into a card grid. Don't turn a data section into a full-screen photograph.
+
+When generating a layout, choose the surface type that matches the moment:
+- **Expansive:** hero imagery, single strong portrait, wide environmental shot, full-bleed section that lets a single idea breathe.
+- **Structured:** cards, grids, stat blocks, scannable data — where comparison and scanning are the job.
+Use the tool that fits the job. Don't default everything to one mode.
 ---
 ## Surface hierarchy
 Every layout is built on four layers, in order of elevation and visual weight:
@@ -43,7 +57,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 4. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-8x` directly adjacent to `--text-1x`), not by stepping gently through intermediate sizes or adding color.
 5. **Strict functionalism.** Every border and margin should serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.
 6. **One accent per layout section.** Traffic Cone (`--color-primary`) appears once per page section. It does not repeat as decoration.
-7. **Shape signals action (Static = Sharp, Actionable = Pill).** All static layout containers (cards, panels, photographs) should use hard, straight edges (`border-radius: 0`). Only actionable human touchpoints (buttons) use a fully rounded pill shape (`border-radius: var(--radius-pill)`, 9999px). No intermediate rounded corners (e.g., 4px or 8px) are permitted. No gradients, no drop shadows.
+7. **Shape signals action (Static = 16px, Actionable = Pill).** All static layout containers (cards, panels, photographs) use `border-radius: 16px`. Actionable human touchpoints (buttons) use a fully rounded pill shape (`border-radius: var(--radius-pill)`, 9999px). No intermediate rounded corners (e.g., 4px or 8px) are permitted. No gradients, no drop shadows.
 8. **Typography does the heavy lifting.** Space and scale create order. Color is exclusively used to signal interactive function (links, buttons, states).
 ---
 ## Section types
@@ -82,7 +96,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 ## What is banned in layouts
 - Gradients of any kind
 - Drop shadows on content
-- Rounded corners on any element that is not an actionable touchpoint
+- Sharp edges (0px) on structural containers — use 16px
 - Intermediate rounded corners (e.g., 4px or 8px)
 - Beveled or angled image masks
 - Pattern fills on content surfaces (boot tread is nav header only)

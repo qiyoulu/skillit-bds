@@ -3,7 +3,16 @@
 ---
 ## The principle
 Photography is the brand’s most human element. Every image should make a craft pro feel seen — not as a stock photo prop, not as a demographic data point, but as a skilled professional whose work builds the physical world.
+
 The camera position is always respectful. Never looking down at the worker. Eye level or slightly below.
+
+**Human essence is the organizing visual principle for this brand.** The company was founded by someone who understands craft professionals — someone who keeps the tradition of technical excellence alive. That understanding lives in the work, the hands, the face, the environment. The brand's responsibility is to inject that human essence into every visual surface, not to abstract the person into a data point, a silhouette, or a logo placeholder. Every image should answer the question: does this make the person feel real?
+
+The visual direction is softer and bolder at the same time:
+- **Softer** — communicated through the earth tones of projects and people. Canvas ground, iron structure, material-named accent colors. Photography that reads as documentary, not stylized.
+- **Bolder** — communicated through the innovative and creative spirit of the product. Large, confident type. Expansive layout moments. Full-screen photography when the image carries the story. A single Traffic Cone accent that signals action without shouting.
+
+The dream — skilled hands finding steady work that recognizes their craft — is ultimately told through people, not product screenshots. Photography and visual assets carry that story.
 ---
 ## Hard rules (apply to all images)
 These are non-negotiable in all generated image briefs, art direction, and asset usage:
