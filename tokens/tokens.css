@@ -63,11 +63,7 @@
   --text-1x-leading: 1.40;
   --text-1x-tracking: 0em;
   --text-1x-sm: 0.75rem;
-  --text-0.75x: 0.75rem;          /* hard legibility floor, 12px, no -sm variant */
-  --text-0.75x-weight: 400;
-  --text-0.75x-weight-bold: 500;
-  --text-0.75x-leading: 1.55;
-  --text-0.75x-tracking: 0em;
+  /* No Text-0.75x — removed (was 12px floor) */
 
   /* typography — functional UI scale */
   --text-ui-lg: 1.125rem;

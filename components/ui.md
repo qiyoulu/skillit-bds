@@ -181,7 +181,7 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground,
 }
 ```
 **Labels:** Above the field, not inside (placeholder is not a label). `--text-label` size, `--weight-medium`, Iron.
-**Error state:** Field unchanged. Error icon (Toolbox, octagon) beside the field + message below in Toolbox, `--text-0.75x`. Icon + text carry the signal — never a colored border.
+**Error state:** Field unchanged. Error icon (Toolbox, octagon) beside the field + message below in Toolbox, `--text-label`. Icon + text carry the signal — never a colored border.
 **Success state:** Field unchanged. Checkmark icon (Bottle Glass) alongside. No border change.
 ---
 ## Badges and status indicators

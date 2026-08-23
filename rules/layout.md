@@ -77,7 +77,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 ### Data / proof section
 - Stat blocks in a 3- or 4-column grid.
 - Stats: `--text-8x`, Traffic Cone.
-- Stat labels: `--text-0.75x`, Iron.
+- Stat labels: `--text-label`, Iron.
 - Background: Canvas or Iron (inverted — white text on Iron, Traffic Cone stats).
 ### CTA / sign-up section
 - Centered, maximum `600px` wide.
@@ -88,7 +88,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 ## Nav bar
 - Background: Canvas with boot tread pattern overlay (low opacity — texture only, not legible repeat).
 - Logo: left-aligned.
-- Nav links: Iron, `--text-0.75x`, sentence-case, no underline at rest.
+- Nav links: Iron, `--text-label`, sentence-case, no underline at rest.
 - Active nav link: Traffic Cone, no underline.
 - Primary CTA (“Join”): Traffic Cone button, right-aligned.
 - Nav tabs (approved): How It Works · Our Network · Jobs · About Us · Resources

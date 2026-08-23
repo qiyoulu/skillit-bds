@@ -120,12 +120,6 @@
           $description: 'Text-1x — all running copy. small viewport: 0.75rem (12px). bolded: 600. mono: 0.875rem.',
           $extensions: { 'org.skillit.print': '12pt', 'org.skillit.sm': '0.75rem' },
         },
-        '0.75x': {
-          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.55, letterSpacing: '0em' },
-          $type: 'typography',
-          $description: 'Text-0.75x — hard legibility floor, 12px. no -sm variant. bolded: 500 (exception).',
-          $extensions: { 'org.skillit.print': '9pt' },
-        },
         'ui-lg': { $value: { fontSize: '1.125rem', fontWeight: 400, lineHeight: 1.6, letterSpacing: '0' }, $type: 'typography', $description: 'large UI text' },
         'ui': { $value: { fontSize: '1rem', fontWeight: 400, lineHeight: 1.6, letterSpacing: '0' }, $type: 'typography', $description: 'default UI body' },
         label: { $value: { fontSize: '0.75rem', fontWeight: 500, lineHeight: 1.4, letterSpacing: '0.04em' }, $type: 'typography', $description: 'labels, tags, badges — sentence-case, minimum size' },

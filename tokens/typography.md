@@ -29,19 +29,17 @@ If you need a size larger than 128px (e.g., 256px), extrapolate using this algor
 | **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | Semibold (600) | Extra Bold (800) | 1.00 | -4% |
 | **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | Medium (500) | Bold (700) | 1.20 | -2% |
 | **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | Regular (400) | Semibold (600) | 1.40 | 0% |
-| **Text-0.75x** | `--text-0.75x` | 12px | 0.75rem | 9pt | Regular (400) | Medium (500) | 1.55 | 0% |
-*(Note: Text-1x and Text-0.75x operate outside the strict 2x multiplier rule to protect legibility on job-site screens — Bolded is only +100 at this floor, not +200. 12px is the absolute hard floor. Text-16x was retired — no longer a defined Figma text style; use the extrapolation algorithm above if a size beyond Text-8x is ever needed.)*
+*(Note: Text-16x was retired — no longer a defined Figma text style; use the extrapolation algorithm above if a size beyond Text-8x is ever needed.)*
 ### Small-viewport variants (confirmed against Figma)
-Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = Text-1x at small viewports). In CSS, the suffix is `-sm` (e.g., `--text-1x-sm`), matching the breakpoint naming in the spacing tokens — **`-sm` always means "small viewport variant", never "small text size"** (small text sizes live in the scale itself, e.g. `--text-0.75x`). Per the halving rule below: Text-2x/4x/8x halve at small viewports. Text-1x scales to `Text-1s` (12px) — the old 16px mobile body was retired aug 13, the former `Text-0.75s` (12px) was renamed to `Text-1s`. Text-0.75x holds its desktop size (hard legibility floor, see Responsive Scaling section).
-| Level | Desktop | Small viewport | Leading (unchanged) |
+Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = Text-1x at small viewports). In CSS, the suffix is `-sm` (e.g., `--text-1x-sm`), matching the breakpoint naming in the spacing tokens. **Mobile variants use the ×0.75 rule** (mobile px = print pt):
+| Level | Desktop | Mobile (×0.75) | Leading |
 |---|---|---|---|
-| Text-8x | 128px | 64px | 0.80 |
-| Text-4x | 64px | 32px | 1.00 |
-| Text-2x | 32px | 16px | 1.20 |
+| Text-8x | 128px | 96px (`Text-8s`) | 0.80 |
+| Text-4x | 64px | 48px (`Text-4s`) | 1.00 |
+| Text-2x | 32px | 24px (`Text-2s`) | 1.20 |
 | Text-1x | 16px | 12px (`Text-1s`) | 1.40 |
-| Text-0.75x | 12px | 12px (no override) | 1.55 |
 ### Monospace variants (confirmed against Figma)
-Concrete values for the 90% scaling rule below, confirmed against current Figma text styles. Only Text-1x and Text-2x have confirmed mono variants so far — don't extrapolate 0.75x/4x/8x mono sizes without confirming in Figma first.
+Concrete values for the 90% scaling rule below, confirmed against current Figma text styles. Only Text-1x and Text-2x have confirmed mono variants so far — don't extrapolate 4x/8x mono sizes without confirming in Figma first.
 | Level | Base | Mono (round(base × 0.9)) |
 |---|---|---|
 | Text-1x | 16px | 14px (`--text-mono`) |
@@ -52,10 +50,8 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
 |---|---|---|---|---|---|
 | `--text-ui-lg` | Large UI text | `1.125rem` (18px) | 400 | 1.6 | `0` |
 | `--text-ui` | Default UI body | `1rem` (16px) | 400 | 1.6 | `0` |
-| `--text-0.75x` | Small UI / captions / labels | `0.75rem` (12px) | 400 | 1.55 | `0%` |
 | `--text-label` | Labels, tags, badges | `0.75rem` (12px) | 500 | 1.4 | `0.04em` |
 | `--text-mono` | Metadata, IDs, data | `0.875rem` (14px) | 400 | 1.5 | `0.02em` |
-*(`--text-ui-sm` was a redundant alias for `--text-0.75x` — retired. Use `--text-0.75x` directly everywhere in the app scale too, not just the primary hierarchy.)*
 ---
 ## Monospace stack (metadata & code)
 All metadata (timestamps, worker IDs, distances, statistics) and code blocks (inline or multiline) should use a monospace stack to visually separate machine data from human text.
@@ -80,7 +76,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-8x-leading:       0.80;
   --text-8x-tracking:      -0.06em;
   --text-8x-print:         96pt;
-  --text-8x-sm:            4rem;   /* 64px — small viewport variant */
+  --text-8x-sm:            6rem;   /* 96px — mobile variant (was 4rem/64px) */
   /* Text-4x */
   --text-4x:                4rem;
   --text-4x-weight:         600;
@@ -88,7 +84,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-4x-leading:        1.00;
   --text-4x-tracking:       -0.04em;
   --text-4x-print:          48pt;
-  --text-4x-sm:             2rem;  /* 32px — small viewport variant */
+  --text-4x-sm:             3rem;  /* 48px — mobile variant (was 2rem/32px) */
   /* Text-2x */
   --text-2x:                2rem;
   --text-2x-weight:         500;
@@ -96,7 +92,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-2x-leading:        1.20;
   --text-2x-tracking:       -0.02em;
   --text-2x-print:          24pt;
-  --text-2x-sm:             1rem;  /* 16px — small viewport variant */
+  --text-2x-sm:             1.5rem; /* 24px — mobile variant (was 1rem/16px) */
   --text-2x-mono:            1.8125rem; /* 29px — confirmed Figma value, round(32 * 0.9) */
   /* Text-1x */
   --text-1x:                1rem;
@@ -105,15 +101,8 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-1x-leading:        1.40;
   --text-1x-tracking:       0em;
   --text-1x-print:          12pt;
-  --text-1x-sm:             0.75rem; /* 12px — mobile body, renamed from Text-0.75s (aug 13) */
-  /* Text-0.75x (Hard Legibility Floor) */
-  --text-0.75x:             0.75rem;
-  --text-0.75x-weight:      400;
-  --text-0.75x-weight-bold: 500;    /* exception: +100, not +200 — see algorithm note */
-  --text-0.75x-leading:     1.55;
-  --text-0.75x-tracking:    0em;
-  --text-0.75x-print:       9pt;
-  /* No -sm token: already the hard floor, does not scale down further */
+  --text-1x-sm:             0.75rem; /* 12px — mobile body */
+  /* No -sm token: Text-1x is the hard floor (12px) */
   /* Functional UI scale */
   --text-ui-lg:     1.125rem;
   --text-ui:        1rem;

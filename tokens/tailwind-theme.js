@@ -42,7 +42,6 @@ module.exports = {
         '4x': 'var(--text-4x)',
         '2x': 'var(--text-2x)',
         '1x': 'var(--text-1x)',
-        '0.75x': 'var(--text-0.75x)',
         ui: 'var(--text-ui)',
         'ui-lg': 'var(--text-ui-lg)',
         label: 'var(--text-label)',

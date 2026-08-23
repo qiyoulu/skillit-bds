@@ -220,18 +220,21 @@ Skillit uses a primary typeface for human content, and a monospace typeface for 
 ### The Typographic Algorithm
 
 The typography system is consistently derived. Levels are named objectively by their pixel size.
-The scale is a perfect factor-of-2 progression built on a 16px baseline: `128 → 64 → 32 → 16`, with the addition of a smaller 12px caption level as the hard legibility floor.
+The scale is a perfect factor-of-2 progression built on a 16px baseline: `128 → 64 → 32 → 16`.
 | Level | Size | Base Weight | Bolded | Line Height | Tracking | Use |
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
 | **Text-8x** | 128px | Bold (700) | Black (900) | 0.80 | −6% | Hero headlines at massive scale |
 | **Text-4x** | 64px | Semibold (600) | Extra Bold (800) | 1.00 | −4% | Standard headlines |
 | **Text-2x** | 32px | Medium (500) | Bold (700) | 1.20 | −2% | Subheadings, pull quotes |
 | **Text-1x** | 16px | Regular (400) | Semibold (600) | 1.40 | 0% | All running copy |
-| **Text-0.75x** | 12px | Regular (400) | Medium (500) | 1.55 | 0% | Captions, labels, legal |
 
-_(Full print/small-viewport/monospace variants for each level are documented in `tokens/typography.md` — check there before inventing a new size, so this table and the token file don't drift apart again.)_
+_(Full print/mobile/monospace variants for each level are documented in `tokens/typography.md` — check there before inventing a new size, so this table and the token file don't drift apart again.)_
 
-**Small-viewport variants:** Each level above `Text-0.75x` has a `-s` variant in Figma and `-sm` in CSS (e.g., `Text-1s` / `--text-1x-sm`). The `-sm` suffix always means "small viewport variant", never "small text size". Text-8x/4x/2x halve at small viewports; Text-1x scales down to 12px (`Text-1s`, locked aug 13); Text-0.75x holds its size (hard floor).
+**Mobile variants:** Each level has a `-s` variant in Figma and `-sm` in CSS (e.g., `Text-1s` / `--text-1x-sm`). The `-sm` suffix always means "mobile variant", never "small text size". All levels scale ×0.75 for mobile (mobile px = print pt):
+- Text-8x: 128px → 96px (`Text-8s`)
+- Text-4x: 64px → 48px (`Text-4s`)
+- Text-2x: 32px → 24px (`Text-2s`)
+- Text-1x: 16px → 12px (`Text-1s`)
 
 ### Case
 
