@@ -57,8 +57,8 @@
   --text-4x-leading: 1.00;
   --text-4x-tracking: -0.04em;
   --text-4x-sm: 3rem;
-  --text-3x: 3rem;                /* Text-3x, mobile: 2.25rem (36px), bolded: 700 */
-  --text-3x-weight: 600;
+  --text-3x: 3rem;                /* Text-3x, mobile: 2.25rem (36px), weight: 550, bolded: 700 */
+  --text-3x-weight: 550;
   --text-3x-weight-bold: 700;
   --text-3x-leading: 1.10;
   --text-3x-tracking: -0.03em;
@@ -69,8 +69,8 @@
   --text-2x-leading: 1.20;
   --text-2x-tracking: -0.02em;
   --text-2x-sm: 1.5rem;
-  --text-1.5x: 1.5rem;            /* Text-1.5x, mobile: 1.125rem (18px), bolded: 600 */
-  --text-1.5x-weight: 500;
+  --text-1.5x: 1.5rem;            /* Text-1.5x, mobile: 1.125rem (18px), weight: 450, bolded: 600 */
+  --text-1.5x-weight: 450;
   --text-1.5x-weight-bold: 600;
   --text-1.5x-leading: 1.30;
   --text-1.5x-tracking: -0.01em;

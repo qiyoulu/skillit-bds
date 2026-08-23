@@ -15,7 +15,7 @@ The mark is the brand's initial 'S' engineered for **physical grip**. Built from
 **Minimum size:** 21px/16pt height. Below this the internal negative space closes up and the mark loses definition.
 ---
 ## The wordmark
-The wordmark is set in Work Sans Black, all-caps, −3% tracking. It is a fixed graphic asset — not a typed line of text.
+The wordmark is set in Work Sans **Bold (900)**, all-caps, −3% tracking. It is a fixed graphic asset — not a typed line of text.
 **File:** `assets/logo/lockup.svg` (extract wordmark from this file as needed)
 **Minimum size:** 16px/12pt height.
 **Clear space:** Minimum clear space equal to the wordmark cap height on all sides.

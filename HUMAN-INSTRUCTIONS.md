@@ -223,13 +223,13 @@ The typography system is consistently derived. Levels are named objectively by t
 The scale is built on a 16px baseline: `128 → 96 → 64 → 48 → 32 → 24 → 16`.
 | Level | Size | Base Weight | Bolded | Line Height | Tracking | Use |
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
-| **Text-8x** | 128px | Bold (700) | Black (900) | 0.80 | −6% | Hero headlines at massive scale |
+| **Text-8x** | 128px | Bold (700) | 900 | 0.80 | −6% | Hero headlines at massive scale |
 | **Text-6x** | 96px | **650** | **850** | 0.90 | −5% | Large hero/section titles |
-| **Text-4x** | 64px | Semibold (600) | Extra Bold (800) | 1.00 | −4% | Standard headlines |
-| **Text-3x** | 48px | Semibold (600) | Bold (700) | 1.10 | −3% | Section titles, pull quotes |
-| **Text-2x** | 32px | Medium (500) | Bold (700) | 1.20 | −2% | Subheadings |
-| **Text-1.5x** | 24px | Medium (500) | Semibold (600) | 1.30 | −1% | Large body, subheads |
-| **Text-1x** | 16px | Regular (400) | Semibold (600) | 1.40 | 0% | All running copy |
+| **Text-4x** | 64px | Semibold (600) | 800 | 1.00 | −4% | Standard headlines |
+| **Text-3x** | 48px | **550** | **700** | 1.10 | −3% | Section titles, pull quotes |
+| **Text-2x** | 32px | Medium (500) | 700 | 1.20 | −2% | Subheadings |
+| **Text-1.5x** | 24px | **450** | **600** | 1.30 | −1% | Large body, subheads |
+| **Text-1x** | 16px | Regular (400) | 600 | 1.40 | 0% | All running copy |
 
 _(Full print/mobile/monospace variants for each level are documented in `tokens/typography.md` — check there before inventing a new size, so this table and the token file don't drift apart again.)_
 

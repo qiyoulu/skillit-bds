@@ -25,13 +25,13 @@ If you need a size larger than 128px (e.g., 256px), extrapolate using this algor
 - **Tracking:** Subtract -2% (-0.02em) for each doubling of size (floor: 0%).
 | Level | Token | px (screen) | rem (web) | pt (print) | Base Weight | Bolded | Line height | Tracking |
 |---|---|---|---|---|---|---|---|---|
-| **Text-8x** | `--text-8x` | 128px | 8rem | 96pt | Bold (700) | Black (900) | 0.80 | -6% |
+| **Text-8x** | `--text-8x` | 128px | 8rem | 96pt | Bold (700) | 900 | 0.80 | -6% |
 | **Text-6x** | `--text-6x` | 96px | 6rem | 72pt | **650** | **850** | 0.90 | -5% |
-| **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | Semibold (600) | Extra Bold (800) | 1.00 | -4% |
-| **Text-3x** | `--text-3x` | 48px | 3rem | 36pt | Semibold (600) | Bold (700) | 1.10 | -3% |
-| **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | Medium (500) | Bold (700) | 1.20 | -2% |
-| **Text-1.5x** | `--text-1.5x` | 24px | 1.5rem | 18pt | Medium (500) | Semibold (600) | 1.30 | -1% |
-| **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | Regular (400) | Semibold (600) | 1.40 | 0% |
+| **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | Semibold (600) | 800 | 1.00 | -4% |
+| **Text-3x** | `--text-3x` | 48px | 3rem | 36pt | **550** | **700** | 1.10 | -3% |
+| **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | Medium (500) | 700 | 1.20 | -2% |
+| **Text-1.5x** | `--text-1.5x` | 24px | 1.5rem | 18pt | **450** | **600** | 1.30 | -1% |
+| **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | Regular (400) | 600 | 1.40 | 0% |
 *(Note: Text-16x was retired — no longer a defined Figma text style; use the extrapolation algorithm above if a size beyond Text-8x is ever needed.)*
 ### Small-viewport variants (confirmed against Figma)
 Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = Text-1x at small viewports). In CSS, the suffix is `-sm` (e.g., `--text-1x-sm`), matching the breakpoint naming in the spacing tokens. **Mobile variants use the ×0.75 rule** (mobile px = print pt):
