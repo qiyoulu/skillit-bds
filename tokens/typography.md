@@ -45,11 +45,17 @@ Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = 
 | Text-1.5x | 24px | 18px (`Text-1.5s`) | 1.30 |
 | Text-1x | 16px | 12px (`Text-1s`) | 1.40 |
 ### Monospace variants (confirmed against Figma)
-Concrete values for the 90% scaling rule below, confirmed against current Figma text styles. Only Text-1x and Text-2x have confirmed mono variants so far — don't extrapolate 4x/8x mono sizes without confirming in Figma first.
-| Level | Base | Mono (round(base × 0.9)) |
-|---|---|---|
-| Text-1x | 16px | 14px (`--text-mono`) |
-| Text-2x | 32px | 29px |
+Concrete values for the 90% scaling rule below, confirmed against current Figma text styles. Mono sizes = round(base × 0.9). All seven primary tiers now have confirmed mono variants.
+
+| Level | Base | Mono (round(base × 0.9)) | Mono Weight | Purpose |
+|---|---|---|---|---|
+| Text-8x | 128px | 115px | Bold (700) | Hero metadata, large data displays |
+| Text-6x | 96px | 86px | 650 | Large stats, section data |
+| Text-4x | 64px | 58px | Semibold (600) | Section stats, large code blocks |
+| Text-3x | 48px | 43px | 550 | Subsection stats, code callouts |
+| Text-2x | 32px | 29px | Medium (500) | Subhead stats, inline code |
+| Text-1.5x | 24px | 22px | 450 | Small data, captions |
+| Text-1x | 16px | 14px | Regular (400) | Timestamps, worker IDs, metadata |
 ## Functional type scale (UI)
 These tokens cover UI surfaces (app, dashboard, labels, captions) where the primary hierarchy doesn’t apply directly.
 | Token | Role | Size | Weight | Line height | Letter spacing |

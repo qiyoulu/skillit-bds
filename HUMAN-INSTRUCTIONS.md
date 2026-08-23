@@ -261,6 +261,16 @@ All metadata (timestamps, worker IDs, distances, file sizes) and code blocks (in
 - **The Stack:** IBM Plex Mono (Primary), JetBrains Mono (Fallback).
 - **The Scale:** Monospace fonts sit on a different em-square. To optically align with Work Sans without breaking the line-box, always scale inline monospace text to 90% of the parent font size.
 
+| Level | Base | Mono (round(base × 0.9)) | Mono Weight | Purpose |
+|---|---|---|---|---|
+| Text-8x | 128px | 115px | Bold (700) | Hero metadata, large data displays |
+| Text-6x | 96px | 86px | 650 | Large stats, section data |
+| Text-4x | 64px | 58px | Semibold (600) | Section stats, large code blocks |
+| Text-3x | 48px | 43px | 550 | Subsection stats, code callouts |
+| Text-2x | 32px | 29px | Medium (500) | Subhead stats, inline code |
+| Text-1.5x | 24px | 22px | 450 | Small data, captions |
+| Text-1x | 16px | 14px | Regular (400) | Timestamps, worker IDs, metadata |
+
 ### Italics & Emphasis
 
 Use italics strictly for their semantic purpose:
