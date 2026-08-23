@@ -180,8 +180,8 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground,
   color: rgba(35, 47, 54, 0.4);            /* Iron at 40% */
 }
 ```
-**Labels:** Above the field, not inside (placeholder is not a label). `--text-label` size, `--weight-medium`, Iron.
-**Error state:** Field unchanged. Error icon (Toolbox, octagon) beside the field + message below in Toolbox, `--text-label`. Icon + text carry the signal — never a colored border.
+**Labels:** Above the field, not inside (placeholder is not a label). `--text-1x` size, `--weight-medium`, Iron.
+**Error state:** Field unchanged. Error icon (Toolbox, octagon) beside the field + message below in Toolbox, `--text-1x`. Icon + text carry the signal — never a colored border.
 **Success state:** Field unchanged. Checkmark icon (Bottle Glass) alongside. No border change.
 ---
 ## Badges and status indicators
@@ -193,7 +193,7 @@ Status badges are **drawn icons** — the shape carries the state (shape coding 
   align-items: center;
   gap: var(--space-1);
   font-family: var(--font-primary);
-  font-size: var(--text-label);            /* 0.75rem */
+  font-size: var(--text-1x);            /* 1rem */
   font-weight: var(--weight-medium);       /* 500 */
   padding: var(--space-1) var(--space-2); /* 4px 8px */
 }

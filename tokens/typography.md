@@ -54,7 +54,6 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
 |---|---|---|---|---|---|
 | `--text-ui-lg` | Large UI text | `1.125rem` (18px) | 400 | 1.6 | `0` |
 | `--text-ui` | Default UI body | `1rem` (16px) | 400 | 1.6 | `0` |
-| `--text-label` | Labels, tags, badges | `0.75rem` (12px) | 500 | 1.4 | `0.04em` |
 | `--text-mono` | Metadata, IDs, data | `0.875rem` (14px) | 400 | 1.5 | `0.02em` |
 ---
 ## Monospace stack (metadata & code)
@@ -125,9 +124,8 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   /* No -sm token: Text-1x is the hard floor (12px) */
   /* Functional UI scale */
   --text-ui-lg:     1.125rem;
-  --text-ui:        1rem;
-  --text-label:     0.75rem;
-  --text-mono:      0.875rem; /* = Text-1x monospace variant, confirmed round(16 * 0.9) = 14px */
+  --text-ui: 1rem;
+  --text-mono: 0.875rem; /* = Text-1x monospace variant, confirmed round(16 * 0.9) = 14px */
   /* Variable Font Weights */
   --weight-regular:    400;
   --weight-medium:     500;
@@ -153,7 +151,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
 - **Text-1x:** All running copy, paragraph text.
 ### Functional UI scale (app, dashboard)
 - **`--text-ui` and above:** Work Sans Regular (400) minimum. Line height 1.6. Never below 1.4.
-- **`--text-label`:** Work Sans Medium (500). Always sentence-case. Minimum size — do not go smaller.
+- **`--text-ui`:** Work Sans Regular (400) minimum. Line height 1.6. Never below 1.4.
 - Maximum line length for body: 70 characters (`max-width: var(--max-width-text)`).
 ### Variable Font & Optical Balancing
 Work Sans is implemented as a variable font (`wght@100..900`).
@@ -194,4 +192,4 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 - Do not use the primary hierarchy sizes in UI components — they are for editorial/marketing surfaces only.
 ### Responsive Scaling (Desktop to Mobile)
 - **The Rule:** Scale display text sizes down smoothly to a minimum of half the size at mobile breakpoints (e.g., a desktop 128px becomes 64px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
-- **Body Text Exception:** Body and UI text scale down to the 12px hard floor on mobile (`Text-1s` = 12px, locked aug 13). Never below 12px. UI text (`--text-ui`, `--text-label`) holds its size — the 44px touch target rule governs app surfaces, not display.
+- **Body Text Exception:** Body and UI text scale down to the 12px hard floor on mobile (`Text-1s` = 12px). Never below 12px. UI text (`--text-ui`) holds its size — the 44px touch target rule governs app surfaces, not display.
