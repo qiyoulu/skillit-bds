@@ -40,7 +40,9 @@ module.exports = {
       fontSize: {
         '8x': 'var(--text-8x)',
         '4x': 'var(--text-4x)',
+        '3x': 'var(--text-3x)',
         '2x': 'var(--text-2x)',
+        '1.5x': 'var(--text-1.5x)',
         '1x': 'var(--text-1x)',
         ui: 'var(--text-ui)',
         'ui-lg': 'var(--text-ui-lg)',

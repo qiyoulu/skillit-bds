@@ -220,12 +220,14 @@ Skillit uses a primary typeface for human content, and a monospace typeface for 
 ### The Typographic Algorithm
 
 The typography system is consistently derived. Levels are named objectively by their pixel size.
-The scale is a perfect factor-of-2 progression built on a 16px baseline: `128 → 64 → 32 → 16`.
+The scale is built on a 16px baseline: `128 → 64 → 48 → 32 → 24 → 16`.
 | Level | Size | Base Weight | Bolded | Line Height | Tracking | Use |
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
 | **Text-8x** | 128px | Bold (700) | Black (900) | 0.80 | −6% | Hero headlines at massive scale |
 | **Text-4x** | 64px | Semibold (600) | Extra Bold (800) | 1.00 | −4% | Standard headlines |
-| **Text-2x** | 32px | Medium (500) | Bold (700) | 1.20 | −2% | Subheadings, pull quotes |
+| **Text-3x** | 48px | Semibold (600) | Bold (700) | 1.10 | −3% | Section titles, pull quotes |
+| **Text-2x** | 32px | Medium (500) | Bold (700) | 1.20 | −2% | Subheadings |
+| **Text-1.5x** | 24px | Medium (500) | Semibold (600) | 1.30 | −1% | Large body, subheads |
 | **Text-1x** | 16px | Regular (400) | Semibold (600) | 1.40 | 0% | All running copy |
 
 _(Full print/mobile/monospace variants for each level are documented in `tokens/typography.md` — check there before inventing a new size, so this table and the token file don't drift apart again.)_
@@ -233,7 +235,9 @@ _(Full print/mobile/monospace variants for each level are documented in `tokens/
 **Mobile variants:** Each level has a `-s` variant in Figma and `-sm` in CSS (e.g., `Text-1s` / `--text-1x-sm`). The `-sm` suffix always means "mobile variant", never "small text size". All levels scale ×0.75 for mobile (mobile px = print pt):
 - Text-8x: 128px → 96px (`Text-8s`)
 - Text-4x: 64px → 48px (`Text-4s`)
+- Text-3x: 48px → 36px (`Text-3s`)
 - Text-2x: 32px → 24px (`Text-2s`)
+- Text-1.5x: 24px → 18px (`Text-1.5s`)
 - Text-1x: 16px → 12px (`Text-1s`)
 
 ### Case

@@ -27,7 +27,9 @@ If you need a size larger than 128px (e.g., 256px), extrapolate using this algor
 |---|---|---|---|---|---|---|---|---|
 | **Text-8x** | `--text-8x` | 128px | 8rem | 96pt | Bold (700) | Black (900) | 0.80 | -6% |
 | **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | Semibold (600) | Extra Bold (800) | 1.00 | -4% |
+| **Text-3x** | `--text-3x` | 48px | 3rem | 36pt | Semibold (600) | Bold (700) | 1.10 | -3% |
 | **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | Medium (500) | Bold (700) | 1.20 | -2% |
+| **Text-1.5x** | `--text-1.5x` | 24px | 1.5rem | 18pt | Medium (500) | Semibold (600) | 1.30 | -1% |
 | **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | Regular (400) | Semibold (600) | 1.40 | 0% |
 *(Note: Text-16x was retired — no longer a defined Figma text style; use the extrapolation algorithm above if a size beyond Text-8x is ever needed.)*
 ### Small-viewport variants (confirmed against Figma)
@@ -36,7 +38,9 @@ Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = 
 |---|---|---|---|
 | Text-8x | 128px | 96px (`Text-8s`) | 0.80 |
 | Text-4x | 64px | 48px (`Text-4s`) | 1.00 |
+| Text-3x | 48px | 36px (`Text-3s`) | 1.10 |
 | Text-2x | 32px | 24px (`Text-2s`) | 1.20 |
+| Text-1.5x | 24px | 18px (`Text-1.5s`) | 1.30 |
 | Text-1x | 16px | 12px (`Text-1s`) | 1.40 |
 ### Monospace variants (confirmed against Figma)
 Concrete values for the 90% scaling rule below, confirmed against current Figma text styles. Only Text-1x and Text-2x have confirmed mono variants so far — don't extrapolate 4x/8x mono sizes without confirming in Figma first.
@@ -85,6 +89,14 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-4x-tracking:       -0.04em;
   --text-4x-print:          48pt;
   --text-4x-sm:             3rem;  /* 48px — mobile variant (was 2rem/32px) */
+  /* Text-3x */
+  --text-3x:                3rem;
+  --text-3x-weight:         600;
+  --text-3x-weight-bold:    700;
+  --text-3x-leading:        1.10;
+  --text-3x-tracking:       -0.03em;
+  --text-3x-print:          36pt;
+  --text-3x-sm:             2.25rem; /* 36px — mobile variant */
   /* Text-2x */
   --text-2x:                2rem;
   --text-2x-weight:         500;
@@ -94,6 +106,14 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-2x-print:          24pt;
   --text-2x-sm:             1.5rem; /* 24px — mobile variant (was 1rem/16px) */
   --text-2x-mono:            1.8125rem; /* 29px — confirmed Figma value, round(32 * 0.9) */
+  /* Text-1.5x */
+  --text-1.5x:              1.5rem;
+  --text-1.5x-weight:       500;
+  --text-1.5x-weight-bold:  600;
+  --text-1.5x-leading:      1.30;
+  --text-1.5x-tracking:     -0.01em;
+  --text-1.5x-print:        18pt;
+  --text-1.5x-sm:           1.125rem; /* 18px — mobile variant */
   /* Text-1x */
   --text-1x:                1rem;
   --text-1x-weight:         400;
