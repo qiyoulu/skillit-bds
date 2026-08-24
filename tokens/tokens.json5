@@ -66,7 +66,7 @@
       link: {
         $value: '#007CA6',
         $type: 'color',
-        $description: "Painter's Tape — text fill: underlined = link, not underlined = info. never a fill. info text floor 12px (4.6:1 on canvas); below 12px use iron.",
+        $description: "Painter's Tape — text fill: underlined = link, not underlined = info. never a fill. info text floor: --text-1x (16px), 4.6:1 on canvas; below that use iron.",
         $extensions: {
           'org.skillit.role': 'text-fill',
           'org.skillit.pantone': '3135 C',
@@ -135,8 +135,8 @@
         '1x': {
           $value: { fontFamily: '{base.typography.family.primary}', fontSize: '1rem', fontWeight: 400, lineHeight: 1.4, letterSpacing: '0em' },
           $type: 'typography',
-          $description: 'Text-1x — all running copy. mobile: 0.75rem (12px). bolded: 600. mono: 0.875rem.',
-          $extensions: { 'org.skillit.print': '12pt', 'org.skillit.sm': '0.75rem' },
+          $description: 'Text-1x — all running copy. mobile: 1rem (16px, held — see typography.md). bolded: 600. mono: 0.875rem.',
+          $extensions: { 'org.skillit.print': '12pt', 'org.skillit.sm': '1rem' },
         },
         'ui-lg': { $value: { fontSize: '1.125rem', fontWeight: 400, lineHeight: 1.6, letterSpacing: '0' }, $type: 'typography', $description: 'large UI text' },
         'ui': { $value: { fontSize: '1rem', fontWeight: 400, lineHeight: 1.6, letterSpacing: '0' }, $type: 'typography', $description: 'default UI body' },

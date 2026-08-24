@@ -538,7 +538,7 @@ _Brand Design: Chiyo · System: Skillit Narrative & Brand_
 
 - Scale display headers down smoothly (using fluid typography or breakpoints) to half their size at mobile viewports.
 - **Maintain the original desktop font-weight** when scaling down headers to preserve hierarchy and punch.
-- Never scale body or UI text below 12px. Body (`Text-1x`) scales to `Text-1s` (12px) on small viewports — never below. UI text (`--text-ui`) holds its desktop size for app legibility and touch targets.
+- Body text does not scale on mobile. Body (`Text-1x`) holds at 16px on small viewports — it is the one tier exempt from the ×0.75 rule, because every reference system holds body copy while adapting display sizes, and iOS Safari auto-zooms form inputs below 16px. UI text (`--text-ui`) likewise holds its desktop size for app legibility and touch targets.
 
 ---
 

@@ -34,8 +34,8 @@ If you need a size larger than 128px (e.g., 256px), extrapolate using this algor
 | **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | Regular (400) | 600 | 1.40 | 0% |
 *(Note: Text-16x was retired — no longer a defined Figma text style; use the extrapolation algorithm above if a size beyond Text-8x is ever needed.)*
 ### Small-viewport variants (confirmed against Figma)
-Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = Text-1x at small viewports). In CSS, the suffix is `-sm` (e.g., `--text-1x-sm`), matching the breakpoint naming in the spacing tokens. **Mobile variants use the ×0.75 rule** (mobile px = print pt):
-| Level | Desktop | Mobile (×0.75) | Leading |
+Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = Text-1x at small viewports). In CSS, the suffix is `-sm` (e.g., `--text-1x-sm`), matching the breakpoint naming in the spacing tokens. **Display tiers use the ×0.75 rule** (mobile px = print pt). **Text-1x is the one exception — it is held at 16px.**
+| Level | Desktop | Mobile | Leading |
 |---|---|---|---|
 | Text-8x | 128px | 96px (`Text-8s`) | 0.80 |
 | Text-6x | 96px | 72px (`Text-6s`) | 0.90 |
@@ -43,7 +43,13 @@ Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = 
 | Text-3x | 48px | 36px (`Text-3s`) | 1.10 |
 | Text-2x | 32px | 24px (`Text-2s`) | 1.20 |
 | Text-1.5x | 24px | 18px (`Text-1.5s`) | 1.30 |
-| Text-1x | 16px | 12px (`Text-1s`) | 1.40 |
+| **Text-1x** | 16px | **16px — held** (`Text-1s`) | 1.40 |
+
+**Why Text-1x does not scale.** Display type has no legibility floor — extreme scale is the brand's point, and ×0.75 serves it. Body copy does have a floor, and every reference system holds it: Material 3 keeps `bodyLarge` at 16sp while adapting display sizes across form factors; Apple keeps Body at 17pt while Large Title shifts. At the previous 12px, Skillit's mobile body sat below Material's `bodyMedium` (14sp), below Apple's Body (17pt), and below Tailwind's `text-base` (16px) — it was a caption size doing a body job. Two concrete consequences drove the change: iOS Safari auto-zooms any form input under 16px, which broke the signup flow; and the audience reads on job sites in direct sun, the same condition that already dictates solid-fill iconography.
+
+The cost is accepted deliberately: mobile px = print pt no longer holds for Text-1x (16px screen, 12pt print). 12pt remains correct for print body regardless of screen size, so the two values are right for their own media. Print parity still holds for every display tier.
+
+Sub-16px text on mobile is not available from the primary scale. Metadata, badges, and captions use the functional UI tokens.
 ### Monospace variants (confirmed against Figma)
 Concrete values for the 90% scaling rule below, confirmed against current Figma text styles. Mono sizes = round(base × 0.9). All seven primary tiers now have confirmed mono variants.
 
@@ -136,8 +142,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-1x-leading:        1.40;
   --text-1x-tracking:       0em;
   --text-1x-print:          12pt;
-  --text-1x-sm:             0.75rem; /* 12px — mobile body */
-  /* No -sm token: Text-1x is the hard floor (12px) */
+  --text-1x-sm:             1rem;   /* 16px — HELD, not scaled. See note below. */
   /* Functional UI scale */
   --text-ui-lg:     1.125rem;
   --text-ui: 1rem;
@@ -208,4 +213,4 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 - Do not use the primary hierarchy sizes in UI components — they are for editorial/marketing surfaces only.
 ### Responsive Scaling (Desktop to Mobile)
 - **The Rule:** Scale display text sizes down smoothly to a minimum of half the size at mobile breakpoints (e.g., a desktop 128px becomes 64px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
-- **Body Text Exception:** Body and UI text scale down to the 12px hard floor on mobile (`Text-1s` = 12px). Never below 12px. UI text (`--text-ui`) holds its size — the 44px touch target rule governs app surfaces, not display.
+- **Body Text Exception:** Body text does **not** scale on mobile. `Text-1x` holds at 16px (`Text-1s` = 16px) — see "Why Text-1x does not scale" above. UI text (`--text-ui`) also holds its size; the 44px touch target rule governs app surfaces, not display.
