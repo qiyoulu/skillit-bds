@@ -58,10 +58,10 @@
         $extensions: { 'org.skillit.pantone': '186 C' },
       },
       success: {
-        $value: '#26733D',
+        $value: '#31683D',
         $type: 'color',
         $description: 'Bottle Glass — confirmations, success states. Canvas text only.',
-        $extensions: { 'org.skillit.pantone': null },
+        $extensions: { 'org.skillit.pantone': '349 C' },
       },
       link: {
         $value: '#007CA6',

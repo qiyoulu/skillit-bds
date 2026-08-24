@@ -118,7 +118,7 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 | Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C / 158 U  | Primary CTA, active states, key accents |
 | Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C / 1235 U | Warnings, non-fatal alerts              |
 | Toolbox        | `#C8102E` | 2, 100, 85, 6   | 186 C / 186 U  | Errors, destructive actions             |
-| Bottle Glass   | `#26733D` | 67, 0, 47, 55   | None — digital-first | Success, confirmations                  |
+| Bottle Glass   | `#31683D` | 53, 0, 41, 59   | 349 C / 349 U  | Success, confirmations                  |
 | Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C / 3135 U | Text fill — underlined = link, not underlined = info |
 
 Coated and uncoated are the same ink on different paper — the number is shared, the appearance is not. Uncoated absorbs ink and returns lighter and duller. Always proof on the actual stock; Traffic Cone shifts most. Spot references apply only where you print spot (business cards, signage, vehicle wrap, embroidery) — process work uses the CMYK values.
