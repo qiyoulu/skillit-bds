@@ -110,16 +110,18 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 
 ### The palette
 
-| Name           | Hex       | CMYK            | Spot (Pantone) | Role                                    |
+| Name           | Hex       | CMYK            | Spot (Coated / Uncoated) | Role                                    |
 | -------------- | --------- | --------------- | -------------- | --------------------------------------- |
-| Canvas         | `#FAF7F3` | 2, 2, 4, 0      | Paper          | Primary background — all surfaces       |
-| Plaster        | `#FFFFFF` | 0, 0, 0, 0      | None           | Elevated surfaces, cards, form inputs   |
-| Iron           | `#232F36` | 80, 50, 45, 65  | 432 C          | All text, structural elements           |
-| Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C          | Primary CTA, active states, key accents |
-| Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C         | Warnings, non-fatal alerts              |
-| Toolbox        | `#C8102E` | 2, 100, 85, 6   | 186 C          | Errors, destructive actions             |
-| Bottle Glass   | `#7EB485` | 30, 0, 26, 29   | None           | Success, confirmations                  |
-| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C         | Text fill — underlined = link, not underlined = info |
+| Canvas         | `#FAF7F3` | 2, 2, 4, 0      | Paper — not an ink | Primary background — all surfaces       |
+| Plaster        | `#FFFFFF` | 0, 0, 0, 0      | None — unprinted stock | Elevated surfaces, cards, form inputs   |
+| Iron           | `#232F36` | 80, 50, 45, 65  | 432 C / 432 U  | All text, structural elements           |
+| Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C / 158 U  | Primary CTA, active states, key accents |
+| Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C / 1235 U | Warnings, non-fatal alerts              |
+| Toolbox        | `#C8102E` | 2, 100, 85, 6   | 186 C / 186 U  | Errors, destructive actions             |
+| Bottle Glass   | `#26733D` | 67, 0, 47, 55   | None — digital-first | Success, confirmations                  |
+| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C / 3135 U | Text fill — underlined = link, not underlined = info |
+
+Coated and uncoated are the same ink on different paper — the number is shared, the appearance is not. Uncoated absorbs ink and returns lighter and duller. Always proof on the actual stock; Traffic Cone shifts most. Spot references apply only where you print spot (business cards, signage, vehicle wrap, embroidery) — process work uses the CMYK values.
 
 ### Color Do / Don’t
 

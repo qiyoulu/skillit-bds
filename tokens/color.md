@@ -14,16 +14,18 @@
 - All contrast ratios listed are against their intended text color. Do not pair colors outside their documented combinations.
 ---
 ## Core palette
-| Token             | Name     | Hex       | CMYK           | Spot (Pantone) | UI Role                                            |
+| Token             | Name     | Hex       | CMYK           | Spot (Coated / Uncoated) | UI Role                                            |
 | ----------------- | -------- | --------- | -------------- | -------------- | -------------------------------------------------- |
-| `--color-bg`      | 📜 Canvas | `#FAF7F3` | 2, 2, 4, 0     | Paper          | Primary background — all surfaces default to this  |
-| `--color-surface` | ⬜️ Plaster  | `#FFFFFF` | 0, 0, 0, 0     | None           | Elevated surfaces, cards, and isolated form inputs |
-| `--color-fg`      | ⬛️ Iron | `#232F36` | 80, 50, 45, 65 | 432 C          | All body text, headings, structural elements       |
-| `--color-primary` | 🟧 Traffic Cone     | `#EF6F1A` | 0, 65, 100, 0  | 158 C          | Primary CTA, active states, key accents            |
-| `--color-warning` | 🟨 Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C         | Non-fatal alerts, warnings                         |
-| `--color-error`   | 🟥 Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C          | Fatal errors, destructive actions                  |
-| `--color-success` | 🟩 Bottle Glass   | `#7EB485` | 30, 0, 26, 29  | None           | Confirmations, success states                      |
-| `--color-link`    | 🟦 Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C         | Text fill — underlined = link, not underlined = info. Never a fill. |
+| `--color-bg`      | 📜 Canvas | `#FAF7F3` | 2, 2, 4, 0     | Paper — not an ink | Primary background — all surfaces default to this  |
+| `--color-surface` | ⬜️ Plaster  | `#FFFFFF` | 0, 0, 0, 0     | None — unprinted stock | Elevated surfaces, cards, and isolated form inputs |
+| `--color-fg`      | ⬛️ Iron | `#232F36` | 80, 50, 45, 65 | 432 C / 432 U  | All body text, headings, structural elements       |
+| `--color-primary` | 🟧 Traffic Cone     | `#EF6F1A` | 0, 65, 100, 0  | 158 C / 158 U  | Primary CTA, active states, key accents            |
+| `--color-warning` | 🟨 Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C / 1235 U | Non-fatal alerts, warnings                         |
+| `--color-error`   | 🟥 Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C / 186 U  | Fatal errors, destructive actions                  |
+| `--color-success` | 🟩 Bottle Glass   | `#26733D` | 67, 0, 47, 55  | None — digital-first | Confirmations, success states                      |
+| `--color-link`    | 🟦 Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C / 3135 U | Text fill — underlined = link, not underlined = info. Never a fill. |
+
+**On spot references.** Coated and uncoated are the same ink on different paper — the number is shared, the appearance is not. Uncoated stock absorbs ink, so every colour returns lighter, duller, and slightly greyed. These pairs are the correct references to hand a printer, but they are not a guarantee of matched appearance across stocks. **Proof on the actual stock before production.** Traffic Cone is the one to watch: saturated orange dulls hardest on uncoated, and if 158 U proofs too flat, the fix is a deliberately hotter ink for uncoated applications, not a change to the digital token. Spot inks matter only where you are printing spot — business cards, signage, vehicle wrap, embroidery. Everything running process uses the CMYK values above.
 ---
 ## Contrast ratios (WCAG AA minimum: 4.5:1 body, 3:1 UI)
 | Foreground         | Background         | Ratio  | Use                                                                                                 |
@@ -34,7 +36,7 @@
 | Iron `#232F36`     | Traffic Cone `#EF6F1A`     | 4.54:1 | Passes AA. Use Iron for all text on Traffic Cone surfaces.                                              |
 | Iron `#232F36`     | Hard Hat `#FEB11C` | 7.1:1  | Dark text on warning badge — passes AAA                                                             |
 | Canvas `#FAF7F3` | Toolbox `#C8102E`  | 4.8:1  | White text on error state — passes AA                                                               |
-| Iron `#232F36`     | Bottle Glass `#7EB485`   | 5.72:1 | Dark text on success state — passes AA                                                              |
+| Canvas `#FAF7F3` | Bottle Glass `#26733D`   | 5.46:1 | White text on success state — passes AA                                                             |
 | Canvas `#FAF7F3` | Iron `#232F36`     | 12.4:1 | White text on dark surfaces — passes AAA                                                            |
 | Painter's Tape `#007CA6`   | Canvas `#FAF7F3` | 4.6:1  | Link text on background — passes AA                                                                 |
 ---
@@ -62,11 +64,11 @@
 - Destructive action confirmation, form validation errors, failed states.
 - Text on Toolbox should always be Canvas (`#FAF7F3`).
 - Should always be accompanied by an error label — never color alone.
-### `--color-success` 🟩 Bottle Glass `#7EB485`
+### `--color-success` 🟩 Bottle Glass `#26733D`
 - Confirmed actions, verified worker badges, completed profile states.
-- Text on Bottle Glass should always be Iron (`#232F36`) — 5.72:1, passes AA. Canvas on Bottle Glass fails (2.25:1) and is not permitted.
+- Text on Bottle Glass should always be Canvas (`#FAF7F3`) — 5.46:1, passes AA. Iron on Bottle Glass fails (2.35:1) and is not permitted.
 - Should always be accompanied by a success label — never color alone.
-- Digital-first token: no spot equivalent. Match to a Pantone chip at print time if the mark ever needs one.
+- Digital-first token: no spot equivalent. Match to a chip against a physical proof if the mark ever needs one — do not derive it from a conversion table.
 ### `--color-link` 🟦 Painter's Tape `#007CA6`
 - Text fill only. Underlined = link; not underlined = info (“Info,” “Note,” “Tip”).
 - Never used as a button fill, background, or decorative element.
@@ -81,7 +83,7 @@
   --color-primary: #ef6f1a;
   --color-warning: #feb11c;
   --color-error: #c8102e;
-  --color-success: #7eb485;
+  --color-success: #26733d;
   --color-link: #007ca6;
 }
 ```
@@ -97,4 +99,5 @@ These colors exist in the project’s research history but are NOT active tokens
 | Brick (old error)        | `#9C363D` | Replaced by Toolbox — approved `#C8102E`            |
 | Ridgid                   | `#D64500` | Brand name retired                                  |
 | Clay                     | `#B76E4A` | Fails contrast — dropped                            |
-| Bottle Glass Green (old)       | `#4F6B4E` | Fails contrast — dropped; replaced by `#7EB485`     |
+| Bottle Glass Green (old)       | `#4F6B4E` | Fails contrast — dropped; replaced by `#26733D`     |
+| John Deere Green         | `#367C2B` | Former success value — retired 2026-08-23. Byte-identical to an actively enforced equipment mark; also the palette's thinnest contrast at 4.83:1. |

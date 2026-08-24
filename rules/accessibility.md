@@ -20,7 +20,7 @@ Every output — website, app, social asset, document, generated content — sho
 | Iron `#232F36` | Traffic Cone `#EF6F1A`     | 4.54:1 | Pass AA                                   |
 | Iron `#232F36` | Hard Hat `#FEB11C` | 7.1:1  | Pass AAA                  |
 | Canvas `#FAF7F3` | Toolbox `#C8102E`  | 4.8:1  | Pass AA                   |
-| Iron `#232F36` | Bottle Glass `#7EB485`   | 5.72:1 | Pass AA                   |
+| Canvas `#FAF7F3` | Bottle Glass `#26733D`   | 5.46:1 | Pass AA                   |
 | Painter's Tape `#007CA6`   | Canvas `#FAF7F3` | 4.6:1  | Pass AA                   |
 ### Pairs that are banned
 | Text               | Background         | Ratio  | Reason                                                                |
@@ -28,8 +28,8 @@ Every output — website, app, social asset, document, generated content — sho
 | Traffic Cone `#EF6F1A`     | Canvas `#FAF7F3` | 2.83:1 | Fails AA — never use Traffic Cone as text on Canvas                         |
 | Canvas `#FAF7F3` | Traffic Cone `#EF6F1A`     | 2.83:1 | Fails AA — never use Canvas text on Traffic Cone                            |
 | Hard Hat `#FEB11C` | Canvas `#FAF7F3` | 1.5:1  | Fails — never use yellow text on light background                     |
-| Bottle Glass `#7EB485`   | Toolbox `#C8102E`  | 2.45:1 | Fails — red/green together banned entirely                            |
-| Canvas `#FAF7F3` | Bottle Glass `#7EB485`   | 2.25:1 | Fails AA — never use Canvas text on Bottle Glass; use Iron            |
+| Bottle Glass `#26733D`   | Toolbox `#C8102E`  | 1.01:1 | Fails — red/green together banned entirely. Near-identical luminance: invisible to deuteranopes and in greyscale. |
+| Iron `#232F36` | Bottle Glass `#26733D`   | 2.35:1 | Fails AA — never use Iron text on Bottle Glass; use Canvas          |
 ---
 ## Color blindness rules
 Approximately 8% of men and 0.5% of women have red-green color blindness (deuteranopia/protanopia). These rules are non-negotiable:
@@ -42,7 +42,7 @@ Approximately 8% of men and 0.5% of women have red-green color blindness (deuter
 Every status state should communicate via three channels simultaneously: color + shape + label.
 | State   | Color              | Shape                 | Label required                            |
 | ------- | ------------------ | --------------------- | ----------------------------------------- |
-| Success | Bottle Glass `#7EB485`   | Circle / pill         | “Verified,” “Complete,” “Confirmed”       |
+| Success | Bottle Glass `#26733D`   | Circle / pill         | “Verified,” “Complete,” “Confirmed”       |
 | Warning | Hard Hat `#FEB11C` | Triangle / chamfer    | “Incomplete,” “Action needed,” “Expiring” |
 | Error   | Toolbox `#C8102E`  | Octagon            | “Error,” “Failed,” “Expired”              |
 | Info    | Painter's Tape `#007CA6` | Square             | “Info,” “Note,” “Tip”                     |
