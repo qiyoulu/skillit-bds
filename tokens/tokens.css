@@ -39,12 +39,12 @@
   --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
 
   /* typography — primary hierarchy */
-  --text-8x: 8rem;                /* Text-8x, small viewport: 4rem, bolded: 900 */
+  --text-8x: 8rem;                /* Text-8x, mobile: 6rem (96px), bolded: 900 */
   --text-8x-weight: 700;
   --text-8x-weight-bold: 900;
   --text-8x-leading: 0.80;
   --text-8x-tracking: -0.06em;
-  --text-8x-sm: 4rem;
+  --text-8x-sm: 6rem;
   --text-6x: 6rem;                /* Text-6x, mobile: 4.5rem (72px), bolded: 850 */
   --text-6x-weight: 650;
   --text-6x-weight-bold: 850;
