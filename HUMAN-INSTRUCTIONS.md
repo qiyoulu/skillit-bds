@@ -118,7 +118,7 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 | Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C          | Primary CTA, active states, key accents |
 | Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C         | Warnings, non-fatal alerts              |
 | Toolbox        | `#C8102E` | 2, 100, 85, 6   | 186 C          | Errors, destructive actions             |
-| Bottle Glass   | `#367C2B` | 75, 15, 100, 10 | 364 C          | Success, confirmations                  |
+| Bottle Glass   | `#7EB485` | 30, 0, 26, 29   | None           | Success, confirmations                  |
 | Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C         | Text fill — underlined = link, not underlined = info |
 
 ### Color Do / Don’t
