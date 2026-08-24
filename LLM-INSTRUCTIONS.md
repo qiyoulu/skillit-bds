@@ -11,7 +11,7 @@ Use CSS variables, never raw hex codes in output.
 - `--color-fg`: Iron (`#232F36`) - Body text, borders. NO `#000000`.
 - `--color-primary`: Traffic Cone (`#EF6F1A`) - Primary CTAs. Use sparingly (one per layout section).
 - `--color-link`: Painter's Tape (`#007CA6`) - Text fill: underlined = link, not underlined = info. Never a fill.
-- `--color-success`: Bottle Glass (`#31683D`)
+- `--color-success`: Bottle Glass (`#33663D`)
 - `--color-warning`: Hard Hat (`#FEB11C`)
 - `--color-error`: Toolbox (`#C8102E`)
 
