@@ -72,6 +72,16 @@
           'org.skillit.pantone': '3135 C',
         },
       },
+      hover: {
+        'bg': { $value: '#EAE5DF', $type: 'color', $description: 'Canvas hover — × Canvas + 5% Iron' },
+        'surface': { $value: '#EFEDE9', $type: 'color', $description: 'Plaster hover — × Canvas + 5% Iron' },
+        'fg': { $value: '#212C31', $type: 'color', $description: 'Iron hover — × Canvas + 5% Iron' },
+        'primary': { $value: '#E06818', $type: 'color', $description: 'Traffic Cone hover — × Canvas + 5% Iron' },
+        'warning': { $value: '#EEA41A', $type: 'color', $description: 'Hard Hat hover — × Canvas + 5% Iron' },
+        'error': { $value: '#BC0E2A', $type: 'color', $description: 'Toolbox hover — × Canvas + 5% Iron' },
+        'success': { $value: '#305F38', $type: 'color', $description: 'Bottle Glass hover — × Canvas + 5% Iron' },
+        'link': { $value: '#007398', $type: 'color', $description: "Painter's Tape hover — × Canvas + 5% Iron" },
+      },
     },
     spacing: {
       '1': { $value: '0.25rem', $type: 'dimension', $description: '4px — micro gaps, icon-to-label' },

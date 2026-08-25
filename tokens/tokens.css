@@ -15,6 +15,16 @@
   --color-success: #33663D;       /* Bottle Glass — success */
   --color-link: #007CA6;          /* Painter's Tape — underlined = link, not underlined = info. never a fill */
 
+  /* hover states — × Canvas + 5% Iron */
+  --color-bg-hover: #EAE5DF;       /* Canvas hover */
+  --color-surface-hover: #EFEDE9;  /* Plaster hover */
+  --color-fg-hover: #212C31;       /* Iron hover */
+  --color-primary-hover: #E06818;  /* Traffic Cone hover */
+  --color-warning-hover: #EEA41A;  /* Hard Hat hover */
+  --color-error-hover: #BC0E2A;    /* Toolbox hover */
+  --color-success-hover: #305F38;  /* Bottle Glass hover */
+  --color-link-hover: #007398;     /* Painter's Tape hover */
+
   /* spacing — 4px base unit, rem */
   --space-1: 0.25rem;             /* 4px  */
   --space-1.5: 0.375rem;          /* 6px  */
