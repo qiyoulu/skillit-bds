@@ -61,7 +61,7 @@ Every status state should communicate via three channels simultaneously: color +
 ---
 ## Focus states
 - All interactive elements should have a visible focus ring.
-- Focus ring: `2px solid` Iron (`--color-fg`), `2px offset`. Focus rings are always Iron — never a status/accent color (see `tokens/color.md`).
+- Focus ring: `2px solid` Iron (`--color-foreground`), `2px offset`. Focus rings are always Iron — never a status/accent color (see `tokens/color.md`).
 - Never remove focus outlines with `outline: none` without providing an equivalent custom focus style.
 - Focus should be keyboard-navigable in the correct DOM order.
 - **Skip-to-content link** at the top of every page (visually hidden until focused) so keyboard users bypass repeated navigation.

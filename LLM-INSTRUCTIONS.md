@@ -6,9 +6,9 @@
 
 ## 1. Colors (Strict)
 Use CSS variables, never raw hex codes in output.
-- `--color-bg`: Canvas (`#FAF7F3`) - Default background.
+- `--color-background`: Canvas (`#FAF7F3`) - Default background.
 - `--color-surface`: Plaster (`#FFFFFF`) - Cards, elevated panels.
-- `--color-fg`: Iron (`#232F36`) - Body text, borders. NO `#000000`.
+- `--color-foreground`: Iron (`#232F36`) - Body text, borders. NO `#000000`.
 - `--color-primary`: Traffic Cone (`#EF6F1A`) - Primary CTAs. Use sparingly (one per layout section).
 - `--color-link`: Painter's Tape (`#007CA6`) - Text fill: underlined = link, not underlined = info. Never a fill.
 - `--color-success`: Bottle Glass (`#33663D`)

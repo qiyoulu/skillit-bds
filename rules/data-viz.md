@@ -7,10 +7,10 @@
 - **Corners:** `16px` radius (bars, tooltips, legends, and the Plaster cards themselves).
 - **Stroke Weights:** A universal `4px` rule applies to all line work to maintain an industrial, structural feel.
   - Data lines are `4px`.
-  - Gridlines (horizontal Y-axis only) are `4px` Canvas (`--color-bg`).
+  - Gridlines (horizontal Y-axis only) are `4px` Canvas (`--color-background`).
 - **Line Charts:** Both unsmoothed (stepped/linear) and smoothed (spline/curved) paths are permitted. Choose the geometry that best serves the specific data story.
 - **Markers:** Sharp squares (`0px`) or diamonds. No circles.
-- **Axes:** Remove outer bounding boxes. Y-axis gridlines only (4px Canvas `--color-bg`). No X-axis gridlines.
+- **Axes:** Remove outer bounding boxes. Y-axis gridlines only (4px Canvas `--color-background`). No X-axis gridlines.
 
 ## 2. Typography
 - **Font:** Work Sans.
@@ -25,7 +25,7 @@
 - **Semantic Lock:** NEVER use Painter's Tape (Blue), Bottle Glass (Green), Hard Hat (Yellow), or Toolbox (Red) for standard categories. Only use them if measuring explicit links, info notes, successes, warnings, or failures.
 
 ## 4. Interaction & Specific Chart Rules
-- **Tooltips:** Plaster (`--color-surface`) background, 1px solid Iron (`--color-fg`) border, 16px corners.
+- **Tooltips:** Plaster (`--color-surface`) background, 1px solid Iron (`--color-foreground`) border, 16px corners.
 - **Hover:** Active series at 100% opacity, all others drop to 30%.
 - **Pie Charts (Solid State):** Slices must sit flush against each other with zero gap and zero stroke. Delineation is handled entirely by opacity steps in Iron or the Traffic Cone hero slice.
 - **Legends are banned for pie charts:** Never force a user to match shades of gray between a key and the chart. All labels must sit outside the chart on the Canvas background, connected directly to their corresponding slice by a 1px Iron leader line.

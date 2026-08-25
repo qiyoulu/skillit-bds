@@ -19,7 +19,7 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 1. **No drop shadows.** Images do not cast shadows onto the background. They sit directly on the surface.
 2. **No edge fading or blending.** Images do not fade into the background color. Hard cut only.
 3. **No color grading filters.** No Instagram-style color treatment. No dramatic color shifts. Natural color only.
-4. **No composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on a flat brand color (`--color-bg` Canvas or `--color-fg` Iron) with no environment invented behind them.
+4. **No composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on a flat brand color (`--color-background` Canvas or `--color-foreground` Iron) with no environment invented behind them.
 5. **Universal Blend Mode:** All photography should use the `multiply` CSS blend mode (`mix-blend-mode: multiply;`). Because the primary brand ground is Canvas (`#FAF7F3`), this universally drops out lighter backgrounds and melts every photograph perfectly into the layout. This creates a flawless, borderless editorial look across the entire system.
 ---
 ## Subject: worker portraits
@@ -53,7 +53,7 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 ---
 ## Subject: product screenshots / UI
 - Capture at `2x` resolution (retina). Always.
-- Background: Canvas (`--color-bg`) only. Not pure white, not grey.
+- Background: Canvas (`--color-background`) only. Not pure white, not grey.
 - Browser chrome: minimal or none. Show the UI, not the browser.
 - Data in screenshots should be realistic. Fake or clearly placeholder data (e.g., “John Doe,” “Test Company”) undermines the brand’s credibility.
 - Crop tightly to the relevant UI area. Do not show a full screen if the relevant feature is in one panel.

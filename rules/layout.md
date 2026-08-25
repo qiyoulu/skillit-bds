@@ -23,9 +23,9 @@ Use the tool that fits the job. Don't default everything to one mode.
 Every layout is built on four layers, in order of elevation and visual weight:
 | Layer | Color | Token | Role |
 |---|---|---|---|
-| Ground | Canvas | `--color-bg` | Default background for all surfaces |
+| Ground | Canvas | `--color-background` | Default background for all surfaces |
 | Lifted Surface | Plaster | `--color-surface` | Cards and isolated containers |
-| Structure | Iron | `--color-fg` | Text, borders, dividers, nav elements |
+| Structure | Iron | `--color-foreground` | Text, borders, dividers, nav elements |
 | Signal | Traffic Cone | `--color-primary` | One dominant accent per layout section — CTAs, key data, active states |
 State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional only. They appear in UI interactions, not in layout composition.
 ---
@@ -63,7 +63,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 ## Section types
 ### Hero
 - Full viewport height on desktop, minimum `560px`.
-- Background: Canvas (`--color-bg`).
+- Background: Canvas (`--color-background`).
 - Worker portrait (isolated, hard-edge) placed right or center.
 - Headline: `--text-8x` or `--text-4x`, Iron, sentence-case.
 - Single Traffic Cone CTA button beneath headline.

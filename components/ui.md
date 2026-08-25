@@ -14,7 +14,7 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
 ```css
 .btn-primary {
   background-color: var(--color-primary);   /* Traffic Cone #EF6F1A */
-  color: var(--color-fg);                   /* Iron text #232F36 — 4.54:1 AA */
+  color: var(--color-foreground);                   /* Iron text #232F36 — 4.54:1 AA */
   font-family: var(--font-primary);
   font-size: var(--text-ui);              /* 1rem */
   font-weight: var(--weight-semibold);      /* 600 */
@@ -31,7 +31,7 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
   filter: brightness(0.92);
 }
 .btn-primary:focus-visible {
-  outline: 2px solid var(--color-fg);   /* Iron ring — neutral, 12.4:1 on Canvas */
+  outline: 2px solid var(--color-foreground);   /* Iron ring — neutral, 12.4:1 on Canvas */
   outline-offset: 2px;
 }
 ```
@@ -44,7 +44,7 @@ For primary actions inside the Iron `surface-inverted` blocks. Iron text on Traf
 ```css
 .surface-inverted .btn-primary {
   background-color: var(--color-primary);   /* Traffic Cone */
-  color: var(--color-fg);                   /* Iron text */
+  color: var(--color-foreground);                   /* Iron text */
 }
 ```
 **Label rules:**
@@ -56,7 +56,7 @@ For irreversible actions only. Toolbox background.
 ```css
 .btn-destructive {
   background-color: var(--color-error);     /* Toolbox #C8102E */
-  color: var(--color-bg);
+  color: var(--color-background);
   font-family: var(--font-primary);
   font-size: var(--text-ui);
   font-weight: var(--weight-semibold);
@@ -72,7 +72,7 @@ The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF
 On desktop, the full "Skillit" lockup is visible. When the viewport scales down, the lockup hides and is replaced by the 24px `mark` icon, while the navigation items collapse into a full-width dropdown menu.
 ```css
 .nav {
-  background-color: var(--color-bg);        /* Canvas */
+  background-color: var(--color-background);        /* Canvas */
   color: var(--color-surface);              /* currentColor for pattern.svg — Plaster tread */
   background-image: url('../assets/logo/pattern.svg'); /* Plaster pattern */
   background-repeat: repeat-x;              /* Horizontal only */
@@ -120,7 +120,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   font-family: var(--font-primary);
   font-size: var(--text-ui);             /* 1rem / 16px */
   font-weight: var(--weight-medium);       /* 500 */
-  color: var(--color-fg);                  /* Iron */
+  color: var(--color-foreground);                  /* Iron */
   text-decoration: none;
 }
 .nav-link:hover {
@@ -148,18 +148,18 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground,
 .input {
   background-color: var(--color-surface); /* Plaster — field separated from Canvas ground */
   border: none;
-  border-bottom: 2px solid var(--color-fg); /* Iron — drafting line (neutral, structural) */
+  border-bottom: 2px solid var(--color-foreground); /* Iron — drafting line (neutral, structural) */
   border-radius: 16px;
-  color: var(--color-fg);
+  color: var(--color-foreground);
   font-family: var(--font-primary);
   font-size: var(--text-ui);
   padding: var(--space-3) var(--space-2);  /* 12px 8px — tactile */
   width: 100%;
 }
 .input:focus {
-  outline: 2px solid var(--color-fg);      /* Iron focus ring — visible, neutral */
+  outline: 2px solid var(--color-foreground);      /* Iron focus ring — visible, neutral */
   outline-offset: 2px;
-  border-bottom-color: var(--color-fg);    /* line stays Iron */
+  border-bottom-color: var(--color-foreground);    /* line stays Iron */
 }
 .input::placeholder {
   color: rgba(35, 47, 54, 0.5);            /* Iron at 50% */
@@ -214,15 +214,15 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
 /* Active / selected state — Iron text on Traffic Cone (Canvas on Cone is banned, 2.83:1) */
 .card-interactive[aria-selected="true"] {
   background-color: var(--color-primary);
-  color: var(--color-fg);
+  color: var(--color-foreground);
 }
 @media (max-width: 768px) {
   .card { padding: var(--space-8); }        /* 32px — tactile mobile */
 }
 /* Inverted surface (Dark mode block) */
 .surface-inverted {
-  background-color: var(--color-fg);       /* Iron */
-  color: var(--color-bg);                  /* Canvas */
+  background-color: var(--color-foreground);       /* Iron */
+  color: var(--color-background);                  /* Canvas */
   border: none;
   border-radius: 16px;
   padding: var(--space-8);                 /* Generous padding for heavy blocks */
@@ -241,7 +241,7 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 a:focus-visible {
-  outline: 2px solid var(--color-fg);     /* Iron ring — focus rings are always Iron (color.md) */
+  outline: 2px solid var(--color-foreground);     /* Iron ring — focus rings are always Iron (color.md) */
   outline-offset: 2px;
   border-radius: 0;
 }
@@ -263,8 +263,8 @@ img.photo,
 The footer anchors the bottom of the page using an inverted Iron surface, completing the structural framing of the layout. It uses a flush-left vertical stack for the brand and a multi-column grid for navigation, following the structural simplicity of Anthropic.com.
 ```css
 .footer {
-  background-color: var(--color-fg);       /* Iron */
-  color: var(--color-bg);                  /* Canvas */
+  background-color: var(--color-foreground);       /* Iron */
+  color: var(--color-background);                  /* Canvas */
   padding: var(--space-128);
 }
 .footer-inner {
@@ -292,7 +292,7 @@ The footer anchors the bottom of the page using an inverted Iron surface, comple
   flex-direction: column;
 }
 .footer .nav-link {
-  color: var(--color-bg);                  /* Canvas links */
+  color: var(--color-background);                  /* Canvas links */
   display: block;
   margin-bottom: var(--space-8);
 }
@@ -300,7 +300,7 @@ The footer anchors the bottom of the page using an inverted Iron surface, comple
   color: var(--color-primary);             /* Traffic Cone hover */
 }
 ```
-The logo in the footer should be `lockup.svg` with `color: var(--color-bg)` on the container so the `currentColor` fill renders Canvas on the Iron background. On smaller viewports, this hides and is replaced by `mark.svg` the same way.
+The logo in the footer should be `lockup.svg` with `color: var(--color-background)` on the container so the `currentColor` fill renders Canvas on the Iron background. On smaller viewports, this hides and is replaced by `mark.svg` the same way.
 ---
 ## Metadata and data strings
 All timestamps, IDs, distances, file sizes, and numeric data strings use the monospace stack.

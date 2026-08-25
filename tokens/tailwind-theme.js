@@ -23,9 +23,9 @@ module.exports = {
     extend: {
       colors: {
         skillit: {
-          canvas: 'var(--color-bg)',
+          canvas: 'var(--color-background)',
           plaster: 'var(--color-surface)',
-          iron: 'var(--color-fg)',
+          iron: 'var(--color-foreground)',
           'traffic-cone': 'var(--color-primary)',
           'hard-hat': 'var(--color-warning)',
           toolbox: 'var(--color-error)',
