@@ -25,17 +25,20 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
   cursor: pointer;
 }
 /* Hover for ALL filled buttons (any color: Cone, Toolbox, Hard Hat, Bottle Glass, Painter's Tape):
-   opacity: 0.9 — one treatment, no per-color hover hexes. Lifts over Canvas.
-   Note: .btn-secondary is NOT filled — it uses its own inversion hover (below). */
+   filter: brightness(0.92) — darkens the button without fading, one treatment, no per-color hover hexes. */
 .btn-primary:hover,
 .btn-destructive:hover {
-  opacity: 0.9;
+  filter: brightness(0.92);
 }
 .btn-primary:focus-visible {
   outline: 2px solid var(--color-fg);   /* Iron ring — neutral, 12.4:1 on Canvas */
   outline-offset: 2px;
 }
 ```
+### Button hover
+
+Filled buttons use `filter: brightness(0.92)` on hover — darkens the button without fading it toward the background, and stays within the single-color-per-button rule. No secondary button class exists in the current system.
+
 ### CTA Button (inverted)
 For primary actions inside the Iron `surface-inverted` blocks. Iron text on Traffic Cone, same as the standard primary button — consistent across all surfaces.
 ```css
@@ -47,25 +50,7 @@ For primary actions inside the Iron `surface-inverted` blocks. Iron text on Traf
 **Label rules:**
 - Sentence-case imperative. “Join” / “Apply” / “See the network.” Never “Click here” or “Submit form.”
 - **Strict Consistency:** All buttons that point to the exact same destination page should use the exact same label across the entire platform. If the primary account creation CTA is "Join", do not alternate it with "Get started", "Create your profile", or "Sign up" elsewhere on the page. Pick one label per destination and lock it.
-### Secondary button
-Outlined, Iron stroke, no fill. For secondary actions.
-```css
-.btn-secondary {
-  background-color: transparent;
-  color: var(--color-fg);                   /* Iron #232F36 */
-  font-family: var(--font-primary);
-  font-size: var(--text-ui);
-  font-weight: var(--weight-semibold);      /* 600 */
-  padding: var(--space-3) var(--space-8);  /* 12px 32px — tactile */
-  border: 1.5px solid var(--color-fg);
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-}
-.btn-secondary:hover {
-  background-color: var(--color-fg);
-  color: var(--color-bg);
-}
-```
+
 ### Destructive button
 For irreversible actions only. Toolbox background.
 ```css
@@ -177,7 +162,7 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground,
   border-bottom-color: var(--color-fg);    /* line stays Iron */
 }
 .input::placeholder {
-  color: rgba(35, 47, 54, 0.4);            /* Iron at 40% */
+  color: rgba(35, 47, 54, 0.5);            /* Iron at 50% */
 }
 ```
 **Labels:** Above the field, not inside (placeholder is not a label). `--text-1x` size, `--weight-medium`, Iron.
@@ -218,14 +203,13 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
   border-radius: 16px;
   padding: var(--space-16);                /* 64px — tactile */
 }
-/* Interactive cards reserve a transparent border so hover can reveal the Iron outline without layout shift */
+/* Cards separate from Canvas ground through Plaster background contrast — no borders. */
 .card-interactive {
-  border: 1.5px solid transparent;
-}
-/* Hover state for interactive cards — Iron outline (structural). Traffic Cone is reserved for the selected state. */
-.card-interactive:hover {
-  border-color: var(--color-fg);            /* Iron border on hover */
   cursor: pointer;
+}
+/* Interactive cards: hover state is a subtle background shift (10% Iron over Plaster). */
+.card-interactive:hover {
+  background-color: rgba(35, 47, 54, 0.04);
 }
 /* Active / selected state — Iron text on Traffic Cone (Canvas on Cone is banned, 2.83:1) */
 .card-interactive[aria-selected="true"] {
@@ -375,6 +359,6 @@ Design all states, not just the happy path. A layout that only works for the ide
 - **Empty:** Plaster surface, Iron message, single illustration or icon. Never a blank void — give the user a reason the state is empty and a path forward.
 - **Loading:** skeleton blocks in Plaster, no spinner-only states. There is no spinner icon in the set — if one is ever needed, it must be drawn and added to the inventory; skeletons are the default loading treatment.
 - **Error:** icon (octagon, Toolbox) + specific message. See form inputs for field-level states.
-- **Disabled:** Iron at 40% (`rgba(35, 47, 54, 0.4)`), no color change — a disabled control must never be confused with an error state.
+- **Disabled:** Iron at 50% (`rgba(35, 47, 54, 0.5)`), no color change — a disabled control must never be confused with an error state.
 - **Overflow:** one line of text at any width must never clip. Headings wrap; long worker names truncate with ellipsis at the container edge, never overlap.
 - **Progressive disclosure:** the simple view first, advanced options behind a toggle. Never dump every option on screen at once.
