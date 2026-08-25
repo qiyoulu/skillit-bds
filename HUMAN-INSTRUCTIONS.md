@@ -114,12 +114,12 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 | -------------- | --------- | --------------- | -------------- | --------------------------------------- |
 | Canvas         | `#FAF7F3` | 2, 2, 4, 0      | Paper — not an ink | Primary background — all surfaces       |
 | Plaster        | `#FFFFFF` | 0, 0, 0, 0      | None — unprinted stock | Elevated surfaces, cards, form inputs   |
-| Iron           | `#232F36` | 80, 50, 45, 65  | 432 C / 432 U  | All text, structural elements           |
-| Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C / 158 U  | Primary CTA, active states, key accents |
+| Iron           | `#232F36` | 80, 50, 45, 65  | 432 C / 432 U  | Foreground                                                |
+| Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C / 158 U  | Primary action                                            |
 | Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C / 1235 U | Warnings, non-fatal alerts              |
 | Toolbox        | `#C8102E` | 2, 100, 85, 6   | 186 C / 186 U  | Errors, destructive actions             |
 | Bottle Glass   | `#33663D` | 50, 0, 40, 60   | 2427 C / 2427 U  | Success, confirmations                  |
-| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C / 3135 U | Text fill — underlined = link, not underlined = info |
+| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C / 3135 U | Link / Info |
 
 Coated and uncoated are the same ink on different paper — the number is shared, the appearance is not. Uncoated absorbs ink and returns lighter and duller. Always proof on the actual stock; Traffic Cone shifts most. Spot references apply only where you print spot (business cards, signage, vehicle wrap, embroidery) — process work uses the CMYK values.
 

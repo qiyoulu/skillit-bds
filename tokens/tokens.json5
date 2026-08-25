@@ -30,7 +30,7 @@
       fg: {
         $value: '#232F36',
         $type: 'color',
-        $description: 'Iron — all body text, headings, structural elements. never #000000.',
+        $description: 'Iron — foreground. all body text, headings, borders, structural elements.',
         $extensions: {
           'org.skillit.role': 'foreground',
           'org.skillit.pantone': '432 C',
@@ -39,7 +39,7 @@
       primary: {
         $value: '#EF6F1A',
         $type: 'color',
-        $description: 'Traffic Cone — primary CTA, active states, key accents. one accent per section.',
+        $description: 'Traffic Cone — primary action. one accent per section.',
         $extensions: {
           'org.skillit.role': 'accent',
           'org.skillit.pantone': '158 C',
@@ -66,7 +66,7 @@
       link: {
         $value: '#007CA6',
         $type: 'color',
-        $description: "Painter's Tape — text fill: underlined = link, not underlined = info. never a fill. info text floor: --text-1x (16px), 4.6:1 on canvas; below that use iron.",
+        $description: "Painter's Tape — link / info. underlined = link, not underlined = info. never a fill.",
         $extensions: {
           'org.skillit.role': 'text-fill',
           'org.skillit.pantone': '3135 C',
