@@ -93,6 +93,36 @@
   --text-1x-sm: 1rem;
   /* No Text-0.75x — removed (was 12px floor) */
 
+  /* typography — mono tier variants (round(base × 0.9)) */
+  --text-mono-8x: 7.1875rem;
+  --text-mono-8x-weight: 700;
+  --text-mono-8x-leading: 0.80;
+  --text-mono-8x-tracking: -0.06em;
+  --text-mono-6x: 5.375rem;
+  --text-mono-6x-weight: 650;
+  --text-mono-6x-leading: 0.90;
+  --text-mono-6x-tracking: -0.05em;
+  --text-mono-4x: 3.625rem;
+  --text-mono-4x-weight: 600;
+  --text-mono-4x-leading: 1.00;
+  --text-mono-4x-tracking: -0.04em;
+  --text-mono-3x: 2.6875rem;
+  --text-mono-3x-weight: 550;
+  --text-mono-3x-leading: 1.10;
+  --text-mono-3x-tracking: -0.03em;
+  --text-mono-2x: 1.8125rem;
+  --text-mono-2x-weight: 500;
+  --text-mono-2x-leading: 1.20;
+  --text-mono-2x-tracking: -0.02em;
+  --text-mono-1.5x: 1.375rem;
+  --text-mono-1.5x-weight: 450;
+  --text-mono-1.5x-leading: 1.30;
+  --text-mono-1.5x-tracking: -0.01em;
+  --text-mono-1x: 0.875rem;
+  --text-mono-1x-weight: 400;
+  --text-mono-1x-leading: 1.40;
+  --text-mono-1x-tracking: 0em;
+
   /* typography — functional UI scale */
   --text-ui-lg: 1.125rem;
   --text-ui: 1rem;
