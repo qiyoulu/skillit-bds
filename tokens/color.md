@@ -23,7 +23,7 @@
 | `--color-warning` | 🟨 Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C / 1235 U | Non-fatal alerts, warnings                         |
 | `--color-error`   | 🟥 Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C / 186 U  | Fatal errors, destructive actions                  |
 | `--color-success` | 🟩 Bottle Glass   | `#33663D` | 50, 0, 40, 60  | 2427 C / 2427 U | Confirmations, success states                      |
-| `--color-link`    | 🟦 Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C / 3135 U | Link / Info                                                |
+| `--color-link`    | 🟦 Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C / 3135 U | Link                                                |
 
 ## Hover states
 

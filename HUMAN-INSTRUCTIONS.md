@@ -119,7 +119,7 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 | Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C / 1235 U | Warnings, non-fatal alerts              |
 | Toolbox        | `#C8102E` | 2, 100, 85, 6   | 186 C / 186 U  | Errors, destructive actions             |
 | Bottle Glass   | `#33663D` | 50, 0, 40, 60   | 2427 C / 2427 U  | Success, confirmations                  |
-| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C / 3135 U | Link / Info |
+| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C / 3135 U | Link |
 
 Coated and uncoated are the same ink on different paper — the number is shared, the appearance is not. Uncoated absorbs ink and returns lighter and duller. Always proof on the actual stock; Traffic Cone shifts most. Spot references apply only where you print spot (business cards, signage, vehicle wrap, embroidery) — process work uses the CMYK values.
 
