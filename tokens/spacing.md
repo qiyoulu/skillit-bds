@@ -85,8 +85,8 @@ Buttons and interactive cards should use **double the standard horizontal paddin
 - **UI Lists:** `--space-4` (16px / 1rem) between interactive list items in the app or dashboard. This wider spacing protects the 44px minimum touch target rule.
 
 ### Small viewports (`< 768px`)
-- **Paragraphs:** `--space-3` (12px / 0.75rem) below paragraphs. Tighter than desktop — body copy at small viewports reads as one continuous column; 16px creates visible gaps between stacked paragraphs.
-- **Text Lists:** `--space-1.5` (6px / 0.375rem) between bulleted or numbered text items. This is intentionally *off* the 8px scale — it's the optical sweet spot for list rhythm on narrow columns, locked by design review (aug 13).
+- **Paragraphs:** unchanged (`--space-4`, 16px) — paragraph spacing is viewport-independent.
+- **Text Lists:** unchanged (`--space-2`, 8px) — list spacing is viewport-independent.
 - **UI Lists:** unchanged (`--space-4`, 16px) — the 44px touch target rule is viewport-independent.
 ---
 ## Breakpoints
