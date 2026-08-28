@@ -1,23 +1,23 @@
 # Brand Design System (BDS) — Skillit
 
-## **Version 1.0 · July 2026**
+## **Version 1.1 · August 2026**
 
 ## Table of Contents
 
 - [Brand Design System (BDS) — Skillit](#brand-design-system-bds--skillit)
-  - [**Version 1.0 · July 2026**](#version-10--july-2026)
+  - [**Version 1.1 · August 2026**](#version-11--august-2026)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [At a Glance](#at-a-glance)
-  - [The Story](#the-story)
-  - [Mission](#mission)
-  - [**Worker First.** The brand is built around the worker, not the contractor. The contractor is our customer, but the worker is our subject. When in doubt, frame the design and the message from the worker’s perspective.](#worker-first-the-brand-is-built-around-the-worker-not-the-contractor-the-contractor-is-our-customer-but-the-worker-is-our-subject-when-in-doubt-frame-the-design-and-the-message-from-the-workers-perspective)
+  - [Who These Guidelines Are For](#who-these-guidelines-are-for)
+  - [How to Use These Guidelines](#how-to-use-these-guidelines)
   - [Colors](#colors)
     - [The palette](#the-palette)
-    - [Color Do / Don’t](#color-do--dont)
+    - [Color Do / Don't](#color-do--dont)
   - [Logo](#logo)
     - [The mark](#the-mark)
     - [The wordmark](#the-wordmark)
+    - [Wordmark-only usage](#wordmark-only-usage)
     - [The lockup](#the-lockup)
     - [Color variants](#color-variants)
     - [What not to do](#what-not-to-do)
@@ -25,14 +25,16 @@
   - [Iconography](#iconography)
   - [Typography](#typography)
     - [The Typographic Algorithm](#the-typographic-algorithm)
+    - [When to use Text-8x (128px)](#when-to-use-text-8x-128px)
     - [Case](#case)
     - [Monospace \& Metadata](#monospace--metadata)
     - [Italics \& Emphasis](#italics--emphasis)
     - [Spacing](#spacing)
+    - [Block quotes](#block-quotes)
     - [Variable weight \& halation correction](#variable-weight--halation-correction)
     - [Typographic Punctuation](#typographic-punctuation)
     - [Widows and Orphans](#widows-and-orphans)
-    - [Typography Do / Don’t](#typography-do--dont)
+    - [Typography Do / Don't](#typography-do--dont)
   - [Layout](#layout)
     - [The principle](#the-principle)
     - [Surface boundaries (Cards \& Containers)](#surface-boundaries-cards--containers)
@@ -40,25 +42,40 @@
     - [Rules](#rules)
     - [Border radius (Shape signals action)](#border-radius-shape-signals-action)
     - [Grid \& Baseline](#grid--baseline)
-    - [Layout Do / Don’t](#layout-do--dont)
+    - [Layout Do / Don't](#layout-do--dont)
   - [Data Visualization](#data-visualization)
+    - [Chart requirements](#chart-requirements)
     - [Geometry \& Structure](#geometry--structure)
     - [Color](#color)
+    - [Bar graphs](#bar-graphs)
+    - [Flowcharts](#flowcharts)
     - [Banned Elements](#banned-elements)
   - [Voice \& Tone](#voice--tone)
     - [The north star](#the-north-star)
     - [The Five Core Traits](#the-five-core-traits)
     - [Tone by Channel](#tone-by-channel)
-    - [Banned Language (Trait Violations)](#banned-language-trait-violations)
+    - [Demand Gen vs. Supply Gen](#demand-gen-vs-supply-gen)
     - [Sam (The AI)](#sam-the-ai)
-    - [Copy Do / Don’t](#copy-do--dont)
+    - [Banned Language (Trait Violations)](#banned-language-trait-violations)
+    - [Copy Do / Don't](#copy-do--dont)
   - [Photography \& Imagery](#photography--imagery)
     - [The mood in one line](#the-mood-in-one-line)
-    - [Photography Do / Don’t](#photography-do--dont)
+    - [Iron filter](#iron-filter)
+    - [Collages](#collages)
+    - [Photography Do / Don't](#photography-do--dont)
+  - [Website pages](#website-pages)
+    - [Header](#header)
+    - [Home Page](#home-page)
+    - [Find Work](#find-work)
+    - [Our Network](#our-network)
+    - [What We Do](#what-we-do)
+    - [Resources](#resources)
+    - [Who We Are](#who-we-are)
+    - [Support](#support)
   - [A note on this document](#a-note-on-this-document)
     - [Responsive Scaling](#responsive-scaling)
   - [Engineering Handoff](#engineering-handoff)
-  - [Resources](#resources)
+  - [Resources](#resources-1)
     - [Asset Directory](#asset-directory)
 
 ---
@@ -71,7 +88,7 @@ The brand is a strategic advantage. Our goal is to make the world—enterprise c
 
 This document is the human-readable translation of the rules. The system itself also lives as a machine-readable token library (via MCP). This means anyone at Skillit can use AI tools to generate presentations, sales collateral, product marketing (worker portraits, feature illustrations, screenshots), and other visual outputs that are consistently and aesthetically perfectly on-brand.
 
-Designers, marketers, writers, engineers, and anyone who has ever asked “does this look right?” — this is for you.
+Designers, marketers, writers, engineers, and anyone who has ever asked "does this look right?" — this is for you.
 
 ---
 
@@ -82,27 +99,33 @@ Designers, marketers, writers, engineers, and anyone who has ever asked “does 
 **The Layout:** Strict functionalism. Whitespace is structural mass. Hard, straight edges only. Canvas (off-white) background, Iron (dark navy) text. No decoration.
 **The Accent:** Traffic Cone (orange). Use it exactly _once_ per layout section. Never for decoration.
 **The Photos:** Real workers doing real work. Shot at eye level. No color grading or filters.
-**The Copy:** Direct, unhedged, data-backed. Don’t say revolutionize or disrupt.
+**The Copy:** Direct, unhedged, data-backed. Don't say revolutionize or disrupt.
 **The Assets:** All logos, icons, and graphics are built with `currentColor`. They should be inlined in code (or used as components) to inherit dynamic CSS coloring.
-**The Rule:** Technology should make humans more essential, not more expendable. Start from the worker’s perspective.
+**The Rule:** Technology should make humans more essential, not more expendable. Start from the worker's perspective.
 
 ---
 
-## The Story
+## Who These Guidelines Are For
 
-**Skillit is not a job board. We are workforce infrastructure.**
-When you create assets for Skillit, you are designing for a specific, misunderstood reality: the physical world tracks materials, schedules, and budgets with extraordinary precision, but it doesn’t track the people doing the work.
-Our data proves that only 1 in 20 workers are missing from the labor force, yet 9 in 10 employers can’t find them. **This is an access problem, not a shortage problem.**
-Your job is to communicate that truth. Our visuals and copy should project infrastructure-level reliability to contractors, while maintaining absolute respect and dignity for the craft pro. Everything we make should reflect our founding reality: **we are builders who built tech**, not a software company that discovered construction.
+**Designers** — visual designers, brand designers, UI designers, and anyone creating graphical assets for Skillit.
+
+**Communicators** — marketing, PR, internal comms, and anyone writing on behalf of the brand.
+
+**Writers** — copywriters, content strategists, and anyone crafting product copy or editorial content.
 
 ---
 
-## Mission
+## How to Use These Guidelines
 
-> Technology should make humans more essential, not more expendable.
-> This is our anchor. Every design decision, every piece of copy, and every product interaction should pass this test. If an asset diminishes the worker, makes them look like a corporate resource, or relies on tech-utopian AI hype, revise it.
+**Designers** — Start here for visual rules: color, typography, layout, iconography, photography. Use the data visualization section for charts and graphics. Reference the voice & tone section for copy that appears in your designs.
 
-## **Worker First.** The brand is built around the worker, not the contractor. The contractor is our customer, but the worker is our subject. When in doubt, frame the design and the message from the worker’s perspective.
+**Communicators** — Start with voice & tone for writing rules by channel. Use photography & imagery for visual standards. Reference the data visualization section for charts in reports and presentations.
+
+**Writers** — Start with voice & tone for vocabulary, mechanics, and channel-specific rules. Use the typography section for hierarchy and scale. Reference the brand story section for the core narrative.
+
+**AI ingest** — If you are an AI agent assisting with Skillit work, these guidelines are your primary source for visual and verbal brand rules. For mission, story, and company context, extract key points from the Skillit culture doc.
+
+---
 
 ## Colors
 
@@ -123,19 +146,19 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 
 Coated and uncoated are the same ink on different paper — the number is shared, the appearance is not. Uncoated absorbs ink and returns lighter and duller. Always proof on the actual stock; Traffic Cone shifts most. Spot references apply only where you print spot (business cards, signage, vehicle wrap, embroidery) — process work uses the CMYK values.
 
-### Color Do / Don’t
+### Color Do / Don't
 
 - **Do** use Traffic Cone once per section, on the most important element.
-- **Don’t** repeat Traffic Cone decoratively across borders, icons, and dividers.
+- **Don't** repeat Traffic Cone decoratively across borders, icons, and dividers.
 - **Do** use Iron on Canvas for all body text.
-- **Don’t** use Traffic Cone text on Canvas backgrounds at body size — it fails contrast.
+- **Don't** use Traffic Cone text on Canvas backgrounds at body size — it fails contrast.
 - **Do** pair every status color with a specific shape (Circle for Success, Triangle for Warning, Octagon for Error) and a label.
-- **Don’t** rely on color alone to communicate error, warning, or success.
-- **Don’t** use gradients — all color transitions are hard edges.
-- **Don’t** use Hard Hat, Toolbox, Bottle Glass, or Painter's Tape as layout backgrounds or decorative elements.
-- **Don’t** use Painter's Tape as a button fill. Colors are limited to: text fill on Canvas/Plaster/Iron, button bg fill, and drawn icons (incl. status badges).
+- **Don't** rely on color alone to communicate error, warning, or success.
+- **Don't** use gradients — all color transitions are hard edges.
+- **Don't** use Hard Hat, Toolbox, Bottle Glass, or Painter's Tape as layout backgrounds or decorative elements.
+- **Don't** use Painter's Tape as a button fill. Colors are limited to: text fill on Canvas/Plaster/Iron, button bg fill, and drawn icons (incl. status badges).
 - **Do** use Painter's Tape text underlined for links, not underlined for info.
-- **Don’t** introduce any color outside the eight tokens.
+- **Don't** introduce any color outside the eight tokens.
 
 ---
 
@@ -143,7 +166,7 @@ Coated and uncoated are the same ink on different paper — the number is shared
 
 ### The mark
 
-The Skillit mark is the brand’s initial ‘S’ engineered for **physical grip**. Built from three interlocking blocks on a precise **1:3 shear**, the geometry acts as a **boot tread, machinery tracks, or diamond plate steel**. It encodes **traction**, **structural integrity**, and **forward momentum** into a single form. It **does not require the wordmark** to be understood.
+The Skillit mark is the brand's initial 'S' engineered for **physical grip**. Built from three interlocking blocks on a precise **1:3 shear**, the geometry acts as a **boot tread, machinery tracks, or diamond plate steel**. It encodes **traction**, **structural integrity**, and **forward momentum** into a single form. It **does not require the wordmark** to be understood.
 **Grid:** 7×8 unit grid. One unit of clear space on all sides — protected area of 9×10 units.
 **Minimum size:** 21px/16pt height. Below this threshold the internal negative space closes up and the mark loses definition.
 
@@ -152,6 +175,18 @@ The Skillit mark is the brand’s initial ‘S’ engineered for **physical grip
 The wordmark is set in Work Sans Black, all-caps, with −3% tracking. It is a fixed graphic asset, not a line of text.
 **Minimum size:** 16px/12pt height.
 **Clear space:** Maintain a minimum clear space equal to the cap height of the wordmark on all sides. Never crowd it against an edge, another logo, or a photographic element.
+
+### Wordmark-only usage
+
+Use the wordmark alone when:
+- Space is constrained and the mark cannot meet minimum size (21px height)
+- The mark already appears elsewhere on the same layout (e.g., footer lockup + header wordmark)
+- The brand is clearly established in context (e.g., app icon, favicon, email signature)
+
+**Do not** use the wordmark alone when:
+- Introducing the brand to a new audience
+- The lockup can fit at minimum size
+- The wordmark reads as "SKILLIT" without the mark — the mark is what distinguishes us
 
 ### The lockup
 
@@ -186,7 +221,6 @@ Canvas on Traffic Cone and Traffic Cone on Canvas both fail WCAG AA (2.83:1) and
 The Skillit pattern is a step-and-repeat tessellation of the boot tread mark. Because the mark's negative space is designed as an interlocking joint, the repeated pattern locks together to form a structural, masonry-like wall. It is the only decorative graphic permitted in the system.
 **Because the pattern is built directly from the mark, all technical rules that apply to the logo apply equally to the pattern** (no stretching, shearing, rotating, no drop shadows, no raster formats like PNG/JPG, and always use the approved SVG file).
 **How to use it:**
-
 - **Restricted Palette:** The pattern may ONLY be rendered using the neutral structural colors: Canvas, Plaster, and Iron (the whites and black). Accent colors are strictly banned.
 - **As a structural anchor:** Use it to ground the top edge of a digital surface (e.g., the primary navigation bar). It creates a physical, structural boundary that grounds the layout. The preferred execution is rendering the pattern in **Plaster** (`#FFFFFF`) over a **Canvas** ground.
 - **Physical applications:** Excellent for tactile physical touchpoints (e.g., debossed into leather, printed on packaging interiors, or as a subtle watermark on formal documents).
@@ -209,6 +243,19 @@ Style is solid fill only. No strokes, no outlines, no gradients, no drop shadows
 Status never relies on color alone. Locked silhouettes: Success = Circle, Warning = Triangle, Error = Octagon.
 
 **Core set (Phase I):** Checkmark · Error · Warning · Search · Arrow (×4) · Location · Clock · User · External link · Plus · Menu
+
+**Trade icons:**
+- Carpenter
+- Electrician
+- Heavy equipment operator
+- Pipefitter
+- Welder
+
+**Other icons:**
+- Certifications
+- Safety credentials
+- Per diem indicator
+- Travel readiness
 
 ---
 
@@ -242,11 +289,28 @@ _(Full print/mobile/monospace variants for each level are documented in `tokens/
 - Text-3x: 48px → 36px (`Text-3s`)
 - Text-2x: 32px → 24px (`Text-2s`)
 - Text-1.5x: 24px → 18px (`Text-1.5s`)
-- Text-1x: 16px → 12px (`Text-1s`)
+- Text-1x: 16px → 16px (`Text-1s`)
+
+### When to use Text-8x (128px)
+
+Use the 8x tier sparingly. It is reserved for:
+
+- **Homepage hero headlines** — "Do great work where it matters"
+- **Landing page hero headlines** — single-line value propositions
+- **Section titles on long-scrolling pages** — when the section spans the full viewport height
+- **Campaign landing pages** — the primary headline above the fold
+
+**Do not use Text-8x for:**
+- Body copy or subheadings
+- UI elements (buttons, labels, form fields)
+- Text that wraps to more than two lines at desktop width
+- Anything below the fold where it competes with the hero
+
+**Rule of thumb:** If you're using 128px more than twice on a single page, you likely have a hierarchy problem. Step down to 6x (96px) or 4x (64px) for secondary emphasis.
 
 ### Case
 
-**Sentence-case everywhere.** “Join for free” — not “Join For Free.” “How it works” — not “HOW IT WORKS.” All-caps and title case are banned in all brand typesetting.
+**Sentence-case everywhere.** "Join for free" — not "Join For Free." "How it works" — not "HOW IT WORKS." All-caps and title case are banned in all brand typesetting.
 
 **Exceptions to the rule:**
 
@@ -283,16 +347,26 @@ Use italics strictly for their semantic purpose:
 
 ### Spacing
 
-To maintain the grid’s consistent rhythm, vertical spacing between text elements is locked to absolute spacing tokens regardless of the text size. Never use relative `em` spacing (which breaks the 8px baseline grid).
+To maintain the grid's consistent rhythm, vertical spacing between text elements is locked to absolute spacing tokens regardless of the text size. Never use relative `em` spacing (which breaks the 8px baseline grid).
 
 - **Paragraphs:** 16px (`--space-4`). The standard gap between text blocks.
 - **Text Lists:** 8px (`--space-2`). Items in a bulleted or numbered list sit tighter together so the list reads visually as a single, cohesive block.
 - **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 44px minimum touch target rule.
 
-**Blockquotes** are treated as elevated structural cards, not editorial text callouts.
+### Block quotes
+
+**Block quotes** are treated as elevated structural cards, not editorial text callouts.
 
 - **Container:** Wrap the quote in a Plaster (`var(--color-surface)` / `#FFFFFF`) card container (16px corners). It inherits the standard tactile padding for cards.
-- **No Block Italics:** Do not italicize the entire quote. Keep the typography Roman and grounded, reserving italics strictly for emphasis or titles within the text.
+- **Typography:** Roman only. Do not italicize the entire quote (reserve italics strictly for emphasis or titles within the text).
+- **Attribution:** Name in Semibold (600), title/company in Regular (400). Accent color: Traffic Cone for the attribution name.
+- **No opening/closing quotation marks** in the card — the card itself signals the quote.
+- **If a quote runs longer than three lines,** reduce to Body (16px) and increase leading to 1.5.
+
+**For editorial text callouts** (pull quotes within articles):
+- Use Painter's Tape text, no card container
+- Italicize only if the original source used italics
+- Attribute inline or below in Iron at Body size
 
 ### Variable weight & halation correction
 
@@ -315,20 +389,20 @@ A **widow** is a single word left dangling on its own line at the end of a parag
 - **The Soft Break (Secondary Fix):** If tracking adjustment isn't feasible, insert a soft break opportunity (`&wbr;` in HTML, or a manual soft line break — Shift+Enter in Figma) before the word that would otherwise orphan. Unlike a non-breaking space, this only kicks in if the line actually needs to wrap there — it doesn't glue two words together permanently, so it won't leave a stray gap once the text block gets more room (e.g. a wider viewport).
 - **In Engineering (CSS):** Apply `text-wrap: balance;` to all headlines (`h1`, `h2`, `h3`). Apply `text-wrap: pretty;` to all paragraph text (`p`). Because `text-wrap: pretty` is not yet supported in all legacy browsers, the manual soft-break rule above is still required as a fallback for all critical marketing copy.
 
-### Typography Do / Don’t
+### Typography Do / Don't
 
 - **Do** use sentence-case everywhere, on every surface.
-- **Don’t** use title case or all-caps in UI or layouts (the logo wordmark is the only exception).
+- **Don't** use title case or all-caps in UI or layouts (the logo wordmark is the only exception).
 - **Do** let size, weight, and spacing create hierarchy.
-- **Don’t** use Traffic Cone or Hard Hat on headings to make them stand out — color signals function, not rank.
+- **Don't** use Traffic Cone or Hard Hat on headings to make them stand out — color signals function, not rank.
 - **Do** use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`).
-- **Don’t** use straight (dumb) typewriter quotes in human-readable copy.
+- **Don't** use straight (dumb) typewriter quotes in human-readable copy.
 - **Do** use 16px spacing between paragraphs and 8px between text list items.
-- **Don’t** leave widows or orphans. Force at least two words onto the final line of any text block to maintain a solid shape.
-- **Don’t** use Work Sans Light (300) — too thin for job-site legibility.
-- **Don’t** use any typeface other than Work Sans.
-- **Don’t** use Display or Heading sizes in UI components.
-- **Don’t** track body copy — tracking is for display and heading sizes only, never on running copy.
+- **Don't** leave widows or orphans. Force at least two words onto the final line of any text block to maintain a solid shape.
+- **Don't** use Work Sans Light (300) — too thin for job-site legibility.
+- **Don't** use any typeface other than Work Sans.
+- **Don't** use Display or Heading sizes in UI components.
+- **Don't** track body copy — tracking is for display and heading sizes only, never on running copy.
 
 ---
 
@@ -387,22 +461,29 @@ While micro-spacing (`8px`, `16px`, `32px`) remains locked to absolute pixels to
 | Desktop Section Gap | — | 128px |
 | Desktop Page Margin | — | 128px |
 
-### Layout Do / Don’t
+### Layout Do / Don't
 
 - **Do** leave generous space. Minimum 128px vertical padding on desktop sections.
-- **Don’t** fill space with shapes, patterns, or decorative elements to avoid “emptiness.”
+- **Don't** fill space with shapes, patterns, or decorative elements to avoid "emptiness."
 - **Do** use 16px corners for static containers and photos.
 - **Do** use fully rounded pill shapes for primary buttons.
-- **Don’t** use intermediate rounded corners (e.g., 4px or 8px) anywhere.
-- **Don’t** bevel edges or use drop shadows.
+- **Don't** use intermediate rounded corners (e.g., 4px or 8px) anywhere.
+- **Don't** bevel edges or use drop shadows.
 - **Do** use the boot tread pattern in the nav bar header.
-- **Don’t** use it as a section background or content surface fill.
+- **Don't** use it as a section background or content surface fill.
 
 ---
 
 ## Data Visualization
 
-Skillit’s data visualization is utilitarian. The charts should be legible, precise, and stripped of decorative noise. Our goal is human-centered clarity: every pixel should convey the truth of the data.
+Skillit's data visualization is utilitarian. The charts should be legible, precise, and stripped of decorative noise. Our goal is human-centered clarity: every pixel should convey the truth of the data.
+
+### Chart requirements
+
+Every chart must include:
+- **Header** — what the data shows (e.g., "Craft hires by trade, Q3 2026")
+- **Subheader** — context or timeframe if not in the header
+- **Data source** — attribution at the bottom in Plex Mono, 14px, Iron at 50%
 
 ### Geometry & Structure
 
@@ -418,6 +499,21 @@ Skillit’s data visualization is utilitarian. The charts should be legible, pre
 - **Monochromatic scale:** Standard categorical charts use a monochromatic scale, rather than different colors, to preserve UI semantics.
 - **Highlight:** Traffic Cone (orange) is used exclusively to highlight the focal data point or trend the viewer is supposed to care about. Orange is the thesis; Iron is the context.
 
+### Bar graphs
+
+- Accommodate **gradient fills** — use Traffic Cone at 100% to 40% opacity top-to-bottom for emphasis bars
+- **Annotations** — callout labels in Plex Mono, 14px, Iron, with a thin Iron line pointing to the data point
+- **Legend** — placed at the bottom, horizontal layout, Plex Mono 14px
+- Grouped bars: use Iron at 100%, 70%, 50% opacity to disambiguate series
+
+### Flowcharts
+
+- Flowchart nodes may include **graphics** (icons, small illustrations) alongside text
+- Node backgrounds: Plaster with 16px corners
+- Connector lines: Iron, 2px weight, 16px corners on turns
+- Decision diamonds: Hard Hat fill with Iron text
+- CTA nodes: Traffic Cone fill with Canvas text
+
 ### Banned Elements
 
 - 3D effects and drop shadows.
@@ -430,8 +526,8 @@ Skillit’s data visualization is utilitarian. The charts should be legible, pre
 
 ### The north star
 
-> Write like the smartest person on the job site — the one who’s been doing this since before it was a startup, who knows the data cold, and who doesn’t need to prove they belong in the room because the work speaks for itself.
-> **If it sounds like a press release, a pitch deck, or a LinkedIn growth-hacker, it’s wrong.**
+> Write like the smartest person on the job site — the one who's been doing this since before it was a startup, who knows the data cold, and who doesn't need to prove they belong in the room because the work speaks for itself.
+> **If it sounds like a press release, a pitch deck, or a LinkedIn growth-hacker, it's wrong.**
 
 **The Worker-First Mandate:** Every piece of copy—from blog titles to button labels—must ultimately serve and elevate the worker. Amplify the overlooked details of craftwork by focusing on these traits: _Agency, Judgment, Craftsmanship, Stamina, Responsibility_. Technology should uplift, meaning craft pros are irreplaceable and tech merely provides a direct route for their skills to be discovered.
 
@@ -439,7 +535,7 @@ Skillit’s data visualization is utilitarian. The charts should be legible, pre
 
 The brand voice is built entirely around five traits inherent to craft pros. Every piece of copy should reflect at least one of these:
 
-**1. Agency (Empowering Choice).** Craft workers are independent decision-makers, not cogs in a machine. Write to support their control over their career. <!-- orig: "empower" — banned in brand-voice.md Banned Register -->
+**1. Agency (Empowering Choice).** Craft workers are independent decision-makers, not cogs in a machine. Write to support their control over their career.
 
 - Wrong: "We place you in open jobs."
 - Right: "Choose the right job for you."
@@ -466,106 +562,198 @@ The brand voice is built entirely around five traits inherent to craft pros. Eve
 
 ### Tone by Channel
 
-**Website / marketing:** Confident, objective, and proof-heavy. Lead with the insight, not the product. One CTA per section.
-**Blog / editorial:** Authoritative, punchy, and grounded. Focus on tangible realities. No individual bylines.
-**Worker app:** Unfussy, respectful, and simple. One idea per screen. Write for gloves and sunlight.
-**Contractor dashboard:** Precise, no-nonsense. Outcome-focused.
-**LinkedIn / Executive:** Opinionated, first-person authority. Counterintuitive claim → data → principle. Stand firm on industry truths.
-**Press:** Founder-story-led. Anchor the narrative in tangible impact, never just a product feature.
+| Channel | Audience | Purpose | Key traits |
+|---|---|---|---|
+| **Website** | Both | Explain the platform | Confident, objective, proof-heavy |
+| **Insights** (formerly Blog) | Both | Authority & analysis | Authoritative, punchy, grounded |
+| **Comms** (formerly Press) | Public | Product milestones & news | Tangible impact, never just product features |
+| **Worker app** | Workers | Guide through tasks | Unfussy, respectful, simple |
+| **Contractor dashboard** | Contractors | Show outcomes | Precise, no-nonsense |
+| **LinkedIn** | Both | Industry authority | Opinionated, first-person, data-backed |
+| **Worker newsletter** | Workers | Monthly updates | Direct, practical, grounded |
+| **Customer newsletter** | Contractors | Nurture & retention | Data-backed, proof-heavy |
 
-### Banned Language (Trait Violations)
+### Demand Gen vs. Supply Gen
 
-- **Violates Responsibility (Hype):** “Revolutionize,” “Disrupt,” “Excited to announce,” “Thrilled to share,” “World-class.”
-- **Violates Craftsmanship (Tech Abstraction):** “Ecosystem,” “Leverage synergies,” “Holistic,” “Pipeline.”
-- **Violates Judgment (Hedging):** “We believe,” “Perhaps,” “Might be able to.”
-- **Violates Agency (Software as Hero):** “AI-powered” as the lead descriptor, "We place you," "Let our algorithm decide."
+**Demand Gen** (employer-facing): cold leads, nurture/warm leads, monthly customer newsletter
+
+| Don't use | Do use |
+|---|---|
+| Anthropomorphize robotics or Skillit as a singular entity | "Skillit matches workers to projects" |
+| "Proud" / facts + quotes from relevant sources to support emotional impact | Data and outcomes first |
+| "Serve" / "support" | "Match," "connect," "capture," "feature" |
+| "Workers" for first intro, then "workers" | "Craft professionals" first, then "workers" |
+
+**Supply Gen** (worker-facing): monthly newsletter, paid ads, help center, call center SOP
+
+| Don't use | Do use |
+|---|---|
+| "Represent" / "reflect" | "Match," "connect," "get discovered" |
+| "Workers" / "craft professionals" alone | "Craft professionals," "members" |
+| "Serve" / "support" | "Match," "connect," "find" |
 
 ### Sam (The AI)
 
-Sam is Skillit’s AI assistant. Sam has a name because names matter — they signal that this is a tool built for humans, not a machine replacing them.
+Sam is Skillit's AI assistant. Sam has a name because names matter — they signal that this is a tool built for humans, not a machine replacing them.
 
-- Right: “Hey Sam, pull up civil welders with GMAW experience in Dallas.”
-- Wrong: “Our proprietary ML algorithm surfaces qualified candidates based on your requirements.”
+- Right: "Hey Sam, pull up civil welders with GMAW experience in Dallas."
+- Wrong: "Our proprietary ML algorithm surfaces qualified candidates based on your requirements."
 
 **Sam coordinates and surfaces. The human still decides.** This is the ultimate expression of worker _Agency_ and _Judgment_.
 
-### Copy Do / Don’t
+**Sam's voice rules:**
+- **No exclamation marks.** Period.
+- **No emojis.** Ever.
+- Use plain, direct language.
+- Whenever possible, use a period instead of a question mark.
+- Do not anthropomorphize. Sam is not a person.
 
-- **Do** lead with the insight. “Only 1 in 20 workers are missing. 9 in 10 employers still can’t find them.”
-- **Do** use inline bolding for key phrases in paragraph text to improve scannability (Stamina).
-- **Don’t** lead with the product. “Skillit is an AI-powered construction hiring platform...”
-- **Do** use strict consistency for button labels. If a button points to account creation, it should say "Join" everywhere.
-- **Do** use one CTA per section. Ensure the primary mobile CTA is visible without scrolling.
-- **Don’t** offer “Start hiring” alongside “Get hired” — consolidate to a single “Join.”
+### Banned Language (Trait Violations)
+
+- **Violates Responsibility (Hype):** "Revolutionize," "Disrupt," "Excited to announce," "Thrilled to share," "World-class."
+- **Violates Craftsmanship (Tech Abstraction):** "Ecosystem," "Leverage synergies," "Holistic," "Pipeline."
+- **Violates Judgment (Hedging):** "We believe," "Perhaps," "Might be able to."
+- **Violates Agency (Software as Hero):** "AI-powered" as the lead descriptor, "We place you," "Let our algorithm decide."
+
+### Copy Do / Don't
+
+**Do** lead with the insight. "Only 1 in 20 workers are missing. 9 in 10 employers still can't find them."
+**Do** use inline bolding for key phrases in paragraph text to improve scannability (Stamina).
+**Don't** lead with the product. "Skillit is an AI-powered construction hiring platform..."
+**Do** use strict consistency for button labels. If a button points to account creation, it should say "Join" everywhere.
+**Do** use one CTA per section. Ensure the primary mobile CTA is visible without scrolling.
+**Don't** offer "Start hiring" alongside "Get hired" — consolidate to a single "Join."
 
 ---
 
 ## Photography & Imagery
 
-Photography is the brand’s most human element. Every image should make a craft pro feel seen — **not as a stock photo prop, but as a skilled professional** whose work builds the physical world.
+Photography is the brand's most human element. Every image should make a craft worker feel seen — not as a stock photo prop, but as a skilled professional whose work builds the physical world.
 
-**Visual Archetype:** Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic should blend the accessibility of a government vocational program, the rigor of resource-rich institutions, and the flair of aspirational publications.
+Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic should blend the accessibility of a government vocational program, the rigor of resource-rich institutions, and the flair of aspirational publications.
 
-### The mood in one line
+**Do**
+- Use Adobe Stock only; exclude generative AI
+- Apply multiply blend mode to melt lighter backgrounds into the ground
+- Frame workers at eye level or below; capture candid, dignified work on real job sites; show hands
+- Use earth tones, big scopes, aerial for projects; silhouettes, profiles, hands for stock workers
+- Overlay text in Canvas with 50% Iron filter on the image
 
-Documentary photography. Real sites, real light, real people. Eye level. Hard edges on Canvas or Iron.
+**Don't**
+- Don't use photographic edge masks (feathered edges, vignettes, beveled cutouts)
+- Don't apply color grading, warm toning, or dramatic filters; natural color only
+- Don't overlay symbols, UI elements, or graphs on images
+- Don't use AI-generated images or composite backgrounds; if background is removed, the worker sits directly on Canvas or Iron
+- Don't shoot from above; it creates a power dynamic the brand explicitly rejects
+- Don't use stock photo aesthetics (fake smiles, obvious casting, "safety theater" costumes)
+- Don't use generative AI imagery
 
-### Photography Do / Don’t
+### Iron filter
 
-- **Don’t** use photographic edge masks like feathered edges, vignettes, or beveled cutouts. (Standard hard edges are enforced globally by the layout rules).
-- **Do** apply the `multiply` blend mode to photography to melt lighter backgrounds into the Canvas ground.
-- **Don’t** apply color grading, warm toning, or dramatic filters. Natural color only.
-- **Don’t** overlay text, symbols, UI elements, or graphs on images.
-- **Don’t** use AI-generated images or composite backgrounds. If the background is removed, the worker sits directly on Canvas or Iron.
-- **Do** frame workers at eye level or below.
-- **Don’t** shoot from above — it creates a power dynamic the brand explicitly rejects.
-- **Do** capture candid, dignified workers doing skilled work on real job sites (concrete, steel, dirt). Show their hands.
-- **Don’t** use stock photo aesthetics: no fake smiles, obvious casting, or pristine "safety theater" costumes.
+The Iron filter is for **text legibility only**, not for aesthetic grading of the image itself.
+
+- Apply Iron filter **only when overlaying text** on an image
+- Use at 50% opacity over the image area where text sits
+- Do **not** apply Iron filter to full-width hero images or standalone photography
+- For standalone images, use multiply blend mode only on lighter backgrounds to melt into Canvas
+
+### Collages
+
+Collages are needed for the culture doc and select marketing materials.
+
+**Rules:**
+- Maintain eye-level or below framing across all images in the collage
+- Keep consistent lighting — do not mix golden-hour warmth with midday cool
+- No image should be smaller than 120px in its longest dimension at desktop
+- Use 16px gaps between images on desktop, 8px on mobile
+- Grid layouts only — no overlapping, diagonal cuts, or feathered edges
+- Maintain the Iron filter rule: apply only where text overlays the collage
+
+---
+
+## Website pages
+
+### Header
+- Logo lockup
+- Navigation: Find Work · Our Network · What We Do · Resources · Who We Are · Support
+- Join
+
+### Home Page
+- Hero with revolving trade word + CTA
+- Employer logos (Mortenson, DPR, Brasfield & Gorrie, Suffolk Technologies)
+- Stat callouts (200+ contractors, 72 hours, Free)
+- What to Expect (3-step onboarding)
+- Define Your Role (job listings by title, not company; estimated prices)
+- Live data (split-flap display)
+- Flowchart (how to find your next role)
+- Expand your horizons (top in-demand markets)
+- Testimonial
+- Ask Skillit (FAQ)
+- Newsletter opt-in
+
+### Find Work
+- Search by trade
+- By title, not company
+- Estimated pay
+- Trade categories:
+  - Site & Earthwork
+  - Structural & Metals
+  - Concrete & Masonry
+  - Carpentry & Wood
+  - Mechanical & Piping
+  - Electrical & Systems
+  - Roofing & Envelope
+  - Finishes & Interiors
+  - General Labor & Support
+  - Leadership & Engineering
+
+### Our Network
+- Stat callouts
+- By the numbers
+- How Skillit compares
+- Trusted by top contractors
+- Stakeholders (backers, founders)
+- Press
+
+### What We Do
+- Flowchart (workers → Skillit → companies)
+- One membership
+- Two agents, one platform
+- How Skillit compares
+- 3-Point Chart
+- Key Features
+
+### Resources
+- Blog
+- The Data
+- Success Stories
+- Press
+
+### Who We Are
+- Team → Join us! (careers)
+- Backers
+- Founder
+
+### Support
+- FAQs
+- Contact
+- Worker Standards
 
 ---
 
 ## A note on this document
 
-These guidelines exist to help anyone at Skillit create work that feels unmistakably like Skillit — whether that’s a designer building in Figma, a writer drafting a press release, or an agency partner producing a social asset.
-They are not a substitute for judgment. Rules describe the system. Judgment applies the system to situations the rules didn’t anticipate. When in doubt: go back to the mission. Does this make the worker feel more essential? Does this sound like the smartest person on the job site? If yes, you’re on brand.
-
----
-
-_Skillit Brand Design System · Version 1.0 · July 2026_
-_Brand Design: Chiyo · System: Skillit Narrative & Brand_
-
 ### Responsive Scaling
 
-- Scale display headers down smoothly (using fluid typography or breakpoints) to half their size at mobile viewports.
-- **Maintain the original desktop font-weight** when scaling down headers to preserve hierarchy and punch.
-- Body text does not scale on mobile. Body (`Text-1x`) holds at 16px on small viewports — it is the one tier exempt from the ×0.75 rule, because every reference system holds body copy while adapting display sizes, and iOS Safari auto-zooms form inputs below 16px. UI text (`--text-ui`) likewise holds its desktop size for app legibility and touch targets.
+- **The Rule:** Scale display text sizes down smoothly to a minimum of half the size at mobile breakpoints (e.g., a desktop 128px becomes 64px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
+- **Body Text Exception:** Body text does **not** scale on mobile. `Text-1x` holds at 16px (`Text-1s` = 16px) — see "Why Text-1x does not scale" above. UI text (`--text-ui`) also holds its size; the 44px touch target rule governs app surfaces, not display.
 
 ---
 
 ## Engineering Handoff
 
-The production codebase is **Ruby on Rails 7.2** using **`tailwindcss-rails`** and **importmap** (no npm build pipeline, no Vite or webpack).
-**Token delivery format:**
-
-- Brand tokens are delivered as a `tailwind.config.js` theme extension — not a standalone CSS file.
-- The Google Fonts `<link>` tag for Work Sans belongs in `app/views/layouts/application.html.erb` inside `<head>`.
-- SVGs are inlined as Rails ERB partials (e.g., `_icon_check.html.erb`) so they inherit `currentColor` dynamically.
-- Any values Tailwind cannot express natively (e.g., optical weight offsets for halation compensation) go into `app/assets/stylesheets/application.css` as CSS custom properties.
-  **What not to do:**
-- Do not deliver a standalone HTML file or npm install instructions.
-- Do not reference Vite, webpack, or a JS entrypoint for font loading.
-- Do not use raw hex codes in templates — reference Tailwind config keys only.
-
 ---
 
 ## Resources
 
-The brand is a living system. If you encounter a layout or touchpoint that these rules do not accommodate, do not invent a solution in isolation.
-
 ### Asset Directory
-
-- **Engineering:** `https://github.com/skillit-eng/skillit-bds`
-- **Logos & Icons:** Raw SVGs are available in the `/assets` folder of the BDS repository.
-- **Figma Library:** Maintained internally by the Narrative Team.
-
-> _Technology should make humans more essential, not more expendable._

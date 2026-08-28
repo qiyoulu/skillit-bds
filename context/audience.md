@@ -1,9 +1,10 @@
 # Audience — Skillit BDS
 **Last updated:** 2026-08-17
 ---
-## Load this file when the output is audience-specific.
-Skillit serves two distinct audiences simultaneously. They have different needs, different emotional states, and different relationships with the product. The brand should serve both without flattening either.
-**Default rule:** When in doubt, write for the worker first. The worker is the subject. The contractor is the customer. These are not the same thing.
+## Default rule
+When in doubt, write for the worker first. The worker is the subject. The contractor is the customer. These are not the same thing.
+
+Beyond both of them, the audience Skillit is ultimately speaking to is the American public. The brand tells a story about skilled hands being recognized — about dignity of work, about the tradesperson or tradeswoman whose expertise should mean something. Every surface should pull in that direction.
 ---
 ## Audience 1: Craft workers
 ### Who they are
@@ -67,7 +68,7 @@ Skillit serves two distinct audiences simultaneously. They have different needs,
 - Evaluating market size, team credibility, competitive moat, and unit economics.
 - Familiar with tech but may not know construction deeply.
 ### What they need
-- The market size argument: $600B+ infrastructure build cycle, workforce as the bottleneck.
+- The market size argument: \$600B+ infrastructure build cycle, workforce as the bottleneck.
 - The insight: it’s not a shortage, it’s an access problem — and access problems are solvable with data.
 - The moat: 200K+ verified workers, proprietary skill data, three interlocking systems.
 - Founding credibility: not tech tourists, but builders who built tech.
@@ -79,7 +80,6 @@ Skillit serves two distinct audiences simultaneously. They have different needs,
 - Executives speak for themselves in investor contexts — use his voice directly.
 ---
 ## Audience 4: Press (secondary)
-### Who they are
 - Journalists covering construction-tech, future of work, AI, and the physical economy.
 - Looking for a story, not a press release.
 ### What they need

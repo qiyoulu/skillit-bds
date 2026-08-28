@@ -16,13 +16,28 @@ Use this file to calibrate tone before generating any Skillit copy. Read a few e
 > Only 1 in 20 workers are missing from the labor force, yet 9 out of 10 employers can’t find them. Skillit’s data-driven platform makes craft labor more visible, routable, and hireable at scale.
 **Section 3 — The CTA (approved copy):**
 > Trusted by the largest contractors in the world, vetted craft pros in our growing network get hired 10x as fast. Create a free profile today.
-### CTAs
-| Wrong | Right |
+## CTAs
+|| Wrong | Right |
 |---|---|
-| “Learn more about how Skillit can help you find workers.” | “See the network.” |
-| “Get started with Skillit today!” | “Sign up.” |
-| “Click here to explore our platform.” | “Get hired.” |
-| “Request a demo to learn more.” | “Talk to us.” |
+| "Learn more about how Skillit can help you find workers." | "See the network." |
+| "Get started with Skillit today!" | "Sign up." |
+| "Click here to explore our platform." | "Get hired." |
+| "Request a demo to learn more." | "Talk to us." |
+
+### Subheadings — sentence case
+All subheadings use sentence case. No title case, no all-caps.
+|| Wrong | Right |
+|---|---|
+| "How It Works" | "How it works" |
+| "Why Craft Pros Choose Skillit" | "Why craft pros choose Skillit" |
+| "The Future Of Construction Hiring" | "The future of construction hiring" |
+
+### Punctuation
+No exclamation marks. A period is enough. Exclamation marks signal marketing enthusiasm — the voice is calm, direct, and never over-eager.
+|| Wrong | Right |
+|---|---|
+| "Join the network today!" | "Join the network." |
+| "See the workers you've been missing!" | "See the workers you've been missing." |
 ---
 ## Worker-facing (app UI)
 ### Onboarding
@@ -103,3 +118,30 @@ Use this file to calibrate tone before generating any Skillit copy. Read a few e
 - “Ecosystem”
 - “Holistic approach”
 - “AI-powered” as a lead descriptor (it’s a footnote, not the headline)
+- Banned words: Serve, Represent, Proud, Customer, Product (when referring to people), Worker (in copy — see exception in brand-voice.md), Marketplace.
+- "This, not that" as a sentence structure. Listicle rhythm, not a point.
+  - *Wrong:* "We don't just connect contractors with workers — we connect the right workers with the right jobs."
+  - *Right:* "Skillit gets the right worker to the right job site."
+
+---
+
+## Using quotes for emotional weight
+When a third-party voice says it better than we can, quote them. The quotation carries the point — it doesn't replace our own argument.
+
+### Hero / section copy
+|| Wrong | Right |
+|---|---|
+| "Craft pros deserve better tools." | _"I've been running crews for twenty years. I know what a good ironworker looks like the minute they walk on site."_ — Contractor, Texas Gulf Coast *(illustrative — replace with a real quote for published copy)* |
+| "Our platform is easy to use." | _"It took me five minutes to post a job. I had three applicants by lunch."_ — Hiring manager, Nashville *(illustrative — replace with a real quote for published copy)* |
+
+### Blog / editorial
+|| Wrong | Right |
+|---|---|
+| "Workers feel undervalued." | _"I don't want a career. I want to be able to feed my family doing something I'm good at."_ — Carpenter, Portland *(illustrative — replace with a real quote for published copy)* |
+
+### Rules of thumb
+- Keep quotes short — one to two sentences on the page.
+- Attribute every quote: name and role, or "worker, city" when anonymity is needed.
+- Do not fabricate quotes for published copy. The examples above show the *shape* a quote should take; swap in a real, attributable quote before anything ships.
+- Do not put Skillit's argument in someone else's mouth. The quote illustrates the point; it is not the point.
+- Do not over-quote. One strong quotation per section is usually enough.

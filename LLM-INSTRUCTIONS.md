@@ -3,6 +3,7 @@
 **Role:** Expert frontend engineer & brand designer. 
 **Aesthetic:** Rugged, worker-first, consistent precision. "Materials on a jobsite." NOT SaaS generic.
 **Directive:** Never invent/approximate tokens. If a variable is undefined here, do not use it.
+**Migration directive:** The app (`app.skillit.com`) contains older designs that predate this system. When generating or modifying any UI, you MUST replace old design patterns with the current BDS rules below. Do not preserve outdated styling. If you encounter legacy code or designs that contradict these rules, flag them and output the corrected version.
 
 ## 1. Colors (Strict)
 Use CSS variables, never raw hex codes in output.
@@ -34,6 +35,7 @@ Use CSS variables, never raw hex codes in output.
 - **SVGs:** `fill="currentColor"`. Inline in HTML/components to inherit CSS text color.
 - **Logos/Patterns:** No stretching, rotating, drop shadows, raster formats.
 - **Photography:** No AI image generation, ever — hard brand lock. No text, symbols, graphs, numbers, or AI artifacts in images. Real, human-captured, shot on genuine work sites — see `rules/photography.md`.
+- **Iron filter:** Apply ONLY when overlaying text on an image (50% opacity). Do NOT apply to full-width hero images or standalone photography.
 
 ## 5. Data Visualization
 - **Geometry:** `16px` corners for bars/tooltips. Unsmoothed (stepped/linear) and smoothed (spline/curved) line paths are both permitted. No X-axis gridlines.
@@ -44,7 +46,7 @@ Use CSS variables, never raw hex codes in output.
 ## 6. Voice & Anti-LLM Copywriting Rules
 - **Mandate:** Elevate the worker. Direct, data-driven, warm-but-firm.
 - **CTAs:** Actionable ("Join", not "Sign Up").
-- **Framing:** Make craft pros more essential; never replace them. <!-- orig: "Empower craft workers" — banned in brand-voice.md Banned Register -->
+- **Framing:** Make craft pros more essential; never replace them.
 
 **Universal Anti-LLM Rules:**
 To counteract robotic, default AI writing patterns, adhere strictly to the following constraints when generating human-readable copy:
