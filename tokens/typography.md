@@ -112,7 +112,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-4x-sm:             3rem;  /* 48px — mobile variant (was 2rem/32px) */
   /* Text-3x */
   --text-3x:                3rem;
-  --text-3x-weight:         600;
+  --text-3x-weight:         550;
   --text-3x-weight-bold:    700;
   --text-3x-leading:        1.10;
   --text-3x-tracking:       -0.03em;
@@ -128,13 +128,13 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
   --text-2x-sm:             1.5rem; /* 24px — mobile variant (was 1rem/16px) */
   --text-2x-mono:            1.8125rem; /* 29px — confirmed Figma value, round(32 * 0.9) */
   /* Text-1.5x */
-  --text-1.5x:              1.5rem;
-  --text-1.5x-weight:       500;
-  --text-1.5x-weight-bold:  600;
-  --text-1.5x-leading:      1.30;
-  --text-1.5x-tracking:     -0.01em;
-  --text-1.5x-print:        18pt;
-  --text-1.5x-sm:           1.125rem; /* 18px — mobile variant */
+  --text-1\.5x:              1.5rem;
+  --text-1\.5x-weight:       450;
+  --text-1\.5x-weight-bold:  600;
+  --text-1\.5x-leading:      1.30;
+  --text-1\.5x-tracking:     -0.01em;
+  --text-1\.5x-print:        18pt;
+  --text-1\.5x-sm:           1.125rem; /* 18px — mobile variant */
   /* Text-1x */
   --text-1x:                1rem;
   --text-1x-weight:         400;

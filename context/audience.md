@@ -70,7 +70,7 @@ Beyond both of them, the audience Skillit is ultimately speaking to is the Ameri
 ### What they need
 - The market size argument: \$600B+ infrastructure build cycle, workforce as the bottleneck.
 - The insight: it’s not a shortage, it’s an access problem — and access problems are solvable with data.
-- The moat: 200K+ verified workers, proprietary skill data, three interlocking systems.
+- The moat: 230,000+ verified workers, proprietary skill data, three interlocking systems.
 - Founding credibility: not tech tourists, but builders who built tech.
 - The arc: Act 1 (construction) → Act 2 (training pathways) → Act 3 (every physical industry).
 ### How to write for investors

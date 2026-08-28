@@ -16,18 +16,18 @@
   --color-link: #007CA6;          /* Painter's Tape — link. underlined = link */
 
   /* hover states — × Canvas + 5% Iron */
-  --color-background-hover: #EAE6DE;       /* Canvas hover */
+  --color-background-hover: #EAE5DF;       /* Canvas hover */
   --color-surface-hover: #EFEDE9;  /* Plaster hover */
   --color-foreground-hover: #212C31;       /* Iron hover */
-  --color-primary-hover: #E06718;  /* Traffic Cone hover */
-  --color-warning-hover: #EEA51A;  /* Hard Hat hover */
-  --color-error-hover: #BB0F2A;    /* Toolbox hover */
+  --color-primary-hover: #E06818;  /* Traffic Cone hover */
+  --color-warning-hover: #EEA41A;  /* Hard Hat hover */
+  --color-error-hover: #BC0E2A;    /* Toolbox hover */
   --color-success-hover: #305F38;  /* Bottle Glass hover */
   --color-link-hover: #007398;     /* Painter's Tape hover */
 
   /* spacing — 4px base unit, rem */
   --space-1: 0.25rem;             /* 4px  */
-  --space-1.5: 0.375rem;          /* 6px  */
+  --space-1\.5: 0.375rem;          /* 6px  */
   --space-2: 0.5rem;              /* 8px  */
   --space-3: 0.75rem;             /* 12px */
   --space-4: 1rem;                /* 16px */
@@ -79,12 +79,12 @@
   --text-2x-leading: 1.20;
   --text-2x-tracking: -0.02em;
   --text-2x-sm: clamp(1.5rem, 1.2928rem + 0.884vw, 2rem);
-  --text-1.5x: 1.5rem;             /* Text-1.5x, mobile: clamp(1.125rem, 0.97rem + 0.66vw, 1.5rem) */
-  --text-1.5x-weight: 450;
-  --text-1.5x-weight-bold: 600;
-  --text-1.5x-leading: 1.30;
-  --text-1.5x-tracking: -0.01em;
-  --text-1.5x-sm: clamp(1.125rem, 0.9696rem + 0.663vw, 1.5rem);
+  --text-1\.5x: 1.5rem;             /* Text-1.5x, mobile: clamp(1.125rem, 0.97rem + 0.66vw, 1.5rem) */
+  --text-1\.5x-weight: 450;
+  --text-1\.5x-weight-bold: 600;
+  --text-1\.5x-leading: 1.30;
+  --text-1\.5x-tracking: -0.01em;
+  --text-1\.5x-sm: clamp(1.125rem, 0.9696rem + 0.663vw, 1.5rem);
   --text-1x: 1rem;                /* Text-1x, small viewport: 0.75rem, bolded: 600 */
   --text-1x-weight: 400;
   --text-1x-weight-bold: 600;
@@ -114,10 +114,10 @@
   --text-mono-2x-weight: 500;
   --text-mono-2x-leading: 1.20;
   --text-mono-2x-tracking: -0.02em;
-  --text-mono-1.5x: 1.375rem;
-  --text-mono-1.5x-weight: 450;
-  --text-mono-1.5x-leading: 1.30;
-  --text-mono-1.5x-tracking: -0.01em;
+  --text-mono-1\.5x: 1.375rem;
+  --text-mono-1\.5x-weight: 450;
+  --text-mono-1\.5x-leading: 1.30;
+  --text-mono-1\.5x-tracking: -0.01em;
   --text-mono-1x: 0.875rem;
   --text-mono-1x-weight: 400;
   --text-mono-1x-leading: 1.40;

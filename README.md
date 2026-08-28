@@ -89,5 +89,5 @@ skillit-bds/
 | `rules/data-viz.md` | Complete |
 | `rules/photography.md` | Complete |
 | `context/` (Narrative, Audience) | Complete |
-| Icon System (core 12, in `assets/icons/`) | Complete — arrow up/down pending |
+| Icon System (core 12, in `assets/icons/`) | Complete — arrow up/down are derived variants |
 | Dark Mode Tokens | Planned for Phase II |

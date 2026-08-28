@@ -1,11 +1,11 @@
 # Brand Design System (BDS) — Skillit
 
-## **Version 1.1 · August 2026**
+## **Version 0.9-beta · August 2026**
 
 ## Table of Contents
 
 - [Brand Design System (BDS) — Skillit](#brand-design-system-bds--skillit)
-  - [**Version 1.1 · August 2026**](#version-11--august-2026)
+  - [**Version 0.9-beta · August 2026**](#version-09-beta--august-2026)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [At a Glance](#at-a-glance)
@@ -501,7 +501,7 @@ Every chart must include:
 
 ### Bar graphs
 
-- Accommodate **gradient fills** — use Traffic Cone at 100% to 40% opacity top-to-bottom for emphasis bars
+- Use flat fills only. For overlapping series, use equally stepped opacity levels: Iron or Traffic Cone at 100%, 60%, and 30%.
 - **Annotations** — callout labels in Plex Mono, 14px, Iron, with a thin Iron line pointing to the data point
 - **Legend** — placed at the bottom, horizontal layout, Plex Mono 14px
 - Grouped bars: use Iron at 100%, 70%, 50% opacity to disambiguate series
@@ -634,7 +634,7 @@ Lean into the archetype of the independent, strong, hands-on do-er. The aestheti
 
 **Do**
 - Use Adobe Stock only; exclude generative AI
-- Apply multiply blend mode to melt lighter backgrounds into the ground
+- Apply multiply blend mode only when a photograph sits on a light background and needs to melt into the Canvas ground
 - Frame workers at eye level or below; capture candid, dignified work on real job sites; show hands
 - Use earth tones, big scopes, aerial for projects; silhouettes, profiles, hands for stock workers
 - Overlay text in Canvas with 50% Iron filter on the image
@@ -745,7 +745,7 @@ Collages are needed for the culture doc and select marketing materials.
 
 ### Responsive Scaling
 
-- **The Rule:** Scale display text sizes down smoothly to a minimum of half the size at mobile breakpoints (e.g., a desktop 128px becomes 64px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
+- **The Rule:** Scale display text sizes down smoothly to 0.75x at mobile breakpoints (e.g., a desktop 128px becomes 96px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
 - **Body Text Exception:** Body text does **not** scale on mobile. `Text-1x` holds at 16px (`Text-1s` = 16px) — see "Why Text-1x does not scale" above. UI text (`--text-ui`) also holds its size; the 44px touch target rule governs app surfaces, not display.
 
 ---

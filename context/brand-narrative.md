@@ -60,7 +60,7 @@ Three words. No BS. The tagline carries the promise — when a worker joins Skil
 ### Act 1: Access (now — 2027)
 **"Find the workers who already exist."**
 - The gap is an access problem. Better data closes it.
-- Proof: Mortenson, DPR, Kiewit adoption. 200K+ workers in network.
+- Proof: Mortenson, DPR, Kiewit adoption. 230,000+ workers in network.
 - Brand emphasis: *Visible, routable, hireable.*
 ### Act 2: Solve the shortage (2027–2029)
 **"Grow the workforce using AI."**

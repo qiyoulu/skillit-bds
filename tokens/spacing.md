@@ -108,7 +108,7 @@ Buttons and interactive cards should use **double the standard horizontal paddin
 ```css
 :root {
   --space-1:  0.25rem;
-  --space-1.5: 0.375rem;
+   --space-1\.5: 0.375rem;
   --space-2:  0.5rem;
   --space-3:  0.75rem;
   --space-4:  1rem;

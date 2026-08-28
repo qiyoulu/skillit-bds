@@ -43,7 +43,7 @@ module.exports = {
         '4x': 'var(--text-4x)',
         '3x': 'var(--text-3x)',
         '2x': 'var(--text-2x)',
-        '1.5x': 'var(--text-1.5x)',
+         '1.5x': 'var(--text-1\\.5x)',
         '1x': 'var(--text-1x)',
         ui: 'var(--text-ui)',
         'ui-lg': 'var(--text-ui-lg)',
@@ -55,7 +55,7 @@ module.exports = {
       },
       spacing: {
         '1': 'var(--space-1)',
-        '1.5': 'var(--space-1.5)',
+         '1.5': 'var(--space-1\\.5)',
         '2': 'var(--space-2)',
         '3': 'var(--space-3)',
         '4': 'var(--space-4)',

@@ -63,7 +63,7 @@ This is not a rule to eliminate periods everywhere. It is a principle: choose th
   - Do not use the "this, not that" sentence structure. It reads as a listicle, not a point.
 
 ## Register by Channel
-- **Website:** Confident, proof-heavy. Short/medium sentences. Second/third person. Imperative CTAs ("Sign up").
+- **Website:** Confident, proof-heavy. Short/medium sentences. Second/third person. Imperative CTA ("Join").
 - **Insights (formerly Blog):** Authoritative, punchy, grounded. Focus on tangible realities. No individual bylines.
 - **Worker-facing (App/Comms):** Simple, respectful, very short. Written by someone who works with their hands.
 - **Contractor-facing:** Precise, capable, no-nonsense. Data-driven.

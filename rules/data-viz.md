@@ -16,6 +16,7 @@
 - **Font:** Work Sans.
 - **Numbers:** `font-variant-numeric: tabular-nums;` (strict requirement).
 - **Labels:** Sentence-case, `Text-1x/2x`, right-aligned Y-axis values.
+- **Headers and subheaders:** Use equally stepped Iron opacity levels: 100% for headers and 60% for subheaders. When a Traffic Cone highlight is needed, use the same 100% / 60% / 30% steps rather than a gradient.
 
 ## 3. Data Color Palette (Monochromatic & Semantic)
 - **The Baseline (Context):** All secondary or background data uses a single flat shade of Iron. Do not use varying shades of Iron for standard side-by-side bar charts.

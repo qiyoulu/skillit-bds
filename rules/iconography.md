@@ -33,6 +33,9 @@ The following 12 icons constitute the core structural set. Do not invent new met
 12. `chevron-down.svg` (Dropdown/expand)
 
 `arrow-up.svg` and `arrow-down.svg` are rotations of `arrow-right.svg` — derived variants, not separate core icons (listed as Complete in `components/ui.md`; Figma exports can replace them later).
+
+### Secondary brand marks
+Platform marks in `assets/icons/` (`facebook.svg`, `instagram.svg`, `linkedin.svg`, `x.svg`, and `youtube.svg`) are approved social marks, not core interface icons. Their external brand geometry is authoritative and is exempt from the Skillit 10×10 grid and no-bezier construction rules. They must still use `fill="currentColor"` and must not be altered.
 ## 4. Implementation Rules
 - **Coloring:** Icons inherit their color from the parent text element (`fill="currentColor"`), allowing them to automatically adapt to their UI context (Iron on Canvas, Canvas on Traffic Cone, etc.).
 - **Inline SVGs:** To unlock the power of `currentColor`, icons should be inlined directly into the HTML (or handled via modern component frameworks) rather than loaded as static `<img>` tags.

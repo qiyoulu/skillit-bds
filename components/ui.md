@@ -5,7 +5,7 @@
 - All components use tokens from `tokens/color.md`, `tokens/typography.md`, and `tokens/spacing.md`. Never hardcode values.
 - Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
 - Tactile padding rule: buttons and interactive cards use generous horizontal padding — double the standard. This is a non-negotiable brand rule.
-- Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
+- Every interactive element should have a visible focus state (2px solid foreground hover, 2px offset).
 - Touch targets minimum 44px in both dimensions (app).
 ---
 ## Buttons
@@ -31,7 +31,7 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
   filter: brightness(0.92);
 }
 .btn-primary:focus-visible {
-  outline: 2px solid var(--color-foreground);   /* Iron ring — neutral, 12.4:1 on Canvas */
+   outline: 2px solid var(--color-foreground-hover);   /* Iron hover ring — neutral */
   outline-offset: 2px;
 }
 ```
@@ -80,7 +80,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   border-bottom: none;                      /* No borders */
 }
 .nav-inner {
-  max-width: 1440px;
+   max-width: var(--max-width-content);
   margin: 0 auto;
   padding: 0 var(--space-128);             /* 128px side margins aligning with main content */
   height: 64px;
@@ -113,7 +113,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   flex-direction: column;
   gap: var(--space-8);               /* 32px — mobile dropdown links */
   padding: var(--space-16) var(--space-128);
-  border-top: 1px solid rgba(35, 47, 54, 0.12);
+   border-top: 1px solid var(--color-foreground);
 }
 .mobile-dropdown .nav-link { font-size: clamp(24px, 3vw, 32px); font-weight: 500; }
 .nav-link {
@@ -157,12 +157,12 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground,
   width: 100%;
 }
 .input:focus {
-  outline: 2px solid var(--color-foreground);      /* Iron focus ring — visible, neutral */
+   outline: 2px solid var(--color-foreground-hover);      /* Iron hover focus ring — visible, neutral */
   outline-offset: 2px;
   border-bottom-color: var(--color-foreground);    /* line stays Iron */
 }
 .input::placeholder {
-  color: rgba(35, 47, 54, 0.5);            /* Iron at 50% */
+   color: var(--color-foreground-hover);
 }
 ```
 **Labels:** Above the field, not inside (placeholder is not a label). `--text-1x` size, `--weight-medium`, Iron.
@@ -209,12 +209,12 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
 }
 /* Interactive cards: hover state is a subtle background shift (10% Iron over Plaster). */
 .card-interactive:hover {
-  background-color: rgba(35, 47, 54, 0.04);
+   background-color: var(--color-surface-hover);
 }
-/* Active / selected state — Iron text on Traffic Cone (Canvas on Cone is banned, 2.83:1) */
+/* Active / selected state — inverted Iron surface with Canvas text */
 .card-interactive[aria-selected="true"] {
-  background-color: var(--color-primary);
-  color: var(--color-foreground);
+   background-color: var(--color-foreground);
+   color: var(--color-background);
 }
 @media (max-width: 768px) {
   .card { padding: var(--space-8); }        /* 32px — tactile mobile */
@@ -241,17 +241,16 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 a:focus-visible {
-  outline: 2px solid var(--color-foreground);     /* Iron ring — focus rings are always Iron (color.md) */
+   outline: 2px solid var(--color-foreground-hover);     /* Iron hover ring — neutral */
   outline-offset: 2px;
   border-radius: 0;
 }
 ```
 **On Iron (dark) backgrounds:** Use Canvas underlined text instead of Painter's Tape — Painter's Tape does not pass contrast on Iron.
 ## Photography & Media
-All photography utilizes a universal multiply blend mode to integrate seamlessly with the Canvas ground.
+Photography uses multiply only when placed on a light background and intended to integrate with the Canvas ground.
 ```css
-img.photo,
-.photo-container img {
+.photo-on-light-background {
   mix-blend-mode: multiply;
   display: block;
   width: 100%;
@@ -268,7 +267,7 @@ The footer anchors the bottom of the page using an inverted Iron surface, comple
   padding: var(--space-128);
 }
 .footer-inner {
-  max-width: 1440px;
+   max-width: var(--max-width-content);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -281,7 +280,7 @@ The footer anchors the bottom of the page using an inverted Iron surface, comple
   gap: var(--space-16);
 }
 .footer-copyright {
-  color: rgba(250, 247, 243, 0.6);        /* Canvas at 60% */
+   color: var(--color-background-hover);
 }
 .footer-columns {
   display: flex;
@@ -308,7 +307,7 @@ All timestamps, IDs, distances, file sizes, and numeric data strings use the mon
 .meta {
   font-family: var(--font-mono);
   font-size: var(--text-mono);            /* 0.875rem */
-  color: rgba(35, 47, 54, 0.6);          /* Iron at 60% */
+   color: var(--color-foreground-hover);
   letter-spacing: 0.02em;
 }
 ```
