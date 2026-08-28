@@ -24,12 +24,10 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
   letter-spacing: 0;
   cursor: pointer;
 }
-/* Hover for ALL filled buttons (any color: Cone, Toolbox, Hard Hat, Bottle Glass, Painter's Tape):
-   filter: brightness(0.92) — darkens the button without fading, one treatment, no per-color hover hexes. */
-.btn-primary:hover,
-.btn-destructive:hover {
-  filter: brightness(0.92);
-}
+.btn-primary:hover { background-color: var(--color-primary-hover); }
+.btn-destructive:hover { background-color: var(--color-error-hover); }
+.btn-warning:hover { background-color: var(--color-warning-hover); }
+.btn-success:hover { background-color: var(--color-success-hover); }
 .btn-primary:focus-visible {
    outline: 2px solid var(--color-foreground-hover);   /* Iron hover ring — neutral */
   outline-offset: 2px;
@@ -37,12 +35,12 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
 ```
 ### Button hover
 
-Filled buttons use `filter: brightness(0.92)` on hover — darkens the button without fading it toward the background, and stays within the single-color-per-button rule. No secondary button class exists in the current system.
+Filled buttons use their matching per-color hover token. No secondary button class exists in the current system.
 
 ### CTA Button (inverted)
-For primary actions inside the Iron `surface-inverted` blocks. Iron text on Traffic Cone, same as the standard primary button — consistent across all surfaces.
+For primary actions inside structured blocks. Iron text on Traffic Cone, same as the standard primary button — consistent across all surfaces.
 ```css
-.surface-inverted .btn-primary {
+.surface-structured .btn-primary {
   background-color: var(--color-primary);   /* Traffic Cone */
   color: var(--color-foreground);                   /* Iron text */
 }
@@ -207,22 +205,22 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
 .card-interactive {
   cursor: pointer;
 }
-/* Interactive cards: hover state is a subtle background shift (10% Iron over Plaster). */
+/* Interactive cards: hover state uses the Plaster hover token. */
 .card-interactive:hover {
    background-color: var(--color-surface-hover);
 }
-/* Active / selected state — inverted Iron surface with Canvas text */
+/* Active / selected state — Plaster hover surface with Iron text */
 .card-interactive[aria-selected="true"] {
-   background-color: var(--color-foreground);
-   color: var(--color-background);
+   background-color: var(--color-surface-hover);
+   color: var(--color-foreground);
 }
 @media (max-width: 768px) {
   .card { padding: var(--space-8); }        /* 32px — tactile mobile */
 }
-/* Inverted surface (Dark mode block) */
-.surface-inverted {
-  background-color: var(--color-foreground);       /* Iron */
-  color: var(--color-background);                  /* Canvas */
+/* Structured surface */
+.surface-structured {
+  background-color: var(--color-surface);         /* Plaster */
+  color: var(--color-foreground);                 /* Iron */
   border: none;
   border-radius: 16px;
   padding: var(--space-8);                 /* Generous padding for heavy blocks */
@@ -246,7 +244,7 @@ a:focus-visible {
   border-radius: 0;
 }
 ```
-**On Iron (dark) backgrounds:** Use Canvas underlined text instead of Painter's Tape — Painter's Tape does not pass contrast on Iron.
+**On non-Skillit dark backgrounds:** Use Canvas underlined text instead of Painter's Tape — Painter's Tape does not pass contrast on dark surfaces.
 ## Photography & Media
 Photography uses multiply only when placed on a light background and intended to integrate with the Canvas ground.
 ```css
@@ -259,11 +257,11 @@ Photography uses multiply only when placed on a light background and intended to
 ```
 ---
 ## Footer
-The footer anchors the bottom of the page using an inverted Iron surface, completing the structural framing of the layout. It uses a flush-left vertical stack for the brand and a multi-column grid for navigation, following the structural simplicity of Anthropic.com.
+The footer anchors the bottom of the page using the Canvas ground and Iron text. It uses a flush-left vertical stack for the brand and a multi-column grid for navigation.
 ```css
 .footer {
-  background-color: var(--color-foreground);       /* Iron */
-  color: var(--color-background);                  /* Canvas */
+  background-color: var(--color-background);      /* Canvas */
+  color: var(--color-foreground);                 /* Iron */
   padding: var(--space-128);
 }
 .footer-inner {
@@ -299,7 +297,7 @@ The footer anchors the bottom of the page using an inverted Iron surface, comple
   color: var(--color-primary);             /* Traffic Cone hover */
 }
 ```
-The logo in the footer should be `lockup.svg` with `color: var(--color-background)` on the container so the `currentColor` fill renders Canvas on the Iron background. On smaller viewports, this hides and is replaced by `mark.svg` the same way.
+The logo in the footer should be `lockup.svg` with `color: var(--color-foreground)` on the container. On smaller viewports, this hides and is replaced by `mark.svg` the same way.
 ---
 ## Metadata and data strings
 All timestamps, IDs, distances, file sizes, and numeric data strings use the monospace stack.

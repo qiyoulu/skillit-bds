@@ -6,6 +6,7 @@ const files = {
   json: read('tokens/tokens.json5'),
   css: read('tokens/tokens.css'),
   color: read('tokens/color.md'),
+  dataViz: read('rules/data-viz.md'),
   layout: read('rules/layout.md'),
   components: read('components/ui.md'),
   manual: read('HUMAN-INSTRUCTIONS.md'),
@@ -31,8 +32,12 @@ assert(!files.css.includes('--space-1.5:'));
 assert(!files.css.includes('--text-1.5x:'));
 assert(files.layout.includes('Content max-width: `1200px`'));
 assert(files.components.includes('max-width: var(--max-width-content)'));
+assert(!files.components.includes('brightness(0.92)'));
+assert(!files.components.includes('surface-inverted'));
 assert(files.manual.includes('Version 0.9-beta'));
 assert(files.manual.includes('0.75x at mobile breakpoints'));
+assert(files.manual.includes('100% / 50% for two steps'));
+assert(files.dataViz.includes('100% / 67% / 33% for three'));
 assert(files.readme.includes('0.9-beta'));
 
 console.log('Skillit BDS validation passed');

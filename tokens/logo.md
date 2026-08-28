@@ -36,8 +36,8 @@ Because horizontal space is at an absolute premium on mobile viewports (e.g., iP
 | Variant                             | Contrast | Permitted | Use                                             |
 | ----------------------------------- | -------- | --------- | ----------------------------------------------- |
 | Iron on Canvas                | 12.84:1  | Yes       | Default — all light backgrounds                 |
-| Canvas on Iron                | 12.84:1  | Yes       | Dark backgrounds, inverted surfaces             |
-| Iron on Traffic Cone                    | 4.54:1   | Yes       | Traffic Cone backgrounds only — marginal, use sparingly |
+| Canvas on Iron                | 12.84:1  | No        | Iron is not a background surface                |
+| Iron on Traffic Cone                    | 4.54:1   | Yes       | Button backgrounds only — marginal, use sparingly |
 | Single color (Iron or Canvas) | —        | Yes       | Print, embroidery, engraving                    |
 | Canvas on Traffic Cone                    | 2.83:1   | No        | Fails WCAG AA                                   |
 | Traffic Cone on Canvas                    | 2.83:1   | No        | Fails WCAG AA                                   |

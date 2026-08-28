@@ -19,7 +19,7 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 1. **No drop shadows.** Images do not cast shadows onto the background. They sit directly on the surface.
 2. **No edge fading or blending.** Images do not fade into the background color. Hard cut only.
 3. **No color grading filters.** No Instagram-style color treatment. No dramatic color shifts. Natural color only.
-4. **No composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on a flat brand color (`--color-background` Canvas or `--color-foreground` Iron) with no environment invented behind them.
+4. **No composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on the Canvas ground (`--color-background`) with no environment invented behind them.
 5. **Conditional Blend Mode:** Use `multiply` (`mix-blend-mode: multiply;`) only when a photograph sits on a light background and is intended to melt into the Canvas ground. Do not use it on standalone or full-width photography.
 ---
 ## Subject: worker portraits

@@ -200,8 +200,8 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 | Variant              | Contrast | Use                                                     |
 | -------------------- | -------- | ------------------------------------------------------- |
 | Iron on Canvas       | 12.84:1  | Default — all light backgrounds                         |
-| Canvas on Iron       | 12.84:1  | Dark backgrounds, inverted surfaces                     |
-| Iron on Traffic Cone | 4.54:1   | Traffic Cone backgrounds only — marginal, use sparingly |
+| Canvas on Iron       | 12.84:1  | Not used — Iron is not a background surface             |
+| Iron on Traffic Cone | 4.54:1   | Button backgrounds only — marginal, use sparingly      |
 | Single color outline | —        | Print, embroidery, engraving only                       |
 
 Canvas on Traffic Cone and Traffic Cone on Canvas both fail WCAG AA (2.83:1) and are not permitted.
@@ -374,7 +374,7 @@ Work Sans is a **variable font** with a continuous weight axis (100–900). Use 
 **Halation correction:** Light text on a dark background creates an optical illusion that makes letterforms appear heavier than they are. There are two techniques to reduce this:
 
 - **On light backgrounds (Canvas):** Use standard weights (400, 500, 600, 700). Canvas is already an off-white (`#FAF7F3`) rather than pure white, which naturally reduces irradiation against dark type.
-- **On dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass):** Subtract ~25 units to use interpolated weights (375, 475, 575, 675). The goal is to make the text read as the same apparent weight as it would on a light background.
+- **On non-Skillit dark backgrounds:** Subtract ~25 units to use interpolated weights (375, 475, 575, 675). Skillit layout surfaces remain Canvas or Plaster.
 
 ### Typographic Punctuation
 
@@ -426,7 +426,7 @@ Every layout uses four layers, in order of elevation and visual weight:
 
 1. **Ground** — Canvas. The default background for all pages and apps.
 2. **Lifted Surface** — Plaster. Used for cards and isolated containers. Because drop shadows and borders are banned, Plaster separates purely through stark optical brightness and generous padding.
-3. **Structure & Inversion** — Iron. Used for all text and structural lines. When massive visual weight or strict sectioning is needed, Iron inverts to become a dark background surface (with Canvas text).
+3. **Structure** — Iron. Used for all text and structural lines. It does not become a layout background surface.
 4. **Signal** — Traffic Cone. One dominant accent per layout section.
 
 ### Rules
@@ -501,10 +501,10 @@ Every chart must include:
 
 ### Bar graphs
 
-- Use flat fills only. For overlapping series, use equally stepped opacity levels: Iron or Traffic Cone at 100%, 60%, and 30%.
+- Use flat fills only. For N opacity steps, distribute values evenly from 100% down to 100% / N: 100% / 50% for two steps, 100% / 67% / 33% for three steps. Apply the same rule to Iron and Traffic Cone.
 - **Annotations** — callout labels in Plex Mono, 14px, Iron, with a thin Iron line pointing to the data point
 - **Legend** — placed at the bottom, horizontal layout, Plex Mono 14px
-- Grouped bars: use Iron at 100%, 70%, 50% opacity to disambiguate series
+- Grouped bars: use equally stepped Iron opacity, such as 100% / 67% / 33% for three series, to disambiguate series
 
 ### Flowcharts
 
@@ -512,7 +512,7 @@ Every chart must include:
 - Node backgrounds: Plaster with 16px corners
 - Connector lines: Iron, 2px weight, 16px corners on turns
 - Decision diamonds: Hard Hat fill with Iron text
-- CTA nodes: Traffic Cone fill with Canvas text
+- CTA nodes: Traffic Cone fill with Iron text
 
 ### Banned Elements
 
@@ -643,7 +643,7 @@ Lean into the archetype of the independent, strong, hands-on do-er. The aestheti
 - Don't use photographic edge masks (feathered edges, vignettes, beveled cutouts)
 - Don't apply color grading, warm toning, or dramatic filters; natural color only
 - Don't overlay symbols, UI elements, or graphs on images
-- Don't use AI-generated images or composite backgrounds; if background is removed, the worker sits directly on Canvas or Iron
+- Don't use AI-generated images or composite backgrounds; if background is removed, the worker sits directly on Canvas
 - Don't shoot from above; it creates a power dynamic the brand explicitly rejects
 - Don't use stock photo aesthetics (fake smiles, obvious casting, "safety theater" costumes)
 - Don't use generative AI imagery

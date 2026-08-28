@@ -176,7 +176,7 @@ All metadata (timestamps, worker IDs, distances, statistics) and code blocks (in
 - Maximum line length for body: 70 characters (`max-width: var(--max-width-text)`).
 ### Variable Font & Optical Balancing
 Work Sans is implemented as a variable font (`wght@100..900`).
-- **Optical Balancing:** Light text on a dark background creates an optical illusion (halation) making letterforms appear heavier. Canvas is already off-white (`#FAF7F3`) rather than pure white, which reduces irradiation naturally. For text on dark backgrounds (Iron, Traffic Cone, Toolbox, Bottle Glass), subtract approximately 25 units of font weight to generate an interpolated weight — e.g., `font-weight: var(--weight-regular-dark);` (375) instead of 400. Adjust by eye; this is a heuristic, not a fixed rule.
+- **Optical Balancing:** If text must appear on a non-Skillit dark surface, subtract approximately 25 units of font weight to account for halation. Skillit layout surfaces remain Canvas or Plaster. Adjust by eye; this is a heuristic, not a fixed rule.
 - **Micro-interactions:** Use CSS transitions on the `font-weight` axis (e.g., `400` to `600`) for fluid hover states on navigation links and buttons, rather than abrupt jumps.
 ### Monospace / metadata
 - Use `--font-mono` for: timestamps, worker IDs, distances, file sizes, any numeric data string.

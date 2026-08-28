@@ -40,7 +40,7 @@ Use CSS variables, never raw hex codes in output.
 ## 5. Data Visualization
 - **Geometry:** `16px` corners for bars/tooltips. Unsmoothed (stepped/linear) and smoothed (spline/curved) line paths are both permitted. No X-axis gridlines.
 - **Typography:** `font-variant-numeric: tabular-nums` (mandatory). Right-align Y-axis.
-- **Colors:** Monochromatic scale using Iron opacities (100%, 60%, 30%). Traffic Cone allowed 1x for absolute focal highlight. NEVER use semantic colors (Blue, Green, Yellow, Red) for standard categories.
+- **Colors:** Monochromatic scale using equally stepped Iron opacities. For N steps, use 100% down to 100% / N (for example, 100% / 50% for two and 100% / 67% / 33% for three). Traffic Cone may use the same stepped scale for an explicit highlight. NEVER use semantic colors (Blue, Green, Yellow, Red) for standard categories.
 - **Banned:** 3D, drop shadows, donut charts (use solid pie charts for ratios), radar charts.
 
 ## 6. Voice & Anti-LLM Copywriting Rules
