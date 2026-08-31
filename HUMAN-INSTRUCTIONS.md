@@ -280,7 +280,7 @@ The scale is built on a 16px baseline: `128 → 96 → 64 → 48 → 32 → 24 �
 | **Text-1.5x** | 24px | **450** | **600** | 1.30 | −1% | Large body, subheads |
 | **Text-1x** | 16px | Regular (400) | 600 | 1.40 | 0% | All running copy |
 
-_(Full print/mobile/monospace variants for each level are documented in `tokens/typography.md` — check there before inventing a new size, so this table and the token file don't drift apart again.)_
+_(Full print/mobile/monospace variants for each level are documented in `tokens/docs/typography.md` — check there before inventing a new size, so this table and the token file don't drift apart again.)_
 
 **Mobile variants:** Each level has a `-s` variant in Figma and `-sm` in CSS (e.g., `Text-1s` / `--text-1x-sm`). The `-sm` suffix always means "mobile variant", never "small text size". All levels scale ×0.75 for mobile (mobile px = print pt):
 - Text-8x: 128px → 96px (`Text-8s`)
@@ -584,7 +584,7 @@ The brand voice is built entirely around five traits inherent to craft pros. Eve
 | "Serve" / "support" | "Match," "connect," "capture," "feature" |
 | "Workers" for first intro, then "workers" | "Craft professionals" first, then "workers" |
 
-**Supply Gen** (worker-facing): monthly newsletter, paid ads, help center, call center SOP
+**Supply Gen** (worker-facing): paid ads (broad), help center, call center SOP
 
 | Don't use | Do use |
 |---|---|

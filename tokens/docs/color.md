@@ -7,7 +7,8 @@
 - Every token has a designated UI role. Use each color only for its assigned role.
 - Primary surfaces are Canvas + Iron. Traffic Cone is the single accent — use it once per layout section, not repeatedly.
 - **Color usage is limited to three places only:** (1) text fill on Canvas, Plaster, or Iron; (2) button background fill; (3) icons — including status badges, which are drawn icons (shape-coded, see `rules/accessibility.md`). Never use a color as a layout background, a decorative fill, a border, or a shadow.
-- **Borders and focus rings are always Iron** (structural) — never a status color. State lives in icons and text, not borders.
+- **Borders are always Iron** (structural) — never a status color. State lives in icons and text, not borders.
+- **Focus rings use Traffic Cone** (`--color-primary`) — the one exception to the "one accent per section" rule. Focus rings are functional, not decorative.
 - **Painter's Tape (blue):** text without underline = **info**; text with underline = **link**. Never a fill.
 - **Info text size floor:** Painter's Tape on Canvas is 4.6:1 — passes AA for normal text, but only by 0.1. Keep info text at `--text-1x` (16px) or larger; below that, fall back to Iron.
 - Never use color as the only status signal. Always pair with shape and label.

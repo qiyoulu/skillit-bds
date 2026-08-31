@@ -60,8 +60,8 @@ Every status state should communicate via three channels simultaneously: color +
 - Line height minimum: `1.4` for UI, `1.6` for body text. Tighter than this hurts legibility.
 ---
 ## Focus states
-- All interactive elements should have a visible focus ring.
-- Focus ring: `2px solid` Iron (`--color-foreground`), `2px offset`. Focus rings are always Iron — never a status/accent color (see `tokens/color.md`).
+- All interactive elements should have a visible focus ring in Traffic Cone.
+- Focus ring: `2px solid` Traffic Cone (`--color-primary`), `2px offset`. Focus rings are the one exception to the "one accent per section" rule — they are functional, not decorative.
 - Never remove focus outlines with `outline: none` without providing an equivalent custom focus style.
 - Focus should be keyboard-navigable in the correct DOM order.
 - **Skip-to-content link** at the top of every page (visually hidden until focused) so keyboard users bypass repeated navigation.

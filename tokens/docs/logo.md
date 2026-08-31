@@ -1,5 +1,5 @@
 # Logo Tokens — Skillit BDS
-**Last updated:** 2026-08-17
+**Last updated:** 2026-08-27
 **Canonical source:** `tokens.json5` (machine-readable) for dimension tokens; the SVGs in `assets/logo/` are the fixed graphic assets.
 ---
 ## Rules before you use this file
@@ -14,17 +14,12 @@ The mark is the brand's initial 'S' engineered for **physical grip**. Built from
 **Protected area:** 1 unit clear space on all sides — 9×10 unit protected zone.
 **Minimum size:** 21px/16pt height. Below this the internal negative space closes up and the mark loses definition.
 ---
-## The wordmark
-The wordmark is set in Work Sans **Bold (900)**, all-caps, −3% tracking. It is a fixed graphic asset — not a typed line of text.
-**File:** `assets/logo/lockup.svg` (extract wordmark from this file as needed)
-**Minimum size:** 16px/12pt height.
-**Clear space:** Minimum clear space equal to the wordmark cap height on all sides.
----
 ## The lockup
-The lockup is the mark and wordmark together. It is the primary logo — use it wherever possible.
+The lockup is the mark and wordmark together. It is the primary logo — use it wherever possible. The wordmark is never used standalone.
 **File:** `assets/logo/lockup.svg`
 **Construction:** Mark to the left of the wordmark, aligned to cap height, 2 units of space between them. (1 unit = 1 grid unit from the 7×8 mark grid.)
 **Format:** Horizontal only. No stacked or vertical variant.
+**Wordmark specs:** Work Sans Black (900), proper case, −3% tracking. Lowercase 'l' uses a straight leg. The 'k' connects to 'i' and 'i' connects to 't' via custom point adjustment — not typed text.
 **Minimum size:** 21px/16pt height (mark at 21px/16pt, wordmark at 16px/12pt).
 **Clear space:** Maintain a minimum clear space of 2 units on all sides of the lockup as a unit.
 ## Responsive Rules (Mobile)
@@ -57,5 +52,7 @@ The pattern is a step-and-repeat tessellation of the mark. Because the mark feat
 - Do not place on busy photographic backgrounds without sufficient contrast
 - Do not use legacy versions — the 2023 orange logo is retired
 - Do not recreate the mark or wordmark in another application — always use the approved file
+- **Never use the wordmark alone.** The wordmark is a component of the lockup, not a standalone logo. Use the lockup, or use the mark alone on mobile.
 - Do not use raster formats (PNG, JPG, BMP) of the logo — always use the vector SVG
 - **Exception — raster-only platforms:** PNG exports (`lockup-*.png`, `mark-*.png` in `assets/logo/`) are approved for platforms that reject SVG uploads (e.g., Google Slides, some CMS editors, deck tools). SVG remains the source of truth and the standard for web.
+- **PNG export size:** All raster exports are rendered at **512px height** for digital use. For print, render at 300 DPI at the final printed size.

@@ -81,7 +81,7 @@ This is not a rule to eliminate periods everywhere. It is a principle: choose th
 | "Serve" / "support" | "Match," "connect," "capture," "feature" |
 | "Workers" for first intro, then "workers" | "Craft professionals" first, then "workers" |
 
-**Supply Gen** (worker-facing): monthly newsletter, paid ads, help center, call center SOP
+**Supply Gen** (worker-facing): paid ads (broad), help center, call center SOP
 
 | Don't use | Do use |
 |---|---|

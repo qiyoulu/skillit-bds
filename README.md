@@ -42,9 +42,9 @@ git merge upstream/main
 When tasked with generating code, copywriting, or UI components, you should adhere strictly to the rules in this repository. 
 
 ### Generation Sequence
-1. **Context:** Read `context/brand-narrative.md` and `context/audience.md`.
+1. **Context:** Read `brand/narrative.md` and `brand/audience.md`.
 2. **Voice:** Read `voice/brand-voice.md`.
-3. **Tokens:** Read `tokens/color.md`, `typography.md`, and `spacing.md`. Never guess or approximate token values.
+3. **Tokens:** Read `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never guess or approximate token values.
 4. **Rules:** Read the specific rules for your output type (e.g., `rules/data-viz.md`). `rules/accessibility.md` is non-negotiable.
 
 ### Hard Constraints
@@ -69,17 +69,40 @@ skillit-bds/
 ├── LLM-INSTRUCTIONS.md        # Core system prompt for UI generation
 ├── HUMAN-INSTRUCTIONS.md      # Plain language brand manual
 ├── assets/                    # Approved SVG logos and icons (no photography — shot on real sites)
-├── tokens/                    # Colors, typography, spacing, and logo rules
+├── tokens/
+│   ├── tokens.json5           # Single source of truth (machine-readable)
+│   ├── docs/                  # Human-readable specs
+│   │   ├── color.md
+│   │   ├── typography.md
+│   │   ├── spacing.md
+│   │   └── logo.md
+│   └── generated/             # Derived outputs (keep in sync with json5)
+│       ├── tokens.css
+│       └── tailwind-theme.js
 ├── voice/                     # Brand voice guidelines and copy examples
 ├── rules/                     # Layout, accessibility, photography, and data-viz
-├── components/                # Structural UI definitions (buttons, cards)
-└── context/                   # Brand narrative and audience profiles
+├── components/                # Structural UI definitions (buttons, cards, etc.)
+│   ├── buttons.md
+│   ├── navigation.md
+│   ├── forms.md
+│   ├── badges.md
+│   ├── cards.md
+│   ├── links.md
+│   ├── footer.md
+│   ├── metadata.md
+│   ├── icons.md
+│   └── states.md
+├── brand/                     # Brand narrative and audience profiles
+│   ├── narrative.md
+│   └── audience.md
+└── scripts/
+    ├── validate.mjs
+    └── smart_quotes.rb
 ```
 
 ---
 
 ## 📊 Status Tracker
-
 | Component | Status |
 | :--- | :--- |
 | `tokens/` (Color, Type, Spacing) | Complete |
@@ -88,6 +111,6 @@ skillit-bds/
 | `rules/layout.md` | Complete |
 | `rules/data-viz.md` | Complete |
 | `rules/photography.md` | Complete |
-| `context/` (Narrative, Audience) | Complete |
+| `brand/` (Narrative, Audience) | Complete |
 | Icon System (core 12, in `assets/icons/`) | Complete — arrow up/down are derived variants |
 | Dark Mode Tokens | Planned for Phase II |
