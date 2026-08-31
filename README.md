@@ -122,7 +122,7 @@ When tasked with generating code, copywriting, or UI components, you should adhe
 
 ### Model Routing
 
-- **your AI agent (3.5/5):** Use for code generation, Tailwind scaffolding, copywriting, and CSS compilation.
+- **Claude (3.5/5):** Use for code generation, Tailwind scaffolding, copywriting, and CSS compilation.
 - **Gemini (1.5/3.5 Pro):** Use for repo-wide context audits and cross-referencing brand rules against screenshots.
 
 Note: Skillit does not use AI image generation. Photography is real, human-captured, and shot on genuine work sites — see `rules/photography.md`.
