@@ -35,7 +35,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['"Work Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', '"JetBrains Mono"', 'ui-monospace', 'monospace']
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
       },
       fontSize: {
         '8x': 'var(--text-8x)',

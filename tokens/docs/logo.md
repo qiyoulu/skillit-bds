@@ -19,7 +19,7 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 **File:** `assets/logo/lockup.svg`
 **Construction:** Mark to the left of the wordmark, aligned to cap height, 2 units of space between them. (1 unit = 1 grid unit from the 7×8 mark grid.)
 **Format:** Horizontal only. No stacked or vertical variant.
-**Wordmark specs:** Work Sans Black (900), proper case, −3% tracking. Lowercase 'l' uses a straight leg. The 'k' connects to 'i' and 'i' connects to 't' via custom point adjustment — not typed text.
+**Wordmark specs:** Work Sans Black (900), ALL CAPS, −3% tracking. Lowercase 'l' uses a straight leg. The 'k' connects to 'i' and 'i' connects to 't' via custom point adjustment — not typed text.
 **Minimum size:** 21px/16pt height (mark at 21px/16pt, wordmark at 16px/12pt).
 **Clear space:** Maintain a minimum clear space of 2 units on all sides of the lockup as a unit.
 ## Responsive Rules (Mobile)

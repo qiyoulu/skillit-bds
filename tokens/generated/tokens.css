@@ -46,7 +46,7 @@
 
   /* typography — families */
   --font-primary: 'Work Sans', sans-serif;
-  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  --font-mono: 'JetBrains Mono', monospace;
 
   /* typography — primary hierarchy */
   --text-8x: 8rem;                /* Text-8x, mobile: clamp(6rem, 5.17rem + 3.54vw, 8rem) */

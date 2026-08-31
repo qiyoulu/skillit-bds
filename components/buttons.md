@@ -3,7 +3,7 @@
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
-- Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
+- ALL CAPS on all labels, buttons, and UI text. No sentence case, no Title Case.
 - Tactile padding rule: buttons use generous horizontal padding — double the standard. This is a non-negotiable brand rule.
 - Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
 - Touch targets minimum 44px in both dimensions (app).
@@ -45,7 +45,7 @@ For primary actions inside structured blocks. Iron text on Traffic Cone, same as
 }
 ```
 **Label rules:**
-- Sentence-case imperative. "Join" / "Apply" / "See the network." Never "Click here" or "Submit form."
+- ALL CAPS imperative. "JOIN" / "APPLY" / "SEE THE NETWORK." Never "Click here" or "Submit form."
 - **Strict Consistency:** All buttons that point to the exact same destination page should use the exact same label across the entire platform. If the primary account creation CTA is "Join", do not alternate it with "Get started", "Create your profile", or "Sign up" elsewhere on the page. Pick one label per destination and lock it.
 
 ## Destructive button

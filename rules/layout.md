@@ -65,7 +65,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Full viewport height on desktop, minimum `560px`.
 - Background: Canvas (`--color-background`).
 - Worker portrait (isolated, hard-edge) placed right or center.
-- Headline: `--text-8x` or `--text-4x`, Iron, sentence-case.
+- Headline: `--text-8x` or `--text-4x`, Iron, ALL CAPS.
 - Single Traffic Cone CTA button beneath headline.
 - No secondary CTA below the fold.
 ### Content section
@@ -88,7 +88,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 ## Nav bar
 - Background: Canvas with boot tread pattern overlay (low opacity — texture only, not legible repeat).
 - Logo: left-aligned.
-- Nav links: Iron, `--text-1x`, sentence-case, no underline at rest.
+- Nav links: Iron, `--text-1x`, ALL CAPS, no underline at rest.
 - Active nav link: Traffic Cone, no underline.
 - Primary CTA (“Join”): Traffic Cone button, right-aligned.
 - Nav tabs (approved): How It Works · Our Network · Jobs · About Us · Resources

@@ -3,7 +3,7 @@
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
-- Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
+- ALL CAPS on all labels, buttons, and UI text. No sentence case, no Title Case.
 - Tactile padding rule: buttons use generous horizontal padding — double the standard. This is a non-negotiable brand rule.
 - Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
 - Touch targets minimum 44px in both dimensions (app).

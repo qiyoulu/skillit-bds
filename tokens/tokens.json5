@@ -104,7 +104,7 @@
     typography: {
       family: {
         primary: { $value: "'Work Sans', sans-serif", $type: 'fontFamily', $description: 'the only typeface — UI, headings, body, marketing, print' },
-        mono: { $value: "'IBM Plex Mono', 'JetBrains Mono', monospace", $type: 'fontFamily', $description: 'metadata, IDs, data — scale to 0.9em inline' },
+        mono: { $value: "'JetBrains Mono', monospace", $type: 'fontFamily', $description: 'metadata, IDs, data, code — no scaling needed, matches Work Sans x-height' },
       },
       text: {
         '8x': {
@@ -159,7 +159,7 @@
           '1x': { $value: { fontFamily: '{base.typography.family.mono}', fontSize: '0.875rem', fontWeight: 400, lineHeight: 1.4, letterSpacing: '0em' }, $type: 'typography', $description: 'Text-1x mono — timestamps, metadata' },
         },
         'ui': { $value: { fontSize: '1rem', fontWeight: 400, lineHeight: 1.6, letterSpacing: '0' }, $type: 'typography', $description: 'default UI body' },
-        label: { $value: { fontSize: '0.75rem', fontWeight: 500, lineHeight: 1.4, letterSpacing: '0.04em' }, $type: 'typography', $description: 'labels, tags, badges — sentence-case, minimum size' },
+        label: { $value: { fontSize: '0.75rem', fontWeight: 500, lineHeight: 1.4, letterSpacing: '0.04em' }, $type: 'typography', $description: 'labels, tags, badges — ALL CAPS, minimum size' },
       },
       weight: {
         regular: { $value: 400, $type: 'fontWeight' },

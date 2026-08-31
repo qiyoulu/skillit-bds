@@ -59,10 +59,8 @@
     - [Banned Language (Trait Violations)](#banned-language-trait-violations)
     - [Copy Do / Don't](#copy-do--dont)
   - [Photography \& Imagery](#photography--imagery)
-    - [The mood in one line](#the-mood-in-one-line)
     - [Iron filter](#iron-filter)
     - [Collages](#collages)
-    - [Photography Do / Don't](#photography-do--dont)
   - [Website pages](#website-pages)
     - [Header](#header)
     - [Home Page](#home-page)
@@ -95,7 +93,7 @@ Designers, marketers, writers, engineers, and anyone who has ever asked "does th
 ## At a Glance
 
 **The Vibe:** Documentary, not corporate. The smartest person on the job site.
-**The Typography:** Work Sans only. Sentence-case everywhere. No all-caps. Flush-left alignment. Dramatic leaps in scale.
+**The Typography:** Work Sans only. ALL CAPS everywhere. No lowercase. Flush-left alignment. Dramatic leaps in scale.
 **The Layout:** Strict functionalism. Whitespace is structural mass. Hard, straight edges only. Canvas (off-white) background, Iron (dark navy) text. No decoration.
 **The Accent:** Traffic Cone (orange). Use it exactly _once_ per layout section. Never for decoration.
 **The Photos:** Real workers doing real work. Shot at eye level. No color grading or filters.
@@ -133,16 +131,16 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 
 ### The palette
 
-| Name           | Hex       | CMYK            | Spot (Coated / Uncoated) | Role                                    |
-| -------------- | --------- | --------------- | -------------- | --------------------------------------- |
-| Canvas         | `#FAF7F3` | 2, 2, 4, 0      | Paper — not an ink | Primary background — all surfaces       |
-| Plaster        | `#FFFFFF` | 0, 0, 0, 0      | None — unprinted stock | Elevated surfaces, cards, form inputs   |
-| Iron           | `#232F36` | 80, 50, 45, 65  | 432 C / 432 U  | Foreground                                                |
-| Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C / 158 U  | Primary action                                            |
-| Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C / 1235 U | Warnings, non-fatal alerts              |
-| Toolbox        | `#C8102E` | 2, 100, 85, 6   | 186 C / 186 U  | Errors, destructive actions             |
-| Bottle Glass   | `#33663D` | 50, 0, 40, 60   | 2427 C / 2427 U  | Success, confirmations                  |
-| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C / 3135 U | Link |
+| Name           | Hex       | CMYK            | Spot (Coated / Uncoated) | Role                                  |
+| -------------- | --------- | --------------- | ------------------------ | ------------------------------------- |
+| Canvas         | `#FAF7F3` | 2, 2, 4, 0      | Paper — not an ink       | Primary background — all surfaces     |
+| Plaster        | `#FFFFFF` | 0, 0, 0, 0      | None — unprinted stock   | Elevated surfaces, cards, form inputs |
+| Iron           | `#232F36` | 80, 50, 45, 65  | 432 C / 432 U            | Foreground                            |
+| Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C / 158 U            | Primary action                        |
+| Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C / 1235 U          | Warnings, non-fatal alerts            |
+| Toolbox        | `#C8102E` | 2, 100, 85, 6   | 186 C / 186 U            | Errors, destructive actions           |
+| Bottle Glass   | `#33663D` | 50, 0, 40, 60   | 2427 C / 2427 U          | Success, confirmations                |
+| Painter's Tape | `#007CA6` | 100, 30, 10, 10 | 3135 C / 3135 U          | Link                                  |
 
 Coated and uncoated are the same ink on different paper — the number is shared, the appearance is not. Uncoated absorbs ink and returns lighter and duller. Always proof on the actual stock; Traffic Cone shifts most. Spot references apply only where you print spot (business cards, signage, vehicle wrap, embroidery) — process work uses the CMYK values.
 
@@ -179,11 +177,13 @@ The wordmark is set in Work Sans Black, all-caps, with −3% tracking. It is a f
 ### Wordmark-only usage
 
 Use the wordmark alone when:
+
 - Space is constrained and the mark cannot meet minimum size (21px height)
 - The mark already appears elsewhere on the same layout (e.g., footer lockup + header wordmark)
 - The brand is clearly established in context (e.g., app icon, favicon, email signature)
 
 **Do not** use the wordmark alone when:
+
 - Introducing the brand to a new audience
 - The lockup can fit at minimum size
 - The wordmark reads as "SKILLIT" without the mark — the mark is what distinguishes us
@@ -197,12 +197,12 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 
 ### Color variants
 
-| Variant              | Contrast | Use                                                     |
-| -------------------- | -------- | ------------------------------------------------------- |
-| Iron on Canvas       | 12.84:1  | Default — all light backgrounds                         |
-| Canvas on Iron       | 12.84:1  | Not used — Iron is not a background surface             |
-| Iron on Traffic Cone | 4.54:1   | Button backgrounds only — marginal, use sparingly      |
-| Single color outline | —        | Print, embroidery, engraving only                       |
+| Variant              | Contrast | Use                                               |
+| -------------------- | -------- | ------------------------------------------------- |
+| Iron on Canvas       | 12.84:1  | Default — all light backgrounds                   |
+| Canvas on Iron       | 12.84:1  | Not used — Iron is not a background surface       |
+| Iron on Traffic Cone | 4.54:1   | Button backgrounds only — marginal, use sparingly |
+| Single color outline | —        | Print, embroidery, engraving only                 |
 
 Canvas on Traffic Cone and Traffic Cone on Canvas both fail WCAG AA (2.83:1) and are not permitted.
 
@@ -221,6 +221,7 @@ Canvas on Traffic Cone and Traffic Cone on Canvas both fail WCAG AA (2.83:1) and
 The Skillit pattern is a step-and-repeat tessellation of the boot tread mark. Because the mark's negative space is designed as an interlocking joint, the repeated pattern locks together to form a structural, masonry-like wall. It is the only decorative graphic permitted in the system.
 **Because the pattern is built directly from the mark, all technical rules that apply to the logo apply equally to the pattern** (no stretching, shearing, rotating, no drop shadows, no raster formats like PNG/JPG, and always use the approved SVG file).
 **How to use it:**
+
 - **Restricted Palette:** The pattern may ONLY be rendered using the neutral structural colors: Canvas, Plaster, and Iron (the whites and black). Accent colors are strictly banned.
 - **As a structural anchor:** Use it to ground the top edge of a digital surface (e.g., the primary navigation bar). It creates a physical, structural boundary that grounds the layout. The preferred execution is rendering the pattern in **Plaster** (`#FFFFFF`) over a **Canvas** ground.
 - **Physical applications:** Excellent for tactile physical touchpoints (e.g., debossed into leather, printed on packaging interiors, or as a subtle watermark on formal documents).
@@ -245,6 +246,7 @@ Status never relies on color alone. Locked silhouettes: Success = Circle, Warnin
 **Core set (Phase I):** Checkmark · Error · Warning · Search · Arrow (×4) · Location · Clock · User · External link · Plus · Menu
 
 **Trade icons:**
+
 - Carpenter
 - Electrician
 - Heavy equipment operator
@@ -252,6 +254,7 @@ Status never relies on color alone. Locked silhouettes: Success = Circle, Warnin
 - Welder
 
 **Other icons:**
+
 - Certifications
 - Safety credentials
 - Per diem indicator
@@ -261,10 +264,10 @@ Status never relies on color alone. Locked silhouettes: Success = Circle, Warnin
 
 ## Typography
 
-Skillit uses a primary typeface for human content, and a monospace typeface for machine data. Both are free, open-source, and available on Google Fonts, Adobe Fonts, and GitHub.
+Skillit uses two typefaces: **Work Sans** for human content, **JetBrains Mono** for machine data. Both are free, open-source, and available on Google Fonts and GitHub. Both share the same scale — no scaling needed.
 
 - **Work Sans** (Primary): Inspired by early twentieth-century Grotesque typefaces, it is warm, direct, and legible.
-- **IBM Plex Mono** (Metadata & Code): Engineered to emphasize the relationship between mankind and machine.
+- **JetBrains Mono** (Metadata & Code): Warm, open-aperture mono designed for IDE legibility. Weights 100-800. Use for metadata, IDs, data, code blocks, and large data displays.
 
 ### The Typographic Algorithm
 
@@ -283,6 +286,7 @@ The scale is built on a 16px baseline: `128 → 96 → 64 → 48 → 32 → 24 �
 _(Full print/mobile/monospace variants for each level are documented in `tokens/docs/typography.md` — check there before inventing a new size, so this table and the token file don't drift apart again.)_
 
 **Mobile variants:** Each level has a `-s` variant in Figma and `-sm` in CSS (e.g., `Text-1s` / `--text-1x-sm`). The `-sm` suffix always means "mobile variant", never "small text size". All levels scale ×0.75 for mobile (mobile px = print pt):
+
 - Text-8x: 128px → 96px (`Text-8s`)
 - Text-6x: 96px → 72px (`Text-6s`)
 - Text-4x: 64px → 48px (`Text-4s`)
@@ -301,6 +305,7 @@ Use the 8x tier sparingly. It is reserved for:
 - **Campaign landing pages** — the primary headline above the fold
 
 **Do not use Text-8x for:**
+
 - Body copy or subheadings
 - UI elements (buttons, labels, form fields)
 - Text that wraps to more than two lines at desktop width
@@ -310,32 +315,22 @@ Use the 8x tier sparingly. It is reserved for:
 
 ### Case
 
-**Sentence-case everywhere.** "Join for free" — not "Join For Free." "How it works" — not "HOW IT WORKS." All-caps and title case are banned in all brand typesetting.
+**ALL CAPS everywhere.** Brand typesetting uses Work Sans Black in all capitals. "JOIN FOR FREE" — not "Join for free." "HOW IT WORKS" — not "How it works." Title case and sentence case are banned in all brand typesetting.
 
 **Exceptions to the rule:**
 
-1. **The Wordmark:** The logo is the sole exception for all-caps (it is a fixed graphic, not typed text).
+1. **The Wordmark:** The logo is the sole exception for proper case (it is a fixed graphic, not typed text).
 2. **Acronyms & Certifications:** Standard industry acronyms (OSHA, HVAC, AI, CDL) remain fully capitalized. Do not force them into lowercase.
 3. **Proper Nouns:** Names of people, companies (Skillit, Suffolk Tech), and cities retain standard proper noun capitalization.
-4. **User-Generated Content:** The sentence-case rule applies to our UI, product copy, and marketing. We do not automatically mutate user-inputted data (like a worker's resume title or name) into sentence-case if they typed it differently.
+4. **User-Generated Content:** The ALL CAPS rule applies to our UI, product copy, and marketing. We do not automatically mutate user-inputted data (like a worker's resume title or name) into ALL CAPS if they typed it differently.
 5. **Quoted Content:** Direct quotes, press excerpts, and testimonials retain their original capitalization to preserve the source's integrity.
 
 ### Monospace & Metadata
 
-All metadata (timestamps, worker IDs, distances, file sizes) and code blocks (inline `` or multiline) should use a monospace font to visually separate machine data from human text.
+All metadata (timestamps, worker IDs, distances, file sizes) and code blocks (inline `` or multiline) should use JetBrains Mono to visually separate machine data from human text.
 
-- **The Stack:** IBM Plex Mono (Primary), JetBrains Mono (Fallback).
-- **The Scale:** Monospace fonts sit on a different em-square. To optically align with Work Sans without breaking the line-box, always scale inline monospace text to 90% of the parent font size.
-
-| Level | Base | Mono (round(base × 0.9)) | Mono Weight | Purpose |
-|---|---|---|---|---|
-| Text-8x | 128px | 115px | Bold (700) | Hero metadata, large data displays |
-| Text-6x | 96px | 86px | 650 | Large stats, section data |
-| Text-4x | 64px | 58px | Semibold (600) | Section stats, large code blocks |
-| Text-3x | 48px | 43px | 550 | Subsection stats, code callouts |
-| Text-2x | 32px | 29px | Medium (500) | Subhead stats, inline code |
-| Text-1.5x | 24px | 22px | 450 | Small data, captions |
-| Text-1x | 16px | 14px | Regular (400) | Timestamps, worker IDs, metadata |
+- **The Stack:** JetBrains Mono (Primary).
+- **The Scale:** JetBrains Mono matches Work Sans x-height — no scaling needed. Use at 100% for all metadata, data, and code.
 
 ### Italics & Emphasis
 
@@ -364,6 +359,7 @@ To maintain the grid's consistent rhythm, vertical spacing between text elements
 - **If a quote runs longer than three lines,** reduce to Body (16px) and increase leading to 1.5.
 
 **For editorial text callouts** (pull quotes within articles):
+
 - Use Painter's Tape text, no card container
 - Italicize only if the original source used italics
 - Attribute inline or below in Iron at Body size
@@ -391,7 +387,7 @@ A **widow** is a single word left dangling on its own line at the end of a parag
 
 ### Typography Do / Don't
 
-- **Do** use sentence-case everywhere, on every surface.
+- **Do** use ALL CAPS everywhere, on every surface.
 - **Don't** use title case or all-caps in UI or layouts (the logo wordmark is the only exception).
 - **Do** let size, weight, and spacing create hierarchy.
 - **Don't** use Traffic Cone or Hard Hat on headings to make them stand out — color signals function, not rank.
@@ -481,9 +477,10 @@ Skillit's data visualization is utilitarian. The charts should be legible, preci
 ### Chart requirements
 
 Every chart must include:
+
 - **Header** — what the data shows (e.g., "Craft hires by trade, Q3 2026")
 - **Subheader** — context or timeframe if not in the header
-- **Data source** — attribution at the bottom in Plex Mono, 14px, Iron at 50%
+- **Data source** — attribution at the bottom in JetBrains Mono, 14px, Iron at 50%
 
 ### Geometry & Structure
 
@@ -502,8 +499,8 @@ Every chart must include:
 ### Bar graphs
 
 - Use flat fills only. For N opacity steps, distribute values evenly from 100% down to 100% / N: 100% / 50% for two steps, 100% / 67% / 33% for three steps. Apply the same rule to Iron and Traffic Cone.
-- **Annotations** — callout labels in Plex Mono, 14px, Iron, with a thin Iron line pointing to the data point
-- **Legend** — placed at the bottom, horizontal layout, Plex Mono 14px
+- **Annotations** — callout labels in JetBrains Mono, 14px, Iron, with a thin Iron line pointing to the data point
+- **Legend** — placed at the bottom, horizontal layout, JetBrains Mono 14px
 - Grouped bars: use equally stepped Iron opacity, such as 100% / 67% / 33% for three series, to disambiguate series
 
 ### Flowcharts
@@ -562,35 +559,35 @@ The brand voice is built entirely around five traits inherent to craft pros. Eve
 
 ### Tone by Channel
 
-| Channel | Audience | Purpose | Key traits |
-|---|---|---|---|
-| **Website** | Both | Explain the platform | Confident, objective, proof-heavy |
-| **Insights** (formerly Blog) | Both | Authority & analysis | Authoritative, punchy, grounded |
-| **Comms** (formerly Press) | Public | Product milestones & news | Tangible impact, never just product features |
-| **Worker app** | Workers | Guide through tasks | Unfussy, respectful, simple |
-| **Contractor dashboard** | Contractors | Show outcomes | Precise, no-nonsense |
-| **LinkedIn** | Both | Industry authority | Opinionated, first-person, data-backed |
-| **Worker newsletter** | Workers | Monthly updates | Direct, practical, grounded |
-| **Customer newsletter** | Contractors | Nurture & retention | Data-backed, proof-heavy |
+| Channel                      | Audience    | Purpose                   | Key traits                                   |
+| ---------------------------- | ----------- | ------------------------- | -------------------------------------------- |
+| **Website**                  | Both        | Explain the platform      | Confident, objective, proof-heavy            |
+| **Insights** (formerly Blog) | Both        | Authority & analysis      | Authoritative, punchy, grounded              |
+| **Comms** (formerly Press)   | Public      | Product milestones & news | Tangible impact, never just product features |
+| **Worker app**               | Workers     | Guide through tasks       | Unfussy, respectful, simple                  |
+| **Contractor dashboard**     | Contractors | Show outcomes             | Precise, no-nonsense                         |
+| **LinkedIn**                 | Both        | Industry authority        | Opinionated, first-person, data-backed       |
+| **Worker newsletter**        | Workers     | Monthly updates           | Direct, practical, grounded                  |
+| **Customer newsletter**      | Contractors | Nurture & retention       | Data-backed, proof-heavy                     |
 
 ### Demand Gen vs. Supply Gen
 
 **Demand Gen** (employer-facing): cold leads, nurture/warm leads, monthly customer newsletter
 
-| Don't use | Do use |
-|---|---|
-| Anthropomorphize robotics or Skillit as a singular entity | "Skillit matches workers to projects" |
-| "Proud" / facts + quotes from relevant sources to support emotional impact | Data and outcomes first |
-| "Serve" / "support" | "Match," "connect," "capture," "feature" |
-| "Workers" for first intro, then "workers" | "Craft professionals" first, then "workers" |
+| Don't use                                                                  | Do use                                      |
+| -------------------------------------------------------------------------- | ------------------------------------------- |
+| Anthropomorphize robotics or Skillit as a singular entity                  | "Skillit matches workers to projects"       |
+| "Proud" / facts + quotes from relevant sources to support emotional impact | Data and outcomes first                     |
+| "Serve" / "support"                                                        | "Match," "connect," "capture," "feature"    |
+| "Workers" for first intro, then "workers"                                  | "Craft professionals" first, then "workers" |
 
 **Supply Gen** (worker-facing): paid ads (broad), help center, call center SOP
 
-| Don't use | Do use |
-|---|---|
-| "Represent" / "reflect" | "Match," "connect," "get discovered" |
-| "Workers" / "craft professionals" alone | "Craft professionals," "members" |
-| "Serve" / "support" | "Match," "connect," "find" |
+| Don't use                               | Do use                               |
+| --------------------------------------- | ------------------------------------ |
+| "Represent" / "reflect"                 | "Match," "connect," "get discovered" |
+| "Workers" / "craft professionals" alone | "Craft professionals," "members"     |
+| "Serve" / "support"                     | "Match," "connect," "find"           |
 
 ### Sam (The AI)
 
@@ -602,6 +599,7 @@ Sam is Skillit's AI assistant. Sam has a name because names matter — they sign
 **Sam coordinates and surfaces. The human still decides.** This is the ultimate expression of worker _Agency_ and _Judgment_.
 
 **Sam's voice rules:**
+
 - **No exclamation marks.** Period.
 - **No emojis.** Ever.
 - Use plain, direct language.
@@ -633,6 +631,7 @@ Photography is the brand's most human element. Every image should make a craft w
 Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic should blend the accessibility of a government vocational program, the rigor of resource-rich institutions, and the flair of aspirational publications.
 
 **Do**
+
 - Use Adobe Stock only; exclude generative AI
 - Apply multiply blend mode only when a photograph sits on a light background and needs to melt into the Canvas ground
 - Frame workers at eye level or below; capture candid, dignified work on real job sites; show hands
@@ -640,6 +639,7 @@ Lean into the archetype of the independent, strong, hands-on do-er. The aestheti
 - Overlay text in Canvas with 50% Iron filter on the image
 
 **Don't**
+
 - Don't use photographic edge masks (feathered edges, vignettes, beveled cutouts)
 - Don't apply color grading, warm toning, or dramatic filters; natural color only
 - Don't overlay symbols, UI elements, or graphs on images
@@ -662,6 +662,7 @@ The Iron filter is for **text legibility only**, not for aesthetic grading of th
 Collages are needed for the culture doc and select marketing materials.
 
 **Rules:**
+
 - Maintain eye-level or below framing across all images in the collage
 - Keep consistent lighting — do not mix golden-hour warmth with midday cool
 - No image should be smaller than 120px in its longest dimension at desktop
@@ -674,11 +675,13 @@ Collages are needed for the culture doc and select marketing materials.
 ## Website pages
 
 ### Header
+
 - Logo lockup
 - Navigation: Find Work · Our Network · What We Do · Resources · Who We Are · Support
 - Join
 
 ### Home Page
+
 - Hero with revolving trade word + CTA
 - Employer logos (Mortenson, DPR, Brasfield & Gorrie, Suffolk Technologies)
 - Stat callouts (200+ contractors, 72 hours, Free)
@@ -692,6 +695,7 @@ Collages are needed for the culture doc and select marketing materials.
 - Newsletter opt-in
 
 ### Find Work
+
 - Search by trade
 - By title, not company
 - Estimated pay
@@ -708,6 +712,7 @@ Collages are needed for the culture doc and select marketing materials.
   - Leadership & Engineering
 
 ### Our Network
+
 - Stat callouts
 - By the numbers
 - How Skillit compares
@@ -716,6 +721,7 @@ Collages are needed for the culture doc and select marketing materials.
 - Press
 
 ### What We Do
+
 - Flowchart (workers → Skillit → companies)
 - One membership
 - Two agents, one platform
@@ -724,17 +730,20 @@ Collages are needed for the culture doc and select marketing materials.
 - Key Features
 
 ### Resources
+
 - Blog
 - The Data
 - Success Stories
 - Press
 
 ### Who We Are
+
 - Team → Join us! (careers)
 - Backers
 - Founder
 
 ### Support
+
 - FAQs
 - Contact
 - Worker Standards
