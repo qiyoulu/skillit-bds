@@ -15,7 +15,7 @@ def smart_quotes(text)
       prev_char = i.positive? ? chars[i - 1] : ''
       is_opening = ['', ' ', "\n", "\t", '(', '[', '{', '<', '/'].include?(prev_char) || double_open
 
-      if is_open
+      if is_opening
         result += '“'
         double_open = false
       else

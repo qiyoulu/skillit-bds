@@ -15,7 +15,7 @@
 ## 2. Typography
 - **Font:** Work Sans.
 - **Numbers:** `font-variant-numeric: tabular-nums;` (strict requirement).
-- **Labels:** ALL CAPS, `Text-1x/2x`, right-aligned Y-axis values.
+- **Labels:** Sentence-case, `Text-1x/2x`, right-aligned Y-axis values.
 - **Headers and subheaders:** Use equally stepped opacity levels. For N levels, use 100% down to 100% / N (100% / 50% for two levels; 100% / 67% / 33% for three). Apply the same scale to Iron and Traffic Cone rather than using a gradient.
 
 ## 3. Data Color Palette (Monochromatic & Semantic)

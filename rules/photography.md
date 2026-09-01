@@ -88,13 +88,47 @@ Avoid: stock photo aesthetics, posed expressions, fake environments, rounded edg
 > Background: real site environment (not removed)
 > Avoid: stock photo aesthetics, safety theater, posed or stiff body language
 ---
-## File format and technical specs
-| Use | Format | Resolution | Notes |
-|---|---|---|---|
-| Web (hero, sections) | WebP or JPG | 72dpi, max 200KB | Optimize for load speed |
-| Web (retina) | WebP or JPG | 144dpi (2x) | Use `srcset` for serving |
-| App (worker portraits) | WebP | 72dpi, max 80KB | Mobile-first, small file |
-| Print | TIFF or PSD | 300dpi minimum | CMYK color mode |
-| Isolated portraits | PNG | 72dpi (web) / 300dpi (print) | Transparent alpha channel |
-| Social (square) | JPG or PNG | 1080×1080px | No text in bottom 20% (Instagram crop safe zone) |
-| Social (story) | JPG or PNG | 1080×1920px | Keep subject in center 80% of height |
+### File format and technical specs
+
+**Digital:** JPEG (quality ≥85%) or WebP for web performance. Avoid PNG unless transparency is required.
+
+**Print:** TIFF at 300 DPI minimum, CMYK color mode. Convert RGB to CMYK before press.
+
+**Raw:** Keep original RAW files for future edits. Archive with naming convention: `skillit_MMYY_description.jpg`
+
+**Resolution:**
+- Hero images: 1200px on the long side minimum
+- Crop: 4:3 or 16:9 ratios only
+- Web: Serve srcsets for responsive sizes
+
+**Safe zones:**
+- Text overlays: 20% padding minimum from edges
+- Logos: 1/8 of logo height (12.5%) from all edges
+- Never crop faces tighter than above the temples
+
+**Aspect ratios:**
+
+|| Context | Ratio | Notes |
+||---|---|---|---|
+|| Hero | 16:9 or 4:3 | Desktop and mobile hero |
+|| Thumbnails | 1:1 square | Grid cards |
+|| Social (feed) | 16:9, 4:5, 1:1 | Channel-specific |
+|| Social (Stories) | 9:16 | Vertical crop allowed |
+|| Print | Per template | No vertical |
+
+**DPI for print:**
+
+|| Context | DPI | Definition |
+||---|---|---|
+|| Regular format | 300 DPI | Up to A3 / 11×17 in (Letter, A4, brochures, magazines) |
+|| Large format | 150 DPI | A2+ / poster, banner (viewed from 3+ ft away) |
+
+|| Use | Format | Resolution | Notes |
+||---|---|---|---|
+|| Web (hero, sections) | WebP or JPG | 72dpi, max 200KB | Optimize for load speed |
+|| Web (retina) | WebP or JPG | 144dpi (2x) | Use `srcset` for serving |
+|| App (worker portraits) | WebP | 72dpi, max 80KB | Mobile-first, small file |
+|| Print | TIFF or PSD | 300dpi minimum | CMYK color mode |
+|| Isolated portraits | PNG | 72dpi (web) / 300dpi (print) | Transparent alpha channel |
+|| Social (square) | JPG or PNG | 1080×1080px | No text in bottom 20% (Instagram crop safe zone) |
+|| Social (story) | JPG or PNG | 1080×1920px | Keep subject in center 80% of height |

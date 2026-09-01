@@ -24,13 +24,13 @@ Use this file to calibrate tone before generating any Skillit copy. Read a few e
 | "Click here to explore our platform." | "Get hired." |
 | "Request a demo to learn more." | "Talk to us." |
 
-### Subheadings — ALL CAPS
-All subheadings use ALL CAPS. No title case, no sentence case.
+### Subheadings — sentence case
+All subheadings use sentence case. No title case, no all-caps.
 ||| Wrong | Right |
 |---|---|
-| "How it works" | "HOW IT WORKS" |
-| "Why craft pros choose Skillit" | "WHY CRAFT PROS CHOOSE SKILLIT" |
-| "The future of construction hiring" | "THE FUTURE OF CONSTRUCTION HIRING" |
+| "How It Works" | "How it works" |
+| "Why Craft Pros Choose Skillit" | "Why craft pros choose Skillit" |
+| "The Future Of Construction Hiring" | "The future of construction hiring" |
 
 ### Punctuation
 No exclamation marks. A period is enough. Exclamation marks signal marketing enthusiasm — the voice is calm, direct, and never over-eager.

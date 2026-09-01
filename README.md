@@ -80,7 +80,7 @@ Your AI agent will follow the rules in this repository. If something looks off, 
 
 - "That doesn't match the brand colors"
 - "The tone is too casual — make it more like an industry veteran"
-- "Use ALL CAPS, not title case"
+- "Use sentence case, not title case"
 
 ### What your AI agent knows from this repo
 
@@ -116,7 +116,7 @@ When tasked with generating code, copywriting, or UI components, you should adhe
 ### Hard Constraints
 
 - **Colors:** Use defined tokens only. No raw hex codes in output.
-- **Typography:** Work Sans for all human text. JetBrains Mono for metadata and code blocks. ALL CAPS UI.
+- **Typography:** Work Sans for all human text. JetBrains Mono for metadata and code blocks. Sentence-case UI.
 - **Voice:** "Industry veteran." No tech jargon, hype, or hedging.
 - **Geometry:** 16px radius for structural elements; 9999px (pill) for buttons.
 

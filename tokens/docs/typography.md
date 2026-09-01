@@ -7,26 +7,26 @@
 - JetBrains Mono is the only approved monospace — metadata, IDs, data, and code only, never running copy.
 - Both typefaces match at the same point size — no scaling needed. JetBrains Mono's x-height equals Work Sans at 100%.
 - All sizes are in `rem` (base 16px). Never use `px` for type — it breaks accessibility scaling.
-- All text should be ALL CAPS. No lowercase in UI branding.
+- All text should be sentence-case. No title case in UI. No ALL CAPS anywhere (except industry acronyms like OSHA, HVAC, AI).
 ---
 ## Typefaces
 ### Work Sans
 - **Source:** Google Fonts CDN (zero-config)
 - **CDN link:** `https://fonts.googleapis.com/css2?family=Work Sans:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap`
 - **CSS variable:** `--font-primary: 'Work Sans', sans-serif;`
-- **Use:** Everything — UI, headings, body text, buttons, labels, marketing, print.
+- **Use:** Headings, subheadings, body copy, bylines, buttons, labels.
 ---
 ### JetBrains Mono
 - **Source:** Google Fonts CDN (zero-config)
 - **CSS variable:** `--font-mono: 'JetBrains Mono', monospace;`
-- **Use:** Metadata, IDs, data, code blocks, timestamps, statistics, large data displays.
+- **Use:** Metadata, IDs, data, code blocks, timestamps, captions, footnotes, references.
 - **Weights:** 100, 200, 300, 400, 500, 600, 700, 800 (variable font).
 - **Scaling:** Use at 100% of the tier size. No adjustment needed to match Work Sans x-height.
 ---
 ## The Typographic Algorithm
 The typography system is consistently derived and infinitely scalable. Levels are named objectively by their pixel size. Both Work Sans and JetBrains Mono use the same scale — they match at every tier.
 
-The scale is built on a 16px baseline: `128 → 96 → 64 → 48 → 32 → 24 → 16`.
+The scale is built on a 16px baseline: `16 → 24 → 32 → 48 → 64 → 96 → 128`.
 
 If you need a size larger than 128px (e.g., 256px), extrapolate using this algorithm starting from the 16px baseline:
 - **Size:** Multiply by 2.

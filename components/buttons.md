@@ -3,7 +3,7 @@
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
-- ALL CAPS on all labels, buttons, and UI text. No sentence case, no Title Case.
+- Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
 - Tactile padding rule: buttons use generous horizontal padding — double the standard. This is a non-negotiable brand rule.
 - Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
 - Touch targets minimum 44px in both dimensions (app).
@@ -17,7 +17,7 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
   font-family: var(--font-primary);
   font-size: var(--text-ui);              /* 1rem */
   font-weight: var(--weight-semibold);      /* 600 */
-  padding: var(--space-3) var(--space-8);  /* 12px 32px — tactile */
+  padding: 1em 2em;                /* vertical = 1x font size, horizontal = 2x */
   border: none;
   border-radius: var(--radius-pill);       /* 9999px pill */
   letter-spacing: 0;
@@ -45,7 +45,7 @@ For primary actions inside structured blocks. Iron text on Traffic Cone, same as
 }
 ```
 **Label rules:**
-- ALL CAPS imperative. "JOIN" / "APPLY" / "SEE THE NETWORK." Never "Click here" or "Submit form."
+- Sentence-case imperative. "Join" / "Apply" / "See the network." Never "Click here" or "Submit form."
 - **Strict Consistency:** All buttons that point to the exact same destination page should use the exact same label across the entire platform. If the primary account creation CTA is "Join", do not alternate it with "Get started", "Create your profile", or "Sign up" elsewhere on the page. Pick one label per destination and lock it.
 
 ## Destructive button
@@ -57,7 +57,7 @@ For irreversible actions only. Toolbox background.
   font-family: var(--font-primary);
   font-size: var(--text-ui);
   font-weight: var(--weight-semibold);
-  padding: var(--space-3) var(--space-8);  /* 12px 32px — tactile */
+  padding: 1em 2em;                /* vertical = 1x font size, horizontal = 2x */
   border: none;
   border-radius: var(--radius-pill);
   cursor: pointer;

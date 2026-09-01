@@ -93,7 +93,7 @@ Designers, marketers, writers, engineers, and anyone who has ever asked "does th
 ## At a Glance
 
 **The Vibe:** Documentary, not corporate. The smartest person on the job site.
-**The Typography:** Work Sans only. ALL CAPS everywhere. No lowercase. Flush-left alignment. Dramatic leaps in scale.
+**The Typography:** Work Sans only. Sentence-case everywhere. No all-caps. Flush-left alignment. Dramatic leaps in scale.
 **The Layout:** Strict functionalism. Whitespace is structural mass. Hard, straight edges only. Canvas (off-white) background, Iron (dark navy) text. No decoration.
 **The Accent:** Traffic Cone (orange). Use it exactly _once_ per layout section. Never for decoration.
 **The Photos:** Real workers doing real work. Shot at eye level. No color grading or filters.
@@ -134,7 +134,7 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 | Name           | Hex       | CMYK            | Spot (Coated / Uncoated) | Role                                  |
 | -------------- | --------- | --------------- | ------------------------ | ------------------------------------- |
 | Canvas         | `#FAF7F3` | 2, 2, 4, 0      | Paper — not an ink       | Primary background — all surfaces     |
-| Plaster        | `#FFFFFF` | 0, 0, 0, 0      | None — unprinted stock   | Elevated surfaces, cards, form inputs |
+| Plaster        | `#FFFFFF` | 0, 0, 0, 0      | Paper — unprinted stock   | Elevated surfaces, cards, form inputs |
 | Iron           | `#232F36` | 80, 50, 45, 65  | 432 C / 432 U            | Foreground                            |
 | Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C / 158 U            | Primary action                        |
 | Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C / 1235 U          | Warnings, non-fatal alerts            |
@@ -162,6 +162,8 @@ Coated and uncoated are the same ink on different paper — the number is shared
 
 ## Logo
 
+The Skillit logo system has four components: mark, wordmark, lockup, and pattern. Use the lockup wherever possible — it's the primary logo. Use the mark alone only in constrained spaces where the lockup doesn't fit well. Never use the wordmark alone. Each logo component is a fixed graphic asset. Do not recreate it, retype it, or export it in raster formats. Use the approved SVG and PNG files only.
+
 ### The mark
 
 The Skillit mark is the brand's initial 'S' engineered for **physical grip**. Built from three interlocking blocks on a precise **1:3 shear**, the geometry acts as a **boot tread, machinery tracks, or diamond plate steel**. It encodes **traction**, **structural integrity**, and **forward momentum** into a single form. It **does not require the wordmark** to be understood.
@@ -172,7 +174,7 @@ The Skillit mark is the brand's initial 'S' engineered for **physical grip**. Bu
 
 The wordmark is set in Work Sans Black, all-caps, with −3% tracking. It is a fixed graphic asset, not a line of text.
 **Minimum size:** 16px/12pt height.
-**Clear space:** Maintain a minimum clear space equal to the cap height of the wordmark on all sides. Never crowd it against an edge, another logo, or a photographic element.
+**Clear space:** Maintain a minimum clear space of 12.5% (1/8 of lockup height) on all sides.
 
 ### Wordmark-only usage
 
@@ -223,7 +225,7 @@ The Skillit pattern is a step-and-repeat tessellation of the boot tread mark. Be
 **How to use it:**
 
 - **Restricted Palette:** The pattern may ONLY be rendered using the neutral structural colors: Canvas, Plaster, and Iron (the whites and black). Accent colors are strictly banned.
-- **As a structural anchor:** Use it to ground the top edge of a digital surface (e.g., the primary navigation bar). It creates a physical, structural boundary that grounds the layout. The preferred execution is rendering the pattern in **Plaster** (`#FFFFFF`) over a **Canvas** ground.
+- **Structural anchor:** Document headers and footers only.
 - **Physical applications:** Excellent for tactile physical touchpoints (e.g., debossed into leather, printed on packaging interiors, or as a subtle watermark on formal documents).
   **What not to do:**
 - Do not use any accent colors (Traffic Cone, Bottle Glass, Toolbox, Hard Hat, Painter's Tape) for the pattern.
@@ -239,7 +241,7 @@ Icons are tools, not decorations — heavy, solid, consistently centered for job
 
 All icons are drawn on a 24×24px canvas using a strict 10×10 sub-grid where one block equals 2px. The sub-grid solves centering math — 2px divides the 24px canvas evenly — and enforces the same heavy, cast-iron geometry as the mark. Every shape should snap to the grid; off-grid paths break the system.
 
-Style is solid fill only. No strokes, no outlines, no gradients, no drop shadows, 0px corner radius on all geometry. Icons inherit their color via `fill="currentColor"` — never hardcode a hex value in an SVG.
+Style is solid fill only. No strokes, no outlines, no gradients, no drop shadows, 16px corner radius on all geometry. Icons inherit their color via `fill="currentColor"` — never hardcode a hex value in an SVG.
 
 Status never relies on color alone. Locked silhouettes: Success = Circle, Warning = Triangle, Error = Octagon.
 
@@ -272,7 +274,7 @@ Skillit uses two typefaces: **Work Sans** for human content, **JetBrains Mono** 
 ### The Typographic Algorithm
 
 The typography system is consistently derived. Levels are named objectively by their pixel size.
-The scale is built on a 16px baseline: `128 → 96 → 64 → 48 → 32 → 24 → 16`.
+The scale is built on a 16px baseline: `16 → 24 → 32 → 48 → 64 → 96 → 128`.
 | Level | Size | Base Weight | Bolded | Line Height | Tracking | Use |
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
 | **Text-8x** | 128px | Bold (700) | 900 | 0.80 | −6% | Hero headlines at massive scale |
@@ -315,14 +317,14 @@ Use the 8x tier sparingly. It is reserved for:
 
 ### Case
 
-**ALL CAPS everywhere.** Brand typesetting uses Work Sans Black in all capitals. "JOIN FOR FREE" — not "Join for free." "HOW IT WORKS" — not "How it works." Title case and sentence case are banned in all brand typesetting.
+**Sentence-case everywhere.** "Join for free" — not "Join For Free." "How it works" — not "HOW IT WORKS." All-caps and title case are banned in all brand typesetting.
 
 **Exceptions to the rule:**
 
-1. **The Wordmark:** The logo is the sole exception for proper case (it is a fixed graphic, not typed text).
+1. **The Wordmark:** The logo is the sole exception for all-caps (it is a fixed graphic, not typed text).
 2. **Acronyms & Certifications:** Standard industry acronyms (OSHA, HVAC, AI, CDL) remain fully capitalized. Do not force them into lowercase.
 3. **Proper Nouns:** Names of people, companies (Skillit, Suffolk Tech), and cities retain standard proper noun capitalization.
-4. **User-Generated Content:** The ALL CAPS rule applies to our UI, product copy, and marketing. We do not automatically mutate user-inputted data (like a worker's resume title or name) into ALL CAPS if they typed it differently.
+4. **User-Generated Content:** The sentence-case rule applies to our UI, product copy, and marketing. We do not automatically mutate user-inputted data (like a worker's resume title or name) into sentence-case if they typed it differently.
 5. **Quoted Content:** Direct quotes, press excerpts, and testimonials retain their original capitalization to preserve the source's integrity.
 
 ### Monospace & Metadata
@@ -387,7 +389,7 @@ A **widow** is a single word left dangling on its own line at the end of a parag
 
 ### Typography Do / Don't
 
-- **Do** use ALL CAPS everywhere, on every surface.
+- **Do** use sentence-case everywhere, on every surface.
 - **Don't** use title case or all-caps in UI or layouts (the logo wordmark is the only exception).
 - **Do** let size, weight, and spacing create hierarchy.
 - **Don't** use Traffic Cone or Hard Hat on headings to make them stand out — color signals function, not rank.
@@ -480,7 +482,7 @@ Every chart must include:
 
 - **Header** — what the data shows (e.g., "Craft hires by trade, Q3 2026")
 - **Subheader** — context or timeframe if not in the header
-- **Data source** — attribution at the bottom in JetBrains Mono, 14px, Iron at 50%
+- **Reference** — attribution at the bottom in JetBrains Mono, 14px, Iron at 50%
 
 ### Geometry & Structure
 
@@ -509,7 +511,7 @@ Every chart must include:
 - Node backgrounds: Plaster with 16px corners
 - Connector lines: Iron, 2px weight, 16px corners on turns
 - Decision diamonds: Hard Hat fill with Iron text
-- CTA nodes: Traffic Cone fill with Iron text
+- CTA nodes: Traffic Cone fill with Canvas text
 
 ### Banned Elements
 
@@ -581,7 +583,7 @@ The brand voice is built entirely around five traits inherent to craft pros. Eve
 | "Serve" / "support"                                                        | "Match," "connect," "capture," "feature"    |
 | "Workers" for first intro, then "workers"                                  | "Craft professionals" first, then "workers" |
 
-**Supply Gen** (worker-facing): paid ads (broad), help center, call center SOP
+**Supply Gen** (worker-facing): monthly newsletter, paid ads, help center, call center SOP
 
 | Don't use                               | Do use                               |
 | --------------------------------------- | ------------------------------------ |
@@ -628,7 +630,7 @@ Sam is Skillit's AI assistant. Sam has a name because names matter — they sign
 
 Photography is the brand's most human element. Every image should make a craft worker feel seen — not as a stock photo prop, but as a skilled professional whose work builds the physical world.
 
-Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic should blend the accessibility of a government vocational program, the rigor of resource-rich institutions, and the flair of aspirational publications.
+Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic is the accessibility of a government vocational program, the rigor of resource-rich institutions, and the flair of aspirational publications.
 
 **Do**
 

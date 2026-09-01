@@ -2,6 +2,8 @@
 **Last updated:** 2026-08-27
 **Canonical source:** `tokens.json5` (machine-readable) for dimension tokens; the SVGs in `assets/logo/` are the fixed graphic assets.
 ---
+The Skillit logo system has four components: mark, wordmark, lockup, and pattern. Use the lockup wherever possible — it's the primary logo. Use the mark alone only in constrained spaces where the lockup doesn't fit well. Never use the wordmark alone. Each logo component is a fixed graphic asset. Do not recreate it, retype it, or export it in raster formats. Use the approved SVG and PNG files only.
+---
 ## Rules before you use this file
 - Always use the approved SVG files. Never recreate the mark or wordmark from scratch.
 - The mark and wordmark are fixed graphic assets — do not retype, redraw, or approximate them.
@@ -21,7 +23,7 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 **Format:** Horizontal only. No stacked or vertical variant.
 **Wordmark specs:** Work Sans Black (900), ALL CAPS, −3% tracking. Lowercase 'l' uses a straight leg. The 'k' connects to 'i' and 'i' connects to 't' via custom point adjustment — not typed text.
 **Minimum size:** 21px/16pt height (mark at 21px/16pt, wordmark at 16px/12pt).
-**Clear space:** Maintain a minimum clear space of 2 units on all sides of the lockup as a unit.
+- **Clear space:** Maintain a minimum clear space of 1/8 of the lockup height (12.5%) on each side.
 ## Responsive Rules (Mobile)
 Because horizontal space is at an absolute premium on mobile viewports (e.g., iPhone screens), the full lockup collapses into the standalone **mark**.
 - **Breakpoint:** `< 768px` (Mobile)
@@ -40,7 +42,7 @@ The mark is always rendered in a single, flat color. No gradients, multi-color t
 ## The Pattern
 The pattern is a step-and-repeat tessellation of the mark. Because the mark features interlocking negative space, repeating it forms a structural, masonry-like wall.
 **Usage rules:**
-- **Placement:** Use as a structural anchor (e.g., the primary nav bar) or on physical touchpoints (debossing, endpapers).
+- **Placement:** Use as a structural anchor in document headers and footers, or on physical touchpoints (debossing, endpapers).
 - **Contrast:** Should be low-contrast, tone-on-tone. Rendering the pattern in **Plaster** (`#FFFFFF`) against a **Canvas** ground is the approved and preferred execution for digital surfaces like the navigation bar.
 - **Scale:** Keep it scaled as a texture. Do not blow it up into a massive hero graphic.
 - **Restrictions:** Never use as a background behind running text or UI components. Never overlay on photography.
@@ -53,6 +55,10 @@ The pattern is a step-and-repeat tessellation of the mark. Because the mark feat
 - Do not use legacy versions — the 2023 orange logo is retired
 - Do not recreate the mark or wordmark in another application — always use the approved file
 - **Never use the wordmark alone.** The wordmark is a component of the lockup, not a standalone logo. Use the lockup, or use the mark alone on mobile.
+  Exceptions where the wordmark may appear alone:
+  - Space is constrained and the mark cannot meet minimum size (21px height)
+  - The mark already appears elsewhere on the same layout (e.g., footer lockup + header wordmark)
+  - The brand is clearly established in context (e.g., app icon, favicon, email signature)
 - Do not use raster formats (PNG, JPG, BMP) of the logo — always use the vector SVG
 - **Exception — raster-only platforms:** PNG exports (`lockup-*.png`, `mark-*.png` in `assets/logo/`) are approved for platforms that reject SVG uploads (e.g., Google Slides, some CMS editors, deck tools). SVG remains the source of truth and the standard for web.
 - **PNG export size:** All raster exports are rendered at **512px height** for digital use. For print, render at 300 DPI at the final printed size.
