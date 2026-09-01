@@ -178,17 +178,7 @@ The wordmark is set in Work Sans Black, all-caps, with −3% tracking. It is a f
 
 ### Wordmark-only usage
 
-Use the wordmark alone when:
-
-- Space is constrained and the mark cannot meet minimum size (21px height)
-- The mark already appears elsewhere on the same layout (e.g., footer lockup + header wordmark)
-- The brand is clearly established in context (e.g., app icon, favicon, email signature)
-
-**Do not** use the wordmark alone when:
-
-- Introducing the brand to a new audience
-- The lockup can fit at minimum size
-- The wordmark reads as "SKILLIT" without the mark — the mark is what distinguishes us
+**Never use the wordmark alone.** The wordmark is a component of the lockup, not a standalone logo. Use the lockup, or use the mark alone on mobile.
 
 ### The lockup
 
@@ -630,7 +620,7 @@ Sam is Skillit's AI assistant. Sam has a name because names matter — they sign
 
 Photography is the brand's most human element. Every image should make a craft worker feel seen — not as a stock photo prop, but as a skilled professional whose work builds the physical world.
 
-Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic is the accessibility of a government vocational program, the rigor of resource-rich institutions, and the flair of aspirational publications.
+Lean into the archetype of the independent, strong, hands-on do-er. The aesthetic should blend the accessibility of a government vocational program, the rigor of resource-rich institutions, and the flair of aspirational publications.
 
 **Do**
 
