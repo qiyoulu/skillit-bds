@@ -82,7 +82,7 @@ Use CSS variables, never raw hex codes in output.
 ### Flowcharts
 - Node contents: text only, icon + text, or image + text.
 - Image rules for nodes: 16px corners, max 48px height, Canvas ground behind image, no drop shadows.
-- Node types: Process (Plaster bg, Iron text), Decision (Hard Hat fill, rotated 45°), CTA (Traffic Cone fill, Canvas text), Image (Plaster bg, image + text).
+- Node types: Process (Plaster bg, Iron text), Decision (Hard Hat fill, rotated 45°), CTA (Traffic Cone fill, Iron text), Image (Plaster bg, image + text).
 - Connectors: Iron, 2px, 16px corners on turns.
 
 ## 6. Data Visualization

@@ -511,7 +511,7 @@ Every chart must include:
 - Node backgrounds: Plaster with 16px corners
 - Connector lines: Iron, 2px weight, 16px corners on turns
 - Decision diamonds: Hard Hat fill with Iron text
-- CTA nodes: Traffic Cone fill with Canvas text
+- CTA nodes: Traffic Cone fill with Iron text
 
 ### Banned Elements
 
