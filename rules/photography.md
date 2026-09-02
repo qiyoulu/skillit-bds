@@ -129,6 +129,32 @@ Avoid: stock photo aesthetics, posed expressions, fake environments, rounded edg
 || Web (retina) | WebP or JPG | 144dpi (2x) | Use `srcset` for serving |
 || App (worker portraits) | WebP | 72dpi, max 80KB | Mobile-first, small file |
 || Print | TIFF or PSD | 300dpi minimum | CMYK color mode |
-|| Isolated portraits | PNG | 72dpi (web) / 300dpi (print) | Transparent alpha channel |
-|| Social (square) | JPG or PNG | 1080×1080px | No text in bottom 20% (Instagram crop safe zone) |
-|| Social (story) | JPG or PNG | 1080×1920px | Keep subject in center 80% of height |
+||| Isolated portraits | PNG | 72dpi (web) / 300dpi (print) | Transparent alpha channel |
+||| Social (square) | JPG or PNG | 1080×1080px | No text in bottom 20% (Instagram crop safe zone) |
+||| Social (story) | JPG or PNG | 1080×1920px | Keep subject in center 80% of height |
+
+### Video formats
+
+**Source:** Real job sites only. No AI-generated footage, no stock video, no composites. Same photography rules apply — eye level or below, natural light, no color grading filters.
+
+**Editing:** MOV or ProRes 422 for master files. No heavy post-processing. Natural color only.
+
+**Publishing:**
+
+| Use | Format | Codec | Resolution | Notes |
+| --- | --- | --- | --- | --- |
+| Web (hero, sections) | MP4 | H.264 | 1920×1080 (1080p) minimum | Max 25MB. Compress for load speed. |
+| Social (feed) | MP4 | H.264 | 1920×1080 or 1080×1080 | Add captions — most viewers watch muted. |
+| Social (Stories/Reels) | MP4 | H.264 | 1080×1920 (9:16) | Vertical crop. Keep subject in center 80% of height. |
+| Archive | MOV | ProRes 422 | Original resolution | Keep master files for future edits. |
+
+**Aspect ratios:**
+- Hero and marketing: 16:9 or 4:3
+- Social feed: 16:9 or 1:1
+- Stories/Reels: 9:16
+
+**Audio:** Capture clean ambient audio from the job site. No added music unless it was present at the scene. Voiceover, if needed, recorded in a quiet environment — direct, conversational, no broadcast polish.
+
+**Text overlays:** Follow the same safe zones as photography — 20% padding from edges, Iron filter at 50% opacity for legibility.
+
+**Naming convention:** `skillit_MMYY_description.mp4`
