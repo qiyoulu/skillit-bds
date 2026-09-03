@@ -49,6 +49,9 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   gap: var(--space-8);               /* 32px — nav links */
   align-items: center;
 }
+.nav-cta {
+  margin-left: var(--space-8);       /* 32px — separates Join button from nav links */
+}
 .mobile-dropdown {
   display: none;
   flex-direction: column;
@@ -75,7 +78,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 @media (max-width: 1024px) {
   .nav-links, .nav-cta { display: none; }
   .nav-menu-btn { display: block; }
-  .logo-desktop { display: none; }
+  .nav-logo { display: none; }
   .logo-mark { display: block; }
 }
 .mobile-dropdown.open { display: flex; }

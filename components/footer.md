@@ -30,7 +30,7 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
   gap: var(--space-16);
 }
 .footer-copyright {
-   color: var(--color-foreground-hover);
+   color: var(--color-background-hover);           /* Canvas hover — muted Canvas on Iron bg, 11:1 */
 }
 .footer-columns {
   display: flex;

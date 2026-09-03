@@ -4,7 +4,7 @@
 
 ## 1. Geometry & Structure
 - **Containers:** All data viz graphics must sit on a Plaster (`--color-surface`, pure white) background card to isolate the data and maintain contrast against the surrounding UI.
-- **Corners:** `16px` radius (bars, tooltips, legends, and the Plaster cards themselves).
+- **Corners:** `0px` — sharp, flat edges on bars (data is precision, not decoration). Tooltips and Plaster cards keep `16px` (structural containers).
 - **Stroke Weights:** A universal `4px` rule applies to all line work to maintain an industrial, structural feel.
   - Data lines are `4px`.
   - Gridlines (horizontal Y-axis only) are `4px` Canvas (`--color-background`).
@@ -25,13 +25,19 @@
 - **Expanded Scale:** Use industrial patterns (diagonal cross-hatching, stippling) in Iron. Do not add colors.
 - **Semantic Lock:** NEVER use Painter's Tape (Blue), Bottle Glass (Green), Hard Hat (Yellow), or Toolbox (Red) for standard categories. Only use them if measuring explicit links, info notes, successes, warnings, or failures.
 
-## 4. Interaction & Specific Chart Rules
+## 4. Bar Graphs
+- Use flat fills only. For N opacity steps, distribute values evenly from 100% down to 100% / N: 100% / 50% for two steps, 100% / 67% / 33% for three steps. Apply the same rule to Iron and Traffic Cone.
+- **Annotations:** Value callout labels sit in Work Sans, `Text-1x`, Iron — same typeface as category labels. JetBrains Mono is for machine data only (timestamps, IDs, code); a chart value label is human-readable content, not metadata.
+- **Legend:** Placed at the bottom, horizontal layout, Work Sans `Text-1x`.
+- **Grouped bars:** Use equally stepped Iron opacity, such as 100% / 67% / 33% for three series, to disambiguate series.
+
+## 5. Interaction & Specific Chart Rules
 - **Tooltips:** Plaster (`--color-surface`) background, 1px solid Iron (`--color-foreground`) border, 16px corners.
 - **Interaction:** Charts do not define inactive series. Tooltips may identify the hovered data point, while every series remains visible at its assigned opacity.
 - **Pie Charts (Solid State):** Slices must sit flush against each other with zero gap and zero stroke. Delineation is handled entirely by opacity steps in Iron or the Traffic Cone hero slice.
 - **Legends are banned for pie charts:** Never force a user to match shades of gray between a key and the chart. All labels must sit outside the chart on the Canvas background, connected directly to their corresponding slice by a 1px Iron leader line.
 
-## 5. Banned Elements
+## 6. Banned Elements
 - 3D effects.
 - Drop shadows.
 - Donut charts (decorative SaaS trope. If showing a part-to-whole ratio, use a solid Pie chart instead).

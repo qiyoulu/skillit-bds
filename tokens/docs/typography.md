@@ -130,12 +130,12 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-2x-sm:             clamp(1.5rem, 1.2928rem + 0.884vw, 2rem);
   --text-2x-mono:            1.8125rem; /* 29px — confirmed Figma value, round(32 * 0.9) */
   /* Text-1.5x */
-  --text-1\\.5x:              1.5rem;
-  --text-1\\.5x-weight:       450;
-  --text-1\\.5x-weight-bold:  600;
-  --text-1\\.5x-leading:      1.30;
-  --text-1\\.5x-tracking:     -0.01em;
-  --text-1\\.5x-print:        18pt;
+  --text-1\.5x:              1.5rem;
+  --text-1\.5x-weight:       450;
+  --text-1\.5x-weight-bold:  600;
+  --text-1\.5x-leading:      1.30;
+  --text-1\.5x-tracking:     -0.01em;
+  --text-1\.5x-print:        18pt;
   --text-1\.5x-sm:           clamp(1.125rem, 0.9696rem + 0.663vw, 1.5rem);
   /* Text-1x */
   --text-1x:                1rem;

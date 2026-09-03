@@ -21,7 +21,7 @@ Every output — website, app, social asset, document, generated content — sho
 | Iron `#232F36` | Hard Hat `#FEB11C` | 7.1:1  | Pass AAA                  |
 | Canvas `#FAF7F3` | Toolbox `#C8102E`  | 4.8:1  | Pass AA                   |
 | Canvas `#FAF7F3` | Bottle Glass `#33663D`   | 6.33:1 | Pass AA                   |
-| Painter's Tape `#007CA6`   | Canvas `#FAF7F3` | 4.6:1  | Pass AA                   |
+| Painter's Tape `#007CA6`   | Canvas `#FAF7F3` | 4.43:1  | Fails AA (needs 4.5:1)                  |
 ### Pairs that are banned
 | Text               | Background         | Ratio  | Reason                                                                |
 | ------------------ | ------------------ | ------ | --------------------------------------------------------------------- |

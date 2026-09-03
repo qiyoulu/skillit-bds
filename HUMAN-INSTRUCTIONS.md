@@ -477,7 +477,7 @@ Every chart must include:
 ### Geometry & Structure
 
 - **Containers:** All data viz graphics must sit on a Plaster (pure white) background card to isolate the data and maintain contrast against the surrounding UI.
-- **Sharp edges:** Bar charts, tooltips, legends, and Plaster cards should have `16px` border-radius.
+- **Sharp edges:** Bar charts use `0px` border-radius — flat, sharp edges (data precision, not decoration). Tooltips, legends, and Plaster cards keep `16px`.
 - **Line weight:** All structural lines must be `4px` thick. This applies to data lines and gridlines.
 - **Gridlines:** Rendered in Canvas with 4px stroke weight. Remove all outer bounding boxes. Use horizontal (Y-axis) gridlines only. No vertical gridlines.
 - **Pie charts:** Slices must sit flush against each other with zero gap and zero stroke.
@@ -491,8 +491,8 @@ Every chart must include:
 ### Bar graphs
 
 - Use flat fills only. For N opacity steps, distribute values evenly from 100% down to 100% / N: 100% / 50% for two steps, 100% / 67% / 33% for three steps. Apply the same rule to Iron and Traffic Cone.
-- **Annotations** — callout labels in JetBrains Mono, 14px, Iron, with a thin Iron line pointing to the data point
-- **Legend** — placed at the bottom, horizontal layout, JetBrains Mono 14px
+- **Annotations** — value callout labels in Work Sans, `Text-1x`, Iron, with a thin Iron line pointing to the data point
+- **Legend** — placed at the bottom, horizontal layout, Work Sans `Text-1x`
 - Grouped bars: use equally stepped Iron opacity, such as 100% / 67% / 33% for three series, to disambiguate series
 
 ### Flowcharts
