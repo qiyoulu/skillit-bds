@@ -60,7 +60,27 @@ This is not a rule to eliminate periods everywhere. It is a principle: choose th
 - **AI use:**
   - Do not use AI to originate or finish thinking. AI can expand a draft, surface alternatives, or pressure-test a claim — it cannot be the source of the idea or the final word.
   - Do not use AI to generate images. All imagery is sourced (Adobe Stock, excluded generative AI) or produced by the design team.
-  - Do not use the "this, not that" sentence structure. It reads as a listicle, not a point.
+
+## Banned Sentence Structures (AI-isms)
+These patterns read as machine-generated emphasis, not earned insight. State the point directly instead.
+- **Negation-then-assertion** ("X isn't Y — it's Z", "This isn't just A, it's B"). Manufactures drama instead of stating the fact.
+  - *Avoid:* "The growth isn't a projection. It's projects already underway."
+  - *Use:* "These are projects already underway."
+- **"This, not that"** ("We don't just connect workers — we connect the right worker to the right job"). Reads as a listicle, not a point.
+  - *Avoid:* "We don't just connect contractors with workers — we connect the right workers with the right jobs."
+  - *Use:* "Skillit gets the right worker to the right job site."
+- **Rule-of-three padding** (forcing three parallel items — often adjectives or short clauses — where one or two would do). Signals filler, not precision.
+  - *Avoid:* "Fast, reliable, and effective hiring."
+  - *Use:* "Hiring that works."
+- **Empty intensifiers before a colon** ("Here's the truth:", "The reality is:", "Here's the thing:"). Announces insight instead of delivering it.
+  - *Avoid:* "Here's the truth: the labor gap is an access problem."
+  - *Use:* "The labor gap is an access problem."
+- **"It's not just X, it's Y"** as a stock upgrade move. Same crutch as negation-then-assertion, aimed at inflating value instead of stating it.
+  - *Avoid:* "This isn't just a hiring platform — it's workforce infrastructure."
+  - *Use:* "This is workforce infrastructure."
+- **Tricolon sign-offs that summarize instead of conclude** ("Direct. Data-backed. Done."). Reads as a tagline generator, not a closing thought.
+  - *Avoid:* "Fast. Verified. Effortless."
+  - *Use:* End on the concrete result, not a list of adjectives describing it.
 
 ## Register by Channel
 - **Website:** Confident, proof-heavy. Short/medium sentences. Second/third person. Imperative CTA ("Join").
