@@ -52,7 +52,7 @@ State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional on
 ## Visual minimalism rules
 These are hard constraints derived from the core brand direction. They apply to every generated layout.
 1. **Flush left alignment.** The system relies on a strict horizontal grid. Text blocks, headings, and data tables align flush left. Centered text is prohibited for body copy and strongly discouraged for headlines.
-2. **Optical Top Alignment.** Multi-column elements align at the top edge. To achieve this, typography should be vertically trimmed (`margin-top: -0.15em`) so the cap height—not the invisible line-height box—aligns flush with adjacent images or containers.
+2. **Optical Top Alignment.** Multi-column elements align at the top edge. To achieve this, typography should be vertically trimmed using the Work Sans cap-height ratio (0.72). The algorithm: `margin-top: -calc((line-height - 0.72) / 2)em`. Example: a `1.4` line-height requires a `-0.34em` margin-top.
 3. **Button Alignment Exception.** Do not align buttons by their external padding bubble. Align them optically by the text inside them. A button should shift upward by its top padding value to ensure its internal text cap-height aligns with adjacent layout elements.
 4. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-8x` directly adjacent to `--text-1x`), not by stepping gently through intermediate sizes or adding color.
 5. **Strict functionalism.** Every border and margin should serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.

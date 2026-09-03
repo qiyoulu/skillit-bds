@@ -120,10 +120,19 @@ Buttons and interactive cards should use **double the standard horizontal paddin
   --space-16: 4rem;
   --space-20: 5rem;
   --space-24: 6rem;
+  --space-128: clamp(48px, 10vw, 128px);
+  --space-256: clamp(96px, 18vw, 256px);
   --max-width-content: 1200px;
   --max-width-app:     480px;
   --max-width-text:    70ch;
   --touch-target-min:  44px;
+  --nav-height: 64px;
+  --logo-mark-min: 21px;
+  --wordmark-min: 16px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
 }
 ```
 ---

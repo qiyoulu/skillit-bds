@@ -15,7 +15,7 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
 .card {
   background-color: var(--color-surface);  /* Plaster */
   border: none;                            /* No borders */
-  border-radius: 16px;
+  border-radius: var(--radius-sharp);
   padding: var(--space-16);                /* 64px — tactile */
 }
 /* Cards separate from Canvas ground through Plaster background contrast — no borders. */
@@ -39,7 +39,7 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
   background-color: var(--color-surface);         /* Plaster */
   color: var(--color-foreground);                 /* Iron */
   border: none;
-  border-radius: 16px;
+  border-radius: var(--radius-sharp);
   padding: var(--space-8);                 /* Generous padding for heavy blocks */
 }
 ```

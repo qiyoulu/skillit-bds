@@ -12,8 +12,8 @@
 The footer anchors the bottom of the page using the Canvas ground and Iron text. It uses a flush-left vertical stack for the brand and a multi-column grid for navigation.
 ```css
 .footer {
-  background-color: var(--color-background);      /* Canvas */
-  color: var(--color-foreground);                 /* Iron */
+  background-color: var(--color-foreground);      /* Iron */
+  color: var(--color-background);                 /* Canvas */
   padding: var(--space-128);
 }
 .footer-inner {
@@ -30,7 +30,7 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
   gap: var(--space-16);
 }
 .footer-copyright {
-   color: var(--color-background-hover);
+   color: var(--color-foreground-hover);
 }
 .footer-columns {
   display: flex;
@@ -41,7 +41,7 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
   flex-direction: column;
 }
 .footer .nav-link {
-  color: var(--color-background);                  /* Canvas links */
+  color: var(--color-surface);                  /* Plaster links on Iron */
   display: block;
   margin-bottom: var(--space-8);
 }

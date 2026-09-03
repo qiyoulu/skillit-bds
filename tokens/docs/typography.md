@@ -95,7 +95,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-8x-leading:       0.80;
   --text-8x-tracking:      -0.06em;
   --text-8x-print:         96pt;
-  --text-8x-sm:            6rem;   /* 96px — mobile variant (was 4rem/64px) */
+  --text-8x-sm:            clamp(6rem, 5.1713rem + 3.5359vw, 8rem);
   /* Text-6x */
   --text-6x:               6rem;
   --text-6x-weight:        650;
@@ -103,7 +103,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-6x-leading:       0.90;
   --text-6x-tracking:      -0.05em;
   --text-6x-print:         72pt;
-  --text-6x-sm:            4.5rem; /* 72px — mobile variant */
+  --text-6x-sm:            clamp(4.5rem, 3.8785rem + 2.6519vw, 6rem);
   /* Text-4x */
   --text-4x:                4rem;
   --text-4x-weight:         600;
@@ -111,7 +111,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-4x-leading:        1.00;
   --text-4x-tracking:       -0.04em;
   --text-4x-print:          48pt;
-  --text-4x-sm:             3rem;  /* 48px — mobile variant (was 2rem/32px) */
+  --text-4x-sm:             clamp(3rem, 2.5856rem + 1.768vw, 4rem);
   /* Text-3x */
   --text-3x:                3rem;
   --text-3x-weight:         550;
@@ -119,7 +119,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-3x-leading:        1.10;
   --text-3x-tracking:       -0.03em;
   --text-3x-print:          36pt;
-  --text-3x-sm:             2.25rem; /* 36px — mobile variant */
+  --text-3x-sm:             clamp(2.25rem, 1.9392rem + 1.326vw, 3rem);
   /* Text-2x */
   --text-2x:                2rem;
   --text-2x-weight:         500;
@@ -127,7 +127,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-2x-leading:        1.20;
   --text-2x-tracking:       -0.02em;
   --text-2x-print:          24pt;
-  --text-2x-sm:             1.5rem; /* 24px — mobile variant (was 1rem/16px) */
+  --text-2x-sm:             clamp(1.5rem, 1.2928rem + 0.884vw, 2rem);
   --text-2x-mono:            1.8125rem; /* 29px — confirmed Figma value, round(32 * 0.9) */
   /* Text-1.5x */
   --text-1\\.5x:              1.5rem;
@@ -136,7 +136,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-1\\.5x-leading:      1.30;
   --text-1\\.5x-tracking:     -0.01em;
   --text-1\\.5x-print:        18pt;
-  --text-1\\.5x-sm:           1.125rem; /* 18px — mobile variant */
+  --text-1\.5x-sm:           clamp(1.125rem, 0.9696rem + 0.663vw, 1.5rem);
   /* Text-1x */
   --text-1x:                1rem;
   --text-1x-weight:         400;

@@ -23,7 +23,7 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground,
   width: 100%;
 }
 .input:focus {
-   outline: 2px solid var(--color-foreground-hover);      /* Iron hover focus ring — visible, neutral */
+   outline: 2px solid var(--color-primary);      /* Traffic Cone focus ring */
   outline-offset: 2px;
   border-bottom-color: var(--color-foreground);    /* line stays Iron */
 }

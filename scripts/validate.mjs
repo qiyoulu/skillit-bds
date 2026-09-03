@@ -14,10 +14,10 @@ const files = {
 };
 
 const hover = {
-  background: '#EAE5DF',
-  primary: '#E06818',
-  warning: '#EEA41A',
-  error: '#BC0E2A',
+  background: '#EAE6DE',
+  primary: '#E06718',
+  warning: '#EEA51A',
+  error: '#BB0F2A',
 };
 
 for (const value of Object.values(hover)) {
@@ -35,9 +35,9 @@ assert(files.buttons.includes('max-width: var(--max-width-content)') || files.bu
 assert(!files.buttons.includes('brightness(0.92)'));
 assert(!files.buttons.includes('surface-inverted'));
 assert(files.manual.includes('Version 0.9-beta'));
-assert(files.manual.includes('0.75x at mobile breakpoints'));
+assert(files.manual.includes('×0.75 for mobile'));
 assert(files.manual.includes('100% / 50% for two steps'));
 assert(files.dataViz.includes('100% / 67% / 33% for three'));
-assert(files.readme.includes('0.9-beta'));
+assert(files.readme.includes('v1.0'));
 
 console.log('Skillit BDS validation passed');

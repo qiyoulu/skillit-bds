@@ -25,10 +25,8 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
 }
 .btn-primary:hover { background-color: var(--color-primary-hover); }
 .btn-destructive:hover { background-color: var(--color-error-hover); }
-.btn-warning:hover { background-color: var(--color-warning-hover); }
-.btn-success:hover { background-color: var(--color-success-hover); }
 .btn-primary:focus-visible {
-   outline: 2px solid var(--color-foreground-hover);   /* Iron hover ring — neutral */
+   outline: 2px solid var(--color-primary);   /* Traffic Cone focus ring */
   outline-offset: 2px;
 }
 ```

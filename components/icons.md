@@ -14,12 +14,12 @@ Icons are drawn on a strict **10×10 sub-grid** (1 block = 2px) inside a **24×2
 - **Sub-grid:** 10×10 (1 block = 2px)
 - **Style:** Solid fill only. No strokes, no outlines, no line icons.
 - **Stroke weight:** N/A — solid fill, not stroked.
-- **Corner radius:** 0px — sharp edges on all icon geometry, consistent with the structural container rule.
+- **Corner radius:** 16px — rounded corners on all icon geometry, matching the structural container rule.
 - **Color:** Always `fill="currentColor"`. Never hardcode a fill color in the SVG.
 
 ## Do not
 - Do not use stroke-based (outline) icons — they conflict with the solid, material aesthetic.
-- Do not round icon corners — 0px is mandatory.
+- Do not round icon corners below 16px — 16px is the rule.
 - Do not hardcode fill colors — use `currentColor` so icons inherit their color from CSS.
 - Do not draw outside the 10×10 sub-grid — off-grid geometry breaks centering math.
 

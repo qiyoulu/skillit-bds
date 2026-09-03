@@ -16,12 +16,12 @@
   --color-link: #007CA6;          /* Painter's Tape — link. underlined = link */
 
   /* hover states — × Canvas + 5% Iron */
-  --color-background-hover: #EAE5DF;       /* Canvas hover */
+  --color-background-hover: #EAE6DE;       /* Canvas hover */
   --color-surface-hover: #EFEDE9;  /* Plaster hover */
   --color-foreground-hover: #212C31;       /* Iron hover */
-  --color-primary-hover: #E06818;  /* Traffic Cone hover */
-  --color-warning-hover: #EEA41A;  /* Hard Hat hover */
-  --color-error-hover: #BC0E2A;    /* Toolbox hover */
+  --color-primary-hover: #E06718;  /* Traffic Cone hover */
+  --color-warning-hover: #EEA51A;  /* Hard Hat hover */
+  --color-error-hover: #BB0F2A;    /* Toolbox hover */
   --color-success-hover: #305F38;  /* Bottle Glass hover */
   --color-link-hover: #007398;     /* Painter's Tape hover */
 

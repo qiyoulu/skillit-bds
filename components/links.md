@@ -20,7 +20,7 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 a:focus-visible {
-   outline: 2px solid var(--color-foreground-hover);     /* Iron hover ring — neutral */
+   outline: 2px solid var(--color-primary);     /* Traffic Cone focus ring */
   outline-offset: 2px;
   border-radius: 0;
 }
