@@ -4,7 +4,7 @@
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
 - Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
-- Tactile padding rule: buttons use generous horizontal padding — double the standard. This is a non-negotiable brand rule.
+- Tactile padding rule: button padding scales with font size — vertical = 0.5x font size, horizontal = 1x (`padding: 0.5em 1em`; matches the 8px/16px spec at 16px button text). This is a non-negotiable brand rule.
 - Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
 - Touch targets minimum 44px in both dimensions (app).
 
@@ -17,7 +17,7 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
   font-family: var(--font-primary);
   font-size: var(--text-ui);              /* 1rem */
   font-weight: var(--weight-semibold);      /* 600 */
-  padding: 1em 2em;                /* vertical = 1x font size, horizontal = 2x */
+  padding: 0.5em 1em;             /* vertical = 0.5x font size, horizontal = 1x */
   border: none;
   border-radius: var(--radius-pill);       /* 9999px pill */
   letter-spacing: 0;
@@ -55,7 +55,7 @@ For irreversible actions only. Toolbox background.
   font-family: var(--font-primary);
   font-size: var(--text-ui);
   font-weight: var(--weight-semibold);
-  padding: 1em 2em;                /* vertical = 1x font size, horizontal = 2x */
+  padding: 0.5em 1em;             /* vertical = 0.5x font size, horizontal = 1x */
   border: none;
   border-radius: var(--radius-pill);
   cursor: pointer;
