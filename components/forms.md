@@ -9,12 +9,11 @@
 - Touch targets minimum 44px in both dimensions (app).
 
 ## Input fields
-Fields are **Plaster on Canvas** — the surface separates them from the ground, same as cards. A bottom Iron drafting line keeps the type affordance. State is signaled by a status indicator (drawn icon) plus message text, never by changing the border. Colored borders are not a color usage (see `tokens/docs/color.md`: colors = text fill, button bg fill, or icons). Corner radius is `0` on input fields — inputs align flush with cards and content grids; rounded corners are reserved for cards (16px) and actionable elements (pill) per the shape-coding rule.
+Fields are **Plaster on Canvas** — the surface separates them from the ground. State is signaled by a status indicator (drawn icon) plus message text, never by changing the border. Colored borders are not a color usage (see `tokens/docs/color.md`: colors = text fill, button bg fill, or icons). Corner radius is `0` on input fields — inputs align flush with cards and content grids; rounded corners are reserved for cards (16px) and actionable elements (pill) per the shape-coding rule. No drafting line — inputs separate purely through their Plaster surface against the Canvas ground.
 ```css
 .input {
   background-color: var(--color-surface); /* Plaster — field separated from Canvas ground */
   border: none;
-  border-bottom: 2px solid var(--color-foreground); /* Iron — drafting line (neutral, structural) */
   border-radius: 0;
   color: var(--color-foreground);
   font-family: var(--font-primary);
@@ -25,7 +24,6 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground,
 .input:focus {
    outline: 2px solid var(--color-primary);      /* Traffic Cone focus ring */
   outline-offset: 2px;
-  border-bottom-color: var(--color-foreground);    /* line stays Iron */
 }
 .input::placeholder {
    color: var(--color-foreground-hover);
