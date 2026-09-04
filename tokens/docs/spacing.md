@@ -8,7 +8,7 @@
 - Do not mix units (e.g., `em` or `%` for structural spacing).
 - All values are in `rem` (base 16px). Never use `px` for spacing — it breaks accessibility scaling.
 - Whitespace is a core brand element — it focuses attention on the human. When in doubt, use more space, not less.
-- The system uses “tactile padding” — interactive elements (buttons, cards) use generous horizontal padding to feel warm and physical, not tight and SaaS-like.
+- The system uses "tactile padding" — interactive elements scale padding with font size (0.5em vertical / 1em horizontal on buttons) to feel warm and physical, not tight and SaaS-like.
 ---
 ## Base spacing scale
 Built on a 4px base unit (`0.25rem`). Every value is a multiple of 4. This is the canonical scale — one value per token name, no duplicates.
@@ -42,17 +42,15 @@ Large structural spacing uses CSS `clamp()` to fluidly scale down, preventing ab
 | ------- | ---------------- | ------ |
 | Nav Bar | 64px (`--space-16`) | —      |
 | Logo Lockup | 32px (`--space-8`) | —      |
-| Primary Buttons | `--space-3` vertical (12px), `--space-8` horizontal (32px) | — |
+|| Primary Buttons | `0.5em` vertical, `1em` horizontal (scales with font size) | — |
 | Desktop Section Gap | — | 128px (`--space-128`) |
 | Desktop Page Margin | — | 128px (`--space-128`) |
 ---
 ## Tactile padding
-Buttons and interactive cards should use **double the standard horizontal padding** to feel warm and physical. This is a non-negotiable brand rule.
+Button padding scales with font size: vertical = 0.5× font size, horizontal = 1× font size (`padding: 0.5em 1em`). This is a non-negotiable brand rule — the em ratio keeps the proportions identical at every button size, unlike fixed px values that drift when font size changes. At the standard 16px button text, this yields 8px/16px.
 | Component | Vertical padding | Horizontal padding |
 |---|---|---|
-| Button (default) | `--space-3` (12px) | `--space-8` (32px) |
-| Button (small) | `--space-2` (8px) | `--space-6` (24px) |
-| Button (large) | `--space-4` (16px) | `--space-10` (40px) |
+| Button (all sizes) | `0.5em` | `1em` |
 | Card (desktop) | `--space-16` (64px) | `--space-16` (64px) |
 | Card (mobile) | `--space-8` (32px) | `--space-8` (32px) |
 | Input field | `--space-3` (12px) | `--space-4` (16px) |
