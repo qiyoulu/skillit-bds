@@ -197,6 +197,7 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 
 **Blockquotes**
 - **Container:** Place quotes inside a Plaster (`#FFFFFF`) card container with 16px border radius. It uses standard card padding.
+- **Headshot sizing:** Lock headshots to the quote tier (48px / 64px / 96px) — never scale by font-size ratio. See `components/quotes.md`.
 - **Typography:** Roman only. Do not italicize the entire quote (reserve italics for emphasis or titles of works).
 - **Attribution:** Name in Semibold (600), title/company in Regular (400). Accent color: Traffic Cone for the attribution name.
 - **No opening/closing quotation marks** in the card — the card itself signals the quote.
