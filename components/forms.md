@@ -51,6 +51,37 @@ When an input field carries an icon — a status indicator, a trailing action, a
 - **The 4px gap is between field and icon, not between icon and whatever is after it.** When a hugging field+icon pair sits in a row with other content after it, the gap on the far side of the icon is whatever the row's layout produces — do not extend the 4px inward to the next element.
 - **Do not put a second icon on the left of the field just because the right has one.** A field with an icon on both sides is a different construct (prefix + suffix) and is not in the current brand vocabulary. If a design calls for it, treat each side separately and do not apply the 4px rule symmetrically.
 
+## Dropdown
+A select input with a custom chevron icon. The chevron sits on the right side of the field, 1em in size (matching the input's text size). It uses `currentColor` so it inherits the field's text color (Iron).
+
+```css
+.select {
+  appearance: none;
+  background-color: var(--color-surface);
+  border: none;
+  border-radius: 0;
+  color: var(--color-foreground);
+  font-family: var(--font-primary);
+  font-size: var(--text-1x);
+  font-weight: var(--weight-regular);
+  padding: var(--space-3) var(--space-8);  /* 12px 8px — same as input */
+  padding-right: calc(var(--space-8) + 1em);  /* reserve space for chevron */
+  max-width: 18ch;
+  background-image: url('../assets/icons/chevron-down.svg');
+  background-repeat: no-repeat;
+  background-position: right var(--space-2) center;  /* 8px from right */
+  background-size: 1em;  /* matches text size */
+}
+.select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+```
+
+**Chevron icon:** `assets/icons/chevron-down.svg` — a simple downward-pointing chevron, 16×16 viewBox, filled with `currentColor`. The icon is decorative; the field's label carries the semantic meaning.
+
+**Why 1em:** The chevron scales proportionally with the input's font size. At 16px body text, the chevron is 16px. If the input uses a larger tier (e.g., 1.5× at 24px), the chevron scales to 24px. This keeps visual rhythm across the type scale.
+
 ## Focus and a11y
 - An input with a trailing action icon (search, clear) — the icon is a separate tappable control, not part of the input's touch target. Its own touch target is 40px minimum. Do not let the input's padding absorb the icon's hit area.
 - An input with a status icon (error, success) — the icon is decorative unless it is also a tappable control that opens help or details. If it is not tappable, `aria-hidden="true"` and the status is conveyed by the accompanying text. If it is tappable, it gets its own label and its own 40px touch target.

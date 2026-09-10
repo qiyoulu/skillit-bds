@@ -32,7 +32,7 @@ Implementation:
 ## States
 - **Completed:** Bottle Glass fill (`--color-success`, `#305F38`). Solid. Done.
 - **Active:** Traffic Cone fill (`--color-primary`, `#EF6F1A`). Solid. You are here. Use Traffic Cone for active even on Canvas ground — the badge functional accent exception applies here too (it's a location signal, not decoration).
-- **Pending:** 8px circle, 1px Iron (`--color-foreground`) stroke, transparent fill. Hollow. Not yet reached.
+- **Pending:** 8px circle, 1px Iron (`--color-foreground`) stroke, transparent fill. Hollow. Not yet reached. Note: white fill (as in some industry examples) doesn't work on Canvas ground (`#FAF7F3`) — white-on-cream is ~1:1 contrast, effectively invisible. The hollow ring with Iron border is the BDS-correct equivalent.
 
 ```css
 .progress-dot { width: 8px; height: 8px; border-radius: 50%; }

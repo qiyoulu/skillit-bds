@@ -135,7 +135,7 @@ Rules for the selected state:
 - **aria-pressed vs aria-checked.** Use `aria-pressed="true"` for toggle buttons (single thing on/off). Use `aria-checked="true"` for multi-select items (several can be selected). Both render the same visual; the attribute is what changes for screen readers.
 - **Hover on selected:** `var(--color-foreground-hover)` (`#212C31`) — one step darker than Iron, the same formula used everywhere else.
 - **Disabled selected button:** Reduce opacity to 0.5 (universal disabled rule, same as unselected).
-- **Don't pair with checkboxes.** The checkbox pattern keeps its 16×16 box with Iron stroke + Canvas checkmark on selected. The multi-select button pattern (Plaster/Canvas ↔ Iron/Canvas fill) is distinct from the checkbox pattern by geometry alone — one is a square box with a small icon inside, the other is a pill with centered text. Don't unify them visually.
+- **Don't pair with checkboxes.** The checkbox pattern uses Traffic Cone stroke (unchecked) → Traffic Cone fill + Canvas checkmark (checked). The multi-select button pattern (Plaster/Iron ↔ Iron/Canvas fill) is distinct from the checkbox pattern by geometry alone — one is a square box with a small icon inside, the other is a pill with centered text. Don't unify them visually.
 
 **CSS shape.** Non-hugging buttons with icon:
 ```css
