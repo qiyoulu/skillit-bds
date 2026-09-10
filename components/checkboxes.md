@@ -8,7 +8,7 @@
 
 ## Geometry
 - **Box size:** 16×16px (`--space-8` × `--space-8`)
-- **Border radius:** 0px — sharp corners, consistent with the BDS shape-coding rule (sharp = static container, pill = actionable)
+- **Border radius:** 0px — checkboxes are 16×16px square boxes. The 16px size aligns with `--space-8`; the corners are flush (0px) because the box is a status indicator, not a container. The shape-coding rule (16px = static, pill = actionable) applies to containers and buttons, not to small status marks.
 - **Touch target:** the full row (checkbox + label) is the touch target, not the 16×16 box alone
 
 ## States
