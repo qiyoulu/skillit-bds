@@ -24,10 +24,19 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 **Wordmark specs:** Work Sans Black (900), ALL CAPS, −3% tracking. Lowercase 'l' uses a straight leg. The 'k' connects to 'i' and 'i' connects to 't' via custom point adjustment — not typed text.
 **Minimum size:** 21px/16pt height (mark at 21px/16pt, wordmark at 16px/12pt).
 - **Clear space:** Maintain a minimum clear space of 1/8 of the lockup height (12.5%) on each side.
-## Responsive Rules (Mobile)
-Because horizontal space is at an absolute premium on mobile viewports (e.g., iPhone screens), the full lockup collapses into the standalone **mark**.
-- **Breakpoint:** `< 768px` (Mobile)
-- **Execution:** Hide `lockup.svg` and swap to `mark.svg` while retaining the 32px standard height. Do not rely on the wordmark for recognition on mobile.
+## Header Logo Heights
+The logo height is fixed per component, not per viewport. Use the height that matches the surface the logo sits on.
+
+| Surface | Logo variant | Height | Token | Where |
+|---|---|---|---|---|
+| App header (dark bg) | mark only | **32px** | `--logo-height-mark` | `app/views/application/_header.html.erb`, mobile app headers |
+| Public topnav (light bg) | full lockup | **24px** | `--logo-height-lockup` | `app/views/application/_topnav_skillit_logo.html.erb`, marketing site headers, docs |
+
+**Rules:**
+- The mark is 32px in app headers because it sits on a dark ground at small size — the extra pixel weight keeps it legible.
+- The lockup is 24px in public headers because it sits on a light ground with more horizontal breathing room.
+- Do not scale the logo to fill a container. Do not use `height: auto` and let the SVG's intrinsic size decide. Always set the height explicitly from the token.
+- If the logo appears in a context not listed here (email signatures, partner badges, print), refer to the minimum-size rules (21px for mark, 16px for wordmark) rather than the header heights.
 ---
 ## Color variants
 | Variant                             | Contrast | Permitted | Use                                             |
