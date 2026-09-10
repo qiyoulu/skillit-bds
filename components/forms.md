@@ -1,5 +1,5 @@
 # Form Inputs — Skillit BDS
-**Last updated:** 2026-09-09
+**Last updated:** 2026-09-10
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -75,12 +75,15 @@ A select input with a custom chevron icon. The chevron sits on the right side of
 .select:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+  background-image: url('../assets/icons/chevron-up.svg');
 }
 ```
 
-**Chevron icon:** `assets/icons/chevron-down.svg` — a simple downward-pointing chevron, 16×16 viewBox, filled with `currentColor`. The icon is decorative; the field's label carries the semantic meaning.
+**Chevron icon:** `assets/icons/chevron-down.svg` and `assets/icons/chevron-up.svg` — simple chevrons, 16×16 viewBox, filled with `currentColor`. The chevron is a **functional state indicator**, not decorative: it shows whether the dropdown is closed (chevron-down, default) or open (chevron-up, when the select is focused). The flip happens automatically via the `:focus` pseudo-class.
 
 **Why 1em:** The chevron scales proportionally with the input's font size. At 16px body text, the chevron is 16px. If the input uses a larger tier (e.g., 1.5× at 24px), the chevron scales to 24px. This keeps visual rhythm across the type scale.
+
+**Accessibility:** The select itself carries the accessible label via its `<label>` association. The chevron is a CSS background image — it is not in the DOM and carries no semantic meaning. Screen readers announce the select's label and value; the chevron is purely visual.
 
 ## Focus and a11y
 - An input with a trailing action icon (search, clear) — the icon is a separate tappable control, not part of the input's touch target. Its own touch target is 40px minimum. Do not let the input's padding absorb the icon's hit area.
