@@ -1,12 +1,12 @@
 # Navigation — Skillit BDS
-**Last updated:** 2026-08-17
+**Last updated:** 2026-09-09
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
 - Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
 - Tactile padding rule: button padding scales with font size — vertical = 0.5x font size, horizontal = 1x (padding: 0.5em 1em). This is a non-negotiable brand rule.
 - Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
-- Touch targets minimum 44px in both dimensions (app).
+- Touch targets minimum 40px in both dimensions (app).
 
 ## Primary navigation
 The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF`) to act as a structural, tactile anchor at the top of the interface.
@@ -62,7 +62,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 .mobile-dropdown .nav-link { font-size: clamp(24px, 3vw, 32px); font-weight: 500; }
 .nav-link {
   font-family: var(--font-primary);
-  font-size: var(--text-ui);             /* 1rem / 16px */
+  font-size: var(--text-1x);             /* 1rem / 16px */
   font-weight: var(--weight-medium);       /* 500 */
   color: var(--color-foreground);                  /* Iron */
   text-decoration: none;
@@ -85,3 +85,37 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 ```
 **Approved nav tabs:** How It Works · Our Network · Jobs · About Us · Resources
 **Right side:** Primary button ("Join") — Traffic Cone, tactile padding.
+
+## Back and forward sticky bar
+
+Replaces persistent footer navigation on app views currently using a footer with back and next controls. Sits as a fixed bar at the bottom of the mobile viewport, decouples navigation from the page chrome, and lets the footer be removed.
+
+**When to use.** Any app view that needs a discrete back and next affordance — pagination, step flows, detail-to-listing transitions. One bar per screen, both ends optional; hide whichever side has no action.
+
+**Placement.** `position: sticky; bottom: 0` on mobile. Not sticky on tablet and up — disappears at the tablet breakpoint and the surrounding layout takes over. Do not use `position: fixed` unless the bar must stay on screen across a scroll container that owns the viewport (rare).
+
+**Button spec.** Two icon-only buttons, equal size, aligned to the bar edges.
+
+| Property | Back | Forward |
+|---|---|---|
+| Visual icon size | 24px × 24px | 24px × 24px |
+| Touch target | 40px × 40px | 40px × 40px |
+| Padding (all sides) | 8px | 8px |
+| Arrow fill | Canvas / white (`--color-background`) | Traffic Cone (`--color-primary`) |
+| Button surface fill | None — transparent. The 40px touch target box around the arrow has no fill. | None — transparent. Same as back. |
+| Hover | — | Arrow fill only: Traffic Cone hover (`--color-primary-hover`) |
+| Focus | 2px solid Traffic Cone, 2px offset | 2px solid Traffic Cone, 2px offset |
+
+- Only the arrow graphics themselves are filled. The back arrow is Canvas/white; the forward arrow is Traffic Cone. The button surface — the 40px × 40px tappable box that contains the arrow — is always transparent, on both sides.
+- Do not fill the button surface around the arrow. The button is the transparent hit area; the arrow is the visible mark. A filled button surface around a filled arrow reads as a single solid blob and loses the directional clarity of the arrow shape.
+- The bar itself has no fill. The bar is transparent; the two buttons sit in it with their transparent surfaces. If the page content scrolls under the bar and the buttons need separation from content, separate the bar from content with a Plaster bar background (`--color-surface`) and a 1px Iron border on top — not by filling the buttons.
+
+**Back behavior.** The back button navigates to the previous screen in the app's navigation flow. Which route that is — browser history back, a specific prior route, or a flow-aware previous step — is an engineering decision. The BDS specifies the visual and interaction contract only: the button looks and behaves like a back control, and the destination is whatever the implementation wires it to. Do not hardwire a specific routing strategy in this spec.
+
+**Next behavior.** The next button advances to the next screen or step in the current flow. The same rule applies: the BDS defines the affordance, not the routing.
+
+**One-sided bars.** If only one direction is available, render a single button on the appropriate side. Do not center a lone button in the bar — keep it to the back side (left) or forward side (right), matching the direction it affects.
+
+**Disabled state.** Do not render a disabled-looking back or forward button. If there is no valid destination, hide the button. A disabled navigation control that cannot go anywhere reads as broken.
+
+**Focus and a11y.** Both buttons are real links or buttons, not div clicks. They carry an accessible label — "Back" and "Next" by default — and a visible focus ring (2px solid Traffic Cone, 2px offset) per the button and interactive element rules. Keyboard users must be able to reach and activate them.

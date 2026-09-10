@@ -77,7 +77,7 @@ Your AI agent will follow the rules in this repository. If something looks off, 
 - **Typography:** Work Sans for people, JetBrains Mono for data.
 - **Voice:** Direct, unhedged, no tech jargon.
 - **Layout:** 16px corners on cards, pill buttons, no shadows.
-- **Accessibility:** Minimum contrast ratios, 44px touch targets.
+- **Accessibility:** Minimum contrast ratios, 40px touch targets.
 
 ### Common Mistakes to Watch For
 

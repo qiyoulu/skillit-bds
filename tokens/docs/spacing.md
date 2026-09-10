@@ -59,7 +59,8 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
 ### Website / marketing
 | Property | Value |
 |---|---|
-| Max content width | `1200px` |
+| Max content width | `1168px` |
+| Grid column min width | `326px` |
 | Side margin (desktop) | `--space-16` (64px) each side |
 | Side margin (tablet) | `--space-8` (32px) each side |
 | Side margin (mobile) | `--space-8` (32px) each side |
@@ -75,17 +76,17 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
 | Vertical section gap | `--space-8` (32px) |
 | List item gap | `--space-4` (16px) |
 | Bottom nav height | `64px` |
-| Touch target minimum | `44px` (Apple HIG / WCAG 2.5.5) |
+|| Touch target minimum | `40px` |
 ---
 ## Text Spacing Rules
 - **Paragraphs:** `--space-4` (16px / 1rem) below paragraphs. This is exactly equal to the body font size (1em), maintaining a perfect consistent rhythm.
 - **Text Lists:** `--space-2` (8px / 0.5rem) between bulleted or numbered text items. This tighter spacing ensures the list reads visually as a single, cohesive block of information.
-- **UI Lists:** `--space-4` (16px / 1rem) between interactive list items in the app or dashboard. This wider spacing protects the 44px minimum touch target rule.
+- **UI Lists:** `--space-4` (16px / 1rem) between interactive list items in the app or dashboard. This wider spacing protects the 40px minimum touch target rule.
 
 ### Small viewports (`< 768px`)
 - **Paragraphs:** unchanged (`--space-4`, 16px) — paragraph spacing is viewport-independent.
 - **Text Lists:** unchanged (`--space-2`, 8px) — list spacing is viewport-independent.
-- **UI Lists:** unchanged (`--space-4`, 16px) — the 44px touch target rule is viewport-independent.
+- **UI Lists:** unchanged (`--space-4`, 16px) — the 40px touch target rule is viewport-independent.
 ---
 ## Breakpoints
 | Name | Min width | Context |
@@ -120,10 +121,11 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
   --space-24: 6rem;
   --space-128: clamp(48px, 10vw, 128px);
   --space-256: clamp(96px, 18vw, 256px);
-  --max-width-content: 1200px;
+  --max-width-content: 1168px;
+  --column-min-width: 326px;
   --max-width-app:     480px;
   --max-width-text:    70ch;
-  --touch-target-min:  44px;
+  --touch-target-min:  40px;
   --nav-height: 64px;
   --logo-mark-min: 21px;
   --wordmark-min: 16px;

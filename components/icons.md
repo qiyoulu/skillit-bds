@@ -6,7 +6,7 @@
 - Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
 - Tactile padding rule: button padding scales with font size — vertical = 0.5x font size, horizontal = 1x (padding: 0.5em 1em). This is a non-negotiable brand rule.
 - Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
-- Touch targets minimum 44px in both dimensions (app).
+- Touch targets minimum 40px in both dimensions (app).
 
 ## Geometry
 Icons are drawn on a strict **10×10 sub-grid** (1 block = 2px) inside a **24×24px canvas**. This grid solves consistent centering (the 2px block unit divides the 24px canvas evenly) and enforces the heavy, cast-iron aesthetic.

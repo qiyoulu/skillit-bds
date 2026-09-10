@@ -1,12 +1,12 @@
 # Form Inputs — Skillit BDS
-**Last updated:** 2026-08-17
+**Last updated:** 2026-09-09
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
 - Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
 - Tactile padding rule: button padding scales with font size — vertical = 0.5x font size, horizontal = 1x (padding: 0.5em 1em). This is a non-negotiable brand rule.
 - Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
-- Touch targets minimum 44px in both dimensions (app).
+- Touch targets minimum 40px in both dimensions (app).
 
 ## Input fields
 Fields are **Plaster on Canvas** — the surface separates them from the ground. State is signaled by a status indicator (drawn icon) plus message text, never by changing the border. Colored borders are not a color usage (see `tokens/docs/color.md`: colors = text fill, button bg fill, or icons). Corner radius is `0` on input fields — inputs align flush with cards and content grids; rounded corners are reserved for cards (16px) and actionable elements (pill) per the shape-coding rule. No drafting line — inputs separate purely through their Plaster surface against the Canvas ground.
@@ -17,7 +17,7 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground.
   border-radius: 0;
   color: var(--color-foreground);
   font-family: var(--font-primary);
-  font-size: var(--text-ui);
+  font-size: var(--text-1x);
   padding: var(--space-3) var(--space-2);  /* 12px 8px — tactile */
   width: 100%;
 }
@@ -32,3 +32,24 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground.
 **Labels:** Above the field, not inside (placeholder is not a label). `--text-1x` size, `--weight-medium`, Iron.
 **Error state:** Field unchanged. Error icon (Toolbox, octagon) beside the field + message below in Toolbox, `--text-1x`. Icon + text carry the signal — never a colored border.
 **Success state:** Field unchanged. Checkmark icon (Bottle Glass) alongside. No border change.
+
+## Icon placement beside fields
+When an input field carries an icon — a status indicator, a trailing action, a descriptor — the icon sits on the right side of the field. Text and label stay on the left. The gap between the field and the icon depends on whether the pair hugs.
+
+**Two cases, same rule as buttons:**
+
+| Case | When | Icon position | Gap |
+|---|---|---|---|
+| Does not hug | The field is part of a laid-out form with room around it — standard form rows, dedicated field blocks | Icon at the far right of the field's row, label and input on the left | Auto — let the layout spread them. The icon sits at the end of the row. |
+| Hugs | The field is inline with its action or status — search fields with a trailing search icon, inline validation status, entries inside a denser row | Icon immediately after the field, on the right | 4px fixed — a single 4px gap between the field's visible edge and the icon. |
+
+- **Icon on the right, label on the left.** Same direction as buttons. A leading icon on the left of a field is a different pattern (a prefix or a decorative status mark) and is not covered here — when it appears, it is not paired with the field as an action, and the gap rule does not apply.
+- **Trailing action icons (search, clear, open calendar) are hugging by default.** A search field with a search icon on the right is the most common case — the icon is part of the field's interaction surface and the pair is exactly as wide as the field content. Use the 4px gap. The clear/x icon on a filled field is the same case.
+- **Status icons beside a field (error octagon, success checkmark) sit in the field's row, on the right, and do not touch the field.** They are a separate element from the input — they live in the row, after the field, with the same gap the row's layout produces. Do not glue a status icon to the field's edge with a 4px gap unless the whole field+status pair is hugging (rare for validation states — usually the field has room).
+- **The 4px gap is between field and icon, not between icon and whatever is after it.** When a hugging field+icon pair sits in a row with other content after it, the gap on the far side of the icon is whatever the row's layout produces — do not extend the 4px inward to the next element.
+- **Do not put a second icon on the left of the field just because the right has one.** A field with an icon on both sides is a different construct (prefix + suffix) and is not in the current brand vocabulary. If a design calls for it, treat each side separately and do not apply the 4px rule symmetrically.
+
+## Focus and a11y
+- An input with a trailing action icon (search, clear) — the icon is a separate tappable control, not part of the input's touch target. Its own touch target is 40px minimum. Do not let the input's padding absorb the icon's hit area.
+- An input with a status icon (error, success) — the icon is decorative unless it is also a tappable control that opens help or details. If it is not tappable, `aria-hidden="true"` and the status is conveyed by the accompanying text. If it is tappable, it gets its own label and its own 40px touch target.
+- The input itself is focusable. The icon beside it is not part of the input's focus ring unless the icon is inside the input's form control (which it should not be — keep it as a sibling, not a background layer on the input).

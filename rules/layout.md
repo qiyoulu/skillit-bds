@@ -40,14 +40,15 @@ State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional on
 ### Website / marketing
 - Strict 12-column grid on desktop. No flexible fractional columns (e.g., `1fr`, `1.5fr`). Use fixed `col-span` classes so elements align flawlessly down the vertical axis.
 - Gutter: `--space-8` (32px).
-- Content max-width: `1200px`, centered.
+- Content max-width: `1168px`, centered.
+- Column minimum width: `326px` — no single grid column should be narrower than this, or its content breaks.
 - Side margins: `--space-16` (64px) desktop.
 - **Tablet (`< 1024px`):** The 12-column grid collapses to a single-column layout early to prevent element jumbling. Large typography needs horizontal space; never force complex multi-column grids onto medium viewports.
 - **Mobile (`< 768px`):** Scaling down typography via CSS `clamp()` and implementing `--space-8` (32px) minimum mobile side padding to maintain the premium, editorial whitespace aesthetic.
 ### App (worker-facing)
 - Single-column, max-width `480px`.
 - Side padding: `--space-4` (16px).
-- All interactive elements respect a minimum touch target of `44px`.
+- All interactive elements respect a minimum touch target of `40px`.
 ---
 ## Visual minimalism rules
 These are hard constraints derived from the core brand direction. They apply to every generated layout.

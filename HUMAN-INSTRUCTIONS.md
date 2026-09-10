@@ -134,7 +134,7 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 | Name           | Hex       | CMYK            | Spot (Coated / Uncoated) | Role                                  |
 | -------------- | --------- | --------------- | ------------------------ | ------------------------------------- |
 | Canvas         | `#FAF7F3` | 2, 2, 4, 0      | Paper — not an ink       | Primary background — all surfaces     |
-| Plaster        | `#FFFFFF` | 0, 0, 0, 0      | Paper — unprinted stock   | Elevated surfaces, cards, form inputs |
+| Plaster        | `#FFFFFF` | 0, 0, 0, 0      | Paper — unprinted stock  | Elevated surfaces, cards, form inputs |
 | Iron           | `#232F36` | 80, 50, 45, 65  | 432 C / 432 U            | Foreground                            |
 | Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C / 158 U            | Primary action                        |
 | Hard Hat       | `#FEB11C` | 0, 30, 100, 0   | 1235 C / 1235 U          | Warnings, non-fatal alerts            |
@@ -268,12 +268,12 @@ The scale is built on a 16px baseline: `16 → 24 → 32 → 48 → 64 → 96 �
 | Level | Size | Base Weight | Bolded | Line Height | Tracking | Use |
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
 | **Text-8x** | 128px | Bold (700) | 900 | 0.80 | −6% | Hero headlines at massive scale |
-| **Text-6x** | 96px | **650** | **850** | 0.90 | −5% | Large hero/section titles |
+| **Text-6x** | 96px | 650 | **850** | 0.90 | −5% | Large hero/section titles |
 | **Text-4x** | 64px | Semibold (600) | 800 | 1.00 | −4% | Standard headlines |
-| **Text-3x** | 48px | **550** | **700** | 1.10 | −3% | Section titles, pull quotes |
+| **Text-3x** | 48px | 550 | **700** | 1.10 | −3% | Section titles, pull quotes |
 | **Text-2x** | 32px | Medium (500) | 700 | 1.20 | −2% | Subheadings |
-| **Text-1.5x** | 24px | **450** | **600** | 1.30 | −1% | Large body, subheads |
-| **Text-1x** | 16px | Regular (400) | 600 | 1.40 | 0% | All running copy |
+| **Text-1.5x** | 24px | 450 | **600** | 1.30 | −1% | Large body, subheads |
+| **Text-1x** | 16px | Regular (400) | 650 | 1.40 | 0% | All running copy |
 
 _(Full print/mobile/monospace variants for each level are documented in `tokens/docs/typography.md` — check there before inventing a new size, so this table and the token file don't drift apart again.)_
 
@@ -338,7 +338,7 @@ To maintain the grid's consistent rhythm, vertical spacing between text elements
 
 - **Paragraphs:** 16px (`--space-4`). The standard gap between text blocks.
 - **Text Lists:** 8px (`--space-2`). Items in a bulleted or numbered list sit tighter together so the list reads visually as a single, cohesive block.
-- **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 44px minimum touch target rule.
+- **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 40px minimum touch target rule.
 
 ### Block quotes
 
@@ -747,7 +747,7 @@ Collages are needed for the culture doc and select marketing materials.
 ### Responsive Scaling
 
 - **The Rule:** Scale display text sizes down smoothly to 0.75x at mobile breakpoints (e.g., a desktop 128px becomes 96px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
-- **Body Text Exception:** Body text does **not** scale on mobile. `Text-1x` holds at 16px (`Text-1s` = 16px) — see "Why Text-1x does not scale" above. UI text (`--text-ui`) also holds its size; the 44px touch target rule governs app surfaces, not display.
+- **Body Text Exception:** Body text does **not** scale on mobile. `Text-1x` holds at 16px (`Text-1s` = 16px) — see "Why Text-1x does not scale" above. UI text (`--text-1x`) also holds its size; the 40px touch target rule governs app surfaces, not display.
 
 ---
 

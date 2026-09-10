@@ -40,11 +40,11 @@ If you need a size larger than 128px (e.g., 256px), extrapolate using this algor
 | Level | Token | px (screen) | rem (web) | pt (print) | Base Weight | Bolded | Line height | Tracking |
 |---|---|---|---|---|---|---|---|---|
 | **Text-8x** | `--text-8x` | 128px | 8rem | 96pt | Bold (700) | 900 | 0.80 | -6% |
-| **Text-6x** | `--text-6x` | 96px | 6rem | 72pt | **650** | **850** | 0.90 | -5% |
+| **Text-6x** | `--text-6x` | 96px | 6rem | 72pt | Semibold (600) | **850** | 0.90 | -5% |
 | **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | Semibold (600) | 800 | 1.00 | -4% |
-| **Text-3x** | `--text-3x` | 48px | 3rem | 36pt | **550** | **700** | 1.10 | -3% |
+| **Text-3x** | `--text-3x` | 48px | 3rem | 36pt | Medium (500) | **700** | 1.10 | -3% |
 | **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | Medium (500) | 700 | 1.20 | -2% |
-| **Text-1.5x** | `--text-1.5x` | 24px | 1.5rem | 18pt | **450** | **600** | 1.30 | -1% |
+| **Text-1.5x** | `--text-1.5x` | 24px | 1.5rem | 18pt | Regular (400) | **600** | 1.30 | -1% |
 | **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | Regular (400) | 600 | 1.40 | 0% |
 
 *(Note: Text-16x was retired — no longer a defined Figma text style; use the extrapolation algorithm above if a size beyond Text-8x is ever needed.)*
@@ -73,11 +73,10 @@ Sub-16px text on mobile is not available from the primary scale. Metadata, badge
 ## Functional type scale (UI)
 These tokens cover UI surfaces (app, dashboard, labels, captions) where the primary hierarchy doesn't apply directly.
 
-| Token | Role | Size | Weight | Line height | Letter spacing |
-|---|---|---|---|---|---|
-| `--text-ui-lg` | Large UI text | `1.125rem` (18px) | 400 | 1.6 | `0` |
-| `--text-ui` | Default UI body | `1rem` (16px) | 400 | 1.6 | `0` |
-| `--text-mono` | Metadata, IDs, data | `0.875rem` (14px) | 400 | 1.5 | `0.02em` |
+|| Token | Role | Size | Weight | Line height | Letter spacing |
+||---|---|---|---|---|---|
+|| `--text-0.75x` | Labels, tags, badges, captions — minimum size | `0.75rem` (12px) | 550 | 1.4 | `0.04em` |
+|| `--text-1x` | Default UI body, all running copy | `1rem` (16px) | 400 | 1.4 | `0` |
 ---
 ## CSS custom properties (copy-paste ready)
 ```css
@@ -131,7 +130,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-2x-mono:            1.8125rem; /* 29px — confirmed Figma value, round(32 * 0.9) */
   /* Text-1.5x */
   --text-1\.5x:              1.5rem;
-  --text-1\.5x-weight:       450;
+  --text-1.5x-weight:       450;
   --text-1\.5x-weight-bold:  600;
   --text-1\.5x-leading:      1.30;
   --text-1\.5x-tracking:     -0.01em;
@@ -144,11 +143,22 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-1x-leading:        1.40;
   --text-1x-tracking:       0em;
   --text-1x-print:          12pt;
-  --text-1x-sm:             1rem;   /* 16px — HELD, not scaled. See note below. */
-  /* Functional UI scale */
-  --text-ui-lg:     1.125rem;
-  --text-ui: 1rem;
-  --text-mono: 0.875rem; /* = Text-1x monospace variant, confirmed round(16 * 0.9) = 14px */
+  --text-1x-weight: 400;
+  --text-1x-weight-bold: 600;
+  --text-1x-leading: 1.40;
+  --text-1x-tracking: 0em;
+  --text-1x-sm: 1rem;
+  --text-0.75x: 0.75rem;  /* Text-0.75x — labels, tags, badges, captions. 12px. bolded: 600. */
+  --text-0.75x-weight: 550;
+  --text-0.75x-leading: 1.40;
+  --text-0.75x-tracking: 0.04em;
+
+  /* Button padding — paired with text tiers, 0.5em / 1em tactile ratio */
+  --padding-0.75x: 0.25rem 0.5rem;   /* 4px / 8px — Text-0.75x (12px) */
+  --padding-1x:    0.5rem 1rem;       /* 8px / 16px — Text-1x (16px) */
+  --padding-1.5x:  0.75rem 1.5rem;    /* 12px / 24px — Text-1.5x (24px) */
+  --padding-2x:    1rem 2rem;         /* 16px / 32px — Text-2x (32px) */
+
   /* Variable Font Weights */
   --weight-regular:    400;
   --weight-medium:     500;
@@ -173,8 +183,8 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
 - **Text-2x:** Section headings, page titles, pull quotes.
 - **Text-1x:** All running copy, paragraph text.
 ### Functional UI scale (app, dashboard)
-- **`--text-ui` and above:** Work Sans Regular (400) minimum. Line height 1.6. Never below 1.4.
-- **`--text-ui`:** Work Sans Regular (400) minimum. Line height 1.6. Never below 1.4.
+- **`--text-1x` and above:** Work Sans Regular (400) minimum. Line height 1.6. Never below 1.4.
+- **`--text-1x`:** Work Sans Regular (400) minimum. Line height 1.6. Never below 1.4.
 - Maximum line length for body: 70 characters (`max-width: var(--max-width-text)`).
 ### Variable Font & Optical Balancing
 Work Sans is implemented as a variable font (`wght@100..900`).
@@ -193,11 +203,11 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 
 - **Paragraphs:** 16px (`--space-4`). The standard gap between paragraphs.
 - **Text Lists:** 8px (`--space-2`). Items in a bulleted or numbered text list sit tighter together so the list reads visually as a single, cohesive block of information.
-- **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 44px minimum touch target rule.
+- **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 40px minimum touch target rule.
 
 **Blockquotes**
 - **Container:** Place quotes inside a Plaster (`#FFFFFF`) card container with 16px border radius. It uses standard card padding.
-- **Headshot sizing:** Lock headshots to the quote tier (48px / 64px / 96px) — never scale by font-size ratio. See `components/quotes.md`.
+- **Headshot sizing:** Lock headshots to 128px desktop / 64px mobile — never scale by font-size ratio. See `components/quotes.md`.
 - **Typography:** Roman only. Do not italicize the entire quote (reserve italics for emphasis or titles of works).
 - **Attribution:** Name in Semibold (600), title/company in Regular (400). Accent color: Traffic Cone for the attribution name.
 - **No opening/closing quotation marks** in the card — the card itself signals the quote.
@@ -216,9 +226,9 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 ### What not to do
 - Do not use `font-weight: 300` (Light) — too thin for job-site legibility.
 - Do not use any typeface other than Work Sans.
-- Do not set letter-spacing on UI text below `--text-ui` — it reduces legibility at small sizes.
+- Do not set letter-spacing on UI text below `--text-1x` — it reduces legibility at small sizes.
 - Do not use the primary hierarchy sizes in UI components — they are for editorial/marketing surfaces only.
 
 ### Responsive Scaling (Desktop to Mobile)
 - **The Rule:** Scale display text sizes down smoothly to a minimum of half the size at mobile breakpoints (e.g., a desktop 128px becomes 64px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
-- **Body Text Exception:** Body text does **not** scale on mobile. `Text-1x` holds at 16px (`Text-1s` = 16px) — see "Why Text-1x does not scale" above. UI text (`--text-ui`) also holds its size; the 44px touch target rule governs app surfaces, not display.
+- **Body Text Exception:** Body text does **not** scale on mobile. `Text-1x` holds at 16px (`Text-1s` = 16px) — see "Why Text-1x does not scale" above. UI text (`--text-1x`) also holds its size; the 40px touch target rule governs app surfaces, not display.

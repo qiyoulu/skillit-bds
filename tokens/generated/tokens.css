@@ -56,7 +56,7 @@
   --text-8x-tracking: -0.06em;
   --text-8x-sm: clamp(6rem, 5.1713rem + 3.5359vw, 8rem);
   --text-6x: 6rem;                /* Text-6x, mobile: clamp(4.5rem, 3.88rem + 2.65vw, 6rem) */
-  --text-6x-weight: 650;
+  --text-6x-weight:        650;
   --text-6x-weight-bold: 850;
   --text-6x-leading: 0.90;
   --text-6x-tracking: -0.05em;
@@ -68,7 +68,7 @@
   --text-4x-tracking: -0.04em;
   --text-4x-sm: clamp(3rem, 2.5856rem + 1.768vw, 4rem);
   --text-3x: 3rem;                 /* Text-3x, mobile: clamp(2.25rem, 1.94rem + 1.33vw, 3rem) */
-  --text-3x-weight: 550;
+  --text-3x-weight:         550;
   --text-3x-weight-bold: 700;
   --text-3x-leading: 1.10;
   --text-3x-tracking: -0.03em;
@@ -80,55 +80,29 @@
   --text-2x-tracking: -0.02em;
   --text-2x-sm: clamp(1.5rem, 1.2928rem + 0.884vw, 2rem);
   --text-1\.5x: 1.5rem;             /* Text-1.5x, mobile: clamp(1.125rem, 0.97rem + 0.66vw, 1.5rem) */
-  --text-1\.5x-weight: 450;
+  --text-1.5x-weight:       450;
   --text-1\.5x-weight-bold: 600;
   --text-1\.5x-leading: 1.30;
   --text-1\.5x-tracking: -0.01em;
   --text-1\.5x-sm: clamp(1.125rem, 0.9696rem + 0.663vw, 1.5rem);
-  --text-1x: 1rem;                /* Text-1x, small viewport: 0.75rem, bolded: 600 */
+  --text-1x: 1rem;                /* Text-1x — all running copy, default UI body. 16px held on mobile. bolded: 600. */
   --text-1x-weight: 400;
   --text-1x-weight-bold: 600;
   --text-1x-leading: 1.40;
   --text-1x-tracking: 0em;
   --text-1x-sm: 1rem;
-  /* No Text-0.75x — removed (was 12px floor) */
+  --text-0.75x: 0.75rem;  /* Text-0.75x — labels, tags, badges, captions. 12px. bolded: 600. */
+  --text-0.75x-weight: 550;
+  --text-0.75x-leading: 1.40;
+  --text-0.75x-tracking: 0.04em;
 
-  /* typography — mono tier variants (round(base × 0.9)) */
-  --text-mono-8x: 7.1875rem;
-  --text-mono-8x-weight: 700;
-  --text-mono-8x-leading: 0.80;
-  --text-mono-8x-tracking: -0.06em;
-  --text-mono-6x: 5.375rem;
-  --text-mono-6x-weight: 650;
-  --text-mono-6x-leading: 0.90;
-  --text-mono-6x-tracking: -0.05em;
-  --text-mono-4x: 3.625rem;
-  --text-mono-4x-weight: 600;
-  --text-mono-4x-leading: 1.00;
-  --text-mono-4x-tracking: -0.04em;
-  --text-mono-3x: 2.6875rem;
-  --text-mono-3x-weight: 550;
-  --text-mono-3x-leading: 1.10;
-  --text-mono-3x-tracking: -0.03em;
-  --text-mono-2x: 1.8125rem;
-  --text-mono-2x-weight: 500;
-  --text-mono-2x-leading: 1.20;
-  --text-mono-2x-tracking: -0.02em;
-  --text-mono-1\.5x: 1.375rem;
-  --text-mono-1\.5x-weight: 450;
-  --text-mono-1\.5x-leading: 1.30;
-  --text-mono-1\.5x-tracking: -0.01em;
-  --text-mono-1x: 0.875rem;
-  --text-mono-1x-weight: 400;
-  --text-mono-1x-leading: 1.40;
-  --text-mono-1x-tracking: 0em;
+  /* Button padding — paired with text tiers, 0.5em / 1em tactile ratio */
+  --padding-0.75x: 0.25rem 0.5rem;   /* 4px / 8px — Text-0.75x (12px) */
+  --padding-1x:    0.5rem 1rem;       /* 8px / 16px — Text-1x (16px) */
+  --padding-1.5x:  0.75rem 1.5rem;    /* 12px / 24px — Text-1.5x (24px) */
+  --padding-2x:    1rem 2rem;         /* 16px / 32px — Text-2x (32px) */
 
-  /* typography — functional UI scale */
-  --text-ui-lg: 1.125rem;
-  --text-ui: 1rem;
-  --text-mono: 0.875rem;
-
-  /* typography — variable font weights */
+  /* Variable Font Weights */
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
@@ -148,10 +122,11 @@
   --radius-pill: 9999px;
 
   /* layout constants */
-  --max-width-content: 1200px;
+  --max-width-content: 1168px;
+  --column-min-width: 326px;
   --max-width-app: 480px;
   --max-width-text: 70ch;
-  --touch-target-min: 44px;
+  --touch-target-min: 40px;
   --nav-height: 64px;
   --logo-mark-min: 21px;
   --wordmark-min: 16px;

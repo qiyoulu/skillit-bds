@@ -48,7 +48,7 @@ Every status state should communicate via three channels simultaneously: color +
 | Info    | Painter's Tape `#007CA6` | Square             | “Info,” “Note,” “Tip”                     |
 ---
 ## Touch target rules (mobile / app)
-- Minimum touch target size: `44px × 44px` (Apple HIG / WCAG 2.5.5).
+- Minimum touch target size: `40px × 40px`.
 - This applies to all interactive elements: buttons, links, checkboxes, radio inputs, nav items.
 - The visible element may be smaller, but the clickable/tappable area should meet the minimum.
 - On the worker app specifically: assume fat fingers, gloves, and direct sunlight. When in doubt, go larger.
