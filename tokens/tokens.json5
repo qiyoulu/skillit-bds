@@ -185,8 +185,7 @@
       'touch-target-min': { $value: '40px', $type: 'dimension', $description: 'minimum touch target — app and mobile web' },
       'nav-height': { $value: '64px', $type: 'dimension', $description: 'primary nav bar height' },
       'logo-mark-min': { $value: '21px', $type: 'dimension', $description: 'mark minimum size — below this the negative space closes up' },
-      'logo-height-mark': { $value: '32px', $type: 'dimension', $description: 'mark height in app headers (dark bg)' },
-      'logo-height-lockup': { $value: '24px', $type: 'dimension', $description: 'lockup height in public topnav headers (light bg)' },
+      'logo-height': { $value: '24px', $type: 'dimension', $description: 'standard header logo height — lockup and mark use the same height' },
       'wordmark-min': { $value: '16px', $type: 'dimension', $description: 'wordmark minimum size' },
     },
     breakpoint: {

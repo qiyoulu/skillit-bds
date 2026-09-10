@@ -129,8 +129,7 @@
   --touch-target-min: 40px;
   --nav-height: 64px;
   --logo-mark-min: 21px;
-  --logo-height-mark: 32px;
-  --logo-height-lockup: 24px;
+  --logo-height: 24px;
   --wordmark-min: 16px;
 
   /* breakpoints (min-width, mobile-first) */

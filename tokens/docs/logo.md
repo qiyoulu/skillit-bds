@@ -25,18 +25,19 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 **Minimum size:** 21px/16pt height (mark at 21px/16pt, wordmark at 16px/12pt).
 - **Clear space:** Maintain a minimum clear space of 1/8 of the lockup height (12.5%) on each side.
 ## Header Logo Heights
-The logo height is fixed per component, not per viewport. Use the height that matches the surface the logo sits on.
+The header logo is always **24px tall**, regardless of whether it's the lockup or the mark, regardless of surface. One token: `--logo-height`.
 
-| Surface | Logo variant | Height | Token | Where |
-|---|---|---|---|---|
-| App header (dark bg) | mark only | **32px** | `--logo-height-mark` | `app/views/application/_header.html.erb`, mobile app headers |
-| Public topnav (light bg) | full lockup | **24px** | `--logo-height-lockup` | `app/views/application/_topnav_skillit_logo.html.erb`, marketing site headers, docs |
+| Context | Logo | Token | Value |
+|---|---|---|---|
+| App header (dark bg) | mark only | `--logo-height` | 24px |
+| Public topnav (light bg) | full lockup | `--logo-height` | 24px |
+| Marketing site header | full lockup | `--logo-height` | 24px |
+| Docs header | full lockup | `--logo-height` | 24px |
 
 **Rules:**
-- The mark is 32px in app headers because it sits on a dark ground at small size — the extra pixel weight keeps it legible.
-- The lockup is 24px in public headers because it sits on a light ground with more horizontal breathing room.
-- Do not scale the logo to fill a container. Do not use `height: auto` and let the SVG's intrinsic size decide. Always set the height explicitly from the token.
-- If the logo appears in a context not listed here (email signatures, partner badges, print), refer to the minimum-size rules (21px for mark, 16px for wordmark) rather than the header heights.
+- Lockup and mark use the same 24px height. The lockup has more horizontal reach because it includes the wordmark; the mark does not. Height is the one dimension that stays consistent.
+- Do not scale the logo to fill a container. Do not use `height: auto` and let the SVG's intrinsic size decide. Always set the height explicitly from `--logo-height`.
+- If the logo appears in a context not listed here (email signatures, partner badges, print, cards), refer to the minimum-size rules (21px for mark, 16px for wordmark) rather than the header height.
 ---
 ## Color variants
 | Variant                             | Contrast | Permitted | Use                                             |

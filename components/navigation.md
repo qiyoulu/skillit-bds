@@ -29,8 +29,8 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   align-items: center;
   justify-content: space-between;
 }
-.nav-logo img { height: 32px; }  /* 32px — lockup height */
-.logo-mark { display: none; width: 24px; height: 24px; }
+.nav-logo img { height: var(--logo-height); }  /* 24px — lockup height */
+.logo-mark { display: none; width: var(--logo-height); height: var(--logo-height); }  /* 24px */
 .nav-right {
   display: flex;
   align-items: center;
