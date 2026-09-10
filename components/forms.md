@@ -17,10 +17,12 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground.
   border-radius: 0;
   color: var(--color-foreground);
   font-family: var(--font-primary);
-  font-size: var(--text-1x);
+  font-size: var(--text-1x);              /* 16px */
+  font-weight: var(--weight-regular);       /* 400 — same as body */
   padding: var(--space-3) var(--space-2);  /* 12px 8px — tactile */
-  width: 100%;
+  max-width: 18ch;                          /* ~288px at 16px; prevents stretching in wide columns */
 }
+.input-wide { width: 100%; max-width: none; } /* opt-in for textareas / long-form */
 .input:focus {
    outline: 2px solid var(--color-primary);      /* Traffic Cone focus ring */
   outline-offset: 2px;

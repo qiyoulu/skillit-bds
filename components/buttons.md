@@ -32,7 +32,7 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
 ```
 
 ## Secondary button
-Outline style for lower-priority actions. Iron text on Plaster fill, 1px Iron border. Same pill radius and padding as primary.
+Lower-priority actions. Iron text on Plaster fill, no border. Same pill radius and padding as primary.
 
 ```css
 .btn-secondary {
@@ -42,7 +42,7 @@ Outline style for lower-priority actions. Iron text on Plaster fill, 1px Iron bo
   font-size: var(--text-1x);              /* 1rem */
   font-weight: var(--weight-semibold);      /* 600 */
   padding: 0.5em 1em;             /* vertical = 0.5x font size, horizontal = 1x */
-  border: 1px solid var(--color-foreground);
+  border: none;
   border-radius: var(--radius-pill);       /* 9999px pill */
   letter-spacing: 0;
   cursor: pointer;
@@ -51,7 +51,10 @@ Outline style for lower-priority actions. Iron text on Plaster fill, 1px Iron bo
 ```
 
 ## Button hover
-Filled buttons use their matching per-color hover token. Secondary uses the surface hover token (Plaster × EFEDE9 = `#EFEDE9`). No opacity fade — the old `opacity: 0.9` approach is retired across all button classes.
+Filled buttons use their matching per-color hover token. Hover states use **`background-color`** swaps, not opacity fades — the old `opacity: 0.9` approach is retired across all button classes.
+- Primary → `var(--color-primary-hover)` (`#E06718`)
+- Secondary → `var(--color-surface-hover)` (`#EFEDE9`)
+- Destructive → `var(--color-error-hover)` (`#BB0F2A`)
 
 ## CTA Button (inverted)
 For primary actions inside structured blocks. Iron text on Traffic Cone, same as the standard primary button — consistent across all surfaces.
@@ -100,49 +103,39 @@ Buttons that carry an icon place the icon on the right side of the label, text o
 - **Icon-only buttons are neither case.** An icon-only button (no label) has no gap to manage — the icon fills the button and the touch target is the button size. The back and forward sticky bar arrows are icon-only buttons; their spec lives in `navigation.md`.
 
 ## Selected (toggled) state
-Secondary buttons can carry a selected state — multi-select filters, language pickers, trade selectors, per-diem toggles. A selected secondary button keeps the same Plaster fill, Iron border, and Iron text as an unselected secondary button. The selection is signaled by a green checkmark icon to the right of the label.
+Multi-select buttons (filters, language pickers, trade selectors, per-diem toggles) signal selection through **fill invert** — Plaster/Iron/Iron unselected → Iron/Canvas/Canvas selected. The selection state is the fill change alone; no checkmark icon is added. This keeps the button geometry identical between states and avoids the layout jostling that a conditionally rendered icon would cause.
 
-**Unselected secondary button:**
+**Unselected multi-select button:**
 ```css
-.btn-secondary {
-  background-color: var(--color-surface);                  /* Plaster */
-  border: 1px solid var(--color-foreground);               /* Iron */
-  color: var(--color-foreground);                          /* Iron text */
-  padding: var(--padding-1x);                              /* or --padding-0.75x for dense */
+.btn-multiselect {
+  background-color: var(--color-surface);          /* Plaster */
+  color: var(--color-foreground);                 /* Iron text */
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.5em 1em;
 }
 ```
 
-**Selected secondary button:**
+**Selected multi-select button:**
 ```css
-.btn-secondary[aria-pressed="true"],
-.btn-secondary[aria-checked="true"],
-.btn-secondary.is-selected {
-  /* Same as unselected — no border color change, no fill change */
+.btn-multiselect[aria-pressed="true"],
+.btn-multiselect[aria-checked="true"] {
+  background-color: var(--color-foreground);      /* Iron */
+  color: var(--color-background);                 /* Canvas text */
 }
 ```
 
-**Selected state with checkmark icon:**
-```html
-<button class="btn-secondary" aria-checked="true">
-  <span class="label">English</span>
-  <%= inline_svg 'icons/checkmark.svg', class: 'w-6 h-6', aria: { hidden: true } %>
-</button>
-```
-```css
-.btn-secondary[aria-checked="true"] .icon {
-  margin-left: var(--space-1);  /* 4px gap between label and checkmark */
-}
-```
+**Why no Traffic Cone (Iron only):** Traffic Cone fill is reserved for primary CTAs. Multi-select buttons use Iron fill instead because the selection state is *not* a call to action — it's an on/off indicator. Iron preserves the visual difference between unselected (light) and selected (dark) without competing with CTAs.
 
-The checkmark icon is `assets/icons/checkmark.svg`. It has Bottle Glass (`#33663D`) baked into the path fill — do not change it to `currentColor`. This is a status signal, not a decorative UI icon: the green color pairs with the checkmark shape to say "this is on" without competing with the page's primary CTA. Keeping the fill hardcoded means the icon reads correctly regardless of where it's placed.
+**Why no checkmark:** A checkmark would require an icon slot in the base button, which either shifts the layout when the icon appears (jostling the row of buttons) or wastes space when it's empty. The fill invert alone is unambiguous and reads correctly for colorblind users — the state is conveyed through brightness contrast (light vs. dark), not through a colored icon.
 
 Rules for the selected state:
-- **The button itself doesn't change.** Same Plaster fill, same Iron border, same Iron text, same padding. The checkmark is the only visual difference.
-- **Checkmark goes to the right of the label.** 4px gap (`--space-1`) between label and icon, matching the hugging-button icon rule above.
-- **The checkmark is decorative.** It gets `aria-hidden="true"` — the accessible state comes from `aria-pressed` / `aria-checked` on the button, not from the icon.
-- **aria-pressed vs aria-checked.** Use `aria-pressed="true"` for toggle buttons that turn a single thing on/off. Use `aria-checked="true"` for multi-select items where several can be selected simultaneously (like language pills). Both get the same visual; the attribute is what changes for screen readers.
-- **Disabled selected button:** Same rule as disabled secondary — reduce opacity to 0.5. The checkmark fades with the button.
-- **Hover on selected:** `hover:bg-surface-hover` (same as unselected secondary).
+- **The fill is the signal.** Unselected = Plaster/Iron. Selected = Iron/Canvas. No border change, no icon, no size change.
+- **No checkmark or status icon.** Selection is communicated by the fill swap alone.
+- **aria-pressed vs aria-checked.** Use `aria-pressed="true"` for toggle buttons (single thing on/off). Use `aria-checked="true"` for multi-select items (several can be selected). Both render the same visual; the attribute is what changes for screen readers.
+- **Hover on selected:** `var(--color-foreground-hover)` (`#212C31`) — one step darker than Iron, the same formula used everywhere else.
+- **Disabled selected button:** Reduce opacity to 0.5 (universal disabled rule, same as unselected).
+- **Don't pair with checkboxes.** The checkbox pattern keeps its 16×16 box with Iron stroke + Canvas checkmark on selected. The multi-select button pattern (Plaster/Canvas ↔ Iron/Canvas fill) is distinct from the checkbox pattern by geometry alone — one is a square box with a small icon inside, the other is a pill with centered text. Don't unify them visually.
 
 **CSS shape.** Non-hugging buttons with icon:
 ```css
