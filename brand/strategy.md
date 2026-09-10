@@ -6,16 +6,16 @@
 
 ## Purpose
 
-This document is the executive summary of Skillit's brand strategy. It defines the *what* and *why*. The *how* lives in the BDS files referenced below. When in doubt, start here for direction, then go to the detailed file for execution.
+This document is the executive summary of Skillit's brand strategy. It defines the _what_ and _why_. The _how_ lives in the BDS files referenced below. When in doubt, start here for direction, then go to the detailed file for execution.
 
-| Document | Purpose | Load this when... |
-|---|---|---|
-| `brand/narrative.md` | Full brand story, mission, vision, tagline, key stats, what Skillit is not | Writing any Skillit content |
-| `brand/audience.md` | Detailed audience profiles, writing guidance, two vantage points | Writing for a specific audience |
-| `voice/brand-voice.md` | Voice rules, banned words, tone guidelines | Writing or editing copy |
-| `components/` | Component-specific rules (buttons, cards, quotes, etc.) | Designing a UI element |
-| `tokens/docs/typography.md` | Type scale, weights, usage | Choosing a type treatment |
-| `tokens/docs/color.md` | Color tokens, roles, usage | Choosing a color |
+| Document                    | Purpose                                                                    | Load this when...               |
+| --------------------------- | -------------------------------------------------------------------------- | ------------------------------- |
+| `brand/narrative.md`        | Full brand story, mission, vision, tagline, key stats, what Skillit is not | Writing any Skillit content     |
+| `brand/audience.md`         | Detailed audience profiles, writing guidance, two vantage points           | Writing for a specific audience |
+| `voice/brand-voice.md`      | Voice rules, banned words, tone guidelines                                 | Writing or editing copy         |
+| `components/`               | Component-specific rules (buttons, cards, quotes, etc.)                    | Designing a UI element          |
+| `tokens/docs/typography.md` | Type scale, weights, usage                                                 | Choosing a type treatment       |
+| `tokens/docs/color.md`      | Color tokens, roles, usage                                                 | Choosing a color                |
 
 ---
 
@@ -27,7 +27,7 @@ For workers: access to construction's greatest opportunities.
 For contractors: AI-first access to the skilled workforce they need.
 For society: the capacity to build anything, anywhere.
 
-*See `brand/narrative.md` — "The dream" and "The tagline" for the full context.*
+_See `brand/narrative.md` — "The dream" and "The tagline" for the full context._
 
 ---
 
@@ -35,7 +35,7 @@ For society: the capacity to build anything, anywhere.
 
 The construction industry has spent decades assuming the problem is a labor shortage. The data says otherwise: only 1 in 20 workers are actually missing from the labor pool. The real constraint is a lack of **digital access** to the 95% of skilled workers who already exist.
 
-*See `brand/narrative.md` — "The problem" for the detailed argument and key statistics.*
+_See `brand/narrative.md` — "The problem" for the detailed argument and key statistics._
 
 ---
 
@@ -49,7 +49,7 @@ The construction industry has spent decades assuming the problem is a labor shor
 
 **Positioning statement:** Skillit is a worker-first marketplace that uses AI to interpret live demand from America's largest contractors and intelligently route the right worker to the right project, place, and moment.
 
-*See `brand/narrative.md` — "What Skillit is not" for the detailed exclusions.*
+_See `brand/narrative.md` — "What Skillit is not" for the detailed exclusions._
 
 ---
 
@@ -61,21 +61,21 @@ The construction industry has spent decades assuming the problem is a labor shor
 4. **Craftsmanlike** — Sweat the details. Work you're proud of, even when no one is looking.
 5. **Ambitious** — Solving one of the world's hardest, most stubborn problems.
 
-*These map to the traits in `HUMAN-INSTRUCTIONS.md` and the design principles in `rules/layout.md`.*
+_These map to the traits in `HUMAN-INSTRUCTIONS.md` and the design principles in `rules/layout.md`._
 
 ---
 
 ## Target Audiences (summary)
 
-| Audience | Role | Priority |
-|---|---|---|
-| Craft workers | Subject | Primary |
-| Construction contractors | Customer | Primary |
-| Internal team | Steward | Secondary |
-| Investors | Stakeholder | Secondary |
-| Press | Amplifier | Secondary |
+| Audience                 | Role        | Priority  |
+| ------------------------ | ----------- | --------- |
+| Craft workers            | Subject     | Primary   |
+| Construction contractors | Customer    | Primary   |
+| Internal team            | Steward     | Secondary |
+| Investors                | Stakeholder | Secondary |
+| Press                    | Amplifier   | Secondary |
 
-*See `brand/audience.md` for detailed profiles, writing guidance, and the two vantage points table.*
+_See `brand/audience.md` for detailed profiles, writing guidance, and the two vantage points table._
 
 ---
 
@@ -88,7 +88,7 @@ The construction industry has spent decades assuming the problem is a labor shor
 - **Shape language:** Pill buttons (actionable). 16px corners on static containers.
 - **Motion:** CSS-only, reduced-motion accessible. No GIFs.
 
-*See `tokens/docs/color.md`, `tokens/docs/typography.md`, `components/buttons.md` for the detailed rules.*
+_See `tokens/docs/color.md`, `tokens/docs/typography.md`, `components/buttons.md` for the detailed rules._
 
 ---
 
@@ -103,7 +103,7 @@ The construction industry has spent decades assuming the problem is a labor shor
 - Numbers: digits, commas for ≥1,000.
 - Percentages in digits.
 
-*See `voice/brand-voice.md` for full voice rules and `voice/copy-examples.md` for examples.*
+_See `voice/brand-voice.md` for full voice rules and `voice/copy-examples.md` for examples._
 
 ---
 
@@ -124,8 +124,8 @@ The construction industry has spent decades assuming the problem is a labor shor
 - **Customer validation:** 13 of America's 25 largest datacenter builders trust Skillit.
 - **Team traits:** Agency, judgment, craftsmanship, stamina, responsibility.
 
-*See `brand/narrative.md` — "Founding credibility" and "Key statistics" for the full story and data.*
+_See `brand/narrative.md` — "Founding credibility" and "Key statistics" for the full story and data._
 
 ---
 
-*This document is the foundation. The BDS files beneath it are the implementation. When the strategy changes, update this first, then cascade to the referenced files.*
+_This document is the foundation. The BDS files beneath it are the implementation. When the strategy changes, update this first, then cascade to the referenced files._

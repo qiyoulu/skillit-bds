@@ -11,11 +11,9 @@ Headshot size is **locked to the quote tier, not a ratio to the text**. Never sc
 
 | Tier | Headshot | Quote text | Use |
 |---|---|---|---|
-| Small | 48px | Text-1x (16px, weight 400) | Testimonial grids, app cards, email blocks |
-| Medium | 64px | Text-1.5x (24px, weight 450) | Feature sections, case-study pages |
-| Large | 96px | Text-2x (32px, weight 500) | Hero pull quotes, editorial pages |
+| Quote | 128px desktop / 64px mobile | Text-2x (32px, weight 500) | Pull quotes, hero quotes |
 
-The headshot is `flex: 0 0 auto` at its fixed pixel size. The text container sizes independently. On mobile (< 768px), the headshot drops one tier (Large → Medium, Medium → Small, Small stays Small).
+The headshot is `flex: 0 0 auto` at its fixed pixel size (128px). The text container sizes independently. On mobile (< 768px), the headshot drops to 64px.
 
 ## Quote card
 Quotes sit in a Plaster (`--color-surface`) card with 16px corners and standard card padding. The headshot is circular (`border-radius: 999px`), aligned to the top-left of the card. Attribution (name, role, location) sits below the quote in Text-1x, weight 400, Iron.
@@ -31,10 +29,17 @@ Quotes sit in a Plaster (`--color-surface`) card with 16px corners and standard 
 }
 .quote-card .headshot {
   flex: 0 0 auto;
-  width: 48px;    /* Small tier */
-  height: 48px;
+  width: 128px;
+  height: 128px;
   border-radius: 999px;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .quote-card .headshot {
+    width: 64px;
+    height: 64px;
+  }
 }
 .quote-card .body {
   flex: 1;

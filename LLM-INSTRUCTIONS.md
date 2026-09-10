@@ -45,41 +45,44 @@ Use CSS variables, never raw hex codes in output.
 ## 5. Assets & Imagery
 
 ### SVG icons
+
 - `fill="currentColor"` to inherit CSS text color.
 - Drawn on 24×24px canvas, solid fill only, no strokes or gradients.
 - Color-locked exceptions: status icons (checkmark, error, warning) use fixed brand colors.
 
 ### Photography
 
-| Do | Don't |
-| --- | --- |
+| Do                                                         | Don't                                                |
+| ---------------------------------------------------------- | ---------------------------------------------------- |
 | Eye-level or below framing — candid, dignified, show hands | High-angle shots — creates a power dynamic we reject |
-| Flat, natural, diffused lighting | Studio rim lights, gels, dramatic fill ratios |
-| Natural color only | Color grading, warm toning, lifted shadows |
-| Adobe Stock photography | AI-generated imagery or composites |
-| Real workers on real job sites | Fake stock aesthetics — posed smiles, safety theater |
+| Flat, natural, diffused lighting                           | Studio rim lights, gels, dramatic fill ratios        |
+| Natural color only                                         | Color grading, warm toning, lifted shadows           |
+| Adobe Stock photography                                    | AI-generated imagery or composites                   |
+| Real workers on real job sites                             | Fake stock aesthetics — posed smiles, safety theater |
 
 ### Color grading (Iron overlay)
 
-| Do | Don't |
-| --- | --- |
-| Images with text overlay: Iron at 50% opacity, normal blend mode | Apply Iron overlay to images without text |
-| Standalone images: Iron at 100% opacity, lighten blend mode | Use multiply blend mode on standalone images |
+| Do                                                               | Don't                                        |
+| ---------------------------------------------------------------- | -------------------------------------------- |
+| Images with text overlay: Iron at 50% opacity, normal blend mode | Apply Iron overlay to images without text    |
+| Standalone images: Iron at 100% opacity, lighten blend mode      | Use multiply blend mode on standalone images |
 
 ### Safe zones
 
-| Do | Don't |
-| --- | --- |
+| Do                                                         | Don't                                  |
+| ---------------------------------------------------------- | -------------------------------------- |
 | Logos: 12.5% (1/8 of logo height) clear space on all sides | Place logos closer than 12.5% to edges |
-| Text overlays: 20% padding from edges | Place text closer than 20% to edges |
-| Crop faces above the temples | Crop at forehead level or tighter |
+| Text overlays: 20% padding from edges                      | Place text closer than 20% to edges    |
+| Crop faces above the temples                               | Crop at forehead level or tighter      |
 
 ### Print
+
 - **Inverted convention:** Plaster background, Canvas cards (print lacks screen backlight).
 - **Resolution:** Regular format (up to A3 / 11×17 in): 300 DPI. Large format (A2+): 150 DPI.
 - **Bleed/trim:** 3mm bleed and 3mm trim on all print collateral.
 
 ### Flowcharts
+
 - Node contents: text only, icon + text, or image + text.
 - Image rules for nodes: 16px corners, max 48px height, Canvas ground behind image, no drop shadows.
 - Node types: Process (Plaster bg, Iron text), Decision (Hard Hat fill, rotated 45°), CTA (Traffic Cone fill, Canvas text), Image (Plaster bg, image + text).
@@ -96,17 +99,18 @@ Use CSS variables, never raw hex codes in output.
 
 ### Brand vocabulary
 
-| Don't say | Say |
-| --- | --- |
-| "Serve" or "support" | "Connect" or "match" |
-| "Represent" or "reflect" | "Connect" or "match" |
-| "Proud" | Data and outcomes first |
-| "Product," "marketplace," "workforce," or "labor marketplace" | "Platform" or "network" |
-| "Customer" when referring to workers | "Members" or "craft professionals" |
-| "Workers" or "craft professionals" alone | "Members" alongside "craft professionals" |
-| Casual address or imitative worker tones | Direct, practical, grounded |
+| Don't say                                                     | Say                                       |
+| ------------------------------------------------------------- | ----------------------------------------- |
+| "Serve" or "support"                                          | "Connect" or "match"                      |
+| "Represent" or "reflect"                                      | "Connect" or "match"                      |
+| "Proud"                                                       | Data and outcomes first                   |
+| "Product," "marketplace," "workforce," or "labor marketplace" | "Platform" or "network"                   |
+| "Customer" when referring to workers                          | "Members" or "craft professionals"        |
+| "Workers" or "craft professionals" alone                      | "Members" alongside "craft professionals" |
+| Casual address or imitative worker tones                      | Direct, practical, grounded               |
 
 ### Other banned words
+
 1. **The Blacklist:** Delve, tapestry, leverage, utilize, harness, foster, cultivate, realm, landscape, overarching, seamless, robust, dynamic, myriad, testament, beacon.
 2. **Ban Robotic Transitions:** Never use "Moreover", "Furthermore", "In conclusion", "It is important to note", or "At the end of the day". Start sentences directly.
 3. **Kill the Metronome:** Vary sentence length dramatically. Mix very short, punchy sentences (1-5 words) with longer, complex thoughts.
@@ -118,10 +122,12 @@ Use CSS variables, never raw hex codes in output.
 Confirm target before generating code.
 
 **Target A: Marketing (`www.skillit.com`) — Squarespace**
+
 - Output: Figma prototypes, SVG exports, plain-text token values.
 - DO NOT output: `tailwind.config.js`, ERB, Rails code.
 
 **Target B: Product (`app.skillit.com`) — Rails 7.2 (tailwindcss-rails, importmap)**
+
 - Output: `tailwind.config.js` theme extension (`skillit` namespace).
 - CSS: Custom properties in `application.css` (e.g., optical weights).
 - Fonts: `<link>` tag in `application.html.erb`.
@@ -129,6 +135,7 @@ Confirm target before generating code.
 - DO NOT output: npm instructions, Vite config, standalone HTML.
 
 ### Verification before output:
+
 1. SVGs use `currentColor` (except color-locked status icons).
 2. No unauthorized hex codes.
 3. Corners are 16px (cards) or pill (buttons).

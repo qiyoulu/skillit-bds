@@ -34,7 +34,7 @@ A Plaster (`--color-surface`) card with 16px corners and 64px interior padding, 
 ```
 
 ## Buttons
-Standard primary button rules apply (pill radius, Traffic Cone fill, Iron text, `0.5em 1em` padding, 44px minimum height). Email buttons must render identically in clients that ignore CSS `border-radius` — use a table cell with `bgcolor` and padding on the anchor as the fallback structure.
+Standard primary button rules apply (pill radius, Traffic Cone fill, Iron text, `0.5em 1em` padding, 40px minimum height). Email buttons must render identically in clients that ignore CSS `border-radius` — use a table cell with `bgcolor` and padding on the anchor as the fallback structure.
 
 ## Links
 Inline text links use Painter's Tape (`--color-link`), underlined. Footer legal links break this rule deliberately (Canvas, no underline) because they are utility navigation, not content links.
