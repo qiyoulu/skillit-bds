@@ -94,21 +94,20 @@ Replaces persistent footer navigation on app views currently using a footer with
 
 **Placement.** `position: sticky; bottom: 0` on mobile. Not sticky on tablet and up — disappears at the tablet breakpoint and the surrounding layout takes over. Do not use `position: fixed` unless the bar must stay on screen across a scroll container that owns the viewport (rare).
 
-**Button spec.** Two icon-only buttons, equal size, aligned to the bar edges.
+**Button spec.** Two icon-only buttons in circular button surfaces, equal size, aligned to the bar edges. The button surface carries the color coding; the arrow is always Iron for contrast.
 
 | Property | Back | Forward |
 |---|---|---|
 | Visual icon size | 24px × 24px | 24px × 24px |
 | Touch target | 40px × 40px | 40px × 40px |
-| Padding (all sides) | 8px | 8px |
-| Arrow fill | Canvas / white (`--color-background`) | Traffic Cone (`--color-primary`) |
-| Button surface fill | None — transparent. The 40px touch target box around the arrow has no fill. | None — transparent. Same as back. |
-| Hover | — | Arrow fill only: Traffic Cone hover (`--color-primary-hover`) |
+| Button shape | Circle (40px diameter) | Circle (40px diameter) |
+| Button surface fill | Canvas (`--color-background`) | Traffic Cone (`--color-primary`) |
+| Arrow fill | Iron (`--color-foreground`) | Iron (`--color-foreground`) |
+| Hover | Button surface: `--color-background-hover` | Button surface: `--color-primary-hover` |
 | Focus | 2px solid Traffic Cone, 2px offset | 2px solid Traffic Cone, 2px offset |
 
-- Only the arrow graphics themselves are filled. The back arrow is Canvas/white; the forward arrow is Traffic Cone. The button surface — the 40px × 40px tappable box that contains the arrow — is always transparent, on both sides.
-- Do not fill the button surface around the arrow. The button is the transparent hit area; the arrow is the visible mark. A filled button surface around a filled arrow reads as a single solid blob and loses the directional clarity of the arrow shape.
-- The bar itself has no fill. The bar is transparent; the two buttons sit in it with their transparent surfaces. If the page content scrolls under the bar and the buttons need separation from content, separate the bar from content with a Plaster bar background (`--color-surface`) and a 1px Iron border on top — not by filling the buttons.
+- The button surface is a filled circle. Back = Canvas circle with Iron arrow. Forward = Traffic Cone circle with Iron arrow. The Iron arrow provides contrast on both surfaces (4.54:1 on Canvas, 4.54:1 on Traffic Cone — both pass AA).
+- The bar itself has no fill. The bar is transparent; the two circular buttons sit in it. If the page content scrolls under the bar and the buttons need separation from content, separate the bar from content with a Plaster bar background (`--color-surface`) and a 1px Iron border on top — not by filling the bar itself.
 
 **Back behavior.** The back button navigates to the previous screen in the app's navigation flow. Which route that is — browser history back, a specific prior route, or a flow-aware previous step — is an engineering decision. The BDS specifies the visual and interaction contract only: the button looks and behaves like a back control, and the destination is whatever the implementation wires it to. Do not hardwire a specific routing strategy in this spec.
 

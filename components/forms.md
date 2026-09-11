@@ -20,9 +20,9 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground.
   font-size: var(--text-1x);              /* 16px */
   font-weight: var(--weight-regular);       /* 400 — same as body */
   padding: var(--space-3) var(--space-2);  /* 12px 8px — tactile */
-  max-width: 18ch;                          /* ~288px at 16px; prevents stretching in wide columns */
+  width: 100%;
 }
-.input-wide { width: 100%; max-width: none; } /* opt-in for textareas / long-form */
+.input-wide { width: 100%; } /* opt-in for textareas / long-form — same as default, kept for explicitness */
 .input:focus {
    outline: 2px solid var(--color-primary);      /* Traffic Cone focus ring */
   outline-offset: 2px;
@@ -32,8 +32,14 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground.
 }
 ```
 **Labels:** Above the field, not inside (placeholder is not a label). `--text-1x` size, `--weight-medium`, Iron.
-**Error state:** Field unchanged. Error icon (Toolbox, octagon) beside the field + message below in Toolbox, `--text-1x`. Icon + text carry the signal — never a colored border.
-**Success state:** Field unchanged. Checkmark icon (Bottle Glass) alongside. No border change.
+
+**Required fields.** Required inputs display an asterisk (`*`) beside the label in Traffic Cone (`--color-primary`). The input carries the HTML `required` attribute for native form validation. No visual border change — the asterisk is the signal.
+
+**Placeholder vs. default value.** Numeric inputs (pay, distance, years) display a placeholder (e.g., `-` or `$0`) until the worker types a value. Never pre-fill with `0` as a real value — it confuses "unfilled" with "zero."
+
+**Max-width scoping.** The 18ch cap applies only when the input is inline alongside other controls (e.g., a search bar next to a filter button). In stacked forms where the input is the sole element in its row, the input is full-width (`width: 100%`). The onboarding flow uses stacked forms — inputs are full-width there.
+
+**Bounded numeric inputs.** Inputs that represent bounded ranges should use the HTML `min`/`max` attributes to enforce bounds. Example: commute distance input uses `min="0" max="100"` (miles). The worker cannot enter a value outside the range — native validation handles it without custom error states.
 
 ## Icon placement beside fields
 When an input field carries an icon — a status indicator, a trailing action, a descriptor — the icon sits on the right side of the field. Text and label stay on the left. The gap between the field and the icon depends on whether the pair hugs.
