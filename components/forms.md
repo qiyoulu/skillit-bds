@@ -37,7 +37,7 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground.
 
 **Placeholder vs. default value.** Numeric inputs (pay, distance, years) display a placeholder (e.g., `-` or `$0`) until the worker types a value. Never pre-fill with `0` as a real value — it confuses "unfilled" with "zero."
 
-**Max-width scoping.** The 18ch cap applies only when the input is inline alongside other controls (e.g., a search bar next to a filter button). In stacked forms where the input is the sole element in its row, the input is full-width (`width: 100%`). The onboarding flow uses stacked forms — inputs are full-width there.
+**Stacked forms on desktop.** Inputs fill their container — a card or a column in the 12-col grid. The container carries the max-width constraint (e.g., `--max-width-content` or the column span), so the input doesn't stretch to the viewport edge. On mobile, the container is narrow and the input reads as full-width. On desktop, the container caps the input at a readable width.
 
 **Bounded numeric inputs.** Inputs that represent bounded ranges should use the HTML `min`/`max` attributes to enforce bounds. Example: commute distance input uses `min="0" max="100"` (miles). The worker cannot enter a value outside the range — native validation handles it without custom error states.
 
