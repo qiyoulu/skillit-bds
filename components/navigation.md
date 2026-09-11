@@ -100,7 +100,7 @@ Replaces persistent footer navigation on app views currently using a footer with
 |---|---|---|
 | Visual icon size | 24px × 24px | 24px × 24px |
 | Touch target | 40px × 40px | 40px × 40px |
-| Button shape | Circle (40px diameter) | Circle (40px diameter) |
+| Button shape | 40×40px circle (24px arrow + 8px padding all sides) | 40×40px circle (24px arrow + 8px padding all sides) |
 | Button surface fill | Canvas (`--color-background`) | Traffic Cone (`--color-primary`) |
 | Arrow fill | Iron (`--color-foreground`) | Iron (`--color-foreground`) |
 | Hover | Button surface: `--color-background-hover` | Button surface: `--color-primary-hover` |
@@ -115,6 +115,8 @@ Replaces persistent footer navigation on app views currently using a footer with
 
 **One-sided bars.** If only one direction is available, render a single button on the appropriate side. Do not center a lone button in the bar — keep it to the back side (left) or forward side (right), matching the direction it affects.
 
-**Disabled state.** Do not render a disabled-looking back or forward button. If there is no valid destination, hide the button. A disabled navigation control that cannot go anywhere reads as broken.
+**Disabled state.** The forward button is always rendered. On screens where the form is incomplete, the button is present but disabled (`disabled` attribute). The universal disabled rule applies: `opacity: 0.5`, no color change. The worker sees where the button is and what it does — they just can't activate it yet. Do not hide the button entirely.
+
+A disabled navigation control reads as "complete the form to proceed," not "absent." Hiding the button creates a dead-end: the worker doesn't know where it went, why there's no forward path, or what they're supposed to do next.
 
 **Focus and a11y.** Both buttons are real links or buttons, not div clicks. They carry an accessible label — "Back" and "Next" by default — and a visible focus ring (2px solid Traffic Cone, 2px offset) per the button and interactive element rules. Keyboard users must be able to reach and activate them.
