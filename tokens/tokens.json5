@@ -194,5 +194,23 @@
       lg: { $value: '1024px', $type: 'dimension', $description: 'desktop — grid collapses to single column below this' },
       xl: { $value: '1280px', $type: 'dimension', $description: 'wide desktop' },
     },
+    motion: {
+      duration: {
+        fast: { $value: '150ms', $type: 'time', $description: 'Color swap, opacity toggle' },
+        medium: { $value: '300ms', $type: 'time', $description: 'Expand/collapse, slide' },
+        slow: { $value: '600ms', $type: 'time', $description: 'Modal open/close' },
+      },
+      easing: {
+        out: { $value: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)', $type: 'easing', $description: 'Enter (fast start, gentle land)' },
+        in: { $value: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)', $type: 'easing', $description: 'Exit (slow start, quick leave)' },
+      },
+    },
+    z: {
+      header: { $value: '10', $type: 'number', $description: 'Sticky header, nav' },
+      dropdown: { $value: '20', $type: 'number', $description: 'Dropdown menus' },
+      overlay: { $value: '30', $type: 'number', $description: 'Modal backdrop' },
+      modal: { $value: '40', $type: 'number', $description: 'Modal dialog' },
+      toast: { $value: '50', $type: 'number', $description: 'Toast notifications' },
+    },
   },
 }
