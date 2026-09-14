@@ -114,7 +114,9 @@ skillit-bds/
 ├── README.md                  # Entry point (you are here)
 ├── LLM-INSTRUCTIONS.md        # System prompt for AI agents
 ├── HUMAN-INSTRUCTIONS.md      # Plain-language brand manual
-├── assets/                    # Approved SVG logos and icons
+├── assets/
+│   ├── icons/                  # 34 SVG icons (currentColor fills)
+│   └── logo/                   # Skillit logo variants (PNG, SVG)
 ├── tokens/
 │   ├── tokens.json5           # Single source of truth (machine-readable)
 │   ├── docs/                  # Human-readable specs
@@ -126,18 +128,25 @@ skillit-bds/
 │       ├── tokens.css
 │       └── tailwind-theme.js
 ├── voice/                     # Brand voice guidelines and copy examples
-├── rules/                     # Layout, accessibility, photography, data-viz
+├── rules/                     # Layout, accessibility, photography, data-viz, iconography
 ├── components/                # Structural UI definitions
-│   ├── buttons.md
-│   ├── navigation.md
-│   ├── forms.md
 │   ├── badges.md
+│   ├── buttons.md
 │   ├── cards.md
-│   ├── links.md
+│   ├── checkboxes.md
+│   ├── email.md
 │   ├── footer.md
-│   ├── metadata.md
+│   ├── forms.md
 │   ├── icons.md
-│   └── states.md
+│   ├── links.md
+│   ├── metadata.md
+│   ├── modal.md
+│   ├── navigation.md
+│   ├── progress.md
+│   ├── quote-cards.md
+│   ├── states.md
+│   ├── toast.md
+│   └── validation.md
 ├── brand/                     # Brand narrative and audience profiles
 │   ├── narrative.md
 │   └── audience.md
