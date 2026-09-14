@@ -78,6 +78,7 @@ Your AI agent will follow the rules in this repository. If something looks off, 
 - **Voice:** Direct, unhedged, no tech jargon.
 - **Layout:** 16px corners on cards, pill buttons, no shadows.
 - **Accessibility:** Minimum contrast ratios, 40px touch targets.
+- **Icons:** 34 SVG icons in `assets/icons/`, all `currentColor` fills (tintable via CSS color). Status icons (checkmark, error, warning) retain semantic fills.
 
 ### Common Mistakes to Watch For
 
@@ -158,5 +159,5 @@ skillit-bds/
 | `rules/data-viz.md` | Complete |
 | `rules/photography.md` | Complete |
 | `brand/` (Narrative, Audience) | Complete |
-| Icon System (core 12, in `assets/icons/`) | Complete |
+| Icon System (34 icons in `assets/icons/`) | Complete |
 | Dark Mode Tokens | Planned |
