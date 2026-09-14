@@ -1,4 +1,4 @@
-# Quotes — Skillit BDS
+# Quote Cards — Skillit BDS
 **Last updated:** 2026-09-05
 ---
 ## Rules
