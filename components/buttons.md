@@ -34,6 +34,7 @@ The main CTA. One per section maximum. Traffic Cone background, Iron text (Canva
 ## Secondary button
 Lower-priority actions. Iron text on Plaster fill, no border. Same pill radius and padding as primary.
 
+**Default (on Canvas/Beige surfaces):**
 ```css
 .btn-secondary {
   background-color: var(--color-surface);   /* Plaster #FFFFFF */
@@ -48,6 +49,23 @@ Lower-priority actions. Iron text on Plaster fill, no border. Same pill radius a
   cursor: pointer;
 }
 .btn-secondary:hover { background-color: var(--color-surface-hover); }
+```
+
+**Inverted (on Plaster/White surfaces):**
+When the secondary button sits on a Plaster surface, it inverts to Canvas fill for contrast.
+```css
+.surface-plaster .btn-secondary,
+.section-theme-light .btn-secondary,
+[style*="background-color: rgb(255, 255, 255)"] .btn-secondary,
+[style*="background-color: #fff"] .btn-secondary,
+[style*="background-color: #ffffff"] .btn-secondary {
+  background-color: var(--color-background);   /* Canvas #FAF7F3 */
+  color: var(--color-foreground);              /* Iron text #232F36 */
+}
+.surface-plaster .btn-secondary:hover,
+.section-theme-light .btn-secondary:hover {
+  background-color: var(--color-background-hover);
+}
 ```
 
 ## Button hover
