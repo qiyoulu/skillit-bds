@@ -59,7 +59,8 @@ These are hard constraints derived from the core brand direction. They apply to 
 5. **Strict functionalism.** Every border and margin should serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.
 6. **One accent per layout section.** Traffic Cone (`--color-primary`) appears once per page section. It does not repeat as decoration.
 7. **Shape signals action (Static = 16px, Actionable = Pill).** All static layout containers (cards, panels, photographs) use `border-radius: 16px`. Actionable human touchpoints (buttons) use a fully rounded pill shape (`border-radius: var(--radius-pill)`, 9999px). No intermediate rounded corners (e.g., 4px or 8px) are permitted. No gradients, no drop shadows.
-8. **Typography does the heavy lifting.** Space and scale create order. Color is exclusively used to signal interactive function (links, buttons, states).
+8. **Type and spacing: rem. Radii and borders: px.** All font-sizes and spacing values use `rem` (respects user browser zoom settings, scales proportionally with root). All `border-radius` and `border-width` values use `px` (visual weight, not typographic — a 1px hairline shouldn't scale with text).
+9. **Typography does the heavy lifting.** Space and scale create order. Color is exclusively used to signal interactive function (links, buttons, states).
 ---
 ## Section types
 ### Hero

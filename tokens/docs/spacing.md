@@ -136,6 +136,13 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
 }
 ```
 ---
+## Header/body alignment
+Header bars (page headers, section headers, nav bars) use the same horizontal margins and paddings as the body content below them. A header that indents differently from its content breaks the vertical rhythm.
+
+- If body content uses `--space-16` (64px) side margins, the header above it uses the same.
+- If body content uses `--space-4` (16px) side padding, the header uses the same.
+- Vertical padding inside headers matches the section's vertical rhythm.
+
 ## Whitespace rules
 - **Minimum editorial padding:** All full-width sections should have at minimum `--space-16` (64px) top and bottom padding. Less than this reads as cramped and contradicts the brand’s editorial whitespace principle.
 - **Maximum text width:** Body text columns should never exceed `70ch` (approximately 70 characters). Set `max-width: var(--max-width-text)` on all `<p>` blocks.

@@ -24,6 +24,10 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 **Wordmark specs:** Work Sans Black (900), ALL CAPS, −3% tracking. Lowercase 'l' uses a straight leg. The 'k' connects to 'i' and 'i' connects to 't' via custom point adjustment — not typed text.
 **Minimum size:** 21px/16pt height (mark at 21px/16pt, wordmark at 16px/12pt).
 - **Clear space:** Maintain a minimum clear space of 1/8 of the lockup height (12.5%) on each side.
+## Small viewports
+- **Small viewports (< 768px):** Use the mark alone, not a scaled-down lockup. The lockup's wordmark becomes illegible below its minimum size; the mark carries the brand on its own.
+- Never scale the lockup below 21px height — switch to the mark at the same `--logo-height` instead.
+
 ## Header Logo Heights
 The header logo is always **24px tall**, regardless of whether it's the lockup or the mark, regardless of surface. One token: `--logo-height`.
 

@@ -10,13 +10,24 @@
 
 ## Standard card
 Cards use generous padding (tactile). Because borders and drop shadows are banned, cards separate from the Canvas ground purely through the optical contrast of their Plaster (`#FFFFFF`) background and strong typographic layout.
+
+**Corner radii by function:**
+- **Cards, containers, panels:** `16px` (`--radius-default`)
+- **Buttons:** pill (`--radius-pill`)
+- **Input fields, checkboxes:** `0px` (`--radius-sharp`) — structural, editable
+
+**No drop shadows.** Cards separate from the Canvas ground through Plaster background contrast and typographic structure alone.
+
+**No top stroke.** The top border/stroke on cards was a bug — it has been removed from the system.
+
 ```css
 /* Standard structural card */
 .card {
   background-color: var(--color-surface);  /* Plaster */
   border: none;                            /* No borders */
-  border-radius: var(--radius-sharp);
+  border-radius: var(--radius-default);    /* 16px */
   padding: var(--space-16);                /* 64px — tactile */
+  box-shadow: none;                        /* No drop shadows */
 }
 /* Cards separate from Canvas ground through Plaster background contrast — no borders. */
 .card-interactive {
@@ -39,7 +50,8 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
   background-color: var(--color-surface);         /* Plaster */
   color: var(--color-foreground);                 /* Iron */
   border: none;
-  border-radius: var(--radius-sharp);
-  padding: var(--space-8);                 /* Generous padding for heavy blocks */
+  border-radius: var(--radius-default);           /* 16px */
+  padding: var(--space-8);                        /* Generous padding for heavy blocks */
+  box-shadow: none;                               /* No drop shadows */
 }
 ```

@@ -2,6 +2,8 @@
 
 ## **Version 0.9-beta · August 2026**
 
+> **AI agents: read [`LLM-INSTRUCTIONS.md`](./LLM-INSTRUCTIONS.md) first.** That file is the authoritative constraint set for machine-generated output — code, design, copy, data viz. Where this document and that one conflict, `LLM-INSTRUCTIONS.md` wins. This document is the human-readable rationale and full guideline set; the LLM file is the enforcement layer.
+
 ## Table of Contents
 
 - [Brand Design System (BDS) — Skillit](#brand-design-system-bds--skillit)
@@ -426,6 +428,7 @@ Every layout uses four layers, in order of elevation and visual weight:
 - **Strict functionalism.** No decorative elements. No abstract shapes, blobs, or illustrated backgrounds. Every border, margin, and pixel should perform a structural job.
 - **One accent.** Traffic Cone appears exactly once per layout section (e.g., on the CTA or a key stat). Never repeated decoratively.
 - **Shape signals action.** Static structural elements (cards, layout panels, photographs) use 16px corners. Actionable human touchpoints (buttons) use a fully rounded pill shape. Intermediate rounded corners (e.g., 4px or 8px) are banned. No drop shadows.
+- **Type and spacing: rem. Radii and borders: px.** Font-sizes and spacing always use `rem` (scales with browser zoom, respects accessibility settings). Borders and border-radius always use `px` (visual weight — a 1px hairline doesn't scale with text size).
 - **Consistent text blocks.** Body text columns never exceed 70 characters wide to maintain perfect tracking and readability.
 
 ### Border radius (Shape signals action)

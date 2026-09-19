@@ -7,7 +7,11 @@
 - JetBrains Mono is the only approved monospace — metadata, IDs, data, and code only, never running copy.
 - Both typefaces match at the same point size — no scaling needed. JetBrains Mono's x-height equals Work Sans at 100%.
 - All sizes are in `rem` (base 16px). Never use `px` for type — it breaks accessibility scaling.
-- All text should be sentence-case. No title case in UI. No ALL CAPS anywhere (except industry acronyms like OSHA, HVAC, AI).
+- All text should be sentence-case. No title case in UI. No ALL CAPS anywhere.
+- **Exceptions to sentence case:**
+  - **Acronyms:** ALL CAPS (OSHA, HVAC, AI, BLS, PTO).
+  - **Proper nouns:** Proper Case (New York, Skillit, JustWorks).
+- **Minimum font size:** `1rem` (16px). No text renders below this size.
 ---
 ## Typefaces
 ### Work Sans

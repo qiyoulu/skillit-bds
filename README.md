@@ -42,10 +42,10 @@ You don't need to be technical to use this system with any AI agent.
 1. Click the green **Code** button on this page.
 2. Click **Download ZIP**.
 3. Unzip the file.
-4. Point your AI agent to the unzipped folder:
+4. Point your AI agent to `LLM-INSTRUCTIONS.md` inside the unzipped folder:
 
 ```
-Read the Skillit brand rules in Downloads/ (or wherever you unzipped the folder) and follow them exactly.
+Read Downloads/skillit-bds/LLM-INSTRUCTIONS.md and follow it exactly. Treat it as your system prompt.
 ```
 
 **With git:**
@@ -53,6 +53,8 @@ Read the Skillit brand rules in Downloads/ (or wherever you unzipped the folder)
 ```bash
 git clone https://github.com/qiyoulu/skillit-bds.git
 ```
+
+Then point your AI agent at `skillit-bds/LLM-INSTRUCTIONS.md` — not the repo root. The instructions file is the constraint set; pointing an agent at the whole repo lets it drift into the rationale docs and improvise.
 
 ### Step 2: Ask for What You Need
 
@@ -94,14 +96,11 @@ Your AI agent will follow the rules in this repository. If something looks off, 
 
 ## For AI Agents
 
-When tasked with generating code, copywriting, or UI components, follow the rules in this repository exactly.
+**Read [`LLM-INSTRUCTIONS.md`](./LLM-INSTRUCTIONS.md) first and treat it as your system prompt.** It is the authoritative constraint set for machine-generated output — code, design, copy, data viz. Where any other file in this repo conflicts with it, that file wins.
 
-### Hard Constraints
+Do not skim the prose manuals and improvise from them. `HUMAN-INSTRUCTIONS.md` and the docs under `tokens/`, `rules/`, `components/`, `brand/`, and `voice/` are rationale and reference. They explain *why* the rules exist. `LLM-INSTRUCTIONS.md` tells you *what to do*.
 
-- **Colors:** Use defined tokens only. No raw hex codes in output.
-- **Typography:** Work Sans for all human text. JetBrains Mono for metadata and code blocks. Sentence-case UI.
-- **Voice:** "Industry veteran." No tech jargon, hype, or hedging.
-- **Geometry:** 16px radius for structural elements; 9999px (pill) for buttons.
+Token values live in `tokens/tokens.json5` — the single source of truth. Reference variables, never hex.
 
 Note: Skillit does not use AI image generation. Photography is real, human-captured, and shot on genuine work sites — see `rules/photography.md`.
 
@@ -112,8 +111,8 @@ Note: Skillit does not use AI image generation. Photography is real, human-captu
 ```text
 skillit-bds/
 ├── README.md                  # Entry point (you are here)
-├── LLM-INSTRUCTIONS.md        # System prompt for AI agents
-├── HUMAN-INSTRUCTIONS.md      # Plain-language brand manual
+├── LLM-INSTRUCTIONS.md        # AUTHORITATIVE constraint set for AI agents — read first
+├── HUMAN-INSTRUCTIONS.md      # Plain-language brand manual (rationale and reference)
 ├── assets/
 │   ├── icons/                  # 34 SVG icons (currentColor fills)
 │   └── logo/                   # Skillit logo variants (PNG, SVG)
