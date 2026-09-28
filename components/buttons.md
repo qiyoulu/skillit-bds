@@ -120,40 +120,106 @@ Buttons that carry an icon place the icon on the right side of the label, text o
 - **Do not mix the two cases in the same button.** A button is either hugging or it is not. If you find yourself wanting the icon at the right edge *and* a 4px gap to the label on the same button, pick one — usually the non-hugging case. A button that is full-width in a layout but also has a forced 4px gap to a right-edge icon looks like a bug.
 - **Icon-only buttons are neither case.** An icon-only button (no label) has no gap to manage — the icon fills the button and the touch target is the button size. The back and forward sticky bar arrows are icon-only buttons; their spec lives in `navigation.md`.
 
-## Selected (toggled) state
-Multi-select buttons (filters, language pickers, trade selectors, per-diem toggles) signal selection through **fill invert** — Plaster/Iron/Iron unselected → Iron/Canvas/Canvas selected. The selection state is the fill change alone; no checkmark icon is added. This keeps the button geometry identical between states and avoids the layout jostling that a conditionally rendered icon would cause.
+## Radio chip (single-select)
 
-**Unselected multi-select button:**
+For mutually exclusive choices (trade picker, region picker, language picker when treated as "set language to one"). The chip pill stays Plaster in both states — only the leading 1em circle indicator changes from empty (Canvas outline) to filled (Bottle Glass solid dot). Selection is communicated by the indicator fill, not by changing the pill background. This keeps selected chips visually light and prevents them from competing with primary CTAs.
+
+**Unselected:**
 ```css
-.btn-multiselect {
-  background-color: var(--color-surface);          /* Plaster */
-  color: var(--color-foreground);                 /* Iron text */
+.chip--radio {
+  background-color: var(--color-surface);          /* Plaster — stays white */
+  color: var(--color-foreground);                  /* Iron text */
   border: none;
   border-radius: var(--radius-pill);
   padding: 0.5em 1em;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);                             /* 8px indicator-to-label */
+}
+.chip--radio .chip__indicator {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;                              /* Circle */
+  border: 1.5px solid var(--color-background);     /* Canvas outline */
+  flex-shrink: 0;
 }
 ```
 
-**Selected multi-select button:**
+**Selected:**
 ```css
-.btn-multiselect[aria-pressed="true"],
-.btn-multiselect[aria-checked="true"] {
-  background-color: var(--color-foreground);      /* Iron */
-  color: var(--color-background);                 /* Canvas text */
+.chip--radio[aria-checked="true"] {
+  /* pill stays Plaster — only indicator changes */
+}
+.chip--radio[aria-checked="true"] .chip__indicator {
+  background-color: var(--color-success);          /* Bottle Glass filled dot */
+  border: none;
 }
 ```
 
-**Why no Traffic Cone (Iron only):** Traffic Cone fill is reserved for primary CTAs. Multi-select buttons use Iron fill instead because the selection state is *not* a call to action — it's an on/off indicator. Iron preserves the visual difference between unselected (light) and selected (dark) without competing with CTAs.
+**Hover:** `background-color: var(--color-surface-hover)`. Indicator unchanged on hover.
 
-**Why no checkmark:** A checkmark would require an icon slot in the base button, which either shifts the layout when the icon appears (jostling the row of buttons) or wastes space when it's empty. The fill invert alone is unambiguous and reads correctly for colorblind users — the state is conveyed through brightness contrast (light vs. dark), not through a colored icon.
+**Why filled circle and not checkmark:** A checkmark inside a circle reads as neither checkbox nor radio — it's a hybrid that confuses the semantic. Single-select uses filled circle to match the radio button mental model (pick one of N); multi-select uses checkmark to match the checkbox mental model (toggle on/off).
 
-Rules for the selected state:
-- **The fill is the signal.** Unselected = Plaster/Iron. Selected = Iron/Canvas. No border change, no icon, no size change.
-- **No checkmark or status icon.** Selection is communicated by the fill swap alone.
-- **aria-pressed vs aria-checked.** Use `aria-pressed="true"` for toggle buttons (single thing on/off). Use `aria-checked="true"` for multi-select items (several can be selected). Both render the same visual; the attribute is what changes for screen readers.
-- **Hover on selected:** `var(--color-foreground-hover)` (`#212C31`) — one step darker than Iron, the same formula used everywhere else.
-- **Disabled selected button:** Reduce opacity to 0.5 (universal disabled rule, same as unselected).
-- **Don't pair with checkboxes.** The checkbox pattern uses Traffic Cone stroke (unchecked) → Traffic Cone fill + Canvas checkmark (checked). The multi-select button pattern (Plaster/Iron ↔ Iron/Canvas fill) is distinct from the checkbox pattern by geometry alone — one is a square box with a small icon inside, the other is a pill with centered text. Don't unify them visually.
+**Why Bottle Glass and not Traffic Cone:** Traffic Cone is reserved for primary CTAs. A filled circle in the chip indicator is a status toggle, not a call to action. Bottle Glass signals "selected/active" without competing with the page CTA.
+
+**ARIA:** `role="radio"` + `aria-checked="true|false"`. Use this for single-select groups where only one chip can be selected at a time.
+
+---
+
+## Checkbox chip (multi-select)
+
+For additive filters (search facets, certification toggles, per-diem flags). The chip pill stays Plaster in both states — only the leading 1em square indicator changes from empty (Canvas outline) to filled (Bottle Glass with checkmark icon). The square geometry signals "checkbox" to sighted users, distinguishing multi-select chips from radio chips on the same screen.
+
+**Unselected:**
+```css
+.chip--check {
+  background-color: var(--color-surface);          /* Plaster — stays white */
+  color: var(--color-foreground);                  /* Iron text */
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.5em 1em;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.chip--check .chip__indicator {
+  width: 1em;
+  height: 1em;
+  border-radius: 0;                                /* Square — 0px corners */
+  border: 1.5px solid var(--color-background);     /* Canvas outline */
+  flex-shrink: 0;
+}
+```
+
+**Selected:**
+```css
+.chip--check[aria-checked="true"] .chip__indicator {
+  background-color: var(--color-success);          /* Bottle Glass */
+  border: none;
+  -webkit-mask: url('../assets/icons/checkmark.svg') no-repeat center;
+  mask: url('../assets/icons/checkmark.svg') no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+```
+
+**Hover:** `background-color: var(--color-surface-hover)`. Indicator unchanged on hover.
+
+**Why square and not circle:** Square is the established checkbox geometry. Using a circle here would create the same hybrid-confusion problem as putting a check in a circle for radio chips. Square says "checkbox" instantly.
+
+**Why Bottle Glass and not Traffic Cone:** Same reasoning as radio chip — Bottle Glass is the success/status color, Traffic Cone is reserved for primary CTAs.
+
+**ARIA:** `role="checkbox"` + `aria-checked="true|false"`. Use this for multi-select groups where zero, one, or many chips can be selected.
+
+---
+
+## Why pill stays Plaster in both states
+
+The previous spec (Plaster → Iron fill invert) made selected chips feel like primary buttons — dark, heavy, visually loud. Radio and checkbox chips are **status toggles**, not calls to action. Keeping the pill white in both states preserves the chip-as-toggle semantic. The indicator (circle fill or checkmark) carries the state signal without making the chip look like a CTA.
+
+## Distinction from checkboxes (form pattern)
+
+The form checkbox is a 16×16 standalone square box with no surrounding pill. The checkbox chip is a pill with a 1em square indicator embedded as the leading icon. The form checkbox uses Traffic Cone fill when selected; the checkbox chip uses Bottle Glass. Different geometry (standalone vs pill-embedded), different selection color (Traffic Cone vs Bottle Glass), different role (standalone form input vs inline filter toggle). Don't unify them visually — the form checkbox sits in a form row, the checkbox chip sits in a filter row.
 
 **CSS shape.** Non-hugging buttons with icon:
 ```css
