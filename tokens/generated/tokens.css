@@ -6,7 +6,7 @@
  */
 :root {
   /* color */
-  --color-background: #FAF7F3;            /* Canvas — primary background */
+  --color-background: #F9F4F1;            /* Canvas — primary background */
   --color-surface: #FFFFFF;       /* Plaster — elevated surfaces */
   --color-foreground: #232F36;       /* Iron — foreground */
   --color-primary: #EF6F1A;       /* Traffic Cone — primary action */
@@ -15,15 +15,15 @@
   --color-success: #33663D;       /* Bottle Glass — success */
   --color-link: #007CA6;          /* Painter's Tape — link. underlined = link */
 
-  /* hover states — × Canvas + 5% Iron */
-  --color-background-hover: #EAE6DE;       /* Canvas hover */
-  --color-surface-hover: #EFEDE9;  /* Plaster hover */
-  --color-foreground-hover: #212C31;       /* Iron hover */
-  --color-primary-hover: #E06718;  /* Traffic Cone hover */
-  --color-warning-hover: #EEA51A;  /* Hard Hat hover */
-  --color-error-hover: #BB0F2A;    /* Toolbox hover */
-  --color-success-hover: #305F38;  /* Bottle Glass hover */
-  --color-link-hover: #007398;     /* Painter's Tape hover */
+  /* hover states — color-mix(in oklab, base, black 10%) */
+  --color-background-hover: #EEE9E6;       /* Canvas hover */
+  --color-surface-hover: #F3F3F3;  /* Plaster hover */
+  --color-foreground-hover: #212C33;       /* Iron hover */
+  --color-primary-hover: #E46A18;  /* Traffic Cone hover */
+  --color-warning-hover: #F2A91A;  /* Hard Hat hover */
+  --color-error-hover: #BF0F2B;    /* Toolbox hover */
+  --color-success-hover: #30613A;  /* Bottle Glass hover */
+  --color-link-hover: #00769E;     /* Painter's Tape hover */
 
   /* spacing — 4px base unit, rem */
   --space-1: 0.25rem;             /* 4px  */
@@ -122,9 +122,9 @@
   --radius-pill: 9999px;
 
   /* layout constants */
-  --max-width-content: 1168px;
+  --max-width-content: 1200px;
   --column-min-width: 326px;
-  --max-width-app: 480px;
+  --max-width-app: 1200px;
   --max-width-text: 70ch;
   --touch-target-min: 40px;
   --nav-height: 64px;

@@ -14,7 +14,7 @@
   base: {
     color: {
       bg: {
-        $value: '#FAF7F3',
+        $value: '#F9F4F1',
         $type: 'color',
         $description: 'Canvas — primary background. never pure white as global ground.',
         $extensions: {
@@ -74,14 +74,14 @@
         },
       },
       hover: {
-         'bg': { $value: '#EAE6DE', $type: 'color', $description: 'Canvas hover — × EFEDE9' },
-         'surface': { $value: '#EFEDE9', $type: 'color', $description: 'Plaster hover — × EFEDE9' },
-         'fg': { $value: '#212C31', $type: 'color', $description: 'Iron hover — × EFEDE9' },
-         'primary': { $value: '#E06718', $type: 'color', $description: 'Traffic Cone hover — × EFEDE9' },
-         'warning': { $value: '#EEA51A', $type: 'color', $description: 'Hard Hat hover — × EFEDE9' },
-         'error': { $value: '#BB0F2A', $type: 'color', $description: 'Toolbox hover — × EFEDE9' },
-         'success': { $value: '#305F38', $type: 'color', $description: 'Bottle Glass hover — × EFEDE9' },
-         'link': { $value: '#007398', $type: 'color', $description: "Painter's Tape hover — × EFEDE9" },
+         'bg': { $value: '#EEE9E6', $type: 'color', $description: 'Canvas hover — color-mix(in oklab, base, black 10%)' },
+         'surface': { $value: '#F3F3F3', $type: 'color', $description: 'Plaster hover — color-mix(in oklab, base, black 10%)' },
+         'fg': { $value: '#212C33', $type: 'color', $description: 'Iron hover — color-mix(in oklab, base, black 10%)' },
+         'primary': { $value: '#E46A18', $type: 'color', $description: 'Traffic Cone hover — color-mix(in oklab, base, black 10%)' },
+         'warning': { $value: '#F2A91A', $type: 'color', $description: 'Hard Hat hover — color-mix(in oklab, base, black 10%)' },
+         'error': { $value: '#BF0F2B', $type: 'color', $description: 'Toolbox hover — color-mix(in oklab, base, black 10%)' },
+         'success': { $value: '#30613A', $type: 'color', $description: 'Bottle Glass hover — color-mix(in oklab, base, black 10%)' },
+         'link': { $value: '#00769E', $type: 'color', $description: "Painter's Tape hover — color-mix(in oklab, base, black 10%)" },
       },
     },
     spacing: {
@@ -178,9 +178,9 @@
       pill: { $value: '9999px', $type: 'dimension', $description: 'actionable touchpoints — buttons, badges. 100vmax or 9999px.' },
     },
     layout: {
-      'max-width-content': { $value: '1168px', $type: 'dimension', $description: 'website / marketing grid max content width' },
+      'max-width-content': { $value: '1200px', $type: 'dimension', $description: 'website / marketing grid max content width — centered, no explicit side margins' },
       'column-min-width': { $value: '326px', $type: 'dimension', $description: 'single grid column minimum width — below this the column content breaks' },
-      'max-width-app': { $value: '480px', $type: 'dimension', $description: 'app (worker-facing) max width, mobile-first' },
+      'max-width-app': { $value: '1200px', $type: 'dimension', $description: 'app (worker-facing) max width — centered, no explicit side margins' },
       'max-width-text': { $value: '70ch', $type: 'dimension', $description: 'body text column max width — never exceed' },
       'touch-target-min': { $value: '40px', $type: 'dimension', $description: 'minimum touch target — app and mobile web' },
       'nav-height': { $value: '64px', $type: 'dimension', $description: 'primary nav bar height' },

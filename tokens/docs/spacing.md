@@ -59,11 +59,10 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
 ### Website / marketing
 | Property | Value |
 |---|---|
-| Max content width | `1168px` |
+| Max content width (desktop, ≥1024px) | `1200px` — centered with `margin: 0 auto` |
+| Side margin (tablet, 768–1023px) | `--space-8` (32px) each side |
+| Side margin (mobile, <768px) | `--space-4` (16px) each side |
 | Grid column min width | `326px` |
-| Side margin (desktop) | `--space-16` (64px) each side |
-| Side margin (tablet) | `--space-8` (32px) each side |
-| Side margin (mobile) | `--space-8` (32px) each side |
 | Column gutter | `--space-6` (24px) |
 | Grid columns (desktop) | 12 |
 | Grid columns (tablet) | 8 |
@@ -71,12 +70,13 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
 ### App (worker-facing)
 | Property | Value |
 |---|---|
-| Max content width | `480px` (mobile-first) |
-| Side padding | `--space-4` (16px) |
+| Max content width (desktop, ≥1024px) | `1200px` — centered with `margin: 0 auto` |
+| Side margin (tablet, 768–1023px) | `--space-8` (32px) each side |
+| Side margin (mobile, <768px) | `--space-4` (16px) each side |
 | Vertical section gap | `--space-8` (32px) |
 | List item gap | `--space-4` (16px) |
 | Bottom nav height | `64px` |
-|| Touch target minimum | `40px` |
+| Touch target minimum | `40px` |
 ---
 ## Text Spacing Rules
 - **Paragraphs:** `--space-4` (16px / 1rem) below paragraphs. This is exactly equal to the body font size (1em), maintaining a perfect consistent rhythm.
@@ -121,9 +121,9 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
   --space-24: 6rem;
   --space-128: clamp(48px, 10vw, 128px);
   --space-256: clamp(96px, 18vw, 256px);
-  --max-width-content: 1168px;
+  --max-width-content: 1200px;
   --column-min-width: 326px;
-  --max-width-app:     480px;
+  --max-width-app:     1200px;
   --max-width-text:    70ch;
   --touch-target-min:  40px;
   --nav-height: 64px;
@@ -137,10 +137,12 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
 ```
 ---
 ## Header/body alignment
-Header bars (page headers, section headers, nav bars) use the same horizontal margins and paddings as the body content below them. A header that indents differently from its content breaks the vertical rhythm.
+Header bars (page headers, section headers, nav bars) align to the same content column as the body below them. A header that indents differently from its content breaks the vertical rhythm.
 
-- If body content uses `--space-16` (64px) side margins, the header above it uses the same.
-- If body content uses `--space-4` (16px) side padding, the header uses the same.
+- Desktop (≥1024px): header content capped at `1200px` and centered with `margin: 0 auto`, same as body.
+- Tablet (768–1023px): header content uses `--space-8` (32px) side margins.
+- Mobile (<768px): header content uses `--space-4` (16px) side margins.
+- Full-bleed header backgrounds may span the viewport; only the content aligns.
 - Vertical padding inside headers matches the section's vertical rhythm.
 
 ## Whitespace rules
