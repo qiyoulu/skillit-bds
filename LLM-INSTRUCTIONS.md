@@ -132,6 +132,8 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 
 ## 9. Voice rules (for any generated copy)
 
+**Plain language is the default.** Customers and craft professionals are not in our business every day. Write so a five-year-old could follow the argument — short words, short sentences, no jargon. If a word only makes sense inside Skillit, replace it with the everyday word. Concrete over abstract ("getting the right worker to the right job site" not "optimizing the talent acquisition pipeline"). One idea per sentence. Cut every word that doesn't carry weight.
+
 - **Lead with the insight, not the product.** Data and outcomes first.
 - **"Connect," "match," "capture"** — never "serve," "support," "represent."
 - **"Platform" or "network"** — never "product," "marketplace," or "labor marketplace."
@@ -140,6 +142,11 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Banned transitions:** "Moreover," "Furthermore," "In conclusion," "It is important to note."
 - **Banned hype:** "Revolutionize," "disrupt," "excited to announce," "world-class."
 - Vary sentence length. Short punches mixed with longer thoughts. Concrete, physical detail over abstraction.
+
+**Don't oversell.** State what is true. State it once. Then stop.
+- Avoid stacking adjectives or claims ("powerful" + "intuitive" + "trusted" + "built for") to manufacture value. One true claim is enough.
+- Avoid comparisons that imply a competitor exists ("Unlike other platforms…") when the comparison isn't doing work.
+- Lead with the data or the action, not the framing.
 
 ---
 
@@ -173,3 +180,5 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 12. Spacing uses `--space-*` tokens in `rem`; radii and borders in `px`.
 13. No banned words or transitions in copy.
 14. Header margins match body margins.
+15. **Copy is plain language.** No jargon. No stacked adjectives. One claim per sentence. If a sentence can be cut without losing meaning, cut it.
+16. **No overselling.** No claim-stacking, no implied competitor comparisons unless they're doing work. State the truth once.

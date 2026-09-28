@@ -552,6 +552,11 @@ The brand voice is built entirely around five traits inherent to craft pros. Eve
 - Wrong: "We will revolutionize your career in construction!"
 - Right: "Set your pay expectations upfront. Earn what you're worth."
 
+### Plain language
+Customers and craft professionals are not in our business every day. Write so a five-year-old could follow the argument — short words, short sentences, no jargon. Concrete over abstract. One idea per sentence. Cut every word that doesn't carry weight.
+
+State what is true. State it once. Then stop. Avoid stacking adjectives to manufacture value. Avoid implied competitor comparisons. If a sentence can be cut without losing meaning, cut it.
+
 ### Tone by Channel
 
 | Channel                      | Audience    | Purpose                   | Key traits                                   |

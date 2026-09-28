@@ -49,6 +49,7 @@ When a relevant voice says it better than we can, quote them — workers, contra
 This is not a rule to eliminate periods everywhere. It is a principle: choose the punctuation that matches the emotional register of the moment. When the copy is selling a dream, not a feature, the sentence should feel like an invitation, not a declaration.
 - **Punctuation:** No exclamation marks. A period is enough. Exclamation marks signal marketing enthusiasm, not the veteran's calm authority.
 - **Register:** No casual address ("hey folks," "y'all," "friends") and no imitating workers' tones. The voice is the veteran on the job site — knowledgeable, direct, respectful — not a coworker trying to sound like the crew.
+- **Plain language:** Customers and craft professionals aren't in our business every day. Short words, short sentences, no jargon. If a word only makes sense inside Skillit, replace it with the everyday word. State what is true. State it once. Then stop.
 - **Hype:** Revolutionize, disrupt, ecosystem, synergies.
 - **Boilerplate:** Best-in-class, solutions, empower, holistic.
   - *Why "empower" specifically:* "Empower" frames Skillit as the source of the worker's power. The brand's ontology is the opposite — workers are independent decision-makers, not cogs in a machine (Agency). Power pre-exists; Skillit removes friction. Use "give", "let", "support" — or the mission filter ("make more essential").
