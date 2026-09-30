@@ -23,12 +23,13 @@ These are the rules most often violated. Verify every output against them.
 8. **No donut charts, radar/spider charts, or 3D effects.** Solid pie for part-to-whole.
 9. **No retyping, redrawing, or approximating the logo.** The mark, wordmark, and lockup are fixed SVG assets. Use the approved files.
 10. **No SaaS-generic patterns.** No blobs, abstract shapes, illustrated backgrounds, or decorative dividers. Every element performs a structural job or it is deleted.
+11. **No parallel token systems.** Implementations must reference BDS token names directly. Do not define local CSS custom properties that duplicate BDS tokens under different names (e.g., `--plaster` for `--color-surface`, `--iron` for `--color-foreground`). If a token does not exist in `tokens/tokens.json5`, do not invent it — flag it for addition.
 
 ---
 
 ## 2. Tokens — single source of truth
 
-**`tokens/tokens.json5` is canonical.** The values below are a convenience index for orientation. Output must reference the variable, never the hex.
+**`tokens/tokens.json5` is canonical.** The values below are a convenience index for orientation. Output must reference the variable, never the hex. Implementations must use BDS token names directly — no local aliases, no parallel systems. If a token is missing, flag it for addition rather than inventing a replacement.
 
 ### Colors
 | Variable | Name | Role |
