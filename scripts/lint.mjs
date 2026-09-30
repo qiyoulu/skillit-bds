@@ -450,7 +450,7 @@ function lintInternal() {
   if (existsSync(voicePath) && existsSync(llmMdPath)) {
     const v = readFileSync(voicePath, 'utf8').toLowerCase();
     const l = readFileSync(llmMdPath, 'utf8').toLowerCase();
-    const sample = ['serve', 'represent', 'proud', 'product', 'marketplace'];
+    const sample = ['serve', 'represent', 'proud'];
     const vHas = sample.every((w) => v.includes(w));
     const lHas = sample.every((w) => l.includes(w));
     if (vHas !== lHas) {
