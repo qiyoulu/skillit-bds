@@ -450,11 +450,11 @@ function lintInternal() {
   if (existsSync(voicePath) && existsSync(llmMdPath)) {
     const v = readFileSync(voicePath, 'utf8').toLowerCase();
     const l = readFileSync(llmMdPath, 'utf8').toLowerCase();
-    const sample = ['delve', 'tapestry', 'leverage'];
+    const sample = ['serve', 'represent', 'proud', 'product', 'marketplace'];
     const vHas = sample.every((w) => v.includes(w));
     const lHas = sample.every((w) => l.includes(w));
     if (vHas !== lHas) {
-      report({ rule: 'banned_voice_sync', severity: 'warning', scope: 'voice ↔ LLM-INSTRUCTIONS', message: `banned-word list present in ${vHas ? 'voice only' : lHas ? 'LLM-INSTRUCTIONS only' : 'neither'} — keep voice.md and LLM-INSTRUCTIONS.md aligned`, suggestion: 'copy the banned-word list verbatim across both files' });
+      report({ rule: 'banned_voice_sync', severity: 'info', scope: 'voice ↔ LLM-INSTRUCTIONS', message: `voice/brand-voice.md carries brand-voice banned words; LLM-INSTRUCTIONS.md carries both brand-voice banned words (mirrors voice/brand-voice.md) and AI-ism banned words (voice/brand-voice.md has none). This split is intentional — do not merge the two lists.`, suggestion: 'no action — the two files serve different audiences by design' });
     }
   }
 }

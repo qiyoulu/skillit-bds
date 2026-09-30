@@ -143,7 +143,9 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **"Connect," "match," "capture"** — never "serve," "support," "represent."
 - **"Platform" or "network"** — never "product," "marketplace," or "labor marketplace."
 - **"Craft professionals," "members"** — not "customers" when referring to workers.
-- **Banned words:** delve, tapestry, leverage, utilize, harness, foster, cultivate, realm, landscape, overarching, seamless, robust, dynamic, myriad, testament, beacon.
+- **Banned words (brand voice):** Serve, Represent, Proud, Product, Marketplace. Do not use to describe Skillit's own network or people — the network is a network; our people are craft professionals, craft pros, members, contractors, or employers. (See `voice/brand-voice.md` for the full rationale and exceptions.)
+- **Banned words (AI-isms):** delve, tapestry, leverage, utilize, harness, foster, cultivate, realm, landscape, overarching, seamless, robust, dynamic, myriad, testament, beacon.
+- **Note:** `LLM-INSTRUCTIONS.md` carries both — brand-voice banned words (above) and AI-ism banned words (below). `voice/brand-voice.md` carries brand-voice banned words only.
 - **Banned transitions:** "Moreover," "Furthermore," "In conclusion," "It is important to note."
 - **Banned hype:** "Revolutionize," "disrupt," "excited to announce," "world-class."
 - Vary sentence length. Short punches mixed with longer thoughts. Concrete, physical detail over abstraction.

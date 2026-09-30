@@ -56,7 +56,7 @@ This is not a rule to eliminate periods everywhere. It is a principle: choose th
 - **AI Doom:** "In a world where AI replaces..."
 - **Hedging:** We believe, perhaps, might be able to.
 - **Over-enthusiasm:** Thrilled to announce, exciting.
-- **Banned words:** Serve, Represent, Proud, Customer, Product, Worker, Marketplace.
+- **Banned words:** Serve, Represent, Proud, Product, Marketplace.
   - *Exception:* "Workforce" and "labor marketplace" are permitted only when addressing the market at large — never to describe Skillit's own network. Our network is a network. Our people are craft professionals, craft pros, members, contractors, or employers.
 - **AI use:**
   - Do not use AI to originate or finish thinking. AI can expand a draft, surface alternatives, or pressure-test a claim — it cannot be the source of the idea or the final word.
