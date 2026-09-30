@@ -325,13 +325,29 @@ function scan(text, re) {
 }
 /** Like scan() but returns the captured group value separately so callers don't
  *  index m[1] on h.match (m[0]).  Used by rules that need just the RHS of a CSS
- *  property. */
+ *  property.  Automatically adds the g flag if missing; callers do not need to
+ *  pass /g themselves. */
 function scanCapture(text, re) {
+  if (!re.flags.includes('g')) re = new RegExp(re.source, re.flags + 'g');
   const out = [];
   const lines = text.split('\n');
   for (let i = 0; i < lines.length; i++) {
-    const m = lines[i].match(re);
-    if (m) out.push({ line: i + 1, col: (m.index ?? 0) + 1, lineText: lines[i], match: m[0], value: (m[1] || '').trim() });
+    for (const lm of lines[i].matchAll(re)) {
+      out.push({ line: i + 1, col: lm.index + 1, lineText: lines[i], match: lm[0], value: (lm[1] || '').trim() });
+    }
+  }
+  return out;
+}
+/** Scan every line for a regex that captures the hex marker; return every
+ *  occurrence as a `match` with line/char position, even where the match
+ *  spans just a hex fragment inside a larger string literal. */
+function scanHexes(text) {
+  const re = /#[0-9a-fA-F]{3,8}/g;
+  const out = [];
+  let m;
+  while ((m = re.exec(text)) != null) {
+    const line = text.slice(0, m.index).split('\n').length;
+    out.push({ line, col: m.index - text.lastIndexOf('\n', m.index) + 1, text: text.slice(m.index, m.index + m[0].length) });
   }
   return out;
 }
@@ -471,8 +487,8 @@ function lintExternalFile(pathStr) {
 
   // radius_scale
   if (isCss) {
-    for (const h of scanCapture(text, /border-radius\s*:\s*([^;]+)/)) {
-      const v = h.value;
+    for (const h of scanCapture(text, /border-radius\s*:\s*([^;}]*)/)) {
+      const v = h.value.trim();
       if (/^(0|16px|9999px|50%|1px|2px|3px|clamp\(.*\))$/i.test(v)) continue;
       report({ rule: 'radius_scale', severity: 'error', scope: rel(pathStr), line: h.line, message: `border-radius: ${v}`, suggestion: 'use 0, 16px, 9999px (or 50%/clamp)' });
     }
@@ -522,13 +538,27 @@ function lintExternalFile(pathStr) {
 
   // chart_sequential_scale
   if (isJsOrCss) {
-    const arrRe = /(?<=\[)([^]\n]+)(?=\])/g;
+    // walk the file for any `[` and pull the inner list until the matching `]`.
+    // This survives quoted arrays like ['#111','#222','#333'] that the
+    // lookbehind/lookahead form silently skipped.
+    const re = /\[/g;
     let m;
-    while ((m = arrRe.exec(text)) != null) {
-      const hexes = (m[1].match(/#[0-9a-fA-F]{3,8}/g) || []).map(normalizeHex);
+    while ((m = re.exec(text)) != null) {
+      const openAt = m.index;
+      let closeAt = -1, depth = 0, i = openAt;
+      const lines = text.split('\n');
+      while (i < text.length) {
+        const c = text[i];
+        if (c === '[') depth++;
+        else if (c === ']') { depth--; if (depth === 0) { closeAt = i; break; } }
+        i++;
+      }
+      if (closeAt < 0) continue;
+      const inner = text.slice(openAt + 1, closeAt);
+      const hexes = (inner.match(/#[0-9a-fA-F]{3,8}/g) || []).map(normalizeHex);
       if (hexes.length < 3) continue;
       if (hexes.every((h) => sameHueFamily(h, hexes[0]))) {
-        const lineOf = text.slice(0, m.index).split('\n').length;
+        const lineOf = text.slice(0, openAt).split('\n').length;
         report({ rule: 'chart_sequential_scale', severity: 'warning', scope: rel(pathStr), line: lineOf, message: `sequential hex array with ${hexes.length} ${hueName(hexes[0])} steps`, suggestion: 'use one base hex + stepped opacity (100% / N%)' });
       }
     }
@@ -536,8 +566,8 @@ function lintExternalFile(pathStr) {
 
   // svg_fill_color
   if (ext === '.svg' || isHtmlish) {
-    for (const h of scan(text, /fill\s*=\s*"([^"]+)"/g)) {
-      const v = h.match[1];
+    for (const h of scanCapture(text, /fill\s*=\s*"([^"]+)"/g)) {
+      const v = h.value;
       if (v === 'none' || v === 'currentColor') continue;
       if (isHex(v) && !BRAND_HEX.includes(normalizeHex(v))) {
         report({ rule: 'svg_fill_color', severity: 'error', scope: rel(pathStr), line: h.line, message: `hardcoded fill="${v}" on line ${h.line}`, suggestion: 'use fill="currentColor" + CSS color:var(--…)' });
