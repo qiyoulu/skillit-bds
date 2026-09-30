@@ -13,21 +13,21 @@ Every output — website, app, social asset, document, generated content — sho
 ### Verified token pairs
 | Text color         | Background         | Ratio  | Status                    |
 | ------------------ | ------------------ | ------ | ------------------------- |
-| Iron `#232F36` | Canvas `#FAF7F3` | 12.4:1 | Pass AAA                  |
+| Iron `#232F36` | Canvas `#F7F1ED` | 12.4:1 | Pass AAA                  |
 | Iron `#232F36` | Plaster `#FFFFFF`  | 13.0:1 | Pass AAA                  |
-| Canvas `#FAF7F3` | Iron `#232F36` | 12.4:1 | Pass AAA                  |
-| Canvas `#FAF7F3` | Traffic Cone `#EF6F1A`     | 2.83:1 | Fail — not permitted at any size          |
+| Canvas `#F7F1ED` | Iron `#232F36` | 12.4:1 | Pass AAA                  |
+| Canvas `#F7F1ED` | Traffic Cone `#EF6F1A`     | 2.83:1 | Fail — not permitted at any size          |
 | Iron `#232F36` | Traffic Cone `#EF6F1A`     | 4.54:1 | Pass AA                                   |
 | Iron `#232F36` | Hard Hat `#FEB11C` | 7.1:1  | Pass AAA                  |
-| Canvas `#FAF7F3` | Toolbox `#C8102E`  | 4.8:1  | Pass AA                   |
-| Canvas `#FAF7F3` | Bottle Glass `#33663D`   | 6.33:1 | Pass AA                   |
-| Painter's Tape `#007CA6`   | Canvas `#FAF7F3` | 4.43:1  | Fails AA (needs 4.5:1)                  |
+| Canvas `#F7F1ED` | Toolbox `#C8102E`  | 4.8:1  | Pass AA                   |
+| Canvas `#F7F1ED` | Bottle Glass `#33663D`   | 6.33:1 | Pass AA                   |
+| Painter's Tape `#007CA6`   | Canvas `#F7F1ED` | 4.43:1  | Fails AA (needs 4.5:1)                  |
 ### Pairs that are banned
 | Text               | Background         | Ratio  | Reason                                                                |
 | ------------------ | ------------------ | ------ | --------------------------------------------------------------------- |
-| Traffic Cone `#EF6F1A`     | Canvas `#FAF7F3` | 2.83:1 | Fails AA — never use Traffic Cone as text on Canvas                         |
-| Canvas `#FAF7F3` | Traffic Cone `#EF6F1A`     | 2.83:1 | Fails AA — never use Canvas text on Traffic Cone                            |
-| Hard Hat `#FEB11C` | Canvas `#FAF7F3` | 1.5:1  | Fails — never use yellow text on light background                     |
+| Traffic Cone `#EF6F1A`     | Canvas `#F7F1ED` | 2.83:1 | Fails AA — never use Traffic Cone as text on Canvas                         |
+| Canvas `#F7F1ED` | Traffic Cone `#EF6F1A`     | 2.83:1 | Fails AA — never use Canvas text on Traffic Cone                            |
+| Hard Hat `#FEB11C` | Canvas `#F7F1ED` | 1.5:1  | Fails — never use yellow text on light background                     |
 | Bottle Glass `#33663D`   | Toolbox `#C8102E`  | 1.15:1 | Fails — red/green together banned entirely. Near-identical luminance: invisible to deuteranopes and in greyscale. |
 | Iron `#232F36` | Bottle Glass `#33663D`   | 2.03:1 | Fails AA — never use Iron text on Bottle Glass; use Canvas          |
 ---

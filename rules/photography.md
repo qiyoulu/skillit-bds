@@ -75,7 +75,7 @@ Lighting: flat, natural, diffused — no dramatic rim lights or color gels
 Framing: [eye level / tight crop / wide environmental]
 Style: photorealistic, documentary photography, no filters
 Color: natural — no color grading, no vignette
-Background: [transparent / Canvas #FAF7F3 / Iron #232F36]
+Background: [transparent / Canvas #F7F1ED / Iron #232F36]
 Avoid: stock photo aesthetics, posed expressions, fake environments, rounded edges, drop shadows, color filters
 ```
 **Example brief:**

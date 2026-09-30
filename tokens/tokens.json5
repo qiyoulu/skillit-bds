@@ -14,7 +14,7 @@
   base: {
     color: {
       bg: {
-        $value: '#F9F4F1',
+        $value: '#F7F1ED',
         $type: 'color',
         $description: 'Canvas — primary background. never pure white as global ground.',
         $extensions: {
@@ -74,14 +74,16 @@
         },
       },
       hover: {
-         'bg': { $value: '#EEE9E6', $type: 'color', $description: 'Canvas hover — color-mix(in oklab, base, black 10%)' },
-         'surface': { $value: '#F3F3F3', $type: 'color', $description: 'Plaster hover — color-mix(in oklab, base, black 10%)' },
-         'fg': { $value: '#212C33', $type: 'color', $description: 'Iron hover — color-mix(in oklab, base, black 10%)' },
-         'primary': { $value: '#E46A18', $type: 'color', $description: 'Traffic Cone hover — color-mix(in oklab, base, black 10%)' },
-         'warning': { $value: '#F2A91A', $type: 'color', $description: 'Hard Hat hover — color-mix(in oklab, base, black 10%)' },
-         'error': { $value: '#BF0F2B', $type: 'color', $description: 'Toolbox hover — color-mix(in oklab, base, black 10%)' },
-         'success': { $value: '#30613A', $type: 'color', $description: 'Bottle Glass hover — color-mix(in oklab, base, black 10%)' },
-         'link': { $value: '#00769E', $type: 'color', $description: "Painter's Tape hover — color-mix(in oklab, base, black 10%)" },
+         'bg': { $value: 'color-mix(in oklab, var(--color-background), black 10%)',
+            $type: 'color',
+            $description: 'Canvas hover — color-mix(in oklab, base, black 10%)' },
+         'surface': { $value: 'color-mix(in oklab, var(--color-surface), black 10%)', $type: 'color', $description: 'Plaster hover — color-mix(in oklab, base, black 10%)' },
+         'fg': { $value: 'color-mix(in oklab, var(--color-foreground), black 10%)', $type: 'color', $description: 'Iron hover — color-mix(in oklab, base, black 10%)' },
+         'primary': { $value: 'color-mix(in oklab, var(--color-primary), black 10%)', $type: 'color', $description: 'Traffic Cone hover — color-mix(in oklab, base, black 10%)' },
+         'warning': { $value: 'color-mix(in oklab, var(--color-warning), black 10%)', $type: 'color', $description: 'Hard Hat hover — color-mix(in oklab, base, black 10%)' },
+         'error': { $value: 'color-mix(in oklab, var(--color-error), black 10%)', $type: 'color', $description: 'Toolbox hover — color-mix(in oklab, base, black 10%)' },
+         'success': { $value: 'color-mix(in oklab, var(--color-success), black 10%)', $type: 'color', $description: 'Bottle Glass hover — color-mix(in oklab, base, black 10%)' },
+         'link': { $value: 'color-mix(in oklab, var(--color-link), black 10%)', $type: 'color', $description: "Painter's Tape hover — color-mix(in oklab, base, black 10%)" },
       },
     },
     spacing: {

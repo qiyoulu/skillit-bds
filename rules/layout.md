@@ -40,7 +40,7 @@ State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional on
 ### Website / marketing
 - Strict 12-column grid on desktop. No flexible fractional columns (e.g., `1fr`, `1.5fr`). Use fixed `col-span` classes so elements align flawlessly down the vertical axis.
 - Gutter: `--space-8` (32px).
-- Content max-width: `1168px`, centered.
+- Content max-width: `1200px`, centered.
 - Column minimum width: `326px` — no single grid column should be narrower than this, or its content breaks.
 - Side margins: `--space-16` (64px) desktop.
 - **Tablet (`< 1024px`):** The 12-column grid collapses to a single-column layout early to prevent element jumbling. Large typography needs horizontal space; never force complex multi-column grids onto medium viewports.

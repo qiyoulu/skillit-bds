@@ -6,7 +6,7 @@
  */
 :root {
   /* color */
-  --color-background: #F9F4F1;            /* Canvas — primary background */
+  --color-background: #F7F1ED;            /* Canvas — primary background */
   --color-surface: #FFFFFF;       /* Plaster — elevated surfaces */
   --color-foreground: #232F36;       /* Iron — foreground */
   --color-primary: #EF6F1A;       /* Traffic Cone — primary action */
@@ -14,16 +14,15 @@
   --color-error: #C8102E;         /* Toolbox — errors */
   --color-success: #33663D;       /* Bottle Glass — success */
   --color-link: #007CA6;          /* Painter's Tape — link. underlined = link */
-
   /* hover states — color-mix(in oklab, base, black 10%) */
-  --color-background-hover: #EEE9E6;       /* Canvas hover */
-  --color-surface-hover: #F3F3F3;  /* Plaster hover */
-  --color-foreground-hover: #212C33;       /* Iron hover */
-  --color-primary-hover: #E46A18;  /* Traffic Cone hover */
-  --color-warning-hover: #F2A91A;  /* Hard Hat hover */
-  --color-error-hover: #BF0F2B;    /* Toolbox hover */
-  --color-success-hover: #30613A;  /* Bottle Glass hover */
-  --color-link-hover: #00769E;     /* Painter's Tape hover */
+  --color-background-hover: color-mix(in oklab, var(--color-background), black 10%);       /* Canvas hover */
+  --color-surface-hover: color-mix(in oklab, var(--color-surface), black 10%);  /* Plaster hover */
+   --color-foreground-hover: color-mix(in oklab, var(--color-foreground), black 10%);       /* Iron hover */
+   --color-primary-hover: color-mix(in oklab, var(--color-primary), black 10%);  /* Traffic Cone hover */
+   --color-warning-hover: color-mix(in oklab, var(--color-warning), black 10%);  /* Hard Hat hover */
+   --color-error-hover: color-mix(in oklab, var(--color-error), black 10%);    /* Toolbox hover */
+   --color-success-hover: color-mix(in oklab, var(--color-success), black 10%);  /* Bottle Glass hover */
+   --color-link-hover: color-mix(in oklab, var(--color-link), black 10%);     /* Painter's Tape hover */
 
   /* spacing — 4px base unit, rem */
   --space-1: 0.25rem;             /* 4px  */

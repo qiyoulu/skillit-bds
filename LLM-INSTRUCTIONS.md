@@ -33,7 +33,7 @@ These are the rules most often violated. Verify every output against them.
 ### Colors
 | Variable | Name | Role |
 |---|---|---|
-| `--color-background` | Canvas `#FAF7F3` | Default background — all surfaces |
+| `--color-background` | Canvas `#F7F1ED` | Default background — all surfaces |
 | `--color-surface` | Plaster `#FFFFFF` | Elevated cards, panels, isolated inputs |
 | `--color-foreground` | Iron `#232F36` | All text, structural lines. Never `#000000` |
 | `--color-primary` | Traffic Cone `#EF6F1A` | Primary action — once per layout section max |
@@ -65,6 +65,11 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **One Traffic Cone per layout section.** It marks the single most important action or data point. Never repeated decoratively.
 - **Focus rings use Traffic Cone** — the one permitted accent repetition, because focus is functional.
 - **Humans vs. machine:** Work Sans = human content. JetBrains Mono = machine data. The distinction is a core brand signal.
+
+**Buttons (CTAs):**
+- Left-aligned, never centered. `align="left"` on wrapping `<td>` and inner `<table>`. Industry default is center; Skillit voice is left.
+- **No arrow on the button label.** Button labels carry affordance through shape (pill), color (Cone), and weight. Arrows (`&rarr;` / `→`) are reserved for inline body links where the underlined text is a complete standalone sentence ("Read his article on LinkedIn →"). Not for buttons.
+- Iron text on Cone background for primary CTAs. Sentence-case imperative copy.
 
 ---
 
@@ -125,7 +130,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Surface hierarchy:** Canvas ground → Plaster cards → Iron structure → Traffic Cone signal. Four layers, no more.
 - **Whitespace is structural mass.** Minimum `--space-16` (64px) vertical padding on desktop sections. When in doubt, add space.
 - **Header/body alignment:** Header bars use the same horizontal margins and padding as the body content below them.
-- **Grid:** 12-column desktop grid, fixed column spans — no percentage splits. Max content width `1168px`.
+- **Grid:** 12-column desktop grid, fixed column spans — no percentage splits. Max content width `1200px`.
 - **Text width:** Body columns never exceed `70ch`.
 
 ---

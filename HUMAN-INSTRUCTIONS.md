@@ -135,7 +135,7 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 
 | Name           | Hex       | CMYK            | Spot (Coated / Uncoated) | Role                                  |
 | -------------- | --------- | --------------- | ------------------------ | ------------------------------------- |
-| Canvas         | `#FAF7F3` | 2, 2, 4, 0      | Paper — not an ink       | Primary background — all surfaces     |
+| Canvas         | `#F7F1ED` | 2, 2, 4, 0      | Paper — not an ink       | Primary background — all surfaces     |
 | Plaster        | `#FFFFFF` | 0, 0, 0, 0      | Paper — unprinted stock  | Elevated surfaces, cards, form inputs |
 | Iron           | `#232F36` | 80, 50, 45, 65  | 432 C / 432 U            | Foreground                            |
 | Traffic Cone   | `#EF6F1A` | 0, 65, 100, 0   | 158 C / 158 U            | Primary action                        |
@@ -363,7 +363,7 @@ To maintain the grid's consistent rhythm, vertical spacing between text elements
 Work Sans is a **variable font** with a continuous weight axis (100–900). Use interpolated weights for optical correction.
 **Halation correction:** Light text on a dark background creates an optical illusion that makes letterforms appear heavier than they are. There are two techniques to reduce this:
 
-- **On light backgrounds (Canvas):** Use standard weights (400, 500, 600, 700). Canvas is already an off-white (`#FAF7F3`) rather than pure white, which naturally reduces irradiation against dark type.
+- **On light backgrounds (Canvas):** Use standard weights (400, 500, 600, 700). Canvas is already an off-white (`#F7F1ED`) rather than pure white, which naturally reduces irradiation against dark type.
 - **On non-Skillit dark backgrounds:** Subtract ~25 units to use interpolated weights (375, 475, 575, 675). Skillit layout surfaces remain Canvas or Plaster.
 
 ### Typographic Punctuation
