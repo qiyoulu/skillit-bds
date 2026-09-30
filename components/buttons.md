@@ -4,7 +4,7 @@
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
 - Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
-- Tactile padding rule: button padding scales with font size — vertical = 0.5x font size, horizontal = 1x (`padding: 0.5em 1em`; matches the 8px/16px spec at 16px button text). This is a non-negotiable brand rule.
+- **Tactile padding rule:** Button padding scales with font size — vertical = 0.5× font size, horizontal = 1×. Use `padding: 0.5em 1em` everywhere. At 16px button text this resolves to **8px vertical / 16px horizontal**. At 14px text (smaller buttons, table footers) it scales down to **7px / 14px**. At 18px (large hero buttons) it scales up to **9px / 18px**. **Never use hardcoded pixel values — use em so the rule holds across surface sizes.** This is a non-negotiable brand rule. (For email contexts where Outlook ignores em reliably, an explicit pixel fallback is allowed: CTA buttons in email at 16px text may use `padding: 8px 16px` as the explicit value.)
 - Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
 - Touch targets minimum 40px in both dimensions (app).
 
@@ -85,6 +85,12 @@ For primary actions inside structured blocks. Iron text on Traffic Cone, same as
 **Label rules:**
 - Sentence-case imperative. "Join" / "Apply" / "See the network." Never "Click here" or "Submit form."
 - **Strict Consistency:** All buttons that point to the exact same destination page should use the exact same label across the entire platform. If the primary account creation CTA is "Join", do not alternate it with "Get started", "Create your profile", or "Sign up" elsewhere on the page. Pick one label per destination and lock it.
+
+**Alignment:**
+- **All CTA buttons are left-aligned.** Industry email guides show a center-default for CTAs, but Skillit voice is left-aligned: it keeps the button inline with the column of copy it sits next to and reads as the natural next step in the scan path, not a separate block. Use `align="left"` on the wrapping `<td>` and the inner `<table>`. The exception is hero sections or full-width templates where the column is full width — there, left-align to the column's start (which is the same rule, never `align="center"`).
+
+**Arrow suffix:**
+- **No arrow on buttons.** Button labels carry their own affordance through shape (pill), color (Cone), and weight (size + bold). The arrow is reserved for inline body links where the underlined text is a complete standalone sentence ("Read his article on LinkedIn →", "Reply to this newsletter →") — and only there. Industry convention drops arrows on buttons; Skillit voice keeps arrows only on standalone-sentence body links.
 
 ## Destructive button
 For irreversible actions only. Toolbox background.
