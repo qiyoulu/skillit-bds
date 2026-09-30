@@ -177,6 +177,7 @@
     },
     radius: {
       sharp: { $value: '16px', $type: 'dimension', $description: 'structural containers, photos, cards, icons — universal 16px corners' },
+      soft: { $value: '16px', $type: 'dimension', $description: 'alias of sharp. structural containers, photos, cards, icons — universal 16px corners' },
       pill: { $value: '9999px', $type: 'dimension', $description: 'actionable touchpoints — buttons, badges. 100vmax or 9999px.' },
     },
     layout: {

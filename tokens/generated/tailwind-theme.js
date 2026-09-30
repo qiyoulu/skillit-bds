@@ -51,6 +51,7 @@ module.exports = {
       },
       borderRadius: {
         sharp: 'var(--radius-sharp)',
+        soft: 'var(--radius-soft)',
         pill: 'var(--radius-pill)'
       },
       spacing: {
