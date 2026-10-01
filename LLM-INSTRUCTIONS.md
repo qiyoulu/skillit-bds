@@ -1,4 +1,4 @@
-# SKILLIT KIT BDS — SYSTEM PROMPT (READ FIRST)
+# Skillit Kit Brand Design System (BDS) — SYSTEM PROMPT (READ FIRST)
 
 **Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-01
 
