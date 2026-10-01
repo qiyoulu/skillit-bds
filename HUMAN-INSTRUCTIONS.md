@@ -1,4 +1,6 @@
-# Brand Design System (BDS) — Skillit
+# Skillit Kit BDS — Brand Design System
+
+**Last synced with LLM-INSTRUCTIONS.md:** 2026-10-01
 
 ## **Version 0.9-beta · August 2026**
 
@@ -6,7 +8,7 @@
 
 ## Table of Contents
 
-- [Brand Design System (BDS) — Skillit](#brand-design-system-bds--skillit)
+- [Skillit Kit BDS — Brand Design System](#skillit-kit-bds--brand-design-system)
   - [**Version 0.9-beta · August 2026**](#version-09-beta--august-2026)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
