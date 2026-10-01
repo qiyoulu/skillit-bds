@@ -8,9 +8,9 @@
 ## 2. Geometry & Grid
 - **Base Canvas:** 24x24px.
 - **The 10x10 Sub-grid:** To maintain blocky structural DNA while perfectly centering on an even canvas, icons should be drawn on a 10x10 sub-grid where **1 block = 2x2px**. Vertices should snap to multiples of 2 **where possible**; full-bleed to the 24px edge and half-block (1px) offsets are permitted where the shape needs them (see the arrow set — all current icons follow this relaxed rule).
-- **Live Area:** Leave a 1-block (2px) padding around the edges where the shape allows. The maximum live drawing area is 10x10 blocks (20x20px); arrows full-bleed to the edge for optical weight.
+- **Live Area:** The 2px padding is already baked into the SVG paths. Maintain it when creating new icons; arrows full-bleed to the edge for optical weight.
 - **Shapes:** Solid, filled vector shapes (`fill="currentColor"`). No strokes.
-- **Angles & Curves:** Construction is restricted to 90-degree and 45-degree angles, with no bezier curves; the only constructed curves permitted are consistently perfect full circles or half-circles. Approved exported SVGs may contain curve commands where required to preserve those geometric shapes.
+- **Geometric Construction:** All icons must be built exclusively from circles, rectangles, and triangles and their derivatives — full circles, arcs, semicircles, ring segments, rectangles, right triangles, and straight lines. No bezier curves, no freehand paths, no organic shapes. Every shape must be derivable from these three primitives. This ensures icons remain crisp at any size and consistent with the blocky, industrial brand aesthetic.
 - **Clearance:** Minimum internal padding of 2px (1 block) to maintain the heavy aesthetic.
 ## 3. Status Icons & Accessibility
 To comply with the brand's strict accessibility rules (never relying on color alone) and to mimic physical job-site signage, status icons are permanently locked to specific geometric silhouettes. The icon graphic is punched out of the solid shape:
