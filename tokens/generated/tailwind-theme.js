@@ -69,7 +69,16 @@ module.exports = {
         '20': 'var(--space-20)',
         '24': 'var(--space-24)',
         '128': 'var(--space-128)',
-        '256': 'var(--space-256)'
+        '256': 'var(--space-256)',
+        'space-0.25x': 'var(--space-0.25x)',
+        'space-0.5x': 'var(--space-0.5x)',
+        'space-1x': 'var(--space-1x)',
+        'space-1.5x': 'var(--space-1.5x)',
+        'space-2x': 'var(--space-2x)',
+        'space-3x': 'var(--space-3x)',
+        'space-4x': 'var(--space-4x)',
+        'space-6x': 'var(--space-6x)',
+        'space-8x': 'var(--space-8x)'
       }
     }
   }

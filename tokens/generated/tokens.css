@@ -43,6 +43,17 @@
   --space-128: clamp(48px, 10vw, 128px);
   --space-256: clamp(96px, 18vw, 256px);
 
+  /* spacing — aliases */
+  --space-0.25x: 0.25rem;
+  --space-0.5x: 0.5rem;
+  --space-1x: 1rem;
+  --space-1.5x: 1.5rem;
+  --space-2x: 2rem;
+  --space-3x: 3rem;
+  --space-4x: 4rem;
+  --space-6x: 6rem;
+  --space-8x: 8rem;
+
   /* typography — families */
   --font-primary: 'Work Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;

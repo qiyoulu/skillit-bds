@@ -102,6 +102,15 @@
       '24': { $value: '6rem', $type: 'dimension', $description: '96px — maximum section vertical padding' },
       '128': { $value: 'clamp(48px, 10vw, 128px)', $type: 'dimension', $description: 'desktop section gaps, page margins' },
       '256': { $value: 'clamp(96px, 18vw, 256px)', $type: 'dimension', $description: 'massive editorial breaks' },
+      'space-0.25x': { $value: '0.25rem', $type: 'dimension', $description: 'alias for spacing-1' },
+      'space-0.5x': { $value: '0.5rem', $type: 'dimension', $description: 'alias for spacing-2' },
+      'space-1x': { $value: '1rem', $type: 'dimension', $description: 'alias for spacing-4' },
+      'space-1.5x': { $value: '1.5rem', $type: 'dimension', $description: 'alias for spacing-6' },
+      'space-2x': { $value: '2rem', $type: 'dimension', $description: 'alias for spacing-8' },
+      'space-3x': { $value: '3rem', $type: 'dimension', $description: 'alias for spacing-12' },
+      'space-4x': { $value: '4rem', $type: 'dimension', $description: 'alias for spacing-16' },
+      'space-6x': { $value: '6rem', $type: 'dimension', $description: 'alias for spacing-24' },
+      'space-8x': { $value: '8rem', $type: 'dimension', $description: '128px — fixed' },
     },
     typography: {
       family: {
