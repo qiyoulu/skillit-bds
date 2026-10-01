@@ -1,4 +1,4 @@
-# Copy Examples — Skillit Kit BDS
+# Copy Examples — Skillit BDS
 **Last updated:** 2026-08-17
 Use this file to calibrate tone before generating any Skillit copy. Read a few examples in the relevant channel before writing. If your output sounds like the “Wrong” column, revise.
 ---
