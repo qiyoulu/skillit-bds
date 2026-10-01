@@ -1,4 +1,4 @@
-# Audience — Skillit BDS
+# Audience — Skillit Kit BDS
 
 ## **Last updated:** 2026-08-17
 

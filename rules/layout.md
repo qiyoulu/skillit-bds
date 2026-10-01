@@ -1,4 +1,4 @@
-# Layout Rules — Skillit BDS
+# Layout Rules — Skillit Kit BDS
 **Last updated:** 2026-08-17
 ---
 ## The core principle

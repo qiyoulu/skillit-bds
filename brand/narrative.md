@@ -1,4 +1,4 @@
-# Brand Narrative — Skillit BDS
+# Brand Narrative — Skillit Kit BDS
 
 ## **Last updated:** 2026-08-27
 

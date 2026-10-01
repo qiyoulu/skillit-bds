@@ -1,4 +1,4 @@
-# Iconography Rules — Skillit BDS
+# Iconography Rules — Skillit Kit BDS
 **Last updated:** 2026-07-15
 ---
 ## 1. Core Principles

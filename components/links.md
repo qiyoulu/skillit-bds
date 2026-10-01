@@ -1,4 +1,4 @@
-# Text Links — Skillit BDS
+# Text Links — Skillit Kit BDS
 **Last updated:** 2026-08-17
 ---
 ## Rules

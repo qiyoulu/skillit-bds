@@ -1,4 +1,4 @@
-# Metadata & Data Strings — Skillit BDS
+# Metadata & Data Strings — Skillit Kit BDS
 **Last updated:** 2026-08-17
 ---
 ## Rules

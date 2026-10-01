@@ -1,4 +1,4 @@
-# Form Inputs — Skillit BDS
+# Form Inputs — Skillit Kit BDS
 **Last updated:** 2026-09-10
 ---
 ## Rules

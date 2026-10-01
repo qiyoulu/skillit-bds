@@ -1,4 +1,4 @@
-# Toast / Notification — Skillit BDS
+# Toast / Notification — Skillit Kit BDS
 **Last updated:** 2026-09-13
 ---
 ## Rules

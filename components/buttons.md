@@ -1,4 +1,4 @@
-# Buttons — Skillit BDS
+# Buttons — Skillit Kit BDS
 **Last updated:** 2026-09-09
 ---
 ## Rules

@@ -1,4 +1,4 @@
-# Brand Strategy — Skillit BDS
+# Brand Strategy — Skillit Kit BDS
 
 **Last updated:** 2026-09-06
 

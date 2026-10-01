@@ -1,4 +1,4 @@
-# Form Validation — Skillit BDS
+# Form Validation — Skillit Kit BDS
 **Last updated:** 2026-09-13
 ---
 ## Rules

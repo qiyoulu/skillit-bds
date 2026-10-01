@@ -1,4 +1,4 @@
-# Accessibility Rules — Skillit BDS
+# Accessibility Rules — Skillit Kit BDS
 **Last updated:** 2026-08-17
 ---
 ## Non-negotiable

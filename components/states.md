@@ -1,4 +1,4 @@
-# States — Skillit BDS
+# States — Skillit Kit BDS
 **Last updated:** 2026-08-17
 ---
 ## Rules

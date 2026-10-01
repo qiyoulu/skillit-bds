@@ -1,4 +1,4 @@
-# Brand Voice — Skillit BDS
+# Brand Voice — Skillit Kit BDS
 **Last updated:** 2026-10-01
 
 ## The North Star

@@ -1,4 +1,4 @@
-# Photography & Image Rules — Skillit BDS
+# Photography & Image Rules — Skillit Kit BDS
 **Last updated:** 2026-08-17
 ---
 ## The principle

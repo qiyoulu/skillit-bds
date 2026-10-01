@@ -1,4 +1,4 @@
-# Color Tokens — Skillit BDS
+# Color Tokens — Skillit Kit BDS
 **Last updated:** 2026-08-23
 **Canonical source:** `tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---

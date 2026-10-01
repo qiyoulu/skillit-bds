@@ -1,4 +1,4 @@
-# Email — Skillit BDS
+# Email — Skillit Kit BDS
 **Last updated:** 2026-09-04
 ---
 ## Rules
