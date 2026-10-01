@@ -2,14 +2,14 @@
 
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-01
 
-## **Version 0.9-beta · August 2026**
+## **Version 1.1 · October 2026**
 
 > **AI agents: read [`LLM-INSTRUCTIONS.md`](./LLM-INSTRUCTIONS.md) first.** That file is the authoritative constraint set for machine-generated output — code, design, copy, data viz. Where this document and that one conflict, `LLM-INSTRUCTIONS.md` wins. This document is the human-readable rationale and full guideline set; the LLM file is the enforcement layer.
 
 ## Table of Contents
 
 - [Skillit Kit Brand Design System (BDS)](#skillit-kit-brand-design-system-bds)
-  - [**Version 0.9-beta · August 2026**](#version-09-beta--august-2026)
+  - [**Version 1.1 · October 2026**](#version-11--october-2026)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [At a Glance](#at-a-glance)
