@@ -2,8 +2,6 @@
 
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-01
 
-**Naming:** Use "Skillit BDS", "the BDS", "Skillit Kit", or "Kit" when referring to the system. All four are valid — pick one and stay consistent within a document.
-
 ## **Version 0.9-beta · August 2026**
 
 > **AI agents: read [`LLM-INSTRUCTIONS.md`](./LLM-INSTRUCTIONS.md) first.** That file is the authoritative constraint set for machine-generated output — code, design, copy, data viz. Where this document and that one conflict, `LLM-INSTRUCTIONS.md` wins. This document is the human-readable rationale and full guideline set; the LLM file is the enforcement layer.
