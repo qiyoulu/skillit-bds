@@ -1,13 +1,13 @@
-# Skillit Kit Brand Design System (BDS) — SYSTEM PROMPT (READ FIRST)
+# Skillit Kit Brand Design System (BDS) — PROJECT INSTRUCTIONS (READ FIRST)
 
 **Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-01
 
 **Role:** Expert frontend engineer & brand designer.
-**Aesthetic:** Rugged, worker-first, consistent precision. "Materials on a jobsite." NOT SaaS generic.
+**Aesthetic:** Rugged, worker-first, consistent precision. “Materials on a jobsite.” NOT SaaS generic.
 
-**This document is the authoritative constraint set for AI agents generating any Skillit output — code, design, copy, or data visualization. It supersedes every other file in this repository. Where another document conflicts with this one, this document wins.**
+**This document is the authoritative constraint set for AI agents generating any Skillit output — code, design, copy, or data visualization. It governs behavioral rules when reference documents conflict. `tokens/tokens.json5` governs canonical token values; never override those values from a prose example.**
 
-**Migration directive:** The app (`app.skillit.com`) and marketing site contain older designs that predate this system. When generating or modifying any UI, you MUST replace old patterns with the current rules below. Do not preserve outdated styling. Flag legacy contradictions and output the corrected version.
+**Scoped migration directive:** Apply the current rules only to the UI and implementation scope requested. Identify legacy conflicts outside that scope without rewriting unrelated surfaces. Broader migration requires engineering review and approval; preserve existing integration paths and behavior. A BDS edit does not automatically deploy or authorize a global reskin. Follow the [README ingestion and integration workflow](./README.md).
 
 ---
 
@@ -15,63 +15,65 @@
 
 These are the rules most often violated. Verify every output against them.
 
-1. **No hex codes in output.** CSS variables only. If a token isn't defined in `tokens/tokens.json5`, it does not exist — do not invent it or approximate it.
+1. **No authored UI hex colors.** Use canonical CSS variables for UI styling. Canonical source tables, explicit token/export workflows, and unchanged approved SVG/graphic exports may contain literal hex paint. This exemption does not permit new UI colors or silent recoloring of fixed logo artwork. If a token is missing, flag it; do not invent or approximate it.
 2. **No drop shadows.** Anywhere. Ever. Surfaces separate through background contrast, not artificial depth.
 3. **No centered text.** Flush-left alignment only, headlines included.
-4. **No intermediate border radii.** Only `0px`, `16px`, or pill (`9999px`). `4px` and `8px` radii are banned everywhere.
-5. **No title case, no all-caps in UI text.** Sentence case only. Exceptions: industry acronyms (OSHA, HVAC, AI), proper nouns (Skillit, New York), and the logo wordmark (a fixed graphic asset, never retyped).
-6. **No semantic colors for decoration or chart categories.** Bottle Glass, Hard Hat, Toolbox, and Painter's Tape are functional colors only (success, warning, error, link/supply-data). Never fills, backgrounds, or categorical chart colors.
+4. **No intermediate container radii.** Use `0px` for editable fields/checkbox boxes/chart bars, `16px` for static containers, and pill (`9999px`) for button-like actions. Radio/status circles and circular selection indicators may use `50%` geometry; this is not another container-radius tier. `4px` and `8px` container radii are banned.
+5. **No title case, no all-caps in UI text.** Sentence case only. Exceptions: industry acronyms (OSHA, HVAC, AI), proper nouns (Skillit, New York), the logo wordmark (a fixed graphic asset, never retyped), user-entered data, and direct quotes (preserve source capitalization).
+6. **No semantic colors for decoration.** Bottle Glass, Hard Hat, Toolbox, and Painter’s Tape require functional message, control, or data meaning, not decorative fills or layout backgrounds. Purposeful categorical chart colors from the canonical palette are permitted with legends or direct labels and non-color cues. Noninteractive status icon fills and completed progress use Iron; they never inherit semantic green, red, yellow, or blue. Checkbox, radio, and selection-chip control paint uses Traffic Cone, not Bottle Glass: unselected radio/chip outlines and selected fills are orange. Keep chip pills Plaster with Iron text and the contrasting inner check glyph Iron (4.5443:1 on Cone), not Canvas (2.6958:1). Orange focus rings are also functional exceptions. Existing semantic message text and success/error/warning toast backgrounds remain unchanged. Info toasts stay Plaster with Iron text and an Iron help icon. Iron icons on Bottle Glass (2.0300:1) and Toolbox (2.3309:1) are below 3:1; flag the contrast concerns without silently repainting message text or backgrounds. Status/progress/data displays are not actions themselves. Toast bodies use static 16px panel corners; their close/link controls are actions.
 7. **No gradients.** All color transitions are hard edges.
 8. **No donut charts, radar/spider charts, or 3D effects.** Solid pie for part-to-whole.
 9. **No retyping, redrawing, or approximating the logo.** The mark, wordmark, and lockup are fixed SVG assets. Use the approved files.
-10. **No SaaS-generic patterns.** No blobs, abstract shapes, illustrated backgrounds, or decorative dividers. Every element performs a structural job or it is deleted.
-11. **No parallel token systems.** Implementations must reference Skillit Kit BDS token names directly. Do not define local CSS custom properties that duplicate BDS tokens under different names (e.g., `--plaster` for `--color-surface`, `--iron` for `--color-foreground`). If a token does not exist in `tokens/tokens.json5`, do not invent it — flag it for addition.
+10. **No SaaS-generic patterns.** No blobs, abstract shapes, illustrated backgrounds, or decorative dividers. Every element performs a structural job or it is deleted. Approved neutral boot-tread texture is allowed only in non-content document/header/footer regions; never behind UI text, controls, or running copy.
+11. **No parallel token systems.** Implementations must reference Skillit Kit BDS token names directly. Do not define local CSS custom properties that duplicate BDS tokens under different names (e.g., `--plaster` for `--color-surface`, `--iron` for `--color-foreground`). If a design token is missing, flag it for addition rather than inventing a replacement. Component-local runtime state such as `--active-step`, `--total-steps`, or an icon URL may be declared locally; those are implementation state, not alternate palette/type/spacing tokens.
 
 ---
 
 ## 2. Tokens — single source of truth
 
-**`tokens/tokens.json5` is canonical.** The values below are a convenience index for orientation. Output must reference the variable, never the hex. Implementations must use Skillit Kit BDS token names directly — no local aliases, no parallel systems. If a token is missing, flag it for addition rather than inventing a replacement.
+**`tokens/tokens.json5` is canonical.** The values below are a convenience index for orientation. Authored UI styling must reference the variable, never the hex; source tables, explicit token/export workflows, and unchanged approved assets follow the §1.1 exemptions. Implementations must use Skillit Kit BDS token names directly — no local aliases, no parallel systems. If a token is missing, flag it for addition rather than inventing a replacement.
 
 ### Colors
 | Variable | Name | Role |
 |---|---|---|
 | `--color-background` | Canvas `#F7F1ED` | Default background — all surfaces |
 | `--color-surface` | Plaster `#FFFFFF` | Elevated cards, panels, isolated inputs |
-| `--color-foreground` | Iron `#232F36` | All text, structural lines. Never `#000000` |
-| `--color-primary` | Traffic Cone `#EF6F1A` | Primary action — once per layout section max |
-| `--color-link` | Painter's Tape `#007CA6` | Links (underlined) / info (not underlined); supply-side data on maps and charts |
-| `--color-success` | Bottle Glass `#33663D` | Confirmations, paired with circle + label |
-| `--color-warning` | Hard Hat `#FEB11C` | Warnings, paired with triangle + label |
-| `--color-error` | Toolbox `#C8102E` | Errors, destructive actions, paired with octagon + label |
+| `--color-foreground` | Iron `#232F36` | Default text, structural lines, noninteractive status icons, completed progress. Never `#000000` |
+| `--color-primary` | Traffic Cone `#EF6F1A` | One dominant CTA or focal highlight per section; repeated checkbox/radio/selection-chip indicators and focus rings; purposeful chart encoding |
+| `--color-link` | Painter’s Tape `#007CA6` | Links (underlined) or info text (not underlined); purposeful data encoding, including supply-side maps/charts; not status icon fills |
+| `--color-success` | Bottle Glass `#33663D` | Success messages, appropriate controls and data; not selection indicators, status icons, or completed progress; success shape + label remain required |
+| `--color-warning` | Hard Hat `#FEB11C` | Warning messages and appropriate controls/data; warning icon remains Iron with triangle + label |
+| `--color-error` | Toolbox `#C8102E` | Error messages, destructive actions and appropriate data; error icon remains Iron with octagon + label |
 
 Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`). Use them — do not use opacity or brightness filters for hovers.
 
 ### Typography
 - `--font-primary`: Work Sans — all human text.
-- `--font-mono`: JetBrains Mono — machine data only (timestamps, IDs, distances, file sizes, code). Never for body copy, labels, or headings.
-- Size tokens: `--text-0.75x` (12px, labels/captions minimum) through `--text-8x` (128px hero). Use the token names (`Text-2x`), never semantic names (`h1`, `text-sm`). **No text renders below 1rem except `--text-0.75x` UI labels.**
+- `--font-mono`: JetBrains Mono — machine data only (timestamps, IDs, distances, file sizes, code). Never for running human copy or ordinary UI labels/headings; approved machine metadata, captions, chart references, and data displays may use it.
+- Size tokens: `--text-0.75x` (12px, labels/captions minimum) through `--text-8x` (128px hero). Name size tokens by tier (`Text-2x`), not semantic aliases (`text-sm`). Use semantic HTML (`h1`–`h6`, labels, buttons, links) for meaning and accessibility; do not confuse HTML elements with token names. **No text renders below 1rem except approved `--text-0.75x` functional labels, captions, and machine references.**
 - Mobile variants use the `-sm` suffix (`--text-2x-sm`). Display scales ×0.75 on mobile; `Text-1x` holds at 16px.
 
 ### Spacing
-- Base scale: `--space-1` (4px) through `--space-24` (96px), all multiples of 4.
+- Base scale: `--space-1` (4px) through `--space-24` (96px), multiples of 4 at a 16px root, except `--space-1.5` (0.375rem / 6px) for small-viewport text lists.
 - Macro: `--space-128`, `--space-256` (fluid `clamp()`).
-- **Units rule:** font-size and spacing in `rem`; borders and border-radius in `px`.
+- **Units rule:** font-size, base spacing, and paired padding use `rem`; borders and container radii use `px`, circular indicators may use `50%`. Canonical macro `clamp()` spacing retains approved `px`/`vw` expressions. Local `em` is permitted only for optical alignment and documented indicator geometry, not ordinary gaps or paired padding.
+- **Paired padding:** `--padding-0.75x` = `0.25rem 0.5rem` at 12px (compact exception); `--padding-1x` = `0.5rem 1rem` at 16px; `--padding-1.5x` = `0.75rem 1.5rem` at 24px; `--padding-2x` = `1rem 2rem` at 32px. These canonical fixed pairs override universal `0.5em 1em` prose.
 
 ---
 
 ## 3. Binary rules — memorize these
 
-- **Shape-coding:** `16px` radius = static container (cards, panels, photos). Pill (`9999px`) = actionable (buttons, interactive badges). `0px` = structural editable (input fields, checkboxes, chart bars). Nothing between.
-- **Color usage is limited to three places:** (1) text fill, (2) button background fill, (3) icons (including status badges). Color is never a layout background, decorative fill, border, or shadow.
-- **Borders are always Iron** when used — never a status color. State lives in icons and text.
-- **One Traffic Cone per layout section.** It marks the single most important action or data point. Never repeated decoratively.
-- **Focus rings use Traffic Cone** — the one permitted accent repetition, because focus is functional.
-- **Humans vs. machine:** Work Sans = human content. JetBrains Mono = machine data. The distinction is a core brand signal.
+- **Action vs. state:** Buttons, links, inputs, checkboxes, radios, and chips support actions. Pill (`9999px`) belongs to button-like actions/chips, not every interaction. Editable fields and checkbox boxes use `0px`; static cards/panels/photos and toast bodies use `16px`. Inner radio/checkbox indicators show selection state; radio circles use `50%` geometry. Status icons, progress fills, and data fills are not actions. No intermediate container radii.
+- **Accent/status roles:** Semantic message text, appropriate control fills, and purposeful canonical data colors retain their meaning-scoped roles. Noninteractive status icons and completed progress use Iron. All checkbox, radio, and selection-chip indicators use Cone, not Bottle Glass; repeated selection indicators and orange focus rings are functional exceptions. Never semantic layout/container backgrounds, decorative fills, structural borders, or shadows; success/error/warning toast fills are explicit feedback exceptions, not layout surfaces or actions. Layout backgrounds remain Canvas or Plaster; Iron is allowed only as a functional modal backdrop or photographic text-legibility overlay.
+- **Structural borders are Iron.** Approved Cone checkbox, radio, and selection-chip indicator strokes/fills are selection-state exceptions, not semantic container borders. State also uses labels and shape; never color alone.
+- **One dominant Traffic Cone CTA or focal highlight per section.** Not every action is orange. Repeated checkbox, radio, and selection-chip indicators and focus rings are explicitly permitted; see [checkboxes](./components/checkboxes.md); never repeat Cone decoratively. Supply/demand data encoding follows §7 rather than a count of SVG marks.
+- **Focus outline:** Default 2px solid Traffic Cone with 2px offset. Cone on Canvas is 2.6958:1, below the 3:1 focus/UI floor; Cone on Plaster is 3.0177:1 and meets that floor. Keep orange as requested; do not promise AA on Canvas or quietly substitute Iron. Verify actual adjacent surfaces, clipping, keyboard visibility, and rendered native controls; preserve native focus in forced-colors mode. Flag unresolved surface contrast for review; the display-text exception does not waive focus contrast.
+- **Contrast exceptions:** Painter’s Tape on Canvas is 4.2312:1 and remains an AA normal-text exception pending palette review; use Iron where AA is required. The documented Traffic Cone display/hero accent on Canvas (24px+) is 2.6958:1, an existing brand exception, never a WCAG pass. Canvas text on Traffic Cone is prohibited; Iron text is 4.5443:1.
+- **Humans vs. machine:** Work Sans = human content; JetBrains Mono = machine data. Keep the intentional 1:1 tier-size pairing, not an equal-x-height claim. Measured current Google Fonts ratios: Work Sans cap/x = 0.66/0.50, JetBrains Mono = 0.73/0.55 (x-heights 8px/8.8px at 16px). Mono reads slightly taller; no type-scale change. [Font sources and remeasurement policy](./HUMAN-INSTRUCTIONS.md#monospace--metadata).
 
 **Buttons (CTAs):**
 - Left-aligned, never centered. `align="left"` on wrapping `<td>` and inner `<table>`. Industry default is center; Skillit voice is left.
-- **No arrow on the button label.** Button labels carry affordance through shape (pill), color (Cone), and weight. Arrows (`&rarr;` / `→`) are reserved for inline body links where the underlined text is a complete standalone sentence ("Read his article on LinkedIn →"). Not for buttons.
+- **No arrow on the button label.** Button labels carry affordance through shape (pill), color (Cone), and weight. Arrows (`&rarr;` / `→`) are reserved for inline body links where the underlined text is a complete standalone sentence (“Read his article on LinkedIn →”). Not for buttons.
 - Iron text on Cone background for primary CTAs. Sentence-case imperative copy.
 
 ---
@@ -80,11 +82,11 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 
 - **Case:** Sentence case everywhere. No title case, no all-caps (exceptions in §1.5).
 - **Alignment:** Flush-left only. Centered text banned.
-- **Optical top alignment:** Align cap-height flush with adjacent elements using the Work Sans cap-height ratio (`0.72`): `margin-top: calc(-1 * (line-height - 0.72) / 2 * 1em)`.
-- **Optical balance on dark:** On non-Skillit dark surfaces only, subtract ~25 font-weight units to compensate halation (400 → 375). Skillit surfaces are always Canvas or Plaster.
+- **Optical top alignment:** Align cap-height flush with adjacent elements using the measured Work Sans cap-height ratio (`0.66`) and the matching tier’s unitless leading token; remeasure if the deployed font differs. For Text-1x: `line-height: var(--text-1x-leading); margin-top: calc((0.66 - var(--text-1x-leading)) * 0.5em);` (`-0.37em` at 1.4 leading).
+- **Optical balance on dark:** On non-Skillit dark surfaces only, subtract ~25 font-weight units to compensate halation (400 → 375). Skillit layout surfaces remain Canvas or Plaster; functional modal backdrops and photographic text-legibility overlays are the exception.
 - **Numbers in data contexts:** `font-variant-numeric: tabular-nums` — mandatory.
 - **Smart quotes:** Angled quotes and apostrophes in human copy; straight quotes only in code.
-- **Widows/orphans:** `text-wrap: balance` on headings, `text-wrap: pretty` on body. Fix manually with ±0.02em tracking or `&wbr;` where unsupported.
+- **Widows/orphans:** Use `text-wrap: balance` on headings and `text-wrap: pretty` on body. Where unsupported, test critical copy at every supported width and zoom setting; adjust the wording or apply a non-breaking space between the last two words only after checking that it does not cause overflow. `<wbr>` adds a wrap opportunity inside a long word; it does not prevent a final single-word line. Allow natural wrapping if a manual fix harms reflow.
 
 ---
 
@@ -94,21 +96,21 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Horizontal lockup only.** No stacked or vertical variants. Never the wordmark alone.
 - **Small viewports (< 768px):** Use the mark alone — never scale the lockup below 21px height.
 - **Header height:** `--logo-height: 24px` for both lockup and mark, always set explicitly. Never `height: auto`.
-- **Treatments:** Iron on Canvas (default). Single-color Iron or Canvas for print/embroidery.
-- **Banned:** stretching, rotating, drop shadows, enclosing in shapes, raster formats (except approved 512px PNG exports for SVG-rejecting platforms), recreating in any tool.
+- **Treatments:** Iron on Canvas (default). Single-color solid Iron or Canvas for print/embroidery, never an outline treatment. Preserve the approved fixed artwork and its paint; UI-style hex restrictions do not authorize consumer recoloring.
+- **Banned:** stretching, rotating, drop shadows, enclosing in shapes, raster formats (except approved 512px-height PNG exports for SVG-rejecting platforms), recreating in any tool.
 
 ---
 
 ## 6. Icons & imagery
 
 ### SVG icons
-- `fill="currentColor"` to inherit CSS text color. Never hardcode hex inside an SVG.
+- Tintable UI icons use `fill="currentColor"` to inherit host CSS color. Approved fixed SVG/graphic artwork and explicit source/export workflows may retain literal paint; never silently recolor logo consumers.
 - 24×24px canvas, solid fill only. No strokes, outlines, gradients, shadows.
-- Status icons are shape-locked: Success = circle, Warning = triangle, Error = octagon. Never color alone.
+- Status icons are shape-locked: Success = circle, Warning = triangle, Error = octagon. Never color alone. Host CSS sets noninteractive status `color` to Iron (`--color-foreground`); tintable UI icons use `currentColor`. Selection indicators belong to interactive controls and use Traffic Cone, not success green. Fixed logo artwork is exempt.
 
 ### Photography
 - Real workers on real job sites, eye-level or below, candid, hands visible. Adobe Stock only.
-- No AI-generated imagery, no composites, no color grading, no high-angle shots, no staged "safety theater."
+- No AI-generated imagery, fabricated scene/background composites, color grading, or staged “safety theater.” No high-angle framing of worker subjects; aerial environmental/project images are permitted. Grid collages of separate authentic photos are permitted, not fabricated merged scenes.
 - **Iron overlay for text legibility only:** 50% opacity Iron behind text overlays. Standalone images get no overlay.
 - Crop faces above the temples, never at forehead level.
 
@@ -120,43 +122,48 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Bars:** `0px` corners — data is precision, not decoration.
 - **Lines:** 4px stroke weight, data lines and gridlines alike. Y-axis gridlines only (Canvas); no X-axis gridlines, no bounding boxes.
 - **Markers:** Squares or diamonds, `0px` corners. No circles.
-- **Color:** Monochromatic. Context data in flat Iron; the insight in Traffic Cone. For N overlapping series, use equally stepped opacities of one base color: 100% / (100/N)% — 100/50 for two, 100/67/33 for three. Apply via `opacity` or `color-mix`; never define separate stepped hex values.
-- **Maps:** Light base map for light mode. Supply-side data (worker availability) in Painter's Tape; demand-side (job openings) in Traffic Cone.
+- **Color:** Monochromatic is a default, not exclusive. Flat Iron context with a Cone insight is permitted; Cone alongside Painter’s Tape and other canonical palette colors is also permitted for purposeful categories. Require legends or direct labels, non-color cues, and actual-surface graphical/text contrast checks; never color alone. Scope meanings to the chart rather than banning data colors by their UI roles. For a monochromatic N-series treatment, optionally use equally stepped opacities of one base color: 100% / (100/N)% — 100/50 for two, 100/67/33 for three. Apply via `opacity` or `color-mix`; never define separate stepped hex values.
+- **Maps:** Light base map for light mode. Supply-side data (worker availability) in Painter’s Tape; demand-side (job openings) in Traffic Cone.
 - **Pie:** Solid, zero gap, zero stroke. No legends — labels outside the chart with 1px Iron leader lines.
+- **References:** JetBrains Mono `Text-0.75x` (12px), opaque Iron; require approved source, date, cohort, and definition. No 14px or half-opacity reference text.
 - **Tooltips:** Plaster background, 1px Iron border, `16px` corners.
+- **Flowcharts:** Neutral Plaster decision nodes with Iron text. Do not use semantic fills unless a specific approved exception is documented. A single actionable CTA node may use Traffic Cone with Iron text.
 - **Banned:** 3D, drop shadows, donut charts, radar charts, X-axis gridlines.
 
 ---
 
 ## 8. Layout
 
-- **Surface hierarchy:** Canvas ground → Plaster cards → Iron structure → Traffic Cone signal. Four layers, no more.
+- **Surface hierarchy:** Canvas ground → Plaster cards → Iron structure → Traffic Cone signal. Four layers, no more. Iron is not a layout surface; functional modal backdrops and photographic text-legibility overlays are the explicit exception.
 - **Whitespace is structural mass.** Minimum `--space-16` (64px) vertical padding on desktop sections. When in doubt, add space.
 - **Header/body alignment:** Header bars use the same horizontal margins and padding as the body content below them.
-- **Grid:** 12-column desktop grid, fixed column spans — no percentage splits. Max content width `1200px`.
+- **Grid:** 12-column desktop grid, fixed column spans; `repeat(12, minmax(0, 1fr))` is valid equal-track construction, not an ad hoc content ratio. No arbitrary percentage splits. Max content width `1200px`; use the canonical token and responsive header/body side-padding contract in [spacing](./tokens/docs/spacing.md).
 - **Text width:** Body columns never exceed `70ch`.
 
 ---
 
 ## 9. Voice rules (for any generated copy)
 
-**Plain language is the default.** Customers and craft professionals are not in our business every day. Write so a five-year-old could follow the argument — short words, short sentences, no jargon. If a word only makes sense inside Skillit, replace it with the everyday word. Concrete over abstract ("getting the right worker to the right job site" not "optimizing the talent acquisition pipeline"). One idea per sentence. Cut every word that doesn't carry weight.
+**Plain language is the default.** Customers and craft professionals are not in our business every day. Write so a five-year-old could follow the argument — short words, short sentences, no jargon. If a word only makes sense inside Skillit, replace it with the everyday word. Concrete over abstract (“getting the right worker to the right job site” not “optimizing the talent acquisition pipeline”). One idea per sentence. Cut every word that doesn’t carry weight.
 
-- **Lead with the insight, not the product.** Data and outcomes first.
-- **"Connect," "match," "capture"** — never "serve," "support," "represent."
-- **"Platform" or "network"** — never "product," "marketplace," or "labor marketplace."
-- **"Craft professionals," "members"** — not "customers" when referring to workers.
+- **Lead with the insight, not the product.** Data and outcomes first, but only verified claims. Reusable metrics require an approved source, observation/publication date, cohort, definition, and claim owner. [Legacy narrative metrics](./brand/narrative.md#metric-source-policy) are unverified and blocked until approved. Published 72-hour copy measures profile setup to interview; the older narrative measures search to interview. Do not choose one silently: block reuse until the owner resolves the definition with supporting data. “Free” applies only to craft professionals, not employers or the entire platform. Proposed “two agents” framing is not confirmed architecture.
+- **“Connect,” “match,” “capture”** — never “serve,” “support,” “represent.”
+- **“Platform” or “network”** — never “product,” “marketplace,” or “labor marketplace.”
+- **“Craft professionals,” “members”** — not “customers” when referring to workers.
+- **Demand-facing vocabulary:** Introduce “craft professionals” first; “workers” may follow in the same employer-facing context. For worker-facing copy, use “you,” the trade, “craft professionals,” or “members” for people who have joined; never generic “workers.” Market-at-large discussion may use “workers.”
+- **Sam:** An AI tool, not a person; coordinates and surfaces information while the human decides. Never anthropomorphize.
+- **Banned sentence structures:** Negation-then-assertion (“X isn’t Y; it’s Z”) and “we don’t just” upgrades. State the point directly; retain the fixed mission wording.
 - **Banned words (brand voice):** Serve, Represent, Proud.
-- **Exception:** "Workforce" and "labor marketplace" are permitted only when addressing the market at large — never to describe Skillit's own network. Our network is a network. Our people are craft professionals, craft pros, members, contractors, or employers.
+- **Exception:** “Workforce” and “labor marketplace” are permitted only when addressing the market at large — never to describe Skillit’s own network. Our network is a network. Our people are craft professionals, craft pros, members, contractors, or employers.
 - **Banned words (AI-isms):** delve, tapestry, leverage, utilize, harness, foster, cultivate, realm, landscape, overarching, seamless, robust, dynamic, myriad, testament, beacon.
 - **Note:** `LLM-INSTRUCTIONS.md` carries both — brand-voice banned words (above) and AI-ism banned words (below). `voice/brand-voice.md` carries brand-voice banned words only.
-- **Banned transitions:** "Moreover," "Furthermore," "In conclusion," "It is important to note."
-- **Banned hype:** "Revolutionize," "disrupt," "excited to announce," "world-class."
+- **Banned transitions:** “Moreover,” “Furthermore,” “In conclusion,” “It is important to note.”
+- **Banned hype:** “Revolutionize,” “disrupt,” “excited to announce,” “world-class.”
 - Vary sentence length. Short punches mixed with longer thoughts. Concrete, physical detail over abstraction.
 
-**Don't oversell.** State what is true. State it once. Then stop.
-- Avoid stacking adjectives or claims ("powerful" + "intuitive" + "trusted" + "built for") to manufacture value. One true claim is enough.
-- Avoid comparisons that imply a competitor exists ("Unlike other platforms…") when the comparison isn't doing work.
+**Don’t oversell.** State what is true. State it once. Then stop.
+- Avoid stacking adjectives or claims (“powerful” + “intuitive” + “trusted” + “built for”) to manufacture value. One true claim is enough.
+- Avoid comparisons that imply a competitor exists (“Unlike other platforms…”) when the comparison isn’t doing work.
 - Lead with the data or the action, not the framing.
 
 ---
@@ -170,26 +177,26 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - DO NOT output: `tailwind.config.js`, ERB, Rails code.
 
 **Target B — Product (`app.skillit.com`), Rails 7.2 (tailwindcss-rails, importmap):**
-- Output: `tailwind.config.js` theme extension, CSS custom properties in `application.css`, ViewComponents or ERB partials for SVGs.
+- Preserve the verified existing `main` integration: `config/tailwind.config.js`, CSS in `app/assets/stylesheets/onboarding.css`, and copied SVGs in `app/assets/images/bds/icons/` and `app/assets/images/bds/logo/`. Use ViewComponents or ERB partials for rendering, not as the SVG export directory. Review the existing foundation and current adoption status in the [README](./README.md#integration-points); do not relocate tokens to `application.css` or replace the architecture without engineering review.
 - DO NOT output: npm instructions, Vite config, standalone HTML.
 
 ---
 
 ## 11. VALIDATION CHECKLIST — run before every output
 
-1. No hex codes anywhere — variables only, and every variable exists in `tokens.json5`.
+1. Authored UI styles use canonical variables, no hex or duplicate aliases; allow source tables, explicit token/export workflows, and unchanged approved asset paint (§1.1).
 2. No `box-shadow` on any element.
 3. No `text-align: center` anywhere.
-4. Every border-radius is `0px`, `16px`, or pill — nothing else.
-5. All UI text is sentence case; acronyms and proper nouns excepted.
-6. Buttons are pill. Inputs and checkboxes are `0px`. Cards are `16px`.
-7. Traffic Cone appears at most once per layout section.
-8. Icons use `fill="currentColor"`; status icons are shape-locked (circle/triangle/octagon).
-9. Charts: no X gridlines, no donut, no radar, no 3D, monochromatic Iron + Traffic Cone hero, `tabular-nums`.
-10. Type uses size tokens (`--text-2x`), never semantic names; Work Sans for humans, JetBrains Mono for machine data.
-11. Logo is the approved SVG, unmodified, with 12.5% clear space; mark-only below 768px.
-12. Spacing uses `--space-*` tokens in `rem`; radii and borders in `px`.
+4. Container radii are `0px`, `16px`, or pill; circular radio/status/selection geometry may use `50%`, not a new radius tier.
+5. Authored UI copy is sentence case; acronyms, proper nouns, fixed wordmark, user data, and direct quotes retain capitalization.
+6. Buttons/chips are pill; editable inputs/checkbox boxes are `0px`; cards and toast bodies are `16px`. Links, inputs, checkboxes, and radios remain actions; inner indicators, status icons, progress, and data marks display state/data, not actions.
+7. One dominant Cone CTA/focal highlight per section, not every action; allow repeated orange checkbox/radio/selection-chip indicators, orange focus rings, and purposeful canonical chart colors. Structural borders remain Iron except selection paint. Focus defaults to 2px Cone with 2px offset; Canvas 2.6958:1 is below 3:1, Plaster 3.0177:1 meets it. Preserve forced-colors native focus, verify rendered surfaces/controls, and flag contrast gaps without an Iron fallback or AA claim.
+8. Tintable UI icons use `fill="currentColor"`; status icons are shape-locked (circle/triangle/octagon), labeled, and not automatically interactive. Noninteractive status icon fills and completed progress are Iron; checkbox/radio/selection-chip outlines and fills are Cone with contrasting Iron inner check glyphs; chip pills stay Plaster with Iron text. Preserve approved fixed graphic/logo paint and existing semantic message text and success/error/warning toast backgrounds; check Iron icon contrast on those fills without repainting them. A toast body remains feedback, not an action; only its close/link controls are actions. Info uses Plaster/Iron with an Iron icon.
+9. Charts: no X gridlines, donut, radar, or 3D; monochromatic Iron/Cone is optional/default, not exclusive; purposeful categories may use Cone, Tape, and other canonical colors with legends or direct labels, non-color cues, and actual-surface contrast; `tabular-nums`; references 12px mono opaque Iron with approved source/date/cohort/definition.
+10. Type uses canonical tier tokens; semantic HTML headings/controls are required for meaning. Work Sans for human copy, JetBrains Mono for approved machine data/references; keep 1:1 sizes, not equal-x-height claims. Optical alignment uses measured 0.66 Work Sans cap height.
+11. Logo is the approved SVG, unmodified, with 12.5% clear space; mark-only below 768px. Only SVG-rejecting platforms may use approved 512px-height PNGs; preserve SVG geometry/aspect and fixed paint, never consumer-recolor.
+12. Base spacing uses `--space-*` in `rem`; paired padding uses matching `--padding-*` fixed rem pairs with the 12px compact exception. Keep canonical macro `clamp()` expressions; `em` only for optical/indicator geometry, `50%` only circular indicators, container radii/borders in `px`. Test reflow; no forced widow fixes that overflow.
 13. No banned words or transitions in copy.
 14. Header margins match body margins.
 15. **Copy is plain language.** No jargon. No stacked adjectives. One claim per sentence. If a sentence can be cut without losing meaning, cut it.
-16. **No overselling.** No claim-stacking, no implied competitor comparisons unless they're doing work. State the truth once.
+16. **No overselling.** No claim-stacking or invented current statistics; legacy metrics and conflicting 72-hour definitions remain blocked until approved; “free” is craft-professional-only. Proposed website structure and two-agent framing are not shipped inventory/architecture. Apply migrations only to requested scope, with engineering review for broader changes. Preserve genuine imagery, environmental aerial/grid-collage exceptions, and neutral pattern exclusion zones.

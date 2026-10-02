@@ -26,8 +26,8 @@ Every layout is built on four layers, in order of elevation and visual weight:
 | Ground | Canvas | `--color-background` | Default background for all surfaces |
 | Lifted Surface | Plaster | `--color-surface` | Cards and isolated containers |
 | Structure | Iron | `--color-foreground` | Text, borders, dividers, nav elements |
-| Signal | Traffic Cone | `--color-primary` | One dominant accent per layout section — CTAs, key data, active states |
-State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional only. They appear in UI interactions, not in layout composition.
+| Signal | Traffic Cone | `--color-primary` | One dominant CTA or focal data accent per layout section; not 16px active navigation text |
+Color roles are scoped by function, not by whether an element is generally called a state. Interactive checkbox, radio, and chip selection indicators use Traffic Cone; noninteractive status icons and completed progress use Iron. Existing semantic message text and feedback backgrounds remain unchanged. Charts may use Traffic Cone, Painter’s Tape, and other approved palette colors with labels and legends; see `rules/data-viz.md`. Focus uses 2px Traffic Cone with 2px offset; Canvas contrast fails 3:1 and Plaster narrowly passes. See `rules/accessibility.md` and the component specs.
 ---
 ## Whitespace rules
 - **Section padding (desktop):** Minimum `--space-16` (64px) top and bottom. Hero sections: minimum `--space-24` (96px).
@@ -38,29 +38,29 @@ State colors (Hard Hat, Toolbox, Bottle Glass, Painter's Tape) are functional on
 ---
 ## Grid
 ### Website / marketing
-- Strict 12-column grid on desktop. No flexible fractional columns (e.g., `1fr`, `1.5fr`). Use fixed `col-span` classes so elements align flawlessly down the vertical axis.
-- Gutter: `--space-8` (32px).
+- Strict equal-track 12-column grid on desktop: `grid-template-columns: repeat(12, minmax(0, 1fr))` is permitted. Assign content by integer column spans. Do not replace the shared grid with arbitrary fractional ratios (e.g., `1fr 1.5fr`) or local percentage splits.
+- Gutter: `--space-6` (24px).
 - Content max-width: `1200px`, centered.
-- Column minimum width: `326px` — no single grid column should be narrower than this, or its content breaks.
-- Side margins: `--space-16` (64px) desktop.
-- **Tablet (`< 1024px`):** The 12-column grid collapses to a single-column layout early to prevent element jumbling. Large typography needs horizontal space; never force complex multi-column grids onto medium viewports.
-- **Mobile (`< 768px`):** Scaling down typography via CSS `clamp()` and implementing `--space-8` (32px) minimum mobile side padding to maintain the premium, editorial whitespace aesthetic.
+- Minimum content-block width: `326px` (`--column-min-width`), not the width of each track in the 12-column grid. At narrower viewports, allow a single content block to shrink to the available width so reflow is preserved.
+- Desktop content: max-width `1200px`, centered; headers use the same content column.
+- **Tablet (768–1023px):** Use `--space-8` (32px) side padding, shared by header and body. The 12-column grid collapses to a single-column layout early to prevent element jumbling. Large typography needs horizontal space; never force complex multi-column grids onto medium viewports.
+- **Mobile (`< 768px`):** Scaling down typography via CSS `clamp()` and using `--space-4` (16px) mobile side padding to maintain the premium, editorial whitespace aesthetic.
 ### App (worker-facing)
-- Single-column, max-width `480px`.
-- Side padding: `--space-4` (16px).
+- Max-width `1200px` (`--max-width-app`); collapse to a single column on small viewports.
+- Header and body share the marketing content contract: desktop ≥1024px centered 1200px usable content width; tablet 768–1023px 32px side padding; mobile <768px 16px side padding. Use `box-sizing: border-box` and do not subtract macro side padding from the desktop content width.
 - All interactive elements respect a minimum touch target of `40px`.
 ---
 ## Visual minimalism rules
 These are hard constraints derived from the core brand direction. They apply to every generated layout.
-1. **Flush left alignment.** The system relies on a strict horizontal grid. Text blocks, headings, and data tables align flush left. Centered text is prohibited for body copy and strongly discouraged for headlines.
-2. **Optical Top Alignment.** Multi-column elements align at the top edge. To achieve this, typography should be vertically trimmed using the Work Sans cap-height ratio (0.72). The algorithm: `margin-top: -calc((line-height - 0.72) / 2)em`. Example: a `1.4` line-height requires a `-0.34em` margin-top.
+1. **Flush left alignment.** The system relies on a strict horizontal grid. Text blocks, headings, and data tables align flush left. Centered text is prohibited, including headlines.
+2. **Optical Top Alignment.** Multi-column elements align at the top edge. To achieve this, typography should be vertically trimmed using the Work Sans cap-height ratio (0.66). Use the matching tier’s unitless leading token: for Text-1x, `line-height: var(--text-1x-leading); margin-top: calc((0.66 - var(--text-1x-leading)) * 0.5em);`. Example: a `1.4` line-height requires a `-0.37em` margin-top.
 3. **Button Alignment Exception.** Do not align buttons by their external padding bubble. Align them optically by the text inside them. A button should shift upward by its top padding value to ensure its internal text cap-height aligns with adjacent layout elements.
 4. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-8x` directly adjacent to `--text-1x`), not by stepping gently through intermediate sizes or adding color.
-5. **Strict functionalism.** Every border and margin should serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted in the nav bar header only.
-6. **One accent per layout section.** Traffic Cone (`--color-primary`) appears once per page section. It does not repeat as decoration.
-7. **Shape signals action (Static = 16px, Actionable = Pill).** All static layout containers (cards, panels, photographs) use `border-radius: 16px`. Actionable human touchpoints (buttons) use a fully rounded pill shape (`border-radius: var(--radius-pill)`, 9999px). No intermediate rounded corners (e.g., 4px or 8px) are permitted. No gradients, no drop shadows.
-8. **Type and spacing: rem. Radii and borders: px.** All font-sizes and spacing values use `rem` (respects user browser zoom settings, scales proportionally with root). All `border-radius` and `border-width` values use `px` (visual weight, not typographic — a 1px hairline shouldn't scale with text).
-9. **Typography does the heavy lifting.** Space and scale create order. Color is exclusively used to signal interactive function (links, buttons, states).
+5. **Strict functionalism.** Every border and margin should serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted as low-contrast Plaster-on-Canvas texture in empty document/header/footer regions or physical touchpoints; exclude logo, text, controls, focus rings, and photography. See `tokens/docs/logo.md`.
+6. **One dominant accent per layout section.** Use one dominant Traffic Cone CTA or focal data accent; never repeat it as decoration. Repeated functional checkbox, radio, and chip selection paint is explicitly permitted and does not create multiple primary CTAs.
+7. **Shape signals action (Static = 16px, Actionable = Pill).** All static layout containers (cards, panels, photographs) use `border-radius: 16px`. Button-like actionable controls (buttons and chips) use a fully rounded pill shape (`border-radius: var(--radius-pill)`, 9999px). Editable fields, square checkbox indicators, and chart bars may use 0px; circular radio/status indicators, equal-sided icon buttons, and headshots may use 50% geometry. These are explicit geometry exceptions, not extra container radius tokens. Links are actions, not pill containers; status icons, progress fills, and data marks are not actions. No intermediate rounded corners (e.g., 4px or 8px), gradients, or drop shadows.
+8. **Type and spacing: rem. Radii and borders: px.** Font-sizes and base spacing use `rem`; canonical macro `clamp()` spacing retains its approved `px`/`vw` expressions (respects user browser zoom settings, scales proportionally with root). Container radius tokens and border widths use `px`; approved circles use `50%` (visual weight, not typographic — a 1px hairline shouldn't scale with text).
+9. **Typography does the heavy lifting.** Space and scale create order. Color signals functional roles (links, buttons, states, progress, approved data highlights), not decoration.
 ---
 ## Section types
 ### Hero
@@ -78,22 +78,22 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Accent use: Traffic Cone for inline data callouts or a single stat highlight, not decorative.
 ### Data / proof section
 - Stat blocks in a 3- or 4-column grid.
-- Stats: `--text-8x`, Traffic Cone.
+- Stats: `--text-8x`, Iron; Traffic Cone marks only the single focal stat per section (the documented display contrast exception applies).
 - Stat labels: `--text-1x`, Iron.
-- Background: Canvas or Iron (inverted — white text on Iron, Traffic Cone stats).
+- Background: Canvas ground or Plaster cards. Iron remains foreground; functional modal backdrops and photographic text-legibility overlays are the only dark-background exceptions.
 ### CTA / sign-up section
-- Centered, maximum `600px` wide.
+- Flush-left text and CTA, maximum `600px` wide; the outer container may sit in the centered content grid.
 - One headline, one subline, one button.
-- Background: Canvas or full Iron panel.
+- Background: Canvas or Plaster, never a full Iron panel.
 - Button: Traffic Cone background, Iron text.
 ---
 ## Nav bar
-- Background: Canvas with boot tread pattern overlay (low opacity — texture only, not legible repeat).
+- Background: Canvas with low-contrast Plaster boot-tread texture only in the empty header band; never behind text or controls.
 - Logo: left-aligned.
 - Nav links: Iron, `--text-1x`, sentence-case, no underline at rest.
-- Active nav link: Traffic Cone, no underline.
+- Active nav link: Iron, canonical 600 weight + underline and `aria-current="page"`; never Traffic Cone at 16px.
 - Primary CTA (“Join”): Traffic Cone button, right-aligned.
-- Nav tabs (approved): How It Works · Our Network · Jobs · About Us · Resources
+- Nav labels use sentence case: How it works · Our network · Jobs · About us · Resources
 ---
 ## What is banned in layouts
 - Gradients of any kind
@@ -101,7 +101,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Sharp edges (0px) on structural containers — use 16px
 - Intermediate rounded corners (e.g., 4px or 8px)
 - Beveled or angled image masks
-- Pattern fills on content surfaces (boot tread is nav header only)
-- More than one accent color per layout section
-- Centered body text or centered layout structures (flush-left is the law)
+- Pattern fills behind content, controls, logos, focus rings, or photography; only empty structural texture zones are allowed
+- Competing dominant CTA accents or decorative accent repetition; documented functional selection/status/progress/data exceptions remain permitted
+- Centered body text; the outer 1200px content container is centered while its text remains flush-left
 - Full-bleed background color sections in accent colors (Traffic Cone, Hard Hat, Toolbox — these are UI states, not backgrounds)

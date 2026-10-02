@@ -5,13 +5,15 @@
 ## Rules before you use this file
 - Use only Work Sans for human text. Never substitute with system fonts, other Google Fonts, or unlicensed alternatives.
 - JetBrains Mono is the only approved monospace — metadata, IDs, data, and code only, never running copy.
-- Both typefaces match at the same point size — no scaling needed. JetBrains Mono's x-height equals Work Sans at 100%.
+- Pair both typefaces intentionally at the same tier size (1:1 font size), not equal x-height. Current Google Fonts files measure Work Sans x-height 0.50em and JetBrains Mono 0.55em; Work Sans cap height is 0.66em.
 - All sizes are in `rem` (base 16px). Never use `px` for type — it breaks accessibility scaling.
-- All text should be sentence-case. No title case in UI. No ALL CAPS anywhere.
+- All text should be sentence-case. No title case in UI. No ALL CAPS in authored text except the exceptions below.
 - **Exceptions to sentence case:**
   - **Acronyms:** ALL CAPS (OSHA, HVAC, AI, BLS, PTO).
   - **Proper nouns:** Proper Case (New York, Skillit, JustWorks).
-- **Minimum font size:** `1rem` (16px). No text renders below this size.
+  - **User-entered and verbatim quoted content:** Preserve supplied capitalization.
+  - **Fixed wordmark:** Preserve the approved artwork.
+- **Running-copy minimum:** `1rem` (16px), held on mobile. Functional labels, tags, badges, captions, and machine metadata may use Text-0.75x (`0.75rem` / 12px), never running copy; no text below 12px.
 ---
 ## Typefaces
 ### Work Sans
@@ -25,33 +27,28 @@
 - **CSS variable:** `--font-mono: 'JetBrains Mono', monospace;`
 - **Use:** Metadata, IDs, data, code blocks, timestamps, captions, footnotes, references.
 - **Weights:** 100, 200, 300, 400, 500, 600, 700, 800 (variable font).
-- **Scaling:** Use at 100% of the tier size. No adjustment needed to match Work Sans x-height.
+- **Scaling:** Use at 100% of the tier size. This is an intentional equal-size brand choice, not a claim of matching x-height.
 ---
 ## The Typographic Algorithm
-The typography system is consistently derived and infinitely scalable. Levels are named objectively by their pixel size. Both Work Sans and JetBrains Mono use the same scale — they match at every tier.
+The typography system is consistently derived and infinitely scalable. Levels are named objectively by their pixel size. Both Work Sans and JetBrains Mono use the same scale — their font sizes match at every tier by choice, while their font metrics differ.
 
 The scale is built on a 16px baseline: `16 → 24 → 32 → 48 → 64 → 96 → 128`.
 
-If you need a size larger than 128px (e.g., 256px), extrapolate using this algorithm starting from the 16px baseline:
-- **Size:** Multiply by 2.
-- **Base Weight:** Add +100 for each doubling of size (Max: 900).
-- **Bolded Weight:** Base weight + 200 (Max: 900).
-- **Line Height:** Add +0.2 for each halving of size (e.g., 128px → 0.80, down to 16px → 1.40).
-- **Tracking:** Subtract -2% (-0.02em) for each doubling of size (floor: 0%).
+Use only the defined tiers and their canonical weights below. If a size beyond Text-8x is needed, flag it for token review; do not extrapolate an unapproved token.
 ---
 ## The Scale (both typefaces)
 
 | Level | Token | px (screen) | rem (web) | pt (print) | Base Weight | Bolded | Line height | Tracking |
 |---|---|---|---|---|---|---|---|---|
 | **Text-8x** | `--text-8x` | 128px | 8rem | 96pt | Bold (700) | 900 | 0.80 | -6% |
-| **Text-6x** | `--text-6x` | 96px | 6rem | 72pt | Semibold (600) | **850** | 0.90 | -5% |
-| **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | Semibold (600) | 800 | 1.00 | -4% |
-| **Text-3x** | `--text-3x` | 48px | 3rem | 36pt | Medium (500) | **700** | 1.10 | -3% |
-| **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | Medium (500) | 700 | 1.20 | -2% |
-| **Text-1.5x** | `--text-1.5x` | 24px | 1.5rem | 18pt | Regular (400) | **600** | 1.30 | -1% |
-| **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | Regular (400) | 600 | 1.40 | 0% |
+| **Text-6x** | `--text-6x` | 96px | 6rem | 72pt | 650 | **850** | 0.90 | -5% |
+| **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | 650 | 800 | 1.00 | -4% |
+| **Text-3x** | `--text-3x` | 48px | 3rem | 36pt | 550 | **700** | 1.10 | -3% |
+| **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | 550 | 700 | 1.20 | -2% |
+| **Text-1.5x** | `--text-1.5x` | 24px | 1.5rem | 18pt | 450 | **600** | 1.30 | -1% |
+| **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | 450 | 600 | 1.40 | 0% |
 
-*(Note: Text-16x was retired — no longer a defined Figma text style; use the extrapolation algorithm above if a size beyond Text-8x is ever needed.)*
+*(Text-16x was retired. Sizes beyond Text-8x require a canonical token review.)*
 ---
 ## Small-viewport variants (confirmed against Figma)
 Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = Text-1x at small viewports). In CSS, the suffix is `-sm` (e.g., `--text-1x-sm`), matching the breakpoint naming in the spacing tokens.
@@ -80,9 +77,10 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
 || Token | Role | Size | Weight | Line height | Letter spacing |
 ||---|---|---|---|---|---|
 || `--text-0.75x` | Labels, tags, badges, captions — minimum size | `0.75rem` (12px) | 550 | 1.4 | `0.04em` |
-|| `--text-1x` | Default UI body, all running copy | `1rem` (16px) | 400 | 1.4 | `0` |
+|| `--text-1x` | Default UI body, all running copy | `1rem` (16px) | 450 | 1.4 | `0` |
 ---
 ## CSS custom properties (copy-paste ready)
+Logical decimal token names remain unchanged in prose. In CSS, escape each decimal point in declarations and `var()` references; JavaScript strings containing CSS need an additional backslash escape layer.
 ```css
 /* Google Fonts import — add to <head> */
 /* <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet"> */
@@ -98,7 +96,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-8x-leading:       0.80;
   --text-8x-tracking:      -0.06em;
   --text-8x-print:         96pt;
-  --text-8x-sm:            clamp(6rem, 5.1713rem + 3.5359vw, 8rem);
+  --text-8x-sm:            clamp(6rem, 5.17rem + 3.54vw, 8rem);
   /* Text-6x */
   --text-6x:               6rem;
   --text-6x-weight:        650;
@@ -106,15 +104,15 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-6x-leading:       0.90;
   --text-6x-tracking:      -0.05em;
   --text-6x-print:         72pt;
-  --text-6x-sm:            clamp(4.5rem, 3.8785rem + 2.6519vw, 6rem);
+  --text-6x-sm:            clamp(4.5rem, 3.88rem + 2.65vw, 6rem);
   /* Text-4x */
   --text-4x:                4rem;
-  --text-4x-weight:         600;
+  --text-4x-weight:         650;
   --text-4x-weight-bold:    800;
   --text-4x-leading:        1.00;
   --text-4x-tracking:       -0.04em;
   --text-4x-print:          48pt;
-  --text-4x-sm:             clamp(3rem, 2.5856rem + 1.768vw, 4rem);
+  --text-4x-sm:             clamp(3rem, 2.59rem + 1.77vw, 4rem);
   /* Text-3x */
   --text-3x:                3rem;
   --text-3x-weight:         550;
@@ -122,45 +120,40 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
   --text-3x-leading:        1.10;
   --text-3x-tracking:       -0.03em;
   --text-3x-print:          36pt;
-  --text-3x-sm:             clamp(2.25rem, 1.9392rem + 1.326vw, 3rem);
+  --text-3x-sm:             clamp(2.25rem, 1.94rem + 1.33vw, 3rem);
   /* Text-2x */
   --text-2x:                2rem;
-  --text-2x-weight:         500;
+  --text-2x-weight:         550;
   --text-2x-weight-bold:    700;
   --text-2x-leading:        1.20;
   --text-2x-tracking:       -0.02em;
   --text-2x-print:          24pt;
-  --text-2x-sm:             clamp(1.5rem, 1.2928rem + 0.884vw, 2rem);
-  --text-2x-mono:            1.8125rem; /* 29px — confirmed Figma value, round(32 * 0.9) */
+  --text-2x-sm:             clamp(1.5rem, 1.29rem + 0.88vw, 2rem);
   /* Text-1.5x */
   --text-1\.5x:              1.5rem;
-  --text-1.5x-weight:       450;
+  --text-1\.5x-weight:       450;
   --text-1\.5x-weight-bold:  600;
   --text-1\.5x-leading:      1.30;
   --text-1\.5x-tracking:     -0.01em;
   --text-1\.5x-print:        18pt;
-  --text-1\.5x-sm:           clamp(1.125rem, 0.9696rem + 0.663vw, 1.5rem);
+  --text-1\.5x-sm:           clamp(1.125rem, 0.97rem + 0.66vw, 1.5rem);
   /* Text-1x */
   --text-1x:                1rem;
-  --text-1x-weight:         400;
+  --text-1x-weight:         450;
   --text-1x-weight-bold:    600;
   --text-1x-leading:        1.40;
   --text-1x-tracking:       0em;
   --text-1x-print:          12pt;
-  --text-1x-weight: 400;
-  --text-1x-weight-bold: 600;
-  --text-1x-leading: 1.40;
-  --text-1x-tracking: 0em;
   --text-1x-sm: 1rem;
-  --text-0.75x: 0.75rem;  /* Text-0.75x — labels, tags, badges, captions. 12px. bolded: 600. */
-  --text-0.75x-weight: 550;
-  --text-0.75x-leading: 1.40;
-  --text-0.75x-tracking: 0.04em;
+  --text-0\.75x: 0.75rem;  /* Text-0.75x — functional labels, tags, badges, captions. 12px minimum. */
+  --text-0\.75x-weight: 550;
+  --text-0\.75x-leading: 1.40;
+  --text-0\.75x-tracking: 0.04em;
 
-  /* Button padding — paired with text tiers, 0.5em / 1em tactile ratio */
-  --padding-0.75x: 0.25rem 0.5rem;   /* 4px / 8px — Text-0.75x (12px) */
+  /* Button padding — canonical rem pairs; compact Text-0.75x is the approved exception */
+  --padding-0\.75x: 0.25rem 0.5rem;   /* 4px / 8px — Text-0.75x (12px) */
   --padding-1x:    0.5rem 1rem;       /* 8px / 16px — Text-1x (16px) */
-  --padding-1.5x:  0.75rem 1.5rem;    /* 12px / 24px — Text-1.5x (24px) */
+  --padding-1\.5x:  0.75rem 1.5rem;    /* 12px / 24px — Text-1.5x (24px) */
   --padding-2x:    1rem 2rem;         /* 16px / 32px — Text-2x (32px) */
 
   /* Variable Font Weights */
@@ -187,8 +180,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
 - **Text-2x:** Section headings, page titles, pull quotes.
 - **Text-1x:** All running copy, paragraph text.
 ### Functional UI scale (app, dashboard)
-- **`--text-1x` and above:** Work Sans Regular (400) minimum. Line height 1.6. Never below 1.4.
-- **`--text-1x`:** Work Sans Regular (400) minimum. Line height 1.6. Never below 1.4.
+- **`--text-1x`:** Work Sans 450, bolded 600, unitless line height 1.4. Use the canonical tier weights and leading for larger sizes.
 - Maximum line length for body: 70 characters (`max-width: var(--max-width-text)`).
 ### Variable Font & Optical Balancing
 Work Sans is implemented as a variable font (`wght@100..900`).
@@ -203,36 +195,35 @@ Work Sans is implemented as a variable font (`wght@100..900`).
 - **Titles of Works:** Use italics for book names, publications, and articles.
 - **No Decorative Use:** Do not use italics for entire blocks of text (like blockquotes).
 ### Spacing & Indentation
-To lock text into the rigid 8px/16px baseline grid, vertical spacing between text elements uses absolute tokens regardless of the font size. **Never use relative `em` margins.**
+To lock text into the rigid 8px/16px baseline grid, vertical spacing between text elements uses canonical `rem` tokens independently of the local font size; pixel equivalents assume a 16px root. Do not use local `em` margins for structural spacing. Optical cap-height trimming is the documented exception: `margin-top: calc((0.66 - var(--text-1x-leading)) * 0.5em)` gives -0.37em at Text-1x leading 1.4.
 
 - **Paragraphs:** 16px (`--space-4`). The standard gap between paragraphs.
-- **Text Lists:** 8px (`--space-2`). Items in a bulleted or numbered text list sit tighter together so the list reads visually as a single, cohesive block of information.
+- **Text Lists:** `--space-2` (0.5rem / 8px at a 16px root), with the approved small-viewport `--space-1.5` (0.375rem / 6px) exception.
 - **UI Lists:** 16px (`--space-4`). Interactive lists (like a feed of jobs in the app) use a wider gap to protect the 40px minimum touch target rule.
 
 **Blockquotes**
 - **Container:** Place quotes inside a Plaster (`#FFFFFF`) card container with 16px border radius. It uses standard card padding.
-- **Headshot sizing:** Lock headshots to 128px desktop / 64px mobile — never scale by font-size ratio. See `components/quotes.md`.
+- **Headshot sizing:** Lock headshots to 128px desktop / 64px mobile — never scale by font-size ratio. See `components/quote-cards.md`.
 - **Typography:** Roman only. Do not italicize the entire quote (reserve italics for emphasis or titles of works).
-- **Attribution:** Name in Semibold (600), title/company in Regular (400). Accent color: Traffic Cone for the attribution name.
+- **Attribution:** Name in canonical Text-1x bolded weight (600), role/company/location in canonical Text-1x base weight (450), all full-opacity Iron. Traffic Cone is not permitted for 16px attribution.
 - **No opening/closing quotation marks** in the card — the card itself signals the quote.
-- **If a quote runs longer than three lines,** reduce to Body (16px) and increase leading to 1.5.
+- **If a quote runs longer than three lines,** use canonical Text-1x (16px, 450, leading 1.4); otherwise use Text-2x (32px, 550, leading 1.2). See `components/quote-cards.md`.
 
 ### Typographic Punctuation
-- **Smart Quotes:** Always use angled (smart) quotation marks (`"` `"` ) and apostrophes (`'`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy. Straight quotes are for code; angled quotes are for reading.
+- **Smart Quotes:** Always use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy. Straight quotes are for code; angled quotes are for reading.
 - **Hanging Punctuation (Optical Margin Alignment):** Because layouts are flush-left, opening quotation marks on the first line of a paragraph or pull quote must hang *outside* the bounding box. This ensures the first letters of every line form a perfectly flush vertical grid line. Do not hang bullets or list numbers.
 
 ### Widows and Orphans
 - **The Rule:** Never leave a single word alone on the last line of a paragraph or headline. They create visual holes that break the structural mass of the text block and severely damage readability and scannability.
 - **Manual Tracking Adjustment (Primary Fix):** To fix widows and orphans on static or editorial surfaces, adjust the tracking (letter-spacing) of the text block by up to `±2%` (`±0.02em`). This is the preferred method because it imperceptibly compresses or expands the text to force a re-wrap without creating a ragged visual hole at the end of the previous line.
-- **The Soft Break Injection (Secondary Fix):** If tracking adjustment isn't feasible, insert a soft break opportunity (`&wbr;` in HTML, or a manual soft line break — Shift+Enter in Figma/most editors) before the word that would otherwise orphan. Unlike a non-breaking space, this doesn't force a permanent gap: the browser only breaks there if the line actually needs it, so the fix disappears cleanly at wider viewports instead of leaving stray glue between two words that no longer need to wrap.
-- **In Engineering:** Apply `text-wrap: balance;` to all Display, Heading, and H2 elements. Apply `text-wrap: pretty;` to Body copy (`p`). Because browser support for `pretty` is not absolute, the manual `&wbr;` injection above is required as a fallback for all critical marketing copy. Use `orphans: 2; widows: 2;` in print stylesheets.
+- **Engineering and fallback:** Use `text-wrap: balance` on headings and `text-wrap: pretty` on body. Where unsupported, test critical copy at every supported width and zoom setting; adjust the wording or apply a non-breaking space between the last two words only after checking that it does not cause overflow. `<wbr>` adds a wrap opportunity inside a long word; it does not prevent a final single-word line. Allow natural wrapping if a manual fix harms reflow. Use `orphans: 2; widows: 2;` for print page or column breaks.
 
 ### What not to do
 - Do not use `font-weight: 300` (Light) — too thin for job-site legibility.
-- Do not use any typeface other than Work Sans.
-- Do not set letter-spacing on UI text below `--text-1x` — it reduces legibility at small sizes.
-- Do not use the primary hierarchy sizes in UI components — they are for editorial/marketing surfaces only.
+- Do not use any typeface other than Work Sans for human text or JetBrains Mono for machine data.
+- Do not invent UI tracking; Text-0.75x uses its canonical `0.04em` and Text-1x uses `0em`.
+- Do not use display tiers in compact UI controls; use the functional Text-0.75x and Text-1x tiers or the explicitly documented component tier.
 
 ### Responsive Scaling (Desktop to Mobile)
-- **The Rule:** Scale display text sizes down smoothly to a minimum of half the size at mobile breakpoints (e.g., a desktop 128px becomes 64px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
+- **The Rule:** Scale display text sizes down smoothly to ×0.75 at mobile breakpoints (e.g., a desktop 128px becomes 96px on mobile). However, **keep the original weights** (do not scale down the font-weight) to maintain the visual hierarchy and density.
 - **Body Text Exception:** Body text does **not** scale on mobile. `Text-1x` holds at 16px (`Text-1s` = 16px) — see "Why Text-1x does not scale" above. UI text (`--text-1x`) also holds its size; the 40px touch target rule governs app surfaces, not display.

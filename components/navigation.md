@@ -3,28 +3,41 @@
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
-- Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
-- Tactile padding rule: button padding scales with font size — vertical = 0.5x font size, horizontal = 1x (padding: 0.5em 1em). This is a non-negotiable brand rule.
-- Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
+- Use sentence case for authored labels, buttons, and UI text; preserve acronyms, proper nouns, user-entered capitalization, and verbatim quoted content. The fixed wordmark is an asset exception.
+- **Paired padding:** Button-like controls use the canonical `--padding-*x` token matching their text tier in `rem`: Text-1x = 8px / 16px, Text-1.5x = 12px / 24px, Text-2x = 16px / 32px at a 16px root. Text-0.75x is the approved compact exception (4px / 8px), not a proportional 6px / 12px pair. See `tokens/docs/spacing.md`; do not derive local `em` padding or use unapproved type sizes. Outlook email may use an explicit approved pixel fallback matching the chosen canonical pair.
+- Every interactive element needs a visible focus state: 2px solid Traffic Cone (`--color-primary`), 2px offset. On Canvas this is a documented contrast failure (2.6958:1); on Plaster it narrowly meets 3:1 (3.0177:1). Keep Orange in authored contexts, preserve native and forced-colors focus, and verify the actual adjacent surface; see `rules/accessibility.md`.
 - Touch targets minimum 40px in both dimensions (app).
 
 ## Primary navigation
-The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF`) to act as a structural, tactile anchor at the top of the interface.
+The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF`) as a low-contrast structural anchor in the empty top band of the header. The empty texture band is additional to the 64px minimum content row. Keep the texture outside logo, text, control, and focus-ring exclusion zones; the pattern is not a background behind navigation UI. The external pattern is an alpha mask painted by the host, not a background image that inherits `currentColor`. CSS URLs assume a stylesheet beside `tokens/generated/tokens.css`; see `icons.md`.
 On desktop, the full "Skillit" lockup is visible. When the viewport scales down, the lockup hides and is replaced by the 24px `mark` icon, while the navigation items collapse into a full-width dropdown menu.
 ```css
 .nav {
-  background-color: var(--color-background);        /* Canvas */
-  color: var(--color-surface);              /* currentColor for pattern.svg — Plaster tread */
-  background-image: url('../assets/logo/pattern.svg'); /* Plaster pattern */
-  background-repeat: repeat-x;              /* Horizontal only */
-  background-size: auto 100%;               /* Scale to fit nav height */
-  border-bottom: none;                      /* No borders */
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-background); /* Canvas */
+  border-bottom: none;
+  padding-top: var(--space-2); /* reserved empty pattern band, outside nav content */
+}
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: var(--space-2); /* texture-only band; keep all text/control boxes clear */
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--color-surface); /* host-painted Plaster tread */
+  -webkit-mask: url('../../assets/logo/pattern.svg') left center / auto 100% repeat-x;
+  mask: url('../../assets/logo/pattern.svg') left center / auto 100% repeat-x;
 }
 .nav-inner {
    max-width: var(--max-width-content);
   margin: 0 auto;
-  padding: 0 var(--space-128);             /* 128px side margins aligning with main content */
-  height: 64px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 var(--space-4); /* mobile; shared with body content */
+  min-height: var(--nav-height); /* 64px content row; grow for text resizing */
+  padding-block: var(--space-2);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,7 +54,10 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: var(--space-8);
+  padding: var(--space-2); /* icon-only geometry, not text-tier padding */
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  border-radius: var(--radius-pill);
   position: relative;
 }
 .nav-links {
@@ -56,10 +72,13 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   display: none;
   flex-direction: column;
   gap: var(--space-8);               /* 32px — mobile dropdown links */
-  padding: var(--space-16) var(--space-128);
+  box-sizing: border-box;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-4);
    border-top: 1px solid var(--color-foreground);
 }
-.mobile-dropdown .nav-link { font-size: clamp(24px, 3vw, 32px); font-weight: 500; }
+.mobile-dropdown .nav-link { font-size: var(--text-1\.5x); font-weight: var(--text-1\.5x-weight); }
 .nav-link {
   font-family: var(--font-primary);
   font-size: var(--text-1x);             /* 1rem / 16px */
@@ -68,14 +87,28 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   text-decoration: none;
 }
 .nav-link:hover {
-  color: var(--color-link);                /* Painter's Tape — link color, 4.6:1 passes AA at 16px */
+  color: var(--color-link);                /* Painter’s Tape on Canvas: 4.2312:1, existing brand exception, not an AA pass */
   text-decoration: underline;
 }
 .nav-link[aria-current="page"] {
-  color: var(--color-primary);             /* Traffic Cone — active state, the accent's role */
+  color: var(--color-foreground); /* Iron: active 16px text must not use Cone */
+  font-weight: var(--text-1x-weight-bold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
-/* Responsive Nav */
-@media (max-width: 1024px) {
+ .nav-link:focus-visible, .nav-menu-btn:focus-visible, .nav-logo:focus-visible, .logo-mark:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+/* Responsive Nav and the shared header/body content-width contract */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-inner { padding-inline: var(--space-8); }
+  .mobile-dropdown { padding-inline: var(--space-8); }
+}
+@media (min-width: 1024px) {
+  .nav-inner, .mobile-dropdown { padding-inline: 0; }
+}
+@media (max-width: 1023px) {
   .nav-links, .nav-cta { display: none; }
   .nav-menu-btn { display: block; }
   .nav-logo { display: none; }
@@ -83,7 +116,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 }
 .mobile-dropdown.open { display: flex; }
 ```
-**Approved nav tabs:** How It Works · Our Network · Jobs · About Us · Resources
+**Example nav labels (not a live-site inventory):** How it works · Our network · Jobs · About us · Resources
 **Right side:** Primary button ("Join") — Traffic Cone, tactile padding.
 
 ## Back and forward sticky bar
@@ -106,7 +139,7 @@ Replaces persistent footer navigation on app views currently using a footer with
 | Hover | Button surface: `--color-background-hover` | Button surface: `--color-primary-hover` |
 | Focus | 2px solid Traffic Cone, 2px offset | 2px solid Traffic Cone, 2px offset |
 
-- The button surface is a filled circle. Back = Canvas circle with Iron arrow. Forward = Traffic Cone circle with Iron arrow. The Iron arrow provides contrast on both surfaces (4.54:1 on Canvas, 4.54:1 on Traffic Cone — both pass AA).
+- The button surface is a filled circle. Back = Canvas circle with Iron arrow. Forward = Traffic Cone circle with Iron arrow. The Iron arrow provides contrast on both surfaces (12.2506:1 on Canvas, 4.5443:1 on Traffic Cone — both pass AA).
 - The bar itself has no fill. The bar is transparent; the two circular buttons sit in it. If the page content scrolls under the bar and the buttons need separation from content, separate the bar from content with a Plaster bar background (`--color-surface`) and a 1px Iron border on top — not by filling the bar itself.
 
 **Back behavior.** The back button navigates to the previous screen in the app's navigation flow. Which route that is — browser history back, a specific prior route, or a flow-aware previous step — is an engineering decision. The BDS specifies the visual and interaction contract only: the button looks and behaves like a back control, and the destination is whatever the implementation wires it to. Do not hardwire a specific routing strategy in this spec.

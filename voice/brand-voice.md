@@ -16,7 +16,7 @@ No qualifiers ("we believe", "we think").
 
 **2. Counterintuitive framing**
 Pattern: [Common belief] -> [Contradictory data] -> [Real insight].
-- *Example:* "Construction has the smallest labor gap. Yet 9 in 10 employers can't find workers. The problem isn't shortage. It's access."
+- *Example:* "Construction has the smallest labor gap. Yet 9 in 10 employers can't find workers. The constraint is access."
 
 **3. Data-poetry hybrid**
 Cite the number, then translate to human scale.
@@ -58,6 +58,7 @@ This is not a rule to eliminate periods everywhere. It is a principle: choose th
 - **Over-enthusiasm:** Thrilled to announce, exciting.
 - **Banned words:** Serve, Represent, Proud.
   - *Exception:* "Workforce" and "labor marketplace" are permitted only when addressing the market at large — never to describe Skillit's own network. Our network is a network. Our people are craft professionals, craft pros, members, contractors, or employers.
+- **Vocabulary context:** In employer-facing copy, introduce “craft professionals” first; “workers” may follow in the same context. Worker-facing copy uses “you,” the trade, “craft professionals,” or “members” for people who have joined. Market-at-large discussion may use “workers.”
 - **AI use:**
   - Do not use AI to originate or finish thinking. AI can expand a draft, surface alternatives, or pressure-test a claim — it cannot be the source of the idea or the final word.
   - Do not use AI to generate images. All imagery is sourced (Adobe Stock, excluded generative AI) or produced by the design team.
@@ -97,7 +98,7 @@ These patterns read as machine-generated emphasis, not earned insight. State the
 
 | Don't use | Do use |
 |---|---|
-| Anthropomorphize robotics or Skillit as a singular entity | "Skillit matches workers to projects" |
+| Anthropomorphize robotics or Skillit as a singular entity | “Skillit matches craft professionals to projects” |
 | "Proud" / facts + quotes from relevant sources to support emotional impact | Data and outcomes first |
 | "Serve" / "support" | "Match," "connect," "capture," "feature" |
 | "Workers" for first intro, then "workers" | "Craft professionals" first, then "workers" |
@@ -107,7 +108,7 @@ These patterns read as machine-generated emphasis, not earned insight. State the
 | Don't use | Do use |
 |---|---|
 | "Represent" / "reflect" | "Match," "connect," "get discovered" |
-| "Workers" / "craft professionals" alone | "Craft professionals," "members" |
+| Generic “workers” or impersonal labels | “You,” the trade, “craft professionals,” or “members” for people who have joined |
 | "Serve" / "support" | "Match," "connect," "find" |
 
 ## Core Phrases
@@ -127,7 +128,7 @@ Use these words and structures. Avoid their banned counterparts.
 | Capture | Proud |
 | Feature | Customer |
 | Craft professionals / craft pros (tight spaces, categories) | Product (when referring to people) |
-| Members | Worker (in copy — use only when addressing the market at large, see exception above) |
+| Members | Generic “workers” in supply-facing copy; demand-facing use is permitted after introducing “craft professionals” |
 | Contractors | Marketplace |
 | Employers | |
 | Platform | |
@@ -137,7 +138,7 @@ Use these words and structures. Avoid their banned counterparts.
 *Exception:* "Workforce" and "labor marketplace" are permitted only when addressing the market at large — never to describe Skillit's own network. Our network is a network. Our people are craft professionals, craft pros, members, contractors, or employers.
 
 ## Sam (The AI)
-- Sam is an assistant, never replacing human judgment.
+- Sam is an AI assistant tool, not a person; never anthropomorphize or replace human judgment.
 - *Use:* "Hey Sam, pull up civil welders."
 - *Avoid:* "Our proprietary ML algorithm surfaces candidates."
 - Sam speaks in natural, simple, respectful language. Commanded, not configured.

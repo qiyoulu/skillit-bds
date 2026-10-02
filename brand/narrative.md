@@ -8,7 +8,7 @@
 
 ## The dream (what we are actually selling)
 
-We are not selling software to contracting firms. We are selling a dream to the American people.
+We are selling a dream to the American people: skilled hands finding steady work that recognizes their craft.
 
 The dream is this: skilled hands finding steady work that recognizes their craft. A welder in Tulsa, a carpenter in Pittsburgh, an ironworker in Houston — visible, valued, and deployed where their skill matters. Not as a labor unit. As a professional whose work builds the physical world.
 
@@ -22,18 +22,18 @@ The product is built by engineers. The story is that we are founded by someone w
 - The contractor is the customer. The worker is the subject. The American people are the audience we are ultimately speaking to.
   Skillit is not a job board. Not a staffing agency. Not a construction-tech feature.
   Skillit is **workforce infrastructure for the physical economy** — the data layer that skilled labor has never had. It makes craft pros visible, routable, and hireable at scale.
-  The company was founded by builders: apprentice carpenter in Scotland, journeyman, ironworker, general contractor, then founder. We experienced the problem from both sides — as a worker finding jobs and as a GC finding workers. We built Skillit because the solution didn't exist.
+  The company was founded by builders: apprentice carpenter in Scotland, journeyman, ironworker, general contractor, then founder. We experienced the problem from both sides — as a worker finding jobs and as a GC finding workers. We built Skillit because the solution didn’t exist.
 
 ---
 
-## The problem (state it this way)
+## The problem (legacy quantitative framing; verify before reuse)
 
 > The world needs to build more than ever. But we track materials, schedules, and budgets — not the people doing the work.
 > The labor gap in construction is **5%** of the workforce — 400,000 workers out of 8.3 million. That is the smallest gap of any major industry (hospitality: 25%, manufacturing: 17%).
 > Yet 9 in 10 employers say they cannot find the workers they need.
-> That gap is not a shortage problem. **It is an access problem.** The workers exist. The system to find them doesn't.
+> **The constraint is access.** The workers exist. The system to find them doesn’t.
 
-## This is Skillit's entire reason for existing. Restate it often. It is the brand's strongest claim.
+The access framing is the brand argument; the quantitative claims above are legacy/unverified. Do not restate the numbers until they meet the metric-source policy below.
 
 ## The solution (three systems)
 
@@ -41,9 +41,9 @@ Skillit is built as three interlocking systems:
 
 | System                 | What it does                                                                        | How to describe it                    |
 | ---------------------- | ----------------------------------------------------------------------------------- | ------------------------------------- |
-| System of Record       | Workforce data lives here — verified profiles, certifications, skills, work history | "The source of truth for craft labor" |
-| System of Action       | AI agents (Sam) manage hiring workflows — outreach, screening, scheduling           | "Sam does the busywork"               |
-| System of Intelligence | Real-time labor market data — who is available, where, at what rate                 | "See the market, plan the workforce"  |
+| System of Record       | Workforce data lives here — verified profiles, certifications, skills, work history | “The source of truth for craft labor” |
+| System of Action       | AI agents (Sam) manage hiring workflows — outreach, screening, scheduling           | “Sam does the busywork”               |
+| System of Intelligence | Real-time labor market data — who is available, where, at what rate                 | “See the market, plan the workforce”  |
 
 ## Use these names consistently. They are not marketing jargon — they are the product architecture translated into plain language.
 
@@ -55,13 +55,13 @@ This is our anchor. Every design decision, every piece of copy, every product in
 
 **Vision:** Enable humanity to build anything, anywhere.
 
-The state of the world when Skillit is successful. It's memorable and naturally ties back to access. Every product decision, every piece of copy, every visual should pull toward this outcome.
+The state of the world when Skillit is successful. It’s memorable and naturally ties back to access. Every product decision, every piece of copy, every visual should pull toward this outcome.
 
 **Tagline:** Scale your craft.
 
 Three words. No BS. The tagline carries the promise — when a worker joins Skillit, they scale their craft. When an employer uses Skillit, they scale access to craft. Use it at the top of the home page, in the nav, in signatures, in investor materials — wherever the brand needs a single line that says what it is without explaining it.
 
-**Worker First:** The brand is built around the worker, not the contractor. The contractor is the customer. The worker is the subject. Every design decision, every piece of copy, every product interaction should start from the worker's perspective and work outward.
+**Worker First:** The brand is built around the worker, not the contractor. The contractor is the customer. The worker is the subject. Every design decision, every piece of copy, every product interaction should start from the worker’s perspective and work outward.
 
 ## **Dream-first framing:** The audience beyond the worker and the contractor is the American public. The brand is ultimately telling a story about skilled hands being recognized — about dignity of work, about the tradesperson whose expertise should mean something. When the brand sounds like it is selling software to a construction company, it has drifted. The dream is bigger than the product.
 
@@ -69,22 +69,22 @@ Three words. No BS. The tagline carries the promise — when a worker joins Skil
 
 ### Act 1: Access (now — 2027)
 
-**"Find the workers who already exist."**
+**“Find the workers who already exist.”**
 
 - The gap is an access problem. Better data closes it.
-- Proof: Mortenson, DPR, Kiewit adoption. 230,000+ workers in network.
+- Legacy proof references: Mortenson, DPR, Kiewit adoption; 230,000+ workers in network. Verify relationship permissions and source/date/cohort/definition before reuse; this is not a current count.
 - Brand emphasis: _Visible, routable, hireable._
 
 ### Act 2: Solve the shortage (2027–2029)
 
-**"Grow the workforce using AI."**
+**“Grow the workforce using AI.”**
 
 - Training pathways, career guidance, reducing early-career fragility.
 - Brand emphasis: _Creating the next generation of craft pros._
 
 ### Act 3: Expand (2030+)
 
-**"Every physical industry."**
+**“Every physical industry.”**
 
 - Manufacturing, energy, utilities, defense, space.
 - Brand emphasis: _The infrastructure behind everything built._
@@ -93,7 +93,7 @@ Three words. No BS. The tagline carries the promise — when a worker joins Skil
 
 ## Founding credibility (use it)
 
-Our founding background is not a detail — it is the brand's most differentiating asset. We are not tech founders who discovered construction. We are builders who built tech.
+Our founding background is not a detail — it is the brand’s most differentiating asset. We are builders who built tech.
 
 The founder understands craft professionals because he lived that life — apprentice carpenter in Scotland, journeyman, ironworker, general contractor — then built technology. He knows what the work demands. He keeps the tradition of technical excellence alive: the conviction that skilled work is worth recognizing, that a job well done should mean something, and that technology should serve that recognition, not replace it.
 
@@ -104,19 +104,19 @@ Key facts to draw on:
 - Apprentice carpenter in Scotland before tech. Former ironworker. Former general contractor.
 - Founded and sold Bolster (tech-enabled GC, acquired by Porch Group) before Skillit.
 - Has experienced the hiring problem from both sides of the transaction — as a worker finding jobs and as a GC finding workers.
-- The "two-by-four test": Skillit's early skill assessments asked workers the true dimensions of a two-by-four (1.5" × 3.5"). Workers who knew it had actually bought and installed them. Real knowledge surfaces through real signals, not résumé keywords.
-  Do not state "the founder is credible." Let the biography and the tradition he carries carry the weight.
+- The “two-by-four test”: Skillit’s early skill assessments asked workers the true dimensions of a two-by-four (1.5″ × 3.5″). Workers who knew it had actually bought and installed them. Real knowledge surfaces through real signals, not résumé keywords.
+  Do not state “the founder is credible.” Let the biography and the tradition he carries carry the weight.
 
 ---
 
 ## Sam (the AI)
 
-Sam is Skillit's AI assistant. Sam has a name because names matter — they signal that this is a tool built for humans, not a machine optimizing around them.
+Sam is Skillit’s AI assistant. Sam has a name because names matter — they signal that this is a tool built for humans, not a machine optimizing around them.
 
 - Sam coordinates, schedules, and surfaces. The human still decides.
 - Sam is warm, competent, helpful. Never cold. Never robotic.
-- Sam speaks in natural language: "Hey Sam, pull up civil welders with GMAW experience in Dallas."
-- Sam is not "our proprietary ML algorithm." Sam is the person at the desk who knows the whole roster.
+- Sam speaks in natural language: “Hey Sam, pull up civil welders with GMAW experience in Dallas.”
+- Describe Sam as the AI tool that surfaces the roster, not as a person or a proprietary algorithm. Never anthropomorphize.
 
 ---
 
@@ -131,17 +131,27 @@ Use these when a generated output risks drifting into the wrong category:
 
 ---
 
-## Key statistics (use precisely)
+## Metric-source policy
 
-| Stat            | Value                                                           | Source context         |
+Reusable metrics require an approved source (dataset/report or auditable URL), observation/publication date, cohort/population and timeframe, precise definition/method, and claim owner/approval record. A generic source label or a number appearing on the public website establishes neither statistical accuracy nor current approval. Do not invent updated statistics, round, embellish, or combine claims. Until those fields are supplied and approved, the quantitative examples here and elsewhere in this narrative are **legacy/unverified and blocked from publication or factual reuse**.
+
+**72-hour definition conflict:** Published homepage copy describes profile setup to interview; this older narrative describes search to interview. These start events are different. Publication verifies wording, not the measurement. Do not silently choose either definition as validated truth, call it time to hire/fill, or reuse the 72-hour number until the claim owner approves a definition, dated source, cohort, and calculation.
+
+**Pricing scope:** “Free” refers only to craft professionals; it is not a universal statement about employer pricing or the entire platform. Confirm current approved terms before reuse.
+
+**Proposal boundary:** “Two agents, one platform” is proposed website framing, not confirmed architecture or shipping status. This narrative does not establish a two-agent implementation. Obtain a product source and approval before making that claim.
+
+## Key statistics (legacy/unverified; reuse blocked)
+
+| Stat            | Value                                                           | Legacy source label (not approval) |
 | --------------- | --------------------------------------------------------------- | ---------------------- |
 | Labor gap       | ~400,000 workers / ~5% of construction workforce                | Fraser / industry data |
-| Employer pain   | 9 in 10 employers can't find the workers they need              | Skillit research       |
+| Employer pain   | 9 in 10 employers can’t find the workers they need              | Skillit research       |
 | Competitor gaps | Hospitality: 25% gap. Manufacturing: 17% gap. Construction: 5%. | Comparative framing    |
 | Network         | 230,000+ vetted, interview-ready workers                        | Skillit network size   |
 | Contractors     | 200+ hiring companies                                           | Skillit network        |
-| Time to fill    | 72 hours average from search to interview                       | Skillit platform data  |
-| Cost per hire   | $500 on Skillit vs. $1,000+ traditional                         | Skillit platform data  |
+| Interview timing (definition disputed) | Legacy: 72 hours average from search to interview; published site: profile setup to interview | Unverified; owner resolution required |
+| Cost per hire   | \$500 on Skillit vs. \$1,000+ traditional                         | Skillit platform data  |
 | Better outreach | 18.3X better than Indeed                                        | Mortenson case study   |
 
-Do not round, embellish, or combine these. Use them as written.
+All rows are legacy/unverified. The labels above are not auditable sources or approval records. Do not use these values as written, or as current statistics, until each meets the metric-source policy; retain the unresolved interview-timing conflict explicitly.

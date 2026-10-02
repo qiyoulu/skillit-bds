@@ -1,8 +1,8 @@
 # Logo Tokens — Skillit Kit BDS
 **Last updated:** 2026-08-27
-**Canonical source:** `tokens.json5` (machine-readable) for dimension tokens; the SVGs in `assets/logo/` are the fixed graphic assets.
+**Canonical source:** `tokens/tokens.json5` (machine-readable) for dimension tokens; the SVGs in `assets/logo/` are the fixed graphic assets.
 ---
-The Skillit logo system has four components: mark, wordmark, lockup, and pattern. Use the lockup wherever possible — it's the primary logo. Use the mark alone only in constrained spaces where the lockup doesn't fit well. Never use the wordmark alone. Each logo component is a fixed graphic asset. Do not recreate it, retype it, or export it in raster formats. Use the approved SVG and PNG files only.
+The Skillit logo system has four components: mark, wordmark, lockup, and pattern. Use the lockup wherever possible — it's the primary logo. Use the mark alone only in constrained spaces where the lockup doesn't fit well. Never use the wordmark alone. Each logo component is a fixed graphic asset. Do not recreate it, retype it, or export it in raster formats. Use approved SVG files; approved 512px-height PNG exports are reserved for platforms that reject SVG uploads.
 ---
 ## Rules before you use this file
 - Always use the approved SVG files. Never recreate the mark or wordmark from scratch.
@@ -33,7 +33,7 @@ The header logo is always **24px tall**, regardless of whether it's the lockup o
 
 | Context | Logo | Token | Value |
 |---|---|---|---|
-| App header (dark bg) | mark only | `--logo-height` | 24px |
+| App header (Canvas bg) | mark only | `--logo-height` | 24px |
 | Public topnav (light bg) | full lockup | `--logo-height` | 24px |
 | Marketing site header | full lockup | `--logo-height` | 24px |
 | Docs header | full lockup | `--logo-height` | 24px |
@@ -46,20 +46,20 @@ The header logo is always **24px tall**, regardless of whether it's the lockup o
 ## Color variants
 | Variant                             | Contrast | Permitted | Use                                             |
 | ----------------------------------- | -------- | --------- | ----------------------------------------------- |
-| Iron on Canvas                | 12.84:1  | Yes       | Default — all light backgrounds                 |
-| Canvas on Iron                | 12.84:1  | No        | Iron is not a background surface                |
-| Iron on Traffic Cone                    | 4.54:1   | Yes       | Button backgrounds only — marginal, use sparingly |
+| Iron on Canvas                | 12.2506:1  | Yes       | Default — all light backgrounds                 |
+| Canvas on Iron                | 12.2506:1  | No        | Iron is not a background surface                |
+| Iron on Traffic Cone                    | 4.5443:1   | Yes       | Button backgrounds only — marginal, use sparingly |
 | Single color (Iron or Canvas) | —        | Yes       | Print, embroidery, engraving                    |
-| Canvas on Traffic Cone                    | 2.83:1   | No        | Fails WCAG AA                                   |
-| Traffic Cone on Canvas                    | 2.83:1   | No        | Fails WCAG AA                                   |
+| Canvas on Traffic Cone                    | 2.6958:1   | No        | Fails WCAG AA                                   |
+| Traffic Cone on Canvas                    | 2.6958:1   | No        | Fails WCAG AA                                   |
 The mark is always rendered in a single, flat color. No gradients, multi-color treatments, or effects.
 ## The Pattern
 The pattern is a step-and-repeat tessellation of the mark. Because the mark features interlocking negative space, repeating it forms a structural, masonry-like wall.
 **Usage rules:**
-- **Placement:** Use as a structural anchor in document headers and footers, or on physical touchpoints (debossing, endpapers).
+- **Placement:** Use as a structural anchor in empty document-header/footer regions, the empty navigation-header band, or physical touchpoints (debossing, endpapers). Reserve exclusion zones for the logo, text, controls, and focus rings; permission for header texture is not permission to place it behind navigation UI.
 - **Contrast:** Should be low-contrast, tone-on-tone. Rendering the pattern in **Plaster** (`#FFFFFF`) against a **Canvas** ground is the approved and preferred execution for digital surfaces like the navigation bar.
 - **Scale:** Keep it scaled as a texture. Do not blow it up into a massive hero graphic.
-- **Restrictions:** Never use as a background behind running text or UI components. Never overlay on photography.
+- **Restrictions:** Never use as a background behind running text or UI components. Never overlay on photography. Tint the supplied pattern’s alpha mask using the host’s approved neutral token; this is an approved texture-rendering treatment, not permission to recolor, redraw, or alter fixed mark/lockup artwork. Use supplied logo variants only; absent variants require approval and an approved export, never consumer reconstruction.
 ---
 ## What not to do
 - Do not stretch, compress, or rotate the logo

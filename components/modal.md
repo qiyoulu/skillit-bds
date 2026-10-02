@@ -3,9 +3,9 @@
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
-- Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
-- Tactile padding rule: button padding scales with font size — vertical = 0.5x font size, horizontal = 1x (padding: 0.5em 1em). This is a non-negotiable brand rule.
-- Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
+- Use sentence case for authored labels, buttons, and UI text; preserve acronyms, proper nouns, user-entered capitalization, and verbatim quoted content. The fixed wordmark is an asset exception.
+- **Paired padding:** Button-like controls use the canonical `--padding-*x` token matching their text tier in `rem`: Text-1x = 8px / 16px, Text-1.5x = 12px / 24px, Text-2x = 16px / 32px at a 16px root. Text-0.75x is the approved compact exception (4px / 8px), not a proportional 6px / 12px pair. See `tokens/docs/spacing.md`; do not derive local `em` padding or use unapproved type sizes. Outlook email may use an explicit approved pixel fallback matching the chosen canonical pair.
+- Every interactive element needs a visible focus state: 2px solid Traffic Cone (`--color-primary`), 2px offset. On Canvas this is a documented contrast failure (2.6958:1); on Plaster it narrowly meets 3:1 (3.0177:1). Keep Orange in authored contexts, preserve native and forced-colors focus, and verify the actual adjacent surface; see `rules/accessibility.md`.
 - Touch targets minimum 40px in both dimensions (app).
 
 ## Principle
@@ -13,7 +13,7 @@ A modal is a **focused task surface** — it interrupts the current flow to dema
 
 ## Anatomy
 1. **Backdrop** — full viewport overlay, `--color-foreground` at 50% opacity
-2. **Panel** — Plaster fill, 16px corners, `max-width: 560px` (90vw mobile)
+2. **Panel** — Plaster fill, 16px corners, `max-width: 560px` (full-width mobile)
 3. **Header** — title (`--text-1.5x`, Semibold) + close button (icon-only, 40×40 hit area)
 4. **Body** — scrollable content area
 5. **Footer** — button row: secondary (Cancel/Back) left, primary (Confirm/Next) right
@@ -22,10 +22,10 @@ A modal is a **focused task surface** — it interrupts the current flow to dema
 
 | Context | Width | Max height |
 |---|---|---|
-| Mobile (< 768px) | 90vw (full-width bottom sheet) | 80vh |
+| Mobile (< 768px) | 100vw (full-width bottom sheet) | 80vh |
 | Desktop (≥ 768px) | 560px | 70vh |
 
-**Mobile behavior:** Modal slides up from the bottom as a bottom sheet. Swipe down to close (optional, not required). Full-width with 16px side padding.
+**Mobile behavior:** Modal slides up from the bottom as a bottom sheet. Swipe down to close (optional, not required). Full-width; body and header use the padding in the recipes below.
 
 ## Backdrop
 ```css
@@ -89,7 +89,7 @@ A modal is a **focused task surface** — it interrupts the current flow to dema
 
 .modal__title {
   font-family: var(--font-primary);
-  font-size: var(--text-1.5x); /* 24px */
+  font-size: var(--text-1\.5x); /* 24px */
   font-weight: var(--weight-semibold); /* 600 */
   color: var(--color-foreground);
 }
@@ -109,6 +109,13 @@ A modal is a **focused task surface** — it interrupts the current flow to dema
 
 .modal__close:hover {
   background-color: var(--color-surface-hover);
+}
+```
+
+```css
+.modal__close:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 ```
 
@@ -138,19 +145,26 @@ A modal is a **focused task surface** — it interrupts the current flow to dema
 ```
 
 ## Animation
-- **Enter:** backdrop fades in, panel scales from 0.95 to 1 and fades in
-- **Exit:** backdrop fades out, panel scales from 1 to 0.95 and fades out
+- **Enter:** backdrop fades in; desktop panel scales from 0.95 to 1; mobile sheet translates from 100% to 0 on the Y axis
+- **Exit:** backdrop fades out; desktop panel scales from 1 to 0.95; mobile sheet translates from 0 to 100% on the Y axis
 - **Duration:** `--duration-medium` (300ms)
 - **Reduced motion:** no animation, instant appear
 
 ```css
-.modal-enter {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.95);
+.modal-enter, .modal-exit-active { opacity: 0; }
+.modal-enter-active, .modal-exit { opacity: 1; }
+
+@media (max-width: 767px) {
+  .modal-enter, .modal-exit-active { transform: translateY(100%); }
+  .modal-enter-active, .modal-exit { transform: translateY(0); }
 }
-.modal-enter-active {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+@media (min-width: 768px) {
+  .modal-enter, .modal-exit-active {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  .modal-enter-active, .modal-exit {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

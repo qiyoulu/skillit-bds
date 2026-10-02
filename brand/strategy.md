@@ -47,7 +47,7 @@ _See `brand/narrative.md` — "The problem" for the detailed argument and key st
 
 **Category:** AI labor infrastructure for construction.
 
-**Positioning statement:** Skillit is a worker-first marketplace that uses AI to interpret live demand from America's largest contractors and intelligently route the right worker to the right project, place, and moment.
+**Positioning statement:** Skillit is a worker-first network that uses AI to interpret live demand from America's largest contractors and intelligently route the right worker to the right project, place, and moment.
 
 _See `brand/narrative.md` — "What Skillit is not" for the detailed exclusions._
 
@@ -57,7 +57,7 @@ _See `brand/narrative.md` — "What Skillit is not" for the detailed exclusions.
 
 1. **Direct** — No hedging, no filler, no corporate speak. Words backed by data.
 2. **Grounded** — Industrial functionalism. Materials from the jobsite. Real workers.
-3. **Human** — Technology makes human skill more visible, not more central.
+3. **Human** — Technology makes human skill more visible and essential.
 4. **Craftsmanlike** — Sweat the details. Work you're proud of, even when no one is looking.
 5. **Ambitious** — Solving one of the world's hardest, most stubborn problems.
 
@@ -84,7 +84,7 @@ _See `brand/audience.md` for detailed profiles, writing guidance, and the two va
 - **Essence:** Strong, useful, grounded. Industrial functionalism with humanity.
 - **Color:** Traffic Cone as single accent. Iron for baseline. Canvas for ground. Plaster for surface.
 - **Typography:** Work Sans for human content. JetBrains Mono for machine data. Sentence case.
-- **Imagery:** Real workers, real job sites. No stock photography. No decorative elements without purpose.
+- **Imagery:** Real workers, real job sites. Adobe Stock only, excluding generative AI. No decorative elements without purpose.
 - **Shape language:** Pill buttons (actionable). 16px corners on static containers.
 - **Motion:** CSS-only, reduced-motion accessible. No GIFs.
 
@@ -96,7 +96,7 @@ _See `tokens/docs/color.md`, `tokens/docs/typography.md`, `components/buttons.md
 
 - Active voice. Worker-first framing.
 - No causation words ("is the reason why," "allows," "leads to").
-- No first-person "we."
+- First-person executive voice is permitted in LinkedIn, PR, and investor contexts; use the channel register in `voice/brand-voice.md`.
 - No claim-then-proof structure.
 - No "but/however/actually."
 - No villain framing.

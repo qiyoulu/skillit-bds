@@ -1,17 +1,17 @@
 # Spacing Tokens — Skillit Kit BDS
 **Last updated:** 2026-08-17
-**Canonical source:** `tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
+**Canonical source:** `tokens/tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
 - The system uses a strict **8px / 16px baseline grid**.
 - Never hardcode margins or padding with arbitrary `px` values. Always use a multiple from the token scale below.
-- Do not mix units (e.g., `em` or `%` for structural spacing).
-- All values are in `rem` (base 16px). Never use `px` for spacing — it breaks accessibility scaling.
+- Do not mix units (e.g., `em` or `%` for structural spacing); documented optical cap-height trimming may use `em` independently of layout spacing.
+- Base spacing and paired padding tokens use `rem` (pixel equivalents assume a 16px root). Do not hardcode micro gaps in `px`. The canonical macro `clamp()` tokens intentionally retain their approved `px`/`vw` expressions.
 - Whitespace is a core brand element — it focuses attention on the human. When in doubt, use more space, not less.
-- The system uses "tactile padding" — interactive elements scale padding with font size (0.5em vertical / 1em horizontal on buttons) to feel warm and physical, not tight and SaaS-like.
+- The system uses tactile padding paired with each text tier in canonical `--padding-*x` tokens; see the compact exception below.
 ---
 ## Base spacing scale
-Built on a 4px base unit (`0.25rem`). Every value is a multiple of 4. This is the canonical scale — one value per token name, no duplicates.
+Built on a 4px base unit (`0.25rem`). Values are multiples of 4px at a 16px root, except the approved `--space-1.5` (6px) small-viewport text-list gap. Numeric tokens have equivalent `space-*x` aliases in the canonical source.
 | Token | Value | px equiv | Use |
 |---|---|---|---|
 | `--space-1` | `0.25rem` | 4px | Micro gaps — icon-to-label, tight inline spacing |
@@ -41,16 +41,19 @@ Large structural spacing uses CSS `clamp()` to fluidly scale down, preventing ab
 | Element | Height / Padding | Margin |
 | ------- | ---------------- | ------ |
 | Nav Bar | 64px (`--space-16`) | —      |
-| Logo Lockup | 32px (`--space-8`) | —      |
-|| Primary Buttons | `0.5em` vertical, `1em` horizontal (scales with font size) | — |
+| Logo Lockup | 24px (`--logo-height`) | —      |
+| Primary Buttons | Paired `--padding-*x` token in `rem` | — |
 | Desktop Section Gap | — | 128px (`--space-128`) |
-| Desktop Page Margin | — | 128px (`--space-128`) |
+| Desktop Content Column | — | Centered 1200px usable width, no macro side padding |
 ---
 ## Tactile padding
-Button padding scales with font size: vertical = 0.5× font size, horizontal = 1× font size (`padding: 0.5em 1em`). This is a non-negotiable brand rule — the em ratio keeps the proportions identical at every button size, unlike fixed px values that drift when font size changes. At the standard 16px button text, this yields 8px/16px.
+Use the canonical padding token paired with the text tier. Text-1x, Text-1.5x, and Text-2x follow the 0.5× vertical / 1× horizontal font-size ratio, encoded in `rem`, not local `em` or hardcoded `px`. Text-0.75x is the approved compact exception: 0.25rem / 0.5rem (4px / 8px at a 16px root), not 6px / 12px. Use only approved tier/padding pairs; do not invent 14px controls. Outlook email may use explicit pixel equivalents matching these approved pairs. Editable inputs instead use their documented 12px / 16px field padding; icon-only buttons use fixed target geometry.
 | Component | Vertical padding | Horizontal padding |
 |---|---|---|
-| Button (all sizes) | `0.5em` | `1em` |
+| Button (Text-1x) | `0.5rem` | `1rem` |
+| Button (Text-1.5x) | `0.75rem` | `1.5rem` |
+| Button (Text-2x) | `1rem` | `2rem` |
+| Button (Text-0.75x, compact) | `0.25rem` | `0.5rem` |
 | Card (desktop) | `--space-16` (64px) | `--space-16` (64px) |
 | Card (mobile) | `--space-8` (32px) | `--space-8` (32px) |
 | Input field | `--space-3` (12px) | `--space-4` (16px) |
@@ -62,11 +65,11 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
 | Max content width (desktop, ≥1024px) | `1200px` — centered with `margin: 0 auto` |
 | Side margin (tablet, 768–1023px) | `--space-8` (32px) each side |
 | Side margin (mobile, <768px) | `--space-4` (16px) each side |
-| Grid column min width | `326px` |
+| Content-block min width | `326px`; not each grid track, and may shrink to viewport width for reflow |
 | Column gutter | `--space-6` (24px) |
 | Grid columns (desktop) | 12 |
-| Grid columns (tablet) | 8 |
-| Grid columns (mobile) | 4 |
+| Grid columns (tablet) | Single-column content layout below 1024px |
+| Grid columns (mobile) | Single-column content layout |
 ### App (worker-facing)
 | Property | Value |
 |---|---|
@@ -85,7 +88,7 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
 
 ### Small viewports (`< 768px`)
 - **Paragraphs:** unchanged (`--space-4`, 16px) — paragraph spacing is viewport-independent.
-- **Text Lists:** unchanged (`--space-2`, 8px) — list spacing is viewport-independent.
+- **Text Lists:** `--space-1.5` (0.375rem / 6px at a 16px root) is the approved small-viewport exception to the default `--space-2` gap.
 - **UI Lists:** unchanged (`--space-4`, 16px) — the 40px touch target rule is viewport-independent.
 ---
 ## Breakpoints
@@ -128,6 +131,7 @@ Button padding scales with font size: vertical = 0.5× font size, horizontal = 1
   --touch-target-min:  40px;
   --nav-height: 64px;
   --logo-mark-min: 21px;
+  --logo-height: 24px;
   --wordmark-min: 16px;
   --breakpoint-sm: 480px;
   --breakpoint-md: 768px;
@@ -143,6 +147,7 @@ Header bars (page headers, section headers, nav bars) align to the same content 
 - Tablet (768–1023px): header content uses `--space-8` (32px) side margins.
 - Mobile (<768px): header content uses `--space-4` (16px) side margins.
 - Full-bleed header backgrounds may span the viewport; only the content aligns.
+- `1200px` is usable desktop content width, not a box reduced by giant macro side padding. Use a border-box wrapper with 16px mobile / 32px tablet side padding and zero desktop side padding; share it between header and body.
 - Vertical padding inside headers matches the section's vertical rhythm.
 
 ## Whitespace rules

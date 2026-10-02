@@ -1,0 +1,236 @@
+#!/usr/bin/env python3
+"""Rendered component and icon regression checks.
+Run: uv run --with tinycss2 --with playwright python scripts/test-components.py
+Set BDS_BROWSER_BIN to an installed Chromium executable if needed.
+"""
+from pathlib import Path
+import os
+import shutil
+import sys
+import base64
+import json
+import re
+import xml.etree.ElementTree as ET
+import tinycss2
+from playwright.sync_api import sync_playwright
+
+ROOT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]
+DEPLOYMENT_BASE = ROOT / 'tokens/generated'
+svgs = sorted((ROOT / 'assets/icons').glob('*.svg'))
+assert svgs, 'Icon inventory is empty'
+
+for p in svgs:
+    root = ET.fromstring(p.read_text())
+    assert root.attrib['viewBox'] == '0 0 24 24', p
+    for e in root.iter():
+        for key in ('fill', 'stroke'):
+            if key in e.attrib:
+                assert e.attrib[key] in ('none', 'currentColor'), (p, key, e.attrib[key])
+play = ET.fromstring((ROOT / 'assets/icons/play.svg').read_text())[0]
+assert play.attrib['fill-rule'] == 'evenodd'
+assert play.attrib['d'] == 'M12 1A11 11 0 1 1 12 23A11 11 0 1 1 12 1Z M8 5L19 12L8 19L8 5Z'
+print(f'PASS XML: {len(svgs)} icons parsed; all paint inherits; play circle and triangle retained as knockout')
+
+fences = {}
+css_errors = []
+url_count = 0
+
+def check_tokens(tokens, location):
+    for t in tokens:
+        if t.type == 'error':
+            css_errors.append((location, t.message))
+        if t.type == 'function':
+            if t.lower_name == 'var':
+                first = [v for v in t.arguments if v.type not in ('whitespace', 'comment')]
+                # Every recipe var() begins with one valid custom-property ident.
+                assert first and first[0].type == 'ident' and first[0].value.startswith('--'), (location, first)
+                assert len(first) == 1 or first[1].type == 'literal' and first[1].value == ',', (location, first)
+            check_tokens(t.arguments, location)
+        elif hasattr(t, 'content') and t.content is not None:
+            check_tokens(t.content, location)
+
+def check_rules(rules, location):
+    for rule in rules:
+        if rule.type == 'error':
+            css_errors.append((location, rule.message))
+        elif rule.type == 'qualified-rule':
+            check_tokens(rule.prelude, location)
+            declarations = tinycss2.parse_declaration_list(rule.content, skip_comments=True, skip_whitespace=True)
+            for d in declarations:
+                if d.type == 'error':
+                    css_errors.append((location, d.message))
+                elif d.type == 'declaration':
+                    check_tokens(d.value, location)
+        elif rule.type == 'at-rule' and rule.content is not None:
+            check_rules(tinycss2.parse_rule_list(rule.content, skip_comments=True, skip_whitespace=True), location)
+
+for p in sorted((ROOT / 'components').glob('*.md')):
+    text = p.read_text()
+    blocks = re.findall(r'```css\s*\n(.*?)\n```', text, re.S)
+    fences[p.name] = blocks
+    for i, css in enumerate(blocks, 1):
+        check_rules(tinycss2.parse_stylesheet(css, skip_comments=True, skip_whitespace=True), f'{p.name}:{i}')
+        for url in re.findall(r'url\([\'\"]?([^\'\")]+)', css):
+            assert (DEPLOYMENT_BASE / url).resolve().is_file(), (p, url)
+            url_count += 1
+    assert '--text-mono' not in text, p
+assert not css_errors, css_errors
+print(f'PASS CSS: {sum(map(len, fences.values()))} component fences parsed; valid var() identifiers; {url_count} CSS asset URLs resolve from documented tokens/generated deployment base')
+
+names = ['buttons.md', 'checkboxes.md', 'forms.md', 'modal.md', 'toast.md', 'validation.md', 'navigation.md']
+css = (ROOT / 'tokens/generated/tokens.css').read_text() + '\n' + '\n'.join(block for name in names for block in fences[name])
+def data_asset(match):
+    path = (DEPLOYMENT_BASE / match[1]).resolve()
+    data = base64.b64encode(path.read_bytes()).decode()
+    return f'url("data:image/svg+xml;base64,{data}")'
+# Use real local asset bytes in isolated fixture; URL path validity was checked above.
+css = re.sub(r'url\([\'\"]([^\'\"]+)[\'\"]\)', data_asset, css)
+fixture = '''
+<label class="checkbox-row" id="row"><input type="checkbox" class="checkbox" name="terms" value="accepted"><span class="checkbox-box" aria-hidden="true"></span><span class="checkbox-label">Accept terms</span></label>
+<label class="checkbox-row" id="disabled-row"><input type="checkbox" class="checkbox" disabled><span class="checkbox-box" aria-hidden="true"></span><span class="checkbox-label">Disabled</span></label>
+<button type="button" class="chip--check" role="checkbox" aria-checked="false" id="chip"><span class="chip__indicator" aria-hidden="true"></span><span>Per diem</span></button>
+<button type="button" class="chip--radio" role="radio" aria-checked="true" id="radio-chip"><span class="chip__indicator" aria-hidden="true"></span><span>One choice</span></button>
+<label for="trade">Trade</label><span class="select-wrap" id="select-wrap"><select class="select" id="trade"><option value="carpenter">Carpenter</option><option value="electrician">Electrician</option></select></span>
+<div class="surface-plaster" style="background-color: rgb(255, 255, 255)"><button class="btn-secondary" id="secondary">Cancel</button></div>
+<div class="modal modal-enter-active" id="modal" role="dialog" aria-modal="true" aria-label="Test" style="height:200px">Dialog</div>
+<div class="toast toast--warning" id="warning-toast"><span class="toast__icon" id="warning-toast-icon"></span><span>Warning</span></div>
+<div class="toast toast--info" id="info-toast"><span class="toast__icon" id="info-toast-icon"></span><span>Information</span><button class="toast__close" id="info-close">Dismiss info</button></div>
+<span class="validation-badge validation-badge--error" id="error-icon"></span>
+<span id="hover-probe" style="background-color:var(--color-background-hover)"></span>
+'''
+js = '''document.querySelector('#chip').addEventListener('click', () => { const c=document.querySelector('#chip'); c.setAttribute('aria-checked', String(c.getAttribute('aria-checked') !== 'true')); });'''
+
+def style(page, selector, prop, pseudo=None):
+    return page.evaluate('([s,p,pseudo])=>getComputedStyle(document.querySelector(s),pseudo).getPropertyValue(p)', [selector, prop, pseudo])
+
+with sync_playwright() as pw:
+    executable = os.environ.get('BDS_BROWSER_BIN')
+    if not executable:
+        executable = next((x for x in ['/Applications/Chromium.app/Contents/MacOS/Chromium', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'] if Path(x).exists()), None)
+    executable = executable or shutil.which('chromium') or shutil.which('google-chrome')
+    options = {'headless': True, 'timeout': 20000, 'args': ['--disable-background-networking', '--no-first-run']}
+    if executable:
+        options['executable_path'] = executable
+    browser = pw.chromium.launch(**options)
+    page = browser.new_page(viewport={'width': 390, 'height': 844})
+    page.set_content('<style>' + css + '\n.modal{transition:none}body{margin:0}</style>' + fixture + '<script>' + js + '</script>', wait_until='domcontentloaded')
+    checkbox = page.get_by_role('checkbox', name='Accept terms')
+    assert style(page, '.checkbox', 'appearance') == 'none'
+    assert not checkbox.is_checked()
+    assert style(page, '.checkbox-box', 'visibility', '::after') == 'hidden'
+    assert page.locator('#row').bounding_box()['height'] >= 40
+    assert page.locator('#row').bounding_box()['width'] >= 40
+    checkbox.focus()
+    assert style(page, '#row', 'outline-style') == 'solid'
+    assert style(page, '#row', 'outline-width') == '2px'
+    assert style(page, '#row', 'outline-color') == 'rgb(239, 111, 26)', 'User policy retains Orange focus; Canvas contrast remains documented, not waived'
+    page.keyboard.press('Space')
+    assert checkbox.is_checked()
+    assert style(page, '.checkbox-box', 'visibility', '::after') == 'visible'
+    assert style(page, '.checkbox-box', 'background-color') == 'rgb(239, 111, 26)'
+    assert style(page, '.checkbox-box', 'background-color', '::after') == 'rgb(35, 47, 54)'
+    checked_box = page.locator('.checkbox-box').first.bounding_box()
+    assert checked_box['width'] == checked_box['height'] == 16
+    page.locator('#row .checkbox-label').click()
+    assert not checkbox.is_checked()
+    assert style(page, '.checkbox-box', 'visibility', '::after') == 'hidden'
+    assert style(page, '#disabled-row', 'opacity') == '0.5'
+    print('PASS browser checkbox: label association, native Space/click toggles, appearance none, 16px square, 40px row, visible row focus, disabled opacity')
+
+    chip = page.locator('#chip')
+    chip.focus()
+    page.keyboard.press('Space')
+    assert chip.get_attribute('aria-checked') == 'true'
+    assert style(page, '.chip__indicator', 'mask-image') == 'none'
+    assert style(page, '.chip__indicator', 'border-radius') == '0px'
+    assert style(page, '.chip__indicator', 'background-color') == 'rgb(239, 111, 26)'
+    assert style(page, '.chip__indicator', 'background-color', '::after') == 'rgb(35, 47, 54)'
+    assert style(page, '.chip__indicator', 'visibility', '::after') == 'visible'
+    assert 'data:image/svg+xml' in style(page, '.chip__indicator', 'mask-image', '::after')
+    assert page.locator('#chip .chip__indicator').bounding_box()['width'] == 16
+    page.keyboard.press('Enter')
+    assert chip.get_attribute('aria-checked') == 'false'
+    assert style(page, '.chip__indicator', 'visibility', '::after') == 'hidden'
+    print('PASS browser chip: Space/Enter toggles aria-checked; Orange square and Iron check track state')
+    assert style(page, '#radio-chip .chip__indicator', 'background-color') == 'rgb(239, 111, 26)'
+    page.locator('#radio-chip').evaluate("e => e.setAttribute('aria-checked', 'false')")
+    assert style(page, '#radio-chip .chip__indicator', 'border-top-color') == 'rgb(239, 111, 26)'
+    print('PASS browser radio styling: Orange selected fill and unselected outline; state supplied by the control')
+
+    select_before = style(page, '#select-wrap', 'transform', '::after')
+    page.locator('#trade').focus()
+    assert style(page, '#select-wrap', 'transform', '::after') == select_before
+    assert style(page, '#trade', 'background-image') == 'none'
+    assert style(page, '#select-wrap', 'background-color', '::after') == style(page, '#select-wrap', 'color')
+    page.select_option('#trade', 'electrician')
+    assert page.locator('#trade').input_value() == 'electrician'
+    assert style(page, '#select-wrap', 'transform', '::after') == select_before
+    assert page.locator('#trade').bounding_box()['height'] >= 40
+    print('PASS browser select: native value changes; focus/closed state leaves chevron down; host-painted mask matches Iron; 40px target')
+
+    page.mouse.move(389, 0)
+    base_fill = style(page, '#secondary', 'background-color')
+    page.locator('#secondary').hover()
+    hover_fill = style(page, '#secondary', 'background-color')
+    assert hover_fill == style(page, '#hover-probe', 'background-color') and hover_fill != base_fill
+    print(f'PASS browser inline-white secondary with normalized class: {base_fill} -> {hover_fill}')
+
+    mobile = page.locator('#modal').bounding_box()
+    assert mobile['x'] == 0 and mobile['width'] == 390 and mobile['y'] + mobile['height'] == 844, mobile
+    page.locator('#modal').evaluate('(e)=>e.className="modal modal-enter"')
+    assert style(page, '#modal', 'transform') == 'matrix(1, 0, 0, 1, 0, 200)'
+    page.set_viewport_size({'width': 1280, 'height': 900})
+    page.locator('#modal').evaluate('(e)=>e.className="modal modal-enter-active"')
+    desktop = page.locator('#modal').bounding_box()
+    assert desktop['width'] == 560 and desktop['x'] + desktop['width']/2 == 640 and desktop['y'] + desktop['height']/2 == 450, desktop
+    print(f'PASS browser modal: mobile {mobile}; desktop {desktop}; mobile hidden Y=200px without desktop X centering')
+
+    assert style(page, '#warning-toast-icon', 'color') == style(page, '#select-wrap', 'color')
+    assert style(page, '#error-icon', 'color') == 'rgb(35, 47, 54)'
+    assert style(page, '#warning-toast', 'border-radius') == '16px'
+    assert style(page, '#info-toast', 'border-radius') == '16px'
+    assert style(page, '#info-toast', 'background-color') == 'rgb(255, 255, 255)'
+    assert style(page, '#info-toast', 'color') == 'rgb(35, 47, 54)'
+    assert style(page, '#info-toast-icon', 'color') == 'rgb(35, 47, 54)'
+    page.locator('#info-close').focus()
+    assert style(page, '#info-close', 'outline-color') == 'rgb(239, 111, 26)'
+    print('PASS browser color policy: Iron status icons and neutral info; Orange focus retained; no blanket accessibility claim')
+
+    # Draw SVG bytes to Canvas and assert actual triangle transparency, not just XML attributes.
+    play_svg = (ROOT / 'assets/icons/play.svg').read_text()
+    alpha = page.evaluate('''async (svg) => {
+      const img=new Image(); img.src='data:image/svg+xml;base64,'+btoa(svg);
+      await img.decode(); const c=document.createElement('canvas'); c.width=c.height=24;
+      const ctx=c.getContext('2d');ctx.drawImage(img,0,0);
+      return [[11,12],[5,12],[0,0]].map(([x,y])=>ctx.getImageData(x,y,1,1).data[3]);
+    }''', play_svg)
+    assert alpha == [0, 255, 0], alpha
+    print(f'PASS browser play raster alpha [triangle, circle, outside]: {alpha}')
+
+    # Isolate progress and quotes from dialog/control fixtures.
+    extra_css = (ROOT / 'tokens/generated/tokens.css').read_text() + '\n' + '\n'.join(fences['progress.md'] + fences['quote-cards.md'])
+    extra_css = re.sub(r'url\([\'\"]([^\'\"]+)[\'\"]\)', data_asset, extra_css)
+    page.set_content('<style>' + extra_css + '</style>'
+        '<div class="progress-bar" style="width:200px;--active-step:2;--total-steps:3"><div class="progress-bar__fill" id="fill"></div></div>'
+        '<div class="quote-card"><div class="body"><p class="text">A short quote.</p><p class="attribution">A craft professional</p></div></div>', wait_until='domcontentloaded')
+    assert style(page, '.progress-bar', 'opacity') == '1', 'Parent opacity must not fade the completed fill'
+    assert style(page, '#fill', 'background-color') == 'rgb(35, 47, 54)'
+    assert page.locator('#fill').bounding_box()['width'] == 100
+    assert style(page, '.quote-card .attribution', 'color') == 'rgb(35, 47, 54)'
+    assert style(page, '.quote-card .text', 'font-weight') == '550'
+    print('PASS browser informational elements: opaque Iron progress at half width; Iron attribution and canonical quote weight')
+
+    nav_css = (ROOT / 'tokens/generated/tokens.css').read_text() + '\n' + '\n'.join(fences['navigation.md'])
+    nav_css = re.sub(r'url\([\'\"]([^\'\"]+)[\'\"]\)', data_asset, nav_css)
+    page.set_content('<style>' + nav_css + '\nbody{margin:0}</style><nav class="nav"><div class="nav-inner">Navigation</div></nav>', wait_until='domcontentloaded')
+    for width, expected in [(390, '16px'), (800, '32px')]:
+        page.set_viewport_size({'width': width, 'height': 900})
+        assert style(page, '.nav-inner', 'padding-left') == expected, (width, style(page, '.nav-inner', 'padding-left'))
+        assert style(page, '.nav-inner', 'padding-right') == expected
+    page.set_viewport_size({'width': 1280, 'height': 900})
+    bounds = page.locator('.nav-inner').bounding_box()
+    assert bounds['width'] == 1200 and bounds['x'] == 40, bounds
+    assert style(page, '.nav-inner', 'padding-left') == '0px'
+    print('PASS browser header alignment: mobile16px/tablet32px sides; desktop centered1200px content')
+    browser.close()
+print('ALL COMPONENT/ICON REGRESSIONS PASS')

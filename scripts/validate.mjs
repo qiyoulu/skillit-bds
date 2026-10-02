@@ -1,44 +1,17 @@
-import fs from 'node:fs';
-import assert from 'node:assert/strict';
+#!/usr/bin/env node
+/** Validate current canonical consistency; historical hex/version assertions
+ * belong in neither the validator nor the source tokens. Shares the linter's
+ * rules, diagnostics, JSON sentinels and exit codes (0 clean, 1 errors, 2 warnings).
+ * Regression suite: node --test scripts/*.test.mjs
+ * Browser parity: uv run --with playwright --with json5 python scripts/test-browser.py
+ */
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
-const read = (path) => fs.readFileSync(path, 'utf8');
-const files = {
-  json: read('tokens/tokens.json5'),
-  css: read('tokens/generated/tokens.css'),
-  color: read('tokens/docs/color.md'),
-  dataViz: read('rules/data-viz.md'),
-  layout: read('rules/layout.md'),
-  buttons: read('components/buttons.md'),
-  manual: read('HUMAN-INSTRUCTIONS.md'),
-  readme: read('README.md'),
-};
-
-const hover = {
-  background: '#EAE6DE',
-  primary: '#E06718',
-  warning: '#EEA51A',
-  error: '#BB0F2A',
-};
-
-for (const value of Object.values(hover)) {
-  assert(files.json.includes(value), `missing ${value} in tokens.json5`);
-  assert(files.css.includes(value), `missing ${value} in tokens.css`);
-  assert(files.color.includes(value), `missing ${value} in color.md`);
+const result = spawnSync(process.execPath, [fileURLToPath(new URL('./lint.mjs', import.meta.url)), ...process.argv.slice(2)], { stdio: 'inherit' });
+if (result.error) {
+  console.error(`BDS validation failed to run: ${result.error.message}`);
+  process.exit(1);
 }
-
-assert(files.css.includes('--space-1\\.5'));
-assert(files.css.includes('--text-1\\.5x'));
-assert(!files.css.includes('--space-1.5:'));
-assert(!files.css.includes('--text-1.5x:'));
-assert(files.layout.includes('Content max-width: `1168px`'));
-assert(files.layout.includes('Column minimum width: `326px`'));
-assert(files.buttons.includes('max-width: var(--max-width-content)') || files.buttons.includes('--radius-pill'));
-assert(!files.buttons.includes('brightness(0.92)'));
-assert(!files.buttons.includes('surface-inverted'));
-assert(files.manual.includes('Version 0.9-beta'));
-assert(files.manual.includes('×0.75 for mobile'));
-assert(files.manual.includes('100% / 50% for two steps'));
-assert(files.dataViz.includes('100% / 67% / 33% for three'));
-assert(files.readme.includes('v1.0'));
-
-console.log('Skillit BDS validation passed');
+if (result.status === 0) console.log('Skillit BDS validation passed');
+process.exit(result.status ?? 1);

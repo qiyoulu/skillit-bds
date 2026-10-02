@@ -4,7 +4,7 @@
 ## The principle
 Photography is the brand’s most human element. Every image should make a craft pro feel seen — not as a stock photo prop, not as a demographic data point, but as a skilled professional whose work builds the physical world.
 
-The camera position is always respectful. Never looking down at the worker. Eye level or slightly below.
+Worker-subject framing is respectful: never look down at a worker; use eye level or slightly below. Environmental/project images may use wide or aerial views when the project is the subject, not a worker reduced to a small or subordinate figure.
 
 **Human essence is the organizing visual principle for this brand.** The company was founded by someone who understands craft professionals — someone who keeps the tradition of technical excellence alive. That understanding lives in the work, the hands, the face, the environment. The brand's responsibility is to inject that human essence into every visual surface, not to abstract the person into a data point, a silhouette, or a logo placeholder. Every image should answer the question: does this make the person feel real?
 
@@ -19,7 +19,7 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 1. **No drop shadows.** Images do not cast shadows onto the background. They sit directly on the surface.
 2. **No edge fading or blending.** Images do not fade into the background color. Hard cut only.
 3. **No color grading filters.** No Instagram-style color treatment. No dramatic color shifts. Natural color only.
-4. **No composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on the Canvas ground (`--color-background`) with no environment invented behind them.
+4. **No fabricated scenes or composite background replacements.** Do not place a worker cut-out onto a fake background. If the background is removed, the worker sits directly on the Canvas ground (`--color-background`) with no environment invented behind them.
 5. **Conditional Blend Mode:** Use `multiply` (`mix-blend-mode: multiply;`) only when a photograph sits on a light background and is intended to melt into the Canvas ground. Do not use it on standalone or full-width photography.
 ---
 ## Subject: worker portraits
@@ -47,10 +47,15 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 ---
 ## Subject: job site environments
 - Raw materials and built environments: concrete pours, steel frameworks, finished structures.
-- Scale that conveys ambition: wide shots that show how big the work is.
+- Scale that conveys ambition: wide shots that show how big the work is. Aerial project/environment photography is permitted; high-angle worker portraits are not.
 - Process over result: workers mid-task is more authentic than a finished building.
 - Color grading: none. The site’s natural palette is already part of the brand (concrete, rust, iron, earth).
 ---
+## Authentic photo collages
+- Grid collages of separate authentic photographs are permitted: keep each image distinct, aligned to the shared grid, naturally colored, and hard-cropped.
+- Do not blend separate photographs into a fabricated scene, replace a worker’s environment, overlay pattern texture, or imply that separately captured people/events occurred together.
+- Apply worker-framing rules to worker subjects in every tile; an environmental tile may use its permitted aerial/wide framing.
+
 ## Subject: product screenshots / UI
 - Capture at `2x` resolution (retina). Always.
 - Background: Canvas (`--color-background`) only. Not pure white, not grey.
@@ -75,7 +80,7 @@ Lighting: flat, natural, diffused — no dramatic rim lights or color gels
 Framing: [eye level / tight crop / wide environmental]
 Style: photorealistic, documentary photography, no filters
 Color: natural — no color grading, no vignette
-Background: [transparent / Canvas #F7F1ED / Iron #232F36]
+Background: [transparent / Canvas / genuine site environment]
 Avoid: stock photo aesthetics, posed expressions, fake environments, rounded edges, drop shadows, color filters
 ```
 **Example brief:**
@@ -92,13 +97,13 @@ Avoid: stock photo aesthetics, posed expressions, fake environments, rounded edg
 
 **Digital:** JPEG (quality ≥85%) or WebP for web performance. Avoid PNG unless transparency is required.
 
-**Print:** TIFF at 300 DPI minimum, CMYK color mode. Convert RGB to CMYK before press.
+**Print:** TIFF at 300 DPI minimum; use the printer-approved output ICC profile for CMYK conversion and proof on the actual stock. Existing process references in `tokens/docs/color.md` are provisional, not press-ready recipes.
 
 **Raw:** Keep original RAW files for future edits. Archive with naming convention: `skillit_MMYY_description.jpg`
 
 **Resolution:**
 - Hero images: 1200px on the long side minimum
-- Crop: 4:3 or 16:9 ratios only
+- Hero crop: 4:3 or 16:9; other contexts use the explicit ratios in the table below
 - Web: Serve srcsets for responsive sizes
 
 **Safe zones:**
@@ -135,7 +140,7 @@ Avoid: stock photo aesthetics, posed expressions, fake environments, rounded edg
 
 ### Video formats
 
-**Source:** Real job sites only. No AI-generated footage, no stock video, no composites. Same photography rules apply — eye level or below, natural light, no color grading filters.
+**Source:** Real job sites only. No AI-generated footage, stock video, or fabricated scene composites. Same photography rules apply: workers at eye level or below; environmental/project footage may use wide/aerial framing. Natural light, no color grading filters.
 
 **Editing:** MOV or ProRes 422 for master files. No heavy post-processing. Natural color only.
 

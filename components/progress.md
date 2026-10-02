@@ -12,7 +12,7 @@ Multi-step flows (onboarding, application, signup, checkout, profile setup). Use
 **Contextual rendering.** The progress indicator renders only during multi-step flows. It does not appear on the homepage, dashboard, or single-action screens. It is a flow-level element, not a site-wide chrome.
 
 ## Geometry
-- **Bar height:** 2px (`--space-0.5` if available, otherwise 2px)
+- **Bar height:** 2px (explicit hairline geometry; no `--space-0.5` token exists)
 - **Bar width:** Fills the content container (card or column span)
 - **Stage name:** Work Sans, `--text-1x`, Iron, to the right of the bar (desktop) or below (mobile)
 
@@ -20,8 +20,10 @@ Multi-step flows (onboarding, application, signup, checkout, profile setup). Use
 - Position: directly below the header row, at the bottom edge of the header, bridging to the content below.
 - The bar fills the width of the content column — not the viewport. On desktop, the column is narrower than the viewport and the bar stays aligned with the form below. On mobile, the column is narrow and the bar reads as full-width.
 
+The completed Iron fill is an approved functional progress treatment, not an action or layout-background accent. Keep it fully opaque; never fade the parent track and its completed child together.
+
 ## States
-- **Completed portion:** Bottle Glass fill (`--color-success`, `#305F38`). The filled segment of the bar.
+- **Completed portion:** Iron fill (`--color-foreground`). The filled segment of the bar.
 - **Pending portion:** Iron (`--color-foreground`) at 20% opacity, or transparent with 1px Iron border. The unfilled segment of the bar.
 - **Transition:** Instant fill on step change. No animation. Reduced-motion users see the bar jump directly to the new state.
 
@@ -29,13 +31,13 @@ Multi-step flows (onboarding, application, signup, checkout, profile setup). Use
 .progress-bar {
   height: 2px;
   width: 100%;
-  background-color: var(--color-foreground);  /* Iron base, 20% opacity or transparent */
-  opacity: 0.2;
+  background-color: color-mix(in srgb, var(--color-foreground) 20%, transparent); /* pending track only */
+  opacity: 1; /* completed child remains opaque */
   border: none;
 }
 .progress-bar__fill {
   height: 100%;
-  background-color: var(--color-success);  /* Bottle Glass fill */
+  background-color: var(--color-foreground);  /* opaque Iron completed fill */
   width: calc((var(--active-step) - 1) / (var(--total-steps) - 1) * 100%);
   transition: none;  /* instant, no animation */
 }
@@ -82,7 +84,7 @@ The indicator must work with `prefers-reduced-motion`. The bar fill is instantan
 - Screen readers hear: "Onboarding progress. Step 4 of 13: Location."
 
 ## Empty/completed state
-On the completion screen, the bar is 100% filled. The indicator remains visible briefly, then fades (`opacity: 0` over 200ms) when the worker transitions to the next state (waiting for recruiters, profile view, etc.). Reduced-motion users see the indicator disappear immediately when transition completes.
+On the completion screen, the bar is 100% filled. Keep the completed fill fully opaque while displayed. Remove the indicator when the worker transitions to the next state (waiting for recruiters, profile view, etc.); do not fade completion or apply pending-track opacity to its parent.
 
 ## Examples
 ```html

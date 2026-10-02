@@ -1,90 +1,48 @@
 #!/usr/bin/env node
 /**
- * skillit-bds linter  (idiom aligned with iroha-mcp conventions)
- *
- * One binary. Two modes. One loop.
- *
- *   node scripts/lint.mjs                          -> internal consistency
- *                                                       (BDS repo against itself)
- *   node scripts/lint.mjs <path> [<path>...]       -> external consistency
- *                                                       (artifacts the BDS produces)
- *
- * Internal rules read tokens/tokens.json5 as the canonical source and
- * verify every drift between the json5, its derived tokens.css, and the
- * human-readable spec markdown.  External rules verify any CSS / JS /
- * HTML / SVG / MD file uses only those tokens and the documented
- * geometry, copy, and accessibility rules.  Both rule sets read the
- * same canonical source.  The outer loop is closed by emitting a JSON
- * report that is itself an artifact a downstream linter can validate.
- *
- * Output (text mode)
- *   severity  rule  scope:line  message  →  suggestion
- *
- * Output (--json)
- *   machine-readable report to stderr, shape:
- *     { mode, counts, findings: [{ rule, severity, scope, line, message, suggestion }] }
- *
- * Exit codes
- *   0  no errors or warnings
- *   1  at least one error
- *   2  at least one warning, no errors
- *
- * Severity ladder: error | warning | info   (three tiers, matches iroha-mcp)
- *
- * What it lints (internal mode — runs against the BDS repo itself)
- *   token_css_drift         --color-*-hover etc. written in tokens.css must
- *                             equal tokens.json5, in uppercase
- *   token_doc_drift         the copy-paste :root block in tokens/docs/color.md
- *                             must equal tokens.json5
- *   layout_max_width_drift  rules/layout.md must use --max-width-content
- *                             value from tokens.json5 (not historical 1168px)
- *   typography_escape_drift tokens/docs/typography.md use 1\.5 not 1\\.5
- *                             (single-escape form for CSS identifier)
- *   banned_voice_sync       voice/brand-voice.md and LLM-INSTRUCTIONS.md keep
- *                             the same banned-word list
- *
- * What it lints (external mode — runs against any CSS / SCSS / HTML / SVG /
- *   JS / TS / MD file or directory)
- *   hard_token_reference    no raw hex outside :root; brand hexes prefer var()
- *   radius_scale            0, 16px, 9999px only (clamp/50%/1-3px ok)
- *   box_shadow, gradient_banned, text_align_center, text_transform_uppercase
- *   px_font_size, wcag_contrast (paired text/background in :root)
- *   svg_fill_color, chart_sequential_scale, opacity_filter_hover
- *   smart_quotes (straight apostrophe in human copy)
- *   banned_voice (in markdown body, fenced code excluded)
- *
- * Diagnostic
- *   BDS_LINT_TRACE=1   print every drift before deciding whether to add
- *                      a finding (useful when you suspect the linter is
- *                      lying).
- *
- * Replace validate.mjs?  no.  validate.mjs asserts hoisted hex values
- * used to recurse; lint.mjs is the running rule set for humans.  Both
- * can coexist.
- *
- * Override (CLI)
- *   --severity <rule>=<severity>   repeatable, takes any rule id
- *   --json                         emit JSON report
+ * Skillit BDS lint: zero-dependency canonical and artifact consistency checks.
+ * node scripts/lint.mjs                    internal token/CSS/doc parity
+ * node scripts/lint.mjs <path> ...         external CSS/HTML/JS/SVG/MD checks
+ * --repo <path>                           override script-relative repository
+ * --severity rule=error|warning|info       repeatable rule override
+ * --json                                  stderr JSON between stable sentinels
+ * Exit: 0 clean, 1 errors, 2 warnings (info does not fail).
+ * validate.mjs runs this same current consistency contract.
+ * Regression tests: node --test scripts/*.test.mjs
+ * Static contrast checks explicit same-rule pairs, opaque hex/named black/white
+ * and resolved aliases. Browser checks are required for cascade, alpha, color-mix,
+ * gradients and inherited text styles; unresolved pairs are reported as info.
  */
 
 import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
-import { resolve, relative, extname, join } from 'node:path';
+import { resolve, relative, extname, join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parseCss, cssFences, htmlStyles, customValues, decodeIdentifier, checkReferences, compareCanonical, checkGeometry, checkContrast, checkSvgPaint, jsStrings } from './css-checks.mjs';
 
 // =================================================================
 // CLI parsing
 // =================================================================
 const argv = process.argv.slice(2);
-const wantsJson = argv.includes('--json');
+let wantsJson = false;
 const severityOverrides = new Map();
-for (const a of argv) {
-  if (a.startsWith('--severity=')) {
-    const [rule, sev] = a.slice('--severity='.length).split('=');
+const pathArgs = [];
+let repo = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+for (let i = 0; i < argv.length; i++) {
+  const a = argv[i];
+  if (a === '--json') wantsJson = true;
+  else if (a === '--repo' || a.startsWith('--repo=')) {
+    const value = a === '--repo' ? argv[++i] : a.slice(7);
+    if (!value) throw new Error('--repo requires a path');
+    repo = resolve(value);
+  } else if (a === '--severity' || a.startsWith('--severity=')) {
+    const value = a === '--severity' ? argv[++i] : a.slice(11);
+    const [rule, sev] = (value || '').split('=');
+    if (!rule || !['error', 'warning', 'info'].includes(sev)) throw new Error('expected --severity rule=error|warning|info');
     severityOverrides.set(rule, sev);
-  }
+  } else if (a.startsWith('--')) throw new Error(`unknown option ${a}`);
+  else pathArgs.push(a);
 }
-const pathArgs = argv.filter((a) => !a.startsWith('--'));
 const internalMode = pathArgs.length === 0;
-const repo = process.cwd();
 
 // =================================================================
 // json5 — zero-dep recursive-descent parser
@@ -218,7 +176,7 @@ function cssVarFor(path) {
     if (ren[segs[2]]) return `--color-${ren[segs[2]]}`;
     return null;
   }
-  if (segs[1] === 'spacing') return `--space-${cssEscapeKey(segs.slice(2).join('.'))}`;
+  if (segs[1] === 'spacing') return `--space-${cssEscapeKey(segs.slice(2).join('.').replace(/^space-/, ''))}`;
   if (segs[1] === 'typography') {
     if (segs[2] === 'text') return `--text-${cssEscapeKey(segs.slice(3).join('.'))}`;
     if (segs[2] === 'family') return `--font-${segs[3]}`;
@@ -245,6 +203,7 @@ function flatten(node, prefix, acc) {
       type: node.$type || '',
       description: node.$description || '',
       role: node.$extensions?.['org.skillit.role'] || '',
+      extensions: node.$extensions || {},
       _path: path,
       _cssVar: cssVarFor(path),
     };
@@ -252,10 +211,6 @@ function flatten(node, prefix, acc) {
   }
   for (const [k, v] of Object.entries(node || {})) {
     if (k.startsWith('$')) continue;
-    if (k === 'hover' && typeof v === 'object') {
-      flatten(v, prefix + 'color.hover.', acc);
-      continue;
-    }
     flatten(v, prefix + k + '.', acc);
   }
   return acc;
@@ -264,6 +219,25 @@ function flatten(node, prefix, acc) {
 // tokens.json5 has its leaves under `base`; pass an empty prefix and the
 // first-level `base` key contributes `base` naturally.
 const TOKEN = flatten(tokens, '', {});
+
+// Expand every canonical scalar plus the independently authored typography fields.
+// Dotted source keys are preserved by cssVarFor(), then decoded for Map lookup.
+const CANONICAL = new Map();
+const addCanonical = (name, value, required = true) => CANONICAL.set(decodeIdentifier(name), { value: String(value), required });
+for (const t of Object.values(TOKEN)) {
+  if (!t._cssVar) continue;
+  if (t.type === 'typography') {
+    const fields = { fontSize: '', fontWeight: '-weight', lineHeight: '-leading', letterSpacing: '-tracking' };
+    for (const [field, suffix] of Object.entries(fields)) {
+      if (t.value[field] != null) addCanonical(t._cssVar + suffix, t.value[field]);
+    }
+    if (t.extensions['org.skillit.sm']) addCanonical(t._cssVar + '-sm', t.extensions['org.skillit.sm']);
+    if (t.extensions['org.skillit.print']) addCanonical(t._cssVar + '-print', t.extensions['org.skillit.print'], false);
+  } else addCanonical(t._cssVar, t.value);
+}
+const GENERATED_CSS_PATH = resolve(repo, 'tokens/generated/tokens.css');
+const GENERATED_VALUES = existsSync(GENERATED_CSS_PATH) ? customValues(parseCss(readFileSync(GENERATED_CSS_PATH, 'utf8'))) : new Map();
+const KNOWN_VALUES = new Map([...GENERATED_VALUES, ...[...CANONICAL].map(([name, t]) => [name, t.value])]);
 
 // Sanity check: how many color leaves did we see?
 const colorCount = Object.values(TOKEN).filter((t) => t.type === 'color').length;
@@ -383,49 +357,59 @@ function lintInternal() {
   const voicePath = resolve(repo, 'voice/brand-voice.md');
   const llmMdPath = resolve(repo, 'LLM-INSTRUCTIONS.md');
 
-  // token_css_drift
-  if (existsSync(cssPath)) {
-    const css = readFileSync(cssPath, 'utf8');
-    for (const t of Object.values(TOKEN)) {
-      if (t.type !== 'color' || typeof t.value !== 'string' || !isHex(t.value)) continue;
-      if (!t._cssVar) continue;
-      const re = new RegExp(`${escapeRe(t._cssVar)}\\s*:\\s*(#[0-9a-fA-F]{3,8})`, 'i');
-      const m = css.match(re);
-      if (!m) {
-        report({ rule: 'token_css_drift', severity: 'error', scope: 'tokens.css', message: `${t._cssVar} not declared in tokens.css — tokens.json5 expects ${t.value}`, suggestion: `add \`${t._cssVar}: ${t.value};\` to tokens.css` });
-        continue;
-      }
-      const written = normalizeHex(m[1]);
-      const expected = normalizeHex(t.value);
-      if (written !== expected) {
-        report({ rule: 'token_css_drift', severity: 'error', scope: 'tokens.css', message: `${t._cssVar} written as ${m[1]}; tokens.json5 says ${t.value}`, suggestion: `set ${t._cssVar}: ${t.value}; in tokens.css` });
-      } else if (m[1] !== m[1].toUpperCase()) {
-        report({ rule: 'token_css_case', severity: 'warning', scope: 'tokens.css', message: `${t._cssVar} uses non-uppercase hex ${m[1]}`, suggestion: `change ${m[1]} → ${m[1].toUpperCase()}` });
-      }
+  const canonicalValues = new Map([...CANONICAL].map(([name, t]) => [name, t.value]));
+  if (!existsSync(cssPath)) {
+    report({ rule: 'token_css_drift', severity: 'error', scope: rel(cssPath), message: 'generated tokens.css is missing' });
+  } else {
+    const css = readFileSync(cssPath, 'utf8'), blocks = parseCss(css);
+    checkReferences(css, blocks, canonicalValues, rel(cssPath), report);
+    compareCanonical(blocks, CANONICAL, rel(cssPath), 'token_css_drift', report, { required: true });
+  }
+  const generatedPath = resolve(repo, 'tokens/generated');
+  if (existsSync(generatedPath)) for (const name of readdirSync(generatedPath)) {
+    if (!/\.(?:js|mjs|cjs)$/.test(name)) continue;
+    const path = join(generatedPath, name), text = readFileSync(path, 'utf8');
+    for (const literal of jsStrings(text)) {
+      checkReferences(literal.text, [], GENERATED_VALUES, rel(path), report, literal.line - 1);
+    }
+  }
+  const iconDirectory = resolve(repo, 'assets/icons');
+  if (existsSync(iconDirectory)) {
+    for (const path of expandPath(iconDirectory).filter(path => path.endsWith('.svg'))) {
+      checkSvgPaint(readFileSync(path, 'utf8'), rel(path), report);
     }
   }
 
-  // token_doc_drift  (copy-paste :root block in tokens/docs/color.md)
-  if (existsSync(colorMdPath)) {
-    const md = readFileSync(colorMdPath, 'utf8');
-    const blockMatch = md.match(/```css\s*:root\s*\{([\s\S]*?)\}\s*```/);
-    if (blockMatch) {
-      const block = blockMatch[1];
-      for (const t of Object.values(TOKEN)) {
-        if (t.type !== 'color' || typeof t.value !== 'string' || !isHex(t.value)) continue;
-        if (!t._cssVar) continue;
-        const re = new RegExp(`${escapeRe(t._cssVar)}\\s*:\\s*(#[0-9a-fA-F]{3,8})`, 'i');
-        const m = block.match(re);
-        if (!m) {
-          report({ rule: 'token_doc_drift', severity: 'warning', scope: 'tokens/docs/color.md', message: `copy-paste :root block missing ${t._cssVar} (tokens.json5 says ${t.value})`, suggestion: `add \`${t._cssVar}: ${t.value};\` to the copy-paste block` });
-          continue;
-        }
-        if (normalizeHex(m[1]) !== normalizeHex(t.value)) {
-          report({ rule: 'token_doc_drift', severity: 'error', scope: 'tokens/docs/color.md', message: `copy-paste block ${t._cssVar}: ${m[1]} — tokens.json5 says ${t.value}`, suggestion: `set ${t._cssVar}: ${t.value}; in the copy-paste block` });
-        }
+  // Every fenced CSS example gets syntax/reference/cycle checks, not just color.md.
+  // Declared canonical values must agree, but a doc need not repeat the entire scale.
+  for (const directory of ['tokens/docs', 'rules', 'components']) {
+    const full = resolve(repo, directory);
+    if (!existsSync(full)) continue;
+    for (const path of expandPath(full).filter(path => path.endsWith('.md'))) {
+      const md = readFileSync(path, 'utf8');
+      const segments = [...cssFences(md), ...htmlStyles(md)];
+      const docValues = new Map([...KNOWN_VALUES, ...customValues(segments.flatMap(f => parseCss(f.text)))]);
+      for (const fence of segments) {
+        const blocks = parseCss(fence.text);
+        checkReferences(fence.text, blocks, docValues, rel(path), report, fence.line - 1);
+        compareCanonical(blocks, CANONICAL, rel(path), 'token_doc_drift', report, { lineOffset: fence.line - 1 });
       }
-    } else {
-      report({ rule: 'token_doc_block_missing', severity: 'info', scope: 'tokens/docs/color.md', message: 'no ```css :root { ... } ``` block found; brand consistency depends on prose only', suggestion: 'add a copy-paste ```css :root { ... } ``` block so implementers can lift the file from the doc' });
+    }
+  }
+  // Color and typography copy-paste blocks are contract surfaces: missing values
+  // are drift too. Other docs intentionally publish subsets of the token scale.
+  for (const [path, prefixes] of [[colorMdPath, ['--color-']], [typoPath, ['--font-', '--text-', '--padding-', '--weight-']]]) {
+    if (!existsSync(path)) {
+      report({ rule: 'token_doc_block_missing', severity: 'error', scope: rel(path), message: 'canonical token documentation is missing' });
+      continue;
+    }
+    const fences = cssFences(readFileSync(path, 'utf8'));
+    const roots = fences.flatMap(f => parseCss(f.text)).filter(b => /:root\b/.test(b.selector));
+    const declared = customValues(roots);
+    for (const [name, t] of CANONICAL) {
+      if (t.required !== false && prefixes.some(prefix => name.startsWith(prefix)) && !declared.has(name)) {
+        report({ rule: 'token_doc_drift', severity: 'error', scope: rel(path), message: `copy-paste block missing ${name}`, suggestion: 'add the canonical declaration to the token block' });
+      }
     }
   }
 
@@ -485,13 +469,22 @@ function lintExternalFile(pathStr) {
     }
   }
 
-  // radius_scale
   if (isCss) {
-    for (const h of scanCapture(text, /border-radius\s*:\s*([^;}]*)/)) {
-      const v = h.value.trim();
-      if (/^(0|16px|9999px|50%|1px|2px|3px|clamp\(.*\))$/i.test(v)) continue;
-      report({ rule: 'radius_scale', severity: 'error', scope: rel(pathStr), line: h.line, message: `border-radius: ${v}`, suggestion: 'use 0, 16px, 9999px (or 50%/clamp)' });
+    const blocks = parseCss(text);
+    checkReferences(text, blocks, KNOWN_VALUES, rel(pathStr), report);
+    checkGeometry(blocks, KNOWN_VALUES, rel(pathStr), report);
+    checkContrast(blocks, KNOWN_VALUES, rel(pathStr), report);
+  } else if (isHtmlish) {
+    const segments = [...(ext === '.md' ? cssFences(text) : []), ...htmlStyles(text)];
+    const locals = new Map([...KNOWN_VALUES, ...customValues(segments.flatMap(f => parseCss(f.text)))]);
+    for (const fence of segments) {
+      const blocks = parseCss(fence.text);
+      checkReferences(fence.text, blocks, locals, rel(pathStr), report, fence.line - 1);
+      checkGeometry(blocks, locals, rel(pathStr), report, fence.line - 1);
+      checkContrast(blocks, locals, rel(pathStr), report, fence.line - 1);
     }
+  } else if (isJsOrCss) {
+    for (const literal of jsStrings(text)) checkReferences(literal.text, [], KNOWN_VALUES, rel(pathStr), report, literal.line - 1);
   }
 
   // box_shadow
@@ -564,38 +557,12 @@ function lintExternalFile(pathStr) {
     }
   }
 
-  // svg_fill_color
-  if (ext === '.svg' || isHtmlish) {
-    for (const h of scanCapture(text, /fill\s*=\s*"([^"]+)"/g)) {
-      const v = h.value;
-      if (v === 'none' || v === 'currentColor') continue;
-      if (isHex(v) && !BRAND_HEX.includes(normalizeHex(v))) {
-        report({ rule: 'svg_fill_color', severity: 'error', scope: rel(pathStr), line: h.line, message: `hardcoded fill="${v}" on line ${h.line}`, suggestion: 'use fill="currentColor" + CSS color:var(--…)' });
-      }
-    }
-  }
-
-  // wcag_contrast (paired text/background in any :root block)
-  if (isCss) {
-    const rootRanges = findRootRanges(text);
-    const rules = text.split('\n');
-    for (const [a, b] of rootRanges) {
-      const blockText = rules.slice(a - 1, b).join('\n');
-      const colors = new Map();
-      const tRe = /--([a-z][a-z0-9-]*)\s*:\s*(#[0-9a-fA-F]{3,8})/gi;
-      for (const mm of blockText.matchAll(tRe)) colors.set(mm[1], normalizeHex(mm[2]));
-      const pairRe = /color\s*:\s*(var\(--([a-z0-9-]+)\)|(#[0-9a-fA-F]{3,8}))[^;]*?background(?:-color)?\s*:\s*(var\(--([a-z0-9-]+)\)|(#[0-9a-fA-F]{3,8}))/gi;
-      let pm;
-      while ((pm = pairRe.exec(text)) != null) {
-        const fg = pm[2] ? colors.get(pm[2]) : normalizeHex(pm[3]);
-        const bg = pm[5] ? colors.get(pm[5]) : normalizeHex(pm[6]);
-        if (!fg || !bg) continue;
-        const r = contrastRatio(fg, bg);
-        if (r < 4.5) {
-          const lineOf = text.slice(0, pm.index).split('\n').length;
-          report({ rule: 'wcag_contrast', severity: 'error', scope: rel(pathStr), line: lineOf, message: `text/background contrast ${r.toFixed(2)}:1 (fg=${fg} bg=${bg}) fails WCAG AA`, suggestion: 'raise contrast to >= 4.5:1' });
-        }
-      }
+  // SVG paint must inherit: on-palette literals still break theming.
+  if (ext === '.svg') checkSvgPaint(text, rel(pathStr), report);
+  else if (isHtmlish) {
+    for (const m of text.matchAll(/<svg\b[\s\S]*?<\/svg>/gi)) {
+      const offset = text.slice(0, m.index).split('\n').length - 1;
+      checkSvgPaint(m[0], rel(pathStr), f => report({ ...f, line: f.line + offset }));
     }
   }
 

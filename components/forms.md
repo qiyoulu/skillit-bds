@@ -3,13 +3,13 @@
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
-- Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
-- Tactile padding rule: button padding scales with font size — vertical = 0.5x font size, horizontal = 1x (padding: 0.5em 1em). This is a non-negotiable brand rule.
-- Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
+- Use sentence case for authored labels, buttons, and UI text; preserve acronyms, proper nouns, user-entered capitalization, and verbatim quoted content. The fixed wordmark is an asset exception.
+- **Paired padding:** Button-like controls use the canonical `--padding-*x` token matching their text tier in `rem`: Text-1x = 8px / 16px, Text-1.5x = 12px / 24px, Text-2x = 16px / 32px at a 16px root. Text-0.75x is the approved compact exception (4px / 8px), not a proportional 6px / 12px pair. See `tokens/docs/spacing.md`; do not derive local `em` padding or use unapproved type sizes. Outlook email may use an explicit approved pixel fallback matching the chosen canonical pair.
+- Every interactive element needs a visible focus state: 2px solid Traffic Cone (`--color-primary`), 2px offset. On Canvas this is a documented contrast failure (2.6958:1); on Plaster it narrowly meets 3:1 (3.0177:1). Keep Orange in authored contexts, preserve native and forced-colors focus, and verify the actual adjacent surface; see `rules/accessibility.md`.
 - Touch targets minimum 40px in both dimensions (app).
 
 ## Input fields
-Fields are **Plaster on Canvas** — the surface separates them from the ground. State is signaled by a status indicator (drawn icon) plus message text, never by changing the border. Colored borders are not a color usage (see `tokens/docs/color.md`: colors = text fill, button bg fill, or icons). Corner radius is `0` on input fields — inputs align flush with cards and content grids; rounded corners are reserved for cards (16px) and actionable elements (pill) per the shape-coding rule. No drafting line — inputs separate purely through their Plaster surface against the Canvas ground.
+Fields are **Plaster on Canvas** — the surface separates them from the ground. State is signaled by a status indicator (drawn icon) plus message text, never by changing the border. Structural borders remain Iron; documented checkbox and chip selection paint is an exception, not input validation paint (see `tokens/docs/color.md`). Corner radius is `0` on input fields — inputs align flush with cards and content grids; container rounding belongs to cards (16px) and button-like controls (pill). Editable inputs remain actionable but use 0px; small selection/status circles are approved geometry exceptions. No drafting line — inputs separate purely through their Plaster surface against the Canvas ground.
 ```css
 .input {
   background-color: var(--color-surface); /* Plaster — field separated from Canvas ground */
@@ -18,13 +18,14 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground.
   color: var(--color-foreground);
   font-family: var(--font-primary);
   font-size: var(--text-1x);              /* 16px */
-  font-weight: var(--weight-regular);       /* 400 — same as body */
-  padding: var(--space-3) var(--space-2);  /* 12px 8px — tactile */
+  font-weight: var(--text-1x-weight);       /* canonical body weight: 450 */
+  box-sizing: border-box;
+  padding: var(--space-3) var(--space-4); /* 12px 16px — editable-field exception */
   width: 100%;
 }
 .input-wide { width: 100%; } /* opt-in for textareas / long-form — same as default, kept for explicitness */
 .input:focus {
-   outline: 2px solid var(--color-primary);      /* Traffic Cone focus ring */
+   outline: 2px solid var(--color-primary);      /* Traffic Cone focus; Canvas contrast exception — see accessibility.md */
   outline-offset: 2px;
 }
 .input::placeholder {
@@ -58,38 +59,71 @@ When an input field carries an icon — a status indicator, a trailing action, a
 - **Do not put a second icon on the left of the field just because the right has one.** A field with an icon on both sides is a different construct (prefix + suffix) and is not in the current brand vocabulary. If a design calls for it, treat each side separately and do not apply the 4px rule symmetrically.
 
 ## Dropdown
-A select input with a custom chevron icon. The chevron sits on the right side of the field, 1em in size (matching the input's text size). It uses `currentColor` so it inherits the field's text color (Iron).
+A native select with a decorative down-chevron in a sibling wrapper. The wrapper uses a CSS mask painted with its own `currentColor` (Iron); an external SVG background image does **not** inherit the element’s text color. Keep the chevron down while focused: native select focus does not prove that the popup is open. Do not reference an absent up-chevron asset or simulate an open state with `:focus`.
+
+CSS URLs assume a component stylesheet deployed beside `tokens/generated/tokens.css`; see `icons.md` for relocation rules.
 
 ```css
+.select-wrap {
+  position: relative;
+  display: inline-block;
+  color: var(--color-foreground);
+  max-width: 18ch;
+}
 .select {
+  box-sizing: border-box;
   appearance: none;
   background-color: var(--color-surface);
   border: none;
   border-radius: 0;
-  color: var(--color-foreground);
+  color: inherit;
   font-family: var(--font-primary);
   font-size: var(--text-1x);
-  font-weight: var(--weight-regular);
-  padding: var(--space-3) var(--space-8);  /* 12px 8px — same as input */
-  padding-right: calc(var(--space-8) + 1em);  /* reserve space for chevron */
-  max-width: 18ch;
-  background-image: url('../assets/icons/chevron-down.svg');
-  background-repeat: no-repeat;
-  background-position: right var(--space-2) center;  /* 8px from right */
-  background-size: 1em;  /* matches text size */
+  font-weight: var(--text-1x-weight);
+  min-height: var(--touch-target-min);
+  width: 100%;
+  padding: var(--space-3) var(--space-4); /* 12px 16px — editable-field exception */
+  padding-right: calc(2 * var(--space-4) + 1em);
 }
-.select:focus {
+.select-wrap::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: var(--space-4);
+  transform: translateY(-50%);
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: url('../../assets/icons/chevron-down.svg') center / contain no-repeat;
+  mask: url('../../assets/icons/chevron-down.svg') center / contain no-repeat;
+  pointer-events: none;
+}
+.select:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
-  background-image: url('../assets/icons/chevron-up.svg');
+}
+.select-wrap:has(.select:disabled) { opacity: 0.5; }
+@media (forced-colors: active) {
+  .select { appearance: auto; padding-right: var(--space-4); }
+  .select-wrap::after { display: none; }
 }
 ```
 
-**Chevron icon:** `assets/icons/chevron-down.svg` and `assets/icons/chevron-up.svg` — simple chevrons, 16×16 viewBox, filled with `currentColor`. The chevron is a **functional state indicator**, not decorative: it shows whether the dropdown is closed (chevron-down, default) or open (chevron-up, when the select is focused). The flip happens automatically via the `:focus` pseudo-class.
+```html
+<label for="trade">Trade</label>
+<span class="select-wrap">
+  <select class="select" id="trade" name="trade">
+    <option value="carpenter">Carpenter</option>
+    <option value="electrician">Electrician</option>
+  </select>
+</span>
+```
 
-**Why 1em:** The chevron scales proportionally with the input's font size. At 16px body text, the chevron is 16px. If the input uses a larger tier (e.g., 1.5× at 24px), the chevron scales to 24px. This keeps visual rhythm across the type scale.
+**Chevron icon:** `assets/icons/chevron-down.svg` has a 24×24 viewBox, rendered at 1em. It signals a choice control, not popup state. A custom listbox may rotate this glyph only when its real `aria-expanded` state changes; that is a different component from a native select.
 
-**Accessibility:** The select itself carries the accessible label via its `<label>` association. The chevron is a CSS background image — it is not in the DOM and carries no semantic meaning. Screen readers announce the select's label and value; the chevron is purely visual.
+**Why 1em:** The wrapper and select must share their font size. At 16px body text the chevron is 16px; at a larger text tier it scales with the field.
+
+**Accessibility:** The select gets its accessible name from its associated `<label>`. The CSS pseudo-element is decorative, noninteractive, and absent from the accessibility tree. Screen readers announce the native select’s label and value.
 
 ## Focus and a11y
 - An input with a trailing action icon (search, clear) — the icon is a separate tappable control, not part of the input's touch target. Its own touch target is 40px minimum. Do not let the input's padding absorb the icon's hit area.

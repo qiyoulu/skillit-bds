@@ -11,7 +11,7 @@
 | Token | Value | Use |
 |---|---|---|
 | `--duration-fast` | 150ms | Color swap, opacity toggle, focus ring |
-| `--duration-medium` | 300ms | Expand/collapse, slide, progress bar fill |
+| `--duration-medium` | 300ms | Expand/collapse, slide; discrete-step progress is instant |
 | `--duration-slow` | 600ms | Modal open/close, page transition |
 
 ## Easing
@@ -53,9 +53,9 @@
   transition: background-color var(--duration-fast) var(--ease-out);
 }
 
-/* Progress bar */
+/* Discrete-step progress: the component contract is instant fill. */
 .progress-bar__fill {
-  transition: width var(--duration-medium) var(--ease-out);
+  transition: none;
 }
 ```
 
@@ -82,7 +82,7 @@ This globally disables all motion for users who prefer reduced motion. Component
 | Color swaps (hover, focus) | Layout shifts (content appearing) |
 | Opacity (toast enter/exit) | Form submission |
 | Transform (slide up/down) | Data loading (use skeleton) |
-| Width (progress bar fill) | Typography (no typewriter effect) |
+| — | Discrete-step progress fill; typography (no typewriter effect) |
 
 **Rule:** Animation is for *state change feedback*, not for *content delivery*. Content appears instantly; the transition into view may animate, but the content itself does not.
 

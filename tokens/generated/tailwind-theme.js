@@ -11,9 +11,9 @@
  * which Tailwind does not define.
  *
  * Instructions:
- * 1. Import the CSS custom properties from tokens/tokens.css into your global stylesheet
+ * 1. Import the CSS custom properties from tokens/generated/tokens.css into your global stylesheet
  *    (the var() references below resolve against that :root block).
- * 2. Merge this object into the `theme.extend` section of your project's tailwind.config.js.
+ * 2. Merge this object's `theme.extend` into your project's `theme.extend`, or use the whole export as a Tailwind preset.
  * This ensures all brand colors are namespaced under `skillit-*` (e.g. `bg-skillit-canvas`, `text-skillit-iron`)
  * and tied directly to the canonical design tokens.
  */
@@ -45,9 +45,7 @@ module.exports = {
         '2x': 'var(--text-2x)',
          '1.5x': 'var(--text-1\\.5x)',
         '1x': 'var(--text-1x)',
-        ui: 'var(--text-ui)',
-        'ui-lg': 'var(--text-ui-lg)',
-        mono: 'var(--text-mono)'
+        '0.75x': 'var(--text-0\\.75x)' // captions/labels; pair with font-mono for machine data
       },
       borderRadius: {
         sharp: 'var(--radius-sharp)',
@@ -70,10 +68,10 @@ module.exports = {
         '24': 'var(--space-24)',
         '128': 'var(--space-128)',
         '256': 'var(--space-256)',
-        'space-0.25x': 'var(--space-0.25x)',
-        'space-0.5x': 'var(--space-0.5x)',
+        'space-0.25x': 'var(--space-0\\.25x)',
+        'space-0.5x': 'var(--space-0\\.5x)',
         'space-1x': 'var(--space-1x)',
-        'space-1.5x': 'var(--space-1.5x)',
+        'space-1.5x': 'var(--space-1\\.5x)',
         'space-2x': 'var(--space-2x)',
         'space-3x': 'var(--space-3x)',
         'space-4x': 'var(--space-4x)',

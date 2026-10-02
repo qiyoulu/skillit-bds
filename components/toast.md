@@ -3,19 +3,21 @@
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
-- Sentence-case on all labels, buttons, and UI text. No ALL CAPS, no Title Case.
-- Tactile padding rule: button padding scales with font size — vertical = 0.5x font size, horizontal = 1x (padding: 0.5em 1em). This is a non-negotiable brand rule.
-- Every interactive element should have a visible focus state (2px solid Traffic Cone, 2px offset).
+- Use sentence case for authored labels, buttons, and UI text; preserve acronyms, proper nouns, user-entered capitalization, and verbatim quoted content. The fixed wordmark is an asset exception.
+- **Paired padding:** Button-like controls use the canonical `--padding-*x` token matching their text tier in `rem`: Text-1x = 8px / 16px, Text-1.5x = 12px / 24px, Text-2x = 16px / 32px at a 16px root. Text-0.75x is the approved compact exception (4px / 8px), not a proportional 6px / 12px pair. See `tokens/docs/spacing.md`; do not derive local `em` padding or use unapproved type sizes. Outlook email may use an explicit approved pixel fallback matching the chosen canonical pair.
+- Every interactive element needs a visible focus state: 2px solid Traffic Cone (`--color-primary`), 2px offset. On Canvas this is a documented contrast failure (2.6958:1); on Plaster it narrowly meets 3:1 (3.0177:1). Keep Orange in authored contexts, preserve native and forced-colors focus, and verify the actual adjacent surface; see `rules/accessibility.md`.
 - Touch targets minimum 40px in both dimensions (app).
 
 ## Principle
 Toast is a **transient feedback message** — it confirms an action, reports an error, or warns about a consequence. It is not interactive beyond an optional close button and an optional action link. The worker can continue working while a toast is visible.
 
 ## Anatomy
-A toast is a horizontal row inside a colored pill:
-1. **Icon (16px)** — Canvas white on the semantic color background
+A toast is a horizontal row inside a static feedback panel with 16px corners. Its body is not an action:
+1. **Icon (16px)** — Iron (`--color-foreground`) on every toast type, independent of message foreground
 2. **Message** — single line, Work Sans `--text-1x`, `--weight-medium`
-3. **Close button (16×16)** — Canvas `×` icon, icon-only, 40×40 hit area
+3. **Close button (16×16)** — inherits Canvas on success/error or Iron on warning/info, icon-only, 40×40 hit area
+
+Success/error/warning fills are semantic feedback exceptions, not layout surfaces or actionable containers. Info stays Plaster with Iron text. The static panel uses 16px corners; optional close/link controls are actions. A toast with no action remains feedback; only its close button/link is actionable.
 
 ## Position
 - **Mobile (< 768px):** bottom-center, full-width with 16px side margins, stacked above the nav footer
@@ -28,12 +30,14 @@ Multiple toasts stack vertically — newest at the bottom (mobile) or top (deskt
 
 | Type | Fill | Text | Icon | Use |
 |---|---|---|---|---|
-| Success | `--color-success` (Bottle Glass) | Canvas | White checkmark | Action completed successfully |
-| Error | `--color-error` (Toolbox) | Canvas | White octagon | Action failed, requires attention |
-| Warning | `--color-warning` (Hard Hat) | Iron | White triangle | Consequence warning, not a failure |
-| Info | `--color-link` (Painter's Tape) | Canvas | White info-circle | Neutral information, not a result |
+| Success | `--color-success` (Bottle Glass) | Canvas | Iron circular checkmark | Action completed successfully |
+| Error | `--color-error` (Toolbox) | Canvas | Iron octagon | Action failed, requires attention |
+| Warning | `--color-warning` (Hard Hat) | Iron | Iron triangle | Consequence warning, not a failure |
+| Info | `--color-surface` (Plaster) | Iron | Iron help-circle | Neutral information, not a result |
 
-**Icon color rationale:** All status icons use Canvas (white) because they sit *inside* a colored badge circle or appear directly against the input row. White provides contrast against any background. The semantic color is carried by the message text, not the icon.
+**Icon color rationale:** Every noninteractive toast status icon is Iron, supplied by host CSS; the silhouette and message identify the state. Info uses the supplied help-circle glyph with explicit message text; no circle-i asset is supplied. Existing message colors, close-control colors, and semantic backgrounds are unchanged.
+
+**Unresolved contrast:** Iron on Bottle Glass is 2.0300:1 and Iron on Toolbox is 2.3309:1, both below the 3:1 non-text target. Iron on Hard Hat is 7.5227:1 and on Plaster is 13.7135:1. Success/error toast status icons therefore have a remaining contrast failure; shape and label do not make that a contrast pass. Background or palette changes require a separate decision. Orange focus against Bottle Glass is 2.2385:1, against Toolbox 1.9496:1, and against Hard Hat 1.6554:1; all fail 3:1 where the ring adjoins the colored fill. Verify the actual adjacent surface and do not silently restore Canvas or Iron focus as a fallback.
 
 ## Timing
 - **Auto-dismiss:** 5 seconds after appearing
@@ -47,13 +51,14 @@ Multiple toasts stack vertically — newest at the bottom (mobile) or top (deskt
 - Reduced motion: no animation, instant appear/disappear
 
 ## CSS pattern
+CSS URLs assume a component stylesheet beside `tokens/generated/tokens.css`; see `icons.md` before moving or inlining the CSS.
 ```css
 .toast {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2); /* 8px */
   padding: var(--space-2) var(--space-4); /* 8px 16px */
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sharp); /* static feedback panel, not an action */
   font-family: var(--font-primary);
   font-size: var(--text-1x);
   font-weight: var(--weight-medium);
@@ -64,14 +69,21 @@ Multiple toasts stack vertically — newest at the bottom (mobile) or top (deskt
 .toast--success { background-color: var(--color-success); color: var(--color-background); }
 .toast--error   { background-color: var(--color-error);   color: var(--color-background); }
 .toast--warning { background-color: var(--color-warning); color: var(--color-foreground); }
-.toast--info    { background-color: var(--color-link);    color: var(--color-background); }
+.toast--info    { background-color: var(--color-surface); color: var(--color-foreground); }
 
 .toast__icon {
   width: 16px;
   height: 16px;
   flex: 0 0 16px;
-  color: currentColor; /* inherits from .toast text color */
+  color: var(--color-foreground); /* Iron status paint, independent of message */
+  background-color: currentColor;
+  -webkit-mask: var(--toast-icon) center / contain no-repeat;
+  mask: var(--toast-icon) center / contain no-repeat;
 }
+.toast--success { --toast-icon: url('../../assets/icons/checkmark.svg'); }
+.toast--error { --toast-icon: url('../../assets/icons/error.svg'); }
+.toast--warning { --toast-icon: url('../../assets/icons/warning.svg'); }
+.toast--info { --toast-icon: url('../../assets/icons/help.svg'); }
 
 .toast__message {
   flex: 1;
@@ -87,6 +99,11 @@ Multiple toasts stack vertically — newest at the bottom (mobile) or top (deskt
   border: none;
   cursor: pointer;
   color: currentColor;
+  border-radius: var(--radius-pill);
+}
+.toast__close:focus-visible, .toast a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 @keyframes toast-in {
@@ -152,23 +169,23 @@ Multiple toasts stack vertically — newest at the bottom (mobile) or top (deskt
 ```html
 <!-- Success toast -->
 <div class="toast toast--success" role="status">
-  <svg class="toast__icon" aria-hidden="true"><!-- checkmark --></svg>
+  <span class="toast__icon" aria-hidden="true"></span>
   <span class="toast__message">Your profile has been saved</span>
   <button class="toast__close" aria-label="Dismiss notification">×</button>
 </div>
 
 <!-- Error toast -->
 <div class="toast toast--error" role="status">
-  <svg class="toast__icon" aria-hidden="true"><!-- octagon --></svg>
+  <span class="toast__icon" aria-hidden="true"></span>
   <span class="toast__message">Connection failed. Please try again.</span>
   <button class="toast__close" aria-label="Dismiss notification">×</button>
 </div>
 ```
 
 ## Icon assets
-- `assets/icons/toast/checkmark.svg` — Bottle Glass checkmark, white
-- `assets/icons/toast/octagon.svg` — Toolbox octagon, white
-- `assets/icons/toast/triangle.svg` — Hard Hat triangle, white
-- `assets/icons/toast/info-circle.svg` — Painter's Tape info-circle, white
+- `assets/icons/checkmark.svg` — circular success silhouette
+- `assets/icons/error.svg` — error octagon
+- `assets/icons/warning.svg` — warning triangle
+- `assets/icons/help.svg` — informational help circle
 
-All icons: 16×16 viewBox, filled with `currentColor`.
+All assets: 24×24 viewBox, rendered at 16×16px. The mask is painted by the icon host’s explicit Iron color, not an external SVG’s inherited `currentColor`.

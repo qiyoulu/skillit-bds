@@ -99,7 +99,7 @@ When in doubt, write for the worker first. The worker is the subject. The contra
 ### What they need
 
 - The market size argument: \$600B+ infrastructure build cycle, workforce as the bottleneck.
-- The insight: it’s not a shortage, it’s an access problem — and access problems are solvable with data.
+- The insight: access is the constraint, and better data makes craft professionals findable.
 - The moat: 230,000+ verified workers, proprietary skill data, three interlocking systems.
 - Founding credibility: not tech tourists, but builders who built tech.
 - The arc: Act 1 (construction) → Act 2 (training pathways) → Act 3 (every physical industry).
@@ -138,7 +138,7 @@ The Skillit platform is one system. But the worker and the contractor look at it
 | Element | Contractor view | Worker view |
 |---|---|---|
 | Job post | “Posted this role, here are my matches” | “This role matches your certs” |
-| Worker profile | “Here’s who this worker is and what they’ve done” | “Here’s how you appear to contractors” |
-| Verification badge | “This worker is vetted” | “Your skills are recognized” |
+| Worker profile | “Here’s who this craft professional is and what they’ve done” | “Here’s how you appear to contractors” |
+| Verification badge | “This craft professional is vetted” | “Your skills are recognized” |
 | Sam | “Sam, find me ironworkers in Houston” | “Sam, show me welding jobs starting next month” |
 When generating UI copy, content, or any surface — identify the vantage point first. The same data, described from the wrong camera angle, will feel off.

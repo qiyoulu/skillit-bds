@@ -20,7 +20,7 @@ Use this file to calibrate tone before generating any Skillit copy. Read a few e
 || Wrong | Right |
 |---|---|
 | "Learn more about how Skillit can help you find workers." | "See the network." |
-| "Get started with Skillit today!" | "Sign up." |
+| "Get started with Skillit today!" | “Join.” |
 | "Click here to explore our platform." | "Get hired." |
 | "Request a demo to learn more." | "Talk to us." |
 
@@ -37,7 +37,7 @@ No exclamation marks. A period is enough. Exclamation marks signal marketing ent
 || Wrong | Right |
 |---|---|
 | "Join the network today!" | "Join the network." |
-| "See the workers you've been missing!" | "See the workers you've been missing." |
+| "See the workers you've been missing!" | “See the craft professionals you’ve been missing.” |
 ---
 ## Worker-facing (app UI)
 ### Onboarding
@@ -63,13 +63,13 @@ No exclamation marks. A period is enough. Exclamation marks signal marketing ent
 ### Empty states
 | Wrong | Right |
 |---|---|
-| “No candidates found matching your search criteria at this time.” | “No workers found. Try broadening your location or trade.” |
+| “No candidates found matching your search criteria at this time.” | “No craft professionals found. Try broadening your location or trade.” |
 | “Your pipeline is currently empty. Post a role to get started.” | “No open roles. Post one to start seeing matches.” |
 ### Data labels
 | Wrong | Right |
 |---|---|
 | “Applications received” | “Applied” |
-| “Candidate pipeline” | “Your workers” |
+| “Candidate pipeline” | “Your craft professionals” |
 | “Time to hire (average)” | “Avg. days to hire” |
 | “Worker acquisition cost” | “Cost per hire” |
 ---
@@ -79,7 +79,7 @@ No exclamation marks. A period is enough. Exclamation marks signal marketing ent
 |---|---|
 | “I’m excited to share some thoughts on the future of construction hiring.” | “Construction has the smallest labor gap of any industry. So why does it feel impossible to hire?” |
 | “The construction industry faces many challenges in today’s labor market.” | “The workers exist. The system to find them doesn’t.” |
-| “We at Skillit are working hard to solve the labor shortage problem.” | “It’s not a shortage. It’s an access problem. That’s a solvable problem.” |
+| “We at Skillit are working hard to solve the labor shortage problem.” | “The constraint is access. Better data connects craft professionals to the work.” |
 ### Post structure (counterintuitive pattern)
 ```
 [Surprising claim or statistic — one sentence]
@@ -137,7 +137,7 @@ When a third-party voice says it better than we can, quote them. The quotation c
 ### Blog / editorial
 || Wrong | Right |
 |---|---|
-| "Workers feel undervalued." | _"I don't want a career. I want to be able to feed my family doing something I'm good at."_ — Carpenter, Portland *(illustrative — replace with a real quote for published copy)* |
+| "Workers feel undervalued." | _"I want to be able to feed my family doing something I’m good at."_ — Carpenter, Portland *(illustrative — replace with a real quote for published copy)* |
 
 ### Rules of thumb
 - Keep quotes short — one to two sentences on the page.
