@@ -77,7 +77,7 @@ for p in sorted((ROOT / 'components').glob('*.md')):
 assert not css_errors, css_errors
 print(f'PASS CSS: {sum(map(len, fences.values()))} component fences parsed; valid var() identifiers; {url_count} CSS asset URLs resolve from documented tokens/generated deployment base')
 
-names = ['buttons.md', 'checkboxes.md', 'forms.md', 'modal.md', 'toast.md', 'validation.md', 'navigation.md']
+names = ['buttons.md', 'checkboxes.md', 'forms.md', 'modal.md', 'toast.md', 'validation.md', 'navigation.md', 'icons.md', 'badges.md']
 css = (ROOT / 'tokens/generated/tokens.css').read_text() + '\n' + '\n'.join(block for name in names for block in fences[name])
 def data_asset(match):
     path = (DEPLOYMENT_BASE / match[1]).resolve()
@@ -185,16 +185,33 @@ with sync_playwright() as pw:
     assert desktop['width'] == 560 and desktop['x'] + desktop['width']/2 == 640 and desktop['y'] + desktop['height']/2 == 450, desktop
     print(f'PASS browser modal: mobile {mobile}; desktop {desktop}; mobile hidden Y=200px without desktop X centering')
 
-    assert style(page, '#warning-toast-icon', 'color') == style(page, '#select-wrap', 'color')
-    assert style(page, '#error-icon', 'color') == 'rgb(35, 47, 54)'
+    assert style(page, '#warning-toast-icon', 'color') == 'rgb(254, 177, 28)'
+    assert style(page, '#error-icon', 'color') == 'rgb(200, 16, 46)'
     assert style(page, '#warning-toast', 'border-radius') == '16px'
     assert style(page, '#info-toast', 'border-radius') == '16px'
     assert style(page, '#info-toast', 'background-color') == 'rgb(255, 255, 255)'
     assert style(page, '#info-toast', 'color') == 'rgb(35, 47, 54)'
-    assert style(page, '#info-toast-icon', 'color') == 'rgb(35, 47, 54)'
+    assert style(page, '#info-toast-icon', 'color') == 'rgb(0, 124, 166)'
     page.locator('#info-close').focus()
     assert style(page, '#info-close', 'outline-color') == 'rgb(239, 111, 26)'
-    print('PASS browser color policy: Iron status icons and neutral info; Orange focus retained; no blanket accessibility claim')
+    print('PASS browser color policy: semantic status colors; Orange focus and Iron progress retained; no blanket accessibility claim')
+    expected_status = {'error': 'rgb(200, 16, 46)', 'warning': 'rgb(254, 177, 28)', 'success': 'rgb(51, 102, 61)', 'info': 'rgb(0, 124, 166)'}
+    for state, expected_color in expected_status.items():
+        page.evaluate('''state => {
+            const host=document.createElement('div');host.id='status-'+state;
+            host.innerHTML='<span class="validation-badge validation-badge--'+state+'"></span>' +
+                '<span class="badge badge-'+state+'"><span class="icon"></span></span>' +
+                '<span class="icon--'+state+'"></span>' +
+                '<div class="toast toast--'+state+'"><span class="toast__icon"></span><span class="toast__message">'+state+'</span></div>';
+            document.body.append(host);
+        }''', state)
+        for selector in ['.validation-badge', '.badge .icon', '.icon--'+state, '.toast__icon']:
+            assert style(page, '#status-'+state+' '+selector, 'color') == expected_color, (state, selector)
+        assert style(page, '#status-'+state+' .toast', 'background-color') == 'rgb(255, 255, 255)'
+        assert style(page, '#status-'+state+' .toast', 'color') == 'rgb(35, 47, 54)'
+    page.evaluate("() => { const e=document.createElement('span');e.id='neutral-utility';e.className='icon--neutral';document.body.append(e); }")
+    assert style(page, '#neutral-utility', 'color') == 'rgb(35, 47, 54)'
+    print('PASS browser semantic matrix: all four meanings across validation/badge/standalone/toast hosts; light toast surfaces; neutral utility Iron')
 
     # Draw SVG bytes to Canvas and assert actual triangle transparency, not just XML attributes.
     play_svg = (ROOT / 'assets/icons/play.svg').read_text()

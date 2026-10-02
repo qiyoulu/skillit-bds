@@ -43,14 +43,16 @@ Approximately 8% of men and 0.5% of women have red-green color blindness (deuter
 4. **Hard Hat (yellow) + Traffic Cone (orange) require shape or size differentiation** when both appear in the same context. Never use them as adjacent status indicators without a distinct shape difference.
 ---
 ## Status state rules (shape coding)
-Every status icon uses Iron; its supplied shape and text label identify the state. Color is not required to distinguish states. Preserve existing semantic message text and feedback fills separately.
+Semantic status icons use the corresponding green, yellow, red, or blue host paint, plus their supplied shape and a text label. Noninteractive does not mean neutral: utility icons and completed progress remain Iron, while selection indicators and focus remain Orange. Preserve ordinary message text and the existing validation text policy; every toast uses a static 16px Plaster panel with Iron body text and close control.
 | State   | Color              | Shape                 | Label required                            |
 | ------- | ------------------ | --------------------- | ----------------------------------------- |
-| Success | Iron (`--color-foreground`)   | Circle         | “Verified,” “Complete,” “Confirmed”       |
-| Warning | Iron (`--color-foreground`) | Triangle    | “Incomplete,” “Action needed,” “Expiring” |
-| Error   | Iron (`--color-foreground`)  | Octagon            | “Error,” “Failed,” “Expired”              |
-| Info    | Iron (`--color-foreground`) | Supplied help circle + message; square silhouette only when an approved asset is available | “Info,” “Note,” “Tip”                     |
+| Success | Bottle Glass (`--color-success`)   | Circle         | “Verified,” “Complete,” “Confirmed”       |
+| Warning | Hard Hat (`--color-warning`) | Triangle    | “Incomplete,” “Action needed,” “Expiring” |
+| Error   | Toolbox (`--color-error`)  | Octagon            | “Error,” “Failed,” “Expired”              |
+| Info    | Painter’s Tape (`--color-link`) | Supplied help circle + message; square silhouette only when an approved asset is available | “Info,” “Note,” “Tip”                     |
 ---
+**Warning glyph limitation:** Hard Hat (`#FEB11C`) on Plaster (`#FFFFFF`) is 1.8229:1, below the 3:1 graphical contrast target; on Canvas it is 1.6285:1. If the warning glyph is essential to understanding the state, this fails WCAG 1.4.11. If the visible label or message fully conveys the same information without the glyph, the redundant graphic is not required for understanding under that criterion. A label does not improve the ratio, and `aria-hidden="true"` alone does not establish nonessentialness. Keep the supplied triangle and explicit warning label, assess actual use, and do not describe this paint as AA-compliant or invent a darker yellow. Warning message text stays Iron; yellow body text on light surfaces remains prohibited.
+
 ## Touch target rules (mobile / app)
 - Minimum touch target size: `40px × 40px`.
 - This applies to all interactive elements: buttons, links, checkboxes, radio inputs, nav items.
@@ -66,7 +68,7 @@ Every status icon uses Iron; its supplied shape and text label identify the stat
 ## Focus states
 - All interactive elements (buttons, links, inputs, checkboxes, radios, chips, modal controls, and supported email links) need a visible focus indicator.
 - Use `2px solid` Traffic Cone (`--color-primary`) with `2px` offset consistently in authored contexts, including colored feedback and unavoidable non-Skillit dark surfaces. Never silently substitute Iron or Canvas as a context fallback.
-- **Known contrast limitation:** Traffic Cone on Canvas is 2.6958:1, below the 3:1 non-text target; this requested brand focus treatment is not a WCAG contrast pass. On Plaster it is 3.0177:1, a narrow pass. Check the actual adjacent surface, clipping, and visibility; neither the offset nor a shape/label resolves insufficient contrast. Other surfaces, including success/error toast fills, need separate review. Do not add a double edge, shadow, or new palette value without approval.
+- **Known contrast limitation:** Traffic Cone on Canvas is 2.6958:1, below the 3:1 non-text target; this requested brand focus treatment is not a WCAG contrast pass. On Plaster it is 3.0177:1, a narrow pass. Check the actual adjacent surface, clipping, and visibility; neither the offset nor a shape/label resolves insufficient contrast. Other surfaces need separate review; toast panels are Plaster for every type. Do not add a double edge, shadow, or new palette value without approval.
 - Focus is a functional treatment, not another dominant CTA accent. Preserve native focus where custom CSS cannot render. In forced-colors mode let system colors and native controls override brand paint; never use `forced-color-adjust: none` to lock Orange or Iron.
 
 ```css

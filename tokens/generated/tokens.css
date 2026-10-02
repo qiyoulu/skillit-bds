@@ -12,7 +12,7 @@
   --color-primary: #EF6F1A;       /* Traffic Cone — primary action */
   --color-warning: #FEB11C;       /* Hard Hat — warnings */
   --color-error: #C8102E;         /* Toolbox — errors */
-  --color-success: #33663D;       /* Bottle Glass — confirmation text/feedback or chart data; icons/progress stay Iron */
+  --color-success: #33663D;       /* Bottle Glass — success icons/text or chart data; progress stays Iron */
   --color-link: #007CA6;          /* Painter's Tape — link. underlined = link */
   /* hover states — color-mix(in oklab, base, black 10%) */
   --color-background-hover: color-mix(in oklab, var(--color-background), black 10%);       /* Canvas hover */

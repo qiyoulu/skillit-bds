@@ -132,7 +132,7 @@ Designers, marketers, writers, engineers, and anyone who has ever asked “does 
 
 ## Colors
 
-The Skillit palette is Materials on Site — eight colors named for the physical materials workers handle every day. **Each color has defined roles. Use it only where it communicates an action, message, or data meaning; status icons and completed progress use Iron.**
+The Skillit palette is Materials on Site — eight colors named for the physical materials workers handle every day. **Each color has defined roles. Use it only where it communicates an action, message, or data meaning.** Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Noninteractive does not mean neutral: only nonsemantic utility icons and completed progress use Iron.
 
 ### The palette
 
@@ -140,12 +140,12 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 | -------------- | --------- | --------------- | ------------------------ | ------------------------------------- |
 | Canvas         | `#F7F1ED` | Consult print reference | Paper — not an ink       | Primary background — all surfaces     |
 | Plaster        | `#FFFFFF` | Consult print reference | Paper — unprinted stock  | Elevated surfaces, cards, form inputs |
-| Iron           | `#232F36` | Consult print reference | 432 C / 432 U            | Foreground, status icons, completed progress |
+| Iron           | `#232F36` | Consult print reference | 432 C / 432 U            | Foreground, neutral utility icons, completed progress |
 | Traffic Cone   | `#EF6F1A` | Consult print reference | 158 C / 158 U            | Primary action, selection indicators, focus |
-| Hard Hat       | `#FEB11C` | Consult print reference | 1235 C / 1235 U          | Warnings, non-fatal alerts            |
-| Toolbox        | `#C8102E` | Consult print reference | 186 C / 186 U            | Errors, destructive actions           |
-| Bottle Glass   | `#33663D` | Consult print reference | 2427 C / 2427 U          | Success messages, appropriate controls and data |
-| Painter’s Tape | `#007CA6` | Consult print reference | 3135 C / 3135 U          | Links, info text, purposeful data |
+| Hard Hat       | `#FEB11C` | Consult print reference | 1235 C / 1235 U          | Warnings/icons, non-fatal alerts      |
+| Toolbox        | `#C8102E` | Consult print reference | 186 C / 186 U            | Error icons/messages, destructive actions |
+| Bottle Glass   | `#33663D` | Consult print reference | 2427 C / 2427 U          | Success messages/icons, appropriate controls and data |
+| Painter’s Tape | `#007CA6` | Consult print reference | 3135 C / 3135 U          | Links, info text/icons, purposeful data |
 
 Coated and uncoated are the same ink on different paper — the number is shared, the appearance is not. Uncoated absorbs ink and returns lighter and duller. Always proof on the actual stock; Traffic Cone shifts most. Spot references apply only where you print spot (business cards, signage, vehicle wrap, embroidery) — process work must consult the [color print reference](./tokens/docs/color.md). RGB tokens do not define canonical CMYK conversions. Unprofiled CMYK values are provisional: confirm the output profile, stock, and printer proof before production; this guide does not choose between conflicting Canvas conversions.
 
@@ -155,11 +155,11 @@ Coated and uncoated are the same ink on different paper — the number is shared
 - **Don’t** repeat Traffic Cone decoratively across borders, icons, and dividers.
 - **Do** use Iron on Canvas for all body text.
 - **Don’t** use Traffic Cone text on Canvas backgrounds at body size — it fails contrast.
-- **Do** use Iron for noninteractive status icon fills and completed progress; pair status with a specific shape (Circle for Success, Triangle for Warning, Octagon for Error) and a label.
+- **Do** use meaning-scoped status icon colors: error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Pair status with a specific shape (Circle for Success, Triangle for Warning, Octagon for Error) and a label; neutral utility icons and completed progress use Iron.
 - **Don’t** rely on color alone to communicate error, warning, or success.
 - **Don’t** use gradients — all color transitions are hard edges.
 - **Don’t** use Hard Hat, Toolbox, Bottle Glass, or Painter’s Tape as layout backgrounds or decorative elements.
-- **Don’t** use Painter’s Tape as a button fill. Semantic colors belong to meaningful message text, appropriate functional control fills, documented feedback fills, and data encoding; they do not tint noninteractive status icons or completed progress, which use Iron. Checkbox, radio, and selection-chip control paint uses Traffic Cone, not Bottle Glass: unselected radio/chip outlines and selected fills are orange. Keep chip pills Plaster with Iron text; the contrasting inner check glyph is Iron (4.5443:1 on Cone), not Canvas (2.6958:1). Focus rings also use Cone. Charts may use Cone alongside Painter’s Tape and other canonical palette colors when categories have a communication purpose and legends or direct labels; never color alone. These state/data displays are not actions by themselves. Toast bodies are static 16px-corner feedback panels; only their close/link controls are actionable. Info toasts use Plaster with Iron text and an Iron help icon, not a blue fill. Existing semantic message text and success/error/warning backgrounds remain unchanged; Iron icons on Bottle Glass (2.0300:1) and Toolbox (2.3309:1) are below the 3:1 non-text UI floor; flag these contrast concerns without automatically changing message text or backgrounds.
+- **Don’t** use Painter’s Tape as a button fill. Semantic colors belong to meaningful message text, status icons, appropriate functional control fills, and data encoding; never decorative or layout fills. Checkbox, radio, and selection-chip control paint uses Traffic Cone, not Bottle Glass: unselected radio/chip outlines and selected fills are orange. Keep chip pills Plaster with Iron text; the contrasting inner check glyph is Iron (4.5443:1 on Cone), not Canvas (2.6958:1). Focus rings also use Cone. Charts may use Cone alongside Painter’s Tape and other canonical palette colors for purposeful categories with legends or direct labels and non-color cues; monochromatic is a default, not exclusive. These state/data displays are not actions by themselves. All toast types use Plaster bodies with Iron text and their semantic icon color; close controls use Iron with Traffic Cone focus. Toast bodies remain static 16px-corner feedback panels, not actions; only close/link controls are actionable. No colored success/error/warning toast-background exception remains. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast.
 - **Do** use Painter’s Tape text underlined for links, not underlined for info.
 - **Don’t** introduce authored UI colors outside the eight tokens. Canonical color source tables, explicit token/export workflows, and unchanged approved SVG/logo artwork may contain literal hex values; consumers must not recolor fixed assets to satisfy a UI-style ban.
 
@@ -238,7 +238,7 @@ All icons are drawn on a 24×24px canvas using a strict 10×10 sub-grid where on
 
 Style is solid fill only. No strokes, no outlines, no gradients, no drop shadows. Icon geometry follows [the iconography rules](./rules/iconography.md); 16px corners apply to static containers, not every internal glyph shape. Tintable UI icons inherit their color via `fill="currentColor"`. Approved fixed logo/graphic SVGs and explicit source/export workflows may retain literal paint; do not silently recolor fixed artwork.
 
-Noninteractive status icon fills use Iron; completed progress also uses Iron. Interactive checkbox, radio, and selection-chip indicators use Traffic Cone, not success green: classify the underlying control by its action, not the indicator’s state. Status never relies on color alone. Locked silhouettes: Success = Circle, Warning = Triangle, Error = Octagon.
+Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Noninteractive does not mean neutral: only nonsemantic utility icons and completed progress use Iron. Interactive checkbox, radio, and selection-chip indicators use Traffic Cone, not success green: classify the underlying control by its action, not the indicator’s state. Status never relies on color alone. Locked silhouettes: Success = Circle, Warning = Triangle, Error = Octagon; info uses the supplied help glyph and an explicit label. Status-glyph runtime props select meaning and host CSS token color; SVGs inherit `currentColor`, with no asset recoloring. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast.
 
 **Delivered core assets** in [`assets/icons/`](./assets/icons/):
 

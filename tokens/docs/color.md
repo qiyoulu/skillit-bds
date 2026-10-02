@@ -6,25 +6,25 @@
 - Use ONLY the tokens listed here. Never approximate or invent colors. Use canonical `color-mix()` hover expressions and documented functional opacity treatments (data marks, pending-progress track, backdrops, disabled controls); do not invent derived palette tokens.
 - Every token has designated message, control, and data roles. Scope meanings to the use: UI semantics do not ban purposeful chart categories.
 - Primary surfaces are Canvas and Plaster; Iron is the foreground. Traffic Cone is the dominant CTA/focal-data accent — one dominant use per section, not repeated decoration. Repeated checkbox, radio, and selection-chip indicator paint and focus rings are explicitly permitted functional exceptions.
-- **Accent/status roles:** meaningful message text, appropriate functional control fills, existing success/error/warning feedback fills, and purposeful canonical data colors. Noninteractive status icon fills and completed progress use Iron; all checkbox, radio, and selection-chip control paint uses Traffic Cone, not Bottle Glass. Unselected radio/chip outlines and selected fills are orange; chip pills remain Plaster with Iron text. The contrasting inner check glyph uses Iron (4.5443:1 on Cone), not Canvas (2.6958:1). Orange focus rings are functional exceptions. Charts may use Cone alongside Painter’s Tape and other canonical colors with legends or direct labels and non-color cues; monochromatic is a default, not exclusive. These are not decorative or full-section backgrounds. Canvas and Plaster remain layout surfaces; Iron is permitted only as a functional modal backdrop or photographic text-legibility overlay, not a layout surface.
+- **Accent/status roles:** Meaningful message text, semantic status icons, appropriate functional control fills, and purposeful canonical data colors. Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Noninteractive does not mean neutral: only nonsemantic utility icons and completed progress use Iron. Checkbox, radio, and selection-chip control paint uses Traffic Cone, not Bottle Glass: unselected radio/chip outlines and selected fills are orange. Keep chip pills Plaster with Iron text; the contrasting inner check glyph is Iron (4.5443:1 on Cone), not Canvas (2.6958:1). Focus rings also use Cone. Charts may use Cone alongside Painter’s Tape and other canonical palette colors for purposeful categories with legends or direct labels and non-color cues; monochromatic is a default, not exclusive. All toast types use Plaster bodies with Iron text and their semantic icon color; close controls use Iron with Traffic Cone focus. Toast bodies remain static 16px-corner feedback panels, not actions; only close/link controls are actionable. No colored success/error/warning toast-background exception remains. Canvas and Plaster remain layout surfaces; Iron is permitted only as a functional modal backdrop or photographic text-legibility overlay, not a layout surface.
 - **Structural borders are Iron.** Input validation state stays in icons/text, not colored field borders. The documented Traffic Cone checkbox, radio, and selection-chip indicator strokes/fills are selection exceptions, not structural border tokens.
 - **Focus rings:** default 2px solid Traffic Cone (`--color-primary`) with 2px offset. Cone on Canvas is 2.6958:1, below the 3:1 UI/focus floor; Cone on Plaster is 3.0177:1 and meets that floor. Keep orange as requested; do not claim AA on Canvas or quietly substitute Iron. Check actual adjacent surfaces, clipping, keyboard visibility, and rendered native controls; preserve native focus in forced-colors mode. Flag unresolved contrast for review. See [accessibility](../../rules/accessibility.md).
-- **Painter's Tape (blue):** text without underline = **info**; text with underline = **link**. Never a decorative or ordinary control fill; purposeful chart categories, including supply-side data, are data-fill exceptions. Informational toasts use Plaster with Iron text and an Iron help icon.
+- **Painter's Tape (blue):** text without underline = **info**; text with underline = **link**; info status icons also use Tape. Never a decorative or ordinary control fill; purposeful chart categories, including supply-side data, are data-fill exceptions. Informational toasts use Plaster with Iron text and a Tape help icon.
 - **Info text size floor:** Painter's Tape on Canvas is 4.2312:1 — fails WCAG AA for normal text (needs 4.5:1). Keep info/link text at `--text-1x` (16px) or larger regardless, and prefer Iron for any text where AA compliance is required; treat Painter's Tape on Canvas as a soft exception pending a color review.
 - Never use color as the only status signal. Always pair with shape and label.
-- Contrast depends on the actual foreground, background, and use. Verify text and graphical contrast on rendered surfaces; a passing text pairing does not establish icon or focus contrast. Existing semantic message text and success/error/warning backgrounds remain unchanged; review Iron status icons on those fills without automatically changing the backgrounds.
+- Contrast depends on the actual foreground, background, and use. Verify text and graphical contrast on rendered surfaces; a passing text pairing does not establish icon or focus contrast. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast. All toast types use Plaster bodies with Iron text and their semantic icon color; close controls use Iron with Traffic Cone focus. Toast bodies remain static 16px-corner feedback panels, not actions; only close/link controls are actionable. No colored success/error/warning toast-background exception remains.
 ---
 ## Core palette
 | Token             | Name     | Hex       | CMYK (provisional, unprofiled) | Spot (Coated / Uncoated) | UI Role                                            |
 | ----------------- | -------- | --------- | -------------- | -------------- | -------------------------------------------------- |
 || `--color-background`      | 📜 Canvas | `#F7F1ED` | 2, 3, 4, 0     | Paper — not an ink | Primary background — all surfaces default to this  |
 | `--color-surface` | ⬜️ Plaster  | `#FFFFFF` | 0, 0, 0, 0      | Paper — unprinted stock | Elevated surfaces, cards, and isolated form inputs |
-| `--color-foreground`      | ⬛️ Iron | `#232F36` | 80, 50, 45, 65 | 432 C / 432 U  | Foreground, noninteractive status icons, completed progress |
+| `--color-foreground`      | ⬛️ Iron | `#232F36` | 80, 50, 45, 65 | 432 C / 432 U  | Foreground, neutral utility icons, completed progress |
 | `--color-primary` | 🟧 Traffic Cone     | `#EF6F1A` | 0, 65, 100, 0  | 158 C / 158 U  | Primary action, selection indicators, focus, purposeful data |
-| `--color-warning` | 🟨 Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C / 1235 U | Non-fatal alerts, warnings                         |
-| `--color-error`   | 🟥 Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C / 186 U  | Fatal errors, destructive actions                  |
-| `--color-success` | 🟩 Bottle Glass   | `#33663D` | 50, 0, 40, 60  | 2427 C / 2427 U | Success messages, appropriate controls and data; not icon/progress fills |
-| `--color-link`    | 🟦 Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C / 3135 U | Links, info text, purposeful data |
+| `--color-warning` | 🟨 Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C / 1235 U | Non-fatal alerts, warning messages/icons           |
+| `--color-error`   | 🟥 Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C / 186 U  | Error messages/icons, destructive actions          |
+| `--color-success` | 🟩 Bottle Glass   | `#33663D` | 50, 0, 40, 60 | 2427 C / 2427 U | Success messages/icons, appropriate controls/data; not selection/progress fills |
+| `--color-link`    | 🟦 Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C / 3135 U | Links, info text/icons, purposeful data |
 
 **Print status:** This is the single process-color reference table. Existing CMYK numbers are provisional and unprofiled, not approved RGB-to-CMYK conversions or press-ready recipes. Canvas process values conflict with an older instruction table; neither recipe is resolved by `tokens/tokens.json5`. Do not select a paper/process recipe from those percentages. Confirm stock, output ICC profile, and printer conversion, then approve physical proofs on the actual stock before production. Canvas/Plaster may be represented by the paper itself; do not infer that their screen hex values mandate an ink coverage.
 
@@ -53,10 +53,15 @@ Hover colors are generated with `color-mix(in oklab, base, black 10%)` — mixin
 | Canvas `#F7F1ED` | Traffic Cone `#EF6F1A`     | 2.6958:1 | Fails WCAG AA at all sizes — do not use.                                                            |
 | Iron `#232F36`     | Traffic Cone `#EF6F1A`     | 4.5443:1 | Passes AA. Use Iron for all text on Traffic Cone surfaces.                                              |
 | Iron `#232F36`     | Hard Hat `#FEB11C` | 7.5227:1  | Dark text on warning badge — passes AAA                                                             |
-| Canvas `#F7F1ED` | Toolbox `#C8102E`  | 5.2557:1  | White text on error state — passes AA                                                               |
-| Canvas `#F7F1ED` | Bottle Glass `#33663D`   | 6.0346:1 | White text on success state — passes AA                                                              |
+| Canvas `#F7F1ED` | Toolbox `#C8102E`  | 5.2557:1  | Canvas text on permitted error control/data fills — passes AA; not toast bodies                                                               |
+| Canvas `#F7F1ED` | Bottle Glass `#33663D`   | 6.0346:1 | Canvas text on permitted success control/data fills — passes AA; not toast bodies                                                              |
 | Canvas `#F7F1ED` | Iron `#232F36`     | 12.2506:1 | Canvas text on permitted functional Iron backdrops/overlays — passes AAA                                                            |
 | Painter's Tape `#007CA6`   | Canvas `#F7F1ED` | 4.2312:1  | Link text on background — fails WCAG AA (needs 4.5:1)                                                                 |
+| Toolbox `#C8102E` | Plaster `#FFFFFF` | 5.8833:1 | Error icon — meets 3:1 graphical floor |
+| Bottle Glass `#33663D` | Plaster `#FFFFFF` | 6.7552:1 | Success icon — meets 3:1 graphical floor |
+| Painter’s Tape `#007CA6` | Plaster `#FFFFFF` | 4.7365:1 | Info icon — meets 3:1 graphical floor |
+| Hard Hat `#FEB11C` | Plaster `#FFFFFF` | 1.8229:1 | Warning icon — fails 3:1; retain yellow, triangle + label; not an AA pass |
+| Hard Hat `#FEB11C` | Canvas `#F7F1ED` | 1.6285:1 | Warning icon — fails 3:1; palette limitation remains |
 ---
 ## Usage rules per token
 ### `--color-background` 📜 Canvas `#F7F1ED`
@@ -67,7 +72,7 @@ Hover colors are generated with `color-mix(in oklab, base, black 10%)` — mixin
 - Because drop shadows and borders are banned on these components, Plaster separates from Canvas purely through its stark brightness and typographic structure.
 ### `--color-foreground` ⬛️ Iron `#232F36`
 - All body text, headings, labels, metadata.
-- Used for structural UI elements: borders, dividers, nav strokes; all noninteractive status icon fills and completed-progress fills. Focus rings use Traffic Cone; see the contrast limitation above.
+- Used for structural UI elements: borders, dividers, nav strokes; nonsemantic utility icons and completed-progress fills. Semantic status icons retain their meaning-scoped colors even when noninteractive. Focus rings use Traffic Cone; see the contrast limitation above.
 - The single darkest tone in the system — do not introduce black (`#000000`).
 
 ### `--color-primary` 🟧 Traffic Cone `#EF6F1A`
@@ -76,16 +81,16 @@ Hover colors are generated with `color-mix(in oklab, base, black 10%)` — mixin
 - **Text on Traffic Cone:** Use Iron (`#232F36`) only (4.5443:1, passes AA). Canvas on Traffic Cone fails at all sizes (2.6958:1) and is not permitted.
 - Do not use for links — that role belongs to Painter's Tape.
 ### `--color-warning` 🟨 Hard Hat `#FEB11C`
-- Warning message text, labels, appropriate functional warning controls, existing warning feedback backgrounds, and purposeful data; warning icon fills remain Iron with triangle + label.
+- Warning message text, labels, yellow warning icons (triangle + label), appropriate functional warning controls, and purposeful data. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast.
 - Text on Hard Hat should always be Iron (`#232F36`) — never white.
 - Never rely on Hard Hat versus Toolbox or Bottle Glass alone to distinguish meanings; categorical data needs legends or direct labels and non-color cues.
 ### `--color-error` 🟥 Toolbox `#C8102E`
-- Error message text, destructive actions, form validation errors, failed-state messages, existing error feedback backgrounds, and purposeful data. Noninteractive error icons remain Iron with octagon + label; Iron on Toolbox is 2.3309:1, below the 3:1 non-text UI floor. Flag the contrast concern without automatically changing message text or backgrounds.
+- Error message text, red error icons (octagon + label), destructive actions, form validation errors, failed-state messages, and purposeful data. Error toast bodies use Plaster with Iron text, not Toolbox fill.
 - Text on Toolbox should always be Canvas (`#F7F1ED`).
 - Should always be accompanied by an error label — never color alone.
 ### `--color-success` 🟩 Bottle Glass `#33663D`
-- Success message text, confirmations, appropriate success controls, existing success feedback backgrounds, and purposeful data. Canonical success green remains reserved for these meanings; noninteractive status icon fills and completed-progress fills use Iron, while checkbox/radio/selection-chip indicators use Traffic Cone. Classify the underlying control as an action even when its indicator displays selection state.
-- Text on Bottle Glass remains Canvas (`#F7F1ED`) — 6.0346:1, passes AA. Iron on Bottle Glass is 2.0300:1, below the 3:1 non-text UI floor; the requested Iron status icon treatment therefore needs contrast review on existing green fills. Do not automatically change semantic message text, backgrounds, or icon color to hide the conflict.
+- Success message text, green success icons (circle + label), confirmations, appropriate success controls, and purposeful data. Completed progress uses Iron, while checkbox/radio/selection-chip indicators use Traffic Cone. Classify the underlying control as an action even when its indicator displays selection state. Success toast bodies use Plaster with Iron text, not Bottle Glass fill.
+- Text on permitted Bottle Glass control/data fills remains Canvas (`#F7F1ED`) — 6.0346:1, passes AA. This is not a toast-background exception; semantic success icons use Bottle Glass on a contrasting light surface.
 - Should always be accompanied by a success label — never color alone.
 - The approved spot references are 2427 C / 2427 U. Screen and printed color are not interchangeable; proof the actual stock.
 ### `--color-primary` as text (Traffic Cone highlight)
@@ -96,8 +101,8 @@ Hover colors are generated with `color-mix(in oklab, base, black 10%)` — mixin
 - **CSS class:** `.text-primary` — applies Traffic Cone color. Use on headings and display text only.
 
 ### `--color-link` 🟦 Painter's Tape `#007CA6`
-- Ordinary link/info usage is text fill: underlined = link; not underlined = info (“Info,” “Note,” “Tip”). Explicit feedback/data exceptions below do not change that default.
-- Never used as an ordinary button fill, layout background, or decorative element. Informational feedback toasts use Plaster with Iron text; their help icon uses Iron ([toasts](../../components/toast.md)), never a blue normal-text toast fill.
+- Ordinary link/info usage is text fill: underlined = link; not underlined = info (“Info,” “Note,” “Tip”). Info status icons use Painter’s Tape through host CSS `color`; status-glyph runtime props select meaning and SVGs inherit `currentColor`, not hardcoded asset paint. Feedback/data exceptions below do not change the text default.
+- Never used as an ordinary button fill, layout background, or decorative element. Informational feedback toasts use Plaster with Iron text; their help icon uses Painter’s Tape ([toasts](../../components/toast.md)), never a blue normal-text toast fill.
 - **Exception — data visualization:** Painter’s Tape may appear alongside Traffic Cone and other canonical palette colors for purposeful categories with legends or direct labels and non-color cues, not color alone. Supply/demand maps and charts retain Tape for worker availability or labor supply and Cone for job openings. Verify text and graphical contrast on the actual surface; UI message roles do not create a data-palette ban.
 - If a non-Skillit dark surface is unavoidable: use Canvas underlined text instead.
 ---

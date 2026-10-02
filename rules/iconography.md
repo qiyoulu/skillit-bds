@@ -13,9 +13,10 @@
 - **Clearance:** Minimum internal padding of 2px (1 block) to maintain the heavy aesthetic.
 ## 3. Status Icons & Accessibility
 To comply with the brand's strict accessibility rules (never relying on color alone) and to mimic physical job-site signage, status icons are permanently locked to specific geometric silhouettes. The icon graphic is punched out of the solid shape:
-- **Success (Iron):** Solid **Circle** (Proceed / Safe)
-- **Warning (Iron):** Solid **Triangle** (Hazard / Yield)
-- **Error (Iron):** Solid **Octagon** (Critical / Stop)
+- **Success (Bottle Glass green, `--color-success`):** Solid **Circle** (Proceed / Safe)
+- **Warning (Hard Hat yellow, `--color-warning`):** Solid **Triangle** (Hazard / Yield)
+- **Error (Toolbox red, `--color-error`):** Solid **Octagon** (Critical / Stop)
+- **Info (Painter’s Tape blue, `--color-link`):** Supplied **Help circle** with an explicit message; square silhouette only when an approved asset is available.
 ## 4. Approved Core Inventory
 The following icons constitute the core structural subset; the complete current inventory is the SVG files in `assets/icons/`. Do not invent new metaphors for these actions.
 1. `menu.svg` (Sandwich/hamburger for mobile nav)
@@ -37,5 +38,5 @@ The following icons constitute the core structural subset; the complete current 
 Platform marks in `assets/icons/` (`facebook.svg`, `instagram.svg`, `linkedin.svg`, `x.svg`, and `youtube.svg`) are approved social marks, not core interface icons. Their external brand geometry is authoritative and is exempt from the Skillit 10×10 grid and no-bezier construction rules. They must still use `fill="currentColor"` and must not be altered.
 ## 4. Implementation Rules
 - **Coloring:** Icons inherit their color from the parent text element (`fill="currentColor"`), allowing them to automatically adapt to their UI context (Iron on Canvas, Iron on Traffic Cone, etc.).
-- **Status paint:** Set all noninteractive status icon hosts to Iron (`--color-foreground`), including success, warning, error, and info. Keep SVG `currentColor`, supplied geometry, and a text label; do not change assets. Interactive checkbox, radio, and chip selection indicators use Traffic Cone (`--color-primary`). Flag low contrast on existing colored feedback backgrounds rather than silently recoloring them.
+- **Status paint:** Explicit host classes set success to `--color-success`, warning to `--color-warning`, error to `--color-error`, and info to `--color-link`. Keep SVG `currentColor`, supplied geometry, and a text label; do not change assets. Neutral utility icons and general match indicators use Iron unless an explicit semantic outcome applies. Interactive checkbox, radio, and chip selection indicators use Traffic Cone (`--color-primary`); progress stays Iron. All toast panels are Plaster with Iron messages and close controls. Hard Hat on Plaster is below 3:1 for an essential warning glyph; retain the label, assess essentialness, and never claim a contrast pass (`rules/accessibility.md`).
 - **Inline SVGs:** To unlock the power of `currentColor`, icons should be inlined directly into the HTML (or handled via modern component frameworks) rather than loaded as static `<img>` tags.

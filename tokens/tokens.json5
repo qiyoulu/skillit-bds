@@ -7,10 +7,11 @@
   //
   // color usage scope (matches tokens/docs/color.md):
   //   accent/status colors mark text, functional buttons, selection/status indicators,
-  //   and data. Status icons and completed progress use Iron. Selection controls
+  //   and data. Semantic status icons use error/red, warning/yellow, success/green,
+  //   and info/blue. Neutral utility indicators and completed progress use Iron. Controls
   //   and focus use Traffic Cone. Charts may use Cone, Tape, and other approved
   //   palette colors when labels/legends and contrast support the data story.
-  //   Feedback fills are functional exceptions, never decorative layout surfaces.
+  //   Feedback uses Plaster panels and semantic icons, never decorative layout fills.
   //   structural borders are Iron; selection indicators have documented exceptions.
   //   focus outlines use Traffic Cone; verify adjacent contrast, especially on Canvas.
   //   one dominant Cone CTA per UI section; selection, focus, and chart marks may repeat.
@@ -53,25 +54,25 @@
       warning: {
         $value: '#FEB11C',
         $type: 'color',
-        $description: 'Hard Hat — warning message/feedback or approved chart role; status-icon paint is Iron. Pair warnings with shape + label.',
+        $description: 'Hard Hat — warning icons/feedback or approved chart role. Pair warning triangles with labels; verify light-surface contrast.',
         $extensions: { 'org.skillit.pantone': '1235 C' },
       },
       error: {
         $value: '#C8102E',
         $type: 'color',
-        $description: 'Toolbox — error text, destructive actions/feedback, or approved chart role; status-icon paint is Iron.',
+        $description: 'Toolbox — error icons/text, destructive actions/feedback, or approved chart role.',
         $extensions: { 'org.skillit.pantone': '186 C' },
       },
       success: {
         $value: '#33663D',
         $type: 'color',
-        $description: 'Bottle Glass — confirmation text/feedback or approved chart role; status icons and progress use Iron, selection uses Traffic Cone.',
+        $description: 'Bottle Glass — success icons/confirmation text or approved chart role; completed progress uses Iron, selection uses Traffic Cone.',
         $extensions: { 'org.skillit.pantone': '2427 C' },
       },
       link: {
         $value: '#007CA6',
         $type: 'color',
-        $description: "Painter's Tape — links/information and approved chart data; status-icon paint is Iron.",
+        $description: "Painter's Tape — info icons, links/information, and approved chart data.",
         $extensions: {
           'org.skillit.role': 'text-fill',
           'org.skillit.pantone': '3135 C',

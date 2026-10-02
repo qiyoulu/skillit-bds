@@ -171,7 +171,7 @@ For mutually exclusive choices (trade picker, region picker, language picker whe
 
 **Why filled circle and not checkmark:** A checkmark inside a circle reads as neither checkbox nor radio — it's a hybrid that confuses the semantic. Single-select uses filled circle to match the radio button mental model (pick one of N); multi-select uses checkmark to match the checkbox mental model (toggle on/off).
 
-**Why Traffic Cone:** Radio chips are interactive selection controls. Orange marks selection within the small circle while the pill stays Plaster; this functional indicator does not create another dominant CTA. Noninteractive status icons use Iron.
+**Why Traffic Cone:** Radio chips are interactive selection controls. Orange marks selection within the small circle while the pill stays Plaster; this functional indicator does not create another dominant CTA. Semantic outcome icons use success green, warning yellow, error red, or info blue; neutral utility icons and progress stay Iron.
 
 **ARIA:** `role="radio"` + `aria-checked="true|false"` within a named `radiogroup`. Use a native radio or implement roving tabindex and arrow-key movement/selection; Space selects the focused option. Only one chip can be selected at a time.
 
@@ -240,7 +240,7 @@ The standalone `check.svg` is a glyph, unlike the circular status `checkmark.svg
 
 **Why square and not circle:** Square is the established checkbox geometry. Using a circle here would create the same hybrid-confusion problem as putting a check in a circle for radio chips. Square says "checkbox" instantly.
 
-**Why Traffic Cone:** Checkbox chips are interactive selection controls, like radio chips and form checkboxes. Orange marks the persistent square; the inner check glyph and `aria-checked` also communicate selection. Noninteractive status icons use Iron.
+**Why Traffic Cone:** Checkbox chips are interactive selection controls, like radio chips and form checkboxes. Orange marks the persistent square; the inner check glyph and `aria-checked` also communicate selection. Semantic outcome icons use success green, warning yellow, error red, or info blue; neutral utility icons and progress stay Iron.
 
 **ARIA:** `role="checkbox"` + `aria-checked="true|false"`. Use a real button for multi-select groups where zero, one, or many chips can be selected. Native button activation supports Space and Enter; update `aria-checked` on every activation.
 

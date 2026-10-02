@@ -13,11 +13,11 @@ Toast is a **transient feedback message** — it confirms an action, reports an 
 
 ## Anatomy
 A toast is a horizontal row inside a static feedback panel with 16px corners. Its body is not an action:
-1. **Icon (16px)** — Iron (`--color-foreground`) on every toast type, independent of message foreground
+1. **Icon (16px)** — semantic success green, warning yellow, error red, or info blue, independent of message foreground
 2. **Message** — single line, Work Sans `--text-1x`, `--weight-medium`
-3. **Close button (16×16)** — inherits Canvas on success/error or Iron on warning/info, icon-only, 40×40 hit area
+3. **Close button (16×16)** — Iron on every type, icon-only, 40×40 hit area
 
-Success/error/warning fills are semantic feedback exceptions, not layout surfaces or actionable containers. Info stays Plaster with Iron text. The static panel uses 16px corners; optional close/link controls are actions. A toast with no action remains feedback; only its close button/link is actionable.
+Every toast uses a Plaster panel with Iron message text and close control. Only the status icon carries the semantic color; no matching colored panel fill is needed. The static panel uses 16px corners; optional close/link controls are actions. A toast with no action remains feedback; only its close button/link is actionable.
 
 ## Position
 - **Mobile (< 768px):** bottom-center, full-width with 16px side margins, stacked above the nav footer
@@ -30,14 +30,14 @@ Multiple toasts stack vertically — newest at the bottom (mobile) or top (deskt
 
 | Type | Fill | Text | Icon | Use |
 |---|---|---|---|---|
-| Success | `--color-success` (Bottle Glass) | Canvas | Iron circular checkmark | Action completed successfully |
-| Error | `--color-error` (Toolbox) | Canvas | Iron octagon | Action failed, requires attention |
-| Warning | `--color-warning` (Hard Hat) | Iron | Iron triangle | Consequence warning, not a failure |
-| Info | `--color-surface` (Plaster) | Iron | Iron help-circle | Neutral information, not a result |
+| Success | `--color-surface` (Plaster) | Iron | Bottle Glass circular checkmark (`--color-success`) | Action completed successfully |
+| Error | `--color-surface` (Plaster) | Iron | Toolbox octagon (`--color-error`) | Action failed, requires attention |
+| Warning | `--color-surface` (Plaster) | Iron | Hard Hat triangle (`--color-warning`) | Consequence warning, not a failure |
+| Info | `--color-surface` (Plaster) | Iron | Painter’s Tape help-circle (`--color-link`) | Informational message, not a result |
 
-**Icon color rationale:** Every noninteractive toast status icon is Iron, supplied by host CSS; the silhouette and message identify the state. Info uses the supplied help-circle glyph with explicit message text; no circle-i asset is supplied. Existing message colors, close-control colors, and semantic backgrounds are unchanged.
+**Icon color rationale:** Host CSS paints each supplied status silhouette with its corresponding semantic color. The Plaster panel prevents a semantic glyph disappearing into a matching fill; message text and close controls stay Iron. Info uses the supplied help-circle glyph with explicit message text; no circle-i asset is supplied.
 
-**Unresolved contrast:** Iron on Bottle Glass is 2.0300:1 and Iron on Toolbox is 2.3309:1, both below the 3:1 non-text target. Iron on Hard Hat is 7.5227:1 and on Plaster is 13.7135:1. Success/error toast status icons therefore have a remaining contrast failure; shape and label do not make that a contrast pass. Background or palette changes require a separate decision. Orange focus against Bottle Glass is 2.2385:1, against Toolbox 1.9496:1, and against Hard Hat 1.6554:1; all fail 3:1 where the ring adjoins the colored fill. Verify the actual adjacent surface and do not silently restore Canvas or Iron focus as a fallback.
+**Known contrast limitation:** Hard Hat on Plaster is 1.8229:1, below 3:1. An essential warning glyph therefore fails WCAG 1.4.11; if the visible message fully conveys the warning independently, the redundant glyph is not required for understanding, but its ratio still is not a contrast pass. `aria-hidden` alone does not establish redundancy. Retain the triangle and explicit warning message, do not invent a darker yellow, and assess the actual usage. Iron body text on Plaster is 13.7135:1. Orange focus on Plaster is 3.0177:1; check the actual adjacent surface, since Orange on Canvas remains below 3:1.
 
 ## Timing
 - **Auto-dismiss:** 5 seconds after appearing
@@ -63,19 +63,20 @@ CSS URLs assume a component stylesheet beside `tokens/generated/tokens.css`; see
   font-size: var(--text-1x);
   font-weight: var(--weight-medium);
   min-height: var(--touch-target-min); /* 40px */
+  background-color: var(--color-surface); /* Plaster for every type */
+  color: var(--color-foreground); /* Iron body text */
   animation: toast-in var(--duration-fast) var(--ease-out);
 }
 
-.toast--success { background-color: var(--color-success); color: var(--color-background); }
-.toast--error   { background-color: var(--color-error);   color: var(--color-background); }
-.toast--warning { background-color: var(--color-warning); color: var(--color-foreground); }
-.toast--info    { background-color: var(--color-surface); color: var(--color-foreground); }
+.toast--success .toast__icon { color: var(--color-success); }
+.toast--error .toast__icon { color: var(--color-error); }
+.toast--warning .toast__icon { color: var(--color-warning); }
+.toast--info .toast__icon { color: var(--color-link); }
 
 .toast__icon {
   width: 16px;
   height: 16px;
   flex: 0 0 16px;
-  color: var(--color-foreground); /* Iron status paint, independent of message */
   background-color: currentColor;
   -webkit-mask: var(--toast-icon) center / contain no-repeat;
   mask: var(--toast-icon) center / contain no-repeat;
@@ -98,7 +99,7 @@ CSS URLs assume a component stylesheet beside `tokens/generated/tokens.css`; see
   background: transparent;
   border: none;
   cursor: pointer;
-  color: currentColor;
+  color: var(--color-foreground); /* Iron close control on every type */
   border-radius: var(--radius-pill);
 }
 .toast__close:focus-visible, .toast a:focus-visible {
@@ -180,6 +181,20 @@ CSS URLs assume a component stylesheet beside `tokens/generated/tokens.css`; see
   <span class="toast__message">Connection failed. Please try again.</span>
   <button class="toast__close" aria-label="Dismiss notification">×</button>
 </div>
+
+<!-- Warning toast: the message explicitly conveys the warning -->
+<div class="toast toast--warning" role="status">
+  <span class="toast__icon" aria-hidden="true"></span>
+  <span class="toast__message">Your session expires in 5 minutes</span>
+  <button class="toast__close" aria-label="Dismiss notification">×</button>
+</div>
+
+<!-- Info toast -->
+<div class="toast toast--info" role="status">
+  <span class="toast__icon" aria-hidden="true"></span>
+  <span class="toast__message">New profile tools are available</span>
+  <button class="toast__close" aria-label="Dismiss notification">×</button>
+</div>
 ```
 
 ## Icon assets
@@ -188,4 +203,4 @@ CSS URLs assume a component stylesheet beside `tokens/generated/tokens.css`; see
 - `assets/icons/warning.svg` — warning triangle
 - `assets/icons/help.svg` — informational help circle
 
-All assets: 24×24 viewBox, rendered at 16×16px. The mask is painted by the icon host’s explicit Iron color, not an external SVG’s inherited `currentColor`.
+All assets: 24×24 viewBox, rendered at 16×16px. The mask is painted by the icon host’s explicit semantic color, not an external SVG’s inherited `currentColor`.
