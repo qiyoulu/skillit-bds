@@ -23,7 +23,9 @@ def read_text(path):
     except (OSError, UnicodeError) as error:
         raise SystemExit(f'FAIL: {path}: {error}') from error
 
-human = read_text(root / 'HUMAN-INSTRUCTIONS.md')
+human_guide = read_text(root / 'HUMAN-INSTRUCTIONS.md')
+# Detailed numerical/implementation rules remain covered after the audience split.
+human = read_text(root / 'docs/design-reference.md')
 llm = read_text(root / 'LLM-INSTRUCTIONS.md')
 try:
     source = json5.loads(read_text(root / 'tokens/tokens.json5'))['base']
@@ -37,8 +39,16 @@ def check(condition, message):
         raise SystemExit('FAIL: ' + message)
     checks += 1
 
-check('0.66' in human and '0.66' in llm, 'Both instruction documents must use measured Work Sans cap ratio 0.66')
-for filename in ['HUMAN-INSTRUCTIONS.md', 'LLM-INSTRUCTIONS.md', 'tokens/docs/typography.md', 'rules/layout.md']:
+# The team reading path must not require implementation knowledge.
+check(not re.search(r'```(?:css|html|javascript|js|bash|ruby|python)', human_guide, re.I), 'Human guide must not contain implementation code blocks')
+check(not re.search(r'var\(--|--(?:color|text|space|radius)-', human_guide), 'Human guide must not contain CSS token syntax')
+check('0.66' not in human_guide and '0.72' not in human_guide, 'Measured font ratios belong in the detailed reference, not the team guide')
+for term in ['Work Sans', 'JetBrains Mono', 'Canvas', 'Iron', 'Traffic Cone']:
+    check(term in human_guide, 'Human guide must retain the approved brand choice: ' + term)
+check('16px' in human_guide and 'email' in human_guide.lower(), 'Human guide must retain the readable email size rule')
+
+check('0.66' in human and '0.66' in llm, 'The detailed design reference and AI instructions must use measured Work Sans cap ratio 0.66')
+for filename in ['docs/design-reference.md', 'LLM-INSTRUCTIONS.md', 'tokens/docs/typography.md', 'rules/layout.md']:
     text = read_text(root / filename)
     check('0.72' not in text, filename + ': stale exact cap-height ratio')
     check(not re.search(r'(?:matches Work Sans x-height|x-height equals Work Sans|Both typefaces match at the same point size)', text, re.I), filename + ': equal sizing is policy, not identical metrics')
@@ -72,14 +82,14 @@ def heading_slugs(text):
         slugs.add(slug)
     return slugs
 
-for filename in ['HUMAN-INSTRUCTIONS.md', 'LLM-INSTRUCTIONS.md']:
+for filename in ['HUMAN-INSTRUCTIONS.md', 'LLM-INSTRUCTIONS.md', 'README.md', 'docs/design-reference.md', 'docs/engineering.md']:
     text = read_text(root / filename)
     for target in re.findall(r'\[[^]]*\]\(([^)]*)\)', text):
         link = urlsplit(target)
         if link.scheme or link.netloc:
             continue
         path = unquote(link.path)
-        resource = root / path if path else root / filename
+        resource = (root / filename).parent / path if path else root / filename
         check(resource.exists(), filename + ': missing resource ' + path)
         if link.fragment and resource.suffix.lower() == '.md':
             check(unquote(link.fragment) in heading_slugs(read_text(resource)), filename + ': missing heading ' + target)

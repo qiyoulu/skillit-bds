@@ -401,7 +401,7 @@ function lintInternal() {
 
   // Every fenced CSS example gets syntax/reference/cycle checks, not just color.md.
   // Declared canonical values must agree, but a doc need not repeat the entire scale.
-  for (const directory of ['tokens/docs', 'rules', 'components']) {
+  for (const directory of ['tokens/docs', 'rules', 'components', 'docs']) {
     const full = resolve(repo, directory);
     if (!existsSync(full)) continue;
     for (const path of expandPath(full).filter(path => path.endsWith('.md'))) {

@@ -117,7 +117,7 @@ with sync_playwright() as p:
     page.set_content('<style>' + block.group(1) + '</style>', wait_until='domcontentloaded')
     checks += check_color_tokens(page, expected, 'tokens/docs/color.md copy-paste block')
     cap_checks = {}
-    for filename in ['HUMAN-INSTRUCTIONS.md', 'LLM-INSTRUCTIONS.md']:
+    for filename in ['docs/design-reference.md', 'LLM-INSTRUCTIONS.md']:
         document = (ROOT / filename).read_text()
         recipes = re.findall(r'`([^`\n]*margin-top:\s*calc[^`\n]*)`', document)
         assert recipes, filename + ': missing usable optical-alignment recipe'

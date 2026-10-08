@@ -6,6 +6,8 @@
 **Release:** v1.2 source release; no Git tag or GitHub Release created. See [release notes](./releases/v1.2.md).
 
 **Role:** Expert frontend engineer & brand designer.
+
+**Audience split:** `HUMAN-INSTRUCTIONS.md` is the plain-language team guide. Read [the detailed design reference](./docs/design-reference.md) for full settings and examples, and [the engineering guide](./docs/engineering.md) for setup and verification. Simplified wording does not change the approved rules or canonical values.
 **Aesthetic:** Rugged, worker-first, consistent precision. “Materials on a jobsite.” NOT SaaS generic.
 
 **This document is the authoritative constraint set for AI agents generating any Skillit output — code, design, copy, or data visualization. It governs behavioral rules when reference documents conflict. `tokens/tokens.json5` governs canonical token values; never override those values from a prose example.**
@@ -73,7 +75,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Action priority, not a color quota.** Use orange for primary actions, selection controls, and focus. Repetition is allowed when it serves the interaction. Keep one dominant CTA per section; supporting controls should not compete with it. Orange in charts follows its assigned data role. Never use it as decoration. See [checkboxes](./components/checkboxes.md). Supply/demand data encoding follows §7.
 - **Focus outline:** Default 2px solid Traffic Cone with 2px offset. Cone on Canvas is 2.6958:1, below the 3:1 focus/UI floor; Cone on Plaster is 3.0177:1 and meets that floor. Keep orange as requested; do not promise AA on Canvas or quietly substitute Iron. Verify actual adjacent surfaces, clipping, keyboard visibility, and rendered native controls; preserve native focus in forced-colors mode. Flag unresolved surface contrast for review; the display-text exception does not waive focus contrast.
 - **Contrast exceptions:** Painter’s Tape on Canvas is 4.2312:1 and remains an AA normal-text exception pending palette review; use Iron where AA is required. The documented Traffic Cone display/hero accent on Canvas (24px+) is 2.6958:1, an existing brand exception, never a WCAG pass. Canvas text on Traffic Cone is prohibited; Iron text is 4.5443:1.
-- **Humans vs. machine:** Work Sans = human content; JetBrains Mono = machine data. Keep the intentional 1:1 tier-size pairing, not an equal-x-height claim. Measured current Google Fonts ratios: Work Sans cap/x = 0.66/0.50, JetBrains Mono = 0.73/0.55 (x-heights 8px/8.8px at 16px). Mono reads slightly taller; no type-scale change. [Font sources and remeasurement policy](./HUMAN-INSTRUCTIONS.md#monospace--metadata).
+- **Humans vs. machine:** Work Sans = human content; JetBrains Mono = machine data. Keep the intentional 1:1 tier-size pairing, not an equal-x-height claim. Measured current Google Fonts ratios: Work Sans cap/x = 0.66/0.50, JetBrains Mono = 0.73/0.55 (x-heights 8px/8.8px at 16px). Mono reads slightly taller; no type-scale change. [Font sources and remeasurement policy](./docs/design-reference.md#monospace--metadata).
 
 **Buttons (CTAs):**
 - Left-aligned, never centered. `align="left"` on wrapping `<td>` and inner `<table>`. Industry default is center; Skillit voice is left.
