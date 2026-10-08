@@ -1,5 +1,5 @@
 # Accessibility Rules — Skillit Kit BDS
-**Last updated:** 2026-08-17
+**Last updated:** 2026-10-06
 ---
 ## Non-negotiable
 Every output — website, app, social asset, document, generated content — should meet these requirements. Accessibility is baked in, not bolted on. The brand was designed around these constraints.
@@ -37,19 +37,19 @@ Large-text thresholds are points: 18pt regular = 24 CSS px; 14pt bold ≈ 18.67 
 
 ## Color blindness rules
 Approximately 8% of men and 0.5% of women have red-green color blindness (deuteranopia/protanopia). These rules are non-negotiable:
-1. **Never use color as the only signal.** Every status state (success, error, warning) should pair color with a shape and a text label. Color alone is never sufficient.
-2. **Never pair red and green as opposing states.** Toolbox (error) and Bottle Glass (success) should never appear as direct visual opposites without shape differentiation.
+1. **Never use color as the only signal.** Every status state should use a familiar icon, semantic color, and clear text label. Never rely on shape or color alone.
+2. **Never pair red and green as opposing states.** Toolbox (error) and Bottle Glass (success) must have distinct recognizable glyphs and explicit labels, not just different colors or outer shapes.
 3. **Orange + Blue is the safest contrast pair.** Traffic Cone (`--color-primary`) and Painter's Tape (`--color-link`) are perceptually distinct for all common forms of color blindness.
-4. **Hard Hat (yellow) + Traffic Cone (orange) require shape or size differentiation** when both appear in the same context. Never use them as adjacent status indicators without a distinct shape difference.
+4. **Distinguish Hard Hat warnings from Traffic Cone actions through clear labels and familiar icons.** Do not depend on hue, outer shape, or size alone when they appear together.
 ---
-## Status state rules (shape coding)
-Semantic status icons use the corresponding green, yellow, red, or blue host paint, plus their supplied shape and a text label. Noninteractive does not mean neutral: utility icons and completed progress remain Iron, while selection indicators and focus remain Orange. Preserve ordinary message text and the existing validation text policy; every toast uses a static 16px Plaster panel with Iron body text and close control.
-| State   | Color              | Shape                 | Label required                            |
+## Status communication
+Semantic status icons use the corresponding green, yellow, red, or blue host paint, with familiar icons and clear labels. Outer shape is not an information-type code. Noninteractive does not mean neutral: utility icons and completed progress remain Iron, while selection indicators and focus remain Orange. Preserve ordinary message text and the existing validation text policy; every toast uses a static 16px Plaster panel with Iron body text and close control.
+| State   | Color              | Familiar icon example | Label required                            |
 | ------- | ------------------ | --------------------- | ----------------------------------------- |
-| Success | Bottle Glass (`--color-success`)   | Circle         | “Verified,” “Complete,” “Confirmed”       |
-| Warning | Hard Hat (`--color-warning`) | Triangle    | “Incomplete,” “Action needed,” “Expiring” |
-| Error   | Toolbox (`--color-error`)  | Octagon            | “Error,” “Failed,” “Expired”              |
-| Info    | Painter’s Tape (`--color-link`) | Supplied help circle + message; square silhouette only when an approved asset is available | “Info,” “Note,” “Tip”                     |
+| Success | Bottle Glass (`--color-success`)   | Check | “Verified,” “Complete,” “Confirmed”       |
+| Warning | Hard Hat (`--color-warning`) | Exclamation | “Incomplete,” “Action needed,” “Expiring” |
+| Error   | Toolbox (`--color-error`)  | Cross | “Error,” “Failed,” “Expired”              |
+| Info    | Painter’s Tape (`--color-link`) | Circled “i” when an approved asset is available; “?” denotes help, not info | “Info,” “Note,” “Tip”                     |
 ---
 **Warning glyph limitation:** Hard Hat (`#FEB11C`) on Plaster (`#FFFFFF`) is 1.8229:1, below the 3:1 graphical contrast target; on Canvas it is 1.6285:1. If the warning glyph is essential to understanding the state, this fails WCAG 1.4.11. If the visible label or message fully conveys the same information without the glyph, the redundant graphic is not required for understanding under that criterion. A label does not improve the ratio, and `aria-hidden="true"` alone does not establish nonessentialness. Keep the supplied triangle and explicit warning label, assess actual use, and do not describe this paint as AA-compliant or invent a darker yellow. Warning message text stays Iron; yellow body text on light surfaces remains prohibited.
 

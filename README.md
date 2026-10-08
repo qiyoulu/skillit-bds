@@ -1,6 +1,9 @@
 # Skillit Kit Brand Design System (BDS)
+**Last updated:** 2026-10-08
 
-**Version:** v1.1
+**Version:** v1.2
+
+[Release notes: all changes since the v1.1 bump](./releases/v1.2.md).
 
 **Upstream:** `qiyoulu/skillit-bds`
 
@@ -88,7 +91,13 @@ Review the output against the relevant rules; supplying instructions does not gu
 - **Voice:** Direct, unhedged, no tech jargon.
 - **Layout:** 16px corners on cards, pill buttons, no shadows.
 - **Accessibility:** Minimum contrast ratios, 40px touch targets. Default focus is 2px Traffic Cone with 2px offset; Cone/Canvas is 2.6958:1 (below 3:1), Cone/Plaster is 3.0177:1 (meets the UI floor). Keep orange, document the Canvas exception without an AA claim or quiet Iron substitution, preserve forced-colors native focus, and check actual rendered surfaces and controls.
-- **Icons:** SVG icons in `assets/icons/` use `currentColor` fills (tintable via host CSS color). Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Noninteractive does not mean neutral: only nonsemantic utility icons and completed progress use Iron. Status-glyph runtime props select meaning and host CSS token color, never hardcoded asset paint; retain supplied silhouettes (success circle, warning triangle, error octagon, info help glyph) with labels. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast.
+- **Icons:** Single-color SVG icons in `assets/icons/` use `currentColor` after normalization; approved multicolor/status exports retain contrasting source paint layers. Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Noninteractive does not mean neutral: only nonsemantic utility icons and completed progress use Iron. Status-glyph runtime props select meaning and canonical host/layer token styling; approved status source paint and opaque white glyphs remain intact. External images do not inherit host color; use familiar icons, semantic colors, and clear labels, never shape or color alone. Supplied geometry supports conventions; it is not a code users must learn. A help glyph denotes help, not information by itself. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast.
+
+The current imported icon export contains **90 SVGs**, including 15 additions beyond the earlier comparison; use exact paths and IDs from the [complete inventory](./components/icons.md#complete-imported-inventory). Semantic status props stay independent of asset names. Normalize eligible single-color fresh exports for host tinting; preserve opaque contrasting layers in multicolor media/control artwork. In particular, `play.svg` is a standalone triangle, not the older circular knockout. This BDS migration does not deploy copied SVGs or paths in Rails/workspace consumers.
+
+For icon adoption, use the [naming and migration guide](./components/icons.md#naming-and-migration). `share.svg` remains the three-node symbol; use `arrow-up-on-square.svg` for the upward-arrow/square glyph. The guide records previous IDs and explains the reused `phone`/`user-circle` names; matching Heroicons names alone does not redirect the Rails helper.
+
+The [legacy compatibility archive](./assets/icons/legacy/README.md) preserves **75 frozen prior-ID SVGs** separately from the **90 canonical icons**. Consumers must explicitly point old-version paths or resolvers to `legacy/`; the archive does not automatically restore old root paths. Do not normalize archived files. The validator checks the archive manifest and byte hashes independently of current paint policy.
 
 ### Common Mistakes to Watch For
 
@@ -169,6 +178,8 @@ skillit-bds/
     ├── test-components.py     # Rendered component and icon checks
     ├── test-instructions.py   # Instruction and approved-export checks
     ├── export-logo-pngs.py    # Reproducible 512px-height logo exports
+    ├── normalize_icon_colors.rb # Normalize utility SVG paints after export
+    ├── test_normalize_icon_colors.rb # Ruby normalizer regression tests
     └── smart_quotes.rb
 ```
 
@@ -184,12 +195,18 @@ node --test scripts/*.test.mjs
 uv run --with playwright --with json5 python scripts/test-browser.py
 uv run --with tinycss2 --with playwright python scripts/test-components.py
 uv run --with json5 --with pillow python scripts/test-instructions.py
-uv run --with playwright python scripts/export-logo-pngs.py --check
+uv run --with playwright --with pillow python scripts/export-logo-pngs.py --check
+ruby scripts/test_normalize_icon_colors.rb
+ruby scripts/normalize_icon_colors.rb --check
 ```
+
+### After exporting icons
+
+Run `ruby scripts/normalize_icon_colors.rb --dry-run` to preview, then `ruby scripts/normalize_icon_colors.rb` to apply. Add `--backup-dir /path/to/backup` to retain the original changed exports. The script preserves XML/path geometry and only replaces a single utility paint with `currentColor`. Semantic colors and multi-color artwork stay unchanged; gradients, masks, embedded styles, and variable-based paints are skipped for manual review. `--check` exits 1 if a conversion is needed and 2 for invalid input. It runs without Rails or nonstandard gems on Ruby 2.6+ with REXML available.
 
 The Node checks have no package dependencies. Browser checks use an installed Chromium browser; set `BDS_BROWSER_BIN` to its executable path if it is not detected, or install Playwright’s Chromium browser. `uv run` supplies the Python test dependencies without changing the repository environment.
 
-The validator checks current token and documentation consistency, not historical fixed values. Regression fixtures exercise both accepted and rejected input. Browser checks verify computed token values, hover expressions, optical alignment, native control states, modal positioning, header alignment, progress, quotes, and icon masks. Instruction checks cover links and approved export colors/sizes. Regenerate logo PNGs from the approved SVGs with `uv run --with playwright python scripts/export-logo-pngs.py`; `--check` verifies without writing and compares against the installed Chromium build’s rendering. A clean static check does not establish accessibility conformance for a deployed page.
+The validator checks current token and documentation consistency, not historical fixed values. Regression fixtures exercise both accepted and rejected input. Browser checks verify computed token values, hover expressions, optical alignment, native control states, modal positioning, header alignment, progress, quotes, and icon masks. Instruction checks cover links and approved export colors/sizes. Regenerate logo PNGs from the approved SVGs with `uv run --with playwright --with pillow python scripts/export-logo-pngs.py`; `--check` verifies without writing and compares against the installed Chromium build’s rendering. A clean static check does not establish accessibility conformance for a deployed page.
 
 ---
 

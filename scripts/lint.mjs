@@ -17,6 +17,7 @@
 import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
 import { resolve, relative, extname, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { checkLegacyIcons } from './legacy-icons.mjs';
 import { parseCss, cssFences, htmlStyles, customValues, decodeIdentifier, checkReferences, compareCanonical, checkGeometry, checkContrast, checkSvgPaint, jsStrings } from './css-checks.mjs';
 
 // =================================================================
@@ -43,6 +44,24 @@ for (let i = 0; i < argv.length; i++) {
   else pathArgs.push(a);
 }
 const internalMode = pathArgs.length === 0;
+
+// Approved fresh exports retain their semantic or contrasting layer paints.
+// Applies only to these exact repository paths, never to similarly named external SVGs.
+const approvedIconPaints = new Map(Object.entries({
+  'checkbox-checked.svg': ['#ef6f1a', '#233136'],
+  'check-circle.svg': ['#33663d', '#ffffff'],
+  'x-octagon.svg': ['#c8102e', '#ffffff'],
+  'information-square.svg': ['#007ca6', '#ffffff'],
+  'information-circle.svg': ['#007ca6', '#ffffff'],
+  'puzzle-piece.svg': ['#33663d'],
+  'pause-circle.svg': ['#233136', '#ffffff'],
+  'play-circle.svg': ['#233136', '#ffffff'],
+  'radio-checked.svg': ['#ef6f1a', '#ffffff'],
+  'switch-off.svg': ['#ffffff', '#233136'],
+  'switch-on.svg': ['#ffffff', '#33663d'],
+  'exclamation-triangle.svg': ['#feb11c', '#ffffff'],
+}).map(([name, paints]) => [resolve(repo, 'assets/icons', name), new Set(paints)]));
+const approvedPaintsFor = path => approvedIconPaints.get(resolve(path)) || new Set();
 
 // =================================================================
 // json5 — zero-dep recursive-descent parser
@@ -376,7 +395,7 @@ function lintInternal() {
   const iconDirectory = resolve(repo, 'assets/icons');
   if (existsSync(iconDirectory)) {
     for (const path of expandPath(iconDirectory).filter(path => path.endsWith('.svg'))) {
-      checkSvgPaint(readFileSync(path, 'utf8'), rel(path), report);
+      if (!frozenLegacyPaths.has(resolve(path))) checkSvgPaint(readFileSync(path, 'utf8'), rel(path), report, approvedPaintsFor(path));
     }
   }
 
@@ -558,7 +577,7 @@ function lintExternalFile(pathStr) {
   }
 
   // SVG paint must inherit: on-palette literals still break theming.
-  if (ext === '.svg') checkSvgPaint(text, rel(pathStr), report);
+  if (ext === '.svg' && !frozenLegacyPaths.has(resolve(pathStr))) checkSvgPaint(text, rel(pathStr), report, approvedPaintsFor(pathStr));
   else if (isHtmlish) {
     for (const m of text.matchAll(/<svg\b[\s\S]*?<\/svg>/gi)) {
       const offset = text.slice(0, m.index).split('\n').length - 1;
@@ -632,6 +651,8 @@ function expandPath(p) {
 // =================================================================
 // MAIN
 // =================================================================
+const frozenLegacyPaths = checkLegacyIcons(repo, report);
+
 if (internalMode) {
   lintInternal();
 } else {

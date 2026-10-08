@@ -1,15 +1,18 @@
 # Skillit Kit Brand Design System (BDS)
+**Last updated:** 2026-10-08
 
-**Last synced with LLM-INSTRUCTIONS.md:** 2026-10-01
+**Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 
-## **Version 1.1 · October 2026**
+## **Version 1.2 · October 2026**
+
+**Release status:** v1.2 source release; no Git tag or GitHub Release created. See the [v1.2 release notes](./releases/v1.2.md) for the complete change set since v1.1.
 
 > **AI agents: read [`LLM-INSTRUCTIONS.md`](./LLM-INSTRUCTIONS.md) first.** That file is the authoritative constraint set for machine-generated output — code, design, copy, data viz. Where behavioral rules conflict, `LLM-INSTRUCTIONS.md` wins; `tokens/tokens.json5` governs token values. This document is the human-readable rationale and full guideline set; the LLM file is the enforcement layer.
 
 ## Table of Contents
 
 - [Skillit Kit Brand Design System (BDS)](#skillit-kit-brand-design-system-bds)
-  - [**Version 1.1 · October 2026**](#version-11--october-2026)
+  - [**Version 1.2 · October 2026**](#version-12--october-2026)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [At a Glance](#at-a-glance)
@@ -100,10 +103,10 @@ Designers, marketers, writers, engineers, and anyone who has ever asked “does 
 **The Vibe:** Documentary, not corporate. The smartest person on the job site.
 **The Typography:** Work Sans for human text; JetBrains Mono for machine data. Sentence case for authored brand copy; preserve acronyms, proper names, user input, and direct quotes. No decorative all-caps. Flush-left alignment. Dramatic leaps in scale.
 **The Layout:** Strict functionalism. Whitespace is structural mass. Static containers use 16px corners; button-like actions use pills; editable fields and checkbox boxes use 0px. Circular indicators are geometry exceptions. Canvas (off-white) background, Iron (dark navy) text. Only approved neutral boot-tread texture in non-content header/footer zones; never beneath UI text.
-**The Accent:** Traffic Cone (orange). Use it for one dominant CTA or focal highlight per layout section, not every action. Repeated checkbox, radio, and selection-chip indicator paint and focus rings are explicit functional exceptions. Never for decoration.
+**The Accent:** Traffic Cone (orange). Use orange for primary actions, selection controls, and focus. Repetition is allowed when it serves the interaction. Keep one dominant CTA per section; supporting controls should not compete with it. Orange in charts follows its assigned data role. Never use it as decoration.
 **The Photos:** Real workers doing real work. Shot at eye level. No color grading or filters.
 **The Copy:** Direct, unhedged, data-backed. Don’t say revolutionize or disrupt.
-**The Assets:** UI icons use `currentColor`; use approved logo and graphic assets without altering their paint. Icons should be inlined in code (or used as components) to inherit dynamic CSS coloring.
+**The Assets:** Single-color utility icons use `currentColor`; the 12 approved semantic/multicolor exports preserve their source paint and opaque contrasting layers. Use approved logo and graphic assets without altering their paint. Inline utility icons for dynamic host tinting; inline multicolor components need independent layer styling. The 75 frozen legacy exports are archival content, not part of the current 90-icon set.
 **The Rule:** Technology should make humans more essential, not more expendable. Start from the worker’s perspective.
 
 ---
@@ -151,11 +154,11 @@ Coated and uncoated are the same ink on different paper — the number is shared
 
 ### Color Do / Don’t
 
-- **Do** use Traffic Cone for one dominant CTA or focal highlight per section; retain repeated checkbox, radio, selection-chip indicators and focus rings as functional exceptions.
+- **Do** use Traffic Cone for primary actions, selection controls, and focus. Functional repetition is allowed; preserve one dominant CTA per section, not one orange element.
 - **Don’t** repeat Traffic Cone decoratively across borders, icons, and dividers.
 - **Do** use Iron on Canvas for all body text.
 - **Don’t** use Traffic Cone text on Canvas backgrounds at body size — it fails contrast.
-- **Do** use meaning-scoped status icon colors: error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Pair status with a specific shape (Circle for Success, Triangle for Warning, Octagon for Error) and a label; neutral utility icons and completed progress use Iron.
+- **Do** use meaning-scoped status icon colors: error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Use familiar icons, semantic colors, and clear labels; never rely on shape or color alone. Shapes support familiar conventions, not a code for information types; neutral utility icons and completed progress use Iron.
 - **Don’t** rely on color alone to communicate error, warning, or success.
 - **Don’t** use gradients — all color transitions are hard edges.
 - **Don’t** use Hard Hat, Toolbox, Bottle Glass, or Painter’s Tape as layout backgrounds or decorative elements.
@@ -238,25 +241,30 @@ All icons are drawn on a 24×24px canvas using a strict 10×10 sub-grid where on
 
 Style is solid fill only. No strokes, no outlines, no gradients, no drop shadows. Icon geometry follows [the iconography rules](./rules/iconography.md); 16px corners apply to static containers, not every internal glyph shape. Tintable UI icons inherit their color via `fill="currentColor"`. Approved fixed logo/graphic SVGs and explicit source/export workflows may retain literal paint; do not silently recolor fixed artwork.
 
-Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Noninteractive does not mean neutral: only nonsemantic utility icons and completed progress use Iron. Interactive checkbox, radio, and selection-chip indicators use Traffic Cone, not success green: classify the underlying control by its action, not the indicator’s state. Status never relies on color alone. Locked silhouettes: Success = Circle, Warning = Triangle, Error = Octagon; info uses the supplied help glyph and an explicit label. Status-glyph runtime props select meaning and host CSS token color; SVGs inherit `currentColor`, with no asset recoloring. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast.
+Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Noninteractive does not mean neutral: only nonsemantic utility icons and completed progress use Iron. Interactive checkbox, radio, and selection-chip indicators use Traffic Cone, not success green: classify the underlying control by its action, not the indicator’s state. Use familiar icons, semantic colors, and clear labels to communicate status. Never rely on shape or color alone. Success checks, warning exclamations, and error crosses support familiar conventions; outer shape is not a separate information-type code. Info needs a clear label; a help glyph denotes help, not information by itself. Status-glyph runtime props select meaning and canonical host/layer token colors. Current approved status exports retain semantic ground paint and opaque white glyphs; preserve them as full images or inline components. External images cannot inherit host color, and a single alpha mask flattens both layers. Runtime overrides require inline per-layer token styling, not asset recoloring. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast.
+
+**Icon naming:** Name the visible form, not the feedback state. Use Heroicons vocabulary for equivalent glyphs without replacing Skillit artwork. `share.svg` is the three-node symbol; `arrow-up-on-square.svg` is the upward-arrow/square glyph. Follow the [naming and migration guide](./components/icons.md#naming-and-migration); previous names are history, not shipped aliases. Update consumer paths and resolvers together, taking care with the reused `phone` and `user-circle` IDs.
+
+**Legacy compatibility:** The [frozen legacy archive](./assets/icons/legacy/README.md) preserves 75 prior-ID SVGs outside the 90-icon canonical set. Existing consumers must explicitly select its folder or copied legacy resolver; old root paths are not automatically restored. Do not apply new geometry or paint rules to archived bytes. Migrate to the canonical IDs using the documented map.
 
 **Delivered core assets** in [`assets/icons/`](./assets/icons/):
 
-- Status success: `checkmark.svg`; selection glyph: `check.svg`; error: `error.svg`; warning: `warning.svg`
-- Search: `search.svg`; arrows: `arrow-up.svg`, `arrow-right.svg`, `arrow-down.svg`, `arrow-left.svg`
-- Location: `location.svg`; clock: `clock.svg`; user: `user.svg`; external link: `external-link.svg`; menu: `menu.svg`
-- Close: `close.svg`; plus is available by rotating `close.svg` 45° as specified in [iconography](./rules/iconography.md); no dedicated `plus.svg` is supplied
+- Status success: `check-circle.svg`; selection glyph: `check.svg`; error: `x-octagon.svg`; warning: `exclamation-triangle.svg`
+- Search: `magnifying-glass.svg`; arrows: `arrow-up.svg`, `arrow-right.svg`, `arrow-down.svg`, `arrow-left.svg`
+- Location: `map-pin.svg`; clock: `clock.svg`; user: `user.svg`; external link: `arrow-top-right-on-square.svg`; menu: `bars-3.svg`
+- Close: `x-mark.svg`, `x-circle.svg`; plus: `plus.svg`, `plus-circle.svg`
+- Info: `information-circle.svg`, `information-square.svg`; help: `question-mark-circle.svg`
 
 **Delivered trade assets:**
 
-- Carpenter: `carpenter.svg`
-- Electrician: `electrician.svg`
-- Heavy equipment operator: `heavy-eq.svg`
-- Pipefitter: `pipefitter.svg`
-- Concrete worker: `concrete-worker.svg`
-- Generic trade and worker: `trade.svg`, `worker.svg`
+- Carpenter: `saw.svg`
+- Electrician: `bolt.svg`
+- Heavy equipment operator: `excavator.svg`
+- Pipefitter: `pipe.svg`
+- Concrete worker: `concrete.svg`
+- Generic trade and worker: `wrench.svg`, `user-hat.svg`
 
-**Planned metaphors; no dedicated SVG delivered:** welder, certifications, safety credentials, per diem, and travel readiness. Do not imply these files exist or synthesize replacements without approval. Other delivered utilities and platform marks are listed in the [asset directory](./assets/icons/).
+**Planned metaphors; no dedicated SVG delivered:** welder, certifications, safety credentials, per diem, and travel readiness. Do not imply these files exist or synthesize replacements without approval. The current imported export contains 90 SVGs, including 15 additions beyond the earlier 75-asset comparison. See the [complete inventory and rendering contracts](./components/icons.md#complete-imported-inventory). Use exact user-exported names, including `saw`, `concrete`, `pipe`, `user-hat`, and `user-round`; filenames are independent of semantic component status labels. New `phone.svg` is a handset, distinct from `device-phone-mobile.svg`; new `user-circle.svg` is distinct from `user-round.svg`; `arrow-up-on-square.svg` is supplied separately from `share.svg`. Coordinate consumer path and asset updates; this BDS migration does not deploy Rails/workspace changes.
 
 ---
 
@@ -385,6 +393,9 @@ A **widow** is a single word left dangling on its own line at the end of a parag
 
 ### Typography Do / Don’t
 
+**Email typography:** Use Text-1x (16px / 1rem), Work Sans weight 450, line-height 1.4 as the default and minimum for readable email text—including signatures, footer contacts, addresses, copyright, legal links, captions, and source references. Use 600 for emphasis. Do not apply the general 12px Text-0.75x metadata exception to email. Larger canonical heading/display tiers remain available for marketing emails. Where variable weight 450 is unsupported, use the nearest supported regular weight and verify rendering. Allow contact rows to wrap on narrow screens; never shrink type or force horizontal overflow to keep them on one line.
+
+
 - **Do** use sentence case for authored brand copy; retain documented source-capitalization exceptions.
 - **Don’t** use decorative title case or all-caps in authored UI or layouts; preserve the fixed wordmark, acronyms, proper nouns, user-entered data, and direct-quote capitalization.
 - **Do** let size, weight, and spacing create hierarchy.
@@ -411,7 +422,7 @@ A **widow** is a single word left dangling on its own line at the end of a parag
 
 The interface relies on stark, physical separation rather than artificial lighting effects.
 
-- **No drop shadows.** Banned universally.
+- **No layout lines or drop shadows.** Applies to slides, documents, and UI layouts: no divider rules, underlines added beneath headings, table gridlines, or separator strokes between content blocks. Separate content through whitespace, alignment, typography, and Canvas/Plaster surface contrast. Do not inherit borders or shadow effects from presentation themes. Functional chart lines, chart leader lines, control boundaries, link underlines, and keyboard-focus rings follow their existing component/data rules; they are not layout separators.
 - **No colored backgrounds for cards.** Do not use Hard Hat, Bottle Glass, or Traffic Cone as container backgrounds.
 
 ### Surface hierarchy
@@ -419,9 +430,9 @@ The interface relies on stark, physical separation rather than artificial lighti
 Every layout uses four layers, in order of elevation and visual weight:
 
 1. **Ground** — Canvas. The default background for all pages and apps.
-2. **Lifted Surface** — Plaster. Used for cards and isolated containers. Drop shadows are banned; Plaster separates through optical brightness and generous padding. Functional structural borders, when needed, use Iron; documented selection-indicator paint is a separate exception.
-3. **Structure** — Iron. Used for all text and structural lines. It does not become a layout background surface; a functional modal backdrop or photographic text-legibility overlay is the explicit exception.
-4. **Signal** — Traffic Cone. One dominant accent per layout section.
+2. **Lifted Surface** — Plaster. Used for cards and isolated containers. Drop shadows are banned; Plaster separates through optical brightness and generous padding. No divider rules or table gridlines. Explicitly specified functional control boundaries use Iron; selection-indicator paint is a separate exception.
+3. **Structure** — Iron. Used for text and explicitly specified functional control boundaries, not layout dividers or table gridlines. It does not become a layout background surface; a functional modal backdrop or photographic text-legibility overlay is the explicit exception.
+4. **Signal** — Traffic Cone. Functional action and data cues, not a color-count limit.
 
 ### Rules
 
@@ -430,7 +441,7 @@ Every layout uses four layers, in order of elevation and visual weight:
 - **Button Alignment.** When aligning a button alongside text, align the button by its typography (its internal cap height), not its external padding bubble. Use the matching canonical padding token; when needed, compensate for its top padding and the measured glyph alignment. Test the result at supported widths and zoom; optical `em` adjustments are not ordinary layout spacing.
 - **Tension through scale.** Create hierarchy through dramatic leaps in scale (e.g., placing a 64px headline directly next to a 16px body copy block). Do not rely on intermediate sizes or color shifts to organize information.
 - **Strict functionalism.** No abstract shapes, blobs, or illustrated backgrounds. Every border, margin, and pixel should perform a structural job. The approved neutral boot-tread texture is the narrow exception in non-content header/footer zones, never beneath UI text.
-- **One dominant accent.** Traffic Cone identifies one dominant CTA or focal highlight per section, not every action. Repeated checkbox, radio, selection-chip indicators and focus rings are documented functional exceptions; never repeat Cone decoratively.
+- **Action priority, not a color quota.** Use orange for primary actions, selection controls, and focus. Repetition is allowed when it serves the interaction. Keep one dominant CTA per section; supporting controls should not compete with it. Orange in charts follows its assigned data role. Never use it as decoration.
 - **Shape signals action.** Buttons, links, editable inputs, checkboxes, radios, and chips all support actions. Pill shape belongs only to button-like actions/chips; it is not required on every interactive element. Static cards/panels/photos use 16px corners; editable fields and checkbox boxes use 0px. Inner indicators display state: radio circles use 50% geometry, not an extra container-radius tier. Status icons, progress fills, and data fills do not imply an action. Intermediate container radii (4px or 8px) and drop shadows are banned.
 - **Type and spacing: rem. Radii and borders: px.** Font-sizes, base spacing, and paired padding use `rem`; macro spacing retains canonical `clamp()` expressions (scales with browser zoom, respects accessibility settings). Borders and container radii use `px`; circular indicator geometry may use `50%`. Local `em` is reserved for optical alignment and documented indicator geometry, not ordinary gaps or paired padding.
 - **Consistent text blocks.** Body text columns never exceed 70 characters wide to maintain perfect tracking and readability.

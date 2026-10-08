@@ -1,10 +1,16 @@
 # Checkboxes — Skillit Kit BDS
-**Last updated:** 2026-09-10
+**Last updated:** 2026-10-05
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
 - Every interactive element needs a visible focus state: 2px solid Traffic Cone (`--color-primary`), 2px offset. On Canvas this is a documented contrast failure (2.6958:1); on Plaster it narrowly meets 3:1 (3.0177:1). Keep Orange in authored contexts, preserve native and forced-colors focus, and verify the actual adjacent surface; see `rules/accessibility.md`.
 - Touch targets minimum 40×40px (app). The checkbox itself is 16×16 but the label + checkbox pair forms the touch target.
+
+## Exported checkbox SVGs
+
+`checkbox-unchecked.svg` inherits the host's `color`. In `checkbox-checked.svg`, the box also inherits `color`; the inner check uses `--checkbox-check-color`, falling back to the canonical `--color-foreground`. Load the BDS tokens and set the host to `color: var(--color-primary)`. Engineers do not edit SVG paint.
+
+Inline the SVG (or render it as an inline component) so CSS inheritance reaches it. An external `<img>` does not inherit host color. Do not use the combined checked SVG as a single CSS mask: masks flatten both colors. The separate `check.svg` mask recipe below remains supported. Keep the real native checkbox for interaction and submission; an SVG alone is not a checkbox control.
 
 ## Geometry
 - **Box size:** 16×16px (`--space-4` × `--space-4`)

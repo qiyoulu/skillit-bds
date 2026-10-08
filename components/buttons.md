@@ -1,5 +1,5 @@
 # Buttons — Skillit Kit BDS
-**Last updated:** 2026-09-09
+**Last updated:** 2026-10-08
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -9,7 +9,7 @@
 - Touch targets minimum 40px in both dimensions (app).
 
 ## Primary button
-The dominant CTA. One dominant Traffic Cone CTA per section; documented selection indicators are functional exceptions, not competing CTAs. Traffic Cone background, Iron text (Canvas on Cone is banned — 2.70:1, see `rules/accessibility.md`).
+The dominant CTA. Keep one dominant CTA per section; supporting controls should not compete with it. Orange may repeat across functional primary actions, selection controls, and focus: there is no one-orange-element limit. Traffic Cone background, Iron text (Canvas on Cone is banned — 2.70:1, see `rules/accessibility.md`).
 ```css
 .btn-primary {
   background-color: var(--color-primary);   /* Traffic Cone #EF6F1A */
@@ -213,7 +213,7 @@ For additive filters (search facets, certification toggles, per-diem flags). The
 ```
 
 **Selected:**
-The standalone `check.svg` is a glyph, unlike the circular status `checkmark.svg`. Mask only the inner glyph, never the square. Paint the selected glyph Iron (`--color-foreground`) on Orange (4.5443:1); keep the pill Plaster and its text Iron. Orange indicator outlines on Plaster narrowly meet 3:1 (3.0177:1); Orange against Canvas is 2.6958:1 and fails 3:1. URLs assume a component stylesheet beside `tokens/generated/tokens.css` (see `icons.md`).
+The standalone `check.svg` is a glyph, unlike the circular status `check-circle.svg`. Mask only the inner glyph, never the square. Paint the selected glyph Iron (`--color-foreground`) on Orange (4.5443:1); keep the pill Plaster and its text Iron. Orange indicator outlines on Plaster narrowly meet 3:1 (3.0177:1); Orange against Canvas is 2.6958:1 and fails 3:1. URLs assume a component stylesheet beside `tokens/generated/tokens.css` (see `icons.md`).
 ```css
 .chip--check[aria-checked="true"] .chip__indicator {
   background-color: var(--color-primary);          /* persistent Traffic Cone square */

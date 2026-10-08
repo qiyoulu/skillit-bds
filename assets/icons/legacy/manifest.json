@@ -1,0 +1,458 @@
+{
+  "schema_version": 1,
+  "status": "deprecated-frozen",
+  "snapshot_date": "2026-10-08",
+  "description": "Pre-v1.2 icon filenames and artwork; not automatically resolved aliases. Paths must explicitly select legacy/. The snapshot includes later v1.1-era assets, not only the earliest version-bump commit.",
+  "files": [
+    {
+      "file": "arrow-down-circle.svg",
+      "canonical": "arrow-down-circle.svg",
+      "sha256": "1e56fa54c0eaf4e3b7ee312fa74d0d6cb6ca80acbd4acccf5164dd16e2020765",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "arrow-down.svg",
+      "canonical": "arrow-down.svg",
+      "sha256": "eb6c98be0363c81b79b0d6119b4b14ec5c46d9955ae304f65735a3420c555350",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "arrow-left-circle.svg",
+      "canonical": "arrow-left-circle.svg",
+      "sha256": "61602f1b2f5172e44718d2c9e6edd71563a6213189971adb2cca80856d5e4532",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "arrow-left-right.svg",
+      "canonical": "arrow-left-right.svg",
+      "sha256": "5d59b352a71377c3c0d53e2c9202305fd0fa97d7c7f973eb0a7c6676077e175f",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "arrow-left.svg",
+      "canonical": "arrow-left.svg",
+      "sha256": "f6e95cc8397a480b485f4cdb5e0511f4353c563e8ebba6e2fde17f55687afd1b",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "arrow-path.svg",
+      "canonical": "arrow-path.svg",
+      "sha256": "5da7bf6728bb6c17771e23c8c1b92dcb3f42bee2d4026baf02ac9f3c61b96719",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "arrow-right-circle.svg",
+      "canonical": "arrow-right-circle.svg",
+      "sha256": "fb6d86ee384f2de6b9d3c2273c45ae88b54fe2c31769a73e6ccccf219a136f86",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "arrow-right.svg",
+      "canonical": "arrow-right.svg",
+      "sha256": "df473ad738ed7cfaa24bbc2d31c1a987bed3140ecb38bfc92cbb57b232236939",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "arrow-up-circle.svg",
+      "canonical": "arrow-up-circle.svg",
+      "sha256": "ede0859cf8e0d1da8eb189845431a6454fe0af0b5e361bc4dbdd537932100db2",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "arrow-up.svg",
+      "canonical": "arrow-up.svg",
+      "sha256": "fbbbee9299497fbd85e334796851d09b73eed7a61fda7537b245cf60b6147fd9",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "bookmark.svg",
+      "canonical": "bookmark.svg",
+      "sha256": "674c938411fc26ebff821c0b6c0319fd825ae6a5fc83290d4e01b92e43d6402a",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "calendar.svg",
+      "canonical": "calendar.svg",
+      "sha256": "6c3f08d80c88ea3053f6dbd3b6c5c446426bbe1d3c40505b8b149139d1cc9597",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "carpenter.svg",
+      "canonical": "saw.svg",
+      "sha256": "fc586e49764384d0e538b170d503fb4df855da8d9ca147fc001b52f339d74b30",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "check.svg",
+      "canonical": "check.svg",
+      "sha256": "78c25e415b9b44369bc7e3dd0fa349a4511e18d894bac43ac9d12df6e59e136c",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "checkbox-checked.svg",
+      "canonical": "checkbox-checked.svg",
+      "sha256": "3697fb37f7cae49cbce2b6a63819b49f217873c53521cd8b82aa8ec745c330f8",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "checkbox-unchecked.svg",
+      "canonical": "checkbox-unchecked.svg",
+      "sha256": "a7ce6635f3cd49296b4eb803de6fdd33ddaa207e7179d0f8a2c3ccf611b3f3c2",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "checkmark.svg",
+      "canonical": "check-circle.svg",
+      "sha256": "211a2fd813d8f0e9785b859c03840bd9bed7f12f65e1c041a18becc16b0c67e9",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "chevron-down.svg",
+      "canonical": "chevron-down.svg",
+      "sha256": "07617e04b8517818f407a889681931144718a54ea165a4b79b1b317fb956a66c",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "clock.svg",
+      "canonical": "clock.svg",
+      "sha256": "4a580450387f7e03f272689bd18fae0d15b1f30f4174918c225fad3078d34bed",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "close-circle.svg",
+      "canonical": "x-circle.svg",
+      "sha256": "8c5150557bf807967e4829985fd27c7627510469c42e801e723ca899648e4ad0",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "close.svg",
+      "canonical": "x-mark.svg",
+      "sha256": "d83dbfc8103ea18aeb65b3c1ae0eed600055c7a35634d9744ff22c9210ca2ace",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "concrete-worker.svg",
+      "canonical": "concrete.svg",
+      "sha256": "5da817bb66d7ab62e0234ee30a49e4f2231be50711d5aec5ba2efab941c9df45",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "customer-support.svg",
+      "canonical": "user-headset.svg",
+      "sha256": "d82eb8ce70a77f78c487565bf1fbffa85ea5e1965229dc74cbc7637b5394b94c",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "document.svg",
+      "canonical": "document-text.svg",
+      "sha256": "572df106fbc9d47ade3b213f37dbc13b62533ca6e0452893926c598dba49c55b",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "electrician-circle.svg",
+      "canonical": "bolt-circle.svg",
+      "sha256": "aa1ad6f6bde48c21f57c7e6895461a4564d82244123c22d434d73702433ad5a1",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "electrician.svg",
+      "canonical": "bolt.svg",
+      "sha256": "af95d018253965451e44443b3d492c88f8ec7748ea16b56f1864b441ba26cd2f",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "error.svg",
+      "canonical": "x-octagon.svg",
+      "sha256": "ce649018806c173c51a5fdb43160f93d21269d6126ea75f47647605d99fb5c26",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "external-link.svg",
+      "canonical": "arrow-top-right-on-square.svg",
+      "sha256": "50644f6eec7d5e966ac7ba921545e751e9e1d5d696e9ed1fbd5df4fcc95dbed5",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "eye-off.svg",
+      "canonical": "eye-slash.svg",
+      "sha256": "caa12578077af66e370d7e4cfa90e4d37479ceb3a3ddbd07b8714b35ae3e6634",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "eye.svg",
+      "canonical": "eye.svg",
+      "sha256": "fa0ab5a7ee5b587157cd9881f736cc0070b42d293de275012b7103a4c68e09a9",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "facebook.svg",
+      "canonical": "facebook.svg",
+      "sha256": "4edf09979d99676aaaa1582de1648e98b8bde0f6b904e57b386afe36c06f9a23",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "film.svg",
+      "canonical": "film-reel.svg",
+      "sha256": "98eefc2d2e6b4dd0e905be692b36a6d91934fd25605f1707312221880f0c0afc",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "flag.svg",
+      "canonical": "flag.svg",
+      "sha256": "1b9a8da306ab3f05a7f6c272ac6f4ba4a7032611c118333f6f5ecf1399978f58",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "heavy-eq.svg",
+      "canonical": "excavator.svg",
+      "sha256": "f5c06ed5481b1b9043bd3681f0ffed394d7fde7a223f8eb88deb557e97b8f8ea",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "help.svg",
+      "canonical": "question-mark-circle.svg",
+      "sha256": "c90f50d871a80632a59d4ebc9d2d2839247e6e2e53ca453d36be96415cd22369",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "home.svg",
+      "canonical": "home.svg",
+      "sha256": "54ab41b0d7f5fa32d4782993ba33bcf69da9e24bf64257072e7ba0d743f26bd9",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "information-circle.svg",
+      "canonical": "information-circle.svg",
+      "sha256": "590f8589b81defcbeb2552d4c4cd32be951e49f091637ad84756df0ce0e4cdca",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "information.svg",
+      "canonical": "information-square.svg",
+      "sha256": "fb451443b070602b265981ec9689ab586064f745c44e7e71ff79f7f729f75d6d",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "instagram.svg",
+      "canonical": "instagram.svg",
+      "sha256": "383f88b5e83b710e3e9f5bd1b9266485fa671adb536de3c0d6a67e6780a40f7a",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "language.svg",
+      "canonical": "language.svg",
+      "sha256": "5ed8ce80a2ce208e2020c489f6409fefd18e0fe9cc45e608cb65cf417bd549c8",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "light-bulb.svg",
+      "canonical": "light-bulb.svg",
+      "sha256": "5777d8e2b0788198b0378da73f586c8b65eb3d9d4ba8203c8a9be5a9ba48ffa5",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "linkedin.svg",
+      "canonical": "linkedin.svg",
+      "sha256": "e7534cc2d201f4cdd6ffca1c576df04d360c9120d5a92233bb71832103613cce",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "location.svg",
+      "canonical": "map-pin.svg",
+      "sha256": "a0d7fc73a6b6ba7966379cd1a4792c369492690b5880730e3a68ce17affc8c7e",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "lock-closed-circle.svg",
+      "canonical": "lock-closed-circle.svg",
+      "sha256": "f30dc8de608d985b96a47f384adfd570d12a170ba9aa943a2cb05ddb910e2d19",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "lock-closed.svg",
+      "canonical": "lock-closed.svg",
+      "sha256": "3f4b00ec7fdbe6f9b776476302f8f61aac7d0d66878faaf24948d424933c1930",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "lock-open.svg",
+      "canonical": "lock-open.svg",
+      "sha256": "9725b864bd2269377a2733003a37823ba666e730ae0f9126b9b49e0256904f61",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "mail.svg",
+      "canonical": "envelope.svg",
+      "sha256": "5d6fa49c2980ff87e53539ce3fe433fd4a6ccc0c73ba0577f5a9b22717c37fd5",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "match.svg",
+      "canonical": "puzzle-piece.svg",
+      "sha256": "79a7773f3612128dfdb14b976cb293520260d68670ff655931f7dd619058f1e1",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "menu.svg",
+      "canonical": "bars-3.svg",
+      "sha256": "59c764db5ad5ea43c24ed51d1cb392f700004b9dd327d1740173f1f14c7086d4",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "pause-circle.svg",
+      "canonical": "pause-circle.svg",
+      "sha256": "9f05251d363f521604063ecfead5bf5aa4ac08d97bf8bb5567ac01262a15617a",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "pause.svg",
+      "canonical": "pause.svg",
+      "sha256": "8050a4dbc67dfc8927d13c42478ee5164ef85cc8ae64b162ad1cede4c7bd61bc",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "pencil.svg",
+      "canonical": "pencil.svg",
+      "sha256": "febcc3e096766c22d86d0290440a8169d89e09f1a0ba4c69c6359d02a82416e1",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "phone.svg",
+      "canonical": "device-phone-mobile.svg",
+      "sha256": "ef18c6edecb8993d49f993a000290db884a5f8c08ca8d7bdaf21d685584d1fe0",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "pipefitter.svg",
+      "canonical": "pipe.svg",
+      "sha256": "cff33c6f3b45772aaa9a903fc204cce1e833872d088689af8cebc23bc9e749ed",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "play-circle.svg",
+      "canonical": "play-circle.svg",
+      "sha256": "46dc7dd48379179221a050a726bb3d1a9c93a1eb365614d138ed456383b03136",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "play.svg",
+      "canonical": "play.svg",
+      "sha256": "b51904ac917fe55f3519b2a1fbea1f7e4bb3a71cf6878fe1db1e98e05b5f5885",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "plus-circle.svg",
+      "canonical": "plus-circle.svg",
+      "sha256": "f5155738bbbad51f6da59a0789af3e1caeba8482a214e9fb7bc37ea823bcbef2",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "plus.svg",
+      "canonical": "plus.svg",
+      "sha256": "c89c2f4dec06cdf4e0f65b3e3c3b727999202dac8914c53f6820c1173fe52198",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "radio-checked.svg",
+      "canonical": "radio-checked.svg",
+      "sha256": "e2559db17f1411ca109801744e168e8c1ae059511d14881ce806a5f1d500eb1a",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "radio-unchecked.svg",
+      "canonical": "radio-unchecked.svg",
+      "sha256": "e453456111619051a62d659bf6886e4168490137880f88564bc6a8c0bf1a85b7",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "search.svg",
+      "canonical": "magnifying-glass.svg",
+      "sha256": "480a2a4b670885d300725a75e66d5909fe70766411121f57fee711d361da0afe",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "share.svg",
+      "canonical": "share.svg",
+      "sha256": "7028591ed519622d0694426bf941be259df4e2438ec3bf29a0fa2b1141ce5aec",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "star.svg",
+      "canonical": "star.svg",
+      "sha256": "d1835208a79fa31857bf88d9bc09921357e8d55e3716657894ce5c92bf6c3a4c",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "switch-off.svg",
+      "canonical": "switch-off.svg",
+      "sha256": "88961ee4c50fc6dd312a66f131cd3b427e8a0f1cd0a64267908d4aaa4e4eedc0",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "switch-on.svg",
+      "canonical": "switch-on.svg",
+      "sha256": "59315ddcf60843616991fdd955073fb73c46baa1dc6754cf3447301ccbef4846",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "trade.svg",
+      "canonical": "wrench.svg",
+      "sha256": "9b8d24ed711e4f8bf244fb952e384df4b6c8b05ba65c4957fb17a6aeb46370c9",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "upload.svg",
+      "canonical": "arrow-up-tray.svg",
+      "sha256": "8c2d18584fb2d073e4b982d37b907f26df73e39f46d681d3100feebcbf84b546",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "user-circle.svg",
+      "canonical": "user-round.svg",
+      "sha256": "f249c65d343bdc8b1ac75648e7345c104a0df4ebbb3f11e7d2d6afc1af3a8fa2",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "user.svg",
+      "canonical": "user.svg",
+      "sha256": "3966d0b07b7eee2508a25cc24a3ca2fc0da0ec9ed377f12c059a6e1c065d8b49",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "warning.svg",
+      "canonical": "exclamation-triangle.svg",
+      "sha256": "34e3cc042d6981510f6dc544564b325aee2db91fa000cc1c1d8056da4ce3c2fd",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "web.svg",
+      "canonical": "globe-alt.svg",
+      "sha256": "b8890c36cc27ce42c926f8cf075e367fa7a75469dcacee509607373c017e3a07",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "whatsapp.svg",
+      "canonical": "whatsapp.svg",
+      "sha256": "614f6f7034e686d6222fdcfbd0402091f56870ca9ebfef0644eaaba31e2221a5",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "worker.svg",
+      "canonical": "user-hat.svg",
+      "sha256": "e143aac23b46c764205e1e72f7c47b24453c677d6b2f0c78601180a4227864d4",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "x.svg",
+      "canonical": "x.svg",
+      "sha256": "120eaebb9317b22425d22c2950c714a42c7ac17b8e506bd1ed718f0403df714c",
+      "source": "pre-v1.2-migration snapshot"
+    },
+    {
+      "file": "youtube.svg",
+      "canonical": "youtube.svg",
+      "sha256": "78632be951f8697b80ded1c7061ce66c6b24b35614115f73e0dddef0bbfab064",
+      "source": "pre-v1.2-migration snapshot"
+    }
+  ]
+}

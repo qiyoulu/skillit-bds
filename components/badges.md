@@ -1,5 +1,5 @@
 # Badges & Status Indicators — Skillit Kit BDS
-**Last updated:** 2026-08-17
+**Last updated:** 2026-10-08
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -9,7 +9,7 @@
 - Touch targets minimum 40px in both dimensions (app).
 
 ## Status badges
-Status badges are **drawn icons** — the shape carries the state (shape coding in `rules/accessibility.md`), the label carries the text. Status badges have no colored chip background; their icons use semantic success green, warning yellow, error red, or info blue. The existing approved info text remains Painter’s Tape. Do not confuse badges with actionable selection chips or neutral progress/data roles in `tokens/docs/color.md`. Hard Hat on Plaster is below 3:1; assess whether the warning glyph is essential, retain a fully explicit label, and do not claim a contrast pass (`rules/accessibility.md`).
+Status badges are **drawn icons with clear labels**. Use familiar icons, semantic colors, and clear labels to communicate status. Never rely on shape or color alone. The glyph supports the message; outer shape is not an information-type code (see `rules/accessibility.md`). Status badges have no colored chip background; their icons use semantic success green, warning yellow, error red, or info blue. The existing approved info text remains Painter’s Tape. Do not confuse badges with actionable selection chips or neutral progress/data roles in `tokens/docs/color.md`. Hard Hat on Plaster is below 3:1; assess whether the warning glyph is essential, retain a fully explicit label, and do not claim a contrast pass (`rules/accessibility.md`).
 ```css
 /* Base badge — icon + label, no colored background */
 .badge {
@@ -25,7 +25,7 @@ Status badges are **drawn icons** — the shape carries the state (shape coding 
 .badge-success .icon { color: var(--color-success); } /* Bottle Glass — circle */
 .badge-warning .icon { color: var(--color-warning); } /* Hard Hat — triangle */
 .badge-error .icon { color: var(--color-error); } /* Toolbox — octagon */
-.badge-info .icon { color: var(--color-link); } /* Painter’s Tape — supplied help circle */
+.badge-info .icon { color: var(--color-link); } /* Painter’s Tape — supplied information circle */
 /* Info — Painter's Tape text, no underline. */
 .badge-info {
   color: var(--color-link);                /* Painter's Tape #007CA6 — info, no underline */

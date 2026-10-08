@@ -1,5 +1,5 @@
 # Form Validation — Skillit Kit BDS
-**Last updated:** 2026-09-13
+**Last updated:** 2026-10-08
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -24,9 +24,9 @@ A validated field is a vertical stack:
 | Error | Octagon | `--color-error` | `--color-error` | `--text-0.75x`, canonical 550 |
 | Success | Circular checkmark | `--color-success` | `--color-success` | `--text-0.75x`, canonical 550 |
 | Warning | Triangle | `--color-warning` | `--color-foreground` | `--text-0.75x`, canonical 550 |
-| Info | Help circle + message | `--color-link` | `--color-foreground` | `--text-0.75x`, canonical 550 |
+| Info | Circled i + message | `--color-link` | `--color-foreground` | `--text-0.75x`, canonical 550 |
 
-**Icon color rationale:** Validation status hosts use success green, warning yellow, error red, and info blue, independent of message text. The supplied silhouette plus message carries the state. Error and success message colors remain unchanged; warning and info messages stay Iron. Check message contrast separately. Hard Hat on Plaster is 1.8229:1, below 3:1 for an essential warning glyph; a fully explicit redundant label does not turn that ratio into a pass (`rules/accessibility.md`).
+**Icon color rationale:** Validation status hosts use success green, warning yellow, error red, and info blue, independent of message text. Familiar glyphs support the explicit message; outer shape does not encode an information type. Error and success message colors remain unchanged; warning and info messages stay Iron. Check message contrast separately. Hard Hat on Plaster is 1.8229:1, below 3:1 for an essential warning glyph; a fully explicit redundant label does not turn that ratio into a pass (`rules/accessibility.md`).
 
 ## Spacing
 - Gap between input bottom and status row: `--space-2` (8px)
@@ -81,7 +81,7 @@ Required inputs display an asterisk (`*`) beside the label in Traffic Cone (`--c
 ```
 
 ## Status icon variants
-Use the supplied silhouettes without a second colored circle behind them. The original glyphs already encode success (circle), error (octagon), and warning (triangle). Host CSS supplies the corresponding semantic color; the SVG files remain tintable. CSS URLs assume a stylesheet beside `tokens/generated/tokens.css` (`icons.md`).
+Use the supplied icons without adding a second colored circle behind them. Use familiar icons, semantic colors, and clear labels to communicate status. Never rely on shape or color alone. Checks, crosses, and exclamations support familiar conventions; the outer geometry is not an information-type code. The current supplied status exports retain semantic-colored grounds and opaque white glyphs. This background-image recipe preserves both layers; host `color` cannot recolor an external SVG. Inline the artwork with separate canonical-token ground and glyph styling when runtime overrides are required. CSS URLs assume a stylesheet beside `tokens/generated/tokens.css` (`icons.md`).
 
 ```css
 .validation-badge {
@@ -94,29 +94,27 @@ Use the supplied silhouettes without a second colored circle behind them. The or
   content: '';
   width: 100%;
   height: 100%;
-  background-color: currentColor;
-  -webkit-mask: var(--validation-icon) center / contain no-repeat;
-  mask: var(--validation-icon) center / contain no-repeat;
+  background: var(--validation-icon) center / contain no-repeat; /* preserve semantic ground + white glyph */
 }
 .validation-badge--error {
   color: var(--color-error);
-  --validation-icon: url('../../assets/icons/error.svg');
+  --validation-icon: url('../../assets/icons/x-octagon.svg');
 }
 .validation-badge--success {
   color: var(--color-success);
-  --validation-icon: url('../../assets/icons/checkmark.svg');
+  --validation-icon: url('../../assets/icons/check-circle.svg');
 }
 .validation-badge--warning {
   color: var(--color-warning);
-  --validation-icon: url('../../assets/icons/warning.svg');
+  --validation-icon: url('../../assets/icons/exclamation-triangle.svg');
 }
 .validation-badge--info {
   color: var(--color-link);
-  --validation-icon: url('../../assets/icons/help.svg');
+  --validation-icon: url('../../assets/icons/information-circle.svg');
 }
 ```
 
-Info uses the available question-mark help glyph with explicit message text; no circle-i asset is supplied. Never refer to nonexistent `validation/` asset directories.
+Info uses supplied `information-circle.svg` with explicit message text; `question-mark-circle.svg` is reserved for help. Never refer to nonexistent `validation/` asset directories.
 
 ## Accessibility
 - The status message is associated with the input via `aria-describedby`
@@ -132,7 +130,7 @@ Info uses the available question-mark help glyph with explicit message text; no 
   <input class="input" id="email" type="email" required aria-describedby="email-error" aria-invalid="true" />
   <div class="validation-row" id="email-error">
     <span class="validation-badge validation-badge--error" aria-hidden="true">
-      <!-- CSS mask supplies error.svg -->
+      <!-- CSS background image supplies x-octagon.svg -->
     </span>
     <span class="validation-message validation-message--error">Enter a valid email address</span>
   </div>
@@ -144,7 +142,7 @@ Info uses the available question-mark help glyph with explicit message text; no 
   <input class="input" id="phone" type="tel" required aria-describedby="phone-success" />
   <div class="validation-row" id="phone-success">
     <span class="validation-badge validation-badge--success" aria-hidden="true">
-      <!-- CSS mask supplies checkmark.svg -->
+      <!-- CSS background image supplies check-circle.svg -->
     </span>
     <span class="validation-message validation-message--success">Looks good</span>
   </div>
@@ -152,9 +150,9 @@ Info uses the available question-mark help glyph with explicit message text; no 
 ```
 
 ## Icon assets
-- `assets/icons/error.svg` — error octagon
-- `assets/icons/checkmark.svg` — circular success silhouette
-- `assets/icons/warning.svg` — warning triangle
-- `assets/icons/help.svg` — help circle for informational messages
+- `assets/icons/x-octagon.svg` — error octagon
+- `assets/icons/check-circle.svg` — circular success silhouette
+- `assets/icons/exclamation-triangle.svg` — warning triangle
+- `assets/icons/information-circle.svg` — circled i for informational messages
 
-All assets have a 24×24 viewBox, rendered at 16×16px. Inline SVGs use `currentColor`; external alpha masks are painted by host CSS.
+All assets have a 24×24 viewBox, rendered at 16×16px. These status exports have opaque white glyph layers on semantic-colored grounds. External background images preserve them; combined alpha masks would flatten them. Runtime recoloring requires inline per-layer canonical-token styling.

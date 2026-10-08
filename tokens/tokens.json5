@@ -14,7 +14,8 @@
   //   Feedback uses Plaster panels and semantic icons, never decorative layout fills.
   //   structural borders are Iron; selection indicators have documented exceptions.
   //   focus outlines use Traffic Cone; verify adjacent contrast, especially on Canvas.
-  //   one dominant Cone CTA per UI section; selection, focus, and chart marks may repeat.
+  //   action priority, not a color quota: one dominant CTA per section; functional
+  //   Orange actions, selection, focus, and assigned chart roles may repeat.
   //   painter's tape: underlined = link, not underlined = info; approved chart fill allowed.
   base: {
     color: {

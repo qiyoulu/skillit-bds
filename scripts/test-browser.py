@@ -42,6 +42,31 @@ for name, token in base['motion']['duration'].items():
 for name, token in base['motion']['easing'].items():
     expected['--ease-' + name] = token['$value']
 
+def check_color_tokens(page, values, location):
+    """Compare rendered colors, not merely nonempty custom-property strings."""
+    colors = {name: value for name, value in values.items() if name.startswith('--color-')}
+    rendered_colors = page.evaluate('''values => {
+        const root = getComputedStyle(document.documentElement);
+        const probe = document.createElement('span');
+        document.body.append(probe);
+        const result = Object.fromEntries(Object.entries(values).map(([name, value]) => {
+            const raw = root.getPropertyValue(name).trim();
+            probe.style.backgroundColor = '';
+            probe.style.backgroundColor = value;
+            const expected = getComputedStyle(probe).backgroundColor;
+            probe.style.backgroundColor = 'var(' + name + ')';
+            const actual = getComputedStyle(probe).backgroundColor;
+            return [name, {raw, expected, actual, valid: CSS.supports('color', raw)}];
+        }));
+        probe.remove();
+        return result;
+    }''', colors)
+    for name, result in rendered_colors.items():
+        assert result['raw'] and result['valid'], (location, name, result)
+        assert result['actual'] == result['expected'], (location, name, result)
+    return len(colors)
+
+
 checks = 0
 executable = os.environ.get('BDS_BROWSER_BIN')
 if not executable:
@@ -53,13 +78,14 @@ if not executable:
     executable = shutil.which('chromium') or shutil.which('google-chrome')
 
 with sync_playwright() as p:
-    kwargs = {'headless': True, 'args': ['--disable-background-networking', '--no-first-run']}
+    kwargs = {'headless': True, 'timeout': 20000, 'args': ['--disable-background-networking', '--no-first-run']}
     if executable:
         kwargs['executable_path'] = executable
     browser = p.chromium.launch(**kwargs)
     page = browser.new_page(viewport={'width': 390, 'height': 844})
     css = (ROOT / 'tokens/generated/tokens.css').read_text()
     page.set_content('<style>' + css + '</style><div id="probe">Probe</div>', wait_until='domcontentloaded')
+    check_color_tokens(page, expected, 'tokens/generated/tokens.css')
     actual = page.evaluate('names => Object.fromEntries(names.map(n => [n, getComputedStyle(document.documentElement).getPropertyValue(n).trim()]))', list(expected))
     for name, value in expected.items():
         got = actual[name]
@@ -69,8 +95,8 @@ with sync_playwright() as p:
         elif name.startswith('--color-') and not name.endswith('-hover'):
             assert got.upper() == value.upper(), (name, value, got)
         elif name.endswith('-hover'):
-            # Custom properties serialize their var() references as computed colors.
-            assert got != '' and 'var(' not in got, (name, got)
+            # Rendered values were compared to the canonical expression above.
+            assert 'var(' not in got, (name, got)
         else:
             assert re.sub(r'\s+', ' ', got) == re.sub(r'\s+', ' ', value), (name, value, got)
         checks += 1
@@ -87,15 +113,9 @@ with sync_playwright() as p:
     color_doc = (ROOT / 'tokens/docs/color.md').read_text()
     block = re.search(r'```css\s*(:root\s*\{[\s\S]*?\})\s*```', color_doc)
     assert block, 'Color copy-paste block missing'
-    page.add_style_tag(content=block.group(1))
-    hovers = page.evaluate('''() => {
-        const root=getComputedStyle(document.documentElement);
-        const names=['background','surface','foreground','primary','warning','error','success','link'];
-        return Object.fromEntries(names.map(n=>[n,root.getPropertyValue('--color-'+n+'-hover').trim()]));
-    }''')
-    for name, value in hovers.items():
-        assert value, f'{name} hover invalid after pasting color documentation'
-        checks += 1
+    # The copy-paste block must stand alone; generated CSS must not hide omissions.
+    page.set_content('<style>' + block.group(1) + '</style>', wait_until='domcontentloaded')
+    checks += check_color_tokens(page, expected, 'tokens/docs/color.md copy-paste block')
     cap_checks = {}
     for filename in ['HUMAN-INSTRUCTIONS.md', 'LLM-INSTRUCTIONS.md']:
         document = (ROOT / filename).read_text()

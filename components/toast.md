@@ -1,5 +1,5 @@
 # Toast / Notification — Skillit Kit BDS
-**Last updated:** 2026-09-13
+**Last updated:** 2026-10-08
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -33,9 +33,9 @@ Multiple toasts stack vertically — newest at the bottom (mobile) or top (deskt
 | Success | `--color-surface` (Plaster) | Iron | Bottle Glass circular checkmark (`--color-success`) | Action completed successfully |
 | Error | `--color-surface` (Plaster) | Iron | Toolbox octagon (`--color-error`) | Action failed, requires attention |
 | Warning | `--color-surface` (Plaster) | Iron | Hard Hat triangle (`--color-warning`) | Consequence warning, not a failure |
-| Info | `--color-surface` (Plaster) | Iron | Painter’s Tape help-circle (`--color-link`) | Informational message, not a result |
+| Info | `--color-surface` (Plaster) | Iron | Painter’s Tape circled i (`--color-link`) | Informational message, not a result |
 
-**Icon color rationale:** Host CSS paints each supplied status silhouette with its corresponding semantic color. The Plaster panel prevents a semantic glyph disappearing into a matching fill; message text and close controls stay Iron. Info uses the supplied help-circle glyph with explicit message text; no circle-i asset is supplied.
+**Icon color rationale:** The current status exports retain semantic-colored grounds and opaque white glyphs. Host token classes express the required semantic role; this external-image recipe preserves the approved source colors rather than inheriting host color. For runtime recoloring, inline the SVG and control the ground separately from its white glyph with canonical tokens. The Plaster panel prevents a semantic glyph disappearing into a matching fill; message text and close controls stay Iron. Info uses supplied `information-circle.svg` with explicit message text; `question-mark-circle.svg` denotes help, not information.
 
 **Known contrast limitation:** Hard Hat on Plaster is 1.8229:1, below 3:1. An essential warning glyph therefore fails WCAG 1.4.11; if the visible message fully conveys the warning independently, the redundant glyph is not required for understanding, but its ratio still is not a contrast pass. `aria-hidden` alone does not establish redundancy. Retain the triangle and explicit warning message, do not invent a darker yellow, and assess the actual usage. Iron body text on Plaster is 13.7135:1. Orange focus on Plaster is 3.0177:1; check the actual adjacent surface, since Orange on Canvas remains below 3:1.
 
@@ -77,14 +77,12 @@ CSS URLs assume a component stylesheet beside `tokens/generated/tokens.css`; see
   width: 16px;
   height: 16px;
   flex: 0 0 16px;
-  background-color: currentColor;
-  -webkit-mask: var(--toast-icon) center / contain no-repeat;
-  mask: var(--toast-icon) center / contain no-repeat;
+  background: var(--toast-icon) center / contain no-repeat; /* preserve semantic ground + white glyph */
 }
-.toast--success { --toast-icon: url('../../assets/icons/checkmark.svg'); }
-.toast--error { --toast-icon: url('../../assets/icons/error.svg'); }
-.toast--warning { --toast-icon: url('../../assets/icons/warning.svg'); }
-.toast--info { --toast-icon: url('../../assets/icons/help.svg'); }
+.toast--success { --toast-icon: url('../../assets/icons/check-circle.svg'); }
+.toast--error { --toast-icon: url('../../assets/icons/x-octagon.svg'); }
+.toast--warning { --toast-icon: url('../../assets/icons/exclamation-triangle.svg'); }
+.toast--info { --toast-icon: url('../../assets/icons/information-circle.svg'); }
 
 .toast__message {
   flex: 1;
@@ -198,9 +196,9 @@ CSS URLs assume a component stylesheet beside `tokens/generated/tokens.css`; see
 ```
 
 ## Icon assets
-- `assets/icons/checkmark.svg` — circular success silhouette
-- `assets/icons/error.svg` — error octagon
-- `assets/icons/warning.svg` — warning triangle
-- `assets/icons/help.svg` — informational help circle
+- `assets/icons/check-circle.svg` — circular success silhouette
+- `assets/icons/x-octagon.svg` — error octagon
+- `assets/icons/exclamation-triangle.svg` — warning triangle
+- `assets/icons/information-circle.svg` — circled i for information
 
-All assets: 24×24 viewBox, rendered at 16×16px. The mask is painted by the icon host’s explicit semantic color, not an external SVG’s inherited `currentColor`.
+All assets: 24×24 viewBox, rendered at 16×16px. The external background image preserves both approved semantic ground and white inner glyph. Host `color` cannot recolor it; use inline per-layer token styling for runtime overrides, not a combined alpha mask.

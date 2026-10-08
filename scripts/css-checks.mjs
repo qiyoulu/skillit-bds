@@ -266,10 +266,13 @@ export function checkContrast(blocks, known, scope, report, lineOffset = 0) {
   }
 }
 
-export function checkSvgPaint(text, scope, report) {
+export function checkSvgPaint(text, scope, report, approvedPaints = new Set()) {
   const clean = maskComments(text.replace(/<!--[\s\S]*?-->/g, m => m.replace(/[^\n]/g, ' ')));
   const check = (property, value, offset) => {
     if (/^(none|currentColor)$/i.test(value.trim())) return;
+    const normalized = value.trim().toLowerCase().replace(/^white$/, '#ffffff');
+    // Explicit repository export exceptions only; external artifacts stay strict.
+    if (approvedPaints.has(normalized)) return;
     report({ rule: 'svg_fill_color', severity: 'error', scope, line: lineAt(text, offset), message: `hardcoded SVG ${property}=${JSON.stringify(value)}`, suggestion: 'use currentColor or none; set CSS color with a canonical token' });
   };
   for (const m of clean.matchAll(/\b(fill|stroke)\s*=\s*(["'])(.*?)\2/gi)) check(m[1], m[3], m.index);

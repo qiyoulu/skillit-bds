@@ -1,5 +1,5 @@
 # Layout Rules — Skillit Kit BDS
-**Last updated:** 2026-08-17
+**Last updated:** 2026-10-06
 ---
 ## The core principle
 Whitespace is structural mass. It organizes data and anchors the grid. The human is the subject; the layout is the consistent framework that supports them.
@@ -25,8 +25,8 @@ Every layout is built on four layers, in order of elevation and visual weight:
 |---|---|---|---|
 | Ground | Canvas | `--color-background` | Default background for all surfaces |
 | Lifted Surface | Plaster | `--color-surface` | Cards and isolated containers |
-| Structure | Iron | `--color-foreground` | Text, borders, dividers, nav elements |
-| Signal | Traffic Cone | `--color-primary` | One dominant CTA or focal data accent per layout section; not 16px active navigation text |
+| Structure | Iron | `--color-foreground` | Text, neutral icons, functional control boundaries; no layout dividers |
+| Signal | Traffic Cone | `--color-primary` | Primary actions, selection, focus, and assigned chart roles; functional repetition allowed; not 16px active navigation text |
 Color roles are scoped by function, not by whether an element is generally called a state. Interactive checkbox, radio, and chip selection indicators use Traffic Cone. Semantic status icons use success green, warning yellow, error red, and info blue; neutral utility icons and completed progress use Iron. Preserve ordinary message text and the existing validation text policy. Every toast is a static Plaster panel with Iron body text and close control, plus a semantic icon. Charts may use Traffic Cone, Painter’s Tape, and other approved palette colors with labels and legends; see `rules/data-viz.md`. Focus uses 2px Traffic Cone with 2px offset; Canvas contrast fails 3:1 and Plaster narrowly passes. See `rules/accessibility.md` and the component specs.
 ---
 ## Whitespace rules
@@ -52,12 +52,15 @@ Color roles are scoped by function, not by whether an element is generally calle
 ---
 ## Visual minimalism rules
 These are hard constraints derived from the core brand direction. They apply to every generated layout.
+
+**No layout lines or drop shadows.** Applies to slides, documents, and UI layouts: no divider rules, underlines added beneath headings, table gridlines, or separator strokes between content blocks. Separate content through whitespace, alignment, typography, and Canvas/Plaster surface contrast. Do not inherit borders or shadow effects from presentation themes. Functional chart lines, chart leader lines, control boundaries, link underlines, and keyboard-focus rings follow their existing component/data rules; they are not layout separators.
+
 1. **Flush left alignment.** The system relies on a strict horizontal grid. Text blocks, headings, and data tables align flush left. Centered text is prohibited, including headlines.
 2. **Optical Top Alignment.** Multi-column elements align at the top edge. To achieve this, typography should be vertically trimmed using the Work Sans cap-height ratio (0.66). Use the matching tier’s unitless leading token: for Text-1x, `line-height: var(--text-1x-leading); margin-top: calc((0.66 - var(--text-1x-leading)) * 0.5em);`. Example: a `1.4` line-height requires a `-0.37em` margin-top.
 3. **Button Alignment Exception.** Do not align buttons by their external padding bubble. Align them optically by the text inside them. A button should shift upward by its top padding value to ensure its internal text cap-height aligns with adjacent layout elements.
 4. **Tension through scale.** Hierarchy is established by extreme leaps in typographic scale (e.g., `--text-8x` directly adjacent to `--text-1x`), not by stepping gently through intermediate sizes or adding color.
 5. **Strict functionalism.** Every border and margin should serve a structural purpose. No decorative elements, abstract shapes, blobs, or illustrated backgrounds. The boot tread pattern is permitted as low-contrast Plaster-on-Canvas texture in empty document/header/footer regions or physical touchpoints; exclude logo, text, controls, focus rings, and photography. See `tokens/docs/logo.md`.
-6. **One dominant accent per layout section.** Use one dominant Traffic Cone CTA or focal data accent; never repeat it as decoration. Repeated functional checkbox, radio, and chip selection paint is explicitly permitted and does not create multiple primary CTAs.
+6. **Action priority, not a color quota.** Use orange for primary actions, selection controls, and focus. Repetition is allowed when it serves the interaction. Keep one dominant CTA per section; supporting controls should not compete with it. Orange in charts follows its assigned data role. Never use it as decoration.
 7. **Shape signals action (Static = 16px, Actionable = Pill).** All static layout containers (cards, panels, photographs) use `border-radius: 16px`. Button-like actionable controls (buttons and chips) use a fully rounded pill shape (`border-radius: var(--radius-pill)`, 9999px). Editable fields, square checkbox indicators, and chart bars may use 0px; circular radio/status indicators, equal-sided icon buttons, and headshots may use 50% geometry. These are explicit geometry exceptions, not extra container radius tokens. Links are actions, not pill containers; status icons, progress fills, and data marks are not actions. No intermediate rounded corners (e.g., 4px or 8px), gradients, or drop shadows.
 8. **Type and spacing: rem. Radii and borders: px.** Font-sizes and base spacing use `rem`; canonical macro `clamp()` spacing retains its approved `px`/`vw` expressions (respects user browser zoom settings, scales proportionally with root). Container radius tokens and border widths use `px`; approved circles use `50%` (visual weight, not typographic — a 1px hairline shouldn't scale with text).
 9. **Typography does the heavy lifting.** Space and scale create order. Color signals functional roles (links, buttons, states, progress, approved data highlights), not decoration.
@@ -97,7 +100,8 @@ These are hard constraints derived from the core brand direction. They apply to 
 ---
 ## What is banned in layouts
 - Gradients of any kind
-- Drop shadows on content
+- Drop shadows anywhere
+- Layout divider rules, heading rules, table gridlines, and separator strokes
 - Sharp edges (0px) on structural containers — use 16px
 - Intermediate rounded corners (e.g., 4px or 8px)
 - Beveled or angled image masks
