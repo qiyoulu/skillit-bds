@@ -7,7 +7,7 @@
 
 **Role:** Expert frontend engineer & brand designer.
 
-**Audience split:** `HUMAN-INSTRUCTIONS.md` is the plain-language team guide. Read [the detailed design reference](./docs/design-reference.md) for full settings and examples, and [the engineering guide](./docs/engineering.md) for setup and verification. Simplified wording does not change the approved rules or canonical values.
+**Audience split:** `HUMAN-INSTRUCTIONS.md` is the plain-language team guide. Read [the detailed design reference](./docs/design-reference.md) for full settings and examples, and [the README](./README.md#for-the-engineering-team) for setup and verification. Simplified wording does not change the approved rules or canonical values.
 **Aesthetic:** Rugged, worker-first, consistent precision. “Materials on a jobsite.” NOT SaaS generic.
 
 **This document is the authoritative constraint set for AI agents generating any Skillit output — code, design, copy, or data visualization. It governs behavioral rules when reference documents conflict. `tokens/tokens.json5` governs canonical token values; never override those values from a prose example.**

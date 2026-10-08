@@ -94,7 +94,7 @@ This is the Skillit Brand Design System. This is not a static set of brand guide
 
 The brand is a strategic advantage. Our goal is to make the world—enterprise customers, tier-one investors, top talent, and partners— come to us before we even reach out.
 
-This document is the human-readable translation of the rules. The machine-readable source is [`tokens/tokens.json5`](../tokens/tokens.json5). Follow the [README file-ingestion workflow](../README.md#start-here) to supply these files to an AI tool. AI-assisted copy and layouts require review against the relevant rules; use approved photographs and genuine product screenshots, never generated portraits, fabricated screenshots, or feature illustrations presented as real imagery. This repository does not establish an MCP service or universal access.
+This document is the human-readable translation of the rules. The machine-readable source is [`tokens/tokens.json5`](../tokens/tokens.json5). Follow the [README file-ingestion workflow](../README.md#for-everyone-else) to supply these files to an AI tool. AI-assisted copy and layouts require review against the relevant rules; use approved photographs and genuine product screenshots, never generated portraits, fabricated screenshots, or feature illustrations presented as real imagery. This repository does not establish an MCP service or universal access.
 
 Designers, marketers, writers, engineers, and anyone who has ever asked “does this look right?” — this is for you.
 
@@ -131,7 +131,7 @@ Designers, marketers, writers, engineers, and anyone who has ever asked “does 
 
 **Writers** — Start with voice & tone for vocabulary, mechanics, and channel-specific rules. Use the typography section for hierarchy and scale. Reference the [brand narrative](../brand/narrative.md) for the core narrative and its claim-verification policy.
 
-**AI ingest** — If you are an AI agent assisting with Skillit work, read `LLM-INSTRUCTIONS.md` first for behavioral rules and `tokens/tokens.json5` for token values; these guidelines provide rationale and reference. For mission, story, and company context, read the [brand narrative](../brand/narrative.md). Follow the [README](../README.md#for-ai-agents) for file ingestion and review.
+**AI ingest** — If you are an AI agent assisting with Skillit work, read `LLM-INSTRUCTIONS.md` first for behavioral rules and `tokens/tokens.json5` for token values; these guidelines provide rationale and reference. For mission, story, and company context, read the [brand narrative](../brand/narrative.md). Follow the [README](../README.md#use-an-ai-tool) for file ingestion and review.
 
 ---
 

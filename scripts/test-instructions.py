@@ -82,7 +82,7 @@ def heading_slugs(text):
         slugs.add(slug)
     return slugs
 
-for filename in ['HUMAN-INSTRUCTIONS.md', 'LLM-INSTRUCTIONS.md', 'README.md', 'docs/design-reference.md', 'docs/engineering.md']:
+for filename in ['HUMAN-INSTRUCTIONS.md', 'LLM-INSTRUCTIONS.md', 'README.md', 'docs/design-reference.md']:
     text = read_text(root / filename)
     for target in re.findall(r'\[[^]]*\]\(([^)]*)\)', text):
         link = urlsplit(target)
