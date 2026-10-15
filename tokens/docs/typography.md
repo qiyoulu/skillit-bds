@@ -1,5 +1,5 @@
 # Typography Tokens — Skillit Kit BDS
-**Last updated:** 2026-08-17
+**Last updated:** 2026-10-14
 **Canonical source:** `tokens/tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
@@ -217,6 +217,14 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 - **The Rule:** Never leave a single word alone on the last line of a paragraph or headline. They create visual holes that break the structural mass of the text block and severely damage readability and scannability.
 - **Manual Tracking Adjustment (Primary Fix):** To fix widows and orphans on static or editorial surfaces, adjust the tracking (letter-spacing) of the text block by up to `±2%` (`±0.02em`). This is the preferred method because it imperceptibly compresses or expands the text to force a re-wrap without creating a ragged visual hole at the end of the previous line.
 - **Engineering and fallback:** Use `text-wrap: balance` on headings and `text-wrap: pretty` on body. Where unsupported, test critical copy at every supported width and zoom setting; adjust the wording or apply a non-breaking space between the last two words only after checking that it does not cause overflow. `<wbr>` adds a wrap opportunity inside a long word; it does not prevent a final single-word line. Allow natural wrapping if a manual fix harms reflow. Use `orphans: 2; widows: 2;` for print page or column breaks.
+
+### Exported graphics: pick the tier by displayed size
+- A graphic exported at `2x` and shown at half its pixel width displays its text at half size. Assign the tier and its weight by the size the text is **shown**, not the size it is drawn on the canvas. Text drawn at 32px and shown at 16px uses the Text-1x weights (450, bolded 600).
+- State the intended display width with the export, so the next editor can re-map tiers if the graphic is placed larger.
+
+### Verify the variable font is really variable
+- Some renderers (headless Chromium among them) snap variable-font weights to a few named steps when the font is installed by name, so 450 draws as 500 and 650 as 700. Text then reads heavier than the tokens intend.
+- Load the font file directly with `@font-face` and `font-weight: 100 900`, then confirm that 450, 550, and 650 measure at different widths before exporting.
 
 ### What not to do
 - Do not use `font-weight: 300` (Light) — too thin for job-site legibility.

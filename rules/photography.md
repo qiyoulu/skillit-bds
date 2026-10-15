@@ -1,5 +1,5 @@
 # Photography & Image Rules — Skillit Kit BDS
-**Last updated:** 2026-08-17
+**Last updated:** 2026-10-14
 ---
 ## The principle
 Photography is the brand’s most human element. Every image should make a craft pro feel seen — not as a stock photo prop, not as a demographic data point, but as a skilled professional whose work builds the physical world.
@@ -62,6 +62,17 @@ These are non-negotiable in all generated image briefs, art direction, and asset
 - Browser chrome: minimal or none. Show the UI, not the browser.
 - Data in screenshots should be realistic. Fake or clearly placeholder data (e.g., “John Doe,” “Test Company”) undermines the brand’s credibility.
 - Crop tightly to the relevant UI area. Do not show a full screen if the relevant feature is in one panel.
+## Subject: product graphics (drawn UI and diagrams)
+A product graphic is a drawn, simplified view of the product or of a data story. Use it when a real screenshot would be too small, too dense, or would expose real member data.
+- **Surface:** one Plaster card on Canvas, `16px` corners (`--radius-sharp`), no border or shadow. When exported alone, the corners are transparent so it sits on any ground.
+- **Margin:** `48px` between the card edge and its content at a 800 x 600 tile (`--space-12`); scale proportionally for other sizes.
+- **Default tile:** 4:3, exported at `2x`. Keep a set of tiles on one ratio so a grid lays out evenly.
+- **Color:** Iron and Plaster, plus one accent. Traffic Cone marks the single point of the story (the result, the action, the demand). Do not color several elements orange.
+- **Content:** use the real figures from the copy. If a figure is illustrative, say so where the graphic is specified. Fake names and obviously placeholder data break the rule in the screenshots section above.
+- **Structure:** a surface separates groups, never a rule ([layout](./layout.md)). Tables alternate Canvas and Plaster rows ([tables](../components/tables.md)).
+- **Type:** tiers and weights by displayed size ([typography](../tokens/docs/typography.md)).
+- **Icons and the logo mark:** scale in whole multiples of the source canvas. See [iconography](./iconography.md). The logo mark sits in Iron on Traffic Cone or Plaster, never recolored.
+- **Maps:** see the map rules in [data viz](./data-viz.md).
 ---
 ## Subject: hardware and materials (macro)
 - Physical materials — copper pipe, concrete, rebar, circuit board, tooling — shot close enough to read texture.

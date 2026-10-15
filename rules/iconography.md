@@ -1,5 +1,5 @@
 # Iconography Rules — Skillit Kit BDS
-**Last updated:** 2026-10-08
+**Last updated:** 2026-10-14
 ---
 ## 1. Core Principles
 - **Utilitarian & Honest:** Icons should be instantly recognizable and strictly utilitarian. No decorative embellishments, unnecessary gradients, or clever visual puns. They are tools, not art.
@@ -11,6 +11,7 @@
 - **Shapes:** Solid, filled vector shapes (`fill="currentColor"`). No strokes.
 - **Geometric Construction:** All icons must be built exclusively from circles, rectangles, and triangles and their derivatives — full circles, arcs, semicircles, ring segments, rectangles, right triangles, and straight lines. No bezier curves, no freehand paths, no organic shapes. Every shape must be derivable from these three primitives. This ensures icons remain crisp at any size and consistent with the blocky, industrial brand aesthetic.
 - **Clearance:** Minimum internal padding of 2px (1 block) to maintain the heavy aesthetic.
+- **Scaling:** Scale an icon only in whole multiples of its 24px canvas (24, 48, 72, 96). Each 2px block then lands on whole pixels, so edges stay sharp. Sizes such as 38px or 44px put block edges between pixels and blur the geometry. The same holds for the logo mark: scale it in whole multiples of its source size.
 ## 3. Status Icons & Accessibility
 Use familiar icons, semantic colors, and clear labels to communicate status. Never rely on shape or color alone. Outer shape supports familiar conventions; it does not denote an information type.
 - **Success:** Bottle Glass green with a recognizable check and success label.

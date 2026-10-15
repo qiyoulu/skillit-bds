@@ -4,7 +4,8 @@
 
 ## 1. Geometry & Structure
 - **Containers:** All data viz graphics must sit on a Plaster (`--color-surface`, pure white) background card to isolate the data and maintain contrast against the surrounding UI.
-- **Corners:** `0px` — sharp, flat edges on bars (data is precision, not decoration). Tooltips and Plaster cards keep `16px` (structural containers).
+- **Corners (axis-based charts):** `0px` — sharp, flat edges on bars in any chart read against an axis (bar, grouped bar, histogram, stacked bar). Data is precision, not decoration. Tooltips and Plaster cards keep `16px` (structural containers).
+- **Corners (comparison and progress bars):** a bar that has no axis and is read as a proportion of a track (progress, funnel, a single value against a total, a two-value comparison inside a card) uses a fully rounded end (`--radius-pill`). The track is a Canvas pill and the fill is clipped to it, so the left end rounds and the right end stays at the true length. Label every bar with its value so length is never the only signal. If the bars share an axis with tick marks or gridlines, it is an axis-based chart and stays square.
 - **Stroke Weights:** A universal `4px` rule applies to all line work to maintain an industrial, structural feel.
   - Data lines are `4px`.
   - Gridlines (horizontal Y-axis only) are `4px` Canvas (`--color-background`).
@@ -12,6 +13,8 @@
 - **Markers:** Sharp squares (`0px`) or diamonds. No circles.
 - **Axes:** Remove outer bounding boxes. Y-axis gridlines only (4px Canvas `--color-background`). No X-axis gridlines.
 - **Maps:** Use a light base map for light mode. Dark maps on light surfaces break the surface hierarchy — the map should sit quietly under the data, not compete with it.
+- **Map layers:** draw demand (Traffic Cone) first and supply (Painter’s Tape) above it, so the worker-side marks are never hidden. Show a key that names both, or label them directly on the map.
+- **Connection arcs:** a line that joins supply to demand runs in the direction the data flows. Paint it as a gradient from the supply color at its origin to the demand color at its destination, `4px` stroke at its lightest, round caps. A single color is acceptable only where direction does not matter. Do not draw an arc for a route with too few people to protect their identity (the map notes the threshold).
 
 ## 2. Typography
 - **Font:** Work Sans.
@@ -30,6 +33,7 @@
 - **Patterns:** Industrial cross-hatching or stippling can supplement approved color fills when more separation is needed.
 
 ## 4. Bar Graphs
+The rules below apply to axis-based bars. For comparison and progress bars, see the corner rule in section 1.
 - Use flat fills only. For N opacity steps, distribute values evenly from 100% down to 100% / N: 100% / 50% for two steps, 100% / 67% / 33% for three steps. Apply the same rule to the chosen canonical base color; approved categorical color fills are also allowed.
 - **Annotations:** Value callout labels sit in Work Sans, `Text-1x`, Iron — same typeface as category labels. JetBrains Mono is for machine data only (timestamps, IDs, code); a chart value label is human-readable content, not metadata.
 - **Legend:** Placed at the bottom, horizontal layout, Work Sans `Text-1x`.
