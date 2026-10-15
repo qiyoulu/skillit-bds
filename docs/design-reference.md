@@ -3,9 +3,9 @@
 
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 
-## **Version 1.2 · October 2026**
+## **Version 1.3 · October 2026**
 
-**Release status:** v1.2 source release; no Git tag or GitHub Release created. See the [v1.2 release notes](../releases/v1.2.md) for the complete change set since v1.1.
+**Release status:** v1.3 source release; no Git tag or GitHub Release created. See the [v1.3 release notes](../releases/v1.3.md) for the change set since v1.2.
 
 > **AI agents: read [`LLM-INSTRUCTIONS.md`](../LLM-INSTRUCTIONS.md) first.** That file is the authoritative constraint set for machine-generated output — code, design, copy, data viz. Where behavioral rules conflict, `LLM-INSTRUCTIONS.md` wins; `tokens/tokens.json5` governs token values. This document is the human-readable rationale and full guideline set; the LLM file is the enforcement layer.
 
@@ -14,7 +14,7 @@ This is the detailed design and implementation reference. For the plain-language
 ## Table of Contents
 
 - [Skillit Kit Brand Design System (BDS)](#skillit-kit-brand-design-system-bds)
-  - [**Version 1.2 · October 2026**](#version-12--october-2026)
+  - [**Version 1.3 · October 2026**](#version-13--october-2026)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [At a Glance](#at-a-glance)

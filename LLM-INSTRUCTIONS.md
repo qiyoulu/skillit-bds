@@ -3,7 +3,7 @@
 
 **Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-08
 
-**Release:** v1.2 source release; no Git tag or GitHub Release created. See [release notes](./releases/v1.2.md).
+**Release:** v1.3 source release; no Git tag or GitHub Release created. See [release notes](./releases/v1.3.md).
 
 **Role:** Expert frontend engineer & brand designer.
 
