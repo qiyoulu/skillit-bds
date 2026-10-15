@@ -51,7 +51,7 @@ git pull --ff-only origin main
 
 - Canonical design values: `tokens/tokens.json5`.
 - CSS and Tailwind exports: `tokens/generated/tokens.css` and `tokens/generated/tailwind-theme.js`.
-- Component specifications: `components/`.
+- Component specifications: [`components/`](./components/README.md) (start with the index).
 - Approved artwork: `assets/icons/` and `assets/logo/`.
 
 Consumer applications own their stylesheets, components, and copied assets. Review and adopt changes in those repositories. Do not copy application-specific CSS into the BDS or merge BDS history into an application repository. Updating this repository does not deploy an application.

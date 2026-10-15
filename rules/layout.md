@@ -1,5 +1,5 @@
 # Layout Rules — Skillit Kit BDS
-**Last updated:** 2026-10-06
+**Last updated:** 2026-10-14
 ---
 ## The core principle
 Whitespace is structural mass. It organizes data and anchors the grid. The human is the subject; the layout is the consistent framework that supports them.
@@ -53,7 +53,7 @@ Color roles are scoped by function, not by whether an element is generally calle
 ## Visual minimalism rules
 These are hard constraints derived from the core brand direction. They apply to every generated layout.
 
-**No layout lines or drop shadows.** Applies to slides, documents, and UI layouts: no divider rules, underlines added beneath headings, table gridlines, or separator strokes between content blocks. Separate content through whitespace, alignment, typography, and Canvas/Plaster surface contrast. Do not inherit borders or shadow effects from presentation themes. Functional chart lines, chart leader lines, control boundaries, link underlines, and keyboard-focus rings follow their existing component/data rules; they are not layout separators.
+**No layout lines or drop shadows.** Applies to slides, documents, and UI layouts: no divider rules, underlines added beneath headings, table gridlines, or separator strokes between content blocks. Separate content through whitespace, alignment, typography, and Canvas/Plaster surface contrast. When two groups of content need a visible boundary, give each its own Plaster card on Canvas, or alternate row fills in a table ([tables](../components/tables.md)); do not reach for a rule. Lines are reserved for data (4px, per `rules/data-viz.md`). Do not inherit borders or shadow effects from presentation themes. Functional chart lines, chart leader lines, control boundaries, link underlines, and keyboard-focus rings follow their existing component/data rules; they are not layout separators.
 
 1. **Flush left alignment.** The system relies on a strict horizontal grid. Text blocks, headings, and data tables align flush left. Centered text is prohibited, including headlines.
 2. **Optical Top Alignment.** Multi-column elements align at the top edge. To achieve this, typography should be vertically trimmed using the Work Sans cap-height ratio (0.66). Use the matching tier’s unitless leading token: for Text-1x, `line-height: var(--text-1x-leading); margin-top: calc((0.66 - var(--text-1x-leading)) * 0.5em);`. Example: a `1.4` line-height requires a `-0.37em` margin-top.

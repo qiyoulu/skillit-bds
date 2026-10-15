@@ -169,4 +169,11 @@ for tier in ['0.75x', '1x', '1.5x', '2x']:
     for filename, text in [('HUMAN-INSTRUCTIONS.md', human), ('LLM-INSTRUCTIONS.md', llm)]:
         documented = re.findall(re.escape('--padding-' + tier) + r'`?\s*=\s*`([^`]+)`', text)
         check(bool(documented) and all(pair == value for pair in documented), filename + ': padding pair differs from canonical $value for ' + tier)
+# The component index must list every component file, and every listed file must exist.
+components_dir = root / 'components'
+component_index = read_text(components_dir / 'README.md')
+listed = set(re.findall(r'^- \[[^\]]+\]\(\./([a-z0-9-]+)\.md\)', component_index, re.M))
+on_disk = {path.stem for path in components_dir.glob('*.md') if path.name != 'README.md'}
+check(not (on_disk - listed), 'components/README.md is missing: ' + ', '.join(sorted(on_disk - listed)))
+check(not (listed - on_disk), 'components/README.md lists files that do not exist: ' + ', '.join(sorted(listed - on_disk)))
 print(json.dumps({'status': 'PASS', 'checks': checks, 'repo': str(root)}, indent=2))
