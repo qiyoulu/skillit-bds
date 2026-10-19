@@ -467,8 +467,9 @@ with sync_playwright() as pw:
     assert style(page, '#fill', 'background-color') == 'rgb(35, 47, 54)'
     assert page.locator('#fill').bounding_box()['width'] == 100
     assert style(page, '.quote-card .attribution', 'color') == 'rgb(35, 47, 54)'
-    assert style(page, '.quote-card .text', 'font-weight') == '550'
-    print('PASS browser informational elements: opaque Iron progress at half width; Iron attribution and canonical quote weight')
+    assert style(page, '.quote-card .text', 'font-weight') == '450'
+    assert style(page, '.quote-card .text', 'font-size') == '24px'
+    print('PASS browser informational elements: opaque Iron progress at half width; Iron attribution; Text-1.5x quote (24px, 450)')
 
     nav_css = (ROOT / 'tokens/generated/tokens.css').read_text() + '\n' + '\n'.join(fences['navigation.md'])
     nav_css = re.sub(r'url\([\'\"]([^\'\"]+)[\'\"]\)', data_asset, nav_css)

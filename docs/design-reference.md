@@ -364,8 +364,8 @@ To maintain the grid’s consistent rhythm, vertical spacing between text elemen
 - **Container:** Wrap the quote in a Plaster (`var(--color-surface)` / `#FFFFFF`) card container (16px corners). It inherits the standard tactile padding for cards.
 - **Typography:** Roman only. Do not italicize the entire quote (reserve italics strictly for emphasis or titles within the text).
 - **Attribution:** Name in Semibold (600), title/company at canonical Text-1x weight (450). Color: opaque Iron for the attribution name and title/company.
-- **No opening/closing quotation marks** in the card — the card itself signals the quote.
-- **Short quotes:** Use canonical Text-2x (32px, weight 550). If a quote runs longer than three lines, use the documented long-quote variant at Text-1x (16px, weight 450, leading 1.4); verify wrapping and reflow.
+- **Quote text:** canonical Text-1.5x (24px, weight 450, leading 1.3) at every length. There is no long-quote variant; verify wrapping and reflow.
+- **Quotation marks:** no closing mark and no opening mark inside the text. A card **without a headshot** carries one decorative opening mark at Text-3x (48px, weight 550), Iron, hanging in the card's left margin so the letters stay flush; on small screens it sits above the text. A card with a headshot has no mark. Spec in `components/quote-cards.md`.
 
 **For editorial text callouts** (pull quotes within articles):
 

@@ -177,7 +177,7 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
 ### Primary hierarchy (marketing, digital, editorial, print)
 - **Text-8x:** Hero headlines at massive scale.
 - **Text-4x:** Standard headlines, campaign statements, large callouts.
-- **Text-2x:** Section headings, page titles, pull quotes.
+- **Text-2x:** Section headings, page titles.
 - **Text-1x:** All running copy, paragraph text.
 ### Functional UI scale (app, dashboard)
 - **`--text-1x`:** Work Sans 450, bolded 600, unitless line height 1.4. Use the canonical tier weights and leading for larger sizes.
@@ -206,8 +206,8 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 - **Headshot sizing:** Lock headshots to 128px desktop / 64px mobile — never scale by font-size ratio. See `components/quote-cards.md`.
 - **Typography:** Roman only. Do not italicize the entire quote (reserve italics for emphasis or titles of works).
 - **Attribution:** Name in canonical Text-1x bolded weight (600), role/company/location in canonical Text-1x base weight (450), all full-opacity Iron. Traffic Cone is not permitted for 16px attribution.
-- **No opening/closing quotation marks** in the card — the card itself signals the quote.
-- **If a quote runs longer than three lines,** use canonical Text-1x (16px, 450, leading 1.4); otherwise use Text-2x (32px, 550, leading 1.2). See `components/quote-cards.md`.
+- **Quote text:** canonical Text-1.5x (24px, 450, leading 1.3), at every length. There is no long-quote variant. See `components/quote-cards.md`.
+- **Quotation marks:** no closing mark, and no opening mark inside the text. A card **without a headshot** carries one decorative opening mark at Text-3x (48px, 550), Iron, hanging in the left margin of the card so the quote's letters stay flush (see Hanging Punctuation below). A card with a headshot has no mark. See `components/quote-cards.md`.
 
 ### Typographic Punctuation
 - **Smart Quotes:** Always use angled (smart) quotation marks (`“` `”`) and apostrophes (`’`). Never use straight (dumb) typewriter quotes (`"` `'`) in human-readable copy. Straight quotes are for code; angled quotes are for reading.
