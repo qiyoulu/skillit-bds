@@ -184,6 +184,8 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 
 **Target A — Marketing (`www.skillit.com`), Squarespace:**
 - Output: Figma prototypes, SVG exports, plain-text token values, custom CSS.
+- Custom CSS is compiled by an old LESS (2.7). It adds the bare numbers inside a fluid `clamp()`, even inside `calc()` (`5.17rem + 3.54vw` becomes `8.71rem`), so `clamp()` always returns its maximum and mobile never scales down. Wrap the whole value in the LESS escape: `font-size: ~"clamp(6rem, 5.17rem + 3.54vw, 8rem)" !important;`. Do not use `calc()` for this; it fails on the live site. The `-sm` tokens stay as written; only Squarespace needs the escape. Verify on the live page at about 390px: the computed h1 size should be near 96px, not 128px.
+- Squarespace has one button size per variant, so the variant selects the BDS tier and the block's small/medium/large setting is ignored: **primary** = BDS primary at Text-1.5x (12px / 24px, leading 1.3); **secondary** = BDS primary at Text-1x (8px / 16px, leading 1.4); **tertiary** = BDS secondary at Text-1x. Header and menu buttons are Text-1x. Weight is 600 on all three. Extend the 1x hit area to 44px with a pseudo-element (`components/buttons.md`). Squarespace's own selectors carry id weight, so override at `#siteWrapper` or with `!important`.
 - DO NOT output: `tailwind.config.js`, ERB, Rails code.
 
 **Target B — Product (`app.skillit.com`), Rails 7.2 (tailwindcss-rails, importmap):**

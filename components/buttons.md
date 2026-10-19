@@ -1,5 +1,5 @@
 # Buttons — Skillit Kit BDS
-**Last updated:** 2026-10-08
+**Last updated:** 2026-10-19
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -7,6 +7,7 @@
 - **Paired padding:** Button-like controls use the canonical `--padding-*x` token matching their text tier in `rem`: Text-1x = 8px / 16px, Text-1.5x = 12px / 24px, Text-2x = 16px / 32px at a 16px root. Text-0.75x is the approved compact exception (4px / 8px), not a proportional 6px / 12px pair. See `tokens/docs/spacing.md`; do not derive local `em` padding or use unapproved type sizes. Outlook email may use an explicit approved pixel fallback matching the chosen canonical pair.
 - Every interactive element needs a visible focus state: 2px solid Traffic Cone (`--color-primary`), 2px offset. On Canvas this is a documented contrast failure (2.6958:1); on Plaster it narrowly meets 3:1 (3.0177:1). Keep Orange in authored contexts, preserve native and forced-colors focus, and verify the actual adjacent surface; see `rules/accessibility.md`.
 - Touch targets minimum 40px in both dimensions (app).
+- **Marketing hit area:** the visible pill keeps its tier height (Text-1x is 38.4px: 8px padding plus a 22.4px line). Where that is under 44px, extend the hit area invisibly to 44px (a pseudo-element, 3px above and below at Text-1x). Never grow the pill to meet it. The Text-1.5x primary is 55px and needs no extension.
 
 ## Primary button
 The dominant CTA. Keep one dominant CTA per section; supporting controls should not compete with it. Orange may repeat across functional primary actions, selection controls, and focus: there is no one-orange-element limit. Traffic Cone background, Iron text (Canvas on Cone is banned — 2.70:1, see `rules/accessibility.md`).

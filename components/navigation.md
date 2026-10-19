@@ -1,5 +1,5 @@
 # Navigation — Skillit Kit BDS
-**Last updated:** 2026-09-09
+**Last updated:** 2026-10-19
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -118,6 +118,25 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 ```
 **Example nav labels (not a live-site inventory):** How it works · Our network · Jobs · About us · Resources
 **Right side:** Primary button ("Join") — Traffic Cone, tactile padding.
+
+## Mega menu panel (marketing site)
+For a nav item that leads to a family of offerings, each with its own page. A plain destination stays a plain link. The panel is a marketing-site pattern, not an app one.
+
+**Trigger.** A secondary button at the right of the header, after the primary: Canvas fill on the white header, Iron text, pill, Text-1x. It carries a 16px `chevron-down` that turns 180° while the panel is open. While open the button holds its Canvas hover fill. Traffic Cone stays with the primary alone, so one dominant CTA remains.
+
+**Panel.** Plaster, under the header, across the content container; header and panel read as one white surface. Inside, one Canvas card per offering (16px corners), equal width, one column below 899px. Each card keeps its own copy, buttons and "Ideal for" list. Behind the panel, an Iron backdrop at 50%, the same recipe as the modal backdrop, below the header.
+
+**Audience line.** One line of Text-1x Iron below the cards, naming who the menu serves. Sentence case; acronyms keep their capitals (ENR). It carries no claim and no closing period.
+
+**Motion.** The panel opens as a blind: `clip-path` plus a short translate, never height. `--duration-medium` (300ms), `--ease-out` to open, `--ease-in` to close. Reduced motion is instant.
+
+**Behavior.**
+- **Pointer:** opens on hover; a 200ms leave delay stops it closing on the way into the panel. Hovering any other header control closes it.
+- **Touch:** the first tap opens; a second tap follows the link.
+- **Keyboard:** ArrowDown opens and focuses the first link; Tab walks the panel; Escape closes and returns focus to the trigger.
+- **State:** `aria-expanded` on the trigger is the single source of truth.
+
+**Mobile.** The trigger leaves the header and sits beside the primary in the pinned bar at the foot of the menu, both hugging their labels. Tapping it drills in: the root list slides out to the left and the panel slides in from the right, as the language picker does. A Back row (Text-1x, 48px tall) leads the panel; Escape steps back one level before it closes the menu. The cards stack in one column with the same copy. Root rows are Text-1.5x on 48px rows; the panel text is Text-1x, so type steps 24px then 16px.
 
 ## Back and forward sticky bar
 
