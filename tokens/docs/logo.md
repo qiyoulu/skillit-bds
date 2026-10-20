@@ -47,6 +47,7 @@ The header logo is always **32px tall**, regardless of whether it's the lockup o
 The SKILLIT Hire lockup is the mark, the SKILLIT wordmark, and the word Hire together. It is a fixed graphic asset for the Hire product; the wordmark is not used standalone here either. Use the standard lockup everywhere else.
 **File:** `assets/logo/lockup-hire-iron.svg` (Iron). Canvas and Plaster variants are not yet supplied.
 **Rules:** Same as the lockup: approved SVG only, never retyped or redrawn, explicit height, Iron on Canvas.
+**On SKILLIT Hire pages the Hire lockup is the logo at every width.** It does not collapse to the mark below 1280px, in the header or the footer, mobile included. The mark-only swap applies to the standard lockup alone. Set it 32px high, `--logo-height`, like the standard lockup. That is about 217px wide (61:9 artwork), which fits beside the 40px menu button down to a 320px viewport. Pages outside the Hire product keep the standard lockup and the mark-only swap.
 ---
 ## Color variants
 | Variant                             | Contrast | Permitted | Use                                             |
