@@ -1,5 +1,5 @@
 # Navigation — Skillit Kit BDS
-**Last updated:** 2026-10-19
+**Last updated:** 2026-10-20
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -9,41 +9,28 @@
 - Touch targets minimum 40px in both dimensions (app).
 
 ## Primary navigation
-The primary navigation uses the boot tread pattern rendered in Plaster (`#FFFFFF`) as a low-contrast structural anchor in the empty top band of the header. The empty texture band is additional to the 64px minimum content row. Keep the texture outside logo, text, control, and focus-ring exclusion zones; the pattern is not a background behind navigation UI. The external pattern is an alpha mask painted by the host, not a background image that inherits `currentColor`. CSS URLs assume a stylesheet beside `tokens/generated/tokens.css`; see `icons.md`.
+The primary navigation is a 64px row on Canvas: the 32px logo with 16px above and below. There is no texture band; the row is the whole header.
 On desktop, the full "Skillit" lockup is visible. When the viewport scales down, the lockup hides and is replaced by the 24px `mark` icon, while the navigation items collapse into a full-width dropdown menu.
 ```css
 .nav {
   position: relative;
-  isolation: isolate;
   background-color: var(--color-background); /* Canvas */
   border-bottom: none;
-  padding-top: var(--space-2); /* reserved empty pattern band, outside nav content */
-}
-.nav::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: var(--space-2); /* texture-only band; keep all text/control boxes clear */
-  z-index: -1;
-  pointer-events: none;
-  background-color: var(--color-surface); /* host-painted Plaster tread */
-  -webkit-mask: url('../../assets/logo/pattern.svg') left center / auto 100% repeat-x;
-  mask: url('../../assets/logo/pattern.svg') left center / auto 100% repeat-x;
 }
 .nav-inner {
-   max-width: var(--max-width-content);
+  max-width: calc(var(--max-width-content) + 2 * var(--space-8)); /* 1200px content once both 32px margins fit (1264px) */
   margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
   padding: 0 var(--space-4); /* mobile; shared with body content */
-  min-height: var(--nav-height); /* 64px content row; grow for text resizing */
+  min-height: var(--nav-height); /* 64px row: 32px logo centered, 16px above and below; grows for text resizing */
   padding-block: var(--space-2);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.nav-logo img { height: var(--logo-height); }  /* 24px — lockup height */
-.logo-mark { display: none; width: var(--logo-height); height: var(--logo-height); }  /* 24px */
+.nav-logo img { height: var(--logo-height); }  /* 32px — lockup height */
+.logo-mark { display: none; width: var(--logo-height); height: var(--logo-height); }  /* 32px */
 .nav-right {
   display: flex;
   align-items: center;
@@ -73,7 +60,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   flex-direction: column;
   gap: var(--space-8);               /* 32px — mobile dropdown links */
   box-sizing: border-box;
-  max-width: var(--max-width-content);
+  max-width: calc(var(--max-width-content) + 2 * var(--space-8));
   margin: 0 auto;
   padding: var(--space-16) var(--space-4);
    border-top: 1px solid var(--color-foreground);
@@ -101,14 +88,10 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   outline-offset: 2px;
 }
 /* Responsive Nav and the shared header/body content-width contract */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .nav-inner { padding-inline: var(--space-8); }
-  .mobile-dropdown { padding-inline: var(--space-8); }
+@media (min-width: 768px) {
+  .nav-inner, .mobile-dropdown { padding-inline: var(--space-8); }
 }
-@media (min-width: 1024px) {
-  .nav-inner, .mobile-dropdown { padding-inline: 0; }
-}
-@media (max-width: 1023px) {
+@media (max-width: 1279px) { /* below xl: menu button and mark; the full bar needs the 960px+ of room only xl guarantees */
   .nav-links, .nav-cta { display: none; }
   .nav-menu-btn { display: block; }
   .nav-logo { display: none; }
@@ -116,6 +99,8 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 }
 .mobile-dropdown.open { display: flex; }
 ```
+**Mobile menu layout.** Links are top-aligned and flush-left, directly under the header, as Text-1.5x rows 48px tall. The primary button and, where present, the secondary trigger sit in a bar pinned to the foot of the menu, hugging their labels. The space between the two is empty; links never stretch or center to fill it. The position of a language picker is not yet specified.
+
 **Example nav labels (not a live-site inventory):** How it works · Our network · Jobs · About us · Resources
 **Right side:** Primary button ("Join") — Traffic Cone, tactile padding.
 

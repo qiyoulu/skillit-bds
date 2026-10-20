@@ -5,7 +5,7 @@
 
 ## **Version 1.3 · October 2026**
 
-**Release status:** v1.3 source release; no Git tag or GitHub Release created. See the [v1.3 release notes](../releases/v1.3.md) for the change set since v1.2.
+**Release status:** v1.4 source release; no Git tag or GitHub Release created. See the [v1.4 release notes](../releases/v1.4.md) for the change set since v1.3.
 
 > **AI agents: read [`LLM-INSTRUCTIONS.md`](../LLM-INSTRUCTIONS.md) first.** That file is the authoritative constraint set for machine-generated output — code, design, copy, data viz. Where behavioral rules conflict, `LLM-INSTRUCTIONS.md` wins; `tokens/tokens.json5` governs token values. This document is the human-readable rationale and full guideline set; the LLM file is the enforcement layer.
 
@@ -225,7 +225,7 @@ The Skillit pattern is a step-and-repeat tessellation of the boot tread mark. Be
 **How to use it:**
 
 - **Restricted Palette:** The pattern may ONLY be rendered using the neutral structural colors: Canvas, Plaster, and Iron (the whites and black). Accent colors are strictly banned.
-- **Structural anchor:** Neutral texture in non-content regions of document headers/footers or navigation headers only; keep it out of UI controls, labels, and text zones.
+- **Structural anchor:** Neutral texture in non-content regions of document headers/footers only; keep it out of UI controls, labels, and text zones.
 - **Physical applications:** Excellent for tactile physical touchpoints (e.g., debossed into leather, printed on packaging interiors, or as a subtle watermark on formal documents).
   **What not to do:**
 - Do not use any accent colors (Traffic Cone, Bottle Glass, Toolbox, Hard Hat, Painter’s Tape) for the pattern.
@@ -462,15 +462,15 @@ In this system, shape indicates whether an element is interactive or static. We 
 ### Grid & Baseline
 
 The layout is built on an **8px/16px baseline grid**, paired with **Fluid Architectural Scaling**.
-While micro-spacing uses canonical `rem` tokens (`0.5rem`, `1rem`, `2rem`, equivalent to 8px, 16px, 32px at a 16px root), macro-spacing (margins, section gaps, padding) uses CSS `clamp()` functions (`--space-128` and `--space-256`). This ensures the massive, confident margins seen on desktop smoothly and gradually compress as the viewport scales down, exactly mimicking the fluid, tensioned behavior of Anthropic’s grid, without sudden, jarring jumps at breakpoints.
+While micro-spacing uses canonical `rem` tokens (`0.5rem`, `1rem`, `2rem`, equivalent to 8px, 16px, 32px at a 16px root), macro-spacing (margins, section gaps, padding) uses CSS `clamp()` functions (`--space-128` and `--space-256`). This ensures the massive, confident margins seen on desktop smoothly and gradually compress as the viewport scales down, exactly mimicking the fluid, tensioned behavior of Anthropic’s grid, without sudden, jarring jumps at breakpoints. `--space-128` is anchored at 64px for 768px and 128px for 1280px with a 32px floor, so from 768px up the top and bottom padding is twice the 32px side margin.
 **12-Column Newspaper Grid:** All desktop layouts sit on a strict 12-column grid; equal-track construction such as `repeat(12, minmax(0, 1fr))` is valid. Do not use ad hoc percentage splits. Blocks should span fixed column counts (e.g., 7 columns for hero text, 5 columns for the hero CTA) so that vertical alignment is maintained down the entire page.
 | Element | Height / Padding | Margin |
 | ------------------- | ----------------------------- | ------------ |
 | Nav Bar | 64px | — |
-| Logo Lockup | 24px height (`--logo-height`) | — |
+| Logo Lockup | 32px height (`--logo-height`) | — |
 | Primary Buttons | `--padding-1x`: 0.5rem vertical, 1rem horizontal at Text-1x | — |
 | Desktop Section Gap | — | 128px |
-| Desktop Page Margin | — | 128px |
+| Page top/bottom padding | — | 32px mobile, 64px at 768px, 128px from 1280px (`--space-128`) |
 
 **Paired padding is authoritative in `rem`:** use `--padding-0.75x` = `0.25rem 0.5rem` at 12px (compact exception), `--padding-1x` = `0.5rem 1rem` at 16px, `--padding-1.5x` = `0.75rem 1.5rem` at 24px, and `--padding-2x` = `1rem 2rem` at 32px. Do not replace these fixed pairs with universal `0.5em 1em` padding. Pixel equivalents assume a 16px root. Header and body share the same responsive side-padding contract in [spacing](../tokens/docs/spacing.md).
 
@@ -482,7 +482,7 @@ While micro-spacing uses canonical `rem` tokens (`0.5rem`, `1rem`, `2rem`, equiv
 - **Do** use fully rounded pill shapes for primary buttons.
 - **Don’t** use intermediate container corners (e.g., 4px or 8px); approved circular indicator geometry is not a container tier.
 - **Don’t** bevel edges or use drop shadows.
-- **Do** restrict neutral boot-tread texture to non-content header zones; leave navigation text and controls on an unpatterned surface.
+- **Do** restrict neutral boot-tread texture to non-content document header/footer zones; the navigation header carries no texture.
 - **Don’t** use it as a section background or content surface fill.
 
 ---

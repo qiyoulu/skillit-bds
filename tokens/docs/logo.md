@@ -25,21 +25,21 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 **Minimum size:** 21px/16pt height (mark at 21px/16pt, wordmark at 16px/12pt).
 - **Clear space:** Maintain a minimum clear space of 1/8 of the lockup height (12.5%) on each side.
 ## Small viewports
-- **Small viewports (< 768px):** Use the mark alone, not a scaled-down lockup. The lockup's wordmark becomes illegible below its minimum size; the mark carries the brand on its own.
+- **Header and footer below 1280px:** Use the mark alone, not a scaled-down lockup. The lockup is 5.4× wider than its height (about 172px at 32px), and below 1280px the navigation collapses to a menu button; the mark carries the brand on its own.
 - Never scale the lockup below 21px height — switch to the mark at the same `--logo-height` instead.
 
 ## Header Logo Heights
-The header logo is always **24px tall**, regardless of whether it's the lockup or the mark, regardless of surface. One token: `--logo-height`.
+The header logo is always **32px tall**, regardless of whether it's the lockup or the mark, regardless of surface. One token: `--logo-height`.
 
 | Context | Logo | Token | Value |
 |---|---|---|---|
-| App header (Canvas bg) | mark only | `--logo-height` | 24px |
-| Public topnav (light bg) | full lockup | `--logo-height` | 24px |
-| Marketing site header | full lockup | `--logo-height` | 24px |
-| Docs header | full lockup | `--logo-height` | 24px |
+| App header (Canvas bg) | mark only | `--logo-height` | 32px |
+| Public topnav (light bg) | full lockup | `--logo-height` | 32px |
+| Marketing site header | full lockup | `--logo-height` | 32px |
+| Docs header | full lockup | `--logo-height` | 32px |
 
 **Rules:**
-- Lockup and mark use the same 24px height. The lockup has more horizontal reach because it includes the wordmark; the mark does not. Height is the one dimension that stays consistent.
+- Lockup and mark use the same 32px height. The lockup has more horizontal reach because it includes the wordmark; the mark does not. Height is the one dimension that stays consistent.
 - Do not scale the logo to fill a container. Do not use `height: auto` and let the SVG's intrinsic size decide. Always set the height explicitly from `--logo-height`.
 - If the logo appears in a context not listed here (email signatures, partner badges, print, cards), refer to the minimum-size rules (21px for mark, 16px for wordmark) rather than the header height.
 ---
@@ -56,7 +56,7 @@ The mark is always rendered in a single, flat color. No gradients, multi-color t
 ## The Pattern
 The pattern is a step-and-repeat tessellation of the mark. Because the mark features interlocking negative space, repeating it forms a structural, masonry-like wall.
 **Usage rules:**
-- **Placement:** Use as a structural anchor in empty document-header/footer regions, the empty navigation-header band, or physical touchpoints (debossing, endpapers). Reserve exclusion zones for the logo, text, controls, and focus rings; permission for header texture is not permission to place it behind navigation UI.
+- **Placement:** Use as a structural anchor in empty document-header/footer regions, or physical touchpoints (debossing, endpapers). Reserve exclusion zones for the logo, text, controls, and focus rings; permission for header texture is not permission to place it behind navigation UI.
 - **Contrast:** Should be low-contrast, tone-on-tone. Rendering the pattern in **Plaster** (`#FFFFFF`) against a **Canvas** ground is the approved and preferred execution for digital surfaces like the navigation bar.
 - **Scale:** Keep it scaled as a texture. Do not blow it up into a massive hero graphic.
 - **Restrictions:** Never use as a background behind running text or UI components. Never overlay on photography. Tint the supplied pattern’s alpha mask using the host’s approved neutral token; this is an approved texture-rendering treatment, not permission to recolor, redraw, or alter fixed mark/lockup artwork. Use supplied logo variants only; absent variants require approval and an approved export, never consumer reconstruction.

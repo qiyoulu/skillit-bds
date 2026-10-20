@@ -26,7 +26,7 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
   background-color: var(--color-surface);  /* Plaster */
   border: none;                            /* No borders */
   border-radius: var(--radius-sharp);    /* 16px */
-  padding: var(--space-16);                /* 64px — tactile */
+  padding: var(--space-8);                 /* 32px — tactile, all sizes */
   box-shadow: none;                        /* No drop shadows */
 }
 /* Cards separate from Canvas ground through Plaster background contrast — no borders. */
@@ -45,9 +45,6 @@ Cards use generous padding (tactile). Because borders and drop shadows are banne
 .card-interactive[aria-selected="true"] {
    background-color: var(--color-surface-hover);
    color: var(--color-foreground);
-}
-@media (max-width: 768px) {
-  .card { padding: var(--space-8); }        /* 32px — tactile mobile */
 }
 /* Structured surface */
 .surface-structured {

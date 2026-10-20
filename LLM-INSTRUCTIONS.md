@@ -3,7 +3,7 @@
 
 **Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-08
 
-**Release:** v1.3 source release; no Git tag or GitHub Release created. See [release notes](./releases/v1.3.md).
+**Release:** v1.4 source release; no Git tag or GitHub Release created. See [release notes](./releases/v1.4.md).
 
 **Role:** Expert frontend engineer & brand designer.
 
@@ -100,8 +100,8 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 
 - **Clear space:** 12.5% (1/8 of lockup height) on all sides.
 - **Horizontal lockup only.** No stacked or vertical variants. Never the wordmark alone.
-- **Small viewports (< 768px):** Use the mark alone — never scale the lockup below 21px height.
-- **Header height:** `--logo-height: 24px` for both lockup and mark, always set explicitly. Never `height: auto`.
+- **Header and footer below 1280px:** Use the mark alone — never scale the lockup below 21px height.
+- **Header height:** `--logo-height: 32px` for both lockup and mark, always set explicitly. Never `height: auto`.
 - **Treatments:** Iron on Canvas (default). Single-color solid Iron or Canvas for print/embroidery, never an outline treatment. Preserve the approved fixed artwork and its paint; UI-style hex restrictions do not authorize consumer recoloring.
 - **Banned:** stretching, rotating, drop shadows, enclosing in shapes, raster formats (except approved 512px-height PNG exports for SVG-rejecting platforms), recreating in any tool.
 
@@ -206,7 +206,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 8. Tintable UI icons use `fill="currentColor"`; status uses familiar icons, semantic colors, and clear labels, never shape or color alone. Outer geometry is not an information-type code; status icons are not automatically interactive. Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Noninteractive does not mean neutral: only nonsemantic utility icons and completed progress use Iron. Status-glyph runtime props select meaning and host CSS token color, not fixed asset paint. Checkbox/radio/selection-chip outlines and fills are Cone with contrasting Iron inner check glyphs; chip pills stay Plaster with Iron text. Preserve approved fixed graphic/logo paint. All toast types use Plaster bodies with Iron text and their semantic icon color; close controls use Iron with Traffic Cone focus. Toast bodies remain static 16px-corner feedback panels, not actions; only close/link controls are actionable. No colored success/error/warning toast-background exception remains. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast.
 9. Charts: no X gridlines, donut, radar, or 3D; monochromatic Iron/Cone is optional/default, not exclusive; purposeful categories may use Cone, Tape, and other canonical colors with legends or direct labels, non-color cues, and actual-surface contrast; `tabular-nums`; references 12px mono opaque Iron with approved source/date/cohort/definition.
 10. Type uses canonical tier tokens; semantic HTML headings/controls are required for meaning. Work Sans for human copy, JetBrains Mono for approved machine data/references; keep 1:1 sizes, not equal-x-height claims. Optical alignment uses measured 0.66 Work Sans cap height.
-11. Logo is the approved SVG, unmodified, with 12.5% clear space; mark-only below 768px. Only SVG-rejecting platforms may use approved 512px-height PNGs; preserve SVG geometry/aspect and fixed paint, never consumer-recolor.
+11. Logo is the approved SVG, unmodified, with 12.5% clear space; mark-only in the header and footer below 1280px. Only SVG-rejecting platforms may use approved 512px-height PNGs; preserve SVG geometry/aspect and fixed paint, never consumer-recolor.
 12. Base spacing uses `--space-*` in `rem`; paired padding uses matching `--padding-*` fixed rem pairs with the 12px compact exception. Keep canonical macro `clamp()` expressions; `em` only for optical/indicator geometry, `50%` only circular indicators, container radii/borders in `px`. Test reflow; no forced widow fixes that overflow.
 13. No banned words or transitions in copy.
 14. Header margins match body margins.

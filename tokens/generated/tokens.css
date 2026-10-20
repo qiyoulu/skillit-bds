@@ -40,7 +40,7 @@
   --space-24: 6rem;               /* 96px */
 
   /* spacing — macro (fluid) */
-  --space-128: clamp(48px, 10vw, 128px);
+  --space-128: clamp(2rem, calc(12.5vw - 2rem), 8rem);
   --space-256: clamp(96px, 18vw, 256px);
 
   /* spacing — aliases */
@@ -140,7 +140,7 @@
   --touch-target-min: 40px;
   --nav-height: 64px;
   --logo-mark-min: 21px;
-  --logo-height: 24px;
+  --logo-height: 32px;
   --wordmark-min: 16px;
 
   /* breakpoints (min-width, mobile-first) */

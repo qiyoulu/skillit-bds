@@ -40,14 +40,15 @@ Color roles are scoped by function, not by whether an element is generally calle
 ### Website / marketing
 - Strict equal-track 12-column grid on desktop: `grid-template-columns: repeat(12, minmax(0, 1fr))` is permitted. Assign content by integer column spans. Do not replace the shared grid with arbitrary fractional ratios (e.g., `1fr 1.5fr`) or local percentage splits.
 - Gutter: `--space-6` (24px).
-- Content max-width: `1200px`, centered.
+- Content max-width: `1200px`, centered. The side padding (32px from 768px) stays in place until the viewport can hold 1200px plus both margins, so the cap is reached at 1264px; a centered 1200px block never touches the screen edge.
 - Minimum content-block width: `326px` (`--column-min-width`), not the width of each track in the 12-column grid. At narrower viewports, allow a single content block to shrink to the available width so reflow is preserved.
-- Desktop content: max-width `1200px`, centered; headers use the same content column.
-- **Tablet (768–1023px):** Use `--space-8` (32px) side padding, shared by header and body. The 12-column grid collapses to a single-column layout early to prevent element jumbling. Large typography needs horizontal space; never force complex multi-column grids onto medium viewports.
+- Desktop content: max-width `1200px`, centered; headers use the same content column. Build the container as `max-width: calc(var(--max-width-content) + 2 * var(--space-8))` with `box-sizing: border-box` and `padding-inline: var(--space-8)`.
+- **Vertical page padding:** `--space-128` above and below the content: 32px on mobile, 64px at 768px, 128px from 1280px. From 768px up it is exactly twice the side margin; the 32px mobile floor is twice the 16px side margin.
+- **Tablet (768–1023px):** Use `--space-8` (32px) side padding, shared by header and body. The 12-column grid collapses to two columns (340px each at 768px with the 24px gutter, never below `--column-min-width`). Large typography needs horizontal space; never force grids of three or more columns onto medium viewports.
 - **Mobile (`< 768px`):** Scaling down typography via CSS `clamp()` and using `--space-4` (16px) mobile side padding to maintain the premium, editorial whitespace aesthetic.
 ### App (worker-facing)
 - Max-width `1200px` (`--max-width-app`); collapse to a single column on small viewports.
-- Header and body share the marketing content contract: desktop ≥1024px centered 1200px usable content width; tablet 768–1023px 32px side padding; mobile <768px 16px side padding. Use `box-sizing: border-box` and do not subtract macro side padding from the desktop content width.
+- Header and body share the marketing content contract: 32px side padding from 768px, 16px below; the centered 1200px usable content width is reached at 1264px. Use `box-sizing: border-box`.
 - All interactive elements respect a minimum touch target of `40px`.
 ---
 ## Visual minimalism rules
@@ -91,7 +92,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Button: Traffic Cone background, Iron text.
 ---
 ## Nav bar
-- Background: Canvas with low-contrast Plaster boot-tread texture only in the empty header band; never behind text or controls.
+- Background: Canvas; no texture band.
 - Logo: left-aligned.
 - Nav links: Iron, `--text-1x`, sentence-case, no underline at rest.
 - Active nav link: Iron, canonical 600 weight + underline and `aria-current="page"`; never Traffic Cone at 16px.

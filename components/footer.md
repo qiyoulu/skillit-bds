@@ -20,7 +20,7 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
   box-sizing: border-box;
   width: 100%;
   padding-inline: var(--space-4);
-  max-width: var(--max-width-content);
+  max-width: calc(var(--max-width-content) + 2 * var(--space-8));
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -53,11 +53,10 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
   text-decoration: underline;
 }
 .footer .nav-link:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
-@media (min-width: 768px) and (max-width: 1023px) { .footer-inner { padding-inline: var(--space-8); } }
-@media (min-width: 1024px) { .footer-inner { padding-inline: 0; } }
-@media (max-width: 1023px) {
+@media (min-width: 768px) { .footer-inner { padding-inline: var(--space-8); } }
+@media (max-width: 1279px) {
   .footer-inner { flex-direction: column; gap: var(--space-8); }
   .footer-columns { flex-wrap: wrap; gap: var(--space-8); }
 }
 ```
-The logo in the footer should be `lockup.svg` with `color: var(--color-foreground)` on the container. On smaller viewports, this hides and is replaced by `mark.svg` the same way.
+The logo in the footer should be `lockup.svg` with `color: var(--color-foreground)` on the container. Below 1280px, this hides and is replaced by `mark.svg` the same way as in the header.

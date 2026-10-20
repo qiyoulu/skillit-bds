@@ -16,7 +16,7 @@ One line per component. Open the file for the full rules. Every component uses t
 - [links](./links.md): Text links: Painter's Tape, always underlined.
 - [metadata](./metadata.md): Timestamps, IDs, distances, and data strings in JetBrains Mono.
 - [modal](./modal.md): Modal dialogs: a focused task surface that interrupts the flow.
-- [navigation](./navigation.md): Primary navigation, boot tread band, and mobile bottom bar.
+- [navigation](./navigation.md): Primary navigation and mobile bottom bar.
 - [progress](./progress.md): Progress bar and step indicators; progress fill stays Iron.
 - [quote-cards](./quote-cards.md): Quote cards: Plaster container, locked headshot size, attribution weights.
 - [states](./states.md): Empty, loading, error, and overflow states; design every state, not only the happy path.
