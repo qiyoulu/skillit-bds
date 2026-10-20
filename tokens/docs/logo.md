@@ -1,5 +1,5 @@
 # Logo Tokens — Skillit Kit BDS
-**Last updated:** 2026-08-27
+**Last updated:** 2026-10-20
 **Canonical source:** `tokens/tokens.json5` (machine-readable) for dimension tokens; the SVGs in `assets/logo/` are the fixed graphic assets.
 ---
 The Skillit logo system has four components: mark, wordmark, lockup, and pattern. Use the lockup wherever possible — it's the primary logo. Use the mark alone only in constrained spaces where the lockup doesn't fit well. Never use the wordmark alone. Each logo component is a fixed graphic asset. Do not recreate it, retype it, or export it in raster formats. Use approved SVG files; approved 512px-height PNG exports are reserved for platforms that reject SVG uploads.
@@ -42,6 +42,11 @@ The header logo is always **32px tall**, regardless of whether it's the lockup o
 - Lockup and mark use the same 32px height. The lockup has more horizontal reach because it includes the wordmark; the mark does not. Height is the one dimension that stays consistent.
 - Do not scale the logo to fill a container. Do not use `height: auto` and let the SVG's intrinsic size decide. Always set the height explicitly from `--logo-height`.
 - If the logo appears in a context not listed here (email signatures, partner badges, print, cards), refer to the minimum-size rules (21px for mark, 16px for wordmark) rather than the header height.
+---
+## Product lockup: SKILLIT Hire
+The SKILLIT Hire lockup is the mark, the SKILLIT wordmark, and the word Hire together. It is a fixed graphic asset for the Hire product; the wordmark is not used standalone here either. Use the standard lockup everywhere else.
+**File:** `assets/logo/lockup-hire-iron.svg` (Iron). Canvas and Plaster variants are not yet supplied.
+**Rules:** Same as the lockup: approved SVG only, never retyped or redrawn, explicit height, Iron on Canvas.
 ---
 ## Color variants
 | Variant                             | Contrast | Permitted | Use                                             |
