@@ -5,7 +5,7 @@
 
 ## **Version 1.3 · October 2026**
 
-**Release status:** v1.4 source release; no Git tag or GitHub Release created. See the [v1.4 release notes](../releases/v1.4.md) for the change set since v1.3.
+**Release status:** v1.4, tagged `v1.4` and published as a GitHub Release on 2026-10-22. See the [v1.4 release notes](../releases/v1.4.md) for the change set since v1.3.
 
 > **AI agents: read [`LLM-INSTRUCTIONS.md`](../LLM-INSTRUCTIONS.md) first.** That file is the authoritative constraint set for machine-generated output — code, design, copy, data viz. Where behavioral rules conflict, `LLM-INSTRUCTIONS.md` wins; `tokens/tokens.json5` governs token values. This document is the human-readable rationale and full guideline set; the LLM file is the enforcement layer.
 
@@ -104,7 +104,7 @@ Designers, marketers, writers, engineers, and anyone who has ever asked “does 
 
 **The Vibe:** Documentary, not corporate. The smartest person on the job site.
 **The Typography:** Work Sans for human text; JetBrains Mono for machine data. Sentence case for authored brand copy; preserve acronyms, proper names, user input, and direct quotes. No decorative all-caps. Flush-left alignment. Dramatic leaps in scale.
-**The Layout:** Strict functionalism. Whitespace is structural mass. Static containers use 16px corners; button-like actions use pills; editable fields and checkbox boxes use 0px. Circular indicators are geometry exceptions. Canvas (off-white) background, Iron (dark navy) text. Only approved neutral boot-tread texture in non-content header/footer zones; never beneath UI text.
+**The Layout:** Strict functionalism. Whitespace is structural mass. Static containers use 16px corners; button-like actions use pills; editable fields, checkbox boxes and static tags use 0px. Circular indicators are geometry exceptions. Canvas (off-white) background, Iron (dark navy) text. Only approved neutral boot-tread texture in non-content header/footer zones; never beneath UI text.
 **The Accent:** Traffic Cone (orange). Use orange for primary actions, selection controls, and focus. Repetition is allowed when it serves the interaction. Keep one dominant CTA per section; supporting controls should not compete with it. Orange in charts follows its assigned data role. Never use it as decoration.
 **The Photos:** Real workers doing real work. Shot at eye level. No color grading or filters.
 **The Copy:** Direct, unhedged, data-backed. Don’t say revolutionize or disrupt.
@@ -472,7 +472,7 @@ While micro-spacing uses canonical `rem` tokens (`0.5rem`, `1rem`, `2rem`, equiv
 | Desktop Section Gap | — | 128px |
 | Page top/bottom padding | — | 32px mobile, 64px at 768px, 128px from 1280px (`--space-128`) |
 
-**Paired padding is authoritative in `rem`:** use `--padding-0.75x` = `0.25rem 0.5rem` at 12px (compact exception), `--padding-1x` = `0.5rem 1rem` at 16px, `--padding-1.5x` = `0.75rem 1.5rem` at 24px, and `--padding-2x` = `1rem 2rem` at 32px. Do not replace these fixed pairs with universal `0.5em 1em` padding. Pixel equivalents assume a 16px root. Header and body share the same responsive side-padding contract in [spacing](../tokens/docs/spacing.md).
+**Paired padding is authoritative in `rem`:** use `--padding-0.75x` = `0.375rem 0.75rem` at 12px, `--padding-1x` = `0.5rem 1rem` at 16px, `--padding-1.5x` = `0.75rem 1.5rem` at 24px, and `--padding-2x` = `1rem 2rem` at 32px. Do not replace these fixed pairs with universal `0.5em 1em` padding. Pixel equivalents assume a 16px root. Header and body share the same responsive side-padding contract in [spacing](../tokens/docs/spacing.md).
 
 ### Layout Do / Don’t
 

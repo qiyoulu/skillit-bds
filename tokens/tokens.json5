@@ -170,7 +170,7 @@
         '0.75x': { $value: { fontFamily: '{base.typography.family.primary}', fontSize: '0.75rem', fontWeight: 550, lineHeight: 1.4, letterSpacing: '0.04em' }, $type: 'typography', $description: 'Text-0.75x — 12px. labels, tags, badges, captions. minimum size. for machine metadata use var(--font-mono) at the same size.' },
       },
       padding: {
-        '0.75x': { $value: '0.25rem 0.5rem', $type: 'dimension', $description: 'compact — 4px / 8px. pairs with Text-0.75x (12px); approved dense-UI exception to the half-size/full-size padding ratio.' },
+        '0.75x': { $value: '0.375rem 0.75rem', $type: 'dimension', $description: '6px / 12px. pairs with Text-0.75x (12px); follows the half-size/full-size padding ratio.' },
         '1x':    { $value: '0.5rem 1rem',      $type: 'dimension', $description: 'default — 8px / 16px. pairs with Text-1x (16px). 0.5em / 1em tactile ratio at 16px.' },
         '1.5x':  { $value: '0.75rem 1.5rem',  $type: 'dimension', $description: 'medium — 12px / 24px. pairs with Text-1.5x (24px). 0.5em / 1em tactile ratio at 24px.' },
         '2x':    { $value: '1rem 2rem',        $type: 'dimension', $description: 'large — 16px / 32px. pairs with Text-2x (32px). 0.5em / 1em tactile ratio at 32px.' },

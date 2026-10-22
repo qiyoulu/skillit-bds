@@ -1,10 +1,10 @@
 # Email — Skillit Kit BDS
-**Last updated:** 2026-10-06
+**Last updated:** 2026-10-22
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
 - Use sentence case for authored labels, buttons, and UI text; preserve acronyms, proper nouns, user-entered capitalization, and verbatim quoted content. The fixed wordmark is an asset exception.
-- **Paired padding:** Button-like controls use the canonical `--padding-*x` token matching their text tier in `rem`: Text-1x = 8px / 16px, Text-1.5x = 12px / 24px, Text-2x = 16px / 32px at a 16px root. Text-0.75x is the approved compact exception (4px / 8px), not a proportional 6px / 12px pair. See `tokens/docs/spacing.md`; do not derive local `em` padding or use unapproved type sizes. Outlook email may use an explicit approved pixel fallback matching the chosen canonical pair.
+- **Paired padding:** Button-like controls use the canonical `--padding-*x` token matching their text tier in `rem`: Text-1x = 8px / 16px, Text-1.5x = 12px / 24px, Text-2x = 16px / 32px at a 16px root. Text-0.75x = 6px / 12px, the same half-size / full-size ratio. See `tokens/docs/spacing.md`; do not derive local `em` padding or use unapproved type sizes. Outlook email may use an explicit approved pixel fallback matching the chosen canonical pair.
 - Preserve 2px Traffic Cone (`--color-primary`) focus outlines with 2px offset for links and CTAs in supporting clients; do not strip native focus where custom CSS is ignored. Canvas contrast is 2.6958:1 (fails 3:1); Plaster is 3.0177:1 (narrow pass). Preserve forced-colors accessibility; see `rules/accessibility.md`.
 - Email clients strip or fail SVG. Every image is PNG at 2x display size (e.g., 48x48 file for a 24px icon).
 

@@ -1,10 +1,10 @@
 # Buttons — Skillit Kit BDS
-**Last updated:** 2026-10-19
+**Last updated:** 2026-10-22
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
 - Use sentence case for authored labels, buttons, and UI text; preserve acronyms, proper nouns, user-entered capitalization, and verbatim quoted content. The fixed wordmark is an asset exception.
-- **Paired padding:** Button-like controls use the canonical `--padding-*x` token matching their text tier in `rem`: Text-1x = 8px / 16px, Text-1.5x = 12px / 24px, Text-2x = 16px / 32px at a 16px root. Text-0.75x is the approved compact exception (4px / 8px), not a proportional 6px / 12px pair. See `tokens/docs/spacing.md`; do not derive local `em` padding or use unapproved type sizes. Outlook email may use an explicit approved pixel fallback matching the chosen canonical pair.
+- **Paired padding:** Button-like controls use the canonical `--padding-*x` token matching their text tier in `rem`: Text-1x = 8px / 16px, Text-1.5x = 12px / 24px, Text-2x = 16px / 32px at a 16px root. Text-0.75x = 6px / 12px, the same half-size / full-size ratio. See `tokens/docs/spacing.md`; do not derive local `em` padding or use unapproved type sizes. Outlook email may use an explicit approved pixel fallback matching the chosen canonical pair.
 - Every interactive element needs a visible focus state: 2px solid Traffic Cone (`--color-primary`), 2px offset. On Canvas this is a documented contrast failure (2.6958:1); on Plaster it narrowly meets 3:1 (3.0177:1). Keep Orange in authored contexts, preserve native and forced-colors focus, and verify the actual adjacent surface; see `rules/accessibility.md`.
 - Touch targets minimum 40px in both dimensions (app).
 - **Marketing hit area:** the visible pill keeps its tier height (Text-1x is 38.4px: 8px padding plus a 22.4px line). Where that is under 44px, extend the hit area invisibly to 44px (a pseudo-element, 3px above and below at Text-1x). Never grow the pill to meet it. The Text-1.5x primary is 55px and needs no extension.
@@ -107,6 +107,14 @@ For irreversible actions only. Toolbox background.
   cursor: pointer;
 }
 ```
+
+## Button spacing
+Adjacent buttons are `--space-4` (16px) apart, side by side or stacked. The gap protects each 40px touch target from a mistap.
+- **Side by side:** 16px, primary on the right.
+- **Stacked on mobile:** 16px, primary on top, both full width.
+- **Compact toolbars with Text-0.75x buttons:** `--space-2` (8px).
+- **Never under 8px.**
+- A text link beside a primary button uses the same 16px.
 
 ## Icon placement
 Buttons that carry an icon place the icon on the right side of the label, text on the left. The gap between them depends on whether the button hugs its content.

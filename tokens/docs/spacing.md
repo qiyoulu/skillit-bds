@@ -8,7 +8,7 @@
 - Do not mix units (e.g., `em` or `%` for structural spacing); documented optical cap-height trimming may use `em` independently of layout spacing.
 - Base spacing and paired padding tokens use `rem` (pixel equivalents assume a 16px root). Do not hardcode micro gaps in `px`. The canonical macro `clamp()` tokens intentionally retain their approved `px`/`vw` expressions.
 - Whitespace is a core brand element — it focuses attention on the human. When in doubt, use more space, not less.
-- The system uses tactile padding paired with each text tier in canonical `--padding-*x` tokens; see the compact exception below.
+- The system uses tactile padding paired with each text tier in canonical `--padding-*x` tokens; every tier follows the same ratio.
 ---
 ## Base spacing scale
 Built on a 4px base unit (`0.25rem`). Values are multiples of 4px at a 16px root, except the approved `--space-1.5` (6px) small-viewport text-list gap. `--space-N` is N × 4px. The `--space-*x` aliases (N × 16px, for example `--space-2x` = 32px) are **deprecated**: use the numeric token. They stay until a later release removes them.
@@ -52,14 +52,15 @@ Large structural spacing uses CSS `clamp()` to fluidly scale down, preventing ab
 | Content column | — | `--space-gutter` side padding: 32px from 768px, 16px to 512px, a ramp between; the 1200px usable width is reached at 1264px and centered above it |
 ---
 ## Tactile padding
-Use the canonical padding token paired with the text tier. Text-1x, Text-1.5x, and Text-2x follow the 0.5× vertical / 1× horizontal font-size ratio, encoded in `rem`, not local `em` or hardcoded `px`. Text-0.75x is the approved compact exception: 0.25rem / 0.5rem (4px / 8px at a 16px root), not 6px / 12px. Use only approved tier/padding pairs; do not invent 14px controls. Outlook email may use explicit pixel equivalents matching these approved pairs. Editable inputs use the same `--padding-1x` (`0.5rem 1rem` / 8px 16px) pair as Text-1x buttons; icon-only buttons use fixed target geometry.
+Use the canonical padding token paired with the text tier. Text-0.75x, Text-1x, Text-1.5x, and Text-2x follow the 0.5× vertical / 1× horizontal font-size ratio, encoded in `rem`, not local `em` or hardcoded `px`. Text-0.75x is 0.375rem / 0.75rem (6px / 12px at a 16px root). Use only approved tier/padding pairs; do not invent 14px controls. Outlook email may use explicit pixel equivalents matching these approved pairs. Editable inputs use the same `--padding-1x` (`0.5rem 1rem` / 8px 16px) pair as Text-1x buttons; icon-only buttons use fixed target geometry.
 | Component | Vertical padding | Horizontal padding |
 |---|---|---|
 | Button (Text-1x) | `0.5rem` | `1rem` |
 | Button (Text-1.5x) | `0.75rem` | `1.5rem` |
 | Button (Text-2x) | `1rem` | `2rem` |
-| Button (Text-0.75x, compact) | `0.25rem` | `0.5rem` |
-| Card (all sizes) | `--space-8` (32px) | `--space-8` (32px) |
+| Button (Text-0.75x) | `0.375rem` | `0.75rem` |
+| Feature card (all sizes) | `--space-8` (32px) | `--space-8` (32px) |
+| List card (repeated, all sizes) | `--space-4` (16px) | `--space-4` (16px) |
 | Input field (Text-1x) | `0.5rem` (`--space-2`, 8px) | `1rem` (`--space-4`, 16px) |
 ---
 ## Layout grid

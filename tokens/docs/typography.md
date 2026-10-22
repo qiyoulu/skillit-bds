@@ -1,5 +1,5 @@
 # Typography Tokens — Skillit Kit BDS
-**Last updated:** 2026-10-14
+**Last updated:** 2026-10-22
 **Canonical source:** `tokens/tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
@@ -150,8 +150,8 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
   --text-0\.75x-leading: 1.40;
   --text-0\.75x-tracking: 0.04em;
 
-  /* Button padding — canonical rem pairs; compact Text-0.75x is the approved exception */
-  --padding-0\.75x: 0.25rem 0.5rem;   /* 4px / 8px — Text-0.75x (12px) */
+  /* Button padding — canonical rem pairs, 0.5× vertical / 1× horizontal of the font size */
+  --padding-0\.75x: 0.375rem 0.75rem; /* 6px / 12px — Text-0.75x (12px) */
   --padding-1x:    0.5rem 1rem;       /* 8px / 16px — Text-1x (16px) */
   --padding-1\.5x:  0.75rem 1.5rem;    /* 12px / 24px — Text-1.5x (24px) */
   --padding-2x:    1rem 2rem;         /* 16px / 32px — Text-2x (32px) */
