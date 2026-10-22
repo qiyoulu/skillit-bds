@@ -41,18 +41,21 @@
 
   /* spacing — macro (fluid) */
   --space-128: clamp(2rem, calc(12.5vw - 2rem), 8rem);
-  --space-256: clamp(96px, 18vw, 256px);
+  --space-page: clamp(2rem, calc(12.5vw - 2rem), 8rem);  /* alias of --space-128, named for its role */
 
-  /* spacing — aliases */
-  --space-0\.25x: 0.25rem;
-  --space-0\.5x: 0.5rem;
-  --space-1x: 1rem;
-  --space-1\.5x: 1.5rem;
-  --space-2x: 2rem;
-  --space-3x: 3rem;
-  --space-4x: 4rem;
-  --space-6x: 6rem;
-  --space-8x: 8rem;
+  /* spacing — gutter: page side margin and column gap. 16px to 512px, ramps to 32px at 768px; half of --space-128 up to 768px */
+  --space-gutter: clamp(1rem, calc(6.25vw - 1rem), 2rem);
+
+  /* spacing — DEPRECATED aliases. Use the numeric token in the comment; removed in a later release. */
+  --space-0\.25x: 0.25rem;       /* use --space-1 */
+  --space-0\.5x: 0.5rem;         /* use --space-2 */
+  --space-1x: 1rem;              /* use --space-4 */
+  --space-1\.5x: 1.5rem;         /* use --space-6 */
+  --space-2x: 2rem;              /* use --space-8 */
+  --space-3x: 3rem;              /* use --space-12 */
+  --space-4x: 4rem;              /* use --space-16 */
+  --space-6x: 6rem;              /* use --space-24 */
+  --space-8x: 8rem;              /* no numeric equivalent; unused */
 
   /* typography — families */
   --font-primary: 'Work Sans', sans-serif;

@@ -1,5 +1,5 @@
 # Footer — Skillit Kit BDS
-**Last updated:** 2026-08-17
+**Last updated:** 2026-10-22
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -19,8 +19,8 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
 .footer-inner {
   box-sizing: border-box;
   width: 100%;
-  padding-inline: var(--space-4);
-  max-width: calc(var(--max-width-content) + 2 * var(--space-8));
+  padding-inline: var(--space-gutter); /* 16px to 512px, 32px at 768px */
+  max-width: calc(var(--max-width-content) + 2 * var(--space-gutter));
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -53,7 +53,6 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
   text-decoration: underline;
 }
 .footer .nav-link:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
-@media (min-width: 768px) { .footer-inner { padding-inline: var(--space-8); } }
 @media (max-width: 1279px) {
   .footer-inner { flex-direction: column; gap: var(--space-8); }
   .footer-columns { flex-wrap: wrap; gap: var(--space-8); }

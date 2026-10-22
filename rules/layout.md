@@ -1,5 +1,5 @@
 # Layout Rules — Skillit Kit BDS
-**Last updated:** 2026-10-14
+**Last updated:** 2026-10-22
 ---
 ## The core principle
 Whitespace is structural mass. It organizes data and anchors the grid. The human is the subject; the layout is the consistent framework that supports them.
@@ -31,7 +31,7 @@ Color roles are scoped by function, not by whether an element is generally calle
 ---
 ## Whitespace rules
 - **Section padding (desktop):** Minimum `--space-16` (64px) top and bottom. Hero sections: minimum `--space-24` (96px).
-- **Section padding (mobile):** Minimum `--space-10` (40px) top and bottom.
+- **Section padding (mobile):** Minimum `--space-8` (32px) top and bottom.
 - **Between unrelated content blocks:** Always `--space-16` minimum. Never let unrelated content run together visually.
 - **Text column width:** Never exceed `70ch`. Set `max-width: var(--max-width-text)` on all body text blocks.
 - **Image-to-text gap:** Minimum `--space-8` (32px) between an image and its adjacent text block.
@@ -39,16 +39,16 @@ Color roles are scoped by function, not by whether an element is generally calle
 ## Grid
 ### Website / marketing
 - Strict equal-track 12-column grid on desktop: `grid-template-columns: repeat(12, minmax(0, 1fr))` is permitted. Assign content by integer column spans. Do not replace the shared grid with arbitrary fractional ratios (e.g., `1fr 1.5fr`) or local percentage splits.
-- Gutter: `--space-6` (24px).
+- Gutter: `--space-gutter`, 16px to 512px, ramping to 32px at 768px. It is also the page side margin, so margins and column gaps are one value.
 - Content max-width: `1200px`, centered. The side padding (32px from 768px) stays in place until the viewport can hold 1200px plus both margins, so the cap is reached at 1264px; a centered 1200px block never touches the screen edge.
 - Minimum content-block width: `326px` (`--column-min-width`), not the width of each track in the 12-column grid. At narrower viewports, allow a single content block to shrink to the available width so reflow is preserved.
-- Desktop content: max-width `1200px`, centered; headers use the same content column. Build the container as `max-width: calc(var(--max-width-content) + 2 * var(--space-8))` with `box-sizing: border-box` and `padding-inline: var(--space-8)`.
-- **Vertical page padding:** `--space-128` above and below the content: 32px on mobile, 64px at 768px, 128px from 1280px. From 768px up it is exactly twice the side margin; the 32px mobile floor is twice the 16px side margin.
-- **Tablet (768–1023px):** Use `--space-8` (32px) side padding, shared by header and body. The 12-column grid collapses to two columns (340px each at 768px with the 24px gutter, never below `--column-min-width`). Large typography needs horizontal space; never force grids of three or more columns onto medium viewports.
-- **Mobile (`< 768px`):** Scaling down typography via CSS `clamp()` and using `--space-4` (16px) mobile side padding to maintain the premium, editorial whitespace aesthetic.
+- Desktop content: max-width `1200px`, centered; headers use the same content column. Build the container as `max-width: calc(var(--max-width-content) + 2 * var(--space-gutter))` with `box-sizing: border-box` and `padding-inline: var(--space-gutter)`.
+- **Vertical page padding:** `--space-128` above and below the content: 32px on mobile, 64px at 768px, 128px from 1280px. Up to 768px it is exactly twice `--space-gutter`; above 768px the gutter holds at 32px while this keeps growing.
+- **Tablet (768–1023px):** Use `--space-gutter` (32px) side padding, shared by header and body. The 12-column grid collapses to two columns (336px each at 768px with the 32px gutter, never below `--column-min-width`). Large typography needs horizontal space; never force grids of three or more columns onto medium viewports.
+- **Mobile (`< 768px`):** Scaling down typography via CSS `clamp()` and using `--space-gutter` (16px) mobile side padding to maintain the premium, editorial whitespace aesthetic.
 ### App (worker-facing)
 - Max-width `1200px` (`--max-width-app`); collapse to a single column on small viewports.
-- Header and body share the marketing content contract: 32px side padding from 768px, 16px below; the centered 1200px usable content width is reached at 1264px. Use `box-sizing: border-box`.
+- Header and body share the marketing content contract: side padding is `--space-gutter` (16px to 512px, 32px at 768px); the centered 1200px usable content width is reached at 1264px. Use `box-sizing: border-box`.
 - All interactive elements respect a minimum touch target of `40px`.
 ---
 ## Visual minimalism rules

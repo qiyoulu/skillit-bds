@@ -1,5 +1,5 @@
 # Skillit Kit Brand Design System (BDS) — PROJECT INSTRUCTIONS (READ FIRST)
-**Last updated:** 2026-10-08
+**Last updated:** 2026-10-22
 
 **Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-08
 
@@ -61,7 +61,9 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 
 ### Spacing
 - Base scale: `--space-1` (4px) through `--space-24` (96px), multiples of 4 at a 16px root, except `--space-1.5` (0.375rem / 6px) for small-viewport text lists.
-- Macro: `--space-128`, `--space-256` (fluid `clamp()`).
+- Macro: `--space-128` (fluid `clamp()`), aliased as `--space-page`. Prefer the alias in new work. `--space-256` is removed.
+- Page side margin and column gap are one token: `--space-gutter` (`clamp()`: 16px to 512px, 32px at 768px and above). Do not write the 16/32 values by hand.
+- Deprecated: the `--space-*x` aliases. Use the numeric token (`--space-8`, not `--space-2x`).
 - **Units rule:** font-size, base spacing, and paired padding use `rem`; borders and container radii use `px`, circular indicators may use `50%`. Canonical macro `clamp()` spacing retains approved `px`/`vw` expressions. Local `em` is permitted only for optical alignment and documented indicator geometry, not ordinary gaps or paired padding.
 - **Paired padding:** `--padding-0.75x` = `0.25rem 0.5rem` at 12px (compact exception); `--padding-1x` = `0.5rem 1rem` at 16px; `--padding-1.5x` = `0.75rem 1.5rem` at 24px; `--padding-2x` = `1rem 2rem` at 32px. These canonical fixed pairs override universal `0.5em 1em` prose.
 

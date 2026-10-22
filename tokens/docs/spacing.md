@@ -1,5 +1,5 @@
 # Spacing Tokens — Skillit Kit BDS
-**Last updated:** 2026-10-20
+**Last updated:** 2026-10-22
 **Canonical source:** `tokens/tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
@@ -11,7 +11,7 @@
 - The system uses tactile padding paired with each text tier in canonical `--padding-*x` tokens; see the compact exception below.
 ---
 ## Base spacing scale
-Built on a 4px base unit (`0.25rem`). Values are multiples of 4px at a 16px root, except the approved `--space-1.5` (6px) small-viewport text-list gap. Numeric tokens have equivalent `space-*x` aliases in the canonical source.
+Built on a 4px base unit (`0.25rem`). Values are multiples of 4px at a 16px root, except the approved `--space-1.5` (6px) small-viewport text-list gap. `--space-N` is N × 4px. The `--space-*x` aliases (N × 16px, for example `--space-2x` = 32px) are **deprecated**: use the numeric token. They stay until a later release removes them.
 | Token | Value | px equiv | Use |
 |---|---|---|---|
 | `--space-1` | `0.25rem` | 4px | Micro gaps — icon-to-label, tight inline spacing |
@@ -29,15 +29,18 @@ Built on a 4px base unit (`0.25rem`). Values are multiples of 4px at a 16px root
 | `--space-24` | `6rem` | 96px | Maximum section vertical padding |
 ---
 ## Macro spacing (fluid)
-Large structural spacing uses CSS `clamp()` to fluidly scale down, preventing abrupt layout shifts on resize. These tokens do **not** collide with the base scale.
+Large structural spacing uses CSS `clamp()` to fluidly scale down, preventing abrupt layout shifts on resize. This token does **not** collide with the base scale.
 | Token | CSS Value | Common Use |
 |---|---|---|
 | `--space-128` | `clamp(2rem, calc(12.5vw - 2rem), 8rem)` | Page top/bottom padding, section gaps |
-| `--space-256` | `clamp(96px, 18vw, 256px)` | Massive editorial breaks |
+| `--space-page` | alias of `--space-128` | Same value, named for its role |
 
-> **`--space-128` anchors.** The clamp is derived from two anchors, 64px at 768px and 128px at 1280px, with a 2rem (32px) floor. From 768px up the top/bottom padding is exactly twice the 32px side margin; on mobile the 32px floor is twice the 16px side margin. Between 512px and 767px the value ramps from 32px to 64px while the side margin stays 16px, so the ratio drifts up to 4:1 before resetting at 768px. Above 1280px the value stops at 128px. `rem` keeps it responsive to the user's font-size setting.
+> **`--space-128` anchors.** The clamp is derived from two anchors, 64px at 768px and 128px at 1280px, with a 2rem (32px) floor. Up to 768px the top/bottom padding is exactly twice `--space-gutter`: the 32px floor against 16px, then both ramp from 512px to 64px against 32px at 768px. Above 768px the gutter holds at 32px while the page padding keeps growing. Above 1280px the value stops at 128px. `rem` keeps it responsive to the user's font-size setting.
 
-> **Retired:** `--space-64` and `--space-96` from the old fluid multiplier scale are gone. Do not use them — the macro scale is `--space-128` and `--space-256` only.
+> **Retired:** `--space-64` and `--space-96` from the old fluid multiplier scale are gone. Also retired: `--space-256`, which had no consumers. Do not use any of them. The macro scale is `--space-128` only, also available as `--space-page`.
+
+## Gutter
+`--space-gutter` is one value for the page side margin and the column gap: 16px up to 512px, a ramp to 32px at 768px, and 32px above. Header, body, footer and grids share it. It is a single `clamp()` declaration, with no media query to copy. It is half of `--space-128` at every width up to 768px.
 ---
 ## Structural Constants
 | Element | Height / Padding | Margin |
@@ -46,7 +49,7 @@ Large structural spacing uses CSS `clamp()` to fluidly scale down, preventing ab
 | Logo Lockup | 32px (`--logo-height`) | —      |
 | Primary Buttons | Paired `--padding-*x` token in `rem` | — |
 | Page top/bottom padding | — | `--space-128`: 32px mobile, 64px at 768px, 128px from 1280px |
-| Content column | — | 32px side padding from 768px (16px below); the 1200px usable width is reached at 1264px and centered above it |
+| Content column | — | `--space-gutter` side padding: 32px from 768px, 16px to 512px, a ramp between; the 1200px usable width is reached at 1264px and centered above it |
 ---
 ## Tactile padding
 Use the canonical padding token paired with the text tier. Text-1x, Text-1.5x, and Text-2x follow the 0.5× vertical / 1× horizontal font-size ratio, encoded in `rem`, not local `em` or hardcoded `px`. Text-0.75x is the approved compact exception: 0.25rem / 0.5rem (4px / 8px at a 16px root), not 6px / 12px. Use only approved tier/padding pairs; do not invent 14px controls. Outlook email may use explicit pixel equivalents matching these approved pairs. Editable inputs use the same `--padding-1x` (`0.5rem 1rem` / 8px 16px) pair as Text-1x buttons; icon-only buttons use fixed target geometry.
@@ -64,20 +67,18 @@ Use the canonical padding token paired with the text tier. Text-1x, Text-1.5x, a
 | Property | Value |
 |---|---|
 | Max content width | `1200px` — centered with `margin: 0 auto`; reached at 1264px (1200px plus 32px each side) |
-| Side margin (768px and up) | `--space-8` (32px) each side, shared by header and body |
-| Side margin (mobile, <768px) | `--space-4` (16px) each side |
+| Side margin | `--space-gutter` each side, shared by header and body: 16px to 512px, ramping to 32px at 768px |
 | Content-block min width | `326px`; not each grid track, and may shrink to viewport width for reflow |
-| Column gutter | `--space-6` (24px) |
+| Column gutter | `--space-gutter`, the same value as the side margin |
 | Page top/bottom padding | `--space-128` (see anchors above) |
 | Grid columns (desktop) | 12 |
-| Grid columns (tablet, 768–1023px) | Two columns; 340px each at 768px, never below `326px` |
+| Grid columns (tablet, 768–1023px) | Two columns; 336px each at 768px, never below `326px` |
 | Grid columns (mobile) | Single-column content layout |
 ### App (worker-facing)
 | Property | Value |
 |---|---|
 | Max content width | `1200px` — centered with `margin: 0 auto`; reached at 1264px (1200px plus 32px each side) |
-| Side margin (768px and up) | `--space-8` (32px) each side, shared by header and body |
-| Side margin (mobile, <768px) | `--space-4` (16px) each side |
+| Side margin | `--space-gutter` each side, shared by header and body: 16px to 512px, ramping to 32px at 768px |
 | Vertical section gap | `--space-8` (32px) |
 | List item gap | `--space-4` (16px) |
 | Bottom nav height | `64px` |
@@ -125,7 +126,8 @@ Use the canonical padding token paired with the text tier. Text-1x, Text-1.5x, a
   --space-20: 5rem;
   --space-24: 6rem;
   --space-128: clamp(2rem, calc(12.5vw - 2rem), 8rem);
-  --space-256: clamp(96px, 18vw, 256px);
+  --space-page: clamp(2rem, calc(12.5vw - 2rem), 8rem); /* alias of --space-128 */
+  --space-gutter: clamp(1rem, calc(6.25vw - 1rem), 2rem); /* 16px to 512px, 32px at 768px */
   --max-width-content: 1200px;
   --column-min-width: 326px;
   --max-width-app:     1200px;
@@ -145,10 +147,10 @@ Use the canonical padding token paired with the text tier. Text-1x, Text-1.5x, a
 ## Header/body alignment
 Header bars (page headers, section headers, nav bars) align to the same content column as the body below them. A header that indents differently from its content breaks the vertical rhythm.
 
-- From 768px: header content uses `--space-8` (32px) side margins, same as body. It is capped at `1200px` and centered with `margin: 0 auto` once the viewport reaches 1264px.
-- Mobile (<768px): header content uses `--space-4` (16px) side margins.
+- From 768px: header content uses `--space-gutter` (32px) side margins, same as body. It is capped at `1200px` and centered with `margin: 0 auto` once the viewport reaches 1264px.
+- Mobile (<768px): header content uses `--space-gutter` (16px) side margins.
 - Full-bleed header backgrounds may span the viewport; only the content aligns.
-- `1200px` is usable desktop content width, not a box reduced by giant macro side padding. Use a border-box wrapper with 16px mobile / 32px side padding from 768px and `max-width: calc(var(--max-width-content) + 2 * var(--space-8))`; share it between header and body. Side padding is never dropped to zero, so the content never touches the screen edge.
+- `1200px` is usable desktop content width, not a box reduced by giant macro side padding. Use a border-box wrapper with `padding-inline: var(--space-gutter)` (16px to 512px, 32px at 768px) and `max-width: calc(var(--max-width-content) + 2 * var(--space-gutter))`; share it between header and body. Side padding is never dropped to zero, so the content never touches the screen edge.
 - Vertical padding inside headers matches the section's vertical rhythm.
 
 ## Whitespace rules

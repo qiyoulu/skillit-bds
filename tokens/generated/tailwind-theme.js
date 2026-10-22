@@ -4,11 +4,11 @@
  * DERIVED from tokens/tokens.json5 (single source of truth).
  * No generator exists yet — keep this file in sync with tokens.json5 manually.
  *
- * WARNING: the `spacing` keys (1–256) override Tailwind's default scale for
+ * WARNING: the `spacing` keys (1–128) override Tailwind's default scale for
  * the keys they share. In practice the 1–24 range matches Tailwind's defaults
  * (both are 4px-base rem, e.g. p-5 = 1.25rem = 20px), so the merge is
- * harmless there — the real additions are the macro tokens 128 and 256,
- * which Tailwind does not define.
+ * harmless there — the real additions are the macro token 128 and the
+ * role names `gutter` and `page`, which Tailwind does not define.
  *
  * Instructions:
  * 1. Import the CSS custom properties from tokens/generated/tokens.css into your global stylesheet
@@ -67,7 +67,9 @@ module.exports = {
         '20': 'var(--space-20)',
         '24': 'var(--space-24)',
         '128': 'var(--space-128)',
-        '256': 'var(--space-256)',
+        'gutter': 'var(--space-gutter)',
+        'page': 'var(--space-page)',
+        // DEPRECATED: the space-*x keys below; use the numeric keys above. Removed in a later release.
         'space-0.25x': 'var(--space-0\\.25x)',
         'space-0.5x': 'var(--space-0\\.5x)',
         'space-1x': 'var(--space-1x)',

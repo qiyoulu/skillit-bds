@@ -1,5 +1,5 @@
 # Skillit Kit Brand Design System (BDS)
-**Last updated:** 2026-10-08
+**Last updated:** 2026-10-22
 
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 
@@ -462,7 +462,7 @@ In this system, shape indicates whether an element is interactive or static. We 
 ### Grid & Baseline
 
 The layout is built on an **8px/16px baseline grid**, paired with **Fluid Architectural Scaling**.
-While micro-spacing uses canonical `rem` tokens (`0.5rem`, `1rem`, `2rem`, equivalent to 8px, 16px, 32px at a 16px root), macro-spacing (margins, section gaps, padding) uses CSS `clamp()` functions (`--space-128` and `--space-256`). This ensures the massive, confident margins seen on desktop smoothly and gradually compress as the viewport scales down, exactly mimicking the fluid, tensioned behavior of Anthropic’s grid, without sudden, jarring jumps at breakpoints. `--space-128` is anchored at 64px for 768px and 128px for 1280px with a 32px floor, so from 768px up the top and bottom padding is twice the 32px side margin.
+While micro-spacing uses canonical `rem` tokens (`0.5rem`, `1rem`, `2rem`, equivalent to 8px, 16px, 32px at a 16px root), macro-spacing (margins, section gaps, padding) uses CSS `clamp()` functions (`--space-128`). This ensures the massive, confident margins seen on desktop smoothly and gradually compress as the viewport scales down, exactly mimicking the fluid, tensioned behavior of Anthropic’s grid, without sudden, jarring jumps at breakpoints. `--space-128` is anchored at 64px for 768px and 128px for 1280px with a 32px floor, so from 768px up the top and bottom padding is twice the 32px side margin.
 **12-Column Newspaper Grid:** All desktop layouts sit on a strict 12-column grid; equal-track construction such as `repeat(12, minmax(0, 1fr))` is valid. Do not use ad hoc percentage splits. Blocks should span fixed column counts (e.g., 7 columns for hero text, 5 columns for the hero CTA) so that vertical alignment is maintained down the entire page.
 | Element | Height / Padding | Margin |
 | ------------------- | ----------------------------- | ------------ |

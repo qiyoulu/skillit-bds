@@ -1,5 +1,5 @@
 # Navigation — Skillit Kit BDS
-**Last updated:** 2026-10-20
+**Last updated:** 2026-10-22
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -18,11 +18,11 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   border-bottom: none;
 }
 .nav-inner {
-  max-width: calc(var(--max-width-content) + 2 * var(--space-8)); /* 1200px content once both 32px margins fit (1264px) */
+  max-width: calc(var(--max-width-content) + 2 * var(--space-gutter)); /* 1200px content once both 32px margins fit (1264px) */
   margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 var(--space-4); /* mobile; shared with body content */
+  padding: 0 var(--space-gutter); /* 16px to 512px, 32px at 768px; shared with body content */
   min-height: var(--nav-height); /* 64px row: 32px logo centered, 16px above and below; grows for text resizing */
   padding-block: var(--space-2);
   display: flex;
@@ -60,9 +60,9 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   flex-direction: column;
   gap: var(--space-8);               /* 32px — mobile dropdown links */
   box-sizing: border-box;
-  max-width: calc(var(--max-width-content) + 2 * var(--space-8));
+  max-width: calc(var(--max-width-content) + 2 * var(--space-gutter));
   margin: 0 auto;
-  padding: var(--space-16) var(--space-4);
+  padding: var(--space-16) var(--space-gutter);
    border-top: 1px solid var(--color-foreground);
 }
 .mobile-dropdown .nav-link { font-size: var(--text-1\.5x); font-weight: var(--text-1\.5x-weight); }
@@ -88,9 +88,6 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   outline-offset: 2px;
 }
 /* Responsive Nav and the shared header/body content-width contract */
-@media (min-width: 768px) {
-  .nav-inner, .mobile-dropdown { padding-inline: var(--space-8); }
-}
 @media (max-width: 1279px) { /* below xl: menu button and mark (SKILLIT Hire pages keep their lockup); the full bar needs the 960px+ of room only xl guarantees */
   .nav-links, .nav-cta { display: none; }
   .nav-menu-btn { display: block; }
