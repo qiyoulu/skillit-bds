@@ -154,10 +154,11 @@ for svg in logo_files:
         pixels = image.tobytes()
         opaque = {tuple(pixels[n:n+3]) for n in range(0, len(pixels), 4) if pixels[n+3] == 255}
         check(opaque == {expected}, png.name + ': opaque paint does not match the canonical variant')
-        # Canvas unpremultiplication rounds edge RGB; bound its error by alpha.
+        # Edge RGB is unpremultiplied from 8-bit premultiplied pixels, and Chromium rounds twice
+        # (paint, then composite), so the error is bounded by 255 / alpha, not 127.5 / alpha.
         bad_edge = any(
             pixels[n+3] and pixels[n+3] < 255 and
-            any(abs(pixels[n+c] - expected[c]) > math.ceil(127.5 / pixels[n+3]) for c in range(3))
+            any(abs(pixels[n+c] - expected[c]) > math.ceil(255 / pixels[n+3]) for c in range(3))
             for n in range(0, len(pixels), 4)
         )
         check(not bad_edge, png.name + ': visible edge paint does not match the canonical variant')
