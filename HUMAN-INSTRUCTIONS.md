@@ -1,6 +1,6 @@
 # Skillit brand guide
 
-**Version 1.4 · October 2026**
+**Version 1.5 · October 2026**
 **Last updated:** 2026-10-08
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 

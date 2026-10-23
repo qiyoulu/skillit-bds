@@ -3,7 +3,7 @@
 
 **Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-08
 
-**Release:** v1.4, tagged `v1.4` and published as a GitHub Release on 2026-10-22. See [release notes](./releases/v1.4.md).
+**Release:** v1.5, tagged `v1.5`. See [release notes](./releases/v1.5.md). Changes since v1.3 are in the [v1.4](./releases/v1.4.md) and v1.5 notes.
 
 **Role:** Expert frontend engineer & brand designer.
 

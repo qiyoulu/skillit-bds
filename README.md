@@ -1,5 +1,5 @@
 # Skillit brand guide
-**Version:** v1.4 · **Last updated:** 2026-10-22 · [Release notes](./releases/v1.4.md)
+**Version:** v1.5 · **Last updated:** 2026-10-23 · [Release notes](./releases/v1.5.md)
 
 Use these files when you write, present, design, or build something for Skillit.
 
