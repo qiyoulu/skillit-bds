@@ -1,5 +1,5 @@
 # Typography Tokens — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-23
 **Canonical source:** `tokens/tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
@@ -42,11 +42,11 @@ Use only the defined tiers and their canonical weights below. If a size beyond T
 |---|---|---|---|---|---|---|---|---|
 | **Text-8x** | `--text-8x` | 128px | 8rem | 96pt | Bold (700) | 900 | 0.80 | -6% |
 | **Text-6x** | `--text-6x` | 96px | 6rem | 72pt | 650 | **850** | 0.90 | -5% |
-| **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | 650 | 800 | 1.00 | -4% |
-| **Text-3x** | `--text-3x` | 48px | 3rem | 36pt | 550 | **700** | 1.10 | -3% |
-| **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | 550 | 700 | 1.20 | -2% |
-| **Text-1.5x** | `--text-1.5x` | 24px | 1.5rem | 18pt | 450 | **600** | 1.30 | -1% |
-| **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | 450 | 600 | 1.40 | 0% |
+| **Text-4x** | `--text-4x` | 64px | 4rem | 48pt | 600 | 800 | 1.00 | -4% |
+| **Text-3x** | `--text-3x` | 48px | 3rem | 36pt | 550 | **750** | 1.10 | -3% |
+| **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | 500 | 700 | 1.20 | -2% |
+| **Text-1.5x** | `--text-1.5x` | 24px | 1.5rem | 18pt | 450 | **650** | 1.30 | -1% |
+| **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | 400 | 600 | 1.40 | 0% |
 
 *(Text-16x was retired. Sizes beyond Text-8x require a canonical token review.)*
 ---
@@ -77,7 +77,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
 || Token | Role | Size | Weight | Line height | Letter spacing |
 ||---|---|---|---|---|---|
 || `--text-0.75x` | Labels, tags, badges, captions — minimum size | `0.75rem` (12px) | 550 | 1.4 | `0.04em` |
-|| `--text-1x` | Default UI body, all running copy | `1rem` (16px) | 450 | 1.4 | `0` |
+|| `--text-1x` | Default UI body, all running copy | `1rem` (16px) | 400 | 1.4 | `0` |
 ---
 ## CSS custom properties (copy-paste ready)
 Logical decimal token names remain unchanged in prose. In CSS, escape each decimal point in declarations and `var()` references; JavaScript strings containing CSS need an additional backslash escape layer.
@@ -107,7 +107,7 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
   --text-6x-sm:            clamp(4.5rem, 3.88rem + 2.65vw, 6rem);
   /* Text-4x */
   --text-4x:                4rem;
-  --text-4x-weight:         650;
+  --text-4x-weight:         600;
   --text-4x-weight-bold:    800;
   --text-4x-leading:        1.00;
   --text-4x-tracking:       -0.04em;
@@ -116,14 +116,14 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
   /* Text-3x */
   --text-3x:                3rem;
   --text-3x-weight:         550;
-  --text-3x-weight-bold:    700;
+  --text-3x-weight-bold:    750;
   --text-3x-leading:        1.10;
   --text-3x-tracking:       -0.03em;
   --text-3x-print:          36pt;
   --text-3x-sm:             clamp(2.25rem, 1.94rem + 1.33vw, 3rem);
   /* Text-2x */
   --text-2x:                2rem;
-  --text-2x-weight:         550;
+  --text-2x-weight:         500;
   --text-2x-weight-bold:    700;
   --text-2x-leading:        1.20;
   --text-2x-tracking:       -0.02em;
@@ -132,14 +132,14 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
   /* Text-1.5x */
   --text-1\.5x:              1.5rem;
   --text-1\.5x-weight:       450;
-  --text-1\.5x-weight-bold:  600;
+  --text-1\.5x-weight-bold:  650;
   --text-1\.5x-leading:      1.30;
   --text-1\.5x-tracking:     -0.01em;
   --text-1\.5x-print:        18pt;
   --text-1\.5x-sm:           clamp(1.125rem, 0.97rem + 0.66vw, 1.5rem);
   /* Text-1x */
   --text-1x:                1rem;
-  --text-1x-weight:         450;
+  --text-1x-weight:         400;
   --text-1x-weight-bold:    600;
   --text-1x-leading:        1.40;
   --text-1x-tracking:       0em;
@@ -180,7 +180,7 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
 - **Text-2x:** Section headings, page titles.
 - **Text-1x:** All running copy, paragraph text.
 ### Functional UI scale (app, dashboard)
-- **`--text-1x`:** Work Sans 450, bolded 600, unitless line height 1.4. Use the canonical tier weights and leading for larger sizes.
+- **`--text-1x`:** Work Sans 400, bolded 600, unitless line height 1.4. Use the canonical tier weights and leading for larger sizes.
 - Maximum line length for body: 70 characters (`max-width: var(--max-width-text)`).
 ### Variable Font & Optical Balancing
 Work Sans is implemented as a variable font (`wght@100..900`).
@@ -205,7 +205,7 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 - **Container:** Place quotes inside a Plaster (`#FFFFFF`) card container with 16px border radius. It uses standard card padding.
 - **Headshot sizing:** Lock headshots to 128px desktop / 64px mobile — never scale by font-size ratio. See `components/quote-cards.md`.
 - **Typography:** Roman only. Do not italicize the entire quote (reserve italics for emphasis or titles of works).
-- **Attribution:** Name in canonical Text-1x bolded weight (600), role/company/location in canonical Text-1x base weight (450), all full-opacity Iron. Traffic Cone is not permitted for 16px attribution.
+- **Attribution:** Name in canonical Text-1x bolded weight (600), role/company/location in canonical Text-1x base weight (400), all full-opacity Iron. Traffic Cone is not permitted for 16px attribution.
 - **Quote text:** canonical Text-1.5x (24px, 450, leading 1.3), at every length. There is no long-quote variant. See `components/quote-cards.md`.
 - **Quotation marks:** no closing mark, and no opening mark inside the text. A card **without a headshot** carries one decorative opening mark at Text-3x (48px, 550), Iron, hanging in the left margin of the card so the quote's letters stay flush (see Hanging Punctuation below). A card with a headshot has no mark. See `components/quote-cards.md`.
 
@@ -219,7 +219,7 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 - **Engineering and fallback:** Use `text-wrap: balance` on headings and `text-wrap: pretty` on body. Where unsupported, test critical copy at every supported width and zoom setting; adjust the wording or apply a non-breaking space between the last two words only after checking that it does not cause overflow. `<wbr>` adds a wrap opportunity inside a long word; it does not prevent a final single-word line. Allow natural wrapping if a manual fix harms reflow. Use `orphans: 2; widows: 2;` for print page or column breaks.
 
 ### Exported graphics: pick the tier by displayed size
-- A graphic exported at `2x` and shown at half its pixel width displays its text at half size. Assign the tier and its weight by the size the text is **shown**, not the size it is drawn on the canvas. Text drawn at 32px and shown at 16px uses the Text-1x weights (450, bolded 600).
+- A graphic exported at `2x` and shown at half its pixel width displays its text at half size. Assign the tier and its weight by the size the text is **shown**, not the size it is drawn on the canvas. Text drawn at 32px and shown at 16px uses the Text-1x weights (400, bolded 600).
 - State the intended display width with the export, so the next editor can re-map tiers if the graphic is placed larger.
 
 ### Verify the variable font is really variable

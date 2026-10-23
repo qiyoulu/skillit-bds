@@ -113,7 +113,7 @@ ICON_GEOMETRY = {
     'x.svg': '835c248b6cc0e9380f6bd68ab523e33ec2ea2d85b5997f22022d621127d4a843',
     'x-circle.svg': 'e55da90820f0cf673b4acf149d758170471533b703200c3996ac5f3b1c6112f5',
     'x-mark.svg': 'b436a04d99bfaf63e013a37c340e0737cb56492d19ec51b8daf20652b5f6f1eb',
-    'x-octagon.svg': '0cc824d13eabe63eeb74dea22451dab83182441ababb28de29df1d78cfd8c18d',
+    'x-octagon.svg': '2150417526da1c6544199359545c740092f7daa6344babe8bc2b95ea0deff2b8',
     'youtube.svg': 'f80ffa738a332ab8bad1b5c355168e857ccbbf1340eaa65befb77ca871ba9235',
 }
 
@@ -480,8 +480,8 @@ with sync_playwright() as pw:
         assert style(page, '.nav-inner', 'padding-right') == expected
     page.set_viewport_size({'width': 1280, 'height': 900})
     bounds = page.locator('.nav-inner').bounding_box()
-    assert bounds['width'] == 1200 and bounds['x'] == 40, bounds
-    assert style(page, '.nav-inner', 'padding-left') == '0px'
-    print('PASS browser header alignment: mobile16px/tablet32px sides; desktop centered1200px content')
+    assert bounds['width'] == 1264 and bounds['x'] == 8, bounds
+    assert style(page, '.nav-inner', 'padding-left') == '32px'
+    print('PASS browser header alignment: mobile16px/tablet32px sides; desktop centered1264px frame, 1200px content')
     browser.close()
 print('ALL COMPONENT/ICON REGRESSIONS PASS')

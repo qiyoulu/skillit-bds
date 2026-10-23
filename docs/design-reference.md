@@ -1,5 +1,5 @@
 # Skillit Kit Brand Design System (BDS)
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-23
 
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 
@@ -285,11 +285,11 @@ The scale is built on a 16px baseline: `16 → 24 → 32 → 48 → 64 → 96 �
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
 | **Text-8x** | 128px | Bold (700) | 900 | 0.80 | −6% | Hero headlines at massive scale |
 | **Text-6x** | 96px | 650 | **850** | 0.90 | −5% | Large hero/section titles |
-| **Text-4x** | 64px | 650 | 800 | 1.00 | −4% | Standard headlines |
-| **Text-3x** | 48px | 550 | **700** | 1.10 | −3% | Section titles, pull quotes |
-| **Text-2x** | 32px | 550 | 700 | 1.20 | −2% | Subheadings |
-| **Text-1.5x** | 24px | 450 | **600** | 1.30 | −1% | Large body, subheads |
-| **Text-1x** | 16px | 450 | 600 | 1.40 | 0% | All running copy |
+| **Text-4x** | 64px | 600 | 800 | 1.00 | −4% | Standard headlines |
+| **Text-3x** | 48px | 550 | **750** | 1.10 | −3% | Section titles, pull quotes |
+| **Text-2x** | 32px | 500 | 700 | 1.20 | −2% | Subheadings |
+| **Text-1.5x** | 24px | 450 | **650** | 1.30 | −1% | Large body, subheads |
+| **Text-1x** | 16px | 400 | 600 | 1.40 | 0% | All running copy |
 | **Text-0.75x** | 12px | 550 | — | 1.40 | +4% | Functional labels, tags, badges, captions; not running copy |
 
 _(Full print/mobile/monospace variants for each level are documented in `tokens/docs/typography.md` — check there before inventing a new size, so this table and the token file don’t drift apart again.)_
@@ -363,7 +363,7 @@ To maintain the grid’s consistent rhythm, vertical spacing between text elemen
 
 - **Container:** Wrap the quote in a Plaster (`var(--color-surface)` / `#FFFFFF`) card container (16px corners). It inherits the standard tactile padding for cards.
 - **Typography:** Roman only. Do not italicize the entire quote (reserve italics strictly for emphasis or titles within the text).
-- **Attribution:** Name in Semibold (600), title/company at canonical Text-1x weight (450). Color: opaque Iron for the attribution name and title/company.
+- **Attribution:** Name in Semibold (600), title/company at canonical Text-1x weight (400). Color: opaque Iron for the attribution name and title/company.
 - **Quote text:** canonical Text-1.5x (24px, weight 450, leading 1.3) at every length. There is no long-quote variant; verify wrapping and reflow.
 - **Quotation marks:** no closing mark and no opening mark inside the text. A card **without a headshot** carries one decorative opening mark at Text-3x (48px, weight 550), Iron, hanging in the card's left margin so the letters stay flush; on small screens it sits above the text. A card with a headshot has no mark. Spec in `components/quote-cards.md`.
 
@@ -378,7 +378,7 @@ To maintain the grid’s consistent rhythm, vertical spacing between text elemen
 Work Sans is a **variable font** with a continuous weight axis (100–900). Use interpolated weights for optical correction.
 **Halation correction:** Light text on a dark background creates an optical illusion that makes letterforms appear heavier than they are. There are two techniques to reduce this:
 
-- **On light backgrounds (Canvas):** Use the canonical tier weights (450, 550, 650, 700); named weight tokens remain available for specific roles. Canvas is already an off-white (`#F7F1ED`) rather than pure white, which naturally reduces irradiation against dark type.
+- **On light backgrounds (Canvas):** Use the canonical tier weights (400 to 700 in steps of 50); named weight tokens remain available for specific roles. Canvas is already an off-white (`#F7F1ED`) rather than pure white, which naturally reduces irradiation against dark type.
 - **On non-Skillit dark backgrounds:** Subtract ~25 units to use interpolated weights (375, 475, 575, 675). Skillit layout surfaces remain Canvas or Plaster.
 
 ### Typographic Punctuation
@@ -395,7 +395,7 @@ A **widow** is a single word left dangling on its own line at the end of a parag
 
 ### Typography Do / Don’t
 
-**Email typography:** Use Text-1x (16px / 1rem), Work Sans weight 450, line-height 1.4 as the default and minimum for readable email text—including signatures, footer contacts, addresses, copyright, legal links, captions, and source references. Use 600 for emphasis. Do not apply the general 12px Text-0.75x metadata exception to email. Larger canonical heading/display tiers remain available for marketing emails. Where variable weight 450 is unsupported, use the nearest supported regular weight and verify rendering. Allow contact rows to wrap on narrow screens; never shrink type or force horizontal overflow to keep them on one line.
+**Email typography:** Use Text-1x (16px / 1rem), Work Sans weight 400, line-height 1.4 as the default and minimum for readable email text—including signatures, footer contacts, addresses, copyright, legal links, captions, and source references. Use 600 for emphasis. Do not apply the general 12px Text-0.75x metadata exception to email. Larger canonical heading/display tiers remain available for marketing emails. Where variable weight 450 is unsupported, use the nearest supported regular weight and verify rendering. Allow contact rows to wrap on narrow screens; never shrink type or force horizontal overflow to keep them on one line.
 
 
 - **Do** use sentence case for authored brand copy; retain documented source-capitalization exceptions.

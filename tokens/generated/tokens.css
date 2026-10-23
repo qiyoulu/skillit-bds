@@ -75,31 +75,31 @@
   --text-6x-tracking: -0.05em;
   --text-6x-sm: clamp(4.5rem, 3.88rem + 2.65vw, 6rem);
   --text-4x: 4rem;                 /* Text-4x, mobile: clamp(3rem, 2.59rem + 1.77vw, 4rem) */
-  --text-4x-weight: 650;
+  --text-4x-weight: 600;
   --text-4x-weight-bold: 800;
   --text-4x-leading: 1.00;
   --text-4x-tracking: -0.04em;
   --text-4x-sm: clamp(3rem, 2.59rem + 1.77vw, 4rem);
   --text-3x: 3rem;                 /* Text-3x, mobile: clamp(2.25rem, 1.94rem + 1.33vw, 3rem) */
   --text-3x-weight:         550;
-  --text-3x-weight-bold: 700;
+  --text-3x-weight-bold: 750;
   --text-3x-leading: 1.10;
   --text-3x-tracking: -0.03em;
   --text-3x-sm: clamp(2.25rem, 1.94rem + 1.33vw, 3rem);
   --text-2x: 2rem;                 /* Text-2x, mobile: clamp(1.5rem, 1.29rem + 0.88vw, 2rem) */
-  --text-2x-weight: 550;
+  --text-2x-weight: 500;
   --text-2x-weight-bold: 700;
   --text-2x-leading: 1.20;
   --text-2x-tracking: -0.02em;
   --text-2x-sm: clamp(1.5rem, 1.29rem + 0.88vw, 2rem);
   --text-1\.5x: 1.5rem;             /* Text-1.5x, mobile: clamp(1.125rem, 0.97rem + 0.66vw, 1.5rem) */
   --text-1\.5x-weight:       450;
-  --text-1\.5x-weight-bold: 600;
+  --text-1\.5x-weight-bold: 650;
   --text-1\.5x-leading: 1.30;
   --text-1\.5x-tracking: -0.01em;
   --text-1\.5x-sm: clamp(1.125rem, 0.97rem + 0.66vw, 1.5rem);
   --text-1x: 1rem;                /* Text-1x — all running copy, default UI body. 16px held on mobile. bolded: 600. */
-  --text-1x-weight: 450;
+  --text-1x-weight: 400;
   --text-1x-weight-bold: 600;
   --text-1x-leading: 1.40;
   --text-1x-tracking: 0em;

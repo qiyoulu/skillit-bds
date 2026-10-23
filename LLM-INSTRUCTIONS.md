@@ -1,5 +1,5 @@
 # Skillit Kit Brand Design System (BDS) — PROJECT INSTRUCTIONS (READ FIRST)
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-23
 
 **Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-08
 
@@ -56,7 +56,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - `--font-primary`: Work Sans — all human text.
 - `--font-mono`: JetBrains Mono — machine data only (timestamps, IDs, distances, file sizes, code). Never for running human copy or ordinary UI labels/headings; approved machine metadata, captions, chart references, and data displays may use it.
 - Size tokens: `--text-0.75x` (12px, labels/captions minimum) through `--text-8x` (128px hero). Name size tokens by tier (`Text-2x`), not semantic aliases (`text-sm`). Use semantic HTML (`h1`–`h6`, labels, buttons, links) for meaning and accessibility; do not confuse HTML elements with token names. **No text renders below 1rem except approved `--text-0.75x` functional labels, captions, and machine references.**
-- **Email typography:** Use Text-1x (16px / 1rem), Work Sans weight 450, line-height 1.4 as the default and minimum for readable email text—including signatures, footer contacts, addresses, copyright, legal links, captions, and source references. Use 600 for emphasis. Do not apply the general 12px Text-0.75x metadata exception to email. Larger canonical heading/display tiers remain available for marketing emails. Where variable weight 450 is unsupported, use the nearest supported regular weight and verify rendering. Allow contact rows to wrap on narrow screens; never shrink type or force horizontal overflow to keep them on one line.
+- **Email typography:** Use Text-1x (16px / 1rem), Work Sans weight 400, line-height 1.4 as the default and minimum for readable email text—including signatures, footer contacts, addresses, copyright, legal links, captions, and source references. Use 600 for emphasis. Do not apply the general 12px Text-0.75x metadata exception to email. Larger canonical heading/display tiers remain available for marketing emails. Where variable weight 450 is unsupported, use the nearest supported regular weight and verify rendering. Allow contact rows to wrap on narrow screens; never shrink type or force horizontal overflow to keep them on one line.
 - Mobile variants use the `-sm` suffix (`--text-2x-sm`). Display scales ×0.75 on mobile; `Text-1x` holds at 16px.
 
 ### Spacing

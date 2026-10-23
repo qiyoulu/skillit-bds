@@ -1,5 +1,5 @@
 # Quote Cards — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-23
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -56,7 +56,7 @@ Quotes sit in a Plaster (`--color-surface`) card with 16px corners and standard 
 .quote-card .attribution {
   font-size: var(--text-1x);
   font-family: var(--font-primary);
-  font-weight: var(--text-1x-weight); /* 450 */
+  font-weight: var(--text-1x-weight); /* 400 */
   line-height: var(--text-1x-leading);
   color: var(--color-foreground);
   margin-top: var(--space-4);

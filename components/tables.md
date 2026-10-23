@@ -1,5 +1,5 @@
 # Tables — Skillit Kit BDS
-**Last updated:** 2026-10-14
+**Last updated:** 2026-10-23
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -10,7 +10,7 @@
 - **Row height.** At least `--space-12` (48px) for rows that hold Text-1x. Rows holding Text-2x or larger scale with the text: padding of `--space-4` (16px) top and bottom, minimum.
 - **Cell padding.** `--space-6` (24px) left and right, so text never touches the row edge.
 - **Alignment.** Labels flush left, values flush right. Numbers use `font-variant-numeric: tabular-nums`. See `rules/data-viz.md`.
-- **Weights.** Labels at the tier's base weight, values at its bolded weight (Text-1x: 450 and 600). Do not use opacity fades to rank cells.
+- **Weights.** Labels at the tier's base weight, values at its bolded weight (Text-1x: 400 and 600). Do not use opacity fades to rank cells.
 - **Status in a row.** Pair an icon with a label, never color alone. See `rules/iconography.md`.
 
 ## Do not

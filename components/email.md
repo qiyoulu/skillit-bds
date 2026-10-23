@@ -1,5 +1,5 @@
 # Email — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-23
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -9,7 +9,7 @@
 - Email clients strip or fail SVG. Every image is PNG at 2x display size (e.g., 48x48 file for a 24px icon).
 
 ## Typography
-**Email typography:** Use Text-1x (16px / 1rem), Work Sans weight 450, line-height 1.4 as the default and minimum for readable email text—including signatures, footer contacts, addresses, copyright, legal links, captions, and source references. Use 600 for emphasis. Do not apply the general 12px Text-0.75x metadata exception to email. Larger canonical heading/display tiers remain available for marketing emails. Where variable weight 450 is unsupported, use the nearest supported regular weight and verify rendering. Allow contact rows to wrap on narrow screens; never shrink type or force horizontal overflow to keep them on one line.
+**Email typography:** Use Text-1x (16px / 1rem), Work Sans weight 400, line-height 1.4 as the default and minimum for readable email text—including signatures, footer contacts, addresses, copyright, legal links, captions, and source references. Use 600 for emphasis. Do not apply the general 12px Text-0.75x metadata exception to email. Larger canonical heading/display tiers remain available for marketing emails. Where variable weight 450 is unsupported, use the nearest supported regular weight and verify rendering. Allow contact rows to wrap on narrow screens; never shrink type or force horizontal overflow to keep them on one line.
 
 ## Structure
 - Single-column, 600px max width, centered.
@@ -27,12 +27,12 @@ Display statistics use the 8x typography tier: 128px, weight 700, line-height 0.
 ```
 
 ## Member card
-A Plaster (`--color-surface`) card with 16px corners and 64px interior padding, containing a 256px circular member photo (`border-radius: 50%` on an equal-width/height img; approved portrait geometry exception) and name / trade / member-since lines in Text-1x, weight 450.
+A Plaster (`--color-surface`) card with 16px corners and 64px interior padding, containing a 256px circular member photo (`border-radius: 50%` on an equal-width/height img; approved portrait geometry exception) and name / trade / member-since lines in Text-1x, weight 400.
 ```html
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="background-color: #FFFFFF; border-radius: 16px;">
   <tr><td style="padding: 64px;">
     <img src="..." width="256" height="256" style="border-radius: 50%;" />
-    <p style="font-size: 16px; font-weight: 450; line-height: 1.4;"><strong>Name</strong><br />Trade<br />Member since YYYY</p>
+    <p style="font-size: 16px; font-weight: 400; line-height: 1.4;"><strong>Name</strong><br />Trade<br />Member since YYYY</p>
   </td></tr>
 </table>
 ```

@@ -1,5 +1,5 @@
 # Form Inputs — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-23
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -18,7 +18,7 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground.
   color: var(--color-foreground);
   font-family: var(--font-primary);
   font-size: var(--text-1x);              /* 16px */
-  font-weight: var(--text-1x-weight);       /* canonical body weight: 450 */
+  font-weight: var(--text-1x-weight);       /* canonical body weight: 400 */
   line-height: var(--text-1x-leading);
   box-sizing: border-box;
   min-height: var(--touch-target-min);
