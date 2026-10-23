@@ -1,6 +1,6 @@
 # Skillit brand guide
 
-**Version 1.3 · October 2026**
+**Version 1.4 · October 2026**
 **Last updated:** 2026-10-08
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 
@@ -136,6 +136,8 @@ Project photography can show a site from above. That permission does not extend 
 
 A dark overlay is allowed only where text needs help staying readable. It is not a filter for standalone photos. If a worker’s background is removed, place the worker directly on Canvas.
 
+Full photography rules: [rules/photography.md](./rules/photography.md).
+
 ## Presentations
 
 Start with an approved presentation template supplied by the team. This repository does not include a presentation template; ask for the current one rather than assuming a file here is a deck.
@@ -180,6 +182,8 @@ Worker availability uses blue and job openings use orange when shown together. T
 - Don’t use donut, radar, spider, or 3D charts.
 - Don’t add shadows, outer chart boxes, or vertical gridlines.
 - Don’t turn an old example into a current claim.
+
+Full chart rules: [rules/data-viz.md](./rules/data-viz.md).
 
 ## Write plainly
 
@@ -234,6 +238,8 @@ The “72 hours” claim is blocked from reuse. Published copy measures profile 
 - [Approved icons](./assets/icons/)
 - [Brand story and claim policy](./brand/narrative.md)
 - [More writing guidance](./voice/brand-voice.md)
+- [Rules for layout, accessibility, photography, charts and icons](./rules/)
+- [Component specifications](./components/README.md)
 - [Detailed design reference](./docs/design-reference.md), optional for designers and technical work
 
 The detailed reference retains exact color values, font weights and sizes, logo measurements, chart construction rules, and implementation guidance. Use it when those details are needed; don’t guess them from this guide.

@@ -1,5 +1,5 @@
 # Skillit brand guide
-**Version:** v1.4 · **Last updated:** 2026-10-20 · [Release notes](./releases/v1.4.md)
+**Version:** v1.4 · **Last updated:** 2026-10-22 · [Release notes](./releases/v1.4.md)
 
 Use these files when you write, present, design, or build something for Skillit.
 
@@ -50,7 +50,8 @@ git pull --ff-only origin main
 ### Integration points
 
 - Canonical design values: `tokens/tokens.json5`.
-- CSS and Tailwind exports: `tokens/generated/tokens.css` and `tokens/generated/tailwind-theme.js`.
+- Rules for layout, accessibility, photography, data visualization and iconography: [`rules/`](./rules/layout.md).
+- CSS and Tailwind exports: [`tokens/generated/tokens.css`](./tokens/generated/tokens.css) and [`tokens/generated/tailwind-theme.js`](./tokens/generated/tailwind-theme.js).
 - Component specifications: [`components/`](./components/README.md) (start with the index).
 - Approved artwork: `assets/icons/` and `assets/logo/`.
 

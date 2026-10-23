@@ -3,7 +3,7 @@
 
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 
-## **Version 1.3 · October 2026**
+## **Version 1.4 · October 2026**
 
 **Release status:** v1.4, tagged `v1.4` and published as a GitHub Release on 2026-10-22. See the [v1.4 release notes](../releases/v1.4.md) for the change set since v1.3.
 
@@ -14,7 +14,7 @@ This is the detailed design and implementation reference. For the plain-language
 ## Table of Contents
 
 - [Skillit Kit Brand Design System (BDS)](#skillit-kit-brand-design-system-bds)
-  - [**Version 1.3 · October 2026**](#version-13--october-2026)
+  - [**Version 1.4 · October 2026**](#version-14--october-2026)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [At a Glance](#at-a-glance)

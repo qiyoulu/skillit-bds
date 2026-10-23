@@ -108,6 +108,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Header height:** `--logo-height: 32px` for both lockup and mark, always set explicitly. Never `height: auto`.
 - **Treatments:** Iron on Canvas (default). Single-color solid Iron or Canvas for print/embroidery, never an outline treatment. Preserve the approved fixed artwork and its paint; UI-style hex restrictions do not authorize consumer recoloring.
 - **Banned:** stretching, rotating, drop shadows, enclosing in shapes, raster formats (except approved 512px-height PNG exports for SVG-rejecting platforms), recreating in any tool.
+- Full logo rules, sizes and variants: [`tokens/docs/logo.md`](./tokens/docs/logo.md).
 
 ---
 
@@ -121,12 +122,14 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Imported names and geometry:** Use exact supplied paths and IDs from the [90-asset inventory](./components/icons.md#complete-imported-inventory), including user-selected `saw`, `concrete`, `pipe`, `user-hat`, and `user-round`. Success uses `check-circle.svg`, error `x-octagon.svg`, warning `exclamation-triangle.svg`, info `information-circle.svg` or `information-square.svg`, help `question-mark-circle.svg`; semantic props/classes stay independent of filenames. New `phone.svg` is a handset, distinct from `device-phone-mobile.svg`; new `user-circle.svg` is distinct from `user-round.svg`; Use `share.svg` for the three-node symbol and `arrow-up-on-square.svg` for the upward-arrow/square glyph. Follow the [naming and migration guide](./components/icons.md#naming-and-migration); do not use removed filenames as current paths or replace Skillit artwork with Heroicons. Fresh exports include 15 additions, not only renames. `play.svg` is a standalone triangle; circle play/pause variants retain opaque dark circles and white glyphs. Preserve opaque radio/checkbox/switch layers; never flatten multicolor exports into one mask. Switch-on retains a green right thumb on Plaster; switch-off a dark left thumb on Plaster, separate from Orange checkbox/radio/chip selection. Use canonical tokens for approved layer overrides; normalize eligible single-color raw paint only. Coordinate consumer assets and resolver paths; BDS edits do not deploy Rails/workspace migrations.
 
 - **Legacy compatibility:** [75 archived prior-ID SVGs](./assets/icons/legacy/README.md) are frozen and excluded from the 90-icon canonical set. Do not normalize, recolor, regenerate, or substitute them for new work. Their manifest supplies migration targets and byte hashes. Consumers must explicitly select `legacy/`; adding this folder does not restore old root paths or automatically migrate Rails.
+- Full icon rules: [`rules/iconography.md`](./rules/iconography.md) and [`components/icons.md`](./components/icons.md).
 
 ### Photography
 - Real workers on real job sites, eye-level or below, candid, hands visible. Adobe Stock only.
 - No AI-generated imagery, fabricated scene/background composites, color grading, or staged “safety theater.” No high-angle framing of worker subjects; aerial environmental/project images are permitted. Grid collages of separate authentic photos are permitted, not fabricated merged scenes.
 - **Iron overlay for text legibility only:** 50% opacity Iron behind text overlays. Standalone images get no overlay.
 - Crop faces above the temples, never at forehead level.
+- Full photography rules: [`rules/photography.md`](./rules/photography.md).
 
 ---
 
@@ -143,6 +146,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Tooltips:** Plaster background, 1px Iron border, `16px` corners.
 - **Flowcharts:** Neutral Plaster decision nodes with Iron text. Do not use semantic fills unless a specific approved exception is documented. A single actionable CTA node may use Traffic Cone with Iron text.
 - **Banned:** 3D, drop shadows, donut charts, radar charts, X-axis gridlines.
+- Full chart rules: [`rules/data-viz.md`](./rules/data-viz.md).
 
 ---
 
@@ -153,6 +157,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Header/body alignment:** Header bars use the same horizontal margins and padding as the body content below them.
 - **Grid:** 12-column desktop grid, fixed column spans; `repeat(12, minmax(0, 1fr))` is valid equal-track construction, not an ad hoc content ratio. No arbitrary percentage splits. Max content width `1200px`; use the canonical token and responsive header/body side-padding contract in [spacing](./tokens/docs/spacing.md).
 - **Text width:** Body columns never exceed `70ch`.
+- Full layout rules: [`rules/layout.md`](./rules/layout.md). Component specs: [`components/`](./components/README.md).
 
 ---
 
@@ -195,6 +200,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 **Target B — Product (`app.skillit.com`), Rails 7.2 (tailwindcss-rails, importmap):**
 - Preserve the verified existing `main` integration: `config/tailwind.config.js`, CSS in `app/assets/stylesheets/onboarding.css`, and copied SVGs in `app/assets/images/bds/icons/` and `app/assets/images/bds/logo/`. Use ViewComponents or ERB partials for rendering, not as the SVG export directory. Review the existing foundation and current adoption status in the [README](./README.md#integration-points); do not relocate tokens to `application.css` or replace the architecture without engineering review.
 - DO NOT output: npm instructions, Vite config, standalone HTML.
+- Token exports for both targets: [`tokens/generated/tokens.css`](./tokens/generated/tokens.css) and [`tokens/generated/tailwind-theme.js`](./tokens/generated/tailwind-theme.js) (Tailwind keys include `gutter` and `page`).
 
 ---
 
@@ -216,3 +222,5 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 14. Header margins match body margins.
 15. **Copy is plain language.** No jargon. No stacked adjectives. One claim per sentence. If a sentence can be cut without losing meaning, cut it.
 16. **No overselling.** No claim-stacking or invented current statistics; legacy metrics and conflicting 72-hour definitions remain blocked until approved; “free” is craft-professional-only. Proposed website structure and two-agent framing are not shipped inventory/architecture. Apply migrations only to requested scope, with engineering review for broader changes. Preserve genuine imagery, environmental aerial/grid-collage exceptions, and neutral pattern exclusion zones.
+
+Accessibility detail: [`rules/accessibility.md`](./rules/accessibility.md). Modal focus trap: [`components/modal.md`](./components/modal.md).
