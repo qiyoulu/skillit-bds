@@ -1,5 +1,5 @@
 # Text Links — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-24
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -17,6 +17,7 @@ a {
   text-underline-offset: 2px;
 }
 a:hover {
+  color: var(--color-link-hover);         /* Painter's Tape hover: 5.3511:1 on Canvas, 5.9901:1 on Plaster, passes AA */
   text-decoration-thickness: 2px;
 }
 a:focus-visible {
@@ -25,6 +26,8 @@ a:focus-visible {
   border-radius: 0;
 }
 ```
+**Hover.** Two cues, never one: the color steps to `--color-link-hover` and the underline thickens from 1px to 2px. The hover color is darker than the resting Painter's Tape, so it clears 4.5:1 on both Canvas and Plaster where the resting link does not on Canvas (4.2312:1). Visited links keep the resting color. Nav links and footer links are not body links and follow `navigation.md` and `footer.md`.
+
 **On non-Skillit dark backgrounds:** Use Canvas underlined text instead of Painter's Tape — Painter's Tape does not pass contrast on dark surfaces.
 
 ## Photography & Media

@@ -1,5 +1,5 @@
 # Checkboxes — Skillit Kit BDS
-**Last updated:** 2026-10-05
+**Last updated:** 2026-10-24
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -20,6 +20,8 @@ Inline the SVG (or render it as an inline component) so CSS inheritance reaches 
 ## States
 - **Unchecked:** 16×16, 1.5px Traffic Cone (`--color-primary`) stroke, Plaster (`#FFFFFF`) fill. Orange border on white fill — the industry standard selection signal.
 - **Checked:** 16×16, Traffic Cone fill, Iron (`--color-foreground`) checkmark icon centered inside. The fill invert + checkmark is the universal "selected" pattern.
+
+- **Hover:** the whole row is the target, so hovering the label hovers the box. Unchecked: the 1.5px stroke moves from `--color-primary` to `--color-primary-hover`; the Plaster fill stays. Checked: stroke and fill both move to `--color-primary-hover`; the Iron glyph is unchanged. Unchecked never takes `--color-surface-hover` as a fill: the Cone stroke on Plaster hover is 2.2431:1, under the 3:1 graphical floor. Contrast on hover: stroke on Plaster 3.9136:1, on Canvas 3.4961:1; Iron glyph on the checked hover fill 3.5041:1 (non-text, passes 3:1). Disabled rows do not respond. The label does not change color.
 
 The actual input remains keyboard-focusable and owns `checked`, `disabled`, submission, and the accessible name. Its native visual appearance is replaced by a sibling square; do not put pseudo-elements on the input. CSS URLs below assume a component stylesheet deployed beside `tokens/generated/tokens.css`; see `icons.md` for relocation rules.
 
@@ -58,6 +60,13 @@ The actual input remains keyboard-focusable and owns `checked`, `disabled`, subm
 }
 .checkbox:checked + .checkbox-box {
   background-color: var(--color-primary);
+}
+/* Hover: Traffic Cone hover token. Stroke only when unchecked, stroke and fill when checked. */
+.checkbox-row:hover:not(:has(.checkbox:disabled)) .checkbox-box {
+  border-color: var(--color-primary-hover);
+}
+.checkbox-row:hover:not(:has(.checkbox:disabled)) .checkbox:checked + .checkbox-box {
+  background-color: var(--color-primary-hover);
 }
 .checkbox-box::after {
   content: '';

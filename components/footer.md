@@ -1,5 +1,5 @@
 # Footer — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-24
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -49,7 +49,7 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
   margin-bottom: var(--space-8);
 }
 .footer .nav-link:hover {
-  color: var(--color-foreground);
+  color: var(--color-foreground);         /* stays Iron: hover is the underline alone */
   text-decoration: underline;
 }
 .footer .nav-link:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }

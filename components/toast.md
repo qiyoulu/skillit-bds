@@ -1,5 +1,5 @@
 # Toast / Notification — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-24
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -100,6 +100,7 @@ CSS URLs assume a component stylesheet beside `tokens/generated/tokens.css`; see
   color: var(--color-foreground); /* Iron close control on every type */
   border-radius: var(--radius-pill);
 }
+.toast__close:hover { background-color: var(--color-surface-hover); } /* Plaster body; same as .modal__close */
 .toast__close:focus-visible, .toast a:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;

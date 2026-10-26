@@ -1,5 +1,5 @@
 # Tables — Skillit Kit BDS
-**Last updated:** 2026-10-23
+**Last updated:** 2026-10-24
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -16,7 +16,9 @@
 ## Do not
 - Do not draw a rule between rows, under a header row, or around the table.
 - Do not use a third fill (a tinted or grey row) to mark a selected row. Use the checkbox or selection pattern in `components/checkboxes.md`.
-- Do not hover-tint a row unless the row is actionable. Hover is not a state on touch.
+- Do not hover-tint a row unless the row is actionable. Hover is not a state on touch. An actionable row steps to the hover token of its own fill (below), never to a third color.
+
+**Actionable rows.** A row that opens a record or acts on click takes the hover token of its own fill: Canvas rows `--color-background-hover`, Plaster rows `--color-surface-hover`. The alternation stays readable, no third fill appears, and Iron text holds 9.1419:1 on the Canvas hover and 10.1932:1 on the Plaster hover. The rule applies only where a pointer can hover, and the row needs a real link or button inside it for keyboard and touch. Selection is still the checkbox. Sortable header cells are buttons and take the secondary button hover.
 
 ```css
 /* Alternating-row table inside a Plaster card */
@@ -35,6 +37,10 @@
 }
 .table__row:nth-child(even) {
   background-color: var(--color-surface);      /* Plaster */
+}
+@media (hover: hover) {
+  .table__row--action:hover { background-color: var(--color-background-hover); }
+  .table__row--action:nth-child(even):hover { background-color: var(--color-surface-hover); }
 }
 .table__value {
   font-weight: var(--text-1x-weight-bold);

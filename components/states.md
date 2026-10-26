@@ -1,5 +1,5 @@
 # States — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-24
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -13,6 +13,7 @@ Design all states, not just the happy path. A layout that only works for the ide
 - **Empty:** Plaster surface, Iron message, single illustration or icon. Never a blank void — give the user a reason the state is empty and a path forward.
 - **Loading:** skeleton blocks in Plaster, no spinner-only states. There is no spinner icon in the set — if one is ever needed, it must be drawn and added to the inventory; skeletons are the default loading treatment.
 - **Error:** icon (octagon, Toolbox red, `--color-error`) + specific message. See form inputs for field-level states.
+- **Hover:** every control uses its per-color hover token (`tokens/docs/color.md`), as a `background-color` or stroke swap, never opacity. Buttons, chips, cards: [buttons](./buttons.md), [cards](./cards.md). Inputs and selects: Plaster hover fill ([forms](./forms.md#input-fields)). Checkboxes: Traffic Cone hover stroke and fill ([checkboxes](./checkboxes.md)). Links: `--color-link-hover` plus a 2px underline ([links](./links.md)). Icon-only buttons (menu, modal close, toast close): `--color-surface-hover` circle. Actionable table rows: the hover token of the row's own fill ([tables](./tables.md)). Chart marks: 2px Iron outline, fill unchanged ([data-viz](../rules/data-viz.md)). Disabled controls do not respond.
 - **Disabled:** Set the element to 50% opacity (`opacity: 0.5`), no color change — a disabled control must never be confused with an error state.
 - **Overflow:** one line of text at any width must never clip. Headings wrap; long worker names truncate with ellipsis at the container edge, never overlap.
 - **Progressive disclosure:** the simple view first, advanced options behind a toggle. Never dump every option on screen at once.

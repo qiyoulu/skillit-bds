@@ -41,6 +41,7 @@ The rules below apply to axis-based bars. For comparison and progress bars, see 
 
 ## 5. Interaction & Specific Chart Rules
 - **Tooltips:** Plaster (`--color-surface`) background, 1px solid Iron (`--color-foreground`) border, 16px corners.
+- **Hover and focus on marks:** a hovered bar, map region, or point keeps its fill and gains a 2px Iron outline; keyboard focus uses the 2px Traffic Cone ring with a 2px offset. Fill never changes, because fill encodes data. Raise the hovered mark above its neighbours so the outline is not clipped. Pie slices take no outline (zero stroke): the tooltip and direct label identify them. Marks that are not actionable show the tooltip only, with no pointer cursor.
 - **Interaction:** Charts do not define inactive series. Tooltips may identify the hovered data point, while every series remains visible at its assigned opacity.
 - **Pie Charts (Solid State):** Slices must sit flush against each other with zero gap and zero stroke. Use approved category colors or optional opacity steps, with direct labels identifying every slice.
 - **Pie labels and legends:** Label each slice directly outside the chart on the Canvas background, connected by a 1px Iron leader line. A labeled legend may supplement direct labels; never require color or shade matching alone.

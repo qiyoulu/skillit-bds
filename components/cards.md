@@ -1,5 +1,5 @@
 # Cards — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-24
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -42,7 +42,9 @@ Feature cards (quote cards, author blocks, standalone panels) use generous paddi
 .card-interactive:hover {
    background-color: var(--color-surface-hover);
 }
-/* Active / selected state — Plaster hover surface with Iron text */
+/* Selected state — a persistent fill, carried by the checked indicator, never color alone.
+   The fill matches hover, so a selected card shows the Traffic Cone checkbox (checkboxes.md)
+   and does not change again on hover. */
 .card-interactive[aria-selected="true"] {
    background-color: var(--color-surface-hover);
    color: var(--color-foreground);

@@ -1,5 +1,5 @@
 # Form Inputs — Skillit Kit BDS
-**Last updated:** 2026-10-23
+**Last updated:** 2026-10-24
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -26,6 +26,9 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground.
   width: 100%;
 }
 .input-wide { width: 100%; } /* opt-in for textareas / long-form — same as default, kept for explicitness */
+.input:hover:not(:disabled) {
+  background-color: var(--color-surface-hover); /* Plaster hover — same token as cards and secondary buttons */
+}
 .input:focus {
    outline: 2px solid var(--color-primary);      /* Traffic Cone focus; Canvas contrast exception — see accessibility.md */
   outline-offset: 2px;
@@ -34,6 +37,8 @@ Fields are **Plaster on Canvas** — the surface separates them from the ground.
    color: var(--color-foreground-hover);
 }
 ```
+**Hover.** A hovered field swaps its fill from Plaster to `--color-surface-hover`, the same token as a hovered card or secondary button. Fill only: no border, outline, or text color change. Iron text on the hover fill is 10.1932:1, and the placeholder (`--color-foreground-hover`) stays readable. Hover holds while the field is focused, and the focus ring does not change. Disabled fields do not respond. Applies to `.input`, textareas, and `.select`.
+
 **Labels:** Above the field, not inside (placeholder is not a label). `--text-1x` size, `--weight-medium`, Iron. Gap from label to input: `--space-2` (8px), the same as input to status row. Gap between field groups: `--space-5` (20px).
 
 **Required fields.** Required inputs display an asterisk (`*`) beside the label in Traffic Cone (`--color-primary`). The input carries the HTML `required` attribute for native form validation. No visual border change — the asterisk is the signal.
@@ -101,6 +106,7 @@ CSS URLs assume a component stylesheet deployed beside `tokens/generated/tokens.
   mask: url('../../assets/icons/chevron-down.svg') center / contain no-repeat;
   pointer-events: none;
 }
+.select:hover:not(:disabled) { background-color: var(--color-surface-hover); }
 .select:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;

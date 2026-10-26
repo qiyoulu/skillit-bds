@@ -1,5 +1,5 @@
 # Navigation — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-24
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -47,6 +47,7 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
   border-radius: var(--radius-pill);
   position: relative;
 }
+.nav-menu-btn:hover { background-color: var(--color-surface-hover); } /* header is Plaster; on Canvas use --color-background-hover */
 .nav-links {
   display: flex;
   gap: var(--space-8);               /* 32px — nav links */
