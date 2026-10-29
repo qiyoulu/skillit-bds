@@ -1,7 +1,7 @@
 # Skillit brand guide
 
-**Version 1.5 · October 2026**
-**Last updated:** 2026-10-08
+**Version 1.6 · October 2026**
+**Last updated:** 2026-10-29
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 
 Use this guide when making a sales presentation, writing an email, planning a campaign, or reviewing work for Skillit. It covers the everyday decisions. You don’t need to learn the design system’s technical details to use it.
@@ -44,7 +44,7 @@ Useful chart lines and underlined links are allowed. They explain data or identi
 
 ## Use color for a reason
 
-Canvas is the warm off-white page background. Plaster is white, used for cards and separate content areas. Iron is the dark color for ordinary text. Keep these as the foundation; Iron is not a page background.
+Canvas is the warm off-white page background. Plaster is white, used for cards and separate content areas. Iron is the dark color for ordinary text. Keep these as the foundation; Iron is not a page background; the footer is the exception.
 
 Traffic Cone is our orange. Use it for the main action, selected choices, and the visible outline that helps someone see which control they are using. More than one orange element is fine when each has a job. This is not an orange quota.
 

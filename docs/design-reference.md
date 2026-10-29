@@ -1,5 +1,5 @@
 # Skillit Kit Brand Design System (BDS)
-**Last updated:** 2026-10-23
+**Last updated:** 2026-10-29
 
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 
@@ -202,7 +202,8 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 | Variant              | Contrast | Use                                               |
 | -------------------- | -------- | ------------------------------------------------- |
 | Iron on Canvas       | 12.2506:1  | Default — all light backgrounds                   |
-| Canvas on Iron       | 12.2506:1  | Not used — Iron is not a background surface       |
+| Canvas on Iron       | 12.2506:1  | Modal backdrops, photo overlays, footer band      |
+| Plaster on Iron      | 13.7135:1  | Footer band text, marks and icons                 |
 | Iron on Traffic Cone | 4.5443:1   | Button backgrounds only — marginal, use sparingly |
 | Single-color solid | —        | Print, embroidery, engraving only                 |
 
@@ -433,7 +434,7 @@ Every layout uses four layers, in order of elevation and visual weight:
 
 1. **Ground** — Canvas. The default background for all pages and apps.
 2. **Lifted Surface** — Plaster. Used for cards and isolated containers. Drop shadows are banned; Plaster separates through optical brightness and generous padding. No divider rules or table gridlines. Explicitly specified functional control boundaries use Iron; selection-indicator paint is a separate exception.
-3. **Structure** — Iron. Used for text and explicitly specified functional control boundaries, not layout dividers or table gridlines. It does not become a layout background surface; a functional modal backdrop or photographic text-legibility overlay is the explicit exception.
+3. **Structure** — Iron. Used for text and explicitly specified functional control boundaries, not layout dividers or table gridlines. It does not become a layout background surface; a functional modal backdrop, a photographic text-legibility overlay or the footer band is the explicit exception.
 4. **Signal** — Traffic Cone. Functional action and data cues, not a color-count limit.
 
 ### Rules

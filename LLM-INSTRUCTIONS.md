@@ -1,9 +1,9 @@
 # Skillit Kit Brand Design System (BDS) — PROJECT INSTRUCTIONS (READ FIRST)
 **Last updated:** 2026-10-29
 
-**Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-08
+**Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-29
 
-**Release:** v1.5, tagged `v1.5`. See [release notes](./releases/v1.5.md). Changes since v1.3 are in the [v1.4](./releases/v1.4.md) and v1.5 notes.
+**Release:** v1.6, pending tag `v1.6`. See [release notes](./releases/v1.6.md). Changes since v1.3 are in the [v1.4](./releases/v1.4.md), [v1.5](./releases/v1.5.md) and v1.6 notes.
 
 **Role:** Expert frontend engineer & brand designer.
 
@@ -92,7 +92,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Case:** Sentence case everywhere. No title case, no all-caps (exceptions in §1.5).
 - **Alignment:** Flush-left only. Centered text banned.
 - **Optical top alignment:** Align cap-height flush with adjacent elements using the measured Work Sans cap-height ratio (`0.66`) and the matching tier’s unitless leading token; remeasure if the deployed font differs. For Text-1x: `line-height: var(--text-1x-leading); margin-top: calc((0.66 - var(--text-1x-leading)) * 0.5em);` (`-0.37em` at 1.4 leading).
-- **Optical balance on dark:** On non-Skillit dark surfaces only, subtract ~25 font-weight units to compensate halation (400 → 375). Skillit layout surfaces remain Canvas or Plaster; functional modal backdrops and photographic text-legibility overlays are the exception.
+- **Optical balance on dark:** On non-Skillit dark surfaces only, subtract ~25 font-weight units to compensate halation (400 → 375). Skillit layout surfaces remain Canvas or Plaster; functional modal backdrops, photographic text-legibility overlays and the footer band are the exception.
 - **Numbers in data contexts:** `font-variant-numeric: tabular-nums` — mandatory.
 - **Smart quotes:** Angled quotes and apostrophes in human copy; straight quotes only in code.
 - **Widows/orphans:** Use `text-wrap: balance` on headings and `text-wrap: pretty` on body. Where unsupported, test critical copy at every supported width and zoom setting; adjust the wording or apply a non-breaking space between the last two words only after checking that it does not cause overflow. `<wbr>` adds a wrap opportunity inside a long word; it does not prevent a final single-word line. Allow natural wrapping if a manual fix harms reflow.
