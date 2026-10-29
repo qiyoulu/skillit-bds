@@ -1,5 +1,5 @@
 # Email — Skillit Kit BDS
-**Last updated:** 2026-10-23
+**Last updated:** 2026-10-29
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -10,6 +10,8 @@
 
 ## Typography
 **Email typography:** Use Text-1x (16px / 1rem), Work Sans weight 400, line-height 1.4 as the default and minimum for readable email text—including signatures, footer contacts, addresses, copyright, legal links, captions, and source references. Use 600 for emphasis. Do not apply the general 12px Text-0.75x metadata exception to email. Larger canonical heading/display tiers remain available for marketing emails. Where variable weight 450 is unsupported, use the nearest supported regular weight and verify rendering. Allow contact rows to wrap on narrow screens; never shrink type or force horizontal overflow to keep them on one line.
+
+**Scan emphasis:** follow the voice rule (`voice/brand-voice.md`, Scannability): bold critical action verbs and data points, at weight 600 (the Text-1x bold), so the bold words alone still carry the argument. In an email card that means a few phrases at most, never adjectives or whole sentences, and none in a short card. List lead-ins ("Add a profile picture:") are separate and stay 600. Fallback fonts render bold heavily, so more than a few phrases per card reads as a wall of bold.
 
 ## Structure
 - Single-column, 600px max width, centered.
