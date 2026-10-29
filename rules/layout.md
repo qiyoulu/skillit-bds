@@ -34,7 +34,7 @@ Color roles are scoped by function, not by whether an element is generally calle
 - **Section padding (mobile):** Minimum `--space-8` (32px) top and bottom.
 - **Between unrelated content blocks:** Always `--space-16` minimum on web layouts. Email follows `components/email.md` (32px between sections). Never let unrelated content run together visually.
 - **Text column width:** Never exceed `70ch`. Set `max-width: var(--max-width-text)` on all body text blocks.
-- **Image-to-text gap:** Minimum `--space-8` (32px) between an image and its adjacent text block.
+- **Image-to-text gap:** Minimum `--space-4` (16px) between an image and its adjacent text block, equal to the paragraph gap.
 ---
 ## Grid
 ### Website / marketing
