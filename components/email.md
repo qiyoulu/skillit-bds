@@ -13,12 +13,22 @@
 
 ## Structure
 - Single-column, 600px max width, centered.
-- Content sits directly on Canvas (`--color-background`) — no Plaster card around the email body.
+- The email body sits on Canvas (`--color-background`). No single Plaster card wraps the whole body.
+- **Section cards (newsletters and multi-section emails):** each section may sit in its own Plaster (`--color-surface`) feature card on the Canvas ground: 16px corners, no border or shadow, `--space-8` (32px) padding on every side (`components/cards.md`). The section heading stays on Canvas above its card, Text-1.5x, flush-left, 16px above the card. One card per section; do not nest cards or mix in list cards.
+- The 64px side padding applies to the card's outer edge, so a card in the 600px column is 472px wide with 408px of content. Images inside a card are 408px wide at display size and keep 16px corners.
 - Side padding: 64px (`--space-16`) on all content blocks.
-- Vertical rhythm: 32px (`--space-8`) between major sections, 16px (`--space-4`) between paragraphs and related items.
+- **Mobile (600px and narrower):** the 64px outer margin drops to the 16px page gutter (`--space-gutter`). Card padding does not change: feature cards keep `--space-8` (32px) at every size. A 375px phone then gets about 279px of text inside a card.
+- **Mobile type (600px and narrower):** display tiers scale ×0.75 as in `tokens/docs/typography.md`: Text-2x 32px becomes 24px, Text-1.5x 24px becomes 18px (tracking scales with size). Email cannot use `clamp()`, so use a media query. Body holds at 16px.
+- **Font loading:** most email clients ignore web fonts and render the fallback (Verdana or Tahoma), which has no 450 or 550 weight and renders 450 as 400. Where the client supports `@font-face`, load Work Sans with `font-weight: 100 900`; otherwise accept the fallback and verify headings still read as distinct from body.
+- **Preview text:** always fill it, 90 characters or fewer, written as copy and not left to the first line of the body.
+- **Alt text:** photos that carry story context get descriptive alt text; only purely decorative images use empty alt. Maps and charts state their key data in the body copy next to them.
+- **Color scheme:** Skillit surfaces are Canvas and Plaster only, so declare `color-scheme: light` and test in dark-mode clients.
+- Vertical rhythm: 32px (`--space-8`) between major sections (card to next heading), 16px (`--space-4`) between paragraphs and related items.
 - Footer: Canvas ground, Iron text, aligned to the email content column; no Iron layout band and no boot-tread band.
 - Footer legal links (Preferences / Unsubscribe / Terms of use / Privacy policy) are NOT underlined. Split into two rows if a single row overflows (subscription row, then legal row).
-- Social icons: 24px display, separated by wide gaps. No globe/website icon — the logo already links to the site.
+- Social icons: 24px display, 16px (`--space-4`) between glyphs. No globe/website icon — the logo already links to the site.
+- **Footer hit areas:** footer links and social icons keep a hit area of at least 40px in both dimensions (44px preferred) by padding the link or its table cell, not by growing the glyph or the type. Footer links are 16px text with 11px vertical padding (44px tall).
+- **Reason line:** the footer opens with one plain sentence saying why the reader got the email (for example, "You're receiving this email because you're a Skillit member."), above Preferences / Unsubscribe.
 
 ## Hero stat
 Display statistics use the 8x typography tier: 128px, weight 700, line-height 0.8, tracking -7.68px, Traffic Cone (`--color-primary`). Unit glyphs (%, hrs) scale down proportionally (64px, tracking -3.84px). Full-width is not possible inside the 600px column; 128px is the maximum.
