@@ -1,5 +1,5 @@
 # Layout Rules — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-10-29
 ---
 ## The core principle
 Whitespace is structural mass. It organizes data and anchors the grid. The human is the subject; the layout is the consistent framework that supports them.

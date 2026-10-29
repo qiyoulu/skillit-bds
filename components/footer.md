@@ -1,5 +1,5 @@
 # Footer — Skillit Kit BDS
-**Last updated:** 2026-10-24
+**Last updated:** 2026-10-29
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
