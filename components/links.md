@@ -1,5 +1,5 @@
 # Text Links — Skillit Kit BDS
-**Last updated:** 2026-10-24
+**Last updated:** 2026-10-29
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -29,6 +29,9 @@ a:focus-visible {
 **Hover.** Two cues, never one: the color steps to `--color-link-hover` and the underline thickens from 1px to 2px. The hover color is darker than the resting Painter's Tape, so it clears 4.5:1 on both Canvas and Plaster where the resting link does not on Canvas (4.2312:1). Visited links keep the resting color. Nav links and footer links are not body links and follow `navigation.md` and `footer.md`.
 
 **On non-Skillit dark backgrounds:** Use Canvas underlined text instead of Painter's Tape — Painter's Tape does not pass contrast on dark surfaces.
+
+## Link text
+Link text says where the link goes or what it does, out of context. Never "here", "click here" or a bare "read more" (screen-reader users often list links on their own). Good: "Read about the DPR partnership", "See open roles". Inline arrow links keep a complete standalone sentence, per `components/buttons.md`.
 
 ## Photography & Media
 Photography uses multiply only when placed on a light background and intended to integrate with the Canvas ground.
