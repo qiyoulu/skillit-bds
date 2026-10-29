@@ -16,7 +16,7 @@ No qualifiers ("we believe", "we think").
 
 **2. Counterintuitive framing**
 Pattern: [Common belief] -> [Contradictory data] -> [Real insight].
-- *Example:* "Construction has the smallest labor gap. Yet 9 in 10 employers can't find workers. The constraint is access."
+- *Example:* "Construction has the smallest labor gap. Yet 9 in 10 employers cannot find workers. The constraint is access."
 
 **3. Data-poetry hybrid**
 Cite the number, then translate to human scale.
@@ -45,6 +45,7 @@ When a relevant voice says it better than we can, quote them — workers, contra
 - Short declarative sentences are right when precision matters (data, facts, CTAs).
 - Open punctuation is right when the moment is about possibility — hero headlines, section openers, aspirational copy.
 - Never use an exclamation mark to manufacture enthusiasm. Calm authority is the register.
+- Avoid negative contractions (can't, don't, doesn't, won't, isn't); write "cannot", "do not", "does not". Some readers misread them as the opposite. Positive contractions (we're, you're, that's) are fine.
 
 This is not a rule to eliminate periods everywhere. It is a principle: choose the punctuation that matches the emotional register of the moment. When the copy is selling a dream, not a feature, the sentence should feel like an invitation, not a declaration.
 - **Punctuation:** No exclamation marks. A period is enough. Exclamation marks signal marketing enthusiasm, not the veteran's calm authority.
@@ -62,6 +63,20 @@ This is not a rule to eliminate periods everywhere. It is a principle: choose th
 - **AI use:**
   - Do not use AI to originate or finish thinking. AI can expand a draft, surface alternatives, or pressure-test a claim — it cannot be the source of the idea or the final word.
   - Do not use AI to generate images. All imagery is sourced (Adobe Stock, excluded generative AI) or produced by the design team.
+
+## Lists and links
+- A list opens with a lead-in line, has two or more items, and each item reads on from the lead-in.
+- Keep an item to one or two short sentences. If it needs more, split it into two items.
+- Lead-ins ("Add a profile picture:") are bold, followed by a colon and a capital letter.
+- Link text describes the destination (see `components/links.md`).
+
+## Tone by situation
+The voice stays the same. The tone shifts with how the reader feels.
+- **Something went wrong (errors, failed upload):** say what happened and what to do next, in that order. Calm, never blame, no jokes.
+- **Bad news (no match, rejected, expired):** plain and direct, then the next step. No cushioning, no cheer.
+- **Deadline (cert expires, profile stale):** the date or number first, then the action.
+- **Good news (hired, profile complete):** short and warm. One sentence is enough; no exclamation marks.
+- **First time (onboarding):** one step at a time, everyday words, no jargon.
 
 ## Banned Sentence Structures (AI-isms)
 These patterns read as machine-generated emphasis, not earned insight. State the point directly instead.

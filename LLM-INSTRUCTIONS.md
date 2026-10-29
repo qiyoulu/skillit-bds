@@ -1,5 +1,5 @@
 # Skillit Kit Brand Design System (BDS) — PROJECT INSTRUCTIONS (READ FIRST)
-**Last updated:** 2026-10-23
+**Last updated:** 2026-10-29
 
 **Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-08
 
@@ -177,6 +177,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Banned words (AI-isms):** delve, tapestry, leverage, utilize, harness, foster, cultivate, realm, landscape, overarching, seamless, robust, dynamic, myriad, testament, beacon.
 - **Note:** `LLM-INSTRUCTIONS.md` carries both — brand-voice banned words (above) and AI-ism banned words (below). `voice/brand-voice.md` carries brand-voice banned words only.
 - **Banned transitions:** “Moreover,” “Furthermore,” “In conclusion,” “It is important to note.”
+- **Lists, links, contractions:** lists open with a lead-in and keep each item to one or two short sentences; link text describes its destination (never “here”); avoid negative contractions (“cannot”, not “can’t”). See `voice/brand-voice.md`.
 - **Banned hype:** “Revolutionize,” “disrupt,” “excited to announce,” “world-class.”
 - Vary sentence length. Short punches mixed with longer thoughts. Concrete, physical detail over abstraction.
 

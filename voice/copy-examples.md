@@ -1,19 +1,19 @@
 # Copy Examples — Skillit BDS
-**Last updated:** 2026-08-17
+**Last updated:** 2026-10-29
 Use this file to calibrate tone before generating any Skillit copy. Read a few examples in the relevant channel before writing. If your output sounds like the “Wrong” column, revise.
 ---
 ## Website / marketing
 ### Hero headlines
 | Wrong | Right |
 |---|---|
-| “The future of construction hiring is here.” | “The workers exist. The system to find them doesn’t.” |
+| “The future of construction hiring is here.” | “The workers exist. The system to find them does not.” |
 | “Empowering craft pros with AI-driven solutions.” | “AI workforce systems that make craft more essential.” |
-| “Connecting contractors and workers at scale.” | “Only 1 in 20 workers are missing. 9 in 10 employers still can’t find them.” |
+| “Connecting contractors and workers at scale.” | “Only 1 in 20 workers are missing. 9 in 10 employers still cannot find them.” |
 ### Section copy
 **Section 1 — The problem (approved copy):**
 > AI workforce systems that make craft more essential.
 **Section 2 — The insight (approved copy):**
-> Only 1 in 20 workers are missing from the labor force, yet 9 out of 10 employers can’t find them. Skillit’s data-driven platform makes craft labor more visible, routable, and hireable at scale.
+> Only 1 in 20 workers are missing from the labor force, yet 9 out of 10 employers cannot find them. Skillit’s data-driven platform makes craft labor more visible, routable, and hireable at scale.
 **Section 3 — The CTA (approved copy):**
 > Trusted by the largest contractors in the world, vetted craft pros in our growing network get hired 10x as fast. Create a free profile today.
 ## CTAs
@@ -78,7 +78,7 @@ No exclamation marks. A period is enough. Exclamation marks signal marketing ent
 | Wrong | Right |
 |---|---|
 | “I’m excited to share some thoughts on the future of construction hiring.” | “Construction has the smallest labor gap of any industry. So why does it feel impossible to hire?” |
-| “The construction industry faces many challenges in today’s labor market.” | “The workers exist. The system to find them doesn’t.” |
+| “The construction industry faces many challenges in today’s labor market.” | “The workers exist. The system to find them does not.” |
 | “We at Skillit are working hard to solve the labor shortage problem.” | “The constraint is access. Better data connects craft professionals to the work.” |
 ### Post structure (counterintuitive pattern)
 ```
