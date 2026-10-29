@@ -32,7 +32,7 @@ Color roles are scoped by function, not by whether an element is generally calle
 ## Whitespace rules
 - **Section padding (desktop):** Minimum `--space-16` (64px) top and bottom. Hero sections: minimum `--space-24` (96px).
 - **Section padding (mobile):** Minimum `--space-8` (32px) top and bottom.
-- **Between unrelated content blocks:** Always `--space-16` minimum. Never let unrelated content run together visually.
+- **Between unrelated content blocks:** Always `--space-16` minimum on web layouts. Email follows `components/email.md` (32px between sections). Never let unrelated content run together visually.
 - **Text column width:** Never exceed `70ch`. Set `max-width: var(--max-width-text)` on all body text blocks.
 - **Image-to-text gap:** Minimum `--space-8` (32px) between an image and its adjacent text block.
 ---

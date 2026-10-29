@@ -23,7 +23,9 @@
 - **Preview text:** always fill it, 90 characters or fewer, written as copy and not left to the first line of the body.
 - **Alt text:** photos that carry story context get descriptive alt text; only purely decorative images use empty alt. Maps and charts state their key data in the body copy next to them.
 - **Color scheme:** Skillit surfaces are Canvas and Plaster only, so declare `color-scheme: light` and test in dark-mode clients.
-- Vertical rhythm: 32px (`--space-8`) between major sections (card to next heading), 16px (`--space-4`) between paragraphs and related items.
+- Vertical rhythm: 32px (`--space-8`) between major sections (card to next heading), 16px (`--space-4`) between paragraphs and related items. This file governs email; the 64px between-block minimum in `rules/layout.md` is for web layouts.
+- **Above the footer:** 64px (`--space-16`) of Canvas between the last section and the Iron footer band, 32px on mobile (`rules/layout.md` mobile section padding). Never let the last card touch the band.
+- No extra outer padding around the 600px column: side margin is the 64px block padding, or 16px on mobile.
 - Footer: a full-width Iron (`--color-foreground`) band with Plaster (`--color-surface`, white) text, mark and icons; content aligned to the email content column. No boot-tread band. The footer is an approved Iron layout surface, as on the website (`components/footer.md`). White on Iron is 13.7113:1.
 - Footer legal links (Preferences / Unsubscribe / Terms of use / Privacy policy) are NOT underlined. Split into two rows if a single row overflows (subscription row, then legal row).
 - Social icons: 24px display, 16px (`--space-4`) between glyphs. No globe/website icon — the logo already links to the site.
