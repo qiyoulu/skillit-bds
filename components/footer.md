@@ -9,11 +9,11 @@
 - Touch targets minimum 40px in both dimensions (app).
 
 ## Footer
-The footer anchors the bottom of the page using the Canvas ground and Iron text. It uses a flush-left vertical stack for the brand and a multi-column grid for navigation.
+The footer anchors the bottom of the page using the Iron ground and Plaster (white) text. It is an approved Iron layout surface. It uses a flush-left vertical stack for the brand and a multi-column grid for navigation.
 ```css
 .footer {
-  background-color: var(--color-background); /* Canvas */
-  color: var(--color-foreground); /* Iron */
+  background-color: var(--color-foreground); /* Iron */
+  color: var(--color-surface); /* Plaster */
   padding: var(--space-128) 0; /* macro vertical spacing, never macro side gutters */
 }
 .footer-inner {
@@ -33,7 +33,7 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
   gap: var(--space-16);
 }
 .footer-copyright {
-  color: var(--color-foreground);
+  color: var(--color-surface);
 }
 .footer-columns {
   display: flex;
@@ -44,12 +44,12 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
   flex-direction: column;
 }
 .footer .nav-link {
-  color: var(--color-foreground); /* Iron links on Canvas */
+  color: var(--color-surface); /* Plaster links on Iron */
   display: block;
   margin-bottom: var(--space-8);
 }
 .footer .nav-link:hover {
-  color: var(--color-foreground);         /* stays Iron: hover is the underline alone */
+  color: var(--color-surface);            /* stays Plaster: hover is the underline alone */
   text-decoration: underline;
 }
 .footer .nav-link:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
@@ -58,4 +58,4 @@ The footer anchors the bottom of the page using the Canvas ground and Iron text.
   .footer-columns { flex-wrap: wrap; gap: var(--space-8); }
 }
 ```
-The logo in the footer should be `lockup.svg` with `color: var(--color-foreground)` on the container. Below 1280px, this hides and is replaced by `mark.svg` the same way as in the header. SKILLIT Hire pages keep the SKILLIT Hire lockup at every width instead.
+The logo in the footer should be `lockup.svg` with `color: var(--color-surface)` on the container. Below 1280px, this hides and is replaced by `mark.svg` the same way as in the header. SKILLIT Hire pages keep the SKILLIT Hire lockup at every width instead.

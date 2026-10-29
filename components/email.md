@@ -24,7 +24,7 @@
 - **Alt text:** photos that carry story context get descriptive alt text; only purely decorative images use empty alt. Maps and charts state their key data in the body copy next to them.
 - **Color scheme:** Skillit surfaces are Canvas and Plaster only, so declare `color-scheme: light` and test in dark-mode clients.
 - Vertical rhythm: 32px (`--space-8`) between major sections (card to next heading), 16px (`--space-4`) between paragraphs and related items.
-- Footer: Canvas ground, Iron text, aligned to the email content column; no Iron layout band and no boot-tread band.
+- Footer: a full-width Iron (`--color-foreground`) band with Plaster (`--color-surface`, white) text, mark and icons; content aligned to the email content column. No boot-tread band. The footer is an approved Iron layout surface, as on the website (`components/footer.md`). White on Iron is 13.7113:1.
 - Footer legal links (Preferences / Unsubscribe / Terms of use / Privacy policy) are NOT underlined. Split into two rows if a single row overflows (subscription row, then legal row).
 - Social icons: 24px display, 16px (`--space-4`) between glyphs. No globe/website icon — the logo already links to the site.
 - **Footer hit areas:** footer links and social icons keep a hit area of at least 40px in both dimensions (44px preferred) by padding the link or its table cell, not by growing the glyph or the type. Footer links are 16px text with 11px vertical padding (44px tall).
@@ -58,4 +58,4 @@ Standard primary button rules apply (pill radius, Traffic Cone fill, Iron text, 
 ```
 
 ## Links
-Inline text links use Painter's Tape (`--color-link`), underlined. Footer legal links break this rule deliberately (Iron, no underline) because they are utility navigation, not content links.
+Inline text links use Painter's Tape (`--color-link`), underlined. Footer legal links break this rule deliberately (Plaster on the Iron footer, no underline) because they are utility navigation, not content links.

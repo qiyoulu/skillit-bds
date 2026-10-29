@@ -84,7 +84,7 @@ These are hard constraints derived from the core brand direction. They apply to 
 - Stat blocks in a 3- or 4-column grid.
 - Stats: `--text-8x`, Iron; Traffic Cone marks only the single focal stat per section (the documented display contrast exception applies).
 - Stat labels: `--text-1x`, Iron.
-- Background: Canvas ground or Plaster cards. Iron remains foreground; functional modal backdrops and photographic text-legibility overlays are the only dark-background exceptions.
+- Background: Canvas ground or Plaster cards. Iron remains foreground; functional modal backdrops, photographic text-legibility overlays and the footer band (web and email) are the only dark-background exceptions.
 ### CTA / sign-up section
 - Flush-left text and CTA, maximum `600px` wide; the outer container may sit in the centered content grid.
 - One headline, one subline, one button.
