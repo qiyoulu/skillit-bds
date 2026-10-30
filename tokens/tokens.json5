@@ -19,7 +19,8 @@
   //   painter's tape: underlined = link, not underlined = info; approved chart fill allowed.
   //   accessible variants: opt-in darker steps of Cone, Hard Hat and Tape that clear 4.5:1 on Canvas
   //   and Plaster. use them only where a context requires AA and the brand color fails; the brand
-  //   colors stay the default. Toolbox and Bottle Glass already pass and have no variant.
+  //   colors stay the default. NEVER use a variant as a default, theme or template color.
+  //   Toolbox and Bottle Glass already pass and have no variant.
   base: {
     color: {
       bg: {
@@ -83,9 +84,9 @@
         },
       },
       accessible: {
-         'primary': { $value: '#B6500D', $type: 'color', $description: "Traffic Cone accessible variant — opt-in where AA is required and Traffic Cone fails. 4.5289:1 on Canvas, 5.0697:1 on Plaster. Text, icons and focus on light surfaces only; never fills, chart data or print." },
-         'warning': { $value: '#986401', $type: 'color', $description: "Hard Hat accessible variant — opt-in where AA is required and Hard Hat fails. 4.5113:1 on Canvas, 5.0500:1 on Plaster. Text, icons and focus on light surfaces only; never fills, chart data or print." },
-         'link': { $value: '#0077A0', $type: 'color', $description: "Painter's Tape accessible variant — opt-in where AA is required and Painter's Tape fails. 4.5244:1 on Canvas, 5.0647:1 on Plaster. Text, icons and focus on light surfaces only; never fills, chart data or print." },
+         'primary': { $value: '#B6500D', $type: 'color', $description: "Traffic Cone accessible variant — Opt-in only, never a default; the default is Traffic Cone. Opt in where AA is required and Traffic Cone fails. 4.5289:1 on Canvas, 5.0697:1 on Plaster. Text, icons and focus on light surfaces only; never fills, chart data or print." },
+         'warning': { $value: '#986401', $type: 'color', $description: "Hard Hat accessible variant — Opt-in only, never a default; the default is Hard Hat. Opt in where AA is required and Hard Hat fails. 4.5113:1 on Canvas, 5.0500:1 on Plaster. Text, icons and focus on light surfaces only; never fills, chart data or print." },
+         'link': { $value: '#0077A0', $type: 'color', $description: "Painter's Tape accessible variant — Opt-in only, never a default; the default is Painter's Tape. Opt in where AA is required and Painter's Tape fails. 4.5244:1 on Canvas, 5.0647:1 on Plaster. Text, icons and focus on light surfaces only; never fills, chart data or print." },
       },
       hover: {
          'bg': { $value: 'color-mix(in oklab, var(--color-background), black 10%)',

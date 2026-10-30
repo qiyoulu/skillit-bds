@@ -31,7 +31,7 @@ Every output — website, app, social asset, document, generated content — sho
 | Bottle Glass `#33663D`   | Toolbox `#C8102E`  | 1.1482:1 | Fails — red/green together banned entirely. Near-identical luminance: invisible to deuteranopes and in greyscale. |
 | Iron `#232F36` | Bottle Glass `#33663D`   | 2.0300:1 | Fails AA — never use Iron text on Bottle Glass; use Canvas          |
 ---
-**Brand exceptions:** Painter’s Tape on Canvas is 4.2312:1, below 4.5:1 for normal text. The brand palette is unchanged. Where AA is required, use the opt-in accessible variants in `tokens/docs/color.md`: `--color-link-accessible` (4.5244:1 on Canvas), `--color-primary-accessible` (4.5289:1) and `--color-warning-accessible` (4.5113:1), or Iron. Traffic Cone display text on Canvas is the existing documented brand exception, never a WCAG pass. Contrast ratios do not authorize Iron layout backgrounds; only functional backdrops/overlays are exempt.
+**Brand exceptions:** Painter’s Tape on Canvas is 4.2312:1, below 4.5:1 for normal text. The brand palette is unchanged. Where AA is required, opt in per instance to the accessible variants in `tokens/docs/color.md` (never defaults; the brand colors stay the default): `--color-link-accessible` (4.5244:1 on Canvas), `--color-primary-accessible` (4.5289:1) and `--color-warning-accessible` (4.5113:1), or Iron. Traffic Cone display text on Canvas is the existing documented brand exception, never a WCAG pass. Contrast ratios do not authorize Iron layout backgrounds; only functional backdrops/overlays are exempt.
 
 Large-text thresholds are points: 18pt regular = 24 CSS px; 14pt bold ≈ 18.67 CSS px. Smaller text requires 4.5:1.
 
