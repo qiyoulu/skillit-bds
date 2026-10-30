@@ -31,7 +31,8 @@ module.exports = {
           toolbox: 'var(--color-error)',
           'bottle-glass': 'var(--color-success)',
           'painters-tape': 'var(--color-link)',
-          // accessible variants: opt-in only, never defaults; per instance where AA is required
+          // accessible variants: opt-in only, never defaults; per context where AA is required.
+          // sets: never mix accessible and default classes in one context.
           'traffic-cone-accessible': 'var(--color-primary-accessible)',
           'hard-hat-accessible': 'var(--color-warning-accessible)',
           'painters-tape-accessible': 'var(--color-link-accessible)'
