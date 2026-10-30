@@ -1,5 +1,5 @@
 # Color Tokens — Skillit Kit BDS
-**Last updated:** 2026-10-29
+**Last updated:** 2026-10-30
 **Canonical source:** `tokens/tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file
@@ -8,11 +8,11 @@
 - Primary surfaces are Canvas and Plaster; Iron is the foreground. **Action priority, not a color quota:** Use orange for primary actions, selection controls, and focus. Repetition is allowed when it serves the interaction. Keep one dominant CTA per section; supporting controls should not compete with it. Orange in charts follows its assigned data role. Never use it as decoration.
 - **Accent/status roles:** Meaningful message text, semantic status icons, appropriate functional control fills, and purposeful canonical data colors. Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard Hat yellow (`--color-warning`), success = Bottle Glass green (`--color-success`), info = Painter’s Tape blue (`--color-link`). Noninteractive does not mean neutral: only nonsemantic utility icons and completed progress use Iron. Checkbox, radio, and selection-chip control paint uses Traffic Cone, not Bottle Glass: unselected radio/chip outlines and selected fills are orange. Keep chip pills Plaster with Iron text; the contrasting inner check glyph is Iron (4.5443:1 on Cone), not Canvas (2.6958:1). Focus rings also use Cone. Charts may use Cone alongside Painter’s Tape and other canonical palette colors for purposeful categories with legends or direct labels and non-color cues; monochromatic is a default, not exclusive. All toast types use Plaster bodies with Iron text and their semantic icon color; close controls use Iron with Traffic Cone focus. Toast bodies remain static 16px-corner feedback panels, not actions; only close/link controls are actionable. No colored success/error/warning toast-background exception remains. Canvas and Plaster remain layout surfaces; Iron is permitted only as a functional modal backdrop, a photographic text-legibility overlay or the footer band, not otherwise a layout surface.
 - **No layout dividers or table gridlines.** Use spacing, alignment, type hierarchy, and surface contrast instead. Only explicitly specified functional component boundaries use Iron. Input validation state stays in icons/text, not colored field borders. The documented Traffic Cone checkbox, radio, and selection-chip indicator strokes/fills are selection exceptions, not structural border tokens.
-- **Focus rings:** default 2px solid Traffic Cone (`--color-primary`) with 2px offset. Cone on Canvas is 2.6958:1, below the 3:1 UI/focus floor; Cone on Plaster is 3.0177:1 and meets that floor. Keep orange as requested; do not claim AA on Canvas or quietly substitute Iron. Check actual adjacent surfaces, clipping, keyboard visibility, and rendered native controls; preserve native focus in forced-colors mode. Flag unresolved contrast for review. See [accessibility](../../rules/accessibility.md).
+- **Focus rings:** default 2px solid Traffic Cone (`--color-primary`) with 2px offset. Cone on Canvas is 2.6958:1, below the 3:1 UI/focus floor; Cone on Plaster is 3.0177:1 and meets that floor. Keep orange as requested; do not claim AA on Canvas or quietly substitute Iron. Check actual adjacent surfaces, clipping, keyboard visibility, and rendered native controls; preserve native focus in forced-colors mode. Flag unresolved contrast for review. See [accessibility](../../rules/accessibility.md). Where a context requires the 3:1 focus floor on Canvas, use `--color-primary-accessible` for the ring (4.5289:1 on Canvas).
 - **Painter's Tape (blue):** text without underline = **info**; text with underline = **link**; info status icons also use Tape. Never a decorative or ordinary control fill; purposeful chart categories, including supply-side data, are data-fill exceptions. Informational toasts use Plaster with Iron text and a Tape information icon (`information-circle.svg`).
-- **Info text size floor:** Painter's Tape on Canvas is 4.2312:1 — fails WCAG AA for normal text (needs 4.5:1). Keep info/link text at `--text-1x` (16px) or larger regardless, and prefer Iron for any text where AA compliance is required; treat Painter's Tape on Canvas as a soft exception pending a color review.
+- **Info text size floor:** Painter's Tape on Canvas is 4.2312:1 — fails WCAG AA for normal text (needs 4.5:1). Keep info/link text at `--text-1x` (16px) or larger regardless, and prefer Iron for any text where AA compliance is required; treat Painter's Tape on Canvas as a soft exception pending a color review. Where a context requires AA, use `--color-link-accessible` (4.5244:1 on Canvas) instead of Iron.
 - Use familiar icons, semantic colors, and clear labels to communicate status. Never rely on shape or color alone. Outer shape supports conventions, not an information-type code.
-- Contrast depends on the actual foreground, background, and use. Verify text and graphical contrast on rendered surfaces; a passing text pairing does not establish icon or focus contrast. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast. All toast types use Plaster bodies with Iron text and their semantic icon color; close controls use Iron with Traffic Cone focus. Toast bodies remain static 16px-corner feedback panels, not actions; only close/link controls are actionable. No colored success/error/warning toast-background exception remains.
+- Contrast depends on the actual foreground, background, and use. Verify text and graphical contrast on rendered surfaces; a passing text pairing does not establish icon or focus contrast. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the Hard Hat swatch or claim AA for it; where a context requires AA, use `--color-warning-accessible`. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast. All toast types use Plaster bodies with Iron text and their semantic icon color; close controls use Iron with Traffic Cone focus. Toast bodies remain static 16px-corner feedback panels, not actions; only close/link controls are actionable. No colored success/error/warning toast-background exception remains.
 ---
 ## Core palette
 | Token             | Name     | Hex       | CMYK (provisional, unprofiled) | Spot (Coated / Uncoated) | UI Role                                            |
@@ -44,6 +44,21 @@ Hover colors are generated with `color-mix(in oklab, base, black 10%)` — mixin
 | `--color-link-hover` | Painter's Tape hover | — | Painter's Tape | Link/info hover |
 
 **On spot references.** Coated and uncoated are the same ink on different paper — the number is shared, the appearance is not. Uncoated stock absorbs ink, so every colour returns lighter, duller, and slightly greyed. These pairs are the correct references to hand a printer, but they are not a guarantee of matched appearance across stocks. **Proof on the actual stock before production.** Traffic Cone is the one to watch: saturated orange dulls hardest on uncoated, and if 158 U proofs too flat, the fix is a deliberately hotter ink for uncoated applications, not a change to the digital token. Spot inks matter only where you are printing spot — business cards, signage, vehicle wrap, embroidery. For process printing, treat the table above as provisional reference only; obtain a profile-specific conversion and proof before production.
+---
+## Accessible variants
+Opt-in darker steps of the three brand colors that fail contrast on light surfaces. The brand colors stay the default everywhere; reach for a variant only where a context requires AA (product UI, forms, legal and compliance copy) and the brand color fails it. Toolbox and Bottle Glass already pass on Canvas and Plaster and have no variant.
+
+| Token | Name | Hex | Base | Canvas | Plaster |
+| ----- | ---- | --- | ---- | ------ | ------- |
+| `--color-primary-accessible` | Traffic Cone accessible | `#B6500D` | Traffic Cone | 4.5289:1 | 5.0697:1 |
+| `--color-warning-accessible` | Hard Hat accessible | `#986401` | Hard Hat | 4.5113:1 | 5.0500:1 |
+| `--color-link-accessible` | Painter's Tape accessible | `#0077A0` | Painter's Tape | 4.5244:1 | 5.0647:1 |
+
+- **Use:** text, icons and focus rings on Canvas or Plaster where the brand color fails the required ratio (4.5:1 text, 3:1 icons and focus).
+- **Never:** fills, buttons, chart data, decoration, print, or on Iron (about 2.7:1). Buttons keep Traffic Cone with Iron text (4.5443:1).
+- **Meaning:** a variant carries its base color's role. Warning text or icons in `--color-warning-accessible` still pair with the triangle and a label; links in `--color-link-accessible` are still underlined.
+- **Hover:** variants have no hover token. Links keep `--color-link-hover` (5.3511:1 on Canvas), which is darker than `--color-link-accessible`.
+- **Copper stays retired.** `--color-primary-accessible` is close to the retired Copper `#B34700` but is not a primary color: it never fills a button or carries a CTA.
 ---
 ## Contrast ratios (WCAG AA minimum: 4.5:1 normal text, 3:1 large text and non-text UI)
 | Foreground         | Background         | Ratio  | Use                                                                                                 |
@@ -82,7 +97,7 @@ Hover colors are generated with `color-mix(in oklab, base, black 10%)` — mixin
 - **Text on Traffic Cone:** Use Iron (`#232F36`) only (4.5443:1, passes AA). Canvas on Traffic Cone fails at all sizes (2.6958:1) and is not permitted.
 - Do not use for links — that role belongs to Painter's Tape.
 ### `--color-warning` 🟨 Hard Hat `#FEB11C`
-- Warning message text, labels, yellow warning icons (triangle + label), appropriate functional warning controls, and purposeful data. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the palette or claim AA. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast.
+- Warning message text, labels, yellow warning icons (triangle + label), appropriate functional warning controls, and purposeful data. Hard Hat icons on Plaster are 1.8229:1 and on Canvas 1.6285:1, below the 3:1 graphical floor; retain yellow with triangle + label, document the limitation, and do not darken the Hard Hat swatch or claim AA for it; where a context requires AA, use `--color-warning-accessible`. Toolbox, Bottle Glass, and Painter’s Tape icons on Plaster meet 3:1; check each actual surface. Shape and label do not fix contrast.
 - Text on Hard Hat should always be Iron (`#232F36`) — never white.
 - Never rely on Hard Hat versus Toolbox or Bottle Glass alone to distinguish meanings; categorical data needs legends or direct labels and non-color cues.
 ### `--color-error` 🟥 Toolbox `#C8102E`
@@ -96,7 +111,7 @@ Hover colors are generated with `color-mix(in oklab, base, black 10%)` — mixin
 - The approved spot references are 2427 C / 2427 U. Screen and printed color are not interchangeable; proof the actual stock.
 ### `--color-primary` as text (Traffic Cone highlight)
 - Traffic Cone on Canvas: 2.6958:1 — fails WCAG AA at all sizes. Not permitted for body text.
-- **Exception:** Use as a display/hero text accent only (24px+), as an existing brand exception, not a WCAG pass (Canvas pairing remains 2.6958:1 even at display size). Never use for body copy, captions, or UI text.
+- **Exception:** Use as a display/hero text accent only (24px+), as an existing brand exception, not a WCAG pass (Canvas pairing remains 2.6958:1 even at display size). Never use for body copy, captions, or UI text. Where orange text must pass AA, use `--color-primary-accessible` (4.5289:1 on Canvas), which is not limited to display sizes.
 - On Plaster: 3.0177:1 — passes AA only for large text (18pt regular / 14pt bold); keep the documented display-only restriction.
 - On permitted functional Iron backdrops: Traffic Cone text is 4.5443:1 (AA). This does not permit Iron layout surfaces. All text on Traffic Cone buttons remains Iron.
 - **CSS class:** `.text-primary` — applies Traffic Cone color. Use on headings and display text only.
@@ -118,6 +133,11 @@ Hover colors are generated with `color-mix(in oklab, base, black 10%)` — mixin
   --color-error: #C8102E;
   --color-success: #33663D;
   --color-link: #007CA6;
+
+  /* accessible variants — opt-in where AA is required */
+  --color-primary-accessible: #B6500D;
+  --color-warning-accessible: #986401;
+  --color-link-accessible: #0077A0;
 
   --color-background-hover: color-mix(in oklab, var(--color-background), black 10%);
   --color-surface-hover: color-mix(in oklab, var(--color-surface), black 10%);
@@ -143,3 +163,5 @@ These colors exist in the project’s research history but are NOT active tokens
 | Clay                     | `#B76E4A` | Fails contrast — dropped                            |
 | Bottle Glass Green (old)       | `#4F6B4E` | Fails contrast — dropped; replaced by `#33663D`     |
 | John Deere Green         | `#367C2B` | Former success value — retired 2026-08-23. Byte-identical to an actively enforced equipment mark; also the palette's thinnest contrast at 4.6039:1. |
+| Near-miss Iron           | `#233136` | Two steps off Iron in green; typically an eyedropper or color-picker miss. Enter `#232F36` exactly. |
+| Near-miss Painter's Tape | `#007EA8` | Two steps off Painter's Tape. Enter `#007CA6`, or `#0077A0` where the accessible variant applies. |

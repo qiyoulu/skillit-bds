@@ -14,6 +14,10 @@
   --color-error: #C8102E;         /* Toolbox — errors */
   --color-success: #33663D;       /* Bottle Glass — success icons/text or chart data; progress stays Iron */
   --color-link: #007CA6;          /* Painter's Tape — link. underlined = link */
+  /* accessible variants — opt-in where AA is required and the brand color fails; 4.5:1+ on Canvas and Plaster */
+  --color-primary-accessible: #B6500D;  /* Traffic Cone accessible */
+  --color-warning-accessible: #986401;  /* Hard Hat accessible */
+  --color-link-accessible: #0077A0;     /* Painter's Tape accessible */
   /* hover states — color-mix(in oklab, base, black 10%) */
   --color-background-hover: color-mix(in oklab, var(--color-background), black 10%);       /* Canvas hover */
   --color-surface-hover: color-mix(in oklab, var(--color-surface), black 10%);  /* Plaster hover */

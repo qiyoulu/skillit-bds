@@ -30,7 +30,10 @@ module.exports = {
           'hard-hat': 'var(--color-warning)',
           toolbox: 'var(--color-error)',
           'bottle-glass': 'var(--color-success)',
-          'painters-tape': 'var(--color-link)'
+          'painters-tape': 'var(--color-link)',
+          'traffic-cone-accessible': 'var(--color-primary-accessible)',
+          'hard-hat-accessible': 'var(--color-warning-accessible)',
+          'painters-tape-accessible': 'var(--color-link-accessible)'
         }
       },
       fontFamily: {
