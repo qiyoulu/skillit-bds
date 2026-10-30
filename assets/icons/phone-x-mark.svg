@@ -1,6 +1,10 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8 8H6.08984C7.81112 12.562 11.4381 16.1878 16 17.9092V16H22V23C10.402 23 1 13.598 1 2H8V8Z" fill="currentColor"/>
-<path d="M8 8H6.08984C7.81112 12.562 11.4381 16.1878 16 17.9092V16H22V23C10.402 23 1 13.598 1 2H8V8Z" fill="currentColor"/>
-<path d="M23 3L19 7L23 11L21 13L17 9L13 13L11 11L15 7L11 3L13 1L17 5L21 1L23 3Z" fill="currentColor"/>
-<path d="M23 3L19 7L23 11L21 13L17 9L13 13L11 11L15 7L11 3L13 1L17 5L21 1L23 3Z" fill="currentColor"/>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<use xlink:href="#stroke0_5113_663" fill="currentColor"/>
+<use xlink:href="#stroke0_5113_663" fill="currentColor"/>
+<use xlink:href="#stroke1_5113_663" fill="currentColor"/>
+<use xlink:href="#stroke1_5113_663" fill="currentColor"/>
+<defs>
+<path id="stroke0_5113_663" d="M8 8H6.08984C7.81112 12.562 11.4381 16.1878 16 17.9092V16H22V23C10.402 23 1 13.598 1 2H8V8Z"/>
+<path id="stroke1_5113_663" d="M23 3L19 7L23 11L21 13L17 9L13 13L11 11L15 7L11 3L13 1L17 5L21 1L23 3Z"/>
+</defs>
 </svg>
