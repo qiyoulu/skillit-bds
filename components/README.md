@@ -12,7 +12,7 @@ One line per component. Open the file for the full rules. Every component uses t
 - [email](./email.md): Email layout rules: table-based HTML, Outlook fallbacks, focus and CTA handling.
 - [footer](./footer.md): Page footer on Canvas: flush-left brand stack and link columns.
 - [forms](./forms.md): Form inputs: Plaster fields on Canvas, labels, editable-field geometry.
-- [icons](./icons.md): The 24px icon grid, the 90-asset inventory, tinting, and the previous-to-current ID map.
+- [icons](./icons.md): The 24px icon grid, the 100-asset inventory, tinting, and the previous-to-current ID map.
 - [links](./links.md): Text links: Painter's Tape, always underlined.
 - [metadata](./metadata.md): Timestamps, IDs, distances, and data strings in JetBrains Mono.
 - [modal](./modal.md): Modal dialogs: a focused task surface that interrupts the flow.

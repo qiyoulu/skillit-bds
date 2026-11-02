@@ -82,9 +82,9 @@ _See `brand/audience.md` for detailed profiles, writing guidance, and the two va
 ## Visual Direction (summary)
 
 - **Essence:** Strong, useful, grounded. Industrial functionalism with humanity.
-- **Color:** Traffic Cone as single accent. Iron for baseline. Canvas for ground. Plaster for surface.
+- **Color:** Traffic Cone for primary actions, selection, and focus. Iron for baseline. Canvas for ground. Plaster for surface.
 - **Typography:** Work Sans for human content. JetBrains Mono for machine data. Sentence case.
-- **Imagery:** Real workers, real job sites. Adobe Stock only, excluding generative AI. No decorative elements without purpose.
+- **Imagery:** Real workers, real job sites. Adobe Stock preferred, excluding generative AI. No decorative elements without purpose.
 - **Shape language:** Pill buttons (actionable). 16px corners on static containers.
 - **Motion:** CSS-only, reduced-motion accessible. No GIFs.
 

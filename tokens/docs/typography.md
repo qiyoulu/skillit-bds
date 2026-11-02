@@ -47,6 +47,7 @@ Use only the defined tiers and their canonical weights below. If a size beyond T
 | **Text-2x** | `--text-2x` | 32px | 2rem | 24pt | 500 | 700 | 1.20 | -2% |
 | **Text-1.5x** | `--text-1.5x` | 24px | 1.5rem | 18pt | 450 | **650** | 1.30 | -1% |
 | **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | 400 | 600 | 1.40 | 0% |
+| **Text-0.75x** | `--text-0.75x` | 12px | 0.75rem | 9pt | 400 | 600 | 1.40 | 0% |
 
 *(Text-16x was retired. Sizes beyond Text-8x require a canonical token review.)*
 ---
@@ -150,6 +151,7 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
   --text-0\.75x-weight-bold: 600;
   --text-0\.75x-leading: 1.40;
   --text-0\.75x-tracking: 0em;
+  --text-0\.75x-print: 9pt;
 
   /* Button padding — canonical rem pairs, 0.5× vertical / 1× horizontal of the font size */
   --padding-0\.75x: 0.375rem 0.75rem; /* 6px / 12px — Text-0.75x (12px) */

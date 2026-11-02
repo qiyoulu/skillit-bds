@@ -116,6 +116,7 @@
   --text-0\.75x-weight-bold: 600;
   --text-0\.75x-leading: 1.40;
   --text-0\.75x-tracking: 0em;
+  --text-0\.75x-print: 9pt;
 
   /* Button padding — paired with text tiers, 0.5em / 1em tactile ratio */
   --padding-0\.75x: 0.375rem 0.75rem; /* 6px / 12px — Text-0.75x (12px) */

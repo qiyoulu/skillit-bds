@@ -18,12 +18,12 @@
 ## Core palette
 | Token             | Name     | Hex       | CMYK (provisional, unprofiled) | Spot (Coated / Uncoated) | UI Role                                            |
 | ----------------- | -------- | --------- | -------------- | -------------- | -------------------------------------------------- |
-|| `--color-background`      | 📜 Canvas | `#F7F1ED` | 2, 3, 4, 0     | Paper — not an ink | Primary background — all surfaces default to this  |
+|| `--color-background`      | 📜 Canvas | `#F7F1ED` | 0, 2, 4, 3     | Paper — not an ink | Primary background — all surfaces default to this  |
 | `--color-surface` | ⬜️ Plaster  | `#FFFFFF` | 0, 0, 0, 0      | Paper — unprinted stock | Elevated surfaces, cards, and isolated form inputs |
-| `--color-foreground`      | ⬛️ Iron | `#232F36` | 80, 50, 45, 65 | 432 C / 432 U  | Foreground, neutral utility icons, completed progress |
+| `--color-foreground`      | ⬛️ Iron | `#232F36` | 35, 13, 0, 80 | 433 C / 433 U  | Foreground, neutral utility icons, completed progress |
 | `--color-primary` | 🟧 Traffic Cone     | `#EF6F1A` | 0, 65, 100, 0  | 158 C / 158 U  | Primary action, selection indicators, focus, purposeful data |
 | `--color-warning` | 🟨 Hard Hat | `#FEB11C` | 0, 30, 100, 0  | 1235 C / 1235 U | Non-fatal alerts, warning messages/icons           |
-| `--color-error`   | 🟥 Toolbox  | `#C8102E` | 2, 100, 85, 6  | 186 C / 186 U  | Error messages/icons, destructive actions          |
+| `--color-error`   | 🟥 Toolbox  | `#C8102E` | 2, 100, 85, 5  | 186 C / 186 U  | Error messages/icons, destructive actions          |
 | `--color-success` | 🟩 Bottle Glass   | `#33663D` | 50, 0, 40, 60 | 2427 C / 2427 U | Success messages/icons, appropriate controls/data; not selection/progress fills |
 | `--color-link`    | 🟦 Painter's Tape   | `#007CA6` | 100, 30, 10, 10| 3135 C / 3135 U | Links, info text/icons, purposeful data |
 

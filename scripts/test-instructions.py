@@ -56,7 +56,7 @@ check(not re.search(r'perfectly on-brand|token library \(via MCP\)', human, re.I
 check(not re.search(r'Reference[^\n]*(?:14px|50%)', human), 'Chart reference must use an approved type tier and readable opacity')
 check('Accent color: Traffic Cone for the attribution name' not in human, 'Quote attribution cannot use low-contrast orange body text')
 check(not re.search(r'Force at least two words[^\n]*any text block', human), 'Wrapping rules must allow reflow-safe exceptions')
-check('single color outline' not in human.lower(), 'Solid logo treatments and outline prohibition must agree')
+check('single-color outline' in human.lower() and 'single-color outline for embroidery and engraving only' in llm.lower(), 'Logo outline exception must agree')
 check('Proposed' in human or 'proposed' in human, 'Website proposal must not masquerade as a live inventory')
 check('MCP' not in human or re.search(r'(?:not documented|not established|unverified|not provided|not provisioned)', human, re.I), 'Any MCP mention requires a qualified access claim')
 reference_rules = [line for line in llm.splitlines() if line.startswith('- **References:**')]

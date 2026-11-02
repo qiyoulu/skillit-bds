@@ -108,7 +108,7 @@ Designers, marketers, writers, engineers, and anyone who has ever asked “does 
 **The Accent:** Traffic Cone (orange). Use orange for primary actions, selection controls, and focus. Repetition is allowed when it serves the interaction. Keep one dominant CTA per section; supporting controls should not compete with it. Orange in charts follows its assigned data role. Never use it as decoration.
 **The Photos:** Real workers doing real work. Shot at eye level. No color grading or filters.
 **The Copy:** Direct, unhedged, data-backed. Don’t say revolutionize or disrupt.
-**The Assets:** Single-color utility icons use `currentColor`; the 12 approved semantic/multicolor exports preserve their source paint and opaque contrasting layers. Use approved logo and graphic assets without altering their paint. Inline utility icons for dynamic host tinting; inline multicolor components need independent layer styling. The 75 frozen legacy exports are archival content, not part of the current 90-icon set.
+**The Assets:** Single-color utility icons use `currentColor`; the 14 approved exports preserve their source paint and opaque contrasting layers. Use approved logo and graphic assets without altering their paint. Inline utility icons for dynamic host tinting; inline multicolor components need independent layer styling. The 75 frozen legacy exports are archival content, not part of the current 90-icon set.
 **The Rule:** Technology should make humans more essential, not more expendable. Start from the worker’s perspective.
 
 ---
@@ -145,7 +145,7 @@ The Skillit palette is Materials on Site — eight colors named for the physical
 | -------------- | --------- | --------------- | ------------------------ | ------------------------------------- |
 | Canvas         | `#F7F1ED` | Consult print reference | Paper — not an ink       | Primary background — all surfaces     |
 | Plaster        | `#FFFFFF` | Consult print reference | Paper — unprinted stock  | Elevated surfaces, cards, form inputs |
-| Iron           | `#232F36` | Consult print reference | 432 C / 432 U            | Foreground, neutral utility icons, completed progress |
+| Iron           | `#232F36` | Consult print reference | 433 C / 433 U            | Foreground, neutral utility icons, completed progress |
 | Traffic Cone   | `#EF6F1A` | Consult print reference | 158 C / 158 U            | Primary action, selection indicators, focus |
 | Hard Hat       | `#FEB11C` | Consult print reference | 1235 C / 1235 U          | Warnings/icons, non-fatal alerts      |
 | Toolbox        | `#C8102E` | Consult print reference | 186 C / 186 U            | Error icons/messages, destructive actions |
@@ -206,6 +206,7 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 | Plaster on Iron      | 13.7135:1  | Footer band text, marks and icons                 |
 | Iron on Traffic Cone | 4.5443:1   | Button backgrounds only — marginal, use sparingly |
 | Single-color solid | —        | Print, embroidery, engraving only                 |
+| Single-color outline | —      | Embroidery, engraving only                        |
 
 Canvas on Traffic Cone and Traffic Cone on Canvas both fail WCAG AA (2.6958:1) and are not permitted logo treatments. The separate display-text brand exception does not apply to logos.
 
@@ -655,7 +656,7 @@ Lean into the archetype of the independent, strong, hands-on do-er. The aestheti
 
 **Do**
 
-- Use Adobe Stock only; exclude generative AI
+- Prefer Adobe Stock; exclude generative AI
 - Apply multiply blend mode only when a photograph sits on a light background and needs to melt into the Canvas ground
 - Frame workers at eye level or below; capture candid, dignified work on real job sites; show hands
 - Use earth tones, big scopes, aerial for projects; silhouettes, profiles, hands for stock workers

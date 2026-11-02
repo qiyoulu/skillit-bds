@@ -62,7 +62,7 @@ This is not a rule to eliminate periods everywhere. It is a principle: choose th
 - **Vocabulary context:** In employer-facing copy, introduce “craft professionals” first; “workers” may follow in the same context. Worker-facing copy uses “you,” the trade, “craft professionals,” or “members” for people who have joined. Market-at-large discussion may use “workers.”
 - **AI use:**
   - Do not use AI to originate or finish thinking. AI can expand a draft, surface alternatives, or pressure-test a claim — it cannot be the source of the idea or the final word.
-  - Do not use AI to generate images. All imagery is sourced (Adobe Stock, excluded generative AI) or produced by the design team.
+  - Do not use AI to generate images. All imagery is sourced (Adobe Stock preferred, generative AI excluded) or produced by the design team.
 
 ## Lists and links
 - A list opens with a lead-in line, has two or more items, and each item reads on from the lead-in.
@@ -127,7 +127,8 @@ These patterns read as machine-generated emphasis, not earned insight. State the
 | "Serve" / "support" | "Match," "connect," "find" |
 
 ## Core Phrases
-- **Mission:** "Technology should make humans more essential, not more expendable." (Use as the ultimate filter).
+- **Mission:** "Give everyone access to the world’s best construction opportunities."
+- **Anchor:** "Technology should make humans more essential, not more expendable." (Use as the ultimate filter).
 - **Tagline:** "Scale your craft."
 - **Signature:** "The workers exist. The system to find them doesn't."
 - **Data-poetry:** "1 in 20 feels like 1 in 3."

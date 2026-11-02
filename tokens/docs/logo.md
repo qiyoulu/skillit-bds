@@ -53,9 +53,10 @@ The SKILLIT Hire lockup is the mark, the SKILLIT wordmark, and the word Hire tog
 | Variant                             | Contrast | Permitted | Use                                             |
 | ----------------------------------- | -------- | --------- | ----------------------------------------------- |
 | Iron on Canvas                | 12.2506:1  | Yes       | Default — all light backgrounds                 |
-| Canvas on Iron                | 12.2506:1  | No        | Iron is not a background surface                |
+| Canvas on Iron                | 12.2506:1  | Footer only | Iron is a background surface only in the footer band |
 | Iron on Traffic Cone                    | 4.5443:1   | Yes       | Button backgrounds only — marginal, use sparingly |
 | Single color (Iron or Canvas) | —        | Yes       | Print, embroidery, engraving                    |
+| Single-color outline          | —        | Yes       | Embroidery and engraving only                   |
 | Canvas on Traffic Cone                    | 2.6958:1   | No        | Fails WCAG AA                                   |
 | Traffic Cone on Canvas                    | 2.6958:1   | No        | Fails WCAG AA                                   |
 The mark is always rendered in a single, flat color. No gradients, multi-color treatments, or effects.
@@ -69,7 +70,7 @@ The pattern is a step-and-repeat tessellation of the mark. Because the mark feat
 ---
 ## What not to do
 - Do not stretch, compress, or rotate the logo
-- Do not apply drop shadows, outlines, or effects
+- Do not apply drop shadows, outlines, or effects. The one exception is the single-color outline for embroidery and engraving
 - Do not enclose the mark in a circle, box, or shield — its silhouette is its own structure
 - Do not place on busy photographic backgrounds without sufficient contrast
 - Do not use legacy versions — the 2023 orange logo is retired

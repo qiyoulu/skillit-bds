@@ -33,7 +33,7 @@ The following icons constitute the core structural subset; the complete current 
 11. `arrow-left.svg` (Back/return)
 12. `chevron-down.svg` (Dropdown/expand)
 
-`arrow-up.svg` and `arrow-down.svg` are delivered directional exports. Dedicated `plus.svg` / `plus-circle.svg`, `information-circle.svg` / `information-square.svg`, and `question-mark-circle.svg` are also supplied. See the [complete 90-asset inventory](../components/icons.md#complete-imported-inventory) and [media/control rendering contract](../components/icons.md#tinting-and-status). Preserve fresh exported geometry, not older knockout or translucent-layer assumptions. Asset IDs do not replace semantic component status labels.
+`arrow-up.svg` and `arrow-down.svg` are delivered directional exports. Dedicated `plus.svg` / `plus-circle.svg`, `information-circle.svg` / `information-square.svg`, and `question-mark-circle.svg` are also supplied. See the [complete 100-asset inventory](../components/icons.md#complete-imported-inventory) and [media/control rendering contract](../components/icons.md#tinting-and-status). Preserve fresh exported geometry, not older knockout or translucent-layer assumptions. Asset IDs do not replace semantic component status labels.
 
 ### Secondary brand marks
 Platform marks in `assets/icons/` (`facebook.svg`, `instagram.svg`, `linkedin.svg`, `x.svg`, `whatsapp.svg`, and `youtube.svg`) are approved social marks, not core interface icons. Their external brand geometry is authoritative and is exempt from the Skillit 10×10 grid and no-bezier construction rules. They must still use `fill="currentColor"` and must not be altered.

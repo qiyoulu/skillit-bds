@@ -46,7 +46,7 @@
         $description: 'Iron — foreground. all body text, headings, borders, structural elements.',
         $extensions: {
           'org.skillit.role': 'foreground',
-          'org.skillit.pantone': '432 C',
+          'org.skillit.pantone': '433 C',
         },
       },
       primary: {
@@ -179,7 +179,7 @@
           $description: 'Text-1x — all running copy, default UI body. 16px held on mobile. bolded: 600.',
           $extensions: { 'org.skillit.print': '12pt', 'org.skillit.sm': '1rem' },
         },
-        '0.75x': { $value: { fontFamily: '{base.typography.family.primary}', fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.4, letterSpacing: '0em' }, $type: 'typography', $description: 'Text-0.75x — 12px. labels, tags, badges, captions. minimum size. bolded: 600. for machine metadata use var(--font-mono) at the same size.' },
+        '0.75x': { $value: { fontFamily: '{base.typography.family.primary}', fontSize: '0.75rem', fontWeight: 400, lineHeight: 1.4, letterSpacing: '0em' }, $type: 'typography', $description: 'Text-0.75x — 12px. labels, tags, badges, captions. minimum size. bolded: 600. for machine metadata use var(--font-mono) at the same size.', $extensions: { 'org.skillit.print': '9pt' } },
       },
       padding: {
         '0.75x': { $value: '0.375rem 0.75rem', $type: 'dimension', $description: '6px / 12px. pairs with Text-0.75x (12px); follows the half-size/full-size padding ratio.' },

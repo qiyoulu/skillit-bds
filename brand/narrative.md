@@ -49,6 +49,10 @@ Skillit is built as three interlocking systems:
 
 ## The mission
 
+**Mission:** Give everyone access to the world’s best construction opportunities.
+
+**Anchor:**
+
 > Technology should make humans more essential, not more expendable.
 
 This is our anchor. Every design decision, every piece of copy, every product interaction must pass this test. If an asset diminishes the worker, makes them look like a corporate resource, or relies on tech-utopian AI hype, revise it.

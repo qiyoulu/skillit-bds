@@ -103,7 +103,7 @@ Choose an approved file from the [logo folder](./assets/logo/). Keep its proport
 
 **Don’t**
 - Don’t stretch, rotate, redraw, recolor, or stack the logo.
-- Don’t add outlines, shadows, or effects.
+- Don’t add outlines, shadows, or effects. Embroidery and engraving may use a one-color outline.
 - Don’t put the mark inside a circle, box, or shield.
 - Don’t use retired logos or place the logo over a busy photograph.
 
@@ -117,7 +117,7 @@ Don’t replace Skillit icons with a different icon library, emoji, or a newly g
 
 ## Photos and product images
 
-Use genuine images of skilled people and real work. Choose approved design-team imagery; source new stock photography from Adobe Stock with generative AI excluded. Show workers at eye level or below, with their hands and work visible where possible.
+Use genuine images of skilled people and real work. Choose approved design-team imagery; source new stock photography from Adobe Stock where possible, with generative AI excluded. Show workers at eye level or below, with their hands and work visible where possible.
 
 Project photography can show a site from above. That permission does not extend to looking down on a worker. Separate authentic photos can form a simple grid collage; don’t merge them into a fictional scene.
 
