@@ -1,5 +1,5 @@
 # Badges & Status Indicators — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-11-02
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -34,32 +34,31 @@ Status badges are **drawn icons with clear labels**. Use familiar icons, semanti
 ```
 
 ## Static tag
-A static tag is a short, non-interactive label on a card or list row, such as "New" or "Close to you". It states a fact about the item. It never acts, so it takes the square shape; pills are for actions.
+A static tag is a short, non-interactive label on a card or list row, such as "New" or "Close to you". It states a fact about the item. It is plain text with no container, so it cannot be mistaken for a text field or a button.
 
-- **Shape:** `border-radius: 0`. No outline, no border, no shadow.
-- **Fill:** Canvas on a Plaster card; Plaster on a Canvas surface. The fill is the only container cue.
-- **Text:** Iron (`--color-foreground`), Text-0.75x (`--text-0.75x`), weight 600, sentence case. No semantic or accent color in the label.
-- **Padding:** `--space-1.5` (6px) vertical, `--space-3` (12px) horizontal, the 0.5× / 1× ratio of Text-0.75x. Compact controls use `--padding-0.75x`, the same pair.
-- **Icon:** none. At 12px text the tag is too small for a legible 16px icon.
+- **Container:** none. No fill, border, radius, shadow, or padding.
+- **Text:** Iron (`--color-foreground`), weight 600, sentence case. Use Text-0.75x in dense layouts and Text-1x beside Text-1x card metadata.
+- **Highlight:** one tag per card may use Traffic Cone (`--color-primary`) to mark something new, at Text-1x only and on Plaster only. This is a brand exception: Cone on Plaster is 3.0177:1, below AA for text at this size. Where AA is required, use the accessible color set. Never set Text-0.75x tags in Cone.
+- **Icon:** none.
 - **Gap:** `--space-2` (8px) between tags. Two tags per card at most.
 - **Not interactive:** no hover, no pointer cursor, no focus ring, no `role="button"`. If it acts (filters, toggles), it is a chip, not a tag; use the pill chips in `components/buttons.md`.
-- **Contrast:** Iron on Canvas is above 11:1; Iron on Plaster is higher. Do not set tag text in Traffic Cone: 12px orange text on Canvas is about 2.8:1.
-- **Status colors:** a tag that reports status (success, warning, error, info) is a status badge (see above), not a static tag.
+- **Status:** a tag that reports status (success, warning, error, info) is a status badge (see above), not a static tag. Do not add tinted fills or color dots: tints add colors outside the tokens, and a dot drops the glyph that keeps status clear without color.
 
 ```css
 .tag {
   display: inline-block;
-  background-color: var(--color-background);   /* Canvas on a Plaster card */
   color: var(--color-foreground);              /* Iron */
-  border: none;
-  border-radius: 0;
-  padding: var(--space-1\.5) var(--space-3);   /* 6px 12px */
   font-family: var(--font-primary);
   font-size: var(--text-0\.75x);
   font-weight: var(--weight-semibold);          /* 600 */
   line-height: var(--text-0\.75x-leading);
   letter-spacing: var(--text-0\.75x-tracking);
 }
+.tag--large {
+  font-size: var(--text-1x);
+  line-height: var(--text-1x-leading);
+  letter-spacing: normal;
+}
+.tag--highlight { color: var(--color-primary); } /* Use with .tag--large, on Plaster only */
 .tag + .tag { margin-left: var(--space-2); }
 ```
-

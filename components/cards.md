@@ -15,7 +15,7 @@ Feature cards (quote cards, author blocks, standalone panels) use generous paddi
 - **Cards, containers, panels:** `16px` (`--radius-sharp`)
 - **Button-like controls:** pill (`--radius-pill`); links and editable inputs remain actions without becoming pill containers. Interactive cards retain their 16px container geometry.
 - **Input fields, checkboxes:** `0px` — structural, editable. Outside the radius token system; no intermediate or softened corners permitted.
-- **Static tags inside a card:** `0px`; see `components/badges.md`.
+- **Static tags inside a card:** plain text, no container; see `components/badges.md`.
 
 **No drop shadows.** Cards separate from the Canvas ground through Plaster background contrast and typographic structure alone.
 

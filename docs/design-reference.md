@@ -104,7 +104,7 @@ Designers, marketers, writers, engineers, and anyone who has ever asked “does 
 
 **The Vibe:** Documentary, not corporate. The smartest person on the job site.
 **The Typography:** Work Sans for human text; JetBrains Mono for machine data. Sentence case for authored brand copy; preserve acronyms, proper names, user input, and direct quotes. No decorative all-caps. Flush-left alignment. Dramatic leaps in scale.
-**The Layout:** Strict functionalism. Whitespace is structural mass. Static containers use 16px corners; button-like actions use pills; editable fields, checkbox boxes and static tags use 0px. Circular indicators are geometry exceptions. Canvas (off-white) background, Iron (dark navy) text. Only approved neutral boot-tread texture in non-content header/footer zones; never beneath UI text.
+**The Layout:** Strict functionalism. Whitespace is structural mass. Static containers use 16px corners; button-like actions use pills; editable fields and checkbox boxes use 0px; static tags are plain text with no container. Circular indicators are geometry exceptions. Canvas (off-white) background, Iron (dark navy) text. Only approved neutral boot-tread texture in non-content header/footer zones; never beneath UI text.
 **The Accent:** Traffic Cone (orange). Use orange for primary actions, selection controls, and focus. Repetition is allowed when it serves the interaction. Keep one dominant CTA per section; supporting controls should not compete with it. Orange in charts follows its assigned data role. Never use it as decoration.
 **The Photos:** Real workers doing real work. Shot at eye level. No color grading or filters.
 **The Copy:** Direct, unhedged, data-backed. Don’t say revolutionize or disrupt.
