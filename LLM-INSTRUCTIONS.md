@@ -106,7 +106,7 @@ Hover states: each color has a `-hover` variant (e.g., `--color-surface-hover`).
 - **Header and footer below 1280px:** Use the mark alone — never scale the lockup below 21px height.
 - **SKILLIT Hire pages:** Use the full SKILLIT Hire lockup (`assets/logo/lockup-hire-iron.svg`) at every width, mobile included. Set it 32px high (`--logo-height`). No mark-only swap on these pages.
 - **Header height:** `--logo-height: 32px` for both lockup and mark, always set explicitly. Never `height: auto`.
-- **Treatments:** Iron on Canvas (default). Canvas on Iron in the footer band only. Single-color solid Iron or Canvas for print, embroidery and engraving. Single-color outline for embroidery and engraving only. Preserve the approved fixed artwork and its paint; UI-style hex restrictions do not authorize consumer recoloring.
+- **Treatments:** Iron on Canvas (default). Plaster on Iron in the footer band only. Single-color solid Iron or Canvas for print, embroidery and engraving. Single-color outline for embroidery and engraving only. Preserve the approved fixed artwork and its paint; UI-style hex restrictions do not authorize consumer recoloring.
 - **Banned:** stretching, rotating, drop shadows, enclosing in shapes, raster formats (except approved 512px-height PNG exports for SVG-rejecting platforms), recreating in any tool.
 - Full logo rules, sizes and variants: [`tokens/docs/logo.md`](./tokens/docs/logo.md).
 

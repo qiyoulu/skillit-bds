@@ -202,7 +202,7 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 | Variant              | Contrast | Use                                               |
 | -------------------- | -------- | ------------------------------------------------- |
 | Iron on Canvas       | 12.2506:1  | Default — all light backgrounds                   |
-| Canvas on Iron       | 12.2506:1  | Modal backdrops, photo overlays, footer band      |
+| Canvas on Iron       | 12.2506:1  | Modal backdrops, photo overlays                   |
 | Plaster on Iron      | 13.7135:1  | Footer band text, marks and icons                 |
 | Iron on Traffic Cone | 4.5443:1   | Button backgrounds only — marginal, use sparingly |
 | Single-color solid | —        | Print, embroidery, engraving only                 |

@@ -53,7 +53,8 @@ The SKILLIT Hire lockup is the mark, the SKILLIT wordmark, and the word Hire tog
 | Variant                             | Contrast | Permitted | Use                                             |
 | ----------------------------------- | -------- | --------- | ----------------------------------------------- |
 | Iron on Canvas                | 12.2506:1  | Yes       | Default — all light backgrounds                 |
-| Canvas on Iron                | 12.2506:1  | Footer only | Iron is a background surface only in the footer band |
+| Plaster on Iron               | 13.7135:1  | Footer only | Iron is a background surface only in the footer band |
+| Canvas on Iron                | 12.2506:1  | No        | Use Plaster in the footer band                  |
 | Iron on Traffic Cone                    | 4.5443:1   | Yes       | Button backgrounds only — marginal, use sparingly |
 | Single color (Iron or Canvas) | —        | Yes       | Print, embroidery, engraving                    |
 | Single-color outline          | —        | Yes       | Embroidery and engraving only                   |
