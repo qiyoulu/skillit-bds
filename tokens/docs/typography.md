@@ -192,6 +192,7 @@ Work Sans is implemented as a variable font (`wght@100..900`).
 ### Text-0.75x weights
 - **400:** metadata, chart references and footnotes, and captions.
 - **600:** static tags, other labels, and validation messages.
+- **Bylines:** the name uses 600. Affiliation and other details use 400.
 ### Monospace / metadata
 - Use `--font-mono` for: timestamps, worker IDs, distances, file sizes, any numeric data string.
 - Never use monospace for labels, body copy, or headings.
