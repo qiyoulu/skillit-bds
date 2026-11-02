@@ -35,7 +35,7 @@ SVG exports are stored in the Rails app at `app/assets/images/bds/icons/`. Rails
 Component CSS recipes with `url()` are intended to be assembled into a consumer-owned stylesheet beside `tokens/generated/tokens.css`, with the repository asset tree preserved. From that directory, `../../assets/icons/check.svg` resolves to the supplied asset. This stylesheet is a deployment convention, not a generated file shipped by this repo. If CSS is moved, bundled, or pasted into an inline `<style>` (including Squarespace Custom CSS), rewrite URLs to the deployed asset paths; inline CSS resolves against the HTML document, not this Markdown file. Prose asset paths are repository-relative, not literal CSS URLs.
 
 ### Tinting and status
-The current imported export contains **90 SVGs**, including 15 additional assets beyond the earlier 75-asset comparison. The current set contains **78 tintable utility exports** using `currentColor` and **12 approved semantic/multicolor exports** retaining their contrasting source paint. Future raw exports may still need normalization. Never flatten all layers into one inherited color or substitute older geometry.
+The current imported export contains **100 SVGs**, including 15 additional assets beyond the earlier 75-asset comparison. The current set contains **86 tintable utility exports** using `currentColor`, **12 approved semantic/multicolor exports** retaining their contrasting source paint, and **2 control exports** (`checkbox-unchecked.svg`, `radio-unchecked.svg`) retaining their source fill. Future raw exports may still need normalization. Never flatten all layers into one inherited color or substitute older geometry.
 
 - `check.svg` is the revised standalone angular check; `check-circle.svg` has a green circular ground and opaque white check. `x-octagon.svg`, `exclamation-triangle.svg`, and both information variants also retain semantic-colored grounds and opaque white inner glyphs, not transparent cutouts. Render these as full images or inline components; a combined alpha mask erases their glyph contrast. Only the standalone glyph is suitable for checkbox/chip inner masks.
 - `play.svg` is a standalone filled triangle, not a circular knockout; `pause.svg` is a standalone pause glyph. `play-circle.svg` and `pause-circle.svg` retain opaque dark circles and white inner glyphs. White areas are painted layers, not transparent knockouts.
@@ -124,7 +124,7 @@ The previous IDs below are migration history, not additional shipped aliases. Up
 
 ## Complete imported inventory
 
-All 90 filenames below are delivered assets, not planned metaphors. Resolver IDs are the exact filenames without `.svg`. Semantic props/classes such as `error`, `warning`, `success`, and `info` remain independent of filenames. User-selected `saw`, `concrete`, `pipe`, `user-hat`, and `user-round` are authoritative; do not substitute recommended library names.
+All 100 filenames below are delivered assets, not planned metaphors. Resolver IDs are the exact filenames without `.svg`. Semantic props/classes such as `error`, `warning`, `success`, and `info` remain independent of filenames. User-selected `saw`, `concrete`, `pipe`, `user-hat`, and `user-round` are authoritative; do not substitute recommended library names.
 
 - `arrow-down-circle.svg`, `arrow-down-left.svg`, `arrow-down-right.svg`, `arrow-down.svg`, `arrow-left-circle.svg`
 - `arrow-left-right.svg`, `arrow-left.svg`, `arrow-path.svg`, `arrow-right-circle.svg`, `arrow-right.svg`
@@ -144,6 +144,8 @@ All 90 filenames below are delivered assets, not planned metaphors. Resolver IDs
 - `star.svg`, `switch-off.svg`, `switch-on.svg`, `user-circle.svg`, `user-hat.svg`
 - `user-headset.svg`, `user-round.svg`, `user.svg`, `whatsapp.svg`, `wrench.svg`
 - `x-circle.svg`, `x-mark.svg`, `x-octagon.svg`, `x.svg`, `youtube.svg`
+- `arrow-uturn-down.svg`, `arrow-uturn-left.svg`, `arrow-uturn-right.svg`, `arrow-uturn-up.svg`, `bell-alert.svg`
+- `bell-slash.svg`, `bell.svg`, `chevron-left.svg`, `chevron-right.svg`, `chevron-up.svg`
 
 ### Additional exports beyond the earlier comparison
 
