@@ -8,7 +8,7 @@
 
 ## Exported checkbox SVGs
 
-`checkbox-unchecked.svg` retains its source fill (Traffic Cone) as a control export. In `checkbox-checked.svg`, the box inherits `color` and the inner check uses `--checkbox-check-color`, falling back to the canonical `--color-foreground`. Load the BDS tokens and set the host to `color: var(--color-primary)`. Engineers do not edit SVG paint.
+`checkbox-unchecked.svg` retains its source fill (Traffic Cone) as a control export. `checkbox-checked.svg` also retains its source fills: a Traffic Cone box and an Iron check. Neither responds to the host's `color`. Engineers do not edit SVG paint.
 
 Inline the SVG (or render it as an inline component) so CSS inheritance reaches it. An external `<img>` does not inherit host color. Do not use the combined checked SVG as a single CSS mask: masks flatten both colors. The separate `check.svg` mask recipe below remains supported. Keep the real native checkbox for interaction and submission; an SVG alone is not a checkbox control.
 
