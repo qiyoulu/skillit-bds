@@ -1,7 +1,7 @@
 # Skillit brand guide
 
 **Version 1.6 · October 2026**
-**Last updated:** 2026-10-29
+**Last updated:** 2026-11-02
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 
 Use this guide when making a sales presentation, writing an email, planning a campaign, or reviewing work for Skillit. It covers the everyday decisions. You don’t need to learn the design system’s technical details to use it.

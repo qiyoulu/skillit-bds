@@ -1,11 +1,11 @@
 # Skillit Kit Brand Design System (BDS)
-**Last updated:** 2026-10-29
+**Last updated:** 2026-11-02
 
 **Last synced with LLM-INSTRUCTIONS.md:** 2026-10-08
 
 ## **Version 1.5 · October 2026**
 
-**Release status:** v1.5, tagged `v1.5`. See the [v1.5 release notes](../releases/v1.5.md); the change set since v1.3 is in the [v1.4](../releases/v1.4.md) and v1.5 notes.
+**Release status:** v1.7, tagged `v1.7`. See the [v1.7 release notes](../releases/v1.7.md).
 
 > **AI agents: read [`LLM-INSTRUCTIONS.md`](../LLM-INSTRUCTIONS.md) first.** That file is the authoritative constraint set for machine-generated output — code, design, copy, data viz. Where behavioral rules conflict, `LLM-INSTRUCTIONS.md` wins; `tokens/tokens.json5` governs token values. This document is the human-readable rationale and full guideline set; the LLM file is the enforcement layer.
 

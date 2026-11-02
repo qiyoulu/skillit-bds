@@ -1,5 +1,5 @@
 # Typography Tokens — Skillit Kit BDS
-**Last updated:** 2026-10-23
+**Last updated:** 2026-11-02
 **Canonical source:** `tokens/tokens.json5` (machine-readable). This file is the human-readable spec; never add a token here without adding it there.
 ---
 ## Rules before you use this file

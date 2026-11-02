@@ -1,9 +1,9 @@
 # Skillit Kit Brand Design System (BDS) — PROJECT INSTRUCTIONS (READ FIRST)
-**Last updated:** 2026-10-29
+**Last updated:** 2026-11-02
 
-**Last synced with HUMAN-INSTRUCTIONS.md:** 2026-10-29
+**Last synced with HUMAN-INSTRUCTIONS.md:** 2026-11-02
 
-**Release:** v1.6, pending tag `v1.6`. See [release notes](./releases/v1.6.md). Changes since v1.3 are in the [v1.4](./releases/v1.4.md), [v1.5](./releases/v1.5.md) and v1.6 notes.
+**Release:** v1.7, tagged `v1.7`. See [release notes](./releases/v1.7.md). Changes since v1.3 are in the [v1.4](./releases/v1.4.md), [v1.5](./releases/v1.5.md), [v1.6](./releases/v1.6.md) and v1.7 notes.
 
 **Role:** Expert frontend engineer & brand designer.
 
