@@ -58,7 +58,7 @@ A static tag is a short, non-interactive label on a card or list row, such as "N
   font-size: var(--text-1x);
   line-height: var(--text-1x-leading);
   font-weight: var(--text-1x-weight-bold);
-  letter-spacing: normal;
+  letter-spacing: var(--text-1x-tracking);
 }
 .tag--highlight { color: var(--color-primary); } /* Use with .tag--large, on Plaster only */
 .tag + .tag { margin-left: var(--space-2); }

@@ -76,7 +76,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
 
 || Token | Role | Size | Weight | Line height | Letter spacing |
 ||---|---|---|---|---|---|
-|| `--text-0.75x` | Labels, tags, badges, captions — minimum size | `0.75rem` (12px) | 400, bolded 600 | 1.4 | `0.04em` |
+|| `--text-0.75x` | Labels, tags, badges, captions — minimum size | `0.75rem` (12px) | 400, bolded 600 | 1.4 | `0` |
 || `--text-1x` | Default UI body, all running copy | `1rem` (16px) | 400 | 1.4 | `0` |
 ---
 ## CSS custom properties (copy-paste ready)
@@ -149,7 +149,7 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
   --text-0\.75x-weight: 400;
   --text-0\.75x-weight-bold: 600;
   --text-0\.75x-leading: 1.40;
-  --text-0\.75x-tracking: 0.04em;
+  --text-0\.75x-tracking: 0em;
 
   /* Button padding — canonical rem pairs, 0.5× vertical / 1× horizontal of the font size */
   --padding-0\.75x: 0.375rem 0.75rem; /* 6px / 12px — Text-0.75x (12px) */
@@ -233,7 +233,7 @@ To lock text into the rigid 8px/16px baseline grid, vertical spacing between tex
 ### What not to do
 - Do not use `font-weight: 300` (Light) — too thin for job-site legibility.
 - Do not use any typeface other than Work Sans for human text or JetBrains Mono for machine data.
-- Do not invent UI tracking; Text-0.75x uses its canonical `0.04em` and Text-1x uses `0em`.
+- Do not invent UI tracking; Text-0.75x and Text-1x both use `0em`.
 - Do not use display tiers in compact UI controls; use the functional Text-0.75x and Text-1x tiers or the explicitly documented component tier.
 
 ### Responsive Scaling (Desktop to Mobile)

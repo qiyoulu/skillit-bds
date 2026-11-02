@@ -291,7 +291,7 @@ The scale is built on a 16px baseline: `16 → 24 → 32 → 48 → 64 → 96 �
 | **Text-2x** | 32px | 500 | 700 | 1.20 | −2% | Subheadings |
 | **Text-1.5x** | 24px | 450 | **650** | 1.30 | −1% | Large body, subheads |
 | **Text-1x** | 16px | 400 | 600 | 1.40 | 0% | All running copy |
-| **Text-0.75x** | 12px | 400 | 600 | 1.40 | +4% | Functional labels, tags, badges, captions; not running copy |
+| **Text-0.75x** | 12px | 400 | 600 | 1.40 | 0% | Functional labels, tags, badges, captions; not running copy |
 
 _(Full print/mobile/monospace variants for each level are documented in `tokens/docs/typography.md` — check there before inventing a new size, so this table and the token file don’t drift apart again.)_
 
@@ -410,7 +410,7 @@ A **widow** is a single word left dangling on its own line at the end of a parag
 - **Don’t** use Work Sans Light (300) — too thin for job-site legibility.
 - **Don’t** use any typeface other than Work Sans for human text or JetBrains Mono for machine data.
 - **Don’t** use display tiers in compact UI controls; use the functional tiers or the explicitly documented component tier.
-- **Don’t** track running copy; ±0.02em is allowed only for a tested static-copy widow correction. Functional Text-0.75x uses its canonical +0.04em tracking.
+- **Don’t** track running copy; ±0.02em is allowed only for a tested static-copy widow correction. Functional Text-0.75x uses its canonical 0 tracking.
 
 ---
 
