@@ -15,16 +15,16 @@ module IconColors
   # Exact approved export palettes, not a basename-only semantic bypass.
   ICONS_DIR = File.expand_path('../assets/icons', __dir__)
   APPROVED_PAINTS = {
-    'checkbox-checked.svg' => %w[#ef6f1a #233136],
+    'checkbox-checked.svg' => %w[#ef6f1a #232f36],
     'check-circle.svg' => %w[#33663d #ffffff],
     'x-octagon.svg' => %w[#c8102e #ffffff],
     'information-square.svg' => %w[#007ca6 #ffffff],
     'information-circle.svg' => %w[#007ca6 #ffffff],
     'puzzle-piece.svg' => %w[#33663d],
-    'pause-circle.svg' => %w[#233136 #ffffff],
-    'play-circle.svg' => %w[#233136 #ffffff],
+    'pause-circle.svg' => %w[#232f36 #ffffff],
+    'play-circle.svg' => %w[#232f36 #ffffff],
     'radio-checked.svg' => %w[#ef6f1a #ffffff],
-    'switch-off.svg' => %w[#ffffff #233136],
+    'switch-off.svg' => %w[#ffffff #232f36],
     'switch-on.svg' => %w[#ffffff #33663d],
     'exclamation-triangle.svg' => %w[#feb11c #ffffff]
   }.transform_values { |paints| Set.new(paints).freeze }.freeze

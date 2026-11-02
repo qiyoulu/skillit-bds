@@ -35,7 +35,7 @@ test('exceptions apply only to approved repository paths and colors', () => {
   writeFileSync(approved, '<svg fill="#ff00ff"/>');
   assert.equal(spawnSync(process.execPath, [lint, '--repo', fixture, approved]).status, 1);
   const utility = join(fixture, 'assets/icons/magnifying-glass.svg');
-  writeFileSync(utility, '<svg fill="#233136"/>');
+  writeFileSync(utility, '<svg fill="#232F36"/>');
   assert.equal(spawnSync(process.execPath, [lint, '--repo', fixture, utility]).status, 1);
 });
 
@@ -44,8 +44,8 @@ const approved = {
   'check-circle.svg': '#33663d', 'checkbox-checked.svg': '#ef6f1a',
   'x-octagon.svg': '#c8102e', 'information-square.svg': '#007ca6',
   'information-circle.svg': '#007ca6', 'puzzle-piece.svg': '#33663d',
-  'pause-circle.svg': '#233136', 'play-circle.svg': '#233136',
-  'radio-checked.svg': '#ef6f1a', 'switch-off.svg': '#233136',
+  'pause-circle.svg': '#232f36', 'play-circle.svg': '#232f36',
+  'radio-checked.svg': '#ef6f1a', 'switch-off.svg': '#232f36',
   'switch-on.svg': '#33663d', 'exclamation-triangle.svg': '#feb11c',
 };
 for (const [name, paint] of Object.entries(approved)) {
@@ -73,7 +73,7 @@ test('renamed utilities and retired semantic asset aliases have no paint exempti
   mkdirSync(join(dir, 'assets/icons'), { recursive: true });
   for (const name of ['magnifying-glass', 'saw', 'concrete', 'pipe', 'user-hat', 'user-round', 'arrow-down-left', 'arrow-down-right', 'arrow-up-left', 'arrow-up-right', 'briefcase', 'credit-card', 'currency-dollar', 'inbox', 'map', 'phone', 'phone-arrow-down-left', 'phone-arrow-up-right', 'phone-x-mark', 'arrow-up-on-square', 'user-circle', 'checkmark', 'warning', 'error', 'information', 'match']) {
     const path = join(dir, 'assets/icons', name + '.svg');
-    writeFileSync(path, '<svg fill="#233136"/>');
+    writeFileSync(path, '<svg fill="#232F36"/>');
     assert.equal(spawnSync(process.execPath, [lint, '--repo', dir, path]).status, 1, name);
   }
 });

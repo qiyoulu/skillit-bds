@@ -48,16 +48,16 @@ const internalMode = pathArgs.length === 0;
 // Approved fresh exports retain their semantic or contrasting layer paints.
 // Applies only to these exact repository paths, never to similarly named external SVGs.
 const approvedIconPaints = new Map(Object.entries({
-  'checkbox-checked.svg': ['#ef6f1a', '#233136'],
+  'checkbox-checked.svg': ['#ef6f1a', '#232f36'],
   'check-circle.svg': ['#33663d', '#ffffff'],
   'x-octagon.svg': ['#c8102e', '#ffffff'],
   'information-square.svg': ['#007ca6', '#ffffff'],
   'information-circle.svg': ['#007ca6', '#ffffff'],
   'puzzle-piece.svg': ['#33663d'],
-  'pause-circle.svg': ['#233136', '#ffffff'],
-  'play-circle.svg': ['#233136', '#ffffff'],
+  'pause-circle.svg': ['#232f36', '#ffffff'],
+  'play-circle.svg': ['#232f36', '#ffffff'],
   'radio-checked.svg': ['#ef6f1a', '#ffffff'],
-  'switch-off.svg': ['#ffffff', '#233136'],
+  'switch-off.svg': ['#ffffff', '#232f36'],
   'switch-on.svg': ['#ffffff', '#33663d'],
   'exclamation-triangle.svg': ['#feb11c', '#ffffff'],
 }).map(([name, paints]) => [resolve(repo, 'assets/icons', name), new Set(paints)]));

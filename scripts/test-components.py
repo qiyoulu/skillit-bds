@@ -118,18 +118,18 @@ ICON_GEOMETRY = {
 }
 
 # Exact ordered paint layers of USER-approved Downloads/icons exports.
-# Exported #233136 is intentional; utilities alone normalize to currentColor.
+# Exported #232F36 is intentional; utilities alone normalize to currentColor.
 EXPORTED_PAINTS = {
     'check-circle.svg': ((('fill', 'none'),), (('fill', '#33663d'),), (('fill', '#ffffff'),)),
-    'checkbox-checked.svg': ((('fill', 'none'),), (('fill', '#ef6f1a'),), (('fill', '#233136'),)),
+    'checkbox-checked.svg': ((('fill', 'none'),), (('fill', '#ef6f1a'),), (('fill', '#232f36'),)),
     'exclamation-triangle.svg': ((('fill', 'none'),), (('fill', '#feb11c'),), (('fill', '#ffffff'),), (('fill', '#ffffff'),)),
     'information-circle.svg': ((('fill', 'none'),), (('fill', '#007ca6'),), (('fill', '#ffffff'),), (('fill', '#ffffff'),)),
     'information-square.svg': ((('fill', 'none'),), (('fill', '#007ca6'),), (('fill', '#ffffff'),), (('fill', '#ffffff'),)),
-    'pause-circle.svg': ((('fill', 'none'),), (('fill', '#233136'),), (('fill', '#ffffff'),), (('fill', '#ffffff'),)),
-    'play-circle.svg': ((('fill', 'none'),), (('fill', '#233136'),), (('fill', '#ffffff'),)),
+    'pause-circle.svg': ((('fill', 'none'),), (('fill', '#232f36'),), (('fill', '#ffffff'),), (('fill', '#ffffff'),)),
+    'play-circle.svg': ((('fill', 'none'),), (('fill', '#232f36'),), (('fill', '#ffffff'),)),
     'puzzle-piece.svg': ((('fill', 'none'),), (('fill', '#33663d'),)),
     'radio-checked.svg': ((('fill', 'none'),), (('fill', '#ef6f1a'),), (('fill', '#ffffff'),)),
-    'switch-off.svg': ((('fill', 'none'),), (('fill', '#ffffff'),), (('fill', '#233136'),)),
+    'switch-off.svg': ((('fill', 'none'),), (('fill', '#ffffff'),), (('fill', '#232f36'),)),
     'switch-on.svg': ((('fill', 'none'),), (('fill', '#ffffff'),), (('fill', '#33663d'),)),
     'x-octagon.svg': ((('fill', 'none'),), (('fill', '#c8102e'),), (('fill', '#ffffff'),)),
 }
@@ -161,10 +161,10 @@ validate_icons(svgs)
 # regressions independently, including colors allowed for another semantic asset.
 negative_cases = [
     ('check.svg', lambda s: s.replace('M1 12', 'M2 12'), 'geometry'),
-    ('magnifying-glass.svg', lambda s: s.replace('currentColor', '#233136'), 'utility paint'),
+    ('magnifying-glass.svg', lambda s: s.replace('currentColor', '#232f36'), 'utility paint'),
     ('play-circle.svg', lambda s: s.replace('white', 'none'), 'opaque media layer'),
     ('pause-circle.svg', lambda s: s.replace('white', '#33663D'), 'media palette'),
-    ('radio-checked.svg', lambda s: s.replace('white', '#233136'), 'radio palette'),
+    ('radio-checked.svg', lambda s: s.replace('white', '#232f36'), 'radio palette'),
     ('check-circle.svg', lambda s: s.replace('#33663D', '#C8102E'), 'semantic palette'),
     ('switch-on.svg', lambda s: s.replace('M13 12', 'M3 12'), 'switch geometry'),
     ('phone.svg', lambda s: (ROOT / 'assets/icons/device-phone-mobile.svg').read_text(), 'distinct new handset'),

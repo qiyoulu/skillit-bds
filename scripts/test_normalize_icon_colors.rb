@@ -12,9 +12,9 @@ class IconColorTest < Minitest::Test
   end
 
   def test_single_color_and_idempotence
-    source = svg('<path d="M1 2L3 4Z" fill="#233136" opacity="0.5"/>')
+    source = svg('<path d="M1 2L3 4Z" fill="#232F36" opacity="0.5"/>')
     changed, reason = IconColors.transform(source, 'utility.svg')
-    assert_equal source.sub('#233136', 'currentColor'), changed
+    assert_equal source.sub('#232F36', 'currentColor'), changed
     assert_equal 'converted', reason
     assert_equal changed, IconColors.transform(changed)[0]
   end
@@ -40,9 +40,9 @@ class IconColorTest < Minitest::Test
   end
 
   def test_transparency_quotes_comments_and_geometry
-    source = svg('<!-- <path fill="#233136"/> --><path fill="none"/><path fill="transparent"/><path d="M0 0L2 3Z" fill=\'#233136\'/>')
+    source = svg('<!-- <path fill="#232F36"/> --><path fill="none"/><path fill="transparent"/><path d="M0 0L2 3Z" fill=\'#232F36\'/>')
     changed, = IconColors.transform(source)
-    assert_includes changed, '<!-- <path fill="#233136"/> -->'
+    assert_includes changed, '<!-- <path fill="#232F36"/> -->'
     assert_includes changed, 'fill="none"'
     assert_includes changed, 'fill="transparent"'
     assert_includes changed, "fill='currentColor'"
@@ -50,7 +50,7 @@ class IconColorTest < Minitest::Test
   end
 
   def test_complex_paint_skips_without_loss
-    ['<defs/><path fill="#233136"/>', '<style>path{fill:red}</style><path/>',
+    ['<defs/><path fill="#232F36"/>', '<style>path{fill:red}</style><path/>',
      '<path fill="var(--color-primary)"/>', '<path fill="rgba(0,0,0,.5)"/>'].each do |body|
       source = svg(body)
       assert_equal source, IconColors.transform(source)[0]
@@ -68,12 +68,12 @@ class IconColorTest < Minitest::Test
       complex = original.sub('</svg>', '<style>path{fill:magenta}</style></svg>')
       assert_raises(ArgumentError, name) { IconColors.transform(complex, path) }
       external = File.join(Dir.tmpdir, name)
-      utility = svg('<path fill="#233136"/>')
+      utility = svg('<path fill="#232F36"/>')
       # External names do not bypass normalization, even for semantic exports.
       assert_equal 'converted', IconColors.transform(utility, external)[1], name
     end
     %w[checkmark warning error information match].each do |name|
-      assert_equal 'converted', IconColors.transform(svg('<path fill="#233136"/>'), name + '.svg')[1]
+      assert_equal 'converted', IconColors.transform(svg('<path fill="#232F36"/>'), name + '.svg')[1]
     end
   end
 
@@ -88,7 +88,7 @@ class IconColorTest < Minitest::Test
       backups = File.join(directory, 'backups')
       Dir.mkdir(icons)
       path = File.join(icons, 'utility.svg')
-      original = svg('<path d="M0 0L1 1Z" fill="#233136"/>')
+      original = svg('<path d="M0 0L1 1Z" fill="#232F36"/>')
       File.write(path, original)
       File.chmod(0o640, path)
       assert_equal 0, run_script(icons, '--dry-run')[2]
@@ -107,7 +107,7 @@ class IconColorTest < Minitest::Test
   def test_malformed_batch_never_partially_writes
     Dir.mktmpdir do |directory|
       good = File.join(directory, 'a.svg')
-      original = svg('<path fill="#233136"/>')
+      original = svg('<path fill="#232F36"/>')
       File.write(good, original)
       File.write(File.join(directory, 'z.svg'), '<svg>')
       assert_equal 2, run_script(directory)[2]
@@ -121,7 +121,7 @@ class IconColorTest < Minitest::Test
       backups = File.join(directory, 'backups')
       Dir.mkdir(icons)
       Dir.mkdir(backups)
-      original = svg('<path fill="#233136"/>')
+      original = svg('<path fill="#232F36"/>')
       File.write(File.join(icons, 'x.svg'), original)
       File.write(File.join(backups, 'x.svg'), 'protected')
       assert_equal 2, run_script(icons, '--backup-dir', backups)[2]
