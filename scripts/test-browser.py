@@ -20,6 +20,13 @@ for key, token in base['color'].items():
     if key == 'hover':
         for name, hover in token.items():
             expected['--color-' + renames.get(name, name) + '-hover'] = hover['$value']
+    elif key == 'accessible':
+        for name, acc in token.items():
+            if name.endswith('-hover'):
+                base_name = name[:-6]
+                expected['--color-' + renames.get(base_name, base_name) + '-accessible-hover'] = acc['$value']
+            else:
+                expected['--color-' + renames.get(name, name) + '-accessible'] = acc['$value']
     else:
         expected['--color-' + renames.get(key, key)] = token['$value']
 for name, token in base['spacing'].items():

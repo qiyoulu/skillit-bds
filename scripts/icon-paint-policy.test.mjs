@@ -41,11 +41,11 @@ test('exceptions apply only to approved repository paths and colors', () => {
 
 // Test every retained export: wrong colors and external lookalikes stay strict.
 const approved = {
-  'check-circle.svg': '#33663d', 'checkbox-checked.svg': '#ef6f1a',
+  'checkbox-unchecked.svg': '#ef6f1a', 'check-circle.svg': '#33663d', 'checkbox-checked.svg': '#ef6f1a',
   'x-octagon.svg': '#c8102e', 'information-square.svg': '#007ca6',
   'information-circle.svg': '#007ca6', 'puzzle-piece.svg': '#33663d',
   'pause-circle.svg': '#232f36', 'play-circle.svg': '#232f36',
-  'radio-checked.svg': '#ef6f1a', 'switch-off.svg': '#232f36',
+  'radio-checked.svg': '#ef6f1a', 'radio-unchecked.svg': '#f7f1ed', 'switch-off.svg': '#232f36',
   'switch-on.svg': '#33663d', 'exclamation-triangle.svg': '#feb11c',
 };
 for (const [name, paint] of Object.entries(approved)) {

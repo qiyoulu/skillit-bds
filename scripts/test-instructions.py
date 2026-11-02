@@ -95,7 +95,7 @@ for filename in ['HUMAN-INSTRUCTIONS.md', 'LLM-INSTRUCTIONS.md', 'README.md', 'd
             check(unquote(link.fragment) in heading_slugs(read_text(resource)), filename + ': missing heading ' + target)
 
 # Check fixed logo paint only; approved semantic/multicolor UI icons are separate.
-colors = {token['$value'].upper() for name, token in source['color'].items() if name != 'hover'}
+colors = {token['$value'].upper() for name, token in source['color'].items() if name not in ('hover', 'accessible') and isinstance(token, dict) and '$value' in token}
 logo_files = sorted((root / 'assets/logo').glob('*.svg'))
 check(bool(logo_files), 'assets/logo: no approved SVG assets found')
 export_files = [svg for svg in logo_files if svg.stem.startswith(('mark-', 'lockup-', 'favicon-'))]

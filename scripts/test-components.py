@@ -32,8 +32,8 @@ ICON_GEOMETRY = {
     'arrow-left.svg': '2ac1889d7454d4bc22f62860cd2070c75dc0661c89d64437e103b5702ca6c773',
     'arrow-left-circle.svg': '1a563305b017c584f02b223dbd22001b638ea3636919b2d9a754c41a440446a1',
     'arrow-left-right.svg': 'ddfa6cf34353495bd731f6ba6214addb6339ef69d0bd113438a5a3f5fd251c7e',
-    'arrow-path.svg': '364cfbf29482e2e37fe01d10f7bb2dcaa46087f03cf6b0ecba35f42ee0b7a677',
-    'arrow-right.svg': 'eb0a0b77f8e823b078a8b67094e488000f0d74d6c8e501091a99c744a597f2a7',
+    'arrow-path.svg': '80690d4c8d42d49af4248b5de184d9f8834610762f260f5582599f39bd27a9b9',
+    'arrow-right.svg': 'c3436ca8b679e7781aae9ee0328fd552ad6921aa746e3946fe847235088f3c1d',
     'arrow-right-circle.svg': '1570ec294b901da1bacf69df402dd1361718ad84416f6da25ccd340604fb378f',
     'arrow-top-right-on-square.svg': 'ed2373abe7785d9ea373c518a2f80bf5826621cca3070357fec99725be003c25',
     'arrow-up.svg': 'b70d019dd8b33052a6d53a4f86766710e0fee06fd421c47c48080c4d3ac5baa8',
@@ -41,27 +41,37 @@ ICON_GEOMETRY = {
     'arrow-up-left.svg': '6c94ed7afd0a5ad021509737a4c41b3bb9d6a8133becfbbe8740af19491a096e',
     'arrow-up-right.svg': '15ad463fa70636ed562fdb9dd49128176d9b2325672823942057ba09b1d443dc',
     'arrow-up-tray.svg': 'c0cfdd02de09d0b47d15c05eca20c9c51fb714076ee21fb430c18c0bc1d7863b',
+    'arrow-uturn-down.svg': 'd95c47351bb6b6f34ff81ee27eac24f830d251a772f4e10bcaea2a9a2e203e5e',
+    'arrow-uturn-left.svg': '1fb973a7b3c2d87630ba4bfb2862836d38556825fc9d2e3cb380f7f714fee987',
+    'arrow-uturn-right.svg': 'a39e5029618fc81a6f7c119f2e8ced194136ab9766c7a113bfa0f6ffd16a044d',
+    'arrow-uturn-up.svg': 'b992a71416618a11d9eadf9e7c391d65d12263112a4b97f825df01013291e23a',
     'bars-3.svg': 'a8a00920740eb6e22c6a43eef07721dd678627ba5842935930895312f62ae5e8',
+    'bell-alert.svg': '67e57336a50cf3986abe863acf7d8f221248b6fce862d615e4f36c6beb2172d5',
+    'bell-slash.svg': '0e9863917c5b2a6293486b74972a90861c45ac56164a8014f059d135348c3b09',
+    'bell.svg': '41f4c20b6c5b37efb9db5a9db525bab6815d55bf4c63f9ef819d34d25949277e',
     'bolt.svg': '02f0dd8bfc8ae8edaa6daeed358598104cb9d9cd47ba51533cc3531452be4c67',
     'bolt-circle.svg': '5c43bfff4baa055ca874c87f8d3869bac730ec8b209edbbcca492b3a7bb0de07',
-    'bookmark.svg': '408b5769b6c5c550129cf8ad2868f8b2da926af73482ee2763b47d5291cfc257',
+    'bookmark.svg': 'ebd523c1fc0dc064eb6639c24c2bb0158ae626680aa533b5cdafbad5f9ed37cc',
     'briefcase.svg': '2660d26b438e03b01a29885097a8f7bcdb15e4e978411e005cb5270883435ebd',
     'calendar.svg': 'd04e4f50ba5bd0dfecb2457b9dec52b8b564c3d4202d925f345d003c775e36aa',
     'check.svg': '91081b52107ff74f07d33abefe2349924a7760941adc2ea5ccf1a514d0d96535',
     'check-circle.svg': '470b17db0b3fbd156bbdd0b33ee7ced1a0de5fd530df2cf1a669195a32c15100',
     'checkbox-checked.svg': '12c5834bbe680cd9a8449beb3b8a86835575e041f0244adc5517bd9db4a7300a',
     'checkbox-unchecked.svg': '50a8d84849f4216621cd69012e6650e78d47ed3230afe88556fe7c3626b52093',
-    'chevron-down.svg': '34ed7f9592b2f176c60c3edefb7e6b575ed399995741c39cfa2d47d5bdeb98a7',
+    'chevron-down.svg': '423abd56379b98685e478d0032bbbcccd178a3037ca3a6e8853cf685543e95e9',
+    'chevron-left.svg': '8f9cbe38b1a10a8d7e97f1178a04f3f4a4c3b4d7ed4a4264c137dc0427bcb933',
+    'chevron-right.svg': '10084d32c130b134c7a0277da1af3900f4feea4a417f429968a547d7a88c326e',
+    'chevron-up.svg': '0502c3dac70eb51f22c9adf01d6b8f35c4ab53b08ccfd38b326c1446980673a1',
     'clock.svg': 'cf611fe432519fba1519d8929f49960d4e6a76f8933f6fe063748f8a23c05f9f',
     'concrete.svg': 'd4f0848d5885386f9f02e717738948b355d284384a9a1d1f187d86dc2e194d47',
     'credit-card.svg': 'ad7b9ac3fec03d5285145e30ceb69ac83741d9e3bd3c3fa7fda95425622d4dbd',
-    'currency-dollar.svg': '3376f8c355a4236dd16afa362b00dd2e8342bcb870071299607680d048538680',
+    'currency-dollar.svg': '7a7ac6400ff6e2dca1e9024f2a5df58c6b6526cbc9a04969346a2efc042bd11e',
     'device-phone-mobile.svg': '205f396db21b82a37088c118c9b7ae3bf759a50ac2b6ef69db6a82eb642b6029',
     'document-text.svg': '7439cd86ef4eb3e9b6b777675b2c8bc7de8b4e55f3c06691a7917c4bf2f8ec2b',
     'envelope.svg': '1eca87f8a8f38e34bd1b34880aab3860c949171ffb56658f70160059874ddbe1',
     'excavator.svg': '8bf9044142dd3f74686a56b70300eb43b87fe36e4fd8b6dbece9b6ed1549e2a0',
     'exclamation-triangle.svg': 'f88ba2726d56001ed64af3cfff536a60956191ebe4d33a83e97c1c0114c865c1',
-    'eye.svg': 'a710dc79271cbe6d27071d30a9223e88a078ac9342b0a55bd98f880868ad5ff8',
+    'eye.svg': '4d9675699ac70ccd8710c94b0f775fa690f79ac0ef1769b0cdaba4b5e3355fe3',
     'eye-slash.svg': 'c8d237dd99a727e85471c09a39ac1c5928360a10cc62583e9434addb53a6190b',
     'facebook.svg': '31b8f69997ea684cdddfd29bd872172f98a6e7f420daa932feb8fa55e987e720',
     'film-reel.svg': '1c59509dadbd0bab59111f55a3511a7619a56b918f480466c6ea41fa7455d8c5',
@@ -71,8 +81,8 @@ ICON_GEOMETRY = {
     'inbox.svg': '745ef98d97af01819ef7421b6f33a76209d7af7c400580f2c421d9185ebdafae',
     'information-circle.svg': 'b5454bf09c0ca6d5922c526354070697d0f37c4be06dce8df31a997e87018daa',
     'information-square.svg': '98f6eb7e6772131856fe9cae9262ee8b04e43f75fae9740ffead8f4aee1c74e6',
-    'instagram.svg': '6feaf4add89d9b05e87e4b4855365ca4f59cfa8241dfd7684e85659a9dcfa557',
-    'language.svg': '766d85ed99668a61c28981a65d07d5d43902f71660af63a99b12cff4042c39d3',
+    'instagram.svg': '28252889b67c5409a2ec5d61f8210800cfca0cb14b77e9c2b254e37d51647b77',
+    'language.svg': '36f36a9812ec6dd18f3ff3250be611e0e1045cbfc0bb5f11eafadfe777c60806',
     'light-bulb.svg': '8efef149a5e6ed54e6f2eb5469ff1f05f7283851391cc4c9b2f02495d76c14f2',
     'linkedin.svg': '8da9028ab96dbbe2e762ccb447de0d77ddf10514e7da5d0ccfa80965298e2945',
     'lock-closed.svg': '50dadcdc0b784cd27093a8cc9f3289be3da52913bff4fa30ded07087abc65514',
@@ -80,26 +90,26 @@ ICON_GEOMETRY = {
     'lock-open.svg': '88dc254ea99ce740939f900b412f42fe80082a44649a29029747c6b800b8d46f',
     'magnifying-glass.svg': '942fb64f022665160eedf2f30597b53da9b7a364fa10ff6e2118b5afdb823c71',
     'map.svg': '2fd60ea90f9566c5ef450ec08fc31b367492b1b8fcaa38b3bb21af48f6f52c79',
-    'map-pin.svg': 'af9e584c1da3bfd2250b36171ec6ef1b5e747a7e5a984e04a7be7a59e1b8c666',
+    'map-pin.svg': '4c621122aa98577c5075592b685c751ac57239ce7dd20d405678ad376b5030c2',
     'pause.svg': '296f39bae8b49bc2bfbf2835bb768a120ad27a1007c3a9576df9a377504d967f',
     'pause-circle.svg': 'b76d7867e9d0762b11062c6b472bbcfc9baba15014cb3f7669a9d6959b522a81',
     'pencil.svg': 'd344d3d751726a0bf248b50619a69711baedb5c847e0cc29e54cc9194171b0e3',
     'phone.svg': '14faf250e0ae7fb47fbb09ba396206b91e155b025349ed96ea6580f4ca9097be',
     'phone-arrow-down-left.svg': 'bd5b851291f86f3ac4b84c405a0c3f167fbc778ef86b05fa672dc4fd1366174d',
     'phone-arrow-up-right.svg': '993359c08d3cd1894823dbb4cd1eb9f3e2b897c24ecc4669d16965e0a417ce1b',
-    'phone-x-mark.svg': 'da20805d9481b1ef5559ed7ef6a40b302029c7d509953c745376b0f4cb3bd933',
+    'phone-x-mark.svg': '9e5f06f4b0d56dc4afc7251a80f2af58bc2be19eb4bcf0af128e80b4444a03ce',
     'pipe.svg': 'e290a0e9f025b5a8b399ebd6ff84f603eeb9fe71501a8172bc0b448e07d22af9',
     'play.svg': 'bd50035d60f07e2d25d4104376fe19be92658bd68ed64b6188f49fe72d4b1f56',
     'play-circle.svg': '31f58d4470c009cea94d1ba561858b67530f8e10420154b9703a99a058723986',
     'plus.svg': '60265b7eaf616ffd314c84fa6a796b41430a162c8d16a00a776f6edcda838427',
     'plus-circle.svg': '81f933f6474d192122f492908f94011feb4121e50452a96b47f17fb3b8392c79',
-    'puzzle-piece.svg': '3c57e785749bd6b58af374589fa0d46a8ddc661391169ee2998701c30fdd87fe',
+    'puzzle-piece.svg': 'bfc55990199d9de44d428d2dce03b638bcbcf672635cf4b78d2ff1b43655b8df',
     'question-mark-circle.svg': '5175c9eabc06a2480bbeae063916fb9d144c2f6fadfe11e6027e3caf81c248d9',
     'radio-checked.svg': 'b67dfc040e25d48a867bf1b023d93d45e9368b8e65dcb2b055f0c6dcd46f33c9',
     'radio-unchecked.svg': 'd44d142c34d6fb5de2c9ce12216c190e879f8a3c7158576818d550f238070687',
     'saw.svg': '661ff4d2026e3973aee2b8d5086fecbabdc788123c1610bd4bb00d689cf0b494',
     'share.svg': 'b050c470a29021bab97db3b83f1fa31dc779e0c864003e4aacc865430d8d5598',
-    'arrow-up-on-square.svg': 'b505083c8728af49f68dc3e6bec3f91a00a417c8c47a47dbab20c3f0992d9c0a',
+    'arrow-up-on-square.svg': '3d18624c302194aea54c9a396b49b60f2e3c89227f580f07b7ce3a6042fed3e4',
     'star.svg': 'b115cdb78ae2b14033461ce793caab08715c373cb56462de613ddff621f1b4cd',
     'switch-off.svg': 'ba85dfcb3e193ec0f704933337beaebdd088789159fbd3495c20efbba6def3c4',
     'switch-on.svg': 'a0555c4364879d4139b9f14e11ae487e6fafc5a0fa31a9cd660f254844a5adae',
@@ -107,10 +117,10 @@ ICON_GEOMETRY = {
     'user-circle.svg': 'ec0481ad9f0a9fe849cce898253f12d9b16f84af9b9def73089a4c39cf6255be',
     'user-hat.svg': '0a9d2f2f0e246980e735e060beaecde9aa7a30ad0555d8f48cec11cf282a1c3e',
     'user-headset.svg': 'e1fe99dad34df96a7e51b1ef361fb4f419e462dce03f81a8f06a655745dd59a8',
-    'user-round.svg': '56bc2d257f7b9793d7386f9102b28d095e61ad7c02b8977ed259e5008b662039',
+    'user-round.svg': 'f6bd6a5f09a9c8f596c049848d2ca3ec440bf66403d717753ca54050eebbf2ae',
     'whatsapp.svg': 'b64880fdf55a1611deb8f6e10a541cd5814cb73924e756c02d69ea92738137df',
     'wrench.svg': 'dc884c7cea077a700fc78f787f8fa08c9bdbc95027e999663d74430431d3d938',
-    'x.svg': '835c248b6cc0e9380f6bd68ab523e33ec2ea2d85b5997f22022d621127d4a843',
+    'x.svg': '1ff9a6028341dbcffdcd559dcee45cf43ba58ee9ea2ae6225acc19f0dfbdc62e',
     'x-circle.svg': 'e55da90820f0cf673b4acf149d758170471533b703200c3996ac5f3b1c6112f5',
     'x-mark.svg': 'b436a04d99bfaf63e013a37c340e0737cb56492d19ec51b8daf20652b5f6f1eb',
     'x-octagon.svg': '2150417526da1c6544199359545c740092f7daa6344babe8bc2b95ea0deff2b8',
@@ -120,6 +130,7 @@ ICON_GEOMETRY = {
 # Exact ordered paint layers of USER-approved Downloads/icons exports.
 # Exported #232F36 is intentional; utilities alone normalize to currentColor.
 EXPORTED_PAINTS = {
+    'checkbox-unchecked.svg': ((('fill', 'none'),), (('fill', '#ef6f1a'),)),
     'check-circle.svg': ((('fill', 'none'),), (('fill', '#33663d'),), (('fill', '#ffffff'),)),
     'checkbox-checked.svg': ((('fill', 'none'),), (('fill', '#ef6f1a'),), (('fill', '#232f36'),)),
     'exclamation-triangle.svg': ((('fill', 'none'),), (('fill', '#feb11c'),), (('fill', '#ffffff'),), (('fill', '#ffffff'),)),
@@ -129,6 +140,7 @@ EXPORTED_PAINTS = {
     'play-circle.svg': ((('fill', 'none'),), (('fill', '#232f36'),), (('fill', '#ffffff'),)),
     'puzzle-piece.svg': ((('fill', 'none'),), (('fill', '#33663d'),)),
     'radio-checked.svg': ((('fill', 'none'),), (('fill', '#ef6f1a'),), (('fill', '#ffffff'),)),
+    'radio-unchecked.svg': ((('fill', 'none'),), (('fill', '#f7f1ed'),)),
     'switch-off.svg': ((('fill', 'none'),), (('fill', '#ffffff'),), (('fill', '#232f36'),)),
     'switch-on.svg': ((('fill', 'none'),), (('fill', '#ffffff'),), (('fill', '#33663d'),)),
     'x-octagon.svg': ((('fill', 'none'),), (('fill', '#c8102e'),), (('fill', '#ffffff'),)),
@@ -152,8 +164,10 @@ def validate_icons(paths):
             assert paints == EXPORTED_PAINTS[p.name], (p, 'export paint layers changed', paints)
         else:
             for i, e in enumerate(root.iter()):
-                assert paint_key(e.get('fill', '')) == ('none' if i == 0 else 'currentcolor'), (p, 'utility fill must inherit', e.attrib)
-                assert paint_key(e.get('stroke', 'none')) == 'none', (p, 'solid utility must not gain stroke', e.attrib)
+                if 'fill' in e.attrib:
+                    assert paint_key(e.get('fill', '')) == ('none' if i == 0 else 'currentcolor'), (p, 'utility fill must inherit', e.attrib)
+                if 'stroke' in e.attrib:
+                    assert paint_key(e.get('stroke', 'none')) == 'none', (p, 'solid utility must not gain stroke', e.attrib)
 
 validate_icons(svgs)
 
@@ -413,7 +427,7 @@ with sync_playwright() as pw:
             const host=document.createElement('span');
             host.style.color='magenta'; host.innerHTML=svg;
             document.body.append(host);
-            const values=Array.from(host.querySelectorAll('svg, svg *')).map(e=>getComputedStyle(e).fill);
+            const values=Array.from(host.querySelectorAll('svg, svg *')).filter(e=>!e.closest('defs')).map(e=>getComputedStyle(e).fill);
             host.remove(); return values;
         }''', (ROOT / 'assets/icons' / name).read_text())
         expected_fills = []
@@ -428,7 +442,7 @@ with sync_playwright() as pw:
         fills = page.evaluate('''svg => {
             const host=document.createElement('span');host.style.color='magenta';host.innerHTML=svg;
             document.body.append(host);
-            const values=Array.from(host.querySelectorAll('svg *')).map(e=>getComputedStyle(e).fill);
+            const values=Array.from(host.querySelectorAll('svg *')).filter(e=>!e.closest('defs')).map(e=>getComputedStyle(e).fill);
             host.remove();return values;
         }''', asset.read_text())
         assert fills and all(fill == 'rgb(255, 0, 255)' for fill in fills), (asset.name, fills)
@@ -439,10 +453,10 @@ with sync_playwright() as pw:
     # Sample actual asset bytes: light artwork is opaque, never a knockout.
     raster_cases = {
         'play.svg': ([[11, 12], [5, 12], [0, 0]], [[0, 0, 0, 255], [0, 0, 0, 0], [0, 0, 0, 0]]),
-        'play-circle.svg': ([[11, 12], [5, 12], [0, 0]], [[255, 255, 255, 255], [35, 49, 54, 255], [0, 0, 0, 0]]),
-        'pause-circle.svg': ([[8, 12], [16, 12], [12, 12], [0, 0]], [[255, 255, 255, 255], [255, 255, 255, 255], [35, 49, 54, 255], [0, 0, 0, 0]]),
+        'play-circle.svg': ([[11, 12], [5, 12], [0, 0]], [[255, 255, 255, 255], [35, 47, 54, 255], [0, 0, 0, 0]]),
+        'pause-circle.svg': ([[8, 12], [16, 12], [12, 12], [0, 0]], [[255, 255, 255, 255], [255, 255, 255, 255], [35, 47, 54, 255], [0, 0, 0, 0]]),
         'switch-on.svg': ([[17, 12], [7, 12], [0, 0]], [[51, 102, 61, 255], [255, 255, 255, 255], [0, 0, 0, 0]]),
-        'switch-off.svg': ([[7, 12], [17, 12], [0, 0]], [[35, 49, 54, 255], [255, 255, 255, 255], [0, 0, 0, 0]]),
+        'switch-off.svg': ([[7, 12], [17, 12], [0, 0]], [[35, 47, 54, 255], [255, 255, 255, 255], [0, 0, 0, 0]]),
         'radio-checked.svg': ([[12, 12], [4, 12], [0, 0]], [[255, 255, 255, 255], [239, 111, 26, 255], [0, 0, 0, 0]]),
         'check.svg': ([[9, 18], [12, 10], [0, 0]], [[0, 0, 0, 255], [0, 0, 0, 0], [0, 0, 0, 0]]),
     }

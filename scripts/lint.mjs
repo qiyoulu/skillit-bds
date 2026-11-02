@@ -49,6 +49,7 @@ const internalMode = pathArgs.length === 0;
 // Applies only to these exact repository paths, never to similarly named external SVGs.
 const approvedIconPaints = new Map(Object.entries({
   'checkbox-checked.svg': ['#ef6f1a', '#232f36'],
+  'checkbox-unchecked.svg': ['#ef6f1a'],
   'check-circle.svg': ['#33663d', '#ffffff'],
   'x-octagon.svg': ['#c8102e', '#ffffff'],
   'information-square.svg': ['#007ca6', '#ffffff'],
@@ -57,6 +58,7 @@ const approvedIconPaints = new Map(Object.entries({
   'pause-circle.svg': ['#232f36', '#ffffff'],
   'play-circle.svg': ['#232f36', '#ffffff'],
   'radio-checked.svg': ['#ef6f1a', '#ffffff'],
+  'radio-unchecked.svg': ['#f7f1ed'],
   'switch-off.svg': ['#ffffff', '#232f36'],
   'switch-on.svg': ['#ffffff', '#33663d'],
   'exclamation-triangle.svg': ['#feb11c', '#ffffff'],

@@ -16,6 +16,7 @@ module IconColors
   ICONS_DIR = File.expand_path('../assets/icons', __dir__)
   APPROVED_PAINTS = {
     'checkbox-checked.svg' => %w[#ef6f1a #232f36],
+    'checkbox-unchecked.svg' => %w[#ef6f1a],
     'check-circle.svg' => %w[#33663d #ffffff],
     'x-octagon.svg' => %w[#c8102e #ffffff],
     'information-square.svg' => %w[#007ca6 #ffffff],
@@ -24,6 +25,7 @@ module IconColors
     'pause-circle.svg' => %w[#232f36 #ffffff],
     'play-circle.svg' => %w[#232f36 #ffffff],
     'radio-checked.svg' => %w[#ef6f1a #ffffff],
+    'radio-unchecked.svg' => %w[#f7f1ed],
     'switch-off.svg' => %w[#ffffff #232f36],
     'switch-on.svg' => %w[#ffffff #33663d],
     'exclamation-triangle.svg' => %w[#feb11c #ffffff]

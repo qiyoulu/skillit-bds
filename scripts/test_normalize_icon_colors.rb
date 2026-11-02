@@ -58,7 +58,7 @@ class IconColorTest < Minitest::Test
   end
 
   def test_all_approved_export_palettes_and_negative_controls
-    assert_equal 12, IconColors::APPROVED_PAINTS.size
+    assert_equal 14, IconColors::APPROVED_PAINTS.size
     IconColors::APPROVED_PAINTS.each do |name, allowed|
       path = File.join(IconColors::ICONS_DIR, name)
       original = File.read(path)
