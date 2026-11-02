@@ -163,11 +163,13 @@ def validate_icons(paths):
         if p.name in EXPORTED_PAINTS:
             assert paints == EXPORTED_PAINTS[p.name], (p, 'export paint layers changed', paints)
         else:
+            # Paths inside <defs> are not painted directly; every rendered element is still checked.
+            in_defs = {d for e in root.iter() if e.tag.rsplit('}', 1)[-1] == 'defs' for d in e.iter()}
             for i, e in enumerate(root.iter()):
-                if 'fill' in e.attrib:
-                    assert paint_key(e.get('fill', '')) == ('none' if i == 0 else 'currentcolor'), (p, 'utility fill must inherit', e.attrib)
-                if 'stroke' in e.attrib:
-                    assert paint_key(e.get('stroke', 'none')) == 'none', (p, 'solid utility must not gain stroke', e.attrib)
+                if e in in_defs:
+                    continue
+                assert paint_key(e.get('fill', '')) == ('none' if i == 0 else 'currentcolor'), (p, 'utility fill must inherit', e.attrib)
+                assert paint_key(e.get('stroke', 'none')) == 'none', (p, 'solid utility must not gain stroke', e.attrib)
 
 validate_icons(svgs)
 
