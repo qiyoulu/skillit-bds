@@ -112,7 +112,8 @@
   --text-1x-tracking: 0em;
   --text-1x-sm: 1rem;
   --text-0\.75x: 0.75rem;  /* Text-0.75x — labels, tags, badges, captions. 12px. bolded: 600. */
-  --text-0\.75x-weight: 550;
+  --text-0\.75x-weight: 400;
+  --text-0\.75x-weight-bold: 600;
   --text-0\.75x-leading: 1.40;
   --text-0\.75x-tracking: 0.04em;
 

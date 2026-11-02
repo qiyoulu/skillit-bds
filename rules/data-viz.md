@@ -21,7 +21,7 @@
 - **Numbers:** `font-variant-numeric: tabular-nums;` (strict requirement).
 - **Labels:** Sentence-case, `Text-1x/2x`, flush-left, including Y-axis values.
 - **Headers and subheaders:** Use canonical size/weight hierarchy, not opacity fades. Text labels and references remain full-opacity Iron for readability. Data-mark opacity rules below apply to data geometry, not small text.
-- **References and footnotes:** JetBrains Mono Text-0.75x (`--text-0.75x`, 12px minimum), canonical 550 weight / 1.4 leading / 0.04em tracking, opaque Iron on Plaster; no 14px or 50%-Iron reference treatment.
+- **References and footnotes:** JetBrains Mono Text-0.75x (`--text-0.75x`, 12px minimum), canonical 400 weight / 1.4 leading / 0.04em tracking, opaque Iron on Plaster; no 14px or 50%-Iron reference treatment.
 
 ## 3. Data Color Palette (Role-scoped)
 - **Context and structure:** Iron is the default for neutral/contextual marks; labels and references remain opaque Iron. A monochrome chart is an option, not a requirement.

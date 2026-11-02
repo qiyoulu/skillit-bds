@@ -76,7 +76,7 @@ These tokens cover UI surfaces (app, dashboard, labels, captions) where the prim
 
 || Token | Role | Size | Weight | Line height | Letter spacing |
 ||---|---|---|---|---|---|
-|| `--text-0.75x` | Labels, tags, badges, captions — minimum size | `0.75rem` (12px) | 550 | 1.4 | `0.04em` |
+|| `--text-0.75x` | Labels, tags, badges, captions — minimum size | `0.75rem` (12px) | 400, bolded 600 | 1.4 | `0.04em` |
 || `--text-1x` | Default UI body, all running copy | `1rem` (16px) | 400 | 1.4 | `0` |
 ---
 ## CSS custom properties (copy-paste ready)
@@ -146,7 +146,8 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
   --text-1x-print:          12pt;
   --text-1x-sm: 1rem;
   --text-0\.75x: 0.75rem;  /* Text-0.75x — functional labels, tags, badges, captions. 12px minimum. */
-  --text-0\.75x-weight: 550;
+  --text-0\.75x-weight: 400;
+  --text-0\.75x-weight-bold: 600;
   --text-0\.75x-leading: 1.40;
   --text-0\.75x-tracking: 0.04em;
 
@@ -186,6 +187,9 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
 Work Sans is implemented as a variable font (`wght@100..900`).
 - **Optical Balancing:** If text must appear on a non-Skillit dark surface, subtract approximately 25 units of font weight to account for halation. Skillit layout surfaces remain Canvas or Plaster. Adjust by eye; this is a heuristic, not a fixed rule.
 - **Micro-interactions:** Use CSS transitions on the `font-weight` axis (e.g., `400` to `600`) for fluid hover states on navigation links and buttons, rather than abrupt jumps.
+### Text-0.75x weights
+- **400:** metadata, chart references and footnotes, and captions.
+- **600:** static tags, other labels, and validation messages.
 ### Monospace / metadata
 - Use `--font-mono` for: timestamps, worker IDs, distances, file sizes, any numeric data string.
 - Never use monospace for labels, body copy, or headings.

@@ -291,7 +291,7 @@ The scale is built on a 16px baseline: `16 → 24 → 32 → 48 → 64 → 96 �
 | **Text-2x** | 32px | 500 | 700 | 1.20 | −2% | Subheadings |
 | **Text-1.5x** | 24px | 450 | **650** | 1.30 | −1% | Large body, subheads |
 | **Text-1x** | 16px | 400 | 600 | 1.40 | 0% | All running copy |
-| **Text-0.75x** | 12px | 550 | — | 1.40 | +4% | Functional labels, tags, badges, captions; not running copy |
+| **Text-0.75x** | 12px | 400 | 600 | 1.40 | +4% | Functional labels, tags, badges, captions; not running copy |
 
 _(Full print/mobile/monospace variants for each level are documented in `tokens/docs/typography.md` — check there before inventing a new size, so this table and the token file don’t drift apart again.)_
 

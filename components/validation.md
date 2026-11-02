@@ -21,10 +21,10 @@ A validated field is a vertical stack:
 
 | State | Icon | Icon color | Message color | Message font |
 |---|---|---|---|---|
-| Error | Octagon | `--color-error` | `--color-error` | `--text-0.75x`, canonical 550 |
-| Success | Circular checkmark | `--color-success` | `--color-success` | `--text-0.75x`, canonical 550 |
-| Warning | Triangle | `--color-warning` | `--color-foreground` | `--text-0.75x`, canonical 550 |
-| Info | Circled i + message | `--color-link` | `--color-foreground` | `--text-0.75x`, canonical 550 |
+| Error | Octagon | `--color-error` | `--color-error` | `--text-0.75x`, bolded 600 |
+| Success | Circular checkmark | `--color-success` | `--color-success` | `--text-0.75x`, bolded 600 |
+| Warning | Triangle | `--color-warning` | `--color-foreground` | `--text-0.75x`, bolded 600 |
+| Info | Circled i + message | `--color-link` | `--color-foreground` | `--text-0.75x`, bolded 600 |
 
 **Icon color rationale:** Validation status hosts use success green, warning yellow, error red, and info blue, independent of message text. Familiar glyphs support the explicit message; outer shape does not encode an information type. Error and success message colors remain unchanged; warning and info messages stay Iron. Check message contrast separately. Hard Hat on Plaster is 1.8229:1, below 3:1 for an essential warning glyph; a fully explicit redundant label does not turn that ratio into a pass (`rules/accessibility.md`).
 
@@ -59,7 +59,7 @@ A validated field is a vertical stack:
 .validation-message {
   font-family: var(--font-primary);
   font-size: var(--text-0\.75x);
-  font-weight: var(--text-0\.75x-weight);
+  font-weight: var(--text-0\.75x-weight-bold);
   line-height: var(--text-0\.75x-leading);
   letter-spacing: var(--text-0\.75x-tracking);
 }
