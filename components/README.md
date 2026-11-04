@@ -6,7 +6,7 @@ One line per component. Open the file for the full rules. Every component uses t
 ## Components
 
 - [badges](./badges.md): Status badges: drawn icon plus label for success, warning, error, and info.
-- [buttons](./buttons.md): Primary, secondary, and tertiary actions; one dominant CTA per section; pill shape; hug and fill widths.
+- [buttons](./buttons.md): Primary, Iron primary, and secondary actions; one dominant CTA per section or audience; pill shape; hug and fill widths.
 - [cards](./cards.md): The standard Plaster card on Canvas: 16px corners, no border or shadow, padding tokens.
 - [checkboxes](./checkboxes.md): Checkbox, radio, and chip selection controls; Orange selected state.
 - [email](./email.md): Email layout rules: table-based HTML, Outlook fallbacks, focus and CTA handling.

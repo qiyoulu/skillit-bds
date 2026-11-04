@@ -1,5 +1,5 @@
 # Buttons — Skillit Kit BDS
-**Last updated:** 2026-10-22
+**Last updated:** 2026-11-04
 ---
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
@@ -10,7 +10,7 @@
 - **Marketing hit area:** the visible pill keeps its tier height (Text-1x is 38.4px: 8px padding plus a 22.4px line). Where that is under 44px, extend the hit area invisibly to 44px (a pseudo-element, 3px above and below at Text-1x). Never grow the pill to meet it. The Text-1.5x primary is 55px and needs no extension.
 
 ## Primary button
-The dominant CTA. Keep one dominant CTA per section; supporting controls should not compete with it. Orange may repeat across functional primary actions, selection controls, and focus: there is no one-orange-element limit. Traffic Cone background, Iron text (Canvas on Cone is banned — 2.70:1, see `rules/accessibility.md`).
+The dominant CTA. Keep one dominant CTA per section, or one per audience with an Iron primary; supporting controls should not compete with it. Orange may repeat across functional primary actions, selection controls, and focus: there is no one-orange-element limit. Traffic Cone background, Iron text (Canvas on Cone is banned — 2.70:1, see `rules/accessibility.md`).
 ```css
 .btn-primary {
   background-color: var(--color-primary);   /* Traffic Cone #EF6F1A */
@@ -31,6 +31,40 @@ The dominant CTA. Keep one dominant CTA per section; supporting controls should 
   outline-offset: 2px;
 }
 ```
+
+## Iron primary
+The main action for a second audience, beside or instead of Traffic Cone. Hire next to Join is the model: two audiences, each with its own main action, so neither is a lower-priority fallback. Plaster text on Iron, same pill radius and padding as primary.
+
+```css
+.btn-primary--iron {
+  background-color: var(--color-foreground);   /* Iron #232F36 */
+  color: var(--color-surface);                 /* Plaster text — 13.7135:1 AAA */
+}
+.btn-primary--iron:hover { background-color: var(--color-foreground-hover); }
+
+/* Iron disappears on dark sections and photo or video heroes */
+.surface-dark .btn-primary--iron {
+  background-color: var(--color-surface);      /* Plaster */
+  color: var(--color-foreground);              /* Iron text */
+}
+.surface-dark .btn-primary--iron:hover { background-color: var(--color-surface-hover); }
+```
+
+**Use it:**
+- Beside a Traffic Cone primary, when two audiences each have a main action. A section then has one dominant action per audience, at most two.
+- Alone, for the main action in an employer-facing section.
+
+**Do not use it:**
+- For quiet actions such as Learn more, Show more, Back or Cancel. Those stay secondary.
+- To add emphasis to a second action for the same audience. That action is secondary.
+
+**Squarespace.** Squarespace's button names are fixed, so its tiers map like this on skillit.com:
+
+| Squarespace | BDS |
+|---|---|
+| Primary | Primary, Text-1.5x |
+| Secondary | Primary, Text-1x |
+| Tertiary | Iron primary |
 
 ## Secondary button
 Lower-priority actions. Iron text on Plaster fill, no border. Same pill radius and padding as primary.
