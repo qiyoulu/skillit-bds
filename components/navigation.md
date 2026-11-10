@@ -129,20 +129,53 @@ Replaces persistent footer navigation on app views currently using a footer with
 
 **Placement.** `position: sticky; bottom: 0` on mobile. Not sticky on tablet and up — disappears at the tablet breakpoint and the surrounding layout takes over. Do not use `position: fixed` unless the bar must stay on screen across a scroll container that owns the viewport (rare).
 
-**Button spec.** Two icon-only buttons in circular button surfaces, equal size, aligned to the bar edges. The button surface carries the color coding; the arrow is always Iron for contrast.
+**Bar.** Canvas fill (`--color-background`), matching the app page, so the bar reads as part of the page rather than a separate strip.
 
-| Property | Back | Forward |
+| Property | Value |
+|---|---|
+| Fill | Canvas (`--color-background`) |
+| Side margins | Page gutter (`--space-gutter`), so the buttons align with the page content. Not a bar-specific padding. |
+| Top and bottom padding | `--space-2` (8px), matching the buttons' 0.5em vertical padding. Add `env(safe-area-inset-bottom)` below. |
+| Columns | Two equal columns, `--space-4` (16px) gap: Back left, Next right |
+| Separation | 1px Iron (`--color-foreground`) top border, only while content scrolls under the bar. Short screens that don't scroll show no line. |
+
+```css
+.step-bar {
+  position: sticky;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-gutter)
+    calc(var(--space-2) + env(safe-area-inset-bottom));
+  background-color: var(--color-background);
+}
+.step-bar.is-overlapping { border-top: 1px solid var(--color-foreground); }
+.step-bar .btn-next { grid-column: 2; }   /* stays in the right column even without Back */
+```
+
+**Button spec.** Two labeled pill buttons, each filling half the bar: ( ← Back ) ( Next → ). These are non-hugging buttons (`buttons.md`): the arrow sits at the outer edge it points toward and the label at the opposite edge (`justify-content: space-between`).
+
+| Property | Back | Next |
 |---|---|---|
-| Visual icon size | 24px × 24px | 24px × 24px |
-| Touch target | 40px × 40px | 40px × 40px |
-| Button shape | 40×40px circle (24px arrow + 8px padding all sides) | 40×40px circle (24px arrow + 8px padding all sides) |
-| Button surface fill | Canvas (`--color-background`) | Traffic Cone (`--color-primary`) |
-| Arrow fill | Iron (`--color-foreground`) | Iron (`--color-foreground`) |
-| Hover | Button surface: `--color-background-hover` | Button surface: `--color-primary-hover` |
+| Content | ← Back | Next → |
+| Width | Half the bar | Half the bar |
+| Arrow | 24px, at the far left edge; label at the far right | 24px, at the far right edge; label at the far left |
+| Fill | Plaster (`--color-surface`) — the secondary default on Canvas | Traffic Cone (`--color-primary`) |
+| Text and arrow | Iron (`--color-foreground`), Text-1x semibold | Iron (`--color-foreground`), Text-1x semibold |
+| Padding | `--padding-1x` (8px / 16px) | `--padding-1x` (8px / 16px) |
+| Height | `--touch-target-min` (40px) minimum | `--touch-target-min` (40px) minimum |
+| Shape | Pill (`--radius-pill`) | Pill (`--radius-pill`) |
+| Hover | `--color-surface-hover` | `--color-primary-hover` |
 | Focus | 2px solid Traffic Cone, 2px offset | 2px solid Traffic Cone, 2px offset |
 
-- The button surface is a filled circle. Back = Canvas circle with Iron arrow. Forward = Traffic Cone circle with Iron arrow. The Iron arrow provides contrast on both surfaces (12.2506:1 on Canvas, 4.5443:1 on Traffic Cone — both pass AA).
-- The bar itself has no fill. The bar is transparent; the two circular buttons sit in it. If the page content scrolls under the bar and the buttons need separation from content, separate the bar from content with a Plaster bar background (`--color-surface`) and a 1px Iron border on top — not by filling the bar itself.
+- Iron on Traffic Cone is 4.5443:1 and Iron on Plaster passes easily; both meet AA for the label.
+- The visible labels are the accessible names ("Back", "Next"). Arrows are decorative: `aria-hidden="true"`.
+- Each button needs about 96px (16px padding, label and arrow, 16px padding). A half column is 136px at 320px wide, so labels fit on every supported phone.
+
+**Intercom.** On mobile, the Intercom launcher (spacing settings do not apply on mobile) sits over the right end of Next, and the covered end opens Intercom when tapped. Stopgap until help has a home on mobile that doesn't float over content.
+
+**One-sided bars.** If only one direction is available, keep the button in its own column at its normal half width: Back alone stays left, Next alone stays right with the left column empty. Never stretch or center a lone button — Next stays in the same place on every screen, so it never moves under the worker's thumb.
 
 **Back behavior.** The back button navigates to the previous screen in the app's navigation flow. Which route that is — browser history back, a specific prior route, or a flow-aware previous step — is an engineering decision. The BDS specifies the visual and interaction contract only: the button looks and behaves like a back control, and the destination is whatever the implementation wires it to. Do not hardwire a specific routing strategy in this spec.
 
