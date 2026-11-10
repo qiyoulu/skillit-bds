@@ -5,7 +5,7 @@
 
 ## **Version 1.5 · October 2026**
 
-**Release status:** v1.7, tagged `v1.7`. See the [v1.7 release notes](../releases/v1.7.md).
+**Release status:** v1.8. See the [v1.8 release notes](../releases/v1.8.md).
 
 > **AI agents: read [`LLM-INSTRUCTIONS.md`](../LLM-INSTRUCTIONS.md) first.** That file is the authoritative constraint set for machine-generated output — code, design, copy, data viz. Where behavioral rules conflict, `LLM-INSTRUCTIONS.md` wins; `tokens/tokens.json5` governs token values. This document is the human-readable rationale and full guideline set; the LLM file is the enforcement layer.
 
@@ -174,6 +174,8 @@ Coated and uncoated are the same ink on different paper — the number is shared
 
 The Skillit logo system has four components: mark, wordmark, lockup, and pattern. Use the lockup wherever possible — it’s the primary logo. Use the mark alone only in constrained spaces where the lockup doesn’t fit well. Never use the wordmark alone. Each logo component is a fixed graphic asset. Do not recreate it, retype it, or export it in raster formats. Use approved SVG files; approved 512px-height PNG exports are reserved for platforms that reject SVG uploads.
 
+**Always include the logo in external communications.** Anything that leaves Skillit carries the Skillit logo: decks, documents, PDFs, emails, social posts, press materials, print and event collateral. Use the lockup; use the mark alone only where the lockup doesn't fit.
+
 ### The mark
 
 The Skillit mark is the brand’s initial ‘S’ engineered for **physical grip**. Built from three interlocking blocks on a precise **1:3 shear**, the geometry acts as a **boot tread, machinery tracks, or diamond plate steel**. It encodes **traction**, **structural integrity**, and **forward momentum** into a single form. It **does not require the wordmark** to be understood.
@@ -282,7 +284,7 @@ Skillit uses two typefaces: **Work Sans** for human content, **JetBrains Mono** 
 ### The Typographic Algorithm
 
 The typography system is consistently derived. Levels are named objectively by their pixel size.
-The scale is built on a 16px baseline: `16 → 24 → 32 → 48 → 64 → 96 → 128`.
+The scale is built on a 16px baseline: `16 → 24 → 32 → 48 → 64 → 96 → 128`. Static layouts (presentations, print, posters, PDFs) may continue it: `192 → 256 → 384 → 512 → 768`, see [typography](../tokens/docs/typography.md#static-display-tiers).
 | Level | Size | Base Weight | Bolded | Line Height | Tracking | Use |
 | ------------ | ----- | ---------------- | ---------------- | ----------- | -------- | ------------------------------- |
 | **Text-8x** | 128px | Bold (700) | 900 | 0.80 | −6% | Hero headlines at massive scale |
@@ -504,7 +506,7 @@ Every chart must include:
 ### Geometry & Structure
 
 - **Containers:** All data viz graphics must sit on a Plaster (pure white) background card to isolate the data and maintain contrast against the surrounding UI.
-- **Sharp edges:** Bar charts use `0px` border-radius — flat, sharp edges (data precision, not decoration). Tooltips, legends, and Plaster cards keep `16px`.
+- **Sharp edges:** Axis-based bar charts use `0px` border-radius — flat, sharp edges (data precision, not decoration). Comparison and progress bars are pills at both ends. Presentation column charts on slides use `16px` on all four corners, with every bar labeled ([rules](../rules/data-viz.md)). Tooltips, legends, and Plaster cards keep `16px`.
 - **Line weight:** All structural lines must be `4px` thick. This applies to data lines and gridlines.
 - **Gridlines:** Rendered in Canvas with 4px stroke weight. Remove all outer bounding boxes. Use horizontal (Y-axis) gridlines only. No vertical gridlines.
 - **Pie charts:** Slices must sit flush against each other with zero gap and zero stroke.

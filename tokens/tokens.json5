@@ -137,6 +137,36 @@
         mono: { $value: "'JetBrains Mono', monospace", $type: 'fontFamily', $description: 'metadata, IDs, data, code blocks, timestamps, captions, footnotes, references — intentional same-size pairing with Work Sans; x-height is slightly taller' },
       },
       text: {
+        '48x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '48rem', fontWeight: 700, lineHeight: 0.8, letterSpacing: '-0.06em' },
+          $type: 'typography',
+          $description: 'Text-48x — static display only (presentations, print, posters, PDFs). never web, app or email.',
+          $extensions: { 'org.skillit.print': '576pt' },
+        },
+        '32x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '32rem', fontWeight: 700, lineHeight: 0.8, letterSpacing: '-0.06em' },
+          $type: 'typography',
+          $description: 'Text-32x — static display only (presentations, print, posters, PDFs). never web, app or email.',
+          $extensions: { 'org.skillit.print': '384pt' },
+        },
+        '24x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '24rem', fontWeight: 700, lineHeight: 0.8, letterSpacing: '-0.06em' },
+          $type: 'typography',
+          $description: 'Text-24x — static display only (presentations, print, posters, PDFs). never web, app or email.',
+          $extensions: { 'org.skillit.print': '288pt' },
+        },
+        '16x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '16rem', fontWeight: 700, lineHeight: 0.8, letterSpacing: '-0.06em' },
+          $type: 'typography',
+          $description: 'Text-16x — static display only (presentations, print, posters, PDFs). never web, app or email.',
+          $extensions: { 'org.skillit.print': '192pt' },
+        },
+        '12x': {
+          $value: { fontFamily: '{base.typography.family.primary}', fontSize: '12rem', fontWeight: 700, lineHeight: 0.8, letterSpacing: '-0.06em' },
+          $type: 'typography',
+          $description: 'Text-12x — static display only (presentations, print, posters, PDFs). never web, app or email.',
+          $extensions: { 'org.skillit.print': '144pt' },
+        },
         '8x': {
           $value: { fontFamily: '{base.typography.family.primary}', fontSize: '8rem', fontWeight: 700, lineHeight: 0.8, letterSpacing: '-0.06em' },
           $type: 'typography',

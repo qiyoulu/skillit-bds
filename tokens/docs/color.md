@@ -122,6 +122,8 @@ Opt-in darker steps of the three brand colors that fail contrast on light surfac
 - On permitted functional Iron backdrops: Traffic Cone text is 4.5443:1 (AA). This does not permit Iron layout surfaces. All text on Traffic Cone buttons remains Iron.
 - **CSS class:** `.text-primary` — applies Traffic Cone color. Use on headings and display text only.
 
+- **Static layouts:** To emphasize words or a key number in a presentation, print piece or PDF, use Iron text on a Traffic Cone highlight (4.5443:1, AA), not orange text. Use once per slide or page.
+
 ### `--color-link` 🟦 Painter's Tape `#007CA6`
 - Ordinary link/info usage is text fill: underlined = link; not underlined = info (“Info,” “Note,” “Tip”). Info status icons use Painter’s Tape. Approved information exports retain blue grounds and opaque white glyphs; host `color` does not recolor an external SVG. Status props select meaning independently of the filename; runtime recoloring requires inline per-layer canonical-token styling, not a combined mask. Feedback/data exceptions below do not change the text default.
 - Never used as an ordinary button fill, layout background, or decorative element. Informational feedback toasts use Plaster with Iron text; their information icon uses Painter’s Tape ([toasts](../../components/toast.md)), never a blue normal-text toast fill.

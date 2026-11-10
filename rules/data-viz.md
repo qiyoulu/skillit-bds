@@ -5,7 +5,8 @@
 ## 1. Geometry & Structure
 - **Containers:** All data viz graphics must sit on a Plaster (`--color-surface`, pure white) background card to isolate the data and maintain contrast against the surrounding UI.
 - **Corners (axis-based charts):** `0px` — sharp, flat edges on bars in any chart read against an axis (bar, grouped bar, histogram, stacked bar). Data is precision, not decoration. Tooltips and Plaster cards keep `16px` (structural containers).
-- **Corners (comparison and progress bars):** a bar that has no axis and is read as a proportion of a track (progress, funnel, a single value against a total, a two-value comparison inside a card) uses a fully rounded end (`--radius-pill`). The track is a Canvas pill and the fill is clipped to it, so the left end rounds and the right end stays at the true length. Label every bar with its value so length is never the only signal. If the bars share an axis with tick marks or gridlines, it is an axis-based chart and stays square.
+- **Corners (comparison and progress bars):** a bar that has no axis and is read as a proportion of a track (progress, funnel, a single value against a total, a two-value comparison inside a card) is fully rounded at both ends (`--radius-pill`). The track is a Canvas pill and the fill is a pill of its own inside it, so neither end is square. Label every bar with its value, because a rounded end does not mark the exact length. A fill too short to form a full pill (shorter than its own height) shows as a circle at the start of the track. If the bars share an axis with tick marks or gridlines, it is an axis-based chart and stays square.
+- **Corners (presentation column charts):** see section 4, Presentation column charts. Slides and other at-a-glance graphics may use `16px` corners on all four corners of each bar.
 - **Stroke Weights:** A universal `4px` rule applies to all line work to maintain an industrial, structural feel.
   - Data lines are `4px`.
   - Gridlines (horizontal Y-axis only) are `4px` Canvas (`--color-background`).
@@ -33,11 +34,21 @@
 - **Patterns:** Industrial cross-hatching or stippling can supplement approved color fills when more separation is needed.
 
 ## 4. Bar Graphs
-The rules below apply to axis-based bars. For comparison and progress bars, see the corner rule in section 1.
+The rules below apply to axis-based bars. For comparison and progress bars, see the corner rule in section 1. For slides, see Presentation column charts below.
 - Use flat fills only. For N opacity steps, distribute values evenly from 100% down to 100% / N: 100% / 50% for two steps, 100% / 67% / 33% for three steps. Apply the same rule to the chosen canonical base color; approved categorical color fills are also allowed.
 - **Annotations:** Value callout labels sit in Work Sans, `Text-1x`, Iron — same typeface as category labels. JetBrains Mono is for machine data only (timestamps, IDs, code); a chart value label is human-readable content, not metadata.
 - **Legend:** Placed at the bottom, horizontal layout, Work Sans `Text-1x`.
 - **Grouped bars:** Use approved category colors or an optional equally stepped opacity scale with a labeled legend and redundant series identification.
+
+### Presentation column charts
+For slides and other graphics read at a glance, where each value is printed and nobody reads a bar against an axis. Product dashboards, reports and anything people compare closely use the axis-based rules above.
+- **When:** 12 bars or fewer, one series, every bar labeled with its value. If a bar can't carry a label, use an axis-based chart.
+- **Columns:** each bar sits in its own Plaster column (`--color-surface`) with `16px` corners, on Canvas. Columns share one width and one baseline, with gutters on the layout grid. The column replaces the chart card and the gridlines; draw no axis, ticks or gridlines.
+- **Bars:** `16px` on all four corners. The bar fills the column's width and sits on the column's bottom edge. Bar heights are proportional to the values from a zero baseline; never truncate the scale. Keep the shortest bar at least `32px` tall so its corners form; if the data would make it shorter, use an axis-based chart instead.
+- **Color:** Iron bars, with Traffic Cone on the one bar the slide is about (usually the latest period). One highlight per chart.
+- **Labels:** inside the top of each column, above the bar: the period or category in `Text-1.5x` 450, then the value in `Text-1.5x` 650, both opaque Iron and `tabular-nums`. On a 1920 × 1080 slide this is 24px.
+- **Headline numbers:** up to two stats may sit above the columns in the slide's stat style, each with a short label.
+- **Reference:** the source line is required, as for every chart (section 2).
 
 ## 5. Interaction & Specific Chart Rules
 - **Tooltips:** Plaster (`--color-surface`) background, 1px solid Iron (`--color-foreground`) border, 16px corners.

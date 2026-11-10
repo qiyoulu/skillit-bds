@@ -34,7 +34,7 @@ The typography system is consistently derived and infinitely scalable. Levels ar
 
 The scale is built on a 16px baseline: `16 → 24 → 32 → 48 → 64 → 96 → 128`.
 
-Use only the defined tiers and their canonical weights below. If a size beyond Text-8x is needed, flag it for token review; do not extrapolate an unapproved token.
+Use only the defined tiers and their canonical weights below. Above Text-8x, only the static display tiers below exist, and only for static layouts. Do not extrapolate any other token.
 ---
 ## The Scale (both typefaces)
 
@@ -49,7 +49,30 @@ Use only the defined tiers and their canonical weights below. If a size beyond T
 | **Text-1x** | `--text-1x` | 16px | 1rem | 12pt | 400 | 600 | 1.40 | 0% |
 | **Text-0.75x** | `--text-0.75x` | 12px | 0.75rem | 9pt | 400 | 600 | 1.40 | 0% |
 
-*(Text-16x was retired. Sizes beyond Text-8x require a canonical token review.)*
+### Static display tiers
+
+For fixed-format layouts only: presentations, print, posters and PDFs. Never for websites, apps or email, which must reflow. These tiers continue the scale (`128 → 192 → 256 → 384 → 512 → 768`), use the same weights, leading and tracking as Text-8x, are Work Sans only, and have no small-viewport variants.
+
+| Level | Token | px | rem | pt | Base Weight | Bolded | Line height | Tracking |
+|---|---|---|---|---|---|---|---|---|
+| **Text-48x** | `--text-48x` | 768px | 48rem | 576pt | Bold (700) | 900 | 0.80 | -6% |
+| **Text-32x** | `--text-32x` | 512px | 32rem | 384pt | Bold (700) | 900 | 0.80 | -6% |
+| **Text-24x** | `--text-24x` | 384px | 24rem | 288pt | Bold (700) | 900 | 0.80 | -6% |
+| **Text-16x** | `--text-16x` | 256px | 16rem | 192pt | Bold (700) | 900 | 0.80 | -6% |
+| **Text-12x** | `--text-12x` | 192px | 12rem | 144pt | Bold (700) | 900 | 0.80 | -6% |
+
+Use one per slide or page, for the single most important word or number.
+
+## Sizing print files
+**Points and pixels.** A screen pixel is 1/96 inch and a point is 1/72 inch, so 16px on screen and 12pt on paper are the same physical size. The pt column above is that conversion (×0.75), not a smaller scale. In Figma, set print artboards at **72px per inch**: PDF export maps 1px to 1pt, so the file prints at true size. Don't draw print artboards at 96px per inch to reuse screen sizes directly; the PDF would export a third too large.
+
+**Two kinds of print, two ways to size:**
+- **Read at hand distance** (business cards, documents, flyers, one-pagers): use the pt column, entered as px in a 72px-per-inch artboard, so type matches its screen tier in real life. In Figma these are the `print` styles (for example `0.75 print`, 9px). Text-0.75x print (9pt) is the minimum.
+- **Read from a distance** (banners, table covers, posters, signage): size by viewing distance, not by conversion. Allow about 1 inch of letter height per 10 feet; trade-show material is read from 5–15 feet. Use the regular tier styles (including the static tiers) at whatever size meets that, and keep body text at 0.5 inch or larger.
+
+**Business cards:** 3.5 × 2 in trim. Everything is Text-0.75x print (9pt, 400) with the name bolded (600), matching bylines and quote attributions. Add 0.5–1pt on uncoated stock only if a proof reads weak.
+
+**Large-format reference (33 × 81 in retractable banner):** headline Text-16x (256pt, about 3.5 in), stats Text-12x (192pt), card headings Text-6x, labels and body Text-4x (64pt, about 0.9 in).
 ---
 ## Small-viewport variants (confirmed against Figma)
 Style names carry a `-s` suffix for small viewports in Figma (e.g., `Text-1s` = Text-1x at small viewports). In CSS, the suffix is `-sm` (e.g., `--text-1x-sm`), matching the breakpoint naming in the spacing tokens.
@@ -90,6 +113,36 @@ Logical decimal token names remain unchanged in prose. In CSS, escape each decim
   --font-primary:   'Work Sans', sans-serif;
   --font-mono:      'JetBrains Mono', monospace;
   /* Primary hierarchy — absolute size naming */
+  /* Text-48x — static layouts only */
+  --text-48x:               48rem;
+  --text-48x-weight:        700;
+  --text-48x-weight-bold:        900;
+  --text-48x-leading:       0.80;
+  --text-48x-tracking:      -0.06em;
+  /* Text-32x — static layouts only */
+  --text-32x:               32rem;
+  --text-32x-weight:        700;
+  --text-32x-weight-bold:        900;
+  --text-32x-leading:       0.80;
+  --text-32x-tracking:      -0.06em;
+  /* Text-24x — static layouts only */
+  --text-24x:               24rem;
+  --text-24x-weight:        700;
+  --text-24x-weight-bold:        900;
+  --text-24x-leading:       0.80;
+  --text-24x-tracking:      -0.06em;
+  /* Text-16x — static layouts only */
+  --text-16x:               16rem;
+  --text-16x-weight:        700;
+  --text-16x-weight-bold:        900;
+  --text-16x-leading:       0.80;
+  --text-16x-tracking:      -0.06em;
+  /* Text-12x — static layouts only */
+  --text-12x:               12rem;
+  --text-12x-weight:        700;
+  --text-12x-weight-bold:        900;
+  --text-12x-leading:       0.80;
+  --text-12x-tracking:      -0.06em;
   /* Text-8x */
   --text-8x:               8rem;
   --text-8x-weight:        700;

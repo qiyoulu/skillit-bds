@@ -1,5 +1,5 @@
 # Logo Tokens — Skillit Kit BDS
-**Last updated:** 2026-10-20
+**Last updated:** 2026-11-09
 **Canonical source:** `tokens/tokens.json5` (machine-readable) for dimension tokens; the SVGs in `assets/logo/` are the fixed graphic assets.
 ---
 The Skillit logo system has four components: mark, wordmark, lockup, and pattern. Use the lockup wherever possible — it's the primary logo. Use the mark alone only in constrained spaces where the lockup doesn't fit well. Never use the wordmark alone. Each logo component is a fixed graphic asset. Do not recreate it, retype it, or export it in raster formats. Use approved SVG files; approved 512px-height PNG exports are reserved for platforms that reject SVG uploads.
@@ -8,6 +8,9 @@ The Skillit logo system has four components: mark, wordmark, lockup, and pattern
 - Always use the approved SVG files. Never recreate the mark or wordmark from scratch.
 - The mark and wordmark are fixed graphic assets — do not retype, redraw, or approximate them.
 - Every rule below is non-negotiable. No exceptions for "just this once" placements.
+---
+## External communications
+**Always include the logo in external communications.** Anything that leaves Skillit carries the Skillit logo: decks, documents, PDFs, emails, social posts, press materials, print and event collateral. Use the lockup; use the mark alone only where the lockup doesn't fit.
 ---
 ## The mark
 The mark is the brand's initial 'S' engineered for **physical grip**. Built from three interlocking blocks on a precise **1:3 shear**, the geometry acts as a **boot tread, machinery tracks, or diamond plate steel**. It encodes **traction**, **structural integrity**, and **forward momentum** into a single form.

@@ -43,6 +43,11 @@ module.exports = {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
       },
       fontSize: {
+        '48x': 'var(--text-48x)',
+        '32x': 'var(--text-32x)',
+        '24x': 'var(--text-24x)',
+        '16x': 'var(--text-16x)',
+        '12x': 'var(--text-12x)',
         '8x': 'var(--text-8x)',
         '6x': 'var(--text-6x)',
         '4x': 'var(--text-4x)',

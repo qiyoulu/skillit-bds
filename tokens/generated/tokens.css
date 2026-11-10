@@ -69,6 +69,31 @@
   --font-mono: 'JetBrains Mono', monospace;
 
   /* typography — primary hierarchy */
+  --text-48x: 48rem;                /* Text-48x, static layouts only */
+  --text-48x-weight: 700;
+  --text-48x-weight-bold: 900;
+  --text-48x-leading: 0.80;
+  --text-48x-tracking: -0.06em;
+  --text-32x: 32rem;                /* Text-32x, static layouts only */
+  --text-32x-weight: 700;
+  --text-32x-weight-bold: 900;
+  --text-32x-leading: 0.80;
+  --text-32x-tracking: -0.06em;
+  --text-24x: 24rem;                /* Text-24x, static layouts only */
+  --text-24x-weight: 700;
+  --text-24x-weight-bold: 900;
+  --text-24x-leading: 0.80;
+  --text-24x-tracking: -0.06em;
+  --text-16x: 16rem;                /* Text-16x, static layouts only */
+  --text-16x-weight: 700;
+  --text-16x-weight-bold: 900;
+  --text-16x-leading: 0.80;
+  --text-16x-tracking: -0.06em;
+  --text-12x: 12rem;                /* Text-12x, static layouts only */
+  --text-12x-weight: 700;
+  --text-12x-weight-bold: 900;
+  --text-12x-leading: 0.80;
+  --text-12x-tracking: -0.06em;
   --text-8x: 8rem;                /* Text-8x, mobile: clamp(6rem, 5.17rem + 3.54vw, 8rem) */
   --text-8x-weight: 700;
   --text-8x-weight-bold: 900;
