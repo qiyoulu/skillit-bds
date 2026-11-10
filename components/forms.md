@@ -9,7 +9,7 @@
 - Touch targets minimum 40px in both dimensions (app).
 
 ## Input fields
-Fields are **Plaster on Canvas** — the surface separates them from the ground. State is signaled by a status indicator (drawn icon) plus message text, never by changing the border. Structural borders remain Iron; documented checkbox and chip selection paint is an exception, not input validation paint (see `tokens/docs/color.md`). Corner radius is `0` on input fields — inputs align flush with cards and content grids; container rounding belongs to cards (16px) and button-like controls (pill). Editable inputs remain actionable but use 0px; small selection/status circles are approved geometry exceptions. No drafting line — inputs separate purely through their Plaster surface against the Canvas ground.
+Fields are **Plaster on Canvas** — the surface separates them from the ground. State is signaled by a status indicator (drawn icon) plus message text, never by changing the border. Structural borders remain Iron; documented checkbox and chip selection paint is an exception, not input validation paint (see `tokens/docs/color.md`). Corner radius is `0` on input fields — inputs align flush with cards and content grids; container rounding belongs to cards (16px) and button-like controls (pill). Editable inputs remain actionable but use 0px; small selection/status circles are approved geometry exceptions, and the search field is a pill (see Search field below). No drafting line — inputs separate purely through their Plaster surface against the Canvas ground.
 ```css
 .input {
   background-color: var(--color-surface); /* Plaster — field separated from Canvas ground */
@@ -60,10 +60,59 @@ When an input field carries an icon — a status indicator, a trailing action, a
 | Hugs | The field is inline with its action or status — search fields with a trailing search icon, inline validation status, entries inside a denser row | Icon immediately after the field, on the right | 4px fixed — a single 4px gap between the field's visible edge and the icon. |
 
 - **Icon on the right, label on the left.** Same direction as buttons. A leading icon on the left of a field is a different pattern (a prefix or a decorative status mark) and is not covered here — when it appears, it is not paired with the field as an action, and the gap rule does not apply.
-- **Trailing action icons (search, clear, open calendar) are hugging by default.** A search field with a search icon on the right is the most common case — the icon is part of the field's interaction surface and the pair is exactly as wide as the field content. Use the 4px gap. The clear/x icon on a filled field is the same case.
+- **Trailing action icons (clear, open calendar) are hugging by default.** The icon is part of the field's interaction surface and the pair is exactly as wide as the field content. Use the 4px gap. Search is its own pattern: the submit button sits inside the pill field (see Search field). The clear/x icon on a filled field is the same case.
 - **Status icons beside a field (error octagon, success checkmark) sit in the field's row, on the right, and do not touch the field.** They are a separate element from the input — they live in the row, after the field, with the same gap the row's layout produces. Do not glue a status icon to the field's edge with a 4px gap unless the whole field+status pair is hugging (rare for validation states — usually the field has room).
 - **The 4px gap is between field and icon, not between icon and whatever is after it.** When a hugging field+icon pair sits in a row with other content after it, the gap on the far side of the icon is whatever the row's layout produces — do not extend the 4px inward to the next element.
 - **Do not put a second icon on the left of the field just because the right has one.** A field with an icon on both sides is a different construct (prefix + suffix) and is not in the current brand vocabulary. If a design calls for it, treat each side separately and do not apply the 4px rule symmetrically.
+
+## Search field
+A pill field with a round Traffic Cone search button inside its right end, as on the help center (Webflow `.help-search.in-form` + `.search-submit`). The pill is the one exception to 0px inputs: search is a standalone, button-like control rather than a field in a form grid, and the submit button nests inside it.
+
+| Part | Spec |
+|---|---|
+| Field | Plaster (`--color-surface`) on Canvas, `--radius-pill`, no border, 48px minimum height (`--space-12`) |
+| Field padding | `--space-2` (8px) top and bottom, `--space-6` (24px) left, `--space-16` (64px) right so text never runs under the button |
+| Text | Text-1x, weight 400, Iron (`--color-foreground`); placeholder `--color-foreground-hover` |
+| Button | 40px Traffic Cone (`--color-primary`) circle, inset `--space-1` (4px) from the field's right end, vertically centered |
+| Button icon | 24px search icon, Iron, centered; no visible text |
+| Field hover | `--color-surface-hover` |
+| Button hover | `--color-primary-hover` |
+| Focus | Field and button each get the 2px Traffic Cone ring, 2px offset |
+
+```css
+.search { position: relative; }
+.search-input {
+  width: 100%;
+  min-height: var(--space-12);                       /* 48px */
+  padding: var(--space-2) var(--space-16) var(--space-2) var(--space-6);
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  font: var(--text-1x-weight) var(--text-1x) / var(--text-1x-leading) var(--font-primary);
+}
+.search-input::placeholder { color: var(--color-foreground-hover); }
+.search-input:hover { background-color: var(--color-surface-hover); }
+.search-submit {
+  position: absolute;
+  top: 50%;
+  right: var(--space-1);                             /* 4px inset */
+  transform: translateY(-50%);
+  width: var(--touch-target-min);                    /* 40px */
+  height: var(--touch-target-min);
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary) url("search.svg") center / var(--space-6) no-repeat; /* 24px Iron icon */
+}
+.search-submit:hover { background-color: var(--color-primary-hover); }
+.search-input:focus-visible,
+.search-submit:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+```
+
+- **Label.** The field keeps a real `<label>`, visually hidden (the help center uses "Search"); the placeholder describes what is searched ("Search support articles") and is not the label.
+- **Button name.** The button is a real submit button named "Search" (`aria-label` or value text hidden), with the icon decorative. It is a separate 40px target from the field.
+- **Iron on Traffic Cone** is 4.5443:1 for the icon; Plaster field on Canvas separates by surface alone, as other inputs do.
+- **Graphics.** Illustrations that show a search (e.g. the homepage enterprise map) draw this same field at 2×: 96px pill, 48px left inset, 80px button inset 8px, 48px icon.
 
 ## Dropdown
 A native select with a decorative down-chevron in a sibling wrapper. The wrapper uses a CSS mask painted with its own `currentColor` (Iron); an external SVG background image does **not** inherit the element’s text color. Keep the chevron down while focused: native select focus does not prove that the popup is open. Do not reference an absent up-chevron asset or simulate an open state with `:focus`.

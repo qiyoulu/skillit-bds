@@ -458,7 +458,7 @@ In this system, shape indicates whether an element is interactive or static. We 
 
 - **Static elements:** `16px` radius. Applied to all cards, layout panels, images, photos, and containers.
 - **Button-like actions:** `9999px` (fully rounded pill, `--radius-pill`). Applied to buttons and interactive chips, not every link or editable control.
-- **Editable controls and checkbox boxes:** `0px`; inputs remain actions despite square geometry. Radio indicators use `50%` circular geometry. Inner indicators show state; status icons, progress fills, and data marks are not actions.
+- **Editable controls and checkbox boxes:** `0px`, except the search field, which is a pill with its submit button inside (`components/forms.md`); inputs remain actions despite square geometry. Radio indicators use `50%` circular geometry. Inner indicators show state; status icons, progress fills, and data marks are not actions.
 - **Structural borders:** Iron; documented Cone checkbox, radio, and selection-chip indicator strokes/fills are selection exceptions, not permission for semantic container borders.
 - **Focus:** Default to a visible 2px solid Traffic Cone outline with 2px offset. Cone on Canvas is 2.6958:1, below the 3:1 UI/focus contrast floor; on Plaster it is 3.0177:1 and meets that floor. Keep the requested orange treatment; do not claim an AA pass on Canvas or silently substitute Iron. Check the actual adjacent surface, clipping, keyboard visibility, and rendered native controls. Preserve native focus in forced-colors mode; unresolved surface contrast needs review.
 - **Intermediate radii:** Banned. Do not use `4px`, `8px`, or slightly rounded corners anywhere.
