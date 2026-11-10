@@ -399,7 +399,7 @@ A **widow** is a single word left dangling on its own line at the end of a parag
 
 ### Typography Do / Don’t
 
-**Email typography:** Use Text-1x (16px / 1rem), Work Sans weight 400, line-height 1.4 as the default and minimum for readable email text—including signatures, footer contacts, addresses, copyright, legal links, captions, and source references. Use 600 for emphasis. Do not apply the general 12px Text-0.75x metadata exception to email. Larger canonical heading/display tiers remain available for marketing emails. Where variable weight 450 is unsupported, use the nearest supported regular weight and verify rendering. Allow contact rows to wrap on narrow screens; never shrink type or force horizontal overflow to keep them on one line.
+**Email typography:** Use Text-1x (16px / 1rem), Work Sans weight 400, line-height 1.4 as the default and minimum for readable email text—including footer contacts, addresses, copyright, legal links, captions, and source references. Use 600 for emphasis. Exception: personal email signatures match the email client's default body text (13px in Gmail) so they read as part of the message; set them no smaller than that default. Do not apply the general 12px Text-0.75x metadata exception to email. Larger canonical heading/display tiers remain available for marketing emails. Where variable weight 450 is unsupported, use the nearest supported regular weight and verify rendering. Allow contact rows to wrap on narrow screens; never shrink type or force horizontal overflow to keep them on one line.
 
 
 - **Do** use sentence case for authored brand copy; retain documented source-capitalization exceptions.

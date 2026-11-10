@@ -157,7 +157,7 @@ Keep one main point on each slide. Use a clear heading, a short explanation, and
 
 ## Email
 
-Use at least 16px for all readable email text. This includes signatures, contact details, addresses, legal links, copyright, captions, and source references. Footers are not an exception.
+Use at least 16px for all readable email text. This includes contact details, addresses, legal links, copyright, captions, and source references. Footers are not an exception. Personal email signatures are: they match the email app's default text size (13px in Gmail) so they read as part of the message.
 
 Use Work Sans where supported and check the result in the email tools your audience uses. Keep text and buttons left-aligned. Let contact details wrap on a phone rather than shrinking them.
 
