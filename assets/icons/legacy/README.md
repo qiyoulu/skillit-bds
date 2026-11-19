@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-10-08
 
-This folder preserves earlier icon filenames and artwork for consumers that need a staged migration to Skillit BDS v1.2. New work uses the 90 canonical SVGs directly under `assets/icons/`.
+This folder preserves earlier icon filenames and artwork for consumers that need a staged migration to Skillit BDS v1.2. New work uses the 93 canonical SVGs directly under `assets/icons/`.
 
 ## What is preserved
 

@@ -13,6 +13,12 @@
 - **Weights.** Labels at the tier's base weight, values at its bolded weight (Text-1x: 400 and 600). Do not use opacity fades to rank cells.
 - **Status in a row.** Pair an icon with a label, never color alone. See `rules/iconography.md`.
 
+## Why rows alternate instead of ruling
+Alternating fills are the best-supported row treatment, not only a style choice:
+- **Accuracy:** In Jessica Enders' studies for *A List Apart*, alternating-row shading never hurt reading and improved accuracy on several harder lookups under time pressure ([2008](https://alistapart.com/article/zebrastripingdoesithelp/), [2010](https://alistapart.com/article/zebrastripingmoredataforthecase/)). A 2024 IEEE VIS study found striping helped comparison tasks more than in-cell color or bars ([paper](https://www.ieeevis.org/year/2024/program/paper_v-full-1288.html)).
+- **Preference:** Of about 1,200 people, most ranked single-color striping as most helpful, then ruled lines, then plain tables. Enders recommends striping first and lines second.
+- **Less noise:** Design systems that do allow dividers ask designers to try whitespace first and warn that overused dividers become clutter ([Material](https://m1.material.io/components/dividers.html), [Visa](https://design.visa.com/components/divider/usage/)). Fills give the row separation without adding marks, which keeps the no-layout-lines rule intact.
+
 ## Do not
 - Do not draw a rule between rows, under a header row, or around the table.
 - Do not use a third fill (a tinted or grey row) to mark a selected row. Use the checkbox or selection pattern in `components/checkboxes.md`.

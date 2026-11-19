@@ -108,7 +108,7 @@ Designers, marketers, writers, engineers, and anyone who has ever asked “does 
 **The Accent:** Traffic Cone (orange). Use orange for primary actions, selection controls, and focus. Repetition is allowed when it serves the interaction. Keep one dominant CTA per section; supporting controls should not compete with it. Orange in charts follows its assigned data role. Never use it as decoration.
 **The Photos:** Real workers doing real work. Shot at eye level. No color grading or filters.
 **The Copy:** Direct, unhedged, data-backed. Don’t say revolutionize or disrupt.
-**The Assets:** Single-color utility icons use `currentColor`; the 14 approved exports preserve their source paint and opaque contrasting layers. Use approved logo and graphic assets without altering their paint. Inline utility icons for dynamic host tinting; inline multicolor components need independent layer styling. The 75 frozen legacy exports are archival content, not part of the current 90-icon set.
+**The Assets:** Single-color utility icons use `currentColor`; the 14 approved exports preserve their source paint and opaque contrasting layers. Use approved logo and graphic assets without altering their paint. Inline utility icons for dynamic host tinting; inline multicolor components need independent layer styling. The 75 frozen legacy exports are archival content, not part of the current 93-icon set.
 **The Rule:** Technology should make humans more essential, not more expendable. Start from the worker’s perspective.
 
 ---
@@ -251,7 +251,7 @@ Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard 
 
 **Icon naming:** Name the visible form, not the feedback state. Use Heroicons vocabulary for equivalent glyphs without replacing Skillit artwork. `share.svg` is the three-node symbol; `arrow-up-on-square.svg` is the upward-arrow/square glyph. Follow the [naming and migration guide](../components/icons.md#naming-and-migration); previous names are history, not shipped aliases. Update consumer paths and resolvers together, taking care with the reused `phone` and `user-circle` IDs.
 
-**Legacy compatibility:** The [frozen legacy archive](../assets/icons/legacy/README.md) preserves 75 prior-ID SVGs outside the 90-icon canonical set. Existing consumers must explicitly select its folder or copied legacy resolver; old root paths are not automatically restored. Do not apply new geometry or paint rules to archived bytes. Migrate to the canonical IDs using the documented map.
+**Legacy compatibility:** The [frozen legacy archive](../assets/icons/legacy/README.md) preserves 75 prior-ID SVGs outside the 93-icon canonical set. Existing consumers must explicitly select its folder or copied legacy resolver; old root paths are not automatically restored. Do not apply new geometry or paint rules to archived bytes. Migrate to the canonical IDs using the documented map.
 
 **Delivered core assets** in [`assets/icons/`](../assets/icons/):
 
@@ -270,7 +270,7 @@ Semantic status icons use error = Toolbox red (`--color-error`), warning = Hard 
 - Concrete worker: `concrete.svg`
 - Generic trade and worker: `wrench.svg`, `user-hat.svg`
 
-**Planned metaphors; no dedicated SVG delivered:** welder, certifications, safety credentials, per diem, and travel readiness. Do not imply these files exist or synthesize replacements without approval. The current imported export contains 100 SVGs, including 15 additions beyond the earlier 75-asset comparison. See the [complete inventory and rendering contracts](../components/icons.md#complete-imported-inventory). Use exact user-exported names, including `saw`, `concrete`, `pipe`, `user-hat`, and `user-round`; filenames are independent of semantic component status labels. New `phone.svg` is a handset, distinct from `device-phone-mobile.svg`; new `user-circle.svg` is distinct from `user-round.svg`; `arrow-up-on-square.svg` is supplied separately from `share.svg`. Coordinate consumer path and asset updates; this BDS migration does not deploy Rails/workspace changes.
+**Planned metaphors; no dedicated SVG delivered:** welder, certifications, safety credentials, per diem, and travel readiness. Do not imply these files exist or synthesize replacements without approval. The current imported export contains 103 SVGs, including 18 additions beyond the earlier 75-asset comparison. See the [complete inventory and rendering contracts](../components/icons.md#complete-imported-inventory). Use exact user-exported names, including `saw`, `concrete`, `pipe`, `user-hat`, and `user-round`; filenames are independent of semantic component status labels. New `phone.svg` is a handset, distinct from `device-phone-mobile.svg`; new `user-circle.svg` is distinct from `user-round.svg`; `arrow-up-on-square.svg` is supplied separately from `share.svg`. Coordinate consumer path and asset updates; this BDS migration does not deploy Rails/workspace changes.
 
 ---
 
