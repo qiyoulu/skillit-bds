@@ -102,6 +102,14 @@ On desktop, the full "Skillit" lockup is visible. When the viewport scales down,
 **Example nav labels (not a live-site inventory):** How it works · Our network · Jobs · About us · Resources
 **Right side:** Primary button ("Join") — Traffic Cone, tactile padding.
 
+## App shell (Skillit Hire)
+Logged-in product pages use a header across the full width with a sidebar under it. The header carries what applies everywhere; the sidebar carries the product's own sections.
+
+- **Header:** the 64px Canvas row from Primary navigation, spanning the viewport. Left to right: the Hire lockup at `--logo-height` (32px; see `tokens/docs/logo.md`), global search, then flush right any link back to the previous product and the account menu (avatar, name, `chevron-down`). Side padding is `--space-gutter`, so the lockup lines up with the sidebar's icons.
+- **Sidebar:** 240px wide, under the header, holding only top-level product sections (icon plus Text-1x label, 1–2 words). No action buttons: actions such as "New pool" live on their page. Its fill is an open question (an Iron sidebar is not yet an approved Iron surface; see `rules/layout.md`).
+- **Content:** `--space-gutter` side padding (32px from 768px) and `--space-8` (32px) above the first element. Content keeps the 1200px cap from `rules/layout.md`.
+- **Why both bars:** the header holds global tools that are not product sections (search, account, the way back to the old product); a sidebar alone would mix the two, and the 244px Hire lockup does not fit a 240px sidebar with its padding. This follows IBM Carbon's UI shell, where the header holds the product name and global tools and the side panel holds product navigation ([header](https://carbondesignsystem.com/components/UI-shell-header/usage/), [left panel](https://carbondesignsystem.com/components/UI-shell-left-panel/usage/)).
+
 ## Mega menu panel (marketing site)
 For a nav item that leads to a family of offerings, each with its own page. A plain destination stays a plain link. The panel is a marketing-site pattern, not an app one.
 

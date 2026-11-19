@@ -36,7 +36,7 @@ The header logo is always **32px tall**, regardless of whether it's the lockup o
 
 | Context | Logo | Token | Value |
 |---|---|---|---|
-| App header (Canvas bg) | mark only | `--logo-height` | 32px |
+| App header (Canvas bg, Skillit Hire) | Hire lockup, every width (see below) | `--logo-height` | 32px |
 | Public topnav (light bg) | full lockup | `--logo-height` | 32px |
 | Marketing site header | full lockup | `--logo-height` | 32px |
 | Docs header | full lockup | `--logo-height` | 32px |
