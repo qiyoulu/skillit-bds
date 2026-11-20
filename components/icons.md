@@ -35,13 +35,13 @@ SVG exports are stored in the Rails app at `app/assets/images/bds/icons/`. Rails
 Component CSS recipes with `url()` are intended to be assembled into a consumer-owned stylesheet beside `tokens/generated/tokens.css`, with the repository asset tree preserved. From that directory, `../../assets/icons/check.svg` resolves to the supplied asset. This stylesheet is a deployment convention, not a generated file shipped by this repo. If CSS is moved, bundled, or pasted into an inline `<style>` (including Squarespace Custom CSS), rewrite URLs to the deployed asset paths; inline CSS resolves against the HTML document, not this Markdown file. Prose asset paths are repository-relative, not literal CSS URLs.
 
 ### Tinting and status
-The current imported export contains **103 SVGs**, including 18 additional assets beyond the earlier 75-asset comparison. The current set contains **89 tintable utility exports** using `currentColor` and **14 approved exports** retaining their source paint: 12 semantic/multicolor, plus the single-color `checkbox-unchecked.svg` and `radio-unchecked.svg`. Future raw exports may still need normalization. Never flatten all layers into one inherited color or substitute older geometry.
+The current imported export contains **116 SVGs**, including 31 additional assets beyond the earlier 75-asset comparison. The current set contains **101 tintable utility exports** using `currentColor` and **15 approved exports** retaining their source paint: 13 semantic/multicolor, plus the single-color `checkbox-unchecked.svg` and `radio-unchecked.svg`. Future raw exports may still need normalization. Never flatten all layers into one inherited color or substitute older geometry.
 
 - `check.svg` is the revised standalone angular check; `check-circle.svg` has a green circular ground and opaque white check. `x-octagon.svg`, `exclamation-triangle.svg`, and both information variants also retain semantic-colored grounds and opaque white inner glyphs, not transparent cutouts. Render these as full images or inline components; a combined alpha mask erases their glyph contrast. Only the standalone glyph is suitable for checkbox/chip inner masks.
 - `play.svg` is a standalone filled triangle, not a circular knockout; `pause.svg` is a standalone pause glyph. `play-circle.svg` and `pause-circle.svg` retain opaque dark circles and white inner glyphs. White areas are painted layers, not transparent knockouts.
 - `switch-on.svg` has an opaque Plaster pill and Bottle Glass green circular thumb on the right; `switch-off.svg` has an opaque Plaster pill and dark thumb on the left. Neither uses a translucent track. This immediate-setting switch treatment is separate from Orange checkbox/radio/chip selection; do not recolor its enabled thumb Orange merely because it is interactive.
 - `radio-checked.svg` retains an opaque Orange disc and white center. `radio-unchecked.svg` is a solid disc, not an outline ring. Preserve supplied state geometry; its filename does not authorize inventing an unselected outline or translucent ground.
-- `checkbox-checked.svg` retains an Orange box and contrasting dark check. See the approved [checkbox rendering contract](./checkboxes.md); a combined mask cannot preserve both colors.
+- `checkbox-checked.svg` retains an Orange box and contrasting dark check; `checkbox-bar.svg` (partly selected) retains an Orange box and dark bar. See the approved [checkbox rendering contract](./checkboxes.md); a combined mask cannot preserve both colors.
 
 Inline multicolor SVGs or render inline components for independent layer control. External `<img>` rendering preserves source colors but cannot inherit host color; a single CSS mask destroys contrasting opaque layers. Use canonical tokens for approved host/layer overrides and preserve geometry and opacity. Literal source paint is not permission to define new UI palette values. These SVGs are state indicators, not working controls: retain native inputs or accessible buttons, labels, keyboard behavior, and submission semantics.
 
@@ -58,7 +58,7 @@ Retain each supplied silhouette and accompanying label. Toast panels are Plaster
 
 ## Legacy compatibility
 
-The [deprecated archive](../assets/icons/legacy/README.md) contains **75 frozen legacy SVGs**, separate from the **93 canonical icons**. It preserves the 75 pre-v1.2-migration files; unpublished temporary export IDs are not compatibility assets. The manifest maps each legacy filename to its canonical target and verifies archived bytes; do not normalize or redraw the archive.
+The [deprecated archive](../assets/icons/legacy/README.md) contains **75 frozen legacy SVGs**, separate from the **106 canonical icons**. It preserves the 75 pre-v1.2-migration files; unpublished temporary export IDs are not compatibility assets. The manifest maps each legacy filename to its canonical target and verifies archived bytes; do not normalize or redraw the archive.
 
 Consumers must explicitly select `assets/icons/legacy/` or their copied legacy resolver directory. Old root paths are not automatically restored, and matching Heroicons IDs does not reroute a helper. This is a staged-migration source, not a claim of unchanged-path SemVer compatibility. Keep legacy mobile `phone` and round-cropped `user-circle` separate from the current handset and enclosed-circle assets. See the archive README for migration steps.
 
@@ -124,7 +124,7 @@ The previous IDs below are migration history, not additional shipped aliases. Up
 
 ## Complete imported inventory
 
-All 103 filenames below are delivered assets, not planned metaphors. Resolver IDs are the exact filenames without `.svg`. Semantic props/classes such as `error`, `warning`, `success`, and `info` remain independent of filenames. User-selected `saw`, `concrete`, `pipe`, `user-hat`, and `user-round` are authoritative; do not substitute recommended library names.
+All 116 filenames below are delivered assets, not planned metaphors. Resolver IDs are the exact filenames without `.svg`. Semantic props/classes such as `error`, `warning`, `success`, and `info` remain independent of filenames. User-selected `saw`, `concrete`, `pipe`, `user-hat`, and `user-round` are authoritative; do not substitute recommended library names.
 
 - `arrow-down-circle.svg`, `arrow-down-left.svg`, `arrow-down-right.svg`, `arrow-down.svg`, `arrow-left-circle.svg`
 - `arrow-left-right.svg`, `arrow-left.svg`, `arrow-path.svg`, `arrow-right-circle.svg`, `arrow-right.svg`
@@ -132,7 +132,7 @@ All 103 filenames below are delivered assets, not planned metaphors. Resolver ID
 - `arrow-up-tray.svg`, `arrow-up.svg`, `arrow-uturn-down.svg`, `arrow-uturn-left.svg`, `arrow-uturn-right.svg`
 - `arrow-uturn-up.svg`, `bars-3.svg`, `bell-alert.svg`, `bell-slash.svg`, `bell.svg`
 - `bolt-circle.svg`, `bolt.svg`, `bookmark.svg`, `briefcase.svg`, `calendar.svg`
-- `check-circle.svg`, `check.svg`, `checkbox-checked.svg`, `checkbox-unchecked.svg`, `chevron-down.svg`
+- `check-circle.svg`, `check.svg`, `checkbox-bar.svg`, `checkbox-checked.svg`, `checkbox-unchecked.svg`, `chevron-down.svg`
 - `chevron-left.svg`, `chevron-right.svg`, `chevron-up.svg`, `clock.svg`, `cog-6-tooth.svg`
 - `concrete.svg`, `credit-card.svg`, `currency-dollar.svg`, `device-phone-mobile.svg`, `document-text.svg`
 - `envelope.svg`, `excavator.svg`, `exclamation-triangle.svg`, `eye-slash.svg`, `eye.svg`
@@ -147,6 +147,13 @@ All 103 filenames below are delivered assets, not planned metaphors. Resolver ID
 - `user-group.svg`, `user-hat.svg`, `user-headset.svg`, `user-round.svg`, `user.svg`
 - `users.svg`, `whatsapp.svg`, `wrench.svg`, `x-circle.svg`, `x-mark.svg`
 - `x-octagon.svg`, `x.svg`, `youtube.svg`
+- `archive-box.svg`, `chat-bubble-left.svg`, `circle.svg`, `circle-empty.svg`, `circle-quarter.svg`
+- `circle-half.svg`, `circle-three-quarter.svg`, `ellipsis-horizontal.svg`, `hard-hat.svg`, `minus.svg`
+- `no-symbol.svg`, `slash-circle.svg`
+
+### Skillit Hire additions
+
+Twelve tintable (`currentColor`) icons added for Skillit Hire. `circle` is a solid disc; `circle-empty`, `circle-quarter`, `circle-half` and `circle-three-quarter` are the candidate-status progress family, named by how full the circle is. `no-symbol` (outlined circle with a slash, Heroicons name) marks closed statuses; `slash-circle` is a separate solid disc with a cut-out slash. `hard-hat` marks trade (replacing `wrench` in Hire filters); `user-hat` remains the worker icon. `chat-bubble-left` is Reach out, `ellipsis-horizontal` opens row and card menus, `archive-box` is archive, and `minus` pairs with `plus`.
 
 ### Additional exports beyond the earlier comparison
 

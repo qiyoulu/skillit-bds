@@ -59,7 +59,7 @@ Consumer applications own their stylesheets, components, and copied assets. Revi
 
 ### Icons and migration
 
-The [icon guide](./components/icons.md#naming-and-migration) covers **93 canonical icons** and the previous-to-current ID map. Matching Heroicons names does not automatically redirect a Heroicons helper to Skillit artwork.
+The [icon guide](./components/icons.md#naming-and-migration) covers **106 canonical icons** and the previous-to-current ID map. Matching Heroicons names does not automatically redirect a Heroicons helper to Skillit artwork.
 
 The [legacy archive](./assets/icons/legacy/README.md) contains **75 frozen icons**. Consumers must explicitly select its folder or copied resolver; old root paths are not automatically restored. Do not normalize or redraw archived files.
 

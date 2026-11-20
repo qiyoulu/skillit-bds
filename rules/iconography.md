@@ -33,7 +33,7 @@ The following icons constitute the core structural subset; the complete current 
 11. `arrow-left.svg` (Back/return)
 12. `chevron-down.svg` (Dropdown/expand)
 
-`arrow-up.svg` and `arrow-down.svg` are delivered directional exports. Dedicated `plus.svg` / `plus-circle.svg`, `information-circle.svg` / `information-square.svg`, and `question-mark-circle.svg` are also supplied. See the [complete 103-asset inventory](../components/icons.md#complete-imported-inventory) and [media/control rendering contract](../components/icons.md#tinting-and-status). Preserve fresh exported geometry, not older knockout or translucent-layer assumptions. Asset IDs do not replace semantic component status labels.
+`arrow-up.svg` and `arrow-down.svg` are delivered directional exports. Dedicated `plus.svg` / `plus-circle.svg`, `information-circle.svg` / `information-square.svg`, and `question-mark-circle.svg` are also supplied. See the [complete 116-asset inventory](../components/icons.md#complete-imported-inventory) and [media/control rendering contract](../components/icons.md#tinting-and-status). Preserve fresh exported geometry, not older knockout or translucent-layer assumptions. Asset IDs do not replace semantic component status labels.
 
 ### Secondary brand marks
 Platform marks in `assets/icons/` (`facebook.svg`, `instagram.svg`, `linkedin.svg`, `x.svg`, `whatsapp.svg`, and `youtube.svg`) are approved social marks, not core interface icons. Their external brand geometry is authoritative and is exempt from the Skillit 10×10 grid and no-bezier construction rules. They must still use `fill="currentColor"` and must not be altered.
@@ -44,7 +44,7 @@ Platform marks in `assets/icons/` (`facebook.svg`, `instagram.svg`, `linkedin.sv
 - Follow the [previous-to-current ID mapping](../components/icons.md#previous-ids--current-ids), including the reused `phone` and `user-circle` names. Migrate consumer paths, assets, resolver IDs, and tests together; do not silently reskin or deploy another repository.
 
 ## Legacy archive
-The [legacy icon archive](../assets/icons/legacy/README.md) is deprecated, frozen artwork for explicit old-version consumers, not part of the 93-icon canonical set. Preserve its original bytes and names; do not normalize, recolor, or redraw it. Its manifest records current migration targets, including reused `phone` and `user-circle` IDs. Callers must change their base path or resolver to select it; there are no root-path redirects.
+The [legacy icon archive](../assets/icons/legacy/README.md) is deprecated, frozen artwork for explicit old-version consumers, not part of the 106-icon canonical set. Preserve its original bytes and names; do not normalize, recolor, or redraw it. Its manifest records current migration targets, including reused `phone` and `user-circle` IDs. Callers must change their base path or resolver to select it; there are no root-path redirects.
 
 ## 4. Implementation Rules
 - **Coloring:** Single-color icons inherit their color from the parent text element (`fill="currentColor"`), allowing them to automatically adapt to their UI context (Iron on Canvas, Iron on Traffic Cone, etc.).

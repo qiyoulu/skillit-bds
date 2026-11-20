@@ -4,25 +4,31 @@
 ## Rules
 - All components use tokens from `tokens/docs/color.md`, `tokens/docs/typography.md`, and `tokens/docs/spacing.md`. Never hardcode values.
 - Every interactive element needs a visible focus state: 2px solid Traffic Cone (`--color-primary`), 2px offset. On Canvas this is a documented contrast failure (2.6958:1); on Plaster it narrowly meets 3:1 (3.0177:1). Keep Orange in authored contexts, preserve native and forced-colors focus, and verify the actual adjacent surface; see `rules/accessibility.md`.
-- Touch targets minimum 40×40px (app). The checkbox itself is 16×16 but the label + checkbox pair forms the touch target.
+- Touch targets minimum 40×40px (app). The checkbox box is 20×20 in a 24×24 slot, but the label + checkbox pair forms the touch target.
 
-## Exported checkbox SVGs
+## Checkbox SVGs (canonical)
 
-`checkbox-unchecked.svg` retains its source fill (Traffic Cone) as a control export. `checkbox-checked.svg` also retains its source fills: a Traffic Cone box and an Iron check. Neither responds to the host's `color`. Engineers do not edit SVG paint.
+The box is drawn with the exported SVGs, not rebuilt in CSS. Figma and code use the same files, so they cannot drift:
 
-Both checkbox SVGs work inline or as an external `<img>`, since their colors are fixed. Do not use the combined checked SVG as a single CSS mask: masks flatten both colors. The separate `check.svg` mask recipe below remains supported. Keep the real native checkbox for interaction and submission; an SVG alone is not a checkbox control.
+| State | File |
+|---|---|
+| Unchecked | `checkbox-unchecked.svg` |
+| Checked | `checkbox-checked.svg` |
+| Indeterminate (partly selected) | `checkbox-bar.svg` |
+
+All three keep their source paint (Traffic Cone box, Iron glyph) and do not respond to the host's `color`. Engineers do not edit SVG paint or redraw the glyphs. Use them as background images or `<img>`, never as a single CSS mask (masks flatten both colors). Keep the real native checkbox for interaction and submission; an SVG alone is not a checkbox control.
 
 ## Geometry
-- **Box size:** 16×16px (`--space-4` × `--space-4`)
-- **Border radius:** 0px — checkboxes are 16×16px square boxes. The 16px size aligns with `--space-4`; the corners are flush (0px) because the box is a status indicator, not a container. The shape-coding rule (16px = static, pill = actionable) applies to containers and buttons, not to small status marks.
-- **Touch target:** the full row (checkbox + label) is the touch target, not the 16×16 box alone
+- **Box size:** the SVGs are 24×24px (`--space-6`); the drawn box inside is 20×20 with a 2px inset. Render the SVG at 24px, never scaled, so the 2px stroke stays crisp and the slot lines up with 24px icons.
+- **Border radius:** 0px — checkboxes are square boxes. The corners are flush (0px) because the box is a status indicator, not a container. The shape-coding rule (16px = static, pill = actionable) applies to containers and buttons, not to small status marks.
+- **Touch target:** the full row (checkbox + label) is the touch target, not the 20×20 box alone
 
 ## States
-- **Unchecked:** 16×16, 2px Traffic Cone (`--color-primary`) stroke, Plaster (`#FFFFFF`) fill. Orange border on white fill — the selection-control color, matching the focus ring.
-- **Checked:** 16×16, Traffic Cone fill, Iron (`--color-foreground`) checkmark icon centered inside. The fill invert + checkmark is the universal "selected" pattern.
-- **Indeterminate (partly selected):** 16×16, Traffic Cone fill, Iron horizontal bar (8×2px) centered inside. Used only by a parent checkbox, such as a table header, when some but not all of its rows are checked. Clicking it checks every row; clicking again clears them. Set it with the input's `indeterminate` property (script only, no HTML attribute); it exposes `aria-checked="mixed"` natively.
+- **Unchecked** (`checkbox-unchecked.svg`): 2px Traffic Cone (`--color-primary`) frame, transparent inside so the row surface shows. Orange border — the selection-control color, matching the focus ring.
+- **Checked** (`checkbox-checked.svg`): Traffic Cone fill, Iron (`--color-foreground`) check inside. The fill invert + checkmark is the universal "selected" pattern.
+- **Indeterminate (partly selected)** (`checkbox-bar.svg`): Traffic Cone fill, Iron horizontal bar inside. Used only by a parent checkbox, such as a table header, when some but not all of its rows are checked. Clicking it checks every row; clicking again clears them. Set it with the input's `indeterminate` property (script only, no HTML attribute); it exposes `aria-checked="mixed"` natively.
 
-- **Hover:** the whole row is the target, so hovering the label hovers the box. Unchecked: the 2px stroke moves from `--color-primary` to `--color-primary-hover`; the Plaster fill stays. Checked: stroke and fill both move to `--color-primary-hover`; the Iron glyph is unchanged. Unchecked never takes `--color-surface-hover` as a fill: the Cone stroke on Plaster hover is 2.2431:1, under the 3:1 graphical floor. Contrast on hover: stroke on Plaster 3.9136:1, on Canvas 3.4961:1; Iron glyph on the checked hover fill 3.5041:1 (non-text, passes 3:1). Disabled rows do not respond. The label does not change color.
+- **Hover:** the whole row is the target, so hovering the label hovers the box. Because the box is a fixed-paint SVG, it does not change color on hover; the row's pointer cursor is the hover cue. Disabled rows do not respond. The label does not change color.
 
 The actual input remains keyboard-focusable and owns `checked`, `disabled`, submission, and the accessible name. Its native visual appearance is replaced by a sibling square; do not put pseudo-elements on the input. CSS URLs below assume a component stylesheet deployed beside `tokens/generated/tokens.css`; see `icons.md` for relocation rules.
 
@@ -48,46 +54,16 @@ The actual input remains keyboard-focusable and owns `checked`, `disabled`, subm
   clip-path: inset(50%);
 }
 .checkbox-box {
-  box-sizing: border-box;
-  width: var(--space-4);
-  height: var(--space-4);
-  border-radius: 0;
-  background-color: var(--color-surface);
-  border: 2px solid var(--color-primary);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  width: var(--space-6);
+  height: var(--space-6);
   flex-shrink: 0;
+  background: url('../../assets/icons/checkbox-unchecked.svg') center / 100% no-repeat;
 }
-.checkbox:checked + .checkbox-box,
+.checkbox:checked + .checkbox-box {
+  background-image: url('../../assets/icons/checkbox-checked.svg');
+}
 .checkbox:indeterminate + .checkbox-box {
-  background-color: var(--color-primary);
-}
-/* Hover: Traffic Cone hover token. Stroke only when unchecked, stroke and fill when checked. */
-.checkbox-row:hover:not(:has(.checkbox:disabled)) .checkbox-box {
-  border-color: var(--color-primary-hover);
-}
-.checkbox-row:hover:not(:has(.checkbox:disabled)) .checkbox:checked + .checkbox-box,
-.checkbox-row:hover:not(:has(.checkbox:disabled)) .checkbox:indeterminate + .checkbox-box {
-  background-color: var(--color-primary-hover);
-}
-.checkbox-box::after {
-  content: '';
-  width: 12px;
-  height: 12px;
-  background-color: var(--color-foreground); /* Iron glyph on Orange: 4.5443:1 */
-  -webkit-mask: url('../../assets/icons/check.svg') center / contain no-repeat;
-  mask: url('../../assets/icons/check.svg') center / contain no-repeat;
-  visibility: hidden;
-}
-.checkbox:checked + .checkbox-box::after { visibility: visible; }
-.checkbox:indeterminate + .checkbox-box::after {
-  /* Iron bar, not the check glyph */
-  width: 8px;
-  height: 2px;
-  -webkit-mask: none;
-  mask: none;
-  visibility: visible;
+  background-image: url('../../assets/icons/checkbox-bar.svg');
 }
 .checkbox-row:has(.checkbox:focus-visible) {
   outline: 2px solid var(--color-primary);
@@ -104,8 +80,8 @@ The actual input remains keyboard-focusable and owns `checked`, `disabled`, subm
   .checkbox {
     appearance: auto;
     position: static;
-    width: var(--space-4);
-    height: var(--space-4);
+    width: var(--space-6);
+    height: var(--space-6);
     clip-path: none;
     overflow: visible;
   }
@@ -114,10 +90,13 @@ The actual input remains keyboard-focusable and owns `checked`, `disabled`, subm
 ```
 
 ## Why 2px
-The box is 16px. A 1.5px stroke falls on a half pixel at 1x, so browsers blur it; 2px renders crisp at every pixel density and matches the exported SVGs, whose 24px source uses a 2px frame. Material uses a 2px frame on its 18px box.
+The box is 20px. A 1.5px stroke falls on a half pixel at 1x, so browsers blur it; 2px renders crisp at every pixel density and matches the exported SVGs' 2px frame. Material uses a 2px frame on its 18px box.
+
+## Why 20px
+The box matches the exported 24px SVGs (2px inset), so designers can place the SVG at 24px and engineers build the same box. 20px sits between Material (18px) and a full icon (24px): visible on a phone without overpowering 16px row text. The whole row stays the touch target.
 
 ## Why orange (Traffic Cone) instead of Iron
-Checkboxes and the focus ring share one color on purpose, as Apple's system accent does. The checkbox selection is a functional state — it signals "this item is selected/confirmed." The industry standard is the accent color (Traffic Cone) for the selected state. The concern about competing with CTAs (raised for the 93-checkbox Additional Info screen) applies to **multi-select buttons**, not checkboxes. A 16×16 checkbox with Traffic Cone fill is a small, contained accent usage — not a competing CTA. The worker reads it as a status signal inside a form row, not as a primary action.
+Checkboxes and the focus ring share one color on purpose, as Apple's system accent does. The checkbox selection is a functional state — it signals "this item is selected/confirmed." The industry standard is the accent color (Traffic Cone) for the selected state. The concern about competing with CTAs (raised for the 93-checkbox Additional Info screen) applies to **multi-select buttons**, not checkboxes. A checkbox with Traffic Cone fill is a small, contained accent usage — not a competing CTA. The worker reads it as a status signal inside a form row, not as a primary action.
 
 Multi-select chips keep Plaster pills and use Traffic Cone square indicators when selected (`buttons.md`). Form checkboxes keep Traffic Cone for the selected state. This is the functional selection-indicator exception, not a general permission to use Traffic Cone for status icons. The two patterns are geometrically distinct (square box with icon vs. pill with text) and semantically distinct (form input vs. filter selection).
 
