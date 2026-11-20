@@ -205,7 +205,7 @@ The lockup is the mark and wordmark together. It is the primary logo — use it 
 | -------------------- | -------- | ------------------------------------------------- |
 | Iron on Canvas       | 12.2506:1  | Default — all light backgrounds                   |
 | Canvas on Iron       | 12.2506:1  | Modal backdrops, photo overlays                   |
-| Plaster on Iron      | 13.7135:1  | Footer band text, marks and icons                 |
+| Plaster on Iron      | 13.7135:1  | Text, marks and icons on Iron surfaces            |
 | Iron on Traffic Cone | 4.5443:1   | Button backgrounds only — marginal, use sparingly |
 | Single-color solid | —        | Print, embroidery, engraving only                 |
 | Single-color outline | —      | Embroidery, engraving only                        |
@@ -437,7 +437,7 @@ Every layout uses four layers, in order of elevation and visual weight:
 
 1. **Ground** — Canvas. The default background for all pages and apps.
 2. **Lifted Surface** — Plaster. Used for cards and isolated containers. Drop shadows are banned; Plaster separates through optical brightness and generous padding. No divider rules or table gridlines. Explicitly specified functional control boundaries use Iron; selection-indicator paint is a separate exception.
-3. **Structure** — Iron. Used for text and explicitly specified functional control boundaries, not layout dividers or table gridlines. It does not become a layout background surface; a functional modal backdrop, a photographic text-legibility overlay or the footer band is the explicit exception.
+3. **Structure** — Iron. Used for text and explicitly specified functional control boundaries, not layout dividers or table gridlines. It may also be a surface: dark sections, dark-theme decks and documents, floating menus and tooltips, the footer band, modal backdrops and photographic overlays.
 4. **Signal** — Traffic Cone. Functional action and data cues, not a color-count limit.
 
 ### Rules
