@@ -38,7 +38,7 @@ A static tag is a short, non-interactive label on a card or list row, such as "N
 
 - **Container:** none. No fill, border, radius, shadow, or padding.
 - **Text:** Iron (`--color-foreground`), weight 600, sentence case. Use Text-0.75x in dense layouts and Text-1x beside Text-1x card metadata.
-- **Highlight:** one tag per card may use Traffic Cone (`--color-primary`) to mark something new, at Text-1x only and on Plaster only. This is a brand exception: Cone on Plaster is 3.0177:1, below AA for text at this size. Where AA is required, use the accessible color set. Never set Text-0.75x tags in Cone.
+- **Highlight:** one tag per card may use Traffic Cone (`--color-primary`) to mark something new, such as "New". It may be Text-0.75x or Text-1x, on Plaster or Canvas, and stays plain text with no container. This is a documented brand exception, not an AA pass: Cone text is 3.0177:1 on Plaster and 2.6958:1 on Canvas. Keep it to one short word that is not the only way to learn the fact (the item also appears in an "Added" or date line, or a filter). Where AA is required, opt the context in to the accessible color set (`--color-primary-accessible`).
 - **Icon:** none.
 - **Gap:** `--space-2` (8px) between tags. Two tags per card at most.
 - **Not interactive:** no hover, no pointer cursor, no focus ring, no `role="button"`. If it acts (filters, toggles), it is a chip, not a tag; use the pill chips in `components/buttons.md`.
@@ -60,6 +60,6 @@ A static tag is a short, non-interactive label on a card or list row, such as "N
   font-weight: var(--text-1x-weight-bold);
   letter-spacing: var(--text-1x-tracking);
 }
-.tag--highlight { color: var(--color-primary); } /* Use with .tag--large, on Plaster only */
+.tag--highlight { color: var(--color-primary); } /* Brand exception: Text-0.75x or Text-1x, on Plaster or Canvas */
 .tag + .tag { margin-left: var(--space-2); }
 ```
