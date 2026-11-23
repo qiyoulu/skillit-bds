@@ -133,7 +133,7 @@ For a nav item that leads to a family of offerings, each with its own page. A pl
 Bottom navigation between the app's top-level sections, on phones only. Tablets and desktop use the sidebar.
 
 - **Tabs:** four, each a 24px icon over a one-word Text-0.75x label (Home, Search, Candidates, Inbox). Never icon-only.
-- **Active tab:** Iron icon and bold label. Inactive tabs keep Iron at full opacity with a regular label.
+- **Active tab:** the icon sits in a 40px Canvas circle, like the selected item on the desktop icon rail, and the label is bold. Inactive tabs have no circle, a regular label, and Iron at full opacity.
 - **Always visible** on top-level screens. A modal or full-screen task may cover it.
 - **Navigation only.** Actions that act on the screen go in the screen or a bottom bar, never in the tab bar.
 - **Badges:** a small Traffic Cone dot only for something that needs attention, such as unread messages. No counts.
