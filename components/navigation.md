@@ -10,7 +10,7 @@
 
 ## Primary navigation
 The primary navigation is a 64px row on Canvas: the 32px logo with 16px above and below. There is no texture band; the row is the whole header.
-On desktop, the full "Skillit" lockup is visible. When the viewport scales down, the lockup hides and is replaced by the 32px `mark` icon, while the navigation items collapse into a full-width dropdown menu. SKILLIT Hire pages are the exception: they keep the full SKILLIT Hire lockup at every width, mobile included (see `tokens/docs/logo.md`, Product lockup).
+On desktop, the full "Skillit" lockup is visible. When the viewport scales down, the lockup hides and is replaced by the 32px `mark` icon, while the navigation items collapse into a full-width dropdown menu. SKILLIT Hire pages use the SKILLIT Hire lockup wherever it fits, and the mark only where it does not (see `tokens/docs/logo.md`, Product lockup).
 ```css
 .nav {
   position: relative;

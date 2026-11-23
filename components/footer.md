@@ -58,4 +58,4 @@ The footer anchors the bottom of the page using the Iron ground and Plaster (whi
   .footer-columns { flex-wrap: wrap; gap: var(--space-8); }
 }
 ```
-The logo in the footer should be `lockup.svg` with `color: var(--color-surface)` on the container. Below 1280px, this hides and is replaced by `mark.svg` the same way as in the header. SKILLIT Hire pages keep the SKILLIT Hire lockup at every width instead.
+The logo in the footer should be `lockup.svg` with `color: var(--color-surface)` on the container. Below 1280px, this hides and is replaced by `mark.svg` the same way as in the header. SKILLIT Hire pages use the SKILLIT Hire lockup wherever it fits instead.
