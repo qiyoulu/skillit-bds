@@ -129,6 +129,16 @@ For a nav item that leads to a family of offerings, each with its own page. A pl
 
 **Mobile.** The trigger leaves the header and sits beside the primary in the pinned bar at the foot of the menu, both hugging their labels. Tapping it drills in: the root list slides out to the left and the panel slides in from the right, as the language picker does. A Back row (Text-1x, 48px tall) leads the panel; Escape steps back one level before it closes the menu. The cards stack in one column with the same copy. Root rows are Text-1.5x on 48px rows; the panel text is Text-1x, so type steps 24px then 16px.
 
+## Mobile tab bar (app)
+Bottom navigation between the app's top-level sections, on phones only. Tablets and desktop use the sidebar.
+
+- **Tabs:** four, each a 24px icon over a one-word Text-0.75x label (Home, Search, Candidates, Inbox). Never icon-only.
+- **Active tab:** Iron icon and bold label. Inactive tabs keep Iron at full opacity with a regular label.
+- **Always visible** on top-level screens. A modal or full-screen task may cover it.
+- **Navigation only.** Actions that act on the screen go in the screen or a bottom bar, never in the tab bar.
+- **Badges:** a small Traffic Cone dot only for something that needs attention, such as unread messages. No counts.
+- **Size:** 72px tall plus `env(safe-area-inset-bottom)`, Plaster, each tab at least 40 × 40px.
+
 ## Back and forward sticky bar
 
 Replaces persistent footer navigation on app views currently using a footer with back and next controls. Sits as a fixed bar at the bottom of the mobile viewport, decouples navigation from the page chrome, and lets the footer be removed.

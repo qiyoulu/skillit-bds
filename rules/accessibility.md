@@ -57,6 +57,7 @@ Semantic status icons use the corresponding green, yellow, red, or blue host pai
 - Minimum touch target size: `40px × 40px`.
 - This applies to all interactive elements: buttons, links, checkboxes, radio inputs, nav items.
 - The visible element may be smaller, but the clickable/tappable area should meet the minimum.
+- **Desktop with a mouse:** dense app screens (tables, toolbars, card actions) may use 32px buttons and chips. That still clears WCAG 2.5.8 (24px). Any layout that can be used by touch, mobile and tablet included, keeps 40px.
 - On the worker app specifically: assume fat fingers, gloves, and direct sunlight. When in doubt, go larger.
 ---
 ## Text sizing rules

@@ -246,6 +246,12 @@ Work Sans is implemented as a variable font (`wght@100..900`).
 - **400:** metadata, chart references and footnotes, and captions.
 - **600:** static tags, other labels, and validation messages.
 - **Bylines:** the name uses 600. Affiliation and other details use 400.
+### Person names in UI
+- **Bold (weight-bold of the tier)** when the name is the title of something you can open: a card, a list or table row, a search suggestion.
+- **Regular** inside sentences, quotes, and activity lines ("Added Taheir B. to the pool").
+- **Inboxes and message lists:** bold means unread. Read conversations show the name in regular weight.
+- **Page titles** take the heading tier's weight (Text-2x, 500), not the bold.
+
 ### Monospace / metadata
 - Use `--font-mono` for: timestamps, worker IDs, distances, file sizes, any numeric data string.
 - Never use monospace for labels, body copy, or headings.

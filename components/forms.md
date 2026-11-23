@@ -114,6 +114,31 @@ A pill field with a round Traffic Cone search button inside its right end, as on
 - **Iron on Traffic Cone** is 4.5443:1 for the icon; Plaster field on Canvas separates by surface alone, as other inputs do.
 - **Graphics.** Illustrations that show a search (e.g. the homepage enterprise map) draw this same field at 2×: 96px pill, 48px left inset, 80px button inset 8px, 48px icon.
 
+## Search suggestions
+A panel under a search field that updates as people type. Use it where search filters live; a submit button still runs the full search.
+
+- **Panel:** Plaster, 16px corners, 16px padding, directly under the field with an 8px gap, as wide as the field.
+- **Groups:** results grouped by type in a fixed order (for example Candidates, then Pools). Each group has a Text-0.75x bold heading.
+- **Rows:** the item's name in Text-1x bold, with one detail line under it in Text-1x regular (trade and place, or a count). Rows are 40px targets at minimum.
+- **Last row:** "See all results for “query”", which runs the full search. Enter does the same.
+- **Keyboard:** Down Arrow moves into the panel, Enter opens the highlighted row, Escape closes the panel and returns focus to the field.
+
+## Chat input
+The text field for a conversation, such as a message thread or an AI chat. It follows the search field: a pill with a 40px Traffic Cone circle inside its right end.
+
+| Property | Value |
+|---|---|
+| Field | Pill (`--radius-pill`), Plaster on Canvas, 24px left padding, 4px top, right and bottom padding |
+| Text | Text-1x, Iron; placeholder `--color-foreground-hover`. The pill grows to more lines as people type. |
+| Send button | 40px Traffic Cone circle, 24px Iron `arrow-up` icon, no visible text, inset 4px from the right end |
+
+- **Button name.** A real button named "Send" (`aria-label`), icon decorative.
+- **The send arrow is the button, not an arrow added after a label.** Do not write "Send →" or "Send ↑".
+- **Enter sends; Shift+Enter adds a line.** On mobile the keyboard's return key adds a line, and the button sends.
+
+## Fields on Plaster
+Fields separate from their ground by surface. On Canvas a field is Plaster; on a Plaster surface (an app header, a card, a panel) a field is Canvas. Hover and focus follow the same rules in both cases.
+
 ## Dropdown
 A native select with a decorative down-chevron in a sibling wrapper. The wrapper uses a CSS mask painted with its own `currentColor` (Iron); an external SVG background image does **not** inherit the element’s text color. Keep the chevron down while focused: native select focus does not prove that the popup is open. Do not reference an absent up-chevron asset or simulate an open state with `:focus`.
 

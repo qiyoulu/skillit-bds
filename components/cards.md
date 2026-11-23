@@ -65,6 +65,7 @@ Cards that repeat in a grid or list (job listings, search results, resource list
 
 - Same surface as the standard card: Plaster, `--radius-sharp` (16px), no border, no shadow.
 - Padding in `rem`: `--space-4`. Do not write `16px`.
+- **Equal padding everywhere a card has 16px corners,** so content edges line up down a column. Exceptions: static tags and chips keep their paired padding, chat bubbles use 12px, and dense sidebar rows use 0 / 8px.
 - Gap between list cards: `--space-4` (16px), horizontal and vertical alike (`gap: var(--space-4)`), in a grid and in a single-column list, at every width. It equals the card padding. The page side margin stays at `--space-gutter`.
 - Content width inside a list card at 16px padding: 357px in a 389px three-column card (1280), 277px in a 309px card (1024), 312px in a 344px two-column card (768), 326px in a 358px card (390). Design the card content for 277px, the tightest case.
 - One tier per page region. Do not mix list and feature cards in the same grid.

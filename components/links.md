@@ -31,7 +31,7 @@ a:focus-visible {
 **On non-Skillit dark backgrounds:** Use Canvas underlined text instead of Painter's Tape — Painter's Tape does not pass contrast on dark surfaces.
 
 ## Link text
-Link text says where the link goes or what it does, out of context. Never "here", "click here" or a bare "read more" (screen-reader users often list links on their own). Good: "Read about the DPR partnership", "See open roles". Inline arrow links keep a complete standalone sentence, per `components/buttons.md`.
+Link text says where the link goes or what it does, out of context. Never "here", "click here" or a bare "read more" (screen-reader users often list links on their own). Good: "Read about the DPR partnership", "See open roles".
 
 ## Photography & Media
 Photography uses multiply only when placed on a light background and intended to integrate with the Canvas ground.

@@ -123,8 +123,6 @@ For primary actions inside structured blocks. Iron text on Traffic Cone, same as
 **Alignment:**
 - **All CTA buttons are left-aligned.** Industry email guides show a center-default for CTAs, but Skillit voice is left-aligned: it keeps the button inline with the column of copy it sits next to and reads as the natural next step in the scan path, not a separate block. Use `align="left"` on the wrapping `<td>` and the inner `<table>`. The exception is hero sections or full-width templates where the column is full width — there, left-align to the column's start (which is the same rule, never `align="center"`).
 
-**Arrow suffix:**
-- **No arrow on buttons.** Button labels carry their own affordance through shape (pill), color (Cone), and weight (size + bold). The arrow is reserved for inline body links where the underlined text is a complete standalone sentence ("Read his article on LinkedIn →", "Reply to this newsletter →") — and only there. Industry convention drops arrows on buttons; Skillit voice keeps arrows only on standalone-sentence body links.
 
 ## Destructive button
 For irreversible actions only. Toolbox background.
@@ -151,7 +149,14 @@ Adjacent buttons are `--space-4` (16px) apart, side by side or stacked. The gap 
 - A text link beside a primary button uses the same 16px.
 
 ## Icon placement
-Buttons that carry an icon place the icon on the right side of the label, text on the left. The gap between them depends on whether the button hugs its content.
+Where an icon sits depends on what it means. The gap between icon and label depends on whether the button hugs its content.
+
+**Which side:**
+- **Trailing (after the label):** icons that point where the action goes: forward arrows, external link, and the down chevron on a dropdown.
+- **Leading (before the label):** icons that name the action or its object: add, edit, delete, call, calendar, filter, and back arrows. This matches Material and most public design systems, and reads as "icon, then what it does."
+- **Icon-only buttons** (search submit, chat send, close) have no side.
+
+The table below uses the trailing case; for a leading icon, mirror it.
 
 **Two cases:**
 
@@ -160,8 +165,8 @@ Buttons that carry an icon place the icon on the right side of the label, text o
 || Does not hug | Button is wider than its content — free-standing buttons in layouts, card actions, toolbar buttons, paginated navigation with a label | Icon at the far right edge of the button, label at the far left | Auto — let the layout spread them. Use `justify-content: space-between` or a flex auto margin on the icon. |
 || Hugs | Button collapses to exactly the width of its content — inline actions, table-row actions, chips, dense list-item actions | Icon immediately after the label, on the right | 4px fixed — a single `--space-1` (4px) between the label and the icon. |
 
-- **Default direction is text-left, icon-right.** Never put the icon on the left of the label for a forward-moving action (next, continue, advance). The icon on the right mirrors the reading direction and the back/forward sticky bar convention.
-- **Action icons belong at the end of the label.** Leading radio and checkbox selection indicators are the explicit chip exception. A leading decorative status icon in a non-activatable row is metadata, not an action icon.
+- **Forward-moving actions keep the icon on the right.** Never put a forward arrow before the label (next, continue, advance).
+- **Leading radio and checkbox indicators on chips** follow the chip rules, with an 8px gap.
 - **Edge-to-edge icon placement (auto gap) does not mean the icon floats freely.** On a non-hugging button, the icon sits at the right edge of the button and the label sits at the left edge. The space between them is whatever the button's padding and content width produce — do not add an explicit gap there. This is the normal case for buttons that live inside a layout and have room to breathe.
 - **Hugging buttons use a fixed 4px gap so the pairing reads as one unit.** When the button is only as wide as its content, the icon and label are immediately adjacent — 4px is the brand gap for tight icon-to-text pairings. Anything wider (8px, 16px) makes the button look padded and defeats the hug. Anything tighter makes the pair harder to parse.
 - **The 4px gap applies between label and icon only.** It does not replace the button's tactile padding. A hugging button still has its padding token around the outside of the label+icon pair — the 4px sits inside that padding, between the two pieces.
