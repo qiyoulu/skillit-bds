@@ -71,7 +71,7 @@ A pill field with a round Traffic Cone search button inside its right end, as on
 | Part | Spec |
 |---|---|
 | Field | Plaster (`--color-surface`) on Canvas, `--radius-pill`, no border, 48px minimum height (`--space-12`) |
-| Field padding | `--space-2` (8px) top and bottom, `--space-6` (24px) left, `--space-16` (64px) right so text never runs under the button |
+| Field padding | `--space-2` (8px) top and bottom, `--space-4` (16px) left, `--space-16` (64px) right so text never runs under the button |
 | Text | Text-1x, weight 400, Iron (`--color-foreground`); placeholder `--color-foreground-hover` |
 | Button | 40px Traffic Cone (`--color-primary`) circle, inset `--space-1` (4px) from the field's right end, vertically centered |
 | Button icon | 24px search icon, Iron, centered; no visible text |
@@ -84,7 +84,7 @@ A pill field with a round Traffic Cone search button inside its right end, as on
 .search-input {
   width: 100%;
   min-height: var(--space-12);                       /* 48px */
-  padding: var(--space-2) var(--space-16) var(--space-2) var(--space-6);
+  padding: var(--space-2) var(--space-16) var(--space-2) var(--space-4);
   border: none;
   border-radius: var(--radius-pill);
   background-color: var(--color-surface);
@@ -128,7 +128,7 @@ The text field for a conversation, such as a message thread or an AI chat. It fo
 
 | Property | Value |
 |---|---|
-| Field | Pill (`--radius-pill`), Plaster on Canvas, 24px left padding, 4px top, right and bottom padding |
+| Field | Pill (`--radius-pill`), Plaster on Canvas, 16px left padding, 4px top, right and bottom padding |
 | Text | Text-1x, Iron; placeholder `--color-foreground-hover`. The pill grows to more lines as people type. |
 | Send button | 40px Traffic Cone circle, 24px Iron `arrow-up` icon, no visible text, inset 4px from the right end |
 
